@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ምትእስሳር - ግዕዝ ሆስፒታል</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Noto+Sans+Ethiopic:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Google Search Console Verification Meta Tag (Add if needed, from index.html) -->
+    <!-- <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE_HERE" /> -->
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Geez Hospital Logo">
+                <h1>ግዕዝ ሆስፒታል</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">መእተዊ</a></li>
+                    <li><a href="services.html">ግልጋሎታትና</a></li>
+                    <li><a href="doctors.html">ሓኻይምና</a></li>
+                    <li><a href="contact.html">ምትእስሳር</a></li>
+                    <li>
+                        <div class="language-selector">
+                            <select id="language-switcher">
+                                <option value="tig">ትግርኛ</option>
+                                <option value="eng">English</option>
+                                <option value="amh">አማርኛ</option>
+                            </select>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="page-hero" class="section-padding">
+        <div class="container">
+            <h2>ምትእስሳር</h2>
+            <p>ንዝኾነ ሕቶ ወይ ሓሳብ፣ ክትረኽቡና ትኽእሉ ኢኹም።</p>
+        </div>
+    </section>
+
+    <section id="contact-details" class="section-padding bg-light">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info-card">
+                    <i class="fas fa-map-marker-alt fa-3x"></i>
+                    <h3>ኣድራሻ</h3>
+                    <p>ከተማ ኣኽሱም፣ ጣብያ ክንደያ ትሕቲ ኢትዮቴሌኮም ዉርድ ኢልካ፣ ድሕሪ ሴንትራል ካፌ</p>
+                </div>
+                <div class="contact-info-card">
+                    <i class="fas fa-phone-alt fa-3x"></i>
+                    <h3>ቴሌፎን</h3>
+                    <p>0920008338</p>
+                    <p>0962333388</p>
+                </div>
+                <div class="contact-info-card">
+                    <i class="fas fa-envelope fa-3x"></i>
+                    <h3>ኢሜይል</h3>
+                    <p><a href="mailto:geezhospital@gmail.com">geezhospital@gmail.com</a></p>
+                </div>
+                <div class="contact-info-card">
+                    <i class="fab fa-facebook-f fa-3x"></i>
+                    <h3>ፌስቡክ</h3>
+                    <p><a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank">Geez Hospital Facebook Page</a></p>
+                </div>
+            </div>
+
+            <div id="map-container-contact">
+                <h3>ቦታና ኣብ ካርታ</h3>
+                <!-- Google Map Embed - You need to get an embed code from Google Maps -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.763073740266!2d39.467433299999995!3d14.120309999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x165a297746816027%3A0x6a0a09e0a0a0a0a0!2sAxum%20Hospital%20(Example)!5e0!3m2!1sen!2set!4v1704400000000!5m2!1sen!2set" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <!-- Optional: Contact Form -->
+            <!-- ንሕጂ ብሰርቨር ዝሰርሕ ስለዘይብልካ፣ እዚ ክትጥቀመሉ ኣይትኽእልን ኢኻ።
+            <div id="contact-form">
+                <h3>መልእኽቲ ይልእኩ</h3>
+                <form action="YOUR_FORM_SUBMISSION_URL" method="POST">
+                    <input type="text" name="name" placeholder="ሙሉእ ሽም" required>
+                    <input type="email" name="email" placeholder="ኢሜይል" required>
+                    <input type="text" name="subject" placeholder="ኣርእስቲ">
+                    <textarea name="message" placeholder="መልእኽቲ" rows="6" required></textarea>
+                    <button type="submit" class="btn">ይልኣኽ</button>
+                </form>
+            </div>
+            -->
+        </div>
+    </section>
+
+    <!-- Footer copied from index.html -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ግዕዝ ሆስፒታል. ኩሉ መሰላት ዝተሓለወ እዩ።</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
