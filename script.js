@@ -1,18 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Language switcher functionality
-    const languageSwitcher = document.getElementById('language-switcher');
-    if (languageSwitcher) {
-        languageSwitcher.addEventListener('change', (event) => {
-            const selectedLang = event.target.value;
-            // Here you would implement logic to change the site's language
-            // This could involve:
-            // 1. Reloading the page with a language parameter (e.g., geezhospital.com?lang=eng)
-            // 2. Dynamically changing content on the page (more complex)
-            // For now, we'll just log it.
-            console.log(`Language switched to: ${selectedLang}`);
-            alert(`Language switching is not fully implemented yet. Selected: ${selectedLang}`);
-        });
-    }
+const languageSwitcher = document.getElementById('language-switcher');
+if (languageSwitcher) {
+    languageSwitcher.addEventListener('change', (event) => {
+        const selectedLang = event.target.value;
+        // For a static site, the simplest approach is to reload the page with a language parameter.
+        // In a more advanced setup, you'd load different content based on this.
+
+        // Get the current page path (e.g., /index.html, /services.html)
+        let currentPage = window.location.pathname.split('/').pop();
+        if (currentPage === "") { // If it's the root, assume index.html
+            currentPage = "index.html";
+        }
+
+        // For now, let's keep it simple: we can redirect to a specific page or simply log.
+        // If you want to create separate pages for each language (e.g., index-eng.html, services-tig.html)
+        // then you would modify the redirect logic here.
+
+        // Example: If we want to support /en/index.html or /am/index.html
+        // For now, we'll just log and maybe suggest a redirect placeholder.
+
+        console.log(`Language selected: ${selectedLang}`);
+        // alert(`Language switching is not fully implemented yet. Selected: ${selectedLang}`);
+
+        // To actually implement full language switching on a static site,
+        // you'd typically need a separate set of HTML files for each language (e.g., en/index.html, am/index.html)
+        // or a more complex JavaScript solution to replace all text.
+        // For now, we will demonstrate the concept.
+        
+        // Placeholder for future multi-page language setup
+        // window.location.href = `/${selectedLang}/${currentPage}`;
+        alert(`Selected language: ${selectedLang}. Full multi-language support requires additional translated pages.`);
+    });
+}
 
     // Dynamic Services Loading (Example - you'll expand this)
     const services = [
