@@ -397,5 +397,60 @@ footer {
     font-size: 16px;
     color: var(--secondary-color);
     text-align: left; /* Make paragraphs left-aligned for better readability */
+}/* Doctors Page Specific Styles */
+#all-doctors .doctor-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.doctor-profile-card {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    border-top: 5px solid var(--primary-color);
+}
+
+.doctor-profile-card:hover {
+    transform: translateY(-5px);
+}
+
+.doctor-profile-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--primary-color);
+}
+
+.doctor-profile-card h3 {
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: var(--dark-text);
+}
+
+.doctor-profile-card .specialty {
+    font-size: 16px;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.doctor-profile-card .experience {
+    font-size: 15px;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.btn-small {
+    padding: 8px 18px;
+    font-size: 14px;
 }
 }

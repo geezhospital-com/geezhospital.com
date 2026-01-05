@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ሓኻይምና - ግዕዝ ሆስፒታል</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Noto+Sans+Ethiopic:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Google Search Console Verification Meta Tag (Add if needed, from index.html) -->
+    <!-- <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE_HERE" /> -->
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Geez Hospital Logo">
+                <h1>ግዕዝ ሆስፒታል</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">መእተዊ</a></li>
+                    <li><a href="services.html">ግልጋሎታትና</a></li>
+                    <li><a href="doctors.html">ሓኻይምና</a></li>
+                    <li><a href="#contact">ምትእስሳር</a></li>
+                    <li>
+                        <div class="language-selector">
+                            <select id="language-switcher">
+                                <option value="tig">ትግርኛ</option>
+                                <option value="eng">English</option>
+                                <option value="amh">አማርኛ</option>
+                            </select>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="page-hero" class="section-padding">
+        <div class="container">
+            <h2>ሓኻይምና</h2>
+            <p>ግዕዝ ሆስፒታል ብልዑል ተመኩሮን ሞያን ዘለዎም ስፔሻሊስትን ፍሉይ ስፔሻሊስትን ሓኻይም ግልጋሎት ይህብ ።</p>
+        </div>
+    </section>
+
+    <section id="all-doctors" class="section-padding bg-light">
+        <div class="container">
+            <div class="doctor-detail-grid">
+                <!-- Doctors will be added here -->
+                <div class="doctor-profile-card">
+                    <img src="images/doctor1.jpg" alt="Dr. Tesfay Atsbeha">
+                    <h3>ዶ/ር ተስፋይ ኣጽብሃ</h3>
+                    <p class="sub-specialty">ፍሉይ-ስፔሻሊስት ሕማማት ልቢ</p>
+                    <p class="experience">ዶ/ር ተስፋይ ኣጽብሃ ንልዕሊ 10 ዓመታት ኣብ ዉሽጢ ዓዲን ወጻእን ብዝተምሃርዎ መሰረት ኣብ ሕክምና ልቢ ፍሉይ ክእለትን ሞያን ኣለዎም ። ኣብ ዝተፈላለዩ ሆስፒታላት ብልዑል ብቕዓት ኣገልግሎም እዮም ኣለዋ። ሕዚ ድማ ኣብ ሆስፒታልና ንሕሙማት ብልዑል ተበግሶን ድሌትን ብሞያዊ ብቕዓቶም የገልግሉ ኣለዉ።</p>
+                    <a href="#book-appointment" class="btn btn-small">ቀጠሮ</a>
+                </div>
+                <div class="doctor-profile-card">
+                    <img src="images/doctor2.jpg" alt="Dr. Higus Teklu">
+                    <h3>ዶ/ር ሕጉስ ተኽሉ</h3>
+                    <p class="specialty">ስፔሻሊስት ሕክምና ውሽጣዊ ሕማማት</p>
+                    <p class="experience">ዶ/ር ሕጉስ ተኽሉ ንልዕሊ 12 ዓመታት ኣብ ሕክምና ውሽጣዊ ሕማማት ምኩር ዶክተር እዮም። ኣብ ዝተፈላለዩ ሕክምናዊ ትካላት ኣገልጊሎም። ንዝተፈላለዩ ሕማማት ብምሉእ ዓቕሞም ብምሕካም ኣብ ህዝቦም ልዑል ተቐባልነት ኣለዎም።</p>
+                    <a href="#book-appointment" class="btn btn-small">ቀጠሮ</a>
+                </div>
+                <!-- Add more doctor profile cards here -->
+                <div class="doctor-profile-card">
+                    <img src="images/generic-doctor.jpg" alt="Dr. Gebreab Nega">
+                    <h3>ዶ/ር ገብረኣብ ነጋ</h3>
+                    <p class="specialty">ስፔሻሊስት ሕክምና ህፃውንቲን ኣባፅሕን</p>
+                    <p class="experience">ዶ/ር ገብረኣብ ንልዕሊ 8 ዓመታት ኣብ ሕክምና ህፃውንቲ ኣገልጊሎም፣ከምኡ እዉን ኣብ ኣኽሱም ዩንቨርስቲ ሓጋዚ ፕሮፌሶር እዮም። ንህጻናት ዝምጥን ክንክንን ሕክምናን ይህቡ።</p>
+                    <a href="#book-appointment" class="btn btn-small">ቀጠሮ</a>
+                </div>
+                <div class="doctor-profile-card">
+                    <img src="images/generic-doctor.jpg" alt="Dr. A">
+                    <h3>ዶ/ር ኣ</h3>
+                    <p class="specialty">ስፔሻሊስት ሓፈሻዊ መጥባሕቲ</p>
+                    <p class="experience">ዶ/ር ኣ ኣብ ሓፈሻዊ መጥባሕቲ ብልዑል ተመኩሮ ዘለዎም ሓኪም እዮም። </p>
+                    <a href="#book-appointment" class="btn btn-small">ቀጠሮ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer copied from index.html -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ግዕዝ ሆስፒታል. ኩሉ መሰላት ዝተሓወሰ እዩ።</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
