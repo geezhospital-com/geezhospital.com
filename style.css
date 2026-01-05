@@ -340,4 +340,62 @@ footer {
         padding: 10px 20px;
         font-size: 14px;
     }
+    /* Services Page Specific Styles */
+#page-hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-bg.jpg') no-repeat center center/cover;
+    color: var(--white);
+    text-align: center;
+    padding: 100px 0 50px 0;
+}
+
+#page-hero h2 {
+    color: var(--white);
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+#page-hero p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.service-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-item {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    border-top: 5px solid var(--primary-color);
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+.service-item i {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--dark-text);
+}
+
+.service-item p {
+    font-size: 16px;
+    color: var(--secondary-color);
+    text-align: left; /* Make paragraphs left-aligned for better readability */
+}
 }
