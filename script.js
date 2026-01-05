@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: "መርመራን ሕክምናን ፊዝዮቴራፒ", icon: "fas fa-wheelchair", description: "ምሉእ መርመራን ሕክምናን ብፊዝዮቴራፒ ሓኪም ግልጋሎት ይወሃብ።" },
         { name: "ስፔሻሊስት ሕክምና ስነ ኣእምሮ", icon: "fas fa-brain", description: "ስፔሻሊስት ሕክምና ስነ ኣእምሮ ግልጋሎት ይወሃብ።" },
         { name: "ናይ መዋልዳን ምሉእ ግልጋሎት", icon: "fas fa-baby-carriage", description: "ምሉእ ግልጋሎት መዋልዳን፣ ካብ ቅድሚ ሕርሲ ክሳብ ድሕሪ ሕርሲ፣ ብልዑል ልምዲን ተሞኩሮን ዘለዎም ሰብ ሞያን ብዘመናዊ መሳርሒታትን ይወሃብ።" },
-        { name: "ምሉእ ኣቕሪቦት መድሃኒት(Pharmacy)ን ኣምቡላንስን", icon: "fas fa-ambulance", description: "ምሉእ ኣቕሪቦት መድሃኒት(Pharmacy)ን ኣምቡላንስን ግልጋሎት ይወሃብ።" },
+        { name: "ምሉእ ኣቕሪቦት መድሓኒት(Pharmacy)ን ኣምቡላንስን", icon: "fas fa-ambulance", description: "ምሉእ ኣቕሪቦት መድሓኒት(Pharmacy)ን ኣምቡላንስን ግልጋሎት ይወሃብ።" },
         { name: "ካልኦት ግልጋሎትን ይረኽቡ", icon: "fas fa-plus-circle", description: "ካልኦት ዘይተዘርዘሩ ግልጋሎት ኣብ ግዕዝ ሆስፒታል ይረኽቡ።" }
     ];
 
