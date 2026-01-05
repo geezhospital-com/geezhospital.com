@@ -670,4 +670,85 @@ footer {
         padding: 40px 0;
     }
 }
+/* Hero Section Specific Styles */
+#hero {
+    background: url('images/hero-bg.jpg') no-repeat center center/cover;
+    color: var(--white);
+    text-align: center;
+    padding: 150px 0;
+    position: relative;
+    display: flex; /* ንhero-content ንማእኸል ንምግባር */
+    align-items: center;
+    justify-content: center;
+    min-height: 500px; /* ዝውሓደ ቁመት */
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6); /* Overlay ንምጽሑፍ ብዝበለጸ ንምርኣይ - ቅድሚ ሕጂ 0.5 ነይሩ፣ ሕጂ 0.6 */
+}
+
+#hero .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+}
+
+#hero h2 {
+    color: var(--white);
+    font-size: 52px; /* ዝተወሳኸ ቁጽሪ */
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+#hero p {
+    font-size: 22px; /* ዝተወሳኸ ቁጽሪ */
+    margin-bottom: 40px;
+}
+
+#hero .btn {
+    margin: 0 10px; /* ኣብ መንጎ buttons space ንምግባር */
+}
+
+.btn-outline-white {
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+.btn-outline-white:hover {
+    background-color: var(--white);
+    color: var(--primary-color);
+}
+
+/* Responsive adjustments for Hero section */
+@media (max-width: 768px) {
+    #hero h2 {
+        font-size: 38px;
+    }
+    #hero p {
+        font-size: 18px;
+    }
+    #hero .btn {
+        display: block; /* buttons ብ vertical ንምስራሕ */
+        margin-bottom: 15px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    #hero h2 {
+        font-size: 30px;
+    }
+    #hero p {
+        font-size: 16px;
+    }
+}
 }
