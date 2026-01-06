@@ -87,7 +87,11 @@ document.addEventListener('DOMContentLoaded', () => {
             'service18-p': 'ግዕዝ ሆስፒታል ካልኦት ዘይተዘርዘሩ ግልጋሎት ንሕብረተሰብን ነቕርብ። ንዝኾነ ሕቶ ወይ ተወሳኺ ሓበሬታ ምሕታት ይከኣል እዩ።',
             
             // Footer (Common)
-            'footer-text': '&copy; 2024 ግዕዝ ሆስፒታል. ኩሉ መሰላት ዝተሓለወ እዩ።'
+            'footer-text': 'Copyright © 2026 ግዕዝ ሆስፒታል. ኩሉ መሰላት ዝተሓለወ እዩ።<br>Developed By ኣሰር ተኽሉ ገብረኪዳን',
+            'facebook-aria-label': 'ፌስቡክ',
+            'twitter-aria-label': 'ትዊተር',
+            'telegram-aria-label': 'ቴለግራም',
+            'linkedin-aria-label': 'ሊንክድኢን'
         },
         'eng': {
             // Header Menu Items (Common)
@@ -174,7 +178,11 @@ document.addEventListener('DOMContentLoaded', () => {
             'service18-p': 'Geez Hospital also offers other unlisted services to the community. Inquiries for any questions or additional information are welcome.',
 
             // Footer (Common)
-            'footer-text': '&copy; 2024 Geez Hospital. All rights reserved.'
+            'footer-text': 'Copyright © 2026 Geez Hospital. All rights reserved.<br>Developed By Aser Teklu Gebrekidan',
+            'facebook-aria-label': 'Facebook',
+            'twitter-aria-label': 'Twitter',
+            'telegram-aria-label': 'Telegram',
+            'linkedin-aria-label': 'LinkedIn'
         }
     };
 
@@ -192,29 +200,45 @@ document.addEventListener('DOMContentLoaded', () => {
         const doctorsLink = document.querySelector('nav ul li a[href="doctors.html"]');
         if (doctorsLink) doctorsLink.textContent = currentTranslations['doctors'];
 
+        // Add null checks for news and gallery links in header
         const newsLink = document.querySelector('nav ul li a[href="news.html"]');
-        if (newsLink) newsLink.textContent = currentTranslations['news']; // This link might not exist yet
+        if (newsLink) newsLink.textContent = currentTranslations['news'];
 
         const galleryLink = document.querySelector('nav ul li a[href="gallery.html"]');
-        if (galleryLink) galleryLink.textContent = currentTranslations['gallery']; // This link might not exist yet
+        if (galleryLink) galleryLink.textContent = currentTranslations['gallery'];
 
-        const contactLink = document.querySelector('nav ul li a[href="#contact"]'); // Make sure this is a[href="#contact"] if it's an anchor to a section, not a separate page
+        // Make sure this is a[href="#contact"] if it's an anchor to a section, not a separate page
+        const contactLink = document.querySelector('nav ul li a[href="#contact"]'); 
         if (contactLink) contactLink.textContent = currentTranslations['contact'];
 
         const logoH1 = document.querySelector('.logo h1');
         if (logoH1) logoH1.textContent = currentTranslations['logo-h1'];
 
-        const footerP = document.querySelector('footer p');
-        if (footerP) footerP.innerHTML = currentTranslations['footer-text'];
+        const footerP = document.getElementById('footer-text'); // Use getElementById for consistency
+        if (footerP) footerP.innerHTML = currentTranslations['footer-text']; // Use innerHTML for <br> tag
 
-        document.documentElement.lang = (lang === 'eng') ? 'en' : 'ti'; // 'ti' for Tigrigna
+        document.documentElement.lang = (lang === 'eng') ? 'en' : 'ti'; 
+
+        // Update aria-labels for social links
+        const facebookLink = document.querySelector('footer .social-links a[aria-label]');
+        if (facebookLink) facebookLink.setAttribute('aria-label', currentTranslations['facebook-aria-label']);
+        
+        const twitterLink = document.querySelector('footer .social-links a[aria-label="Twitter"]');
+        if (twitterLink) twitterLink.setAttribute('aria-label', currentTranslations['twitter-aria-label']);
+
+        const telegramLink = document.querySelector('footer .social-links a[aria-label="Telegram"]');
+        if (telegramLink) telegramLink.setAttribute('aria-label', currentTranslations['telegram-aria-label']);
+
+        const linkedinLink = document.querySelector('footer .social-links a[aria-label="LinkedIn"]');
+        if (linkedinLink) linkedinLink.setAttribute('aria-label', currentTranslations['linkedin-aria-label']);
+
 
         // Page-specific content updates
         if (currentPage === 'index.html' || currentPage === '') {
             if (document.querySelector('#hero h2')) document.querySelector('#hero h2').textContent = currentTranslations['hero-h2'];
             if (document.querySelector('#hero p')) document.querySelector('#hero p').textContent = currentTranslations['hero-p'];
-            if (document.querySelector('#hero .btn:nth-of-type(1)')) document.querySelector('#hero .btn:nth-of-type(1)').textContent = currentTranslations['hero-btn-appointment'];
-            if (document.querySelector('#hero .btn:nth-of-type(2)')) document.querySelector('#hero .btn:nth-of-type(2)').textContent = currentTranslations['hero-btn-services'];
+            if (document.querySelector('#hero .btn:nth-of-type(1)') && currentTranslations['hero-btn-appointment']) document.querySelector('#hero .btn:nth-of-type(1)').textContent = currentTranslations['hero-btn-appointment'];
+            if (document.querySelector('#hero .btn:nth-of-type(2)') && currentTranslations['hero-btn-services']) document.querySelector('#hero .btn:nth-of-type(2)').textContent = currentTranslations['hero-btn-services'];
 
             if (document.querySelector('#about h2')) document.querySelector('#about h2').textContent = currentTranslations['about-h2'];
             if (document.querySelector('#about p:nth-of-type(1)')) document.querySelector('#about p:nth-of-type(1)').textContent = currentTranslations['about-p1'];
@@ -250,34 +274,24 @@ document.addEventListener('DOMContentLoaded', () => {
             if (document.querySelector('#contact h2')) document.querySelector('#contact h2').textContent = currentTranslations['contact-h2'];
             if (document.querySelector('#contact p:nth-of-type(1)')) document.querySelector('#contact p:nth-of-type(1)').textContent = currentTranslations['contact-p'];
             
-            // These contact details are usually in the top-bar or footer, not main contact section
-            // Make sure these selectors are correct for your index.html
-            const contactAddressP = document.querySelector('.contact-info p:nth-of-type(1)'); // This selector targets a p in .contact-info, usually in top-bar
-            if (contactAddressP) { 
-                const strong = contactAddressP.querySelector('strong');
-                if (strong) strong.textContent = currentTranslations['address-strong'];
-                contactAddressP.childNodes[1].nodeValue = ` ${currentTranslations['address-text']}`; // Directly update text node
-            }
-            
-            const contactPhoneP = document.querySelector('.contact-info p:nth-of-type(2)');
-            if (contactPhoneP) { 
-                const strong = contactPhoneP.querySelector('strong');
-                if (strong) strong.textContent = currentTranslations['phone-strong'];
-                contactPhoneP.childNodes[1].nodeValue = ` +251920008338 / +251962333388`;
-            }
+            // These selectors should be correct if they are in the top-bar for index.html
+            const topBarAddressSpan = document.querySelector('.top-bar .contact-info + .address-info span');
+            if (topBarAddressSpan) topBarAddressSpan.innerHTML = `<i class="fas fa-map-marker-alt"></i> ${currentTranslations['address-text']}`;
 
-            const contactEmailP = document.querySelector('.contact-info p:nth-of-type(3)');
-            if (contactEmailP) { 
-                const strong = contactEmailP.querySelector('strong');
-                if (strong) strong.textContent = currentTranslations['email-strong'];
-                contactEmailP.childNodes[1].nodeValue = ` geezhospital@gmail.com`;
-            }
+            const topBarPhoneSpan = document.querySelector('.top-bar .contact-info span:nth-of-type(1)');
+            if (topBarPhoneSpan) topBarPhoneSpan.innerHTML = `<i class="fas fa-phone"></i> +251920008338/+251962333388`;
 
-            const contactFacebookP = document.querySelector('.contact-info p:nth-of-type(4)');
-            if (contactFacebookP) { 
-                const strong = contactFacebookP.querySelector('strong');
-                if (strong) strong.textContent = currentTranslations['facebook-strong'];
-                contactFacebookP.querySelector('a').textContent = ` Geez Hospital Facebook Page`;
+            const topBarEmailSpan = document.querySelector('.top-bar .contact-info span:nth-of-type(2)');
+            if (topBarEmailSpan) topBarEmailSpan.innerHTML = `<i class="fas fa-envelope"></i> info@geezhospital.com`;
+
+            // For the main contact section's detailed info, if it exists (assuming it's after #contact h2)
+            const contactInfoSection = document.querySelector('#contact .contact-info');
+            if (contactInfoSection) {
+                const pElements = contactInfoSection.querySelectorAll('p');
+                if (pElements[0]) pElements[0].innerHTML = `<strong>${currentTranslations['address-strong']}</strong> ${currentTranslations['address-text']}`;
+                if (pElements[1]) pElements[1].innerHTML = `<strong>${currentTranslations['phone-strong']}</strong> +251920008338 / +251962333388`;
+                if (pElements[2]) pElements[2].innerHTML = `<strong>${currentTranslations['email-strong']}</strong> geezhospital@gmail.com`;
+                if (pElements[3]) pElements[3].innerHTML = `<strong>${currentTranslations['facebook-strong']}</strong> <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank">Geez Hospital Facebook Page</a>`;
             }
 
         } 
@@ -298,7 +312,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         }
-        // Add more conditions for other pages (doctors.html, news.html, etc.) here
+        else if (currentPage === 'doctors.html') {
+            // Doctors page specific content
+            // Assuming you have a #page-hero section for doctors page similar to services.html
+            const pageHeroH2 = document.querySelector('#page-hero h2'); 
+            if (pageHeroH2) pageHeroH2.textContent = currentTranslations['doctors']; // Or a specific doctors page title
+
+            // If you have specific doctor details on doctors.html, you'd add selectors here.
+            // Example:
+            // const doctorName1 = document.getElementById('doctor-name-1');
+            // if (doctorName1) doctorName1.textContent = currentTranslations['dr-tesfay-name'];
+        }
+        // Add more conditions for other pages (news.html, gallery.html, contact.html) here as you build them
+        // else if (currentPage === 'news.html') {
+        //     const pageHeroH2 = document.querySelector('#page-hero h2');
+        //     if (pageHeroH2) pageHeroH2.textContent = currentTranslations['news'];
+        // }
+        // else if (currentPage === 'gallery.html') {
+        //     const pageHeroH2 = document.querySelector('#page-hero h2');
+        //     if (pageHeroH2) pageHeroH2.textContent = currentTranslations['gallery'];
+        // }
     };
 
     languageSwitcher.addEventListener('change', (event) => {
@@ -319,8 +352,7 @@ document.addEventListener('DOMContentLoaded', () => {
         applyLanguage('tig');
     }
 
-    // Dynamic Services Loading for index.html (This part should only run if serviceGridIndexPage exists)
-    // Make sure these descriptions match the translations.
+    // Dynamic Services Loading for index.html 
     const servicesForIndexPage = [
         { name: "ስፔሻሊስት ሕክምና ውሽጣዊ ሕማማት", icon: "fas fa-stethoscope", description: "ምሉእ ናይ ውሽጣዊ ሕማማት መርመራን ሕክምናን ብልዑል ተመኩሮን ሞያን ዘለዎም ስፔሻሊስት ሓኻይም ይወሃብ።" },
         { name: "ፍሉይ ስፔሻሊስት ሕክምና ሕማማት ልቢ", icon: "fas fa-heartbeat", description: "ፍሉይ ናይ ልቢ ሕማማት መርመራን ሕክምናን ብልዑል ተመኩሮን ሞያን ዘለዎም ሳብ ስፔሻሊስት ሓኻይም ይወሃብ።" },
@@ -342,8 +374,9 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: "ካልኦት ግልጋሎትን ይረኽቡ", icon: "fas fa-plus-circle", description: "ካልኦት ዘይተዘርዘሩ ግልጋሎት ኣብ ግዕዝ ሆስፒታል ይረኽቡ።" }
     ];
 
-    const serviceGridIndexPage = document.querySelector('#services .service-grid'); // ን index.html ጥራይ
+    const serviceGridIndexPage = document.querySelector('#services .service-grid');
     if (serviceGridIndexPage) {
+        serviceGridIndexPage.innerHTML = ''; // Clear existing content to avoid duplicates
         servicesForIndexPage.forEach(service => {
             const serviceCard = document.createElement('div');
             serviceCard.classList.add('service-card');
