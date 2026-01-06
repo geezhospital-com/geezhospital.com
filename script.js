@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const languageSwitcher = document.getElementById('language-switcher');
 
-    // ንኹሉ እቲ ኣብ ገጽ ዘሎ ትግርኛ ጽሑፍን ናይ እንግሊዝኛ ትርጉሙን ዝሓዘ object
     const translations = {
         'tig': {
             // Header Menu Items (Common)
@@ -179,25 +178,39 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // ነቲ ቋንቋ ዝቕይር function
     const applyLanguage = (lang) => {
         const currentTranslations = translations[lang];
         const currentPage = window.location.pathname.split('/').pop();
 
         // Common elements for all pages (e.g., Header Menu, Logo, Footer)
-        document.querySelector('nav ul li a[href="index.html"]').textContent = currentTranslations['home'];
-        document.querySelector('nav ul li a[href="services.html"]').textContent = currentTranslations['services'];
-        document.querySelector('nav ul li a[href="doctors.html"]').textContent = currentTranslations['doctors'];
-        document.querySelector('nav ul li a[href="news.html"]').textContent = currentTranslations['news'];
-        document.querySelector('nav ul li a[href="gallery.html"]').textContent = currentTranslations['gallery'];
-        document.querySelector('nav ul li a[href="contact.html"]').textContent = currentTranslations['contact'];
-        document.querySelector('.logo h1').textContent = currentTranslations['logo-h1'];
-        document.querySelector('footer p').innerHTML = currentTranslations['footer-text'];
+        const homeLink = document.querySelector('nav ul li a[href="index.html"]');
+        if (homeLink) homeLink.textContent = currentTranslations['home'];
+
+        const servicesLink = document.querySelector('nav ul li a[href="services.html"]');
+        if (servicesLink) servicesLink.textContent = currentTranslations['services'];
+
+        const doctorsLink = document.querySelector('nav ul li a[href="doctors.html"]');
+        if (doctorsLink) doctorsLink.textContent = currentTranslations['doctors'];
+
+        const newsLink = document.querySelector('nav ul li a[href="news.html"]');
+        if (newsLink) newsLink.textContent = currentTranslations['news']; // This link might not exist yet
+
+        const galleryLink = document.querySelector('nav ul li a[href="gallery.html"]');
+        if (galleryLink) galleryLink.textContent = currentTranslations['gallery']; // This link might not exist yet
+
+        const contactLink = document.querySelector('nav ul li a[href="#contact"]'); // Make sure this is a[href="#contact"] if it's an anchor to a section, not a separate page
+        if (contactLink) contactLink.textContent = currentTranslations['contact'];
+
+        const logoH1 = document.querySelector('.logo h1');
+        if (logoH1) logoH1.textContent = currentTranslations['logo-h1'];
+
+        const footerP = document.querySelector('footer p');
+        if (footerP) footerP.innerHTML = currentTranslations['footer-text'];
+
         document.documentElement.lang = (lang === 'eng') ? 'en' : 'ti'; // 'ti' for Tigrigna
 
         // Page-specific content updates
         if (currentPage === 'index.html' || currentPage === '') {
-            // Index.html specific content
             if (document.querySelector('#hero h2')) document.querySelector('#hero h2').textContent = currentTranslations['hero-h2'];
             if (document.querySelector('#hero p')) document.querySelector('#hero p').textContent = currentTranslations['hero-p'];
             if (document.querySelector('#hero .btn:nth-of-type(1)')) document.querySelector('#hero .btn:nth-of-type(1)').textContent = currentTranslations['hero-btn-appointment'];
@@ -237,25 +250,44 @@ document.addEventListener('DOMContentLoaded', () => {
             if (document.querySelector('#contact h2')) document.querySelector('#contact h2').textContent = currentTranslations['contact-h2'];
             if (document.querySelector('#contact p:nth-of-type(1)')) document.querySelector('#contact p:nth-of-type(1)').textContent = currentTranslations['contact-p'];
             
-            const contactAddressP = document.querySelector('.contact-info p:nth-of-type(1)');
-            if (contactAddressP) { contactAddressP.innerHTML = `<strong>${currentTranslations['address-strong']}</strong> ${currentTranslations['address-text']}`; }
+            // These contact details are usually in the top-bar or footer, not main contact section
+            // Make sure these selectors are correct for your index.html
+            const contactAddressP = document.querySelector('.contact-info p:nth-of-type(1)'); // This selector targets a p in .contact-info, usually in top-bar
+            if (contactAddressP) { 
+                const strong = contactAddressP.querySelector('strong');
+                if (strong) strong.textContent = currentTranslations['address-strong'];
+                contactAddressP.childNodes[1].nodeValue = ` ${currentTranslations['address-text']}`; // Directly update text node
+            }
+            
             const contactPhoneP = document.querySelector('.contact-info p:nth-of-type(2)');
-            if (contactPhoneP) { contactPhoneP.innerHTML = `<strong>${currentTranslations['phone-strong']}</strong> +251920008338 / +251962333388`; }
+            if (contactPhoneP) { 
+                const strong = contactPhoneP.querySelector('strong');
+                if (strong) strong.textContent = currentTranslations['phone-strong'];
+                contactPhoneP.childNodes[1].nodeValue = ` +251920008338 / +251962333388`;
+            }
+
             const contactEmailP = document.querySelector('.contact-info p:nth-of-type(3)');
-            if (contactEmailP) { contactEmailP.innerHTML = `<strong>${currentTranslations['email-strong']}</strong> geezhospital@gmail.com`; }
+            if (contactEmailP) { 
+                const strong = contactEmailP.querySelector('strong');
+                if (strong) strong.textContent = currentTranslations['email-strong'];
+                contactEmailP.childNodes[1].nodeValue = ` geezhospital@gmail.com`;
+            }
+
             const contactFacebookP = document.querySelector('.contact-info p:nth-of-type(4)');
-            if (contactFacebookP) { contactFacebookP.innerHTML = `<strong>${currentTranslations['facebook-strong']}</strong> <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank">Geez Hospital Facebook Page</a>`; }
+            if (contactFacebookP) { 
+                const strong = contactFacebookP.querySelector('strong');
+                if (strong) strong.textContent = currentTranslations['facebook-strong'];
+                contactFacebookP.querySelector('a').textContent = ` Geez Hospital Facebook Page`;
+            }
+
         } 
         else if (currentPage === 'services.html') {
-            // Services.html specific content
-            const pageHeroH2 = document.querySelector('#services-page-h2');
+            const pageHeroH2 = document.getElementById('services-page-h2');
             if (pageHeroH2) pageHeroH2.textContent = currentTranslations['services-page-h2'];
 
-            const pageHeroP = document.querySelector('#services-page-intro-p');
+            const pageHeroP = document.getElementById('services-page-intro-p');
             if (pageHeroP) pageHeroP.textContent = currentTranslations['services-page-intro-p'];
 
-            // Iterate and update service items
-            // Using IDs now that they are added in services.html
             for (let i = 1; i <= 18; i++) {
                 const serviceItem = document.getElementById(`service-item-${i}`);
                 if (serviceItem) {
@@ -269,30 +301,26 @@ document.addEventListener('DOMContentLoaded', () => {
         // Add more conditions for other pages (doctors.html, news.html, etc.) here
     };
 
-    // ኣብቲ ቋንቋ ተቐያሪ ለውጢ ምስ ዝመጽእ
     languageSwitcher.addEventListener('change', (event) => {
         const selectedLang = event.target.value;
         if (selectedLang === 'tig' || selectedLang === 'eng') {
             applyLanguage(selectedLang);
-            // ነቲ ዝተመርጸ ቋንቋ ኣብ Local Storage ኣቐምጦ
             localStorage.setItem('selectedLanguage', selectedLang);
-            // ገጹ ንምጥራይ (refresh) ብግደ ንምቕያር ንጥቀመሉ
             window.location.reload(); 
         }
     });
 
-    // እቲ ገጽ ምስ ተጻዕነ (loaded) ነቲ ዝተመርጸ ቋንቋ ኣውጽእ
     const savedLanguage = localStorage.getItem('selectedLanguage');
     if (savedLanguage && (savedLanguage === 'tig' || savedLanguage === 'eng')) {
-        languageSwitcher.value = savedLanguage; // ነቲ dropdown ኣስተካኽሎ
+        languageSwitcher.value = savedLanguage; 
         applyLanguage(savedLanguage);
     } else {
-        // ምንም ቋንቋ እንተዘይተረኺቡ፣ ብdefault ትግርኛ ይኹን
-        languageSwitcher.value = 'tig'; // ነቲ dropdown ናብ ትግርኛ የስተካኽሎ
+        languageSwitcher.value = 'tig'; 
         applyLanguage('tig');
     }
 
     // Dynamic Services Loading for index.html (This part should only run if serviceGridIndexPage exists)
+    // Make sure these descriptions match the translations.
     const servicesForIndexPage = [
         { name: "ስፔሻሊስት ሕክምና ውሽጣዊ ሕማማት", icon: "fas fa-stethoscope", description: "ምሉእ ናይ ውሽጣዊ ሕማማት መርመራን ሕክምናን ብልዑል ተመኩሮን ሞያን ዘለዎም ስፔሻሊስት ሓኻይም ይወሃብ።" },
         { name: "ፍሉይ ስፔሻሊስት ሕክምና ሕማማት ልቢ", icon: "fas fa-heartbeat", description: "ፍሉይ ናይ ልቢ ሕማማት መርመራን ሕክምናን ብልዑል ተመኩሮን ሞያን ዘለዎም ሳብ ስፔሻሊስት ሓኻይም ይወሃብ።" },
@@ -328,7 +356,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // You might also want to add a simple smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
