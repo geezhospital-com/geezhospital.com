@@ -848,4 +848,55 @@ footer {
 .gallery-item:hover .overlay {
     opacity: 1;
 }
+/* Top Bar Styles */
+.top-bar {
+    background-color: #333; /* Dark background */
+    color: var(--white);
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* ን responsive */
+}
+
+.top-bar .contact-info,
+.top-bar .address-info {
+    display: flex;
+    gap: 20px;
+}
+
+.top-bar .contact-info span,
+.top-bar .address-info span {
+    display: flex;
+    align-items: center;
+}
+
+.top-bar .contact-info i,
+.top-bar .address-info i {
+    margin-right: 8px;
+    color: var(--primary-color);
+}
+
+/* Adjust main header padding if top-bar is added */
+header {
+    padding-top: 0; /* Remove top padding if top bar exists */
+}
+
+/* Responsive for Top Bar */
+@media (max-width: 768px) {
+    .top-bar .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    .top-bar .contact-info,
+    .top-bar .address-info {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
 }
