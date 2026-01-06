@@ -1,6 +1,6 @@
 /* General Styles */
 :root {
-    --primary-color: #007bff; /* Blue */
+    --primary-color: #0066FF; /* ሓዱሽ ሰማያዊ ሕብሪ ካብ ሎጎ */
     --secondary-color: #6c757d; /* Gray */
     --light-bg: #f8f9fa;
     --dark-text: #343a40;
@@ -64,14 +64,14 @@ h1, h2, h3 {
 
 /* Header */
 header {
-    background-color: var(--white);
+    background-color: var(--white); /* ሓዱሽ ሕብሪ - ጸዓዳ */
     padding: 15px 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
+    transition: background-color 0.3s ease;
 }
-
 header .container {
     display: flex;
     justify-content: space-between;
@@ -285,10 +285,10 @@ nav ul li a:hover {
 
 /* Footer */
 footer {
-    background-color: var(--dark-text);
+    background-color: var(--primary-color); /* ሓዱሽ ሕብሪ ካብ ሎጎ */
     color: var(--white);
+    padding: 40px 0;
     text-align: center;
-    padding: 20px 0;
     margin-top: 50px;
 }
 
@@ -850,10 +850,11 @@ footer {
 }
 /* Top Bar Styles */
 .top-bar {
-    background-color: #333; /* Dark background */
+    background-color: var(--primary-color); /* ሓዱሽ ሕብሪ ካብ ሎጎ */
     color: var(--white);
     padding: 10px 0;
     font-size: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .top-bar .container {
