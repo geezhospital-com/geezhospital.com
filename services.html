@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ግልጋሎታትና - ግዕዝ ሆስፒታል</title>
+    <title>Services - Geez Hospital</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="images/favicon.png" type="image/png">
@@ -13,19 +13,16 @@
 </head>
 <body>
     <div class="top-bar">
-    <div class="container">
-        <div class="contact-info">
-            <span><i class="fas fa-phone"></i> +251920008338/+251962333388</span>
-            <span><i class="fas fa-envelope"></i> info@geezhospital.com</span>
-        </div>
-        <div class="address-info">
-            <span><i class="fas fa-map-marker-alt"></i> Axum, Near Ethiotelecom</span>
+        <div class="container">
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> +251920008338/+251962333388</span>
+                <span><i class="fas fa-envelope"></i> info@geezhospital.com</span>
+            </div>
+            <div class="address-info">
+                <span><i class="fas fa-map-marker-alt"></i> Axum, Near Ethiotelecom</span>
+            </div>
         </div>
     </div>
-</div>
-<header>
-    <!-- እቲ ዝነበረ header ኮድ ኣብዚ ይቕጽል -->
-</header>
     <header>
         <div class="container">
             <div class="logo">
@@ -52,104 +49,105 @@
         </div>
     </header>
 
+    <!-- ዝተመሓየሸ Services Page Content -->
     <section id="page-hero" class="section-padding">
         <div class="container">
-            <h2>ግልጋሎታትና</h2>
-            <p>ግዕዝ ሆስፒታል ዝተፈላለዩን ዘመናዊን ግልጋሎታት ብስፔሻሊስትን ብፍሉይ ስፔሻሊስትን(sub specialist)ብቕዓትት ዘለዎም ሓኻይም ግልጋሎት ይህብ።</p>
+            <h2 id="services-page-h2">ግልጋሎታትና</h2>
+            <p id="services-page-intro-p">ግዕዝ ሆስፒታል ዝተፈላለዩን ዘመናዊን ግልጋሎታት ብስፔሻሊስትን ብፍሉይ ስፔሻሊስትን(sub specialist)ብቕዓትት ዘለዎም ሓኻይም ግልጋሎት ይህብ።</p>
         </div>
     </section>
 
     <section id="all-services" class="section-padding bg-light">
         <div class="container">
             <div class="service-detail-grid">
-                <!-- Services will be dynamically loaded here by JavaScript (or manually) -->
-                <!-- Example: -->
-                <div class="service-item">
+                <!-- Services will be updated by JavaScript using their IDs -->
+                
+                <div class="service-item" id="service-item-1">
                     <i class="fas fa-stethoscope fa-2x"></i>
                     <h3>ስፔሻሊስት ሕክምና ውሽጣዊ ሕማማት</h3>
                     <p>ምሉእ ናይ ውሽጣዊ ሕማማት መርመራን ሕክምናን ብልዑል ተመኩሮን ሞያን ዘለዎም ስፔሻሊስት ሓኻይም ይወሃብ። እዚ ግልጋሎት ንዝተፈላለዩ ሕማማት ከም ሕማም ደም፣ ሕማም ኩላሊት፣ ሕማም ሳንቡእ፣ ሕማም ሆርሞን፣ ወዘተ ዘጠቓለለ እዩ።</p>
                 </div>
-                 <div class="service-item">
+                 <div class="service-item" id="service-item-2">
                     <i class="fas fa-heartbeat fa-2x"></i>
                     <h3>ፍሉይ ስፔሻሊስት ሕክምና ሕማማት ልቢ</h3>
                     <p>ፍሉይ ናይ ልቢ ሕማማት መርመራን ሕክምናን ብልዑል ተመኩሮን ሞያን ዘለዎም ሳብ ስፔሻሊስት ሓኻይም ይወሃብ። ECG፣ Echocardiography፣ Stress Test ዝኣመሰሉ ዘመናዊ መሳርሒታትን ኣገባባትን ንጥቀም።</p>
                 </div>
-                 <div class="service-item">
+                 <div class="service-item" id="service-item-3">
                     <i class="fas fa-surgical-mask fa-2x"></i>
                     <h3>ስፔሻሊስት ሓፈሻዊ መጥባሕቲ</h3>
                     <p>ስፔሻሊስት ሓፈሻዊ መጥባሕቲ ብዘመናዊ መሳርሒታትን ኣገባባትን ይወሃብ። እዚ ንዝተፈላለዩ ንኣብነት ን appendices, hernias, gallbladder, ወዘተ መጥባሕቲ ዝሓቖፈ እዩ።</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item" id="service-item-4">
                     <i class="fas fa-baby fa-2x"></i>
                     <h3>ስፔሻሊስት ሕክምና ህፃውንቲን ኣባፅሕን</h3>
                     <p>ናይ ህፃውንቲን ኣባፅሕን መርመራን ሕክምናን ብስፔሻሊስት ሓኪም ይወሃብ። ንህጻናት ዝምጥን ፍሉይ ክንክን ንህብ።</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item" id="service-item-5">
                     <i class="fas fa-venus-mars fa-2x"></i>
                     <h3>ስፔሻሊስት ሕክምና ማህፀንን ጥንስን</h3>
                     <p>ምሉእ ናይ ማህፀንን ጥንስን መርመራን ሕክምናን ብስፔሻሊስት ሓኪም ይወሃብ። ቅድሚ ሕርሲ፣ ኣብ ሕርሲን ድሕሪ ሕርሲን ዘድሊ ክንክን ይህብ።</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item" id="service-item-6">
                     <i class="fas fa-ear fa-2x"></i>
                     <h3>ስፔሻሊስት ሕክምና ካብ ክሳድ ንላዕሊ(ENT)</h3>
                     <p>ናይ ክሳድ፣ እዝንን ኣፍንጫን መርመራን ሕክምናን ብስፔሻሊስት ሓኪም ይወሃብ። ንዝተፈላለዩ ሕማማት ENT ብዘመናዊ መሳርሒታት(Endoscopy) መርመራን ሕክምናን ንህብ።</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item" id="service-item-7">
                     <i class="fas fa-x-ray fa-2x"></i>
                     <h3>ስፔሻሊስት ራድዮሎጂ (ኣልትራሳውንድ፣ ራጂ፣ ሲቲ ስካን ECGን)</h3>
                     <p>ዘመናዊ ግልጋሎት ራድዮሎጂ (ኣልትራሳውንድ፣ ራጂ፣ ሲቲ ስካን ECGን) ብስፔሻሊስት ሓኪም ይወሃብ። ትክክለኛ መርመራ ንምሃብ ዝሕግዝ ዘመናዊ ቴክኖሎጂ ንጥቀም።</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item" id="service-item-8">
                     <i class="fas fa-tooth fa-2x"></i>
                     <h3>ስፔሻሊስት ሕክምና ስኒ</h3>
                     <p>ምሉእ ናይ ስኒ ሕክምና ብስፔሻሊስት ሓኪም ይወሃብ። ካብ ንጹህ ስኒ ክሳብ ኮሮናን ስኒ ምልዋጥን ዝሓቖፈ ግልጋሎት ንህብ።</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item" id="service-item-9">
                     <i class="fas fa-brain fa-2x"></i>
                     <h3>ስፔሻሊስት መጥባሕቲ መትኒ፣ ዓንዲ ሑቐን ሓንጎልን</h3>
                     <p>ስፔሻሊስት መጥባሕቲ መትኒ፣ ዓንዲ ሑቐን ሓንጎልን ብልዑል ተመኩሮ ዘለዎም ስፔሻሊስት ሓኻይም ይወሃብ። ንዝተፈላለዩ ነርቫዊ ሕማማት ፍሉይ ሕክምና ንህብ።</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item" id="service-item-10">
                     <i class="fas fa-bone fa-2x"></i>
                     <h3>ስፔሻሊስት ሕክምና ዓፅምን መገጣጠምን፣ነርቭን ዓንዲሑቐን</h3>
                     <p>ስፔሻሊስት ሕክምና ዓፅምን መገጣጠምን፣ ነርቭን ዓንዲ ሑቐን ብስፔሻሊስት ሓኪም ይወሃብ። ንስባራት፣ ቁስልን ሕማማት መገጣጠምን ሕክምና ንህብ።</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item" id="service-item-11">
                     <i class="fas fa-spa fa-2x"></i>
                     <h3>ስፔሻሊስት ሕክምና ቆርበት፣ ኣበላዘርን ስነ-ፅባቐን</h3>
                     <p>ስፔሻሊስት ሕክምና ቆርበት፣ ኣበላዘርን ስነ-ፅባቐን ብስፔሻሊስት ሓኪም ይወሃብ። ንዝተፈላለዩ ሕማማት ቆርበትን ውሽጣዊን ክንክን ንህብ።</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item" id="service-item-12">
                     <i class="fas fa-syringe fa-2x"></i>
                     <h3>ስፔሻሊስት መደቀስን ቃንዛን</h3>
                     <p>ስፔሻሊስት መደቀስን ቃንዛን ሕክምና ብስፔሻሊስት ሓኪም ይወሃብ። ቅድሚን ድሕሪን መጥባሕቲ ዘድሊ ክንክን ንህብ።</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item" id="service-item-13">
                     <i class="fas fa-flask fa-2x"></i>
                     <h3>ምሉእ ዘመናዊ ላቦራቶሪ</h3>
                     <p>ምሉእ ዘመናዊ ላቦራቶሪ ግልጋሎት ይወሃብ። ንኹሎም ዓይነታት መርመራ ደምን ሽንትን ካልኦት ባዮሎጂካዊ መርመራታትን ብዘመናዊ መሳርሒታት ግልጋሎት ንህብ።</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item" id="service-item-14">
                     <i class="fas fa-wheelchair fa-2x"></i>
                     <h3>መርመራን ሕክምናን ፊዝዮቴራፒ</h3>
                     <p>ምሉእ መርመራን ሕክምናን ብፊዝዮቴራፒ ሓኪም ግልጋሎት ይወሃብ። ንዝተፈላለዩ ዓይነት ሕማማት ቅርጺ ኣካልን ምንቅስቓስን ሕክምና ንህብ።</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item" id="service-item-15">
                     <i class="fas fa-brain fa-2x"></i>
                     <h3>ስፔሻሊስት ሕክምና ስነ ኣእምሮ</h3>
                     <p>ስፔሻሊስት ሕክምና ስነ ኣእምሮ ግልጋሎት ይወሃብ። ንዝተፈላለዩ ኣእምሮኣዊ ሕማማት ምኽሪን ሕክምናን ንህብ።</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item" id="service-item-16">
                     <i class="fas fa-baby-carriage fa-2x"></i>
                     <h3>ናይ መዋልዳን ምሉእ ግልጋሎት</h3>
                     <p>ምሉእ ግልጋሎት መዋልዳን፣ ካብ ቅድሚ ሕርሲ ክሳብ ድሕሪ ሕርሲ፣ ብልዑል ልምዲን ተሞኩሮን ዘለዎም ሰብ ሞያን ብስፔሻሊስት ሓኪምን ብዘመናዊ መሳርሒታትን ይወሃብ።</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item" id="service-item-17">
                     <i class="fas fa-ambulance fa-2x"></i>
                     <h3>ምሉእ ኣቕሪቦት መድሃኒት(Pharmacy)ን ኣምቡላንስን</h3>
                     <p>ምሉእ ኣቕሪቦት መድሃኒት(Pharmacy)ን ኣምቡላንስን ግልጋሎት ይወሃብ። 24 ሰዓት ግልጋሎት ፋርማሲን ኣምቡላንስን ድሉው እዩ።</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item" id="service-item-18">
                     <i class="fas fa-plus-circle fa-2x"></i>
                     <h3>ካልኦት ግልጋሎትን ይረኽቡ</h3>
                     <p>ግዕዝ ሆስፒታል ካልኦት ዘይተዘርዘሩ ግልጋሎት ንሕብረተሰብን ነቕርብ። ንዝኾነ ሕቶ ወይ ተወሳኺ ሓበሬታ ምሕታት ይከኣል እዩ።</p>

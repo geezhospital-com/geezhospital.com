@@ -4,15 +4,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // ንኹሉ እቲ ኣብ ገጽ ዘሎ ትግርኛ ጽሑፍን ናይ እንግሊዝኛ ትርጉሙን ዝሓዘ object
     const translations = {
         'tig': {
-            // Header Menu Items
+            // Header Menu Items (Common)
             'home': 'መእተዊ',
             'services': 'ግልጋሎታትና',
             'doctors': 'ሓኻይምና',
             'news': 'ሓድሽ ሓበሬታ',
             'gallery': 'ጋለሪ',
             'contact': 'ምትእስሳር',
-            // Logo
-            'logo-h1': 'ግዕዝ ሆስፒታል',
+            'logo-h1': 'ግዕዝ ሆስፒታል', // Logo H1
 
             // Index.html Specific Content
             'hero-h2': 'ብሓልዮትና ንምረጽ፡ብሞያዊ ብቕዓትና ንእመን',
@@ -25,10 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
             'vision-p': 'ብምኽንያት እቲ እንህቦ ብሉፅ ሞያዊ ብቕዓትን ንሕሙም ማእከል ዝገበረ ሓልዮቱን፣ ዓለምለኻዊ ደረጃ ዘለዎ ናይ ሕክምና ግልጋሎት ብምቕራብ ኣብ ኣፍሪካ ክብሪ ዝተጎናፀፈ ናይ ሕክምና ትካል ምዃን።',
             'mission-h3': 'ልእኽ (Mission)',
             'mission-p': 'ብሉፅ ፅሬት፣ ተመጣጣኒ፣ ተበፃሒን ተሓታትነት ዘለዎን ሕክምና ንኹሉ ዜጋ ብምቕራብ፤ ብሉፅ ሞያዊ ክእለትን ርህራሄ ዝመልኦ ሓልዮትን ዘወሃሃደ፣ተበፃሒ፣ ፅሬቱ ዝሓለወን ተመጣጣኒ ዋጋ ዘለዎን ሕክምና ንማሕበረሰብ ብምቕራብ፤ ዓለምለኻዊ ደረጃኡ ዝሓለወ ናይ ሕክምና ኣሰራርሓ ምፍጣር ከምኡውን ዝለዓለ ናይ ሕክምና ስነ-ምግባር ምኽባርን እዩ።',
-            'services-h3': 'ግልጋሎታት (Our Services)',
+            'services-h3': 'ግልጋሎታት (Our Services)', // About section's service summary
             'services-p-about': 'ብርክት ዝበሉ ናይ ስፔሻሊስትን ሳብ ስፔሻሊስትን ዓውድታት (ንኣብነት፦ ልቢ፣ ካንሰር፣ ሓንጎልን መትንታትን፣ ዓፅሚ፣ካብ ክሳድ ንላዕሊ፣ዓይኒ፣ናይ ቆርበትን ስነጽባቐን፣ ናይ ኣዴታትን ህፃናትን ክንክን መርመራታትን ከምኡውን ናይ ህፁፅ ሓደጋን ግልጋሎትሎት ብዘመናዊ ቴክኖሎጂን ብሞያዊ ብቕዓትን ነቕርብ።ንዝርዝር እንህቦም ግልጋሎታት ኣብ ግልጋሎታትና ዝብል ኣርእስቲ የንቢቡ።',
-            'our-services-h2': 'ግልጋሎታትና', // ኣብ index.html ዘሎ
-            'all-services-btn': 'ኩሎም ግልጋሎታትና', // ኣብ index.html ዘሎ
+            'our-services-h2': 'ግልጋሎታትና', // Index page Service section H2
+            'all-services-btn': 'ኩሎም ግልጋሎታትና', // Index page All Services Button
             'doctors-h2': 'ሓኻይምና',
             'doctors-p': 'ግዕዝ ሆስፒታል ብልዑል ተመኩሮን ሞያን ዘለዎም ስፔሻሊስት ሓኻይም ግልጋሎት ይህብ።',
             'dr-tesfay-name': 'ዶ/ር ተስፋይ ኣጽብሃ',
@@ -48,10 +47,9 @@ document.addEventListener('DOMContentLoaded', () => {
             'facebook-strong': 'ፌስቡክ:',
 
             // Services.html Specific Content
-            'services-page-h2': 'ግልጋሎታትና', // ኣብ services.html ዘሎ H2
-            'services-page-intro-p': 'ግዕዝ ሆስፒታል ዝተፈላለዩን ዘመናዊን ግልጋሎታት ብስፔሻሊስትን ብፍሉይ ስፔሻሊስትን(sub specialist)ብቕዓትት ዘለዎም ሓኻይም ግልጋሎት ይህብ።', // ኣብ services.html ዘሎ intro P
+            'services-page-h2': 'ግልጋሎታትና', // Services Page Title
+            'services-page-intro-p': 'ግዕዝ ሆስፒታል ዝተፈላለዩን ዘመናዊን ግልጋሎታት ብስፔሻሊስትን ብፍሉይ ስፔሻሊስትን(sub specialist)ብቕዓትት ዘለዎም ሓኻይም ግልጋሎት ይህብ።',
             
-            // ንነፍሲ-ወከፍ ግልጋሎት (Service Items)
             'service1-h3': 'ስፔሻሊስት ሕክምና ውሽጣዊ ሕማማት',
             'service1-p': 'ምሉእ ናይ ውሽጣዊ ሕማማት መርመራን ሕክምናን ብልዑል ተመኩሮን ሞያን ዘለዎም ስፔሻሊስት ሓኻይም ይወሃብ። እዚ ግልጋሎት ንዝተፈላለዩ ሕማማት ከም ሕማም ደም፣ ሕማም ኩላሊት፣ ሕማም ሳንቡእ፣ ሕማም ሆርሞን፣ ወዘተ ዘጠቓለለ እዩ።',
             'service2-h3': 'ፍሉይ ስፔሻሊስት ሕክምና ሕማማት ልቢ',
@@ -89,19 +87,18 @@ document.addEventListener('DOMContentLoaded', () => {
             'service18-h3': 'ካልኦት ግልጋሎትን ይረኽቡ',
             'service18-p': 'ግዕዝ ሆስፒታል ካልኦት ዘይተዘርዘሩ ግልጋሎት ንሕብረተሰብን ነቕርብ። ንዝኾነ ሕቶ ወይ ተወሳኺ ሓበሬታ ምሕታት ይከኣል እዩ።',
             
-            // Footer (ንኹሎም ገጻት ዝምልከት)
+            // Footer (Common)
             'footer-text': '&copy; 2024 ግዕዝ ሆስፒታል. ኩሉ መሰላት ዝተሓለወ እዩ።'
         },
         'eng': {
-            // Header Menu Items
+            // Header Menu Items (Common)
             'home': 'Home',
             'services': 'Services',
             'doctors': 'Doctors',
             'news': 'News',
             'gallery': 'Gallery',
             'contact': 'Contact',
-            // Logo
-            'logo-h1': 'Geez Hospital',
+            'logo-h1': 'Geez Hospital', // Logo H1
 
             // Index.html Specific Content
             'hero-h2': 'Chosen for our care, trusted for our expertise',
@@ -114,10 +111,10 @@ document.addEventListener('DOMContentLoaded', () => {
             'vision-p': 'To become a renowned medical institution in Africa by providing world-class medical services, known for its excellent professional competence and patient-centered care.',
             'mission-h3': 'Mission',
             'mission-p': 'To provide excellent quality, affordable, accessible, and accountable medical care to all citizens; to offer the community medical care that combines outstanding professional skill and compassionate care, which is accessible, quality-assured, and reasonably priced; to create a medical practice that adheres to international standards and upholds the highest medical ethics.',
-            'services-h3': 'Our Services',
+            'services-h3': 'Our Services', // About section's service summary
             'services-p-about': 'We offer a wide range of specialist and sub-specialist fields (for example: cardiology, oncology, neurology, orthopedics, ENT, ophthalmology, dermatology and cosmetology, maternal and child care, and emergency services) with modern technology and professional competence. For a detailed list of our services, please refer to the "Services" section.',
-            'our-services-h2': 'Our Services',
-            'all-services-btn': 'All Our Services',
+            'our-services-h2': 'Our Services', // Index page Service section H2
+            'all-services-btn': 'All Our Services', // Index page All Services Button
             'doctors-h2': 'Our Doctors',
             'doctors-p': 'Geez Hospital provides services with specialist doctors who have extensive experience and expertise.',
             'dr-tesfay-name': 'Dr. Tesfay Atsbeha',
@@ -137,10 +134,9 @@ document.addEventListener('DOMContentLoaded', () => {
             'facebook-strong': 'Facebook:',
 
             // Services.html Specific Content
-            'services-page-h2': 'Our Services', // In services.html
-            'services-page-intro-p': 'Geez Hospital offers various modern services provided by specialist and sub-specialist doctors with high proficiency.', // In services.html
+            'services-page-h2': 'Our Services', // Services Page Title
+            'services-page-intro-p': 'Geez Hospital offers various modern services provided by specialist and sub-specialist doctors with high proficiency.',
             
-            // For each Service (Service Items)
             'service1-h3': 'Specialist Internal Medicine',
             'service1-p': 'Complete examination and treatment of internal diseases by highly experienced and qualified specialist doctors. This service includes various diseases such as blood pressure, kidney disease, lung disease, hormonal imbalance, etc.',
             'service2-h3': 'Sub-Specialist Cardiology',
@@ -178,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'service18-h3': 'Other Services Available',
             'service18-p': 'Geez Hospital also offers other unlisted services to the community. Inquiries for any questions or additional information are welcome.',
 
-            // Footer (Applies to all pages)
+            // Footer (Common)
             'footer-text': '&copy; 2024 Geez Hospital. All rights reserved.'
         }
     };
@@ -188,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentTranslations = translations[lang];
         const currentPage = window.location.pathname.split('/').pop();
 
-        // Common elements for all pages (e.g., Header Menu, Logo)
+        // Common elements for all pages (e.g., Header Menu, Logo, Footer)
         document.querySelector('nav ul li a[href="index.html"]').textContent = currentTranslations['home'];
         document.querySelector('nav ul li a[href="services.html"]').textContent = currentTranslations['services'];
         document.querySelector('nav ul li a[href="doctors.html"]').textContent = currentTranslations['doctors'];
@@ -196,153 +192,81 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('nav ul li a[href="gallery.html"]').textContent = currentTranslations['gallery'];
         document.querySelector('nav ul li a[href="contact.html"]').textContent = currentTranslations['contact'];
         document.querySelector('.logo h1').textContent = currentTranslations['logo-h1'];
-
-        // Footer (Common for all pages)
         document.querySelector('footer p').innerHTML = currentTranslations['footer-text'];
         document.documentElement.lang = (lang === 'eng') ? 'en' : 'ti'; // 'ti' for Tigrigna
 
-        // Page-specific content
+        // Page-specific content updates
         if (currentPage === 'index.html' || currentPage === '') {
             // Index.html specific content
-            document.querySelector('#hero h2').textContent = currentTranslations['hero-h2'];
-            document.querySelector('#hero p').textContent = currentTranslations['hero-p'];
-            document.querySelector('#hero .btn:nth-of-type(1)').textContent = currentTranslations['hero-btn-appointment'];
-            document.querySelector('#hero .btn:nth-of-type(2)').textContent = currentTranslations['hero-btn-services'];
+            if (document.querySelector('#hero h2')) document.querySelector('#hero h2').textContent = currentTranslations['hero-h2'];
+            if (document.querySelector('#hero p')) document.querySelector('#hero p').textContent = currentTranslations['hero-p'];
+            if (document.querySelector('#hero .btn:nth-of-type(1)')) document.querySelector('#hero .btn:nth-of-type(1)').textContent = currentTranslations['hero-btn-appointment'];
+            if (document.querySelector('#hero .btn:nth-of-type(2)')) document.querySelector('#hero .btn:nth-of-type(2)').textContent = currentTranslations['hero-btn-services'];
 
-            document.querySelector('#about h2').textContent = currentTranslations['about-h2'];
-            document.querySelector('#about p:nth-of-type(1)').textContent = currentTranslations['about-p1'];
-            document.querySelector('#about h3:nth-of-type(1)').textContent = currentTranslations['vision-h3'];
-            document.querySelector('#about p:nth-of-type(2)').textContent = currentTranslations['vision-p'];
-            document.querySelector('#about h3:nth-of-type(2)').textContent = currentTranslations['mission-h3'];
-            document.querySelector('#about p:nth-of-type(3)').textContent = currentTranslations['mission-p'];
-            document.querySelector('#about h3:nth-of-type(3)').textContent = currentTranslations['services-h3'];
-            document.querySelector('#about p:nth-of-type(4)').textContent = currentTranslations['services-p-about'];
+            if (document.querySelector('#about h2')) document.querySelector('#about h2').textContent = currentTranslations['about-h2'];
+            if (document.querySelector('#about p:nth-of-type(1)')) document.querySelector('#about p:nth-of-type(1)').textContent = currentTranslations['about-p1'];
+            if (document.querySelector('#about h3:nth-of-type(1)')) document.querySelector('#about h3:nth-of-type(1)').textContent = currentTranslations['vision-h3'];
+            if (document.querySelector('#about p:nth-of-type(2)')) document.querySelector('#about p:nth-of-type(2)').textContent = currentTranslations['vision-p'];
+            if (document.querySelector('#about h3:nth-of-type(2)')) document.querySelector('#about h3:nth-of-type(2)').textContent = currentTranslations['mission-h3'];
+            if (document.querySelector('#about p:nth-of-type(3)')) document.querySelector('#about p:nth-of-type(3)').textContent = currentTranslations['mission-p'];
+            if (document.querySelector('#about h3:nth-of-type(3)')) document.querySelector('#about h3:nth-of-type(3)').textContent = currentTranslations['services-h3'];
+            if (document.querySelector('#about p:nth-of-type(4)')) document.querySelector('#about p:nth-of-type(4)').textContent = currentTranslations['services-p-about'];
 
-            document.querySelector('#services h2').textContent = currentTranslations['our-services-h2'];
-            document.querySelector('#services .btn-secondary').textContent = currentTranslations['all-services-btn'];
+            if (document.querySelector('#services h2')) document.querySelector('#services h2').textContent = currentTranslations['our-services-h2'];
+            if (document.querySelector('#services .btn-secondary')) document.querySelector('#services .btn-secondary').textContent = currentTranslations['all-services-btn'];
 
-            document.querySelector('#doctors h2').textContent = currentTranslations['doctors-h2'];
-            document.querySelector('#doctors p').textContent = currentTranslations['doctors-p'];
+            if (document.querySelector('#doctors h2')) document.querySelector('#doctors h2').textContent = currentTranslations['doctors-h2'];
+            if (document.querySelector('#doctors p')) document.querySelector('#doctors p').textContent = currentTranslations['doctors-p'];
             
             const doctorCards = document.querySelectorAll('.doctor-card');
             if (doctorCards[0]) {
-                doctorCards[0].querySelector('h3').textContent = currentTranslations['dr-tesfay-name'];
-                doctorCards[0].querySelector('p').textContent = currentTranslations['dr-tesfay-specialty'];
-                doctorCards[0].querySelector('.btn-small').textContent = currentTranslations['appointment-btn'];
+                if (doctorCards[0].querySelector('h3')) doctorCards[0].querySelector('h3').textContent = currentTranslations['dr-tesfay-name'];
+                if (doctorCards[0].querySelector('p')) doctorCards[0].querySelector('p').textContent = currentTranslations['dr-tesfay-specialty'];
+                if (doctorCards[0].querySelector('.btn-small')) doctorCards[0].querySelector('.btn-small').textContent = currentTranslations['appointment-btn'];
             }
             if (doctorCards[1]) {
-                doctorCards[1].querySelector('h3').textContent = currentTranslations['dr-higus-name'];
-                doctorCards[1].querySelector('p').textContent = currentTranslations['dr-higus-specialty'];
-                doctorCards[1].querySelector('.btn-small').textContent = currentTranslations['appointment-btn'];
+                if (doctorCards[1].querySelector('h3')) doctorCards[1].querySelector('h3').textContent = currentTranslations['dr-higus-name'];
+                if (doctorCards[1].querySelector('p')) doctorCards[1].querySelector('p').textContent = currentTranslations['dr-higus-specialty'];
+                if (doctorCards[1].querySelector('.btn-small')) doctorCards[1].querySelector('.btn-small').textContent = currentTranslations['appointment-btn'];
             }
 
-            document.querySelector('#testimonials h2').textContent = currentTranslations['testimonials-h2'];
-            document.querySelector('.testimonial-card p').textContent = currentTranslations['testimonial-p'];
-            document.querySelector('.testimonial-card span').textContent = currentTranslations['testimonial-span'];
+            if (document.querySelector('#testimonials h2')) document.querySelector('#testimonials h2').textContent = currentTranslations['testimonials-h2'];
+            if (document.querySelector('.testimonial-card p')) document.querySelector('.testimonial-card p').textContent = currentTranslations['testimonial-p'];
+            if (document.querySelector('.testimonial-card span')) document.querySelector('.testimonial-card span').textContent = currentTranslations['testimonial-span'];
 
-            document.querySelector('#contact h2').textContent = currentTranslations['contact-h2'];
-            document.querySelector('#contact p:nth-of-type(1)').textContent = currentTranslations['contact-p'];
+            if (document.querySelector('#contact h2')) document.querySelector('#contact h2').textContent = currentTranslations['contact-h2'];
+            if (document.querySelector('#contact p:nth-of-type(1)')) document.querySelector('#contact p:nth-of-type(1)').textContent = currentTranslations['contact-p'];
             
-            const addressP = document.querySelector('.contact-info p:nth-of-type(1)');
-            if (addressP) { addressP.innerHTML = `<strong>${currentTranslations['address-strong']}</strong> ${currentTranslations['address-text']}`; }
-            const phoneP = document.querySelector('.contact-info p:nth-of-type(2)');
-            if (phoneP) { phoneP.innerHTML = `<strong>${currentTranslations['phone-strong']}</strong> +251920008338 / +251962333388`; }
-            const emailP = document.querySelector('.contact-info p:nth-of-type(3)');
-            if (emailP) { emailP.innerHTML = `<strong>${currentTranslations['email-strong']}</strong> geezhospital@gmail.com`; }
-            const facebookP = document.querySelector('.contact-info p:nth-of-type(4)');
-            if (facebookP) { facebookP.innerHTML = `<strong>${currentTranslations['facebook-strong']}</strong> <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank">Geez Hospital Facebook Page</a>`; }
+            const contactAddressP = document.querySelector('.contact-info p:nth-of-type(1)');
+            if (contactAddressP) { contactAddressP.innerHTML = `<strong>${currentTranslations['address-strong']}</strong> ${currentTranslations['address-text']}`; }
+            const contactPhoneP = document.querySelector('.contact-info p:nth-of-type(2)');
+            if (contactPhoneP) { contactPhoneP.innerHTML = `<strong>${currentTranslations['phone-strong']}</strong> +251920008338 / +251962333388`; }
+            const contactEmailP = document.querySelector('.contact-info p:nth-of-type(3)');
+            if (contactEmailP) { contactEmailP.innerHTML = `<strong>${currentTranslations['email-strong']}</strong> geezhospital@gmail.com`; }
+            const contactFacebookP = document.querySelector('.contact-info p:nth-of-type(4)');
+            if (contactFacebookP) { contactFacebookP.innerHTML = `<strong>${currentTranslations['facebook-strong']}</strong> <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank">Geez Hospital Facebook Page</a>`; }
         } 
         else if (currentPage === 'services.html') {
             // Services.html specific content
-            const pageHeroH2 = document.querySelector('#page-hero h2');
+            const pageHeroH2 = document.querySelector('#services-page-h2');
             if (pageHeroH2) pageHeroH2.textContent = currentTranslations['services-page-h2'];
 
-            const pageHeroP = document.querySelector('#page-hero p');
+            const pageHeroP = document.querySelector('#services-page-intro-p');
             if (pageHeroP) pageHeroP.textContent = currentTranslations['services-page-intro-p'];
 
             // Iterate and update service items
-            const serviceItems = document.querySelectorAll('.service-item');
-            if (serviceItems[0]) {
-                serviceItems[0].querySelector('h3').textContent = currentTranslations['service1-h3'];
-                serviceItems[0].querySelector('p').textContent = currentTranslations['service1-p'];
+            // Using IDs now that they are added in services.html
+            for (let i = 1; i <= 18; i++) {
+                const serviceItem = document.getElementById(`service-item-${i}`);
+                if (serviceItem) {
+                    const h3Element = serviceItem.querySelector('h3');
+                    const pElement = serviceItem.querySelector('p');
+                    if (h3Element) h3Element.textContent = currentTranslations[`service${i}-h3`];
+                    if (pElement) pElement.textContent = currentTranslations[`service${i}-p`];
+                }
             }
-            if (serviceItems[1]) {
-                serviceItems[1].querySelector('h3').textContent = currentTranslations['service2-h3'];
-                serviceItems[1].querySelector('p').textContent = currentTranslations['service2-p'];
-            }
-            if (serviceItems[2]) {
-                serviceItems[2].querySelector('h3').textContent = currentTranslations['service3-h3'];
-                serviceItems[2].querySelector('p').textContent = currentTranslations['service3-p'];
-            }
-            if (serviceItems[3]) {
-                serviceItems[3].querySelector('h3').textContent = currentTranslations['service4-h3'];
-                serviceItems[3].querySelector('p').textContent = currentTranslations['service4-p'];
-            }
-            if (serviceItems[4]) {
-                serviceItems[4].querySelector('h3').textContent = currentTranslations['service5-h3'];
-                serviceItems[4].querySelector('p').textContent = currentTranslations['service5-p'];
-            }
-            if (serviceItems[5]) {
-                serviceItems[5].querySelector('h3').textContent = currentTranslations['service6-h3'];
-                serviceItems[5].querySelector('p').textContent = currentTranslations['service6-p'];
-            }
-            if (serviceItems[6]) {
-                serviceItems[6].querySelector('h3').textContent = currentTranslations['service7-h3'];
-                serviceItems[6].querySelector('p').textContent = currentTranslations['service7-p'];
-            }
-            if (serviceItems[7]) {
-                serviceItems[7].querySelector('h3').textContent = currentTranslations['service8-h3'];
-                serviceItems[7].querySelector('p').textContent = currentTranslations['service8-p'];
-            }
-            if (serviceItems[8]) {
-                serviceItems[8].querySelector('h3').textContent = currentTranslations['service9-h3'];
-                serviceItems[8].querySelector('p').textContent = currentTranslations['service9-p'];
-            }
-            if (serviceItems[9]) {
-                serviceItems[9].querySelector('h3').textContent = currentTranslations['service10-h3'];
-                serviceItems[9].querySelector('p').textContent = currentTranslations['service10-p'];
-            }
-            if (serviceItems[10]) {
-                serviceItems[10].querySelector('h3').textContent = currentTranslations['service11-h3'];
-                serviceItems[10].querySelector('p').textContent = currentTranslations['service11-p'];
-            }
-            if (serviceItems[11]) {
-                serviceItems[11].querySelector('h3').textContent = currentTranslations['service12-h3'];
-                serviceItems[11].querySelector('p').textContent = currentTranslations['service12-p'];
-            }
-            if (serviceItems[12]) {
-                serviceItems[12].querySelector('h3').textContent = currentTranslations['service13-h3'];
-                serviceItems[12].querySelector('p').textContent = currentTranslations['service13-p'];
-            }
-            if (serviceItems[13]) {
-                serviceItems[13].querySelector('h3').textContent = currentTranslations['service14-h3'];
-                serviceItems[13].querySelector('p').textContent = currentTranslations['service14-p'];
-            }
-            if (serviceItems[14]) {
-                serviceItems[14].querySelector('h3').textContent = currentTranslations['service15-h3'];
-                serviceItems[14].querySelector('p').textContent = currentTranslations['service15-p'];
-            }
-            if (serviceItems[15]) {
-                serviceItems[15].querySelector('h3').textContent = currentTranslations['service16-h3'];
-                serviceItems[15].querySelector('p').textContent = currentTranslations['service16-p'];
-            }
-            if (serviceItems[16]) {
-                serviceItems[16].querySelector('h3').textContent = currentTranslations['service17-h3'];
-                serviceItems[16].querySelector('p').textContent = currentTranslations['service17-p'];
-            }
-            if (serviceItems[17]) {
-                serviceItems[17].querySelector('h3').textContent = currentTranslations['service18-h3'];
-                serviceItems[17].querySelector('p').textContent = currentTranslations['service18-p'];
-            }
-
-            // You will need to add specific code for services.html here to update the dynamic services.
-            // This requires adding IDs or specific classes to your service elements in services.html
-            // For now, I've added a basic structure to demonstrate.
         }
         // Add more conditions for other pages (doctors.html, news.html, etc.) here
-        // else if (currentPage === 'doctors.html') {
-        //     // Update doctors.html specific content
-        // }
     };
 
     // ኣብቲ ቋንቋ ተቐያሪ ለውጢ ምስ ዝመጽእ
@@ -368,8 +292,7 @@ document.addEventListener('DOMContentLoaded', () => {
         applyLanguage('tig');
     }
 
-    // Dynamic Services Loading for index.html (This part needs to be in index.html's script or conditional)
-    // As per your current setup, this is for the 'services' section on index.html, not services.html
+    // Dynamic Services Loading for index.html (This part should only run if serviceGridIndexPage exists)
     const servicesForIndexPage = [
         { name: "ስፔሻሊስት ሕክምና ውሽጣዊ ሕማማት", icon: "fas fa-stethoscope", description: "ምሉእ ናይ ውሽጣዊ ሕማማት መርመራን ሕክምናን ብልዑል ተመኩሮን ሞያን ዘለዎም ስፔሻሊስት ሓኻይም ይወሃብ።" },
         { name: "ፍሉይ ስፔሻሊስት ሕክምና ሕማማት ልቢ", icon: "fas fa-heartbeat", description: "ፍሉይ ናይ ልቢ ሕማማት መርመራን ሕክምናን ብልዑል ተመኩሮን ሞያን ዘለዎም ሳብ ስፔሻሊስት ሓኻይም ይወሃብ።" },
