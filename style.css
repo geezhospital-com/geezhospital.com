@@ -904,4 +904,21 @@ header {
         gap: 5px;
     }
 }
+/* Footer Logo */
+.footer-logo {
+    text-align: center; /* ምስቲ footer text ክመጣጠር ንመሃዮ */
+    margin-bottom: 20px; /* ካብቲ ካልእ content ንምፍላይ */
+}
+
+.footer-logo img {
+    max-width: 150px; /* ንሎጎ ዘመጣጥን መጠን ንምሃብ */
+    height: auto;
+    filter: brightness(0) invert(1); /* ሎጎ ብጻዕዳ ክርአ እንተደሊኻ (ምስ ድሙቕ background) */
+    opacity: 0.8; /* ንሓፍሲ ንምግባር */
+    transition: opacity 0.3s ease; /* ንኡሽተይ animation ንምሃብ */
+}
+
+.footer-logo img:hover {
+    opacity: 1; /* ምስ ተነኪሑ ንጽሩ ክቕየር */
+}
 }
