@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'map-h3': 'ቦታና ኣብ ካርታ',
 
             // Footer (Common)
-            'footer-text': 'Copyright © 2026 Geez Hospital. All rights reserved. Developed By Aser Teklu Gebrekidan'
+            'footer-text': '© 2026 ግዕዝ ሆስፒታል. ኩሉ መሰላት ብሕጊ ሕሉው እዩ። Developed By Aser Teklu Gebrekidan'
         },
         'eng': {
             // Header Menu Items (Common)
