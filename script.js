@@ -1,6 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
     const languageSwitcher = document.getElementById('language-switcher');
 
+    // Function to get current language from URL parameter
+    const getLanguageFromUrl = () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get('lang');
+    };
+
+    // Function to update URL with language parameter
+    const updateUrlLanguage = (lang) => {
+        const url = new URL(window.location.href);
+        if (lang === 'tig') { // Default language, remove 'lang' parameter
+            url.searchParams.delete('lang');
+        } else {
+            url.searchParams.set('lang', lang);
+        }
+        window.history.pushState({ path: url.href }, '', url.href);
+    };
+
     const translations = {
         'tig': {
             // Header Menu Items (Common)
@@ -10,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'news': 'ሓድሽ ሓበሬታ',
             'gallery': 'ጋለሪ',
             'contact': 'ምትእስሳር',
-            'logo-h1': 'ግዕዝ ሆስፒታል', // Logo H1
+            'logo-alt': 'ግዕዝ ሆስፒታል ሎጎ', // New translation key for logo alt text
 
             // Index.html Specific Content
             'hero-h2': 'ብሓልዮትና ንምረጽ፡ብሞያዊ ብቕዓትና ንእመን',
@@ -38,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'testimonial-p': '"ግዕዝ ሆስፒታል ብሓልዮቶምን ሞያዊ ብቕዓቶምን ብጣዕሚ ፍሉያት እዮም። እቶም ሓኻይም ኣዝዮም ለዋሃትን ብሉፃትን እዮም። ንዝገበሩለይ ሕክምናዊ ክንክን ኣዝየ የመስግን"',
             'testimonial-span': '- ኣይተ ገብረመድህን ካሕሳይ',
             'contact-h2': 'ምትእስሳር',
-            'contact-p': 'ንዝኾነ ሕቶ ወይ ሓሳብ፣ ክትረኽቡና ትኽእሉ ኢኹም።',
+            'contact-p': 'ንዝኾነ ሕቶ ወይ ሓሳብ ፣ ክትረኽቡና ትኽእሉ ኢኹም።',
             'address-strong': 'ኣድራሻ:',
             'address-text': 'ከተማ ኣኽሱም፣ ጣብያ ክንደያ ትሕቲ ኢትዮቴሌኮም ዉርድ ኢልካ፣ ድሕሪ ሴንትራል ካፌ',
             'phone-strong': 'ቴለፎን:',
@@ -87,11 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'service18-p': 'ግዕዝ ሆስፒታል ካልኦት ዘይተዘርዘሩ ግልጋሎት ንሕብረተሰብን ነቕርብ። ንዝኾነ ሕቶ ወይ ተወሳኺ ሓበሬታ ምሕታት ይከኣል እዩ።',
             
             // Footer (Common)
-            'footer-text': 'Copyright © 2026 ግዕዝ ሆስፒታል. ኩሉ መሰላት ዝተሓለወ እዩ።<br>Developed By ኣሰር ተኽሉ ገብረኪዳን',
-            'facebook-aria-label': 'ፌስቡክ',
-            'twitter-aria-label': 'ትዊተር',
-            'telegram-aria-label': 'ቴለግራም',
-            'linkedin-aria-label': 'ሊንክድኢን'
+            'footer-text': 'Copyright © 2026 Geez Hospital. All rights reserved. Developed By| Aser Teklu Gebrekidan'
         },
         'eng': {
             // Header Menu Items (Common)
@@ -101,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'news': 'News',
             'gallery': 'Gallery',
             'contact': 'Contact',
-            'logo-h1': 'Geez Hospital', // Logo H1
+            'logo-alt': 'Geez Hospital Logo', // New translation key for logo alt text
 
             // Index.html Specific Content
             'hero-h2': 'Chosen for our care, trusted for our expertise',
@@ -178,11 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'service18-p': 'Geez Hospital also offers other unlisted services to the community. Inquiries for any questions or additional information are welcome.',
 
             // Footer (Common)
-            'footer-text': 'Copyright © 2026 Geez Hospital. All rights reserved.<br>Developed By Aser Teklu Gebrekidan',
-            'facebook-aria-label': 'Facebook',
-            'twitter-aria-label': 'Twitter',
-            'telegram-aria-label': 'Telegram',
-            'linkedin-aria-label': 'LinkedIn'
+            'footer-text': 'Copyright © 2026 Geez Hospital. All rights reserved. Developed By| Aser Teklu Gebrekidan'
         }
     };
 
@@ -200,45 +209,30 @@ document.addEventListener('DOMContentLoaded', () => {
         const doctorsLink = document.querySelector('nav ul li a[href="doctors.html"]');
         if (doctorsLink) doctorsLink.textContent = currentTranslations['doctors'];
 
-        // Add null checks for news and gallery links in header
         const newsLink = document.querySelector('nav ul li a[href="news.html"]');
         if (newsLink) newsLink.textContent = currentTranslations['news'];
 
         const galleryLink = document.querySelector('nav ul li a[href="gallery.html"]');
         if (galleryLink) galleryLink.textContent = currentTranslations['gallery'];
 
-        // Make sure this is a[href="#contact"] if it's an anchor to a section, not a separate page
         const contactLink = document.querySelector('nav ul li a[href="#contact"]'); 
         if (contactLink) contactLink.textContent = currentTranslations['contact'];
 
-        const logoH1 = document.querySelector('.logo h1');
-        if (logoH1) logoH1.textContent = currentTranslations['logo-h1'];
+        // Update header logo alt text
+        const headerLogoImg = document.querySelector('header .logo img');
+        if (headerLogoImg) headerLogoImg.alt = currentTranslations['logo-alt'];
 
-        const footerP = document.getElementById('footer-text'); // Use getElementById for consistency
-        if (footerP) footerP.innerHTML = currentTranslations['footer-text']; // Use innerHTML for <br> tag
+        const footerP = document.querySelector('footer #footer-text');
+        if (footerP) footerP.innerHTML = currentTranslations['footer-text'];
 
-        document.documentElement.lang = (lang === 'eng') ? 'en' : 'ti'; 
-
-        // Update aria-labels for social links
-        const facebookLink = document.querySelector('footer .social-links a[aria-label]');
-        if (facebookLink) facebookLink.setAttribute('aria-label', currentTranslations['facebook-aria-label']);
-        
-        const twitterLink = document.querySelector('footer .social-links a[aria-label="Twitter"]');
-        if (twitterLink) twitterLink.setAttribute('aria-label', currentTranslations['twitter-aria-label']);
-
-        const telegramLink = document.querySelector('footer .social-links a[aria-label="Telegram"]');
-        if (telegramLink) telegramLink.setAttribute('aria-label', currentTranslations['telegram-aria-label']);
-
-        const linkedinLink = document.querySelector('footer .social-links a[aria-label="LinkedIn"]');
-        if (linkedinLink) linkedinLink.setAttribute('aria-label', currentTranslations['linkedin-aria-label']);
-
+        document.documentElement.lang = (lang === 'eng') ? 'en' : 'ti';
 
         // Page-specific content updates
         if (currentPage === 'index.html' || currentPage === '') {
             if (document.querySelector('#hero h2')) document.querySelector('#hero h2').textContent = currentTranslations['hero-h2'];
             if (document.querySelector('#hero p')) document.querySelector('#hero p').textContent = currentTranslations['hero-p'];
-            if (document.querySelector('#hero .btn:nth-of-type(1)') && currentTranslations['hero-btn-appointment']) document.querySelector('#hero .btn:nth-of-type(1)').textContent = currentTranslations['hero-btn-appointment'];
-            if (document.querySelector('#hero .btn:nth-of-type(2)') && currentTranslations['hero-btn-services']) document.querySelector('#hero .btn:nth-of-type(2)').textContent = currentTranslations['hero-btn-services'];
+            if (document.querySelector('#hero .btn:nth-of-type(1)')) document.querySelector('#hero .btn:nth-of-type(1)').textContent = currentTranslations['hero-btn-appointment'];
+            if (document.querySelector('#hero .btn:nth-of-type(2)')) document.querySelector('#hero .btn:nth-of-type(2)').textContent = currentTranslations['hero-btn-services'];
 
             if (document.querySelector('#about h2')) document.querySelector('#about h2').textContent = currentTranslations['about-h2'];
             if (document.querySelector('#about p:nth-of-type(1)')) document.querySelector('#about p:nth-of-type(1)').textContent = currentTranslations['about-p1'];
@@ -274,26 +268,20 @@ document.addEventListener('DOMContentLoaded', () => {
             if (document.querySelector('#contact h2')) document.querySelector('#contact h2').textContent = currentTranslations['contact-h2'];
             if (document.querySelector('#contact p:nth-of-type(1)')) document.querySelector('#contact p:nth-of-type(1)').textContent = currentTranslations['contact-p'];
             
-            // These selectors should be correct if they are in the top-bar for index.html
-            const topBarAddressSpan = document.querySelector('.top-bar .contact-info + .address-info span');
-            if (topBarAddressSpan) topBarAddressSpan.innerHTML = `<i class="fas fa-map-marker-alt"></i> ${currentTranslations['address-text']}`;
-
-            const topBarPhoneSpan = document.querySelector('.top-bar .contact-info span:nth-of-type(1)');
-            if (topBarPhoneSpan) topBarPhoneSpan.innerHTML = `<i class="fas fa-phone"></i> +251920008338/+251962333388`;
-
-            const topBarEmailSpan = document.querySelector('.top-bar .contact-info span:nth-of-type(2)');
-            if (topBarEmailSpan) topBarEmailSpan.innerHTML = `<i class="fas fa-envelope"></i> info@geezhospital.com`;
-
-            // For the main contact section's detailed info, if it exists (assuming it's after #contact h2)
-            const contactInfoSection = document.querySelector('#contact .contact-info');
-            if (contactInfoSection) {
-                const pElements = contactInfoSection.querySelectorAll('p');
-                if (pElements[0]) pElements[0].innerHTML = `<strong>${currentTranslations['address-strong']}</strong> ${currentTranslations['address-text']}`;
-                if (pElements[1]) pElements[1].innerHTML = `<strong>${currentTranslations['phone-strong']}</strong> +251920008338 / +251962333388`;
-                if (pElements[2]) pElements[2].innerHTML = `<strong>${currentTranslations['email-strong']}</strong> geezhospital@gmail.com`;
-                if (pElements[3]) pElements[3].innerHTML = `<strong>${currentTranslations['facebook-strong']}</strong> <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank">Geez Hospital Facebook Page</a>`;
+            const topBarAddressSpan = document.querySelector('.top-bar .address-info span');
+            if (topBarAddressSpan) {
+                topBarAddressSpan.innerHTML = `<i class="fas fa-map-marker-alt"></i> ${currentTranslations['address-text']}`;
             }
 
+            const topBarPhoneSpan = document.querySelector('.top-bar .contact-info span:nth-of-type(1)');
+            if (topBarPhoneSpan) {
+                topBarPhoneSpan.innerHTML = `<i class="fas fa-phone"></i> +251920008338/+251962333388`;
+            }
+
+            const topBarEmailSpan = document.querySelector('.top-bar .contact-info span:nth-of-type(2)');
+            if (topBarEmailSpan) {
+                topBarEmailSpan.innerHTML = `<i class="fas fa-envelope"></i> geezhospital@gmail.com`;
+            }
         } 
         else if (currentPage === 'services.html') {
             const pageHeroH2 = document.getElementById('services-page-h2');
@@ -311,48 +299,52 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (pElement) pElement.textContent = currentTranslations[`service${i}-p`];
                 }
             }
-        }
-        else if (currentPage === 'doctors.html') {
-            // Doctors page specific content
-            // Assuming you have a #page-hero section for doctors page similar to services.html
-            const pageHeroH2 = document.querySelector('#page-hero h2'); 
-            if (pageHeroH2) pageHeroH2.textContent = currentTranslations['doctors']; // Or a specific doctors page title
 
-            // If you have specific doctor details on doctors.html, you'd add selectors here.
-            // Example:
-            // const doctorName1 = document.getElementById('doctor-name-1');
-            // if (doctorName1) doctorName1.textContent = currentTranslations['dr-tesfay-name'];
+            const topBarAddressSpan = document.querySelector('.top-bar .address-info span');
+            if (topBarAddressSpan) {
+                topBarAddressSpan.innerHTML = `<i class="fas fa-map-marker-alt"></i> ${currentTranslations['address-text']}`;
+            }
+
+            const topBarPhoneSpan = document.querySelector('.top-bar .contact-info span:nth-of-type(1)');
+            if (topBarPhoneSpan) {
+                topBarPhoneSpan.innerHTML = `<i class="fas fa-phone"></i> +251920008338/+251962333388`;
+            }
+
+            const topBarEmailSpan = document.querySelector('.top-bar .contact-info span:nth-of-type(2)');
+            if (topBarEmailSpan) {
+                topBarEmailSpan.innerHTML = `<i class="fas fa-envelope"></i> geezhospital@gmail.com`;
+            }
         }
-        // Add more conditions for other pages (news.html, gallery.html, contact.html) here as you build them
-        // else if (currentPage === 'news.html') {
-        //     const pageHeroH2 = document.querySelector('#page-hero h2');
-        //     if (pageHeroH2) pageHeroH2.textContent = currentTranslations['news'];
-        // }
-        // else if (currentPage === 'gallery.html') {
-        //     const pageHeroH2 = document.querySelector('#page-hero h2');
-        //     if (pageHeroH2) pageHeroH2.textContent = currentTranslations['gallery'];
-        // }
     };
 
     languageSwitcher.addEventListener('change', (event) => {
         const selectedLang = event.target.value;
         if (selectedLang === 'tig' || selectedLang === 'eng') {
-            applyLanguage(selectedLang);
+            updateUrlLanguage(selectedLang); // Update URL parameter
             localStorage.setItem('selectedLanguage', selectedLang);
             window.location.reload(); 
         }
     });
 
+    // Initialize language on load
     const savedLanguage = localStorage.getItem('selectedLanguage');
-    if (savedLanguage && (savedLanguage === 'tig' || savedLanguage === 'eng')) {
-        languageSwitcher.value = savedLanguage; 
-        applyLanguage(savedLanguage);
-    } else {
-        languageSwitcher.value = 'tig'; 
-        applyLanguage('tig');
+    const langInUrl = getLanguageFromUrl();
+
+    let initialLang = 'tig'; // Default to Tigrigna
+
+    if (langInUrl) {
+        initialLang = langInUrl;
+    } else if (savedLanguage) {
+        initialLang = savedLanguage;
     }
 
-    // Dynamic Services Loading for index.html 
+    if (languageSwitcher) {
+        languageSwitcher.value = initialLang;
+    }
+    applyLanguage(initialLang);
+    updateUrlLanguage(initialLang); // Ensure URL reflects initial language
+
+    // Dynamic Services Loading for index.html (This part should only run if serviceGridIndexPage exists)
     const servicesForIndexPage = [
         { name: "ስፔሻሊስት ሕክምና ውሽጣዊ ሕማማት", icon: "fas fa-stethoscope", description: "ምሉእ ናይ ውሽጣዊ ሕማማት መርመራን ሕክምናን ብልዑል ተመኩሮን ሞያን ዘለዎም ስፔሻሊስት ሓኻይም ይወሃብ።" },
         { name: "ፍሉይ ስፔሻሊስት ሕክምና ሕማማት ልቢ", icon: "fas fa-heartbeat", description: "ፍሉይ ናይ ልቢ ሕማማት መርመራን ሕክምናን ብልዑል ተመኩሮን ሞያን ዘለዎም ሳብ ስፔሻሊስት ሓኻይም ይወሃብ።" },
@@ -374,9 +366,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: "ካልኦት ግልጋሎትን ይረኽቡ", icon: "fas fa-plus-circle", description: "ካልኦት ዘይተዘርዘሩ ግልጋሎት ኣብ ግዕዝ ሆስፒታል ይረኽቡ።" }
     ];
 
-    const serviceGridIndexPage = document.querySelector('#services .service-grid');
+    const serviceGridIndexPage = document.querySelector('#services .service-grid'); // ን index.html ጥራይ
     if (serviceGridIndexPage) {
-        serviceGridIndexPage.innerHTML = ''; // Clear existing content to avoid duplicates
         servicesForIndexPage.forEach(service => {
             const serviceCard = document.createElement('div');
             serviceCard.classList.add('service-card');
