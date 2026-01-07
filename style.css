@@ -1051,4 +1051,40 @@ header {
 .contact-info-card a:hover {
     text-decoration: underline;
 }
+/* Contact Form Layout adjustments */
+.contact-form .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--primary-color); /* Assuming --primary-color is defined */
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form input[type="number"],
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding doesn't increase width */
+    font-family: 'Noto Sans Ethiopic', sans-serif; /* Keep consistent font */
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+.contact-form button.btn {
+    width: auto; /* Button size adjusts to content */
+    padding: 10px 20px;
+    cursor: pointer;
+}
 }
