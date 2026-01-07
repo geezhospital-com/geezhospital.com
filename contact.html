@@ -1,36 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tig">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ምትእስሳር - ግዕዝ ሆስፒታል</title>
+    <!-- SEO Meta Tags for Contact Page -->
+    <meta name="description" content="ግዕዝ ሆስፒታል - ብሓልዮትና ንምረጽ፡ ብሞያዊ ብቕዓትና ንእመን። ዘመናዊ ሕክምናዊ ግልጋሎታት ብልዑል ብቕዓት ዘለዎም ሓኻይም ኣብ ኣኽሱም ከተማ። ንምትእስሳር ቅጥዒ ወይ ብቴሌፎን፣ ኢሜይል፣ ፌስቡክ ክትረኽቡና ትኽእሉ ኢኹም።">
+    <meta name="keywords" content="ግዕዝ ሆስፒታል, ኣኽሱም, ትግራይ, ሕክምና, ሆስፒታል, ስፔሻሊስት, ሓኻይም, ግልጋሎት, Geez Hospital, Axum, Tigray, medical, hospital, specialist, doctors, services, contact, contact form, telephone, email, facebook">
+    <meta name="author" content="Geez Hospital">
+    
+    <!-- Open Graph Meta Tags (for Social Media Sharing) -->
+    <meta property="og:title" content="ምትእስሳር - ግዕዝ ሆስፒታል">
+    <meta property="og:description" content="ብሓልዮትና ንምረጽ፡ ብሞያዊ ብቕዓትና ንእመን። ንምትእስሳር ቅጥዒ ወይ ብቴሌፎን፣ ኢሜይል፣ ፌስቡክ ክትረኽቡና ትኽእሉ ኢኹም።">
+    <meta property="og:image" content="https://geezhospital.com/images/logo.png"> <!-- Replace with actual image URL -->
+    <meta property="og:url" content="https://geezhospital.com/contact.html"> <!-- Replace with actual URL -->
+    <meta property="og:type" content="website">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://geezhospital.com/contact.html"> <!-- Replace with actual canonical URL -->
+
+    <!-- Hreflang for Multi-language -->
+    <link rel="alternate" hreflang="ti" href="https://geezhospital.com/contact.html" />
+    <link rel="alternate" hreflang="en" href="https://geezhospital.com/contact.html?lang=en" />
+    <link rel="alternate" hreflang="am" href="https://geezhospital.com/contact.html?lang=am" />
+    <link rel="alternate" hreflang="x-default" href="https://geezhospital.com/contact.html" />
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="images/favicon.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Noto+Sans+Ethiopic:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Google Search Console Verification Meta Tag (Add if needed, from index.html) -->
-    <!-- <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE_HERE" /> -->
 </head>
 <body>
     <div class="top-bar">
-    <div class="container">
-        <div class="contact-info">
-            <span><i class="fas fa-phone"></i> +251 920008338/+251962333388</span>
-            <span><i class="fas fa-envelope"></i> info@geezhospital.com</span>
-        </div>
-        <div class="address-info">
-            <span><i class="fas fa-map-marker-alt"></i> Axum City, Kindeya Kebele, Near Ethiotelecom, behind central cafe</span>
+        <div class="container">
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> +251 920008338/+251962333388</span>
+                <span><i class="fas fa-envelope"></i> geezhospital@gmail.com</span>
+            </div>
+            <div class="address-info">
+                <span><i class="fas fa-map-marker-alt"></i> ከተማ ኣኽሱም፣ ጣብያ ክንደያ ፊትንፊት ኢትዮቴሌኮም ዉርድ ኢልካ፣ ድሕሪ ሴንትራል ካፌ</span>
+            </div>
         </div>
     </div>
-</div>
-<header>
-    <!-- እቲ ዝነበረ header ኮድ ኣብዚ ይቕጽል -->
-</header>
     <header>
         <div class="container">
             <div class="logo">
                 <img src="images/logo.png" alt="Geez Hospital Logo">
-                <h1>ግዕዝ ሆስፒታል</h1>
+                <h1>ግዕዝ ሆስፒታል</h1> <!-- This will be hidden by CSS but kept for accessibility/SEO -->
             </div>
             <nav>
                 <ul>
@@ -54,8 +70,8 @@
 
     <section id="page-hero" class="section-padding">
         <div class="container">
-            <h2>ምትእስሳር</h2>
-            <p>ንዝኾነ ሕቶ ወይ ሓሳብ፣ ክትረኽቡና ትኽእሉ ኢኹም።</p>
+            <h2 id="contact-page-h2">ምትእስሳር</h2>
+            <p id="contact-page-intro-p">ንዝኾነ ሕቶ ወይ ሓሳብ፣ ክትረኽቡና ትኽእሉ ኢኹም።</p>
         </div>
     </section>
 
@@ -65,61 +81,58 @@
                 <div class="contact-info-card">
                     <i class="fas fa-map-marker-alt fa-3x"></i>
                     <h3>ኣድራሻ</h3>
-                    <p>ከተማ ኣኽሱም፣ ጣብያ ክንደያ ትሕቲ ኢትዮቴሌኮም ዉርድ ኢልካ፣ ድሕሪ ሴንትራል ካፌ</p>
+                    <p id="contact-address">ከተማ ኣኽሱም፣ ጣብያ ክንደያ ፊትንፊት ኢትዮቴሌኮም ዉርድ ኢልካ፣ ድሕሪ ሴንትራል ካፌ</p>
                 </div>
                 <div class="contact-info-card">
                     <i class="fas fa-phone-alt fa-3x"></i>
                     <h3>ቴሌፎን</h3>
-                    <p>0920008338</p>
-                    <p>0962333388</p>
+                    <p id="contact-phone1">0920008338</p>
+                    <p id="contact-phone2">0962333388</p>
                 </div>
                 <div class="contact-info-card">
                     <i class="fas fa-envelope fa-3x"></i>
                     <h3>ኢሜይል</h3>
-                    <p><a href="mailto:geezhospital@gmail.com">geezhospital@gmail.com</a></p>
+                    <p><a href="mailto:geezhospital@gmail.com" id="contact-email">geezhospital@gmail.com</a></p>
                 </div>
                 <div class="contact-info-card">
                     <i class="fab fa-facebook-f fa-3x"></i>
                     <h3>ፌስቡክ</h3>
-                    <p><a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank">Geez Hospital Facebook Page</a></p>
+                    <p><a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank" id="contact-facebook">Geez Hospital Facebook Page</a></p>
                 </div>
             </div>
 
-            <div id="map-container-contact">
-                <h3>ቦታና ኣብ ካርታ</h3>
-                <!-- Google Map Embed - You need to get an embed code from Google Maps -->
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.763073740266!2d39.467433299999995!3d14.120309999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x165a297746816027%3A0x6a0a09e0a0a0a0a0!2sAxum%20Hospital%20(Example)!5e0!3m2!1sen!2set!4v1704400000000!5m2!1sen!2set" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-
-            <!-- Optional: Contact Form -->
-            <!-- ንሕጂ ብሰርቨር ዝሰርሕ ስለዘይብልካ፣ እዚ ክትጥቀመሉ ኣይትኽእልን ኢኻ።
-            <div id="contact-form">
-                <h3>መልእኽቲ ይልእኩ</h3>
-                <form action="YOUR_FORM_SUBMISSION_URL" method="POST">
-                    <input type="text" name="name" placeholder="ሙሉእ ሽም" required>
-                    <input type="email" name="email" placeholder="ኢሜይል" required>
-                    <input type="text" name="subject" placeholder="ኣርእስቲ">
-                    <textarea name="message" placeholder="መልእኽቲ" rows="6" required></textarea>
-                    <button type="submit" class="btn">ይልኣኽ</button>
+            <div id="contact-form-section">
+                <h3 id="contact-form-h3">መልእኽቲ ይልእኩ</h3>
+                <form action="https://formspree.io/f/xwvpgllq" method="POST">
+                    <input type="text" name="name" id="form-name" placeholder="ሙሉእ ሽም" required>
+                    <input type="email" name="email" id="form-email" placeholder="ኢሜይል" required>
+                    <input type="text" name="subject" id="form-subject" placeholder="ኣርእስቲ">
+                    <textarea name="message" id="form-message" placeholder="መልእኽቲ" rows="6" required></textarea>
+                    <button type="submit" class="btn" id="form-submit-btn">ይልኣኽ</button>
                 </form>
             </div>
-            -->
+
+            <div id="map-container-contact">
+                <h3 id="map-h3">ቦታና ኣብ ካርታ</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.763073740266!2d39.467433299999995!3d14.120309999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x165a297746816027%3A0x6a0a09e0a0a0a0a0!2sAxum%20Hospital%20(Example)!5e0!3m2!1sen!2set!4v1704400000000!5m2!1sen!2set" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
     </section>
 
-    <!-- Footer copied from index.html -->
     <footer>
-    <div class="container">
-        <p>&copy; 2024 ግዕዝ ሆስፒታል. ኩሉ መሰላት ዝተሓለወ እዩ።</p>
-        <div class="social-links">
-            <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
-            <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <!-- ካልኦት Social Media links እውን ክትወስኽ ትኽእል ኢኻ -->
+        <div class="container">
+            <div class="footer-logo">
+                <img src="images/logo.png" alt="Geez Hospital Logo">
+            </div>
+            <p id="footer-text"></p> <!-- Footer text will be set by JavaScript -->
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://t.me/Geezhospital_bot" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
     <script src="script.js"></script>
 </body>

@@ -921,4 +921,134 @@ header {
 .footer-logo img:hover {
     opacity: 1; /* ምስ ተነኪሑ ንጽሩ ክቕየር */
 }
+/* Contact Form Styling */
+#contact-form-section {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+#contact-form-section h3 {
+    color: #007bff; /* Primary blue color */
+    margin-bottom: 30px;
+    font-size: 2.2em;
+}
+
+#contact-form-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between form elements */
+    max-width: 600px; /* Limit form width */
+    margin: 0 auto; /* Center the form */
+}
+
+#contact-form-section input[type="text"],
+#contact-form-section input[type="email"],
+#contact-form-section textarea {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+#contact-form-section input[type="text"]::placeholder,
+#contact-form-section input[type="email"]::placeholder,
+#contact-form-section textarea::placeholder {
+    color: #aaa;
+}
+
+#contact-form-section textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 120px;
+}
+
+#contact-form-section button.btn {
+    background-color: #007bff; /* Primary blue color */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto; /* Allow button to size itself */
+    align-self: center; /* Center the button if form is flex-column */
+}
+
+#contact-form-section button.btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Google Map in Contact Page */
+#map-container-contact {
+    margin-top: 50px;
+    text-align: center;
+}
+
+#map-container-contact h3 {
+    color: #007bff;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+}
+
+#map-container-contact iframe {
+    width: 100%;
+    max-width: 900px; /* Limit map width */
+    height: 450px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Adjustments for contact-info-card in contact.html */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.contact-info-card {
+    background-color: #f8f9fa; /* Light background for cards */
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.contact-info-card:hover {
+    transform: translateY(-5px);
+}
+
+.contact-info-card i {
+    color: #007bff; /* Icon color */
+    margin-bottom: 15px;
+}
+
+.contact-info-card h3 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.contact-info-card p {
+    color: #555;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.contact-info-card a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-info-card a:hover {
+    text-decoration: underline;
+}
 }

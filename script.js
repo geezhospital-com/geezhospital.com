@@ -1,16 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
     const languageSwitcher = document.getElementById('language-switcher');
 
-    // Function to get current language from URL parameter
     const getLanguageFromUrl = () => {
         const urlParams = new URLSearchParams(window.location.search);
         return urlParams.get('lang');
     };
 
-    // Function to update URL with language parameter
     const updateUrlLanguage = (lang) => {
         const url = new URL(window.location.href);
-        if (lang === 'tig') { // Default language, remove 'lang' parameter
+        if (lang === 'tig') {
             url.searchParams.delete('lang');
         } else {
             url.searchParams.set('lang', lang);
@@ -27,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'news': 'ሓድሽ ሓበሬታ',
             'gallery': 'ጋለሪ',
             'contact': 'ምትእስሳር',
-            'logo-alt': 'ግዕዝ ሆስፒታል ሎጎ', // New translation key for logo alt text
+            'logo-alt': 'ግዕዝ ሆስፒታል ሎጎ', 
 
             // Index.html Specific Content
             'hero-h2': 'ብሓልዮትና ንምረጽ፡ብሞያዊ ብቕዓትና ንእመን',
@@ -40,10 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
             'vision-p': 'ብምኽንያት እቲ እንህቦ ብሉፅ ሞያዊ ብቕዓትን ንሕሙም ማእከል ዝገበረ ሓልዮቱን፣ ዓለምለኻዊ ደረጃ ዘለዎ ናይ ሕክምና ግልጋሎት ብምቕራብ ኣብ ኣፍሪካ ክብሪ ዝተጎናፀፈ ናይ ሕክምና ትካል ምዃን።',
             'mission-h3': 'ልእኽ (Mission)',
             'mission-p': 'ብሉፅ ፅሬት፣ ተመጣጣኒ፣ ተበፃሒን ተሓታትነት ዘለዎን ሕክምና ንኹሉ ዜጋ ብምቕራብ፤ ብሉፅ ሞያዊ ክእለትን ርህራሄ ዝመልኦ ሓልዮትን ዘወሃሃደ፣ተበፃሒ፣ ፅሬቱ ዝሓለወን ተመጣጣኒ ዋጋ ዘለዎን ሕክምና ንማሕበረሰብ ብምቕራብ፤ ዓለምለኻዊ ደረጃኡ ዝሓለወ ናይ ሕክምና ኣሰራርሓ ምፍጣር ከምኡውን ዝለዓለ ናይ ሕክምና ስነ-ምግባር ምኽባርን እዩ።',
-            'services-h3': 'ግልጋሎታት (Our Services)', // About section's service summary
+            'services-h3': 'ግልጋሎታት (Our Services)', 
             'services-p-about': 'ብርክት ዝበሉ ናይ ስፔሻሊስትን ሳብ ስፔሻሊስትን ዓውድታት (ንኣብነት፦ ልቢ፣ ካንሰር፣ ሓንጎልን መትንታትን፣ ዓፅሚ፣ካብ ክሳድ ንላዕሊ፣ዓይኒ፣ናይ ቆርበትን ስነጽባቐን፣ ናይ ኣዴታትን ህፃናትን ክንክን መርመራታትን ከምኡውን ናይ ህፁፅ ሓደጋን ግልጋሎትሎት ብዘመናዊ ቴክኖሎጂን ብሞያዊ ብቕዓትን ነቕርብ።ንዝርዝር እንህቦም ግልጋሎታት ኣብ ግልጋሎታትና ዝብል ኣርእስቲ የንቢቡ።',
-            'our-services-h2': 'ግልጋሎታትና', // Index page Service section H2
-            'all-services-btn': 'ኩሎም ግልጋሎታትና', // Index page All Services Button
+            'our-services-h2': 'ግልጋሎታትና', 
+            'all-services-btn': 'ኩሎም ግልጋሎታትና', 
             'doctors-h2': 'ሓኻይምና',
             'doctors-p': 'ግዕዝ ሆስፒታል ብልዑል ተመኩሮን ሞያን ዘለዎም ስፔሻሊስት ሓኻይም ግልጋሎት ይህብ።',
             'dr-tesfay-name': 'ዶ/ር ተስፋይ ኣጽብሃ',
@@ -54,16 +52,16 @@ document.addEventListener('DOMContentLoaded', () => {
             'testimonials-h2': 'ናይ ሕሙማት ምስክርነት',
             'testimonial-p': '"ግዕዝ ሆስፒታል ብሓልዮቶምን ሞያዊ ብቕዓቶምን ብጣዕሚ ፍሉያት እዮም። እቶም ሓኻይም ኣዝዮም ለዋሃትን ብሉፃትን እዮም። ንዝገበሩለይ ሕክምናዊ ክንክን ኣዝየ የመስግን"',
             'testimonial-span': '- ኣይተ ገብረመድህን ካሕሳይ',
-            'contact-h2': 'ምትእስሳር',
-            'contact-p': 'ንዝኾነ ሕቶ ወይ ሓሳብ ፣ ክትረኽቡና ትኽእሉ ኢኹም።',
+            'contact-h2': 'ምትእስሳር', // Used for index.html contact section
+            'contact-p': 'ንዝኾነ ሕቶ ወይ ሓሳብ፣ ክትረኽቡና ትኽእሉ ኢኹም።', // Used for index.html contact section
             'address-strong': 'ኣድራሻ:',
-            'address-text': 'ከተማ ኣኽሱም፣ ጣብያ ክንደያ ትሕቲ ኢትዮቴሌኮም ዉርድ ኢልካ፣ ድሕሪ ሴንትራል ካፌ',
+            'address-text': 'ከተማ ኣኽሱም፣ ጣብያ ክንደያ ፊትንፊት ኢትዮቴሌኮም ዉርድ ኢልካ፣ ድሕሪ ሴንትራል ካፌ',
             'phone-strong': 'ቴለፎን:',
             'email-strong': 'ኢሜይል:',
             'facebook-strong': 'ፌስቡክ:',
 
             // Services.html Specific Content
-            'services-page-h2': 'ግልጋሎታትና', // Services Page Title
+            'services-page-h2': 'ግልጋሎታትና', 
             'services-page-intro-p': 'ግዕዝ ሆስፒታል ዝተፈላለዩን ዘመናዊን ግልጋሎታት ብስፔሻሊስትን ብፍሉይ ስፔሻሊስትን(sub specialist)ብቕዓትት ዘለዎም ሓኻይም ግልጋሎት ይህብ።',
             
             'service1-h3': 'ስፔሻሊስት ሕክምና ውሽጣዊ ሕማማት',
@@ -89,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'service11-h3': 'ስፔሻሊስት ሕክምና ቆርበት፣ ኣበላዘርን ስነ-ፅባቐን',
             'service11-p': 'ስፔሻሊስት ሕክምና ቆርበት፣ ኣበላዘርን ስነ-ፅባቐን ብስፔሻሊስት ሓኪም ይወሃብ። ንዝተፈላለዩ ሕማማት ቆርበትን ውሽጣዊን ክንክን ንህብ።',
             'service12-h3': 'ስፔሻሊስት መደቀስን ቃንዛን',
-            'service12-p': 'ስፔሻሊስት መደቀስን ቃንዛን ሕክምና ብስፔሻሊስት ሓኪም ይወሃብ። ቅድሚን ድሕሪን መጥባሕቲ ዘድሊ ክንክን ንህብ።',
+            'service12-p': 'ስፔሻሊስት መደቀስን ቃንዛን ሕክምና ብስፔሻሊስት ሓኪም ይወሃብ። ቅድሚን ድሕሪን መጥባሕቲ ዘድሊ ክንክን ይህብ።',
             'service13-h3': 'ምሉእ ዘመናዊ ላቦራቶሪ',
             'service13-p': 'ምሉእ ዘመናዊ ላቦራቶሪ ግልጋሎት ይወሃብ። ንኹሎም ዓይነታት መርመራ ደምን ሽንትን ካልኦት ባዮሎጂካዊ መርመራታትን ብዘመናዊ መሳርሒታት ግልጋሎት ንህብ።',
             'service14-h3': 'መርመራን ሕክምናን ፊዝዮቴራፒ',
@@ -103,8 +101,28 @@ document.addEventListener('DOMContentLoaded', () => {
             'service18-h3': 'ካልኦት ግልጋሎትን ይረኽቡ',
             'service18-p': 'ግዕዝ ሆስፒታል ካልኦት ዘይተዘርዘሩ ግልጋሎት ንሕብረተሰብን ነቕርብ። ንዝኾነ ሕቶ ወይ ተወሳኺ ሓበሬታ ምሕታት ይከኣል እዩ።',
             
+            // Contact.html Specific Content
+            'contact-page-h2': 'ምትእስሳር',
+            'contact-page-intro-p': 'ንዝኾነ ሕቶ ወይ ሓሳብ፣ ክትረኽቡና ትኽእሉ ኢኹም።',
+            'contact-address-title': 'ኣድራሻ',
+            'contact-address': 'ከተማ ኣኽሱም፣ ጣብያ ክንደያ ፊትንፊት ኢትዮቴሌኮም ዉርድ ኢልካ፣ ድሕሪ ሴንትራል ካፌ',
+            'contact-phone-title': 'ቴሌፎን',
+            'contact-phone1': '0920008338',
+            'contact-phone2': '0962333388',
+            'contact-email-title': 'ኢሜይል',
+            'contact-email': 'geezhospital@gmail.com',
+            'contact-facebook-title': 'ፌስቡክ',
+            'contact-facebook': 'Geez Hospital Facebook Page',
+            'contact-form-h3': 'መልእኽቲ ይልእኩ',
+            'form-name-placeholder': 'ሙሉእ ሽም',
+            'form-email-placeholder': 'ኢሜይል',
+            'form-subject-placeholder': 'ኣርእስቲ',
+            'form-message-placeholder': 'መልእኽቲ',
+            'form-submit-btn': 'ይልኣኽ',
+            'map-h3': 'ቦታና ኣብ ካርታ',
+
             // Footer (Common)
-            'footer-text': 'Copyright © 2026 Geez Hospital. All rights reserved. Developed By| Aser Teklu Gebrekidan'
+            'footer-text': 'Copyright © 2026 Geez Hospital. All rights reserved. Developed By Aser Teklu Gebrekidan'
         },
         'eng': {
             // Header Menu Items (Common)
@@ -114,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'news': 'News',
             'gallery': 'Gallery',
             'contact': 'Contact',
-            'logo-alt': 'Geez Hospital Logo', // New translation key for logo alt text
+            'logo-alt': 'Geez Hospital Logo', 
 
             // Index.html Specific Content
             'hero-h2': 'Chosen for our care, trusted for our expertise',
@@ -127,10 +145,10 @@ document.addEventListener('DOMContentLoaded', () => {
             'vision-p': 'To become a renowned medical institution in Africa by providing world-class medical services, known for its excellent professional competence and patient-centered care.',
             'mission-h3': 'Mission',
             'mission-p': 'To provide excellent quality, affordable, accessible, and accountable medical care to all citizens; to offer the community medical care that combines outstanding professional skill and compassionate care, which is accessible, quality-assured, and reasonably priced; to create a medical practice that adheres to international standards and upholds the highest medical ethics.',
-            'services-h3': 'Our Services', // About section's service summary
+            'services-h3': 'Our Services', 
             'services-p-about': 'We offer a wide range of specialist and sub-specialist fields (for example: cardiology, oncology, neurology, orthopedics, ENT, ophthalmology, dermatology and cosmetology, maternal and child care, and emergency services) with modern technology and professional competence. For a detailed list of our services, please refer to the "Services" section.',
-            'our-services-h2': 'Our Services', // Index page Service section H2
-            'all-services-btn': 'All Our Services', // Index page All Services Button
+            'our-services-h2': 'Our Services', 
+            'all-services-btn': 'All Our Services', 
             'doctors-h2': 'Our Doctors',
             'doctors-p': 'Geez Hospital provides services with specialist doctors who have extensive experience and expertise.',
             'dr-tesfay-name': 'Dr. Tesfay Atsbeha',
@@ -141,8 +159,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'testimonials-h2': 'Patient Testimonials',
             'testimonial-p': '"Geez Hospital is truly exceptional for its compassion and professional competence. The doctors are incredibly kind and excellent. I am very grateful for the medical care they provided."',
             'testimonial-span': '- Mr. Gebremedhin Kahsay',
-            'contact-h2': 'Contact Us',
-            'contact-p': 'For any questions or comments, you can reach us.',
+            'contact-h2': 'Contact Us', // Used for index.html contact section
+            'contact-p': 'For any questions or comments, you can reach us.', // Used for index.html contact section
             'address-strong': 'Address:',
             'address-text': 'Aksum City, Kindeya Kebele, below Ethiotelecom, behind Central Cafe',
             'phone-strong': 'Phone:',
@@ -150,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'facebook-strong': 'Facebook:',
 
             // Services.html Specific Content
-            'services-page-h2': 'Our Services', // Services Page Title
+            'services-page-h2': 'Our Services', 
             'services-page-intro-p': 'Geez Hospital offers various modern services provided by specialist and sub-specialist doctors with high proficiency.',
             
             'service1-h3': 'Specialist Internal Medicine',
@@ -190,8 +208,28 @@ document.addEventListener('DOMContentLoaded', () => {
             'service18-h3': 'Other Services Available',
             'service18-p': 'Geez Hospital also offers other unlisted services to the community. Inquiries for any questions or additional information are welcome.',
 
+            // Contact.html Specific Content
+            'contact-page-h2': 'Contact Us',
+            'contact-page-intro-p': 'For any questions or comments, you can reach us.',
+            'contact-address-title': 'Address',
+            'contact-address': 'Aksum City, Kindeya Kebele, In front of Ethiotelecom, behind Central Cafe',
+            'contact-phone-title': 'Phone',
+            'contact-phone1': '0920008338',
+            'contact-phone2': '0962333388',
+            'contact-email-title': 'Email',
+            'contact-email': 'geezhospital@gmail.com',
+            'contact-facebook-title': 'Facebook',
+            'contact-facebook': 'Geez Hospital Facebook Page',
+            'contact-form-h3': 'Send Us a Message',
+            'form-name-placeholder': 'Full Name',
+            'form-email-placeholder': 'Email',
+            'form-subject-placeholder': 'Subject',
+            'form-message-placeholder': 'Message',
+            'form-submit-btn': 'Send Message',
+            'map-h3': 'Our Location on Map',
+
             // Footer (Common)
-            'footer-text': 'Copyright © 2026 Geez Hospital. All rights reserved. Developed By| Aser Teklu Gebrekidan'
+            'footer-text': 'Copyright © 2026 Geez Hospital. All rights reserved. Developed By Aser Teklu Gebrekidan'
         }
     };
 
@@ -215,10 +253,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const galleryLink = document.querySelector('nav ul li a[href="gallery.html"]');
         if (galleryLink) galleryLink.textContent = currentTranslations['gallery'];
 
-        const contactLink = document.querySelector('nav ul li a[href="#contact"]'); 
+        const contactLink = document.querySelector('nav ul li a[href="contact.html"]'); 
         if (contactLink) contactLink.textContent = currentTranslations['contact'];
 
-        // Update header logo alt text
         const headerLogoImg = document.querySelector('header .logo img');
         if (headerLogoImg) headerLogoImg.alt = currentTranslations['logo-alt'];
 
@@ -315,22 +352,78 @@ document.addEventListener('DOMContentLoaded', () => {
                 topBarEmailSpan.innerHTML = `<i class="fas fa-envelope"></i> geezhospital@gmail.com`;
             }
         }
+        else if (currentPage === 'contact.html') {
+            if (document.getElementById('contact-page-h2')) document.getElementById('contact-page-h2').textContent = currentTranslations['contact-page-h2'];
+            if (document.getElementById('contact-page-intro-p')) document.getElementById('contact-page-intro-p').textContent = currentTranslations['contact-page-intro-p'];
+
+            // Contact Info Cards
+            const contactAddressCardH3 = document.querySelector('.contact-info-card:nth-of-type(1) h3');
+            if (contactAddressCardH3) contactAddressCardH3.textContent = currentTranslations['contact-address-title'];
+            const contactAddressCardP = document.getElementById('contact-address');
+            if (contactAddressCardP) contactAddressCardP.textContent = currentTranslations['contact-address'];
+
+            const contactPhoneCardH3 = document.querySelector('.contact-info-card:nth-of-type(2) h3');
+            if (contactPhoneCardH3) contactPhoneCardH3.textContent = currentTranslations['contact-phone-title'];
+            const contactPhoneCardP1 = document.getElementById('contact-phone1');
+            if (contactPhoneCardP1) contactPhoneCardP1.textContent = currentTranslations['contact-phone1'];
+            const contactPhoneCardP2 = document.getElementById('contact-phone2');
+            if (contactPhoneCardP2) contactPhoneCardP2.textContent = currentTranslations['contact-phone2'];
+
+            const contactEmailCardH3 = document.querySelector('.contact-info-card:nth-of-type(3) h3');
+            if (contactEmailCardH3) contactEmailCardH3.textContent = currentTranslations['contact-email-title'];
+            const contactEmailCardA = document.getElementById('contact-email');
+            if (contactEmailCardA) {
+                contactEmailCardA.textContent = currentTranslations['contact-email'];
+                contactEmailCardA.href = `mailto:${currentTranslations['contact-email']}`;
+            }
+
+            const contactFacebookCardH3 = document.querySelector('.contact-info-card:nth-of-type(4) h3');
+            if (contactFacebookCardH3) contactFacebookCardH3.textContent = currentTranslations['contact-facebook-title'];
+            const contactFacebookCardA = document.getElementById('contact-facebook');
+            if (contactFacebookCardA) contactFacebookCardA.textContent = currentTranslations['contact-facebook'];
+
+            // Contact Form
+            if (document.getElementById('contact-form-h3')) document.getElementById('contact-form-h3').textContent = currentTranslations['contact-form-h3'];
+            if (document.getElementById('form-name')) document.getElementById('form-name').placeholder = currentTranslations['form-name-placeholder'];
+            if (document.getElementById('form-email')) document.getElementById('form-email').placeholder = currentTranslations['form-email-placeholder'];
+            if (document.getElementById('form-subject')) document.getElementById('form-subject').placeholder = currentTranslations['form-subject-placeholder'];
+            if (document.getElementById('form-message')) document.getElementById('form-message').placeholder = currentTranslations['form-message-placeholder'];
+            if (document.getElementById('form-submit-btn')) document.getElementById('form-submit-btn').textContent = currentTranslations['form-submit-btn'];
+            
+            // Map
+            if (document.getElementById('map-h3')) document.getElementById('map-h3').textContent = currentTranslations['map-h3'];
+
+            // Top bar info for contact.html
+            const topBarAddressSpan = document.querySelector('.top-bar .address-info span');
+            if (topBarAddressSpan) {
+                topBarAddressSpan.innerHTML = `<i class="fas fa-map-marker-alt"></i> ${currentTranslations['address-text']}`;
+            }
+
+            const topBarPhoneSpan = document.querySelector('.top-bar .contact-info span:nth-of-type(1)');
+            if (topBarPhoneSpan) {
+                topBarPhoneSpan.innerHTML = `<i class="fas fa-phone"></i> ${currentTranslations['contact-phone1']}/${currentTranslations['contact-phone2']}`;
+            }
+
+            const topBarEmailSpan = document.querySelector('.top-bar .contact-info span:nth-of-type(2)');
+            if (topBarEmailSpan) {
+                topBarEmailSpan.innerHTML = `<i class="fas fa-envelope"></i> ${currentTranslations['contact-email']}`;
+            }
+        }
     };
 
     languageSwitcher.addEventListener('change', (event) => {
         const selectedLang = event.target.value;
         if (selectedLang === 'tig' || selectedLang === 'eng') {
-            updateUrlLanguage(selectedLang); // Update URL parameter
+            updateUrlLanguage(selectedLang);
             localStorage.setItem('selectedLanguage', selectedLang);
             window.location.reload(); 
         }
     });
 
-    // Initialize language on load
     const savedLanguage = localStorage.getItem('selectedLanguage');
     const langInUrl = getLanguageFromUrl();
 
-    let initialLang = 'tig'; // Default to Tigrigna
+    let initialLang = 'tig';
 
     if (langInUrl) {
         initialLang = langInUrl;
@@ -342,9 +435,8 @@ document.addEventListener('DOMContentLoaded', () => {
         languageSwitcher.value = initialLang;
     }
     applyLanguage(initialLang);
-    updateUrlLanguage(initialLang); // Ensure URL reflects initial language
+    updateUrlLanguage(initialLang);
 
-    // Dynamic Services Loading for index.html (This part should only run if serviceGridIndexPage exists)
     const servicesForIndexPage = [
         { name: "ስፔሻሊስት ሕክምና ውሽጣዊ ሕማማት", icon: "fas fa-stethoscope", description: "ምሉእ ናይ ውሽጣዊ ሕማማት መርመራን ሕክምናን ብልዑል ተመኩሮን ሞያን ዘለዎም ስፔሻሊስት ሓኻይም ይወሃብ።" },
         { name: "ፍሉይ ስፔሻሊስት ሕክምና ሕማማት ልቢ", icon: "fas fa-heartbeat", description: "ፍሉይ ናይ ልቢ ሕማማት መርመራን ሕክምናን ብልዑል ተመኩሮን ሞያን ዘለዎም ሳብ ስፔሻሊስት ሓኻይም ይወሃብ።" },
@@ -366,7 +458,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: "ካልኦት ግልጋሎትን ይረኽቡ", icon: "fas fa-plus-circle", description: "ካልኦት ዘይተዘርዘሩ ግልጋሎት ኣብ ግዕዝ ሆስፒታል ይረኽቡ።" }
     ];
 
-    const serviceGridIndexPage = document.querySelector('#services .service-grid'); // ን index.html ጥራይ
+    const serviceGridIndexPage = document.querySelector('#services .service-grid');
     if (serviceGridIndexPage) {
         servicesForIndexPage.forEach(service => {
             const serviceCard = document.createElement('div');
@@ -381,21 +473,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) { // Check if the target element exists
-            targetElement.scrollIntoView({
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
                 behavior: 'smooth'
             });
-        } else {
-            // Optionally, you can redirect to the index page's contact section
-            // if the link is for #contact and it's not found on the current page.
-            if (targetId === '#contact') {
-                window.location.href = 'index.html#contact'; // Redirect to index.html's contact
-            }
-        }
+        });
     });
-});
 });
