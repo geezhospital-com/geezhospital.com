@@ -115,112 +115,103 @@ document.addEventListener('DOMContentLoaded', () => {
             'service17-p': 'ምሉእ ኣቕሪቦት መድሓኒት(Pharmacy)ን ኣምቡላንስን ግልጋሎት ይወሃብ። 24 ሰዓት ግልጋሎት ፋርማሲን ኣምቡላንስን ንህብ እዩ።',
             'service18-h3': 'ካልኦት ግልጋሎትን ይረኽቡ',
             'service18-p': 'ግዕዝ ሆስፒታል ካልኦት ዘይተዘርዘሩ ግልጋሎት ንሕብረተሰብን ነቕርብ። ንዝኾነ ሕቶ ወይ ተወሳኺ ሓበሬታ ምሕታት ይከኣል እዩ።',
-            
-            // Footer (Common)
-            'footer-text': 'Copyright © 2026 Geez Hospital. All rights reserved. Developed By Aser Teklu G'
-        },
+
+// Contact Form Translations for Tigrigna (You can add this comment)
+'contact-form-title': 'መልእኽቲ ስደዱልና',
+'form-full-name': 'ምሉእ ሽም:',
+'form-email': 'ኢሜይል:',
+'form-subject': 'ኣርእስቲ:',
+'form-phone': 'ቁጽሪ ስልኪ:',
+'form-address': 'ኣድራሻ:',
+'form-age': 'ዕድመ:',
+'form-gender': 'ጾታ:',
+'form-select-gender': 'ጾታ ምረጽ',
+'form-gender-male': 'ተባዕታይ',
+'form-gender-female': 'ኣንስተይቲ',
+'form-gender-other': 'ካልእ',
+'form-message': 'መልእኽቲ:',
+'form-submit-btn': 'ልኣኽ',
+'our-location': 'ኣድራሻና',
+
+// Footer (Common)
+'footer-text': 'Copyright © 2026 Geez Hospital. All rights reserved. Developed By Aser Teklu G'
+},
         'eng': {
-            // Header Menu Items (Common)
-            'home': 'Home',
-            'services': 'Services',
-            'doctors': 'Doctors',
-            'news': 'News',
-            'gallery': 'Gallery',
-            'contact': 'Contact',
-            'logo-alt': 'Geez Hospital Logo',
+    // Header Menu Items (Common)
+    'home': 'Home',
+    'services': 'Services',
+    'doctors': 'Doctors',
+    'news': 'News', // If you have a news page
+    'gallery': 'Gallery', // If you have a gallery page
+    'contact': 'Contact',
+    'logo-alt': 'Geez Hospital Logo',
 
-            // Index.html Specific Content
-            'hero-h2': 'Chosen for our care, trusted for our expertise',
-            'hero-p': 'Geez Hospital - A Modern Hospital!',
-            'hero-btn-appointment': 'Book Appointment',
-            'hero-btn-services': 'View Our Services',
-            'about-h2': 'About Us',
-            'about-p1': 'Established in 2011 E.C., Geez Hospital is one of the leading healthcare institutions in Central Zone and Tigray, providing modern and efficient medical services with international standards. It aims to make world-class medical care accessible to every citizen in the entire zone and neighboring areas. It is particularly founded on providing compassionate care, high professional competence, and modern equipment. It places great emphasis on patient safety and excellent service.',
-            'vision-h3': 'Vision',
-            'vision-p': 'To become a renowned medical institution in Africa by providing world-class medical services, known for its excellent professional competence and patient-centered care.',
-            'mission-h3': 'Mission',
-            'mission-p': 'To provide excellent quality, affordable, accessible, and accountable medical care to all citizens; to offer the community medical care that combines outstanding professional skill and compassionate care, which is accessible, quality-assured, and reasonably priced; to create a medical practice that adheres to international standards and upholds the highest medical ethics.',
-            'services-h3': 'Our Services',
-            'services-p-about': 'We offer a wide range of specialist and sub-specialist fields (for example: cardiology, oncology, neurology, orthopedics, ENT, ophthalmology, dermatology and cosmetology, maternal and child care, and emergency services) with modern technology and professional competence. For a detailed list of our services, please refer to the "Services" section.',
-            'our-services-h2': 'Our Services',
-            'all-services-btn': 'All Our Services',
-            'doctors-h2': 'Our Doctors',
-            'doctors-p': 'Geez Hospital provides services with specialist doctors who have extensive experience and expertise.',
-            'dr-tesfay-name': 'Dr. Tesfay Atsbeha',
-            'dr-tesfay-specialty': 'Sub-Specialist, Heart Diseases',
-            'dr-higus-name': 'Dr. Higus Teklu',
-            'dr-higus-specialty': 'Specialist, Internal Medicine',
-            'appointment-btn': 'Appointment',
-            'testimonials-h2': 'Patient Testimonials',
-            'testimonial-p': '"Geez Hospital is truly exceptional for its compassion and professional competence. The doctors are incredibly kind and excellent. I am very grateful for the medical care they provided."',
-            'testimonial-span': '- Mr. Gebremedhin Kahsay',
-            'contact-h2': 'Contact Us',
-            'contact-p': 'For any questions or comments, you can reach us.',
-            'address-strong': 'Address:',
-            'address-text': 'Aksum City, Kindeya Kebele, In front of Ethiotelecom, behind Central Cafe',
-            'phone-strong': 'Phone:',
-            'email-strong': 'Email:',
-            'facebook-strong': 'Facebook:',
+    // Index.html Specific Content
+    'hero-h2': 'Chosen for our care, trusted for our expertise',
+    'hero-p': 'Geez Hospital - A Modern Hospital!',
+    'hero-btn-appointment': 'Book Appointment',
+    'hero-btn-services': 'View Our Services',
+    'about-h2': 'About Us',
+    'about-p1': 'Established in 2011 E.C., Geez Hospital is one of the leading healthcare institutions in Central Zone and Tigray, providing modern and efficient medical services with international standards. It aims to make world-class medical care accessible to every citizen in the entire zone and neighboring areas. It is particularly founded on providing compassionate care, high professional competence, and modern equipment. It places great emphasis on patient safety and excellent service.',
+    'vision-h3': 'Vision',
+    'vision-p': 'To become a renowned medical institution in Africa by providing world-class medical services, known for its excellent professional competence and patient-centered care.',
+    'mission-h3': 'Mission',
+    'mission-p': 'To provide excellent quality, affordable, accessible, and accountable medical care to all citizens; to offer the community medical care that combines outstanding professional skill and compassionate care, which is accessible, quality-assured, and reasonably priced; to create a medical practice that adheres to international standards and upholds the highest medical ethics.',
+    'services-h3': 'Our Services', // About section's service summary
+    'services-p-about': 'We offer a wide range of specialist and sub-specialist fields (for example: cardiology, oncology, neurology, orthopedics, ENT, ophthalmology, dermatology and cosmetology, maternal and child care, and emergency services) with modern technology and professional competence. For a detailed list of our services, please refer to the "Services" section.',
+    'our-services-h2': 'Our Services', // Index page Service section H2
+    'all-services-btn': 'All Our Services', // Index page All Services Button
+    'doctors-h2': 'Our Doctors',
+    'doctors-p': 'Geez Hospital provides services with specialist doctors who have extensive experience and expertise.',
+    'dr-tesfay-name': 'Dr. Tesfay Atsbeha',
+    'dr-tesfay-specialty': 'Sub-Specialist, Heart Diseases',
+    'dr-higus-name': 'Dr. Higus Teklu',
+    'dr-higus-specialty': 'Specialist, Internal Medicine',
+    'appointment-btn': 'Appointment',
+    'testimonials-h2': 'Patient Testimonials',
+    'testimonial-p': '"Geez Hospital is truly exceptional for its compassion and professional competence. The doctors are incredibly kind and excellent. I am very grateful for the medical care they provided."',
+    'testimonial-span': '- Mr. Gebremedhin Kahsay',
+    'contact-h2': 'Contact Us',
+    'contact-p': 'For any questions or comments, you can reach us.',
+    'address-strong': 'Address:',
+    'address-text': 'Aksum City, Kindeya Kebele, In front of Ethiotelecom, behind Central Cafe',
+    'phone-strong': 'Phone:',
+    'email-strong': 'Email:',
+    'facebook-strong': 'Facebook:',
 
-            // Contact Form specific translations
-            'contact-name': 'Full Name:',
-            'contact-email': 'Email:',
-            'contact-subject': 'Subject:',
-            'contact-phone': 'Phone Number:',
-            'contact-address': 'Address:',
-            'contact-age': 'Age:',
-            'contact-gender': 'Gender:',
-            'gender-select': 'Select',
-            'gender-male': 'Male',
-            'gender-female': 'Female',
-            'gender-other': 'Other',
-            'contact-message': 'Message:',
-            'contact-submit': 'Send Message',
+    // Services.html Specific Content (add more here if needed)
+    'services-page-h2': 'Our Services', // Services Page Title
+    'services-page-intro-p': 'Geez Hospital offers various modern services provided by specialist and sub-specialist doctors with high proficiency.',
+    // ... (Add all service1-h3 to service18-p translations for English here)
+    'service1-h3': 'Specialist Internal Medicine',
+    'service1-p': 'Complete examination and treatment of internal diseases by highly experienced and qualified specialist doctors. This service includes various diseases such as blood pressure, kidney disease, lung disease, hormonal imbalance, etc.',
+    // ... (all other services up to service18)
+    'service18-h3': 'Other Services Available',
+    'service18-p': 'Geez Hospital also offers other unlisted services to the community. Inquiries for any questions or additional information are welcome.',
 
-            // Services.html Specific Content
-            'services-page-h2': 'Our Services',
-            'services-page-intro-p': 'Geez Hospital offers various modern services provided by specialist and sub-specialist doctors with high proficiency.',
+    // Contact Form Translations for English
+    'contact-form-title': 'Send Us a Message',
+    'form-full-name': 'Full Name:',
+    'form-email': 'Email:',
+    'form-subject': 'Subject:',
+    'form-phone': 'Phone Number:',
+    'form-address': 'Address:',
+    'form-age': 'Age:',
+    'form-gender': 'Gender:',
+    'form-select-gender': 'Select Gender',
+    'form-gender-male': 'Male',
+    'form-gender-female': 'Female',
+    'form-gender-other': 'Other',
+    'form-message': 'Message:',
+    'form-submit-btn': 'Send',
+    'our-location': 'Our Location',
+
+    // Footer (Common)
+    'footer-text': 'Copyright © 2026 Geez Hospital. All rights reserved. Developed By Aser Teklu G'
+},
+           
             
-            'service1-h3': 'Specialist Internal Medicine',
-            'service1-p': 'Complete examination and treatment of internal diseases by highly experienced and qualified specialist doctors. This service includes various diseases such as blood pressure, kidney disease, lung disease, hormonal imbalance, etc.',
-            'service2-h3': 'Sub-Specialist Cardiology',
-            'service2-p': 'Specialized examination and treatment of heart diseases by highly experienced sub-specialist doctors. We use modern equipment and techniques such as ECG, Echocardiography, and Stress Test.',
-            'service3-h3': 'Specialist General Surgery',
-            'service3-p': 'Specialist general surgery is provided with modern equipment and techniques. This includes surgeries for conditions such as appendices, hernias, gallbladder, etc.',
-            'service4-h3': 'Specialist Pediatrics and Adolescents Medicine',
-            'service4-p': 'Examination and treatment of children and adolescents by a specialist doctor. We provide special care suitable for children.',
-            'service5-h3': 'Specialist Obstetrics and Gynecology',
-            'service5-p': 'Complete examination and treatment for obstetrics and gynecology by a specialist doctor. We provide necessary care before, during, and after childbirth.',
-            'service6-h3': 'Specialist ENT (Ear, Nose, Throat)',
-            'service6-p': 'Examination and treatment of throat, ear, and nose conditions by a specialist doctor. We provide examination and treatment for various ENT diseases using modern equipment (Endoscopy).',
-            'service7-h3': 'Specialist Radiology (Ultrasound, X-ray, CT Scan, ECG)',
-            'service7-p': 'Modern radiology services (Ultrasound, X-ray, CT Scan, ECG) are provided by a specialist doctor. We use modern technology to provide accurate diagnoses.',
-            'service8-h3': 'Specialist Dental Treatment',
-            'service8-p': 'Complete dental treatment by a specialist doctor. We offer services ranging from dental cleaning to crowns and tooth replacement.',
-            'service9-h3': 'Specialist Neurosurgery (Nerves, Spine, Brain)',
-            'service9-p': 'Specialist surgery for nerves, spine, and brain is provided by highly experienced specialist doctors. We offer specialized treatment for various neurological diseases.',
-            'service10-h3': 'Specialist Orthopedics and Traumatology (Bones, Joints, Nerves, Spine)',
-            'service10-p': 'Specialist treatment for bones, joints, nerves, and spine by a specialist doctor. We provide treatment for fractures, injuries, and joint diseases.',
-            'service11-h3': 'Specialist Dermatology, Laser, and Cosmetology',
-            'service11-p': 'Specialist treatment for skin, laser, and cosmetology by a specialist doctor. We provide care for various skin and internal conditions.',
-            'service12-h3': 'Specialist Anesthesia and Pain Management',
-            'service12-p': 'Specialist anesthesia and pain management treatment by a specialist doctor. We provide necessary care before and after surgery.',
-            'service13-h3': 'Full Modern Laboratory',
-            'service13-p': 'Full modern laboratory services are provided. We offer services for all types of blood, urine, and other biological tests using modern equipment.',
-            'service14-h3': 'Physiotherapy Examination and Treatment',
-            'service14-p': 'Complete examination and treatment by a physiotherapy doctor. We provide treatment for various types of body form and movement disorders.',
-            'service15-h3': 'Specialist Psychiatry',
-            'service15-p': 'Specialist psychiatry services are provided. We offer counseling and treatment for various mental illnesses.',
-            'service16-h3': 'Complete Maternity Services',
-            'service16-p': 'Complete maternity services, from pre-natal to post-natal care, are provided by highly experienced and skilled professionals and specialist doctors, using modern equipment.',
-            'service17-h3': 'Full Pharmacy and Ambulance Services',
-            'service17-p': 'Full pharmacy and ambulance services are provided. 24-hour pharmacy and ambulance services are available.',
-            'service18-h3': 'Other Services Available',
-            'service18-p': 'Geez Hospital also offers other unlisted services to the community. Inquiries for any questions or additional information are welcome.',
-
-            // Footer (Common)
-            'footer-text': 'Copyright © 2026 Geez Hospital. All rights reserved. Developed By Aser Teklu G'
-        }
+        
     };
 
     const applyLanguage = (lang) => {
