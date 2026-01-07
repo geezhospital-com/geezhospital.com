@@ -381,11 +381,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) { // Check if the target element exists
+            targetElement.scrollIntoView({
                 behavior: 'smooth'
             });
-        });
+        } else {
+            // Optionally, you can redirect to the index page's contact section
+            // if the link is for #contact and it's not found on the current page.
+            if (targetId === '#contact') {
+                window.location.href = 'index.html#contact'; // Redirect to index.html's contact
+            }
+        }
     });
+});
 });
