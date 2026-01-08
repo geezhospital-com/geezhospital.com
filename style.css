@@ -65,7 +65,7 @@ h1, h2, h3 {
 }
 
 .bg-light {
-    background-color: var(--light-bg);
+    background-color: var(--light-grey);
 }
 
 /* Header */
@@ -679,7 +679,8 @@ footer {
     .section-padding {
         padding: 40px 0;
     }
-}
+} /* <--- እዚ መስመር እዩ ክትውስት ዘለካ */
+
 /* Hero Section Specific Styles */
 #hero {
     background: url('images/hero-bg.jpg') no-repeat center center/cover;
@@ -692,6 +693,8 @@ footer {
     justify-content: center;
     min-height: 500px; /* ዝውሓደ ቁመት */
 }
+
+/* ... እቲ ዝተረፈ ናይ #hero styles ... */
 
 #hero::before {
     content: '';
