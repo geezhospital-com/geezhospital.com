@@ -122,10 +122,9 @@ document.addEventListener('DOMContentLoaded', () => {
             'service17-h3': 'ምሉእ ኣቕሪቦት መድሓኒት(Pharmacy)ን ኣምቡላንስን',
             'service17-p': 'ምሉእ ኣቕሪቦት መድሓኒት(Pharmacy)ን ኣምቡላንስን ግልጋሎት ይወሃብ። 24 ሰዓት ግልጋሎት ፋርማሲን ኣምቡላንስን ድሉው እዩ።',
             'service18-h3': 'ካልኦት ግልጋሎትን ይረኽቡ',
-            'service18-p': 'ግዕዝ ሆስፒታል ካልኦት ዘይተዘርዘሩ ግልጋሎት ንሕብረተሰብን ነቕርብ። ንዝኾነ ሕቶ ወይ ተወሳኺ ሓበሬታ ምሕታት ይከኣል እዩ።',
-            // Footer (Common) - Moved here to be only one entry
+            'service18-p': 'ግዕዝ ሆስፒታል ካልኦት ዘይተዘርዘሩ ግልጋሎት ንሕብረተሰብ ነቕርብ። ንዝኾነ ሕቶ ወይ ተወሳኺ ሓበሬታ ምሕታት ይከኣል እዩ።',
             'footer-text': 'Copyright © 2026 Geez Hospital. All rights reserved. Developed By Aser Teklu Gebrekidan'
-        }, // This closes the 'tig' block - ensure this comma is there
+        },
         'eng': {
             // Header Menu Items (Common)
             'home': 'Home',
@@ -136,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'contact': 'Contact',
             'logo-alt': 'Geez Hospital Logo',
             'contact-us-btn': 'Contact Us',
-            'our-location-map': 'View Us on Map', // Corrected this to 'View Us on Map' for consistency
+            'our-location-map': 'View Us on Map',
             'view-on-map': 'View on Map',
 
             // Index.html Specific Content
@@ -150,10 +149,10 @@ document.addEventListener('DOMContentLoaded', () => {
             'vision-p': 'To become a renowned medical institution in Africa by providing world-class medical services, known for its excellent professional competence and patient-centered care.',
             'mission-h3': 'Mission',
             'mission-p': 'To provide excellent quality, affordable, accessible, and accountable medical care to all citizens; to offer the community medical care that combines outstanding professional skill and compassionate care, which is accessible, quality-assured, and reasonably priced; to create a medical practice that adheres to international standards and upholds the highest medical ethics.',
-            'services-h3': 'Our Services', // About section's service summary
+            'services-h3': 'Our Services',
             'services-p-about': 'We offer a wide range of specialist and sub-specialist fields (for example: cardiology, oncology, neurology, orthopedics, ENT, ophthalmology, dermatology and cosmetology, maternal and child care, and emergency services) with modern technology and professional competence. For a detailed list of our services, please refer to the "Services" section.',
-            'our-services-h2': 'Our Services', // Index page Service section H2
-            'all-services-btn': 'All Our Services', // Index page All Services Button
+            'our-services-h2': 'Our Services',
+            'all-services-btn': 'All Our Services',
             'doctors-h2': 'Our Doctors',
             'doctors-p': 'Geez Hospital provides services with specialist doctors who have extensive experience and expertise.',
             'dr-tesfay-name': 'Dr. Tesfay Atsbeha',
@@ -229,10 +228,9 @@ document.addEventListener('DOMContentLoaded', () => {
             'service17-p': 'Full pharmacy and ambulance services are provided. 24-hour pharmacy and ambulance services are available.',
             'service18-h3': 'Other Services Available',
             'service18-p': 'Geez Hospital also offers other unlisted services to the community. Inquiries for any questions or additional information are welcome.',
-            // Footer (Common) - Moved here to be only one entry
             'footer-text': 'Copyright © 2026 Geez Hospital. All rights reserved. Developed By Aser Teklu G'
-        }, // This closes the 'eng' block - ensure this comma is there
-        'amh': { // New Amharic translation block added
+        },
+        'amh': {
             // Header Menu Items (Common)
             'home': 'መነሻ',
             'services': 'አገልግሎቶች',
@@ -246,7 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'view-on-map': 'በካርታ ላይ ይመልከቱ',
 
             // Index.html Specific Content (Example translations for Amharic)
-            'hero-h2': 'ብሓልዮትና ንምረጽ፡ብሞያዊ ብቕዓትና ንእመን',
+            'hero-h2': 'በእንክብካቤአችን ተመራጭ፣ በሙያችን የታመን',
             'hero-p': 'ግዕዝ ሆስፒታል - ለጤናዎ ቅድሚያ በመስጠት፣ ምርጥ ስፔሻሊስት እና ሳብስፔሻሊስት ሐኪሞችን ከዘመናዊ ቴክኖሎጂ መሳሪያዎች ጋር በማጣመር እየጠበቅንዎት ነው። ቀጠሮ ለማስያዝ እዚህ ይመዝገቡ።',
             'hero-btn-appointment': 'ቀጠሮ ያስይዙ',
             'hero-btn-services': 'አገልግሎቶቻችንን ይመልከቱ',
@@ -264,7 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'doctors-p': 'ግዕዝ ሆስፒታል ከፍተኛ ልምድና ሙያ ባላቸው ስፔሻሊስት ሐኪሞች አገልግሎት ይሰጣል።',
             'dr-tesfay-name': 'ዶ/ር ተስፋይ አጽብሃ',
             'dr-tesfay-specialty': 'ሳብ-ስፔሻሊስት የልብ በሽታዎች',
-            'dr-higus-name': 'ዶ/ር ሕጉስ ተክሉ',
+            'dr-higus-name': 'ዶ/ር ህጉስ ተክሉ',
             'dr-higus-specialty': 'ስፔሻሊስት የውስጥ ደዌ ህክምና',
             'appointment-btn': 'ቀጠሮ',
             'testimonials-h2': 'የታካሚዎች ምስክርነት',
@@ -273,7 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'contact-h2': 'ያግኙን',
             'contact-p': 'ለማንኛውም ጥያቄ ወይም አስተያየት፣ ሊያገኙን ይችላሉ።',
             'address-strong': 'አድራሻ:',
-            'address-text': 'አክሱም ከተማ፣ ክንደያ ቀበሌ፣ ከኢትዮቴሌኮም ፊት ለፊት ወረድ ብሎ፣ ከሴንትራል ካፌ በኋላ',
+            'address-text': 'አክሱም ከተማ፣ ቅንደያ ቀበሌ፣ ከኢትዮቴሌኮም ፊት ለፊት ወረድ ብሎ፣ ከሴንትራል ካፌ በኋላ',
             'phone-strong': 'ስልክ:',
             'email-strong': 'ኢሜይል:',
             'facebook-strong': 'ፌስቡክ:',
@@ -326,16 +324,15 @@ document.addEventListener('DOMContentLoaded', () => {
             'service13-h3': 'ሙሉ ዘመናዊ የላብራቶሪ አገልግሎት',
             'service13-p': 'ሙሉ ዘመናዊ የላብራቶሪ አገልግሎት ይሰጣል። ለሁሉም አይነት የደም፣ የሽንትና ሌሎች ባዮሎጂካል ምርመራዎች በዘመናዊ መሳሪያዎች አገልግሎት እንሰጣለን።',
             'service14-h3': 'የፊዚዮቴራፒ ምርመራና ህክምና',
-            'service14-p': 'ሙሉ የፊዚዮቴራፒ ምርመራና ህክምና በፊዚዮቴራፒ ሐኪም ይሰጣል። ለተለያዩ የአካል ቅርጽና እንቅስቃሴ መዛባቶች ህክምና እንሰጣለን።',
+            'service14-p': 'ምሉእ መርመራን ሕክምናን ብፊዝዮቴራፒ ሓኪም ግልጋሎት ይወሃብ። ንዝተፈላለዩ ዓይነት ሕማማት ቅርጺ ኣካልን ምንቅስቓስን ሕክምና ንህብ።',
             'service15-h3': 'የስፔሻሊስት የስነ-አእምሮ ህክምና',
-            'service15-p': 'የስፔሻሊስት የስነ-አእምሮ ህክምና ይሰጣል። ለተለያዩ የአእምሮ በሽታዎች ምክርና ህክምና እንሰጣለን።',
-            'service16-h3': 'ሙሉ የወሊድ አገልግሎት',
-            'service16-p': 'ሙሉ የወሊድ አገልግሎት፣ ከወሊድ በፊት እስከ ወሊድ በኋላ፣ በከፍተኛ ልምድና ክህሎት ባላቸው ባለሙያዎችና ስፔሻሊስት ሐኪሞች፣ ዘመናዊ መሳሪያዎችን በመጠቀም ይሰጣል።',
-            'service17-h3': 'ሙሉ የመድሃኒት አቅርቦት (ፋርማሲ) እና አምቡላንስ',
-            'service17-p': 'ሙሉ የመድሃኒት አቅርቦት (ፋርማሲ) እና አምቡላንስ አገልግሎት ይሰጣል። የ24 ሰዓት ፋርማሲና አምቡላንስ አገልግሎት ዝግጁ ነው።',
-            'service18-h3': 'ሌሎች አገልግሎቶችም ይገኛሉ',
-            'service18-p': 'ሌሎች ያልተዘረዘሩ አገልግሎቶችን ለማህበረሰቡ ያቀርባል። ለማንኛውም ጥያቄ ወይም ተጨማሪ መረጃ መጠየቅ ይቻላል።',
-            // Footer (Common) - Moved here to be only one entry
+            'service15-p': 'ስፔሻሊስት ሕክምና ስነ ኣእምሮ ግልጋሎት ይወሃብ። ንዝተፈላለዩ ኣእምሮኣዊ ሕማማት ምኽሪን ሕክምናን ንህብ።',
+            'service16-h3': 'ናይ መዋልዳን ምሉእ ግልጋሎት',
+            'service16-p': 'ምሉእ ግልጋሎት መዋልዳን፣ ካብ ቅድሚ ሕርሲ ክሳብ ድሕሪ ሕርሲ፣ ብልዑል ልምዲን ተሞኩሮን ዘለዎም ሰብ ሞያን ብስፔሻሊስት ሓኪምን ብዘመናዊ መሳርሒታትን ይወሃብ።',
+            'service17-h3': 'ምሉእ ኣቕሪቦት መድሓኒት(Pharmacy)ን ኣምቡላንስን',
+            'service17-p': 'ምሉእ ኣቕሪቦት መድሓኒት(Pharmacy)ን ኣምቡላንስን ግልጋሎት ይወሃብ። 24 ሰዓት ግልጋሎት ፋርማሲን ኣምቡላንስን ድሉው እዩ።',
+            'service18-h3': 'ካልኦት ግልጋሎትን ይረኽቡ',
+            'service18-p': 'ግዕዝ ሆስፒታል ካልኦት ዘይተዘርዘሩ ግልጋሎት ንሕብረተሰብ ነቕርብ። ንዝኾነ ሕቶ ወይ ተወሳኺ ሓበሬታ ምሕታት ይከኣል እዩ።',
             'footer-text': 'Copyright © 2026 Geez Hospital. All rights reserved. Developed By Aser Teklu Gebrekidan'
         }
     };
@@ -358,7 +355,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (headerLogoImg) headerLogoImg.alt = currentTranslations['logo-alt'];
 
         // Top Bar Contact Us Button (New Element)
-        const topBarContactBtn = document.querySelector('.top-bar .contact-btn'); // Assuming a class 'contact-btn' for this button
+        const topBarContactBtn = document.querySelector('.top-bar .contact-btn');
         if (topBarContactBtn) {
             topBarContactBtn.textContent = currentTranslations['contact-us-btn'];
         }
@@ -368,10 +365,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (footerP) footerP.innerHTML = currentTranslations['footer-text'];
 
         // HTML Language attribute
-        document.documentElement.lang = (lang === 'eng') ? 'en' : (lang === 'amh' ? 'am' : 'ti'); // 'ti' for Tigrigna, 'en' for English, 'am' for Amharic
+        document.documentElement.lang = (lang === 'eng') ? 'en' : (lang === 'amh' ? 'am' : 'ti');
 
         // Top Bar Info (Address, Phone, Email) - These are common for all pages
-        const topBarAddressSpan = document.querySelector('.top-bar .address-info span');
+        // *** THIS IS THE LINE THAT NEEDS TO BE UPDATED ***
+        const topBarAddressSpan = document.querySelector('.top-bar .address-info .address-info-span'); // Changed selector
         if (topBarAddressSpan) {
             topBarAddressSpan.innerHTML = `<i class="fas fa-map-marker-alt"></i> ${currentTranslations['address-text']}`;
         }
@@ -425,11 +423,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (document.querySelector('.testimonial-card p')) document.querySelector('.testimonial-card p').textContent = currentTranslations['testimonial-p'];
             if (document.querySelector('.testimonial-card span')) document.querySelector('.testimonial-card span').textContent = currentTranslations['testimonial-span'];
 
-            if (document.querySelector('#contact h2')) document.querySelector('#contact h2').textContent = currentTranslations['contact-h2'];
-            if (document.querySelector('#contact p:nth-of-type(1)')) document.querySelector('#contact p:nth-of-type(1)').textContent = currentTranslations['contact-p'];
+            // Updated selector to target the contact section by its new ID
+            if (document.querySelector('#contact-section h2')) document.querySelector('#contact-section h2').textContent = currentTranslations['contact-h2'];
+            if (document.querySelector('#contact-section p:nth-of-type(1)')) document.querySelector('#contact-section p:nth-of-type(1)').textContent = currentTranslations['contact-p'];
 
             // Dynamic Services Loading for index.html (This part should only run if serviceGridIndexPage exists)
-            const serviceGridIndexPage = document.querySelector('#services .service-grid'); // ን index.html ጥራይ
+            const serviceGridIndexPage = document.querySelector('#services .service-grid');
             if (serviceGridIndexPage) {
                 const servicesForIndexPage = [
                     { name: currentTranslations["service1-h3"], icon: "fas fa-stethoscope", description: currentTranslations["service1-p"] },
@@ -489,7 +488,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (document.querySelector('.contact-form-section h2')) document.querySelector('.contact-form-section h2').textContent = currentTranslations['contact-form-title'];
 
             // Form Labels
-            // Using data-translate for labels too
             document.querySelectorAll('label[data-translate]').forEach(label => {
                 const key = label.getAttribute('data-translate');
                 if (currentTranslations[key]) {
@@ -500,7 +498,6 @@ document.addEventListener('DOMContentLoaded', () => {
             // Gender Options
             const genderSelect = document.getElementById('gender');
             if (genderSelect) {
-                // Ensure options exist before trying to update them
                 if (genderSelect.options[0]) genderSelect.options[0].textContent = currentTranslations['form-select-gender'];
                 if (genderSelect.options[1]) genderSelect.options[1].textContent = currentTranslations['form-gender-male'];
                 if (genderSelect.options[2]) genderSelect.options[2].textContent = currentTranslations['form-gender-female'];
@@ -517,7 +514,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // View on Map button
-            const viewOnMapBtn = document.querySelector('.contact-map-section .btn'); // Assuming the button has class 'btn'
+            const viewOnMapBtn = document.querySelector('.contact-map-section .btn');
             if (viewOnMapBtn) {
                 viewOnMapBtn.textContent = currentTranslations['view-on-map'];
             }
@@ -526,7 +523,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const pageTitle = document.querySelector('title');
             if (pageTitle) pageTitle.textContent = currentTranslations['contact'];
         }
-        // Add more conditions for other pages (doctors.html, news.html, etc.) here
     };
 
     languageSwitcher.addEventListener('change', (event) => {
@@ -541,7 +537,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedLanguage = localStorage.getItem('selectedLanguage');
     const langInUrl = getLanguageFromUrl();
 
-    let initialLang = 'tig'; // Default to Tigrigna
+    let initialLang = 'tig';
 
     if (langInUrl && (langInUrl === 'tig' || langInUrl === 'eng' || langInUrl === 'amh')) {
         initialLang = langInUrl;
@@ -553,14 +549,24 @@ document.addEventListener('DOMContentLoaded', () => {
         languageSwitcher.value = initialLang;
     }
     applyLanguage(initialLang);
-    updateUrlLanguage(initialLang); // Ensure URL is correctly set on initial load
+    updateUrlLanguage(initialLang);
 
+    // Corrected smooth scroll logic:
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const href = this.getAttribute('href');
+            // Modified condition to specifically check for #contact-section or other valid IDs
+            if (href && href !== '#') { 
+                const targetElement = document.querySelector(href);
+                if (targetElement) { 
+                    e.preventDefault();
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            } else if (href === '#') { // Prevent default for empty hash links
+                e.preventDefault();
+            }
         });
     });
 });
