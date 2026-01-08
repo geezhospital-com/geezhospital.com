@@ -50,8 +50,14 @@ h1, h2, h3 {
 }
 
 .btn-secondary {
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-color); /* እዚ #666 (dark grey) ክኸውን እዩ */
+    color: var(--white); /* <--- እዚ መስመር እዩ ክትውስኾ ዘለካ (ነቲ ጽሑፍ ጻዕዳ ይገብሮ) */
     margin-top: 20px;
+}
+
+.btn-secondary:hover {
+    background-color: #545b62; /* እዚ ድማ ካልእ ጸሊም-ጫሕላይ ግሬይ እዩ */
+    color: var(--white); /* <--- እዚ እውን ክትውስኾ ኣለካ ን hover state */
 }
 
 .btn-secondary:hover {
