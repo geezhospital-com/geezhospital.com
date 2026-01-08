@@ -552,19 +552,19 @@ document.addEventListener('DOMContentLoaded', () => {
     updateUrlLanguage(initialLang);
 
     // Smooth scroll logic for internal anchor links (e.g., #section-id)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            // Ensure it's not an empty hash link or a link that would reload the page
-            if (href && href.startsWith('#') && href.length > 1 && document.querySelector(href)) {
-                e.preventDefault();
-                const targetElement = document.querySelector(href);
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        // Ensure it's not an empty hash link or a link that would reload the page
+        if (href && href.startsWith('#') && href.length > 1 && document.querySelector(href)) {
+            // e.preventDefault(); // Commented out to allow default link behavior
+            const targetElement = document.querySelector(href);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
             }
-        });
+        }
     });
+});
 });
