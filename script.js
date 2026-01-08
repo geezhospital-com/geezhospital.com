@@ -229,111 +229,6 @@ document.addEventListener('DOMContentLoaded', () => {
             'service18-h3': 'Other Services Available',
             'service18-p': 'Geez Hospital also offers other unlisted services to the community. Inquiries for any questions or additional information are welcome.',
             'footer-text': 'Copyright © 2026 Geez Hospital. All rights reserved. Developed By Aser Teklu G'
-        },
-        'amh': {
-            // Header Menu Items (Common)
-            'home': 'መነሻ',
-            'services': 'አገልግሎቶች',
-            'doctors': 'ሐኪሞቻችን',
-            'news': 'ዜና',
-            'gallery': 'ማዕከለ ስዕላት',
-            'contact': 'ያግኙን',
-            'logo-alt': 'ግዕዝ ሆስፒታል አርማ',
-            'contact-us-btn': 'ያግኙን',
-            'our-location-map': 'በካርታ ላይ ይመልከቱ',
-            'view-on-map': 'በካርታ ላይ ይመልከቱ',
-
-            // Index.html Specific Content (Example translations for Amharic)
-            'hero-h2': 'በእንክብካቤአችን ተመራጭ፣ በሙያችን የታመን',
-            'hero-p': 'ግዕዝ ሆስፒታል - ለጤናዎ ቅድሚያ በመስጠት፣ ምርጥ ስፔሻሊስት እና ሳብስፔሻሊስት ሐኪሞችን ከዘመናዊ ቴክኖሎጂ መሳሪያዎች ጋር በማጣመር እየጠበቅንዎት ነው። ቀጠሮ ለማስያዝ እዚህ ይመዝገቡ።',
-            'hero-btn-appointment': 'ቀጠሮ ያስይዙ',
-            'hero-btn-services': 'አገልግሎቶቻችንን ይመልከቱ',
-            'about-h2': 'ስለእኛ',
-            'about-p1': 'በ2011 ዓ.ም የተመሰረተው ግዕዝ ሆስፒታል በማዕከላዊ ዞንና በትግራይ ከቀዳሚዎቹ አንዱ ሲሆን አለም አቀፍ ደረጃውን የጠበቀ ዘመናዊና ቀልጣፋ የህክምና አገልግሎት የሚሰጥ ተቋም ነው። በመላው ዞኑና በአጎራባች አካባቢዎች ካሉት ትላልቅና ታማኝ የህክምና ተቋማት አንዱ በመሆን አለም አቀፍ ደረጃውን የጠበቀ የህክምና አገልግሎት ለሁሉም ዜጋ ተደራሽ ለማድረግ ያለመ ነው። በተለይም አዛኝ እንክብካቤን፣ ከፍተኛ ሙያዊ ብቃትን እና ዘመናዊ መሳሪያዎችን በማቅረብ ላይ የተመሰረተ ተቋም ነው። ለታካሚዎች ደህንነት እና ለላቀ አገልግሎት ከፍተኛ ትኩረት ይሰጣል።',
-            'vision-h3': 'ራዕይ',
-            'vision-p': 'በምንሰጠው የላቀ ሙያዊ ብቃትና ታካሚን ማዕከል ባደረገው እንክብካቤ ምክንያት አለም አቀፍ ደረጃውን የጠበቀ የህክምና አገልግሎት በማቅረብ በአፍሪካ ተከባሪ የህክምና ተቋም መሆን።',
-            'mission-h3': 'ተልዕኮ',
-            'mission-p': 'ምርጥ ጥራት ያለው፣ ተመጣጣኝ፣ ተደራሽና ተጠያቂነት ያለው የህክምና አገልግሎት ለሁሉም ዜጋ በማቅረብ፤ የላቀ ሙያዊ ክህሎትንና አዛኝ እንክብካቤን ያጣመረ፣ ተደራሽ፣ ጥራቱን የጠበቀና ተመጣጣኝ ዋጋ ያለው የህክምና አገልግሎት ለህብረተሰቡ በማቅረብ፤ አለም አቀፍ ደረጃውን የጠበቀ የህክምና አሰራር መፍጠር እንዲሁም ከፍተኛ የህክምና ስነ-ምግባርን ማክበር ነው።',
-            'services-h3': 'አገልግሎቶቻችን',
-            'services-p-about': 'በርካታ የስፔሻሊስትና የሳብ ስፔሻሊስት ዘርፎችን (ለምሳሌ፦ ልብ፣ ካንሰር፣ አእምሮና ነርቭ፣ አጥንት፣ ከነርቭ በላይ፣ አይን፣ የቆዳና ውበት፣ የእናቶችና ህጻናት እንክብካቤ ምርመራዎች እንዲሁም የድንገተኛ አገልግሎት) በዘመናዊ ቴክኖሎጂና በሙያዊ ብቃት እናቀርባለን። ለዝርዝር አገልግሎቶቻችን በአገልግሎቶቻችን ርዕስ ስር ያንብቡ።',
-            'our-services-h2': 'አገልግሎቶቻችን',
-            'all-services-btn': 'ሁሉንም አገልግሎቶቻችን',
-            'doctors-h2': 'ሐኪሞቻችን',
-            'doctors-p': 'ግዕዝ ሆስፒታል ከፍተኛ ልምድና ሙያ ባላቸው ስፔሻሊስት ሐኪሞች አገልግሎት ይሰጣል።',
-            'dr-tesfay-name': 'ዶ/ር ተስፋይ አጽብሃ',
-            'dr-tesfay-specialty': 'ሳብ-ስፔሻሊስት የልብ በሽታዎች',
-            'dr-higus-name': 'ዶ/ር ህጉስ ተክሉ',
-            'dr-higus-specialty': 'ስፔሻሊስት የውስጥ ደዌ ህክምና',
-            'appointment-btn': 'ቀጠሮ',
-            'testimonials-h2': 'የታካሚዎች ምስክርነት',
-            'testimonial-p': '"ግዕዝ ሆስፒታል በእንክብካቤአቸው እና በሙያዊ ብቃታቸው በእውነት ልዩ ናቸው። ሐኪሞቹ እጅግ በጣም ደግ እና ምርጥ ናቸው። ለሰጡኝ የህክምና እንክብካቤ በጣም አመስጋኝ ነኝ።"',
-            'testimonial-span': '- አቶ ገብረመድህን ካህሳይ',
-            'contact-h2': 'ያግኙን',
-            'contact-p': 'ለማንኛውም ጥያቄ ወይም አስተያየት፣ ሊያገኙን ይችላሉ።',
-            'address-strong': 'አድራሻ:',
-            'address-text': 'አክሱም ከተማ፣ ቅንደያ ቀበሌ፣ ከኢትዮቴሌኮም ፊት ለፊት ወረድ ብሎ፣ ከሴንትራል ካፌ በኋላ',
-            'phone-strong': 'ስልክ:',
-            'email-strong': 'ኢሜይል:',
-            'facebook-strong': 'ፌስቡክ:',
-
-            // Contact Form specific translations
-            'contact-form-title': 'መልእክት ይላኩልን',
-            'form-full-name': 'ሙሉ ስም:',
-            'form-email': 'ኢሜይል:',
-            'form-subject': 'ርዕስ:',
-            'form-phone': 'ስልክ ቁጥር:',
-            'form-address': 'አድራሻ:',
-            'form-age': 'ዕድሜ:',
-            'form-gender': 'ፆታ:',
-            'form-select-gender': 'ፆታ ይምረጡ',
-            'form-gender-male': 'ወንድ',
-            'form-gender-female': 'ሴት',
-            'form-gender-other': 'ሌላ',
-            'form-message': 'መልእክት:',
-            'form-submit-btn': 'ይላኩ',
-            'our-location': 'አድራሻችን',
-
-            // Services.html Specific Content
-            'services-page-h2': 'አገልግሎቶቻችን',
-            'services-page-intro-p': 'ግዕዝ ሆስፒታል የተለያዩ ዘመናዊ አገልግሎቶችን በስፔሻሊስት እና በልዩ ስፔሻሊስት (sub specialist) ብቃት ባላቸው ሐኪሞች ይሰጣል።',
-
-            'service1-h3': 'የስፔሻሊስት የውስጥ ደዌ ህክምና',
-            'service1-p': 'ሙሉ የውስጥ ደዌ ምርመራና ህክምና በከፍተኛ ልምድና ሙያ ባላቸው ስፔሻሊስት ሐኪሞች ይሰጣል። ይህ አገልግሎት የተለያዩ በሽታዎችን እንደ የደም ግፊት፣ የኩላሊት በሽታ፣ የሳንባ በሽታ፣ የሆርሞን መዛባት፣ ወዘተ የመሳሰሉትን ያጠቃልላል።',
-            'service2-h3': 'ልዩ የስፔሻሊስት የልብ በሽታዎች ህክምና',
-            'service2-p': 'ልዩ የልብ በሽታዎች ምርመራና ህክምና በከፍተኛ ልምድና ሙያ ባላቸው ሳብ ስፔሻሊስት ሐኪሞች ይሰጣል። ECG፣ Echocardiography፣ Stress Test የመሳሰሉ ዘመናዊ መሳሪያዎችና ዘዴዎችን እንጠቀማለን።',
-            'service3-h3': 'የስፔሻሊስት አጠቃላይ ቀዶ ጥገና',
-            'service3-p': 'የስፔሻሊስት አጠቃላይ ቀዶ ጥገና በዘመናዊ መሳሪያዎችና ዘዴዎች ይሰጣል። ይህ ለተለያዩ ለምሳሌ ለ appendices, hernias, gallbladder, ወዘተ ቀዶ ጥገናዎችን ያጠቃልላል።',
-            'service4-h3': 'የስፔሻሊስት የህጻናትና ታዳጊዎች ህክምና',
-            'service4-p': 'የህጻናትና ታዳጊዎች ምርመራና ህክምና በስፔሻሊስት ሐኪም ይሰጣል። ለህጻናት የሚመጥን ልዩ እንክብካቤ እንሰጣለን።',
-            'service5-h3': 'የስፔሻሊስት የማህፀንና ጽንስ ህክምና',
-            'service5-p': 'ሙሉ የማህፀንና ጽንስ ምርመራና ህክምና በስፔሻሊስት ሐኪም ይሰጣል። ከወሊድ በፊት፣ በወሊድ ጊዜና ከወሊድ በኋላ የሚያስፈልገውን እንክብካቤ ይሰጣል።',
-            'service6-h3': 'የስፔሻሊስት ከነርቭ በላይ (ENT) ህክምና',
-            'service6-p': 'የአንገት፣ የጆሮና የአፍንጫ ምርመራና ህክምና በስፔሻሊስት ሐኪም ይሰጣል። ለተለያዩ የ ENT በሽታዎች በዘመናዊ መሳሪያዎች (Endoscopy) ምርመራና ህክምና እንሰጣለን።',
-            'service7-h3': 'የስፔሻሊስት ራዲዮሎጂ (አልትራሳውንድ፣ ራጂ፣ ሲቲ ስካን ECGን)',
-            'service7-p': 'ዘመናዊ የራዲዮሎጂ አገልግሎት (አልትራሳውንድ፣ ራጂ፣ ሲቲ ስካን ECGን) በስፔሻሊስት ሐኪም ይሰጣል። ትክክለኛ ምርመራ ለመስጠት የሚረዳ ዘመናዊ ቴክኖሎጂ እንጠቀማለን።',
-            'service8-h3': 'የስፔሻሊስት የጥርስ ህክምና',
-            'service8-p': 'ሙሉ የጥርስ ህክምና በስፔሻሊስት ሐኪም ይሰጣል። ከንጹህ ጥርስ እስከ ኮሮናና ጥርስ መቀየርን ያካተተ አገልግሎት እንሰጣለን።',
-            'service9-h3': 'የስፔሻሊስት የአከርካሪ አጥንት፣ የአንጎል እና የነርቭ ቀዶ ጥገና',
-            'service9-p': 'የስፔሻሊስት የአከርካሪ አጥንት፣ የአንጎል እና የነርቭ ቀዶ ጥገና በከፍተኛ ልምድ ባላቸው ስፔሻሊስት ሐኪሞች ይሰጣል። ለተለያዩ ነርቭ ነክ በሽታዎች ልዩ ህክምና እንሰጣለን።',
-            'service10-h3': 'የስፔሻሊስት የአጥንትና መገጣጠሚያ፣ የነርቭና የአከርካሪ ህክምና',
-            'service10-p': 'የስፔሻሊስት የአጥንትና መገጣጠሚያ፣ የነርቭና የአከርካሪ ህክምና በስፔሻሊስት ሐኪም ይሰጣል። ለስብራት፣ ለቁስልና ለመገጣጠሚያ በሽታዎች ህክምና እንሰጣለን።',
-            'service11-h3': 'የስፔሻሊስት የቆዳ፣ የሌዘርና የውበት ህክምና',
-            'service11-p': 'የስፔሻሊስት የቆዳ፣ የሌዘርና የውበት ህክምና በስፔሻሊስት ሐኪም ይሰጣል። ለተለያዩ የቆዳ በሽታዎችና የውበት እንክብካቤ እንሰጣለን።',
-            'service12-h3': 'የስፔሻሊስት ማደንዘዣና የህመም ማስታገሻ',
-            'service12-p': 'የስፔሻሊስት ማደንዘዣና የህመም ማስታገሻ ህክምና በስፔሻሊስት ሐኪም ይሰጣል። ከቀዶ ጥገና በፊትና በኋላ የሚያስፈልገውን እንክብካቤ እንሰጣለን።',
-            'service13-h3': 'ሙሉ ዘመናዊ የላብራቶሪ አገልግሎት',
-            'service13-p': 'ሙሉ ዘመናዊ የላብራቶሪ አገልግሎት ይሰጣል። ለሁሉም አይነት የደም፣ የሽንትና ሌሎች ባዮሎጂካል ምርመራዎች በዘመናዊ መሳሪያዎች አገልግሎት እንሰጣለን።',
-            'service14-h3': 'የፊዚዮቴራፒ ምርመራና ህክምና',
-            'service14-p': 'ምሉእ መርመራን ሕክምናን ብፊዝዮቴራፒ ሓኪም ግልጋሎት ይወሃብ። ንዝተፈላለዩ ዓይነት ሕማማት ቅርጺ ኣካልን ምንቅስቓስን ሕክምና ንህብ።',
-            'service15-h3': 'የስፔሻሊስት የስነ-አእምሮ ህክምና',
-            'service15-p': 'ስፔሻሊስት ሕክምና ስነ ኣእምሮ ግልጋሎት ይወሃብ። ንዝተፈላለዩ ኣእምሮኣዊ ሕማማት ምኽሪን ሕክምናን ንህብ።',
-            'service16-h3': 'ናይ መዋልዳን ምሉእ ግልጋሎት',
-            'service16-p': 'ምሉእ ግልጋሎት መዋልዳን፣ ካብ ቅድሚ ሕርሲ ክሳብ ድሕሪ ሕርሲ፣ ብልዑል ልምዲን ተሞኩሮን ዘለዎም ሰብ ሞያን ብስፔሻሊስት ሓኪምን ብዘመናዊ መሳርሒታትን ይወሃብ።',
-            'service17-h3': 'ምሉእ ኣቕሪቦት መድሓኒት(Pharmacy)ን ኣምቡላንስን',
-            'service17-p': 'ምሉእ ኣቕሪቦት መድሓኒት(Pharmacy)ን ኣምቡላንስን ግልጋሎት ይወሃብ። 24 ሰዓት ግልጋሎት ፋርማሲን ኣምቡላንስን ድሉው እዩ።',
-            'service18-h3': 'ካልኦት ግልጋሎትን ይረኽቡ',
-            'service18-p': 'ግዕዝ ሆስፒታል ካልኦት ዘይተዘርዘሩ ግልጋሎት ንሕብረተሰብ ነቕርብ። ንዝኾነ ሕቶ ወይ ተወሳኺ ሓበሬታ ምሕታት ይከኣል እዩ።',
-            'footer-text': 'Copyright © 2026 Geez Hospital. All rights reserved. Developed By Aser Teklu Gebrekidan'
         }
     };
 
@@ -368,8 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.documentElement.lang = (lang === 'eng') ? 'en' : (lang === 'amh' ? 'am' : 'ti');
 
         // Top Bar Info (Address, Phone, Email) - These are common for all pages
-        // *** THIS IS THE LINE THAT NEEDS TO BE UPDATED ***
-        const topBarAddressSpan = document.querySelector('.top-bar .address-info .address-info-span'); // Changed selector
+        const topBarAddressSpan = document.querySelector('.top-bar .address-info .address-info-span');
         if (topBarAddressSpan) {
             topBarAddressSpan.innerHTML = `<i class="fas fa-map-marker-alt"></i> ${currentTranslations['address-text']}`;
         }
@@ -552,27 +446,21 @@ document.addEventListener('DOMContentLoaded', () => {
     updateUrlLanguage(initialLang);
 
     // Corrected smooth scroll logic:
-    // Corrected smooth scroll logic:
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-       // Corrected smooth scroll logic:
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        // Modified condition to specifically check for #contact-section or other valid IDs
-        // If (href && href != '#') { // Old line (እዚ ኮመንት እንተኾይኑ ኣይትቅይሮ)
-        if (href && href.startsWith('#') && document.querySelector(href)) { // <--- እዚ መስመር እዩ ክትቅይሮ ዘለካ
-            e.preventDefault();
-            const targetElement = document.querySelector(href);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            // Modified condition to specifically check for #contact-section or other valid IDs
+            if (href && href.startsWith('#') && document.querySelector(href)) {
+                e.preventDefault();
+                const targetElement = document.querySelector(href);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            } else if (href === '#') { // Prevent default for empty hash links
+                e.preventDefault();
             }
-        } else if (href === '#') { // Prevent default for empty hash links
-            e.preventDefault();
-        }
+        });
     });
-});
 });
