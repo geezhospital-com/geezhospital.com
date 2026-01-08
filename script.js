@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Index.html Specific Content
             'hero-h2': 'ብሓልዮትና ንምረጽ፡ብሞያዊ ብቕዓትና ንእመን',
-            'hero-p': 'ግዕዝ ሆስፒታል - ዘመናዊ ሆስፒታል!',
+            'hero-p': 'ግዕዝ ሆስፒታል - ንጥዕናኹም ቀዳምነት ብምሃብ፣ ብሉፃት ስፔሻሊስትን ሳብስፔሻሊስትታትን ሓኻይም ምስ  ዘመናዊ ቴክኖሎጂ መሳርሕታት(ማሽን) ኣዋዲድንና ንፅበየኩም ኣለና። በይዞም ቆፀሮ ንምሓዝ ኣብዚ ይመዝገቡ።',
             'hero-btn-appointment': 'ቆፀሮ ንምሓዝ',
             'hero-btn-services': 'ግልጋሎታትና ርኣዩ',
             'about-h2': 'ብዛዕባና (About Us)',
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Index.html Specific Content
             'hero-h2': 'Chosen for our care, trusted for our expertise',
-            'hero-p': 'Geez Hospital - A Modern Hospital!',
+            'hero-p': 'Geez Hospital - Prioritizing your health above all, we have brought together the finest specialist and sub-specialist doctors, equipped with state-of-the-art technology and modern medical equipment, and we await your visit. Please register here to book an appointment.',
             'hero-btn-appointment': 'Book Appointment',
             'hero-btn-services': 'View Our Services',
             'about-h2': 'About Us',
