@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'about-p1': 'ብ2011 ኣ.ግ ዝተመስረተ ሆስፒታል ግዕዝ፣ ኣብ ማእኸላይ ዞባ ኢሉ እዉን ኣብ ትግራይ ካብቶም ቀዳሞት ዝስርዑ፣ ዓለምለኻዊ ፅሬት ዘለዎ ዘመናዊን ስሉጥን ሕክምናዊ ግልጋሎት ዝህቡ ትካላት ሓደ እዩ። ኣብ መላእ እቲ ዞባን ጎረባብቲን ሓደ ካብቶም ዝዓበዩን ዝእመኑን ናይ ሕክምና ትካል ኮይኑ ዓለምለኻዊ ፅሬት ዘለዎ ሕክምና ንነፍሲ-ወከፍ ዜጋ ተበፃሒ ንምግባር ዝዓለመ እዩ።ብፍላይ ሓልዮት ዝተመልኦ ክንክን፣ ላዕለዋይ ሞያዊ ብቕዓትን ዘመናዊ መሳርሒታትን ብምቕራብ ዝተመስረተ ትካል እዩ። ንድሕንነት ሕሙማትን ንብሉፅ ግልጋሎትን ዓብዪ ቆላሕታ ይህብ።',
             'vision-h3': 'ራእይ (Vision)',
             'vision-p': 'ብምኽንያት እቲ እንህቦ ብሉፅ ሞያዊ ብቕዓትን ንሕሙም ማእከል ዝገበረ ሓልዮቱን፣ ዓለምለኻዊ ደረጃ ዘለዎ ናይ ሕክምና ግልጋሎት ብምቕራብ ኣብ ኣፍሪካ ክብሪ ዝተጎናፀፈ ናይ ሕክምና ትካል ምዃን።',
-            'mission-h3': 'ልእኽቶ (Mission)',
+            'mission-h3': 'ልእኽቶ (Mission)', // Corrected 'ልእኽ' to 'ልእኽቶ'
             'mission-p': 'ብሉፅ ፅሬት፣ ተመጣጣኒ፣ ተበፃሒን ተሓታትነት ዘለዎን ሕክምና ንኹሉ ዜጋ ብምቕራብ፤ ብሉፅ ሞያዊ ክእለትን ርህራሄ ዝመልኦ ሓልዮትን ዘወሃሃደ፣ተበፃሒ፣ ፅሬቱ ዝሓለወን ተመጣጣኒ ዋጋ ዘለዎን ሕክምና ንማሕበረሰብ ብምቕራብ፤ ዓለምለኻዊ ደረጃኡ ዝሓለወ ናይ ሕክምና ኣሰራርሓ ምፍጣር ከምኡውን ዝለዓለ ናይ ሕክምና ስነ-ምግባር ምኽባርን እዩ።',
             'services-h3': 'ግልጋሎታት (Our Services)',
             'services-p-about': 'ብርክት ዝበሉ ናይ ስፔሻሊስትን ሳብ ስፔሻሊስትን ዓውድታት (ንኣብነት፦ ልቢ፣ ካንሰር፣ ሓንጎልን መትኒታትን፣ ዓፅሚ፣ካብ ክሳድ ንላዕሊ፣ዓይኒ፣ናይ ቆርበትን ስነጽባቐን፣ ናይ ኣዴታትን ህፃናትን ክንክን መርመራታትን ከምኡውን ናይ ህፁፅ ሓደጋን ግልጋሎትሎት ብዘመናዊ ቴክኖሎጂን ብሞያዊ ብቕዓትን ነቕርብ።ንዝርዝር እንህቦም ግልጋሎታት ኣብ ግልጋሎታትና ዝብል ኣርእስቲ የንቢቡ።',
@@ -283,8 +283,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // Index Page Content
             if (document.querySelector('#hero h2')) document.querySelector('#hero h2').textContent = currentTranslations['hero-h2'];
             if (document.querySelector('#hero p')) document.querySelector('#hero p').textContent = currentTranslations['hero-p'];
-            if (document.querySelector('#hero .btn:nth-of-type(1)')) document.querySelector('#hero .btn:nth-of-type(1)').textContent = currentTranslations['hero-btn-appointment'];
-            if (document.querySelector('#hero .btn:nth-of-type(2)')) document.querySelector('#hero .btn:nth-of-type(2)').textContent = currentTranslations['hero-btn-services'];
+            if (document.querySelector('#hero .btn.btn-primary')) document.querySelector('#hero .btn.btn-primary').textContent = currentTranslations['hero-btn-appointment'];
+            if (document.querySelector('#hero .btn.btn-secondary')) document.querySelector('#hero .btn.btn-secondary').textContent = currentTranslations['hero-btn-services'];
 
             if (document.querySelector('#about h2')) document.querySelector('#about h2').textContent = currentTranslations['about-h2'];
             if (document.querySelector('#about p:nth-of-type(1)')) document.querySelector('#about p:nth-of-type(1)').textContent = currentTranslations['about-p1'];
@@ -445,11 +445,11 @@ document.addEventListener('DOMContentLoaded', () => {
     applyLanguage(initialLang);
     updateUrlLanguage(initialLang);
 
-    // Corrected smooth scroll logic:
+    // This is the removed smooth scroll logic block:
+    /*
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
-            // Modified condition to specifically check for #contact-section or other valid IDs
             if (href && href.startsWith('#') && document.querySelector(href)) {
                 e.preventDefault();
                 const targetElement = document.querySelector(href);
@@ -458,9 +458,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         behavior: 'smooth'
                     });
                 }
-            } else if (href === '#') { // Prevent default for empty hash links
+            } else if (href === '#') {
                 e.preventDefault();
             }
         });
     });
+    */
 });
