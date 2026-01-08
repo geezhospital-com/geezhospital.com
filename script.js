@@ -556,21 +556,19 @@ document.addEventListener('DOMContentLoaded', () => {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
-        
-        // Ensure href is not just '#' and a target element exists
-        if (href && href !== '#') { 
+       // Corrected smooth scroll logic:
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        // Modified condition to specifically check for #contact-section or other valid IDs
+        // If (href && href != '#') { // Old line (እዚ ኮመንት እንተኾይኑ ኣይትቅይሮ)
+        if (href && href.startsWith('#') && document.querySelector(href)) { // <--- እዚ መስመር እዩ ክትቅይሮ ዘለካ
+            e.preventDefault();
             const targetElement = document.querySelector(href);
-            if (targetElement) { // Check if targetElement is found before scrolling
-                e.preventDefault();
+            if (targetElement) {
                 targetElement.scrollIntoView({
                     behavior: 'smooth'
                 });
-            } else {
-                // Optional: For debugging, you can log which href caused the issue
-                console.warn(`Target element not found for href: ${href}`);
-                // If target not found, let the browser handle it (might be a link to another page with a hash)
-                // Or you can still prevent default if you strictly want hash links to only work within the page
-                // e.preventDefault(); 
             }
         } else if (href === '#') { // Prevent default for empty hash links
             e.preventDefault();
