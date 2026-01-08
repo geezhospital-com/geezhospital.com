@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'hero-btn-appointment': 'Book Appointment',
             'hero-btn-services': 'View Our Services',
             'about-h2': 'About Us',
-            'about-p1': 'Established in 2011 E.C., Geez Hospital is one of the leading healthcare institutions in Central Zone and Tigray, providing modern and efficient medical services with international standards. It aims to make world-class medical care accessible to every citizen in the entire zone and neighboring areas. It is particularly founded on providing compassionate care, high professional competence, and modern equipment. It places great emphasis on patient safety and excellent service.',
+            'about-p1': 'Geez Hospital is Established in 2011 E.C., and it is one of the leading healthcare institutions in Central Zone and Tigray, providing modern and efficient medical services with international standards. It aims to make world-class medical care accessible to every citizen in the entire zone and neighboring areas. It is particularly founded on providing compassionate care, high professional competence, and modern equipment. It places great emphasis on patient safety and excellent service.',
             'vision-h3': 'Vision',
             'vision-p': 'To become a renowned medical institution in Africa by providing world-class medical services, known for its excellent professional competence and patient-centered care.',
             'mission-h3': 'Mission',
@@ -333,7 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'service17-p': 'ሙሉ ፋርማሲና አምቡላንስ አገልግሎቶች ይሰጣል። 24 ሰዓት የፋርማሲና አምቡላንስ አገልግሎት ይገኛል።', // Full pharmacy and ambulance services are provided. 24-hour pharmacy and ambulance services are available.
             'service18-h3': 'ሌሎች አገልግሎቶች አሉ', // Other Services Available
             'service18-p': 'ግዕዝ ሆስፒታል ሌሎች ያልተዘረዘሩ አገልግሎቶችን ለህብረተሰቡ እናቀርባለን። ለማንኛውም ጥያቄ ወይም ተጨማሪ መረጃ መጠየቅ ይቻላል።', // Geez Hospital also offers other unlisted services to the community. Inquiries for any questions or additional information are welcome.
-            'footer-text': 'Copyright © 2026 Geez Hospital. All rights reserved. Developed By Aser Teklu G'
+            'footer-text': 'Copyright © 2026 Geez Hospital. All rights reserved. Developed By Aser Teklu Gebrekidan'
         }
     };
 
@@ -381,7 +381,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const topBarEmailSpan = document.querySelector('.top-bar .contact-info span:nth-of-type(2)');
         if (topBarEmailSpan && currentTranslations) { // Added currentTranslations check
-            topBarEmailSpan.innerHTML = `<i class="fas fa-envelope"></i> geezhospital@gmail.com`;
+            topBarEmailSpan.innerHTML = `<i class="fas fa-envelope"></i> info@geezhospital.com`;
         }
 
         // --- Page-specific content updates ---
