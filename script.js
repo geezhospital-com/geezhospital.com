@@ -29,10 +29,13 @@ document.addEventListener('DOMContentLoaded', () => {
             'gallery': 'ጋለሪ',
             'contact': 'ምትእስሳር',
             'logo-alt': 'ግዕዝ ሆስፒታል ሎጎ',
+            'contact-us-btn': 'ምትእስሳር',
+            'our-location-map': 'ኣብ ካርታ ርኣዩና',
+            'view-on-map': 'ኣብ ካርታ ርኣይ',
 
             // Index.html Specific Content
             'hero-h2': 'ብሓልዮትና ንምረጽ፡ብሞያዊ ብቕዓትና ንእመን',
-            'hero-p': 'ግዕዝ ሆስፒታል - ንጥዕናኹም ቀዳምነት ብምሃብ፣ ብሉፃት ስፔሻሊስትን ሳብስፔሻሊስትታትን ሓኻይም ምስ  ዘመናዊ ቴክኖሎጂ መሳርሕታት(ማሽን) ኣዋዲድንና ንፅበየኩም ኣለና። በይዞም ቆፀሮ ንምሓዝ ኣብዚ ይመዝገቡ።',
+            'hero-p': 'ግዕዝ ሆስፒታል - ንጥዕናኹም ቀዳምነት ብምሃብ፣ ብሉፃት ስፔሻሊስትን ሳብስፔሻሊስትታትን ሓኻይም ምስ ዘመናዊ ቴክኖሎጂ መሳርሕታት(ማሽን) ኣዋዲድንና ንፅበየኩም ኣለና። በይዞም ቆፀሮ ንምሓዝ ኣብዚ ይመዝገቡ።',
             'hero-btn-appointment': 'ቆፀሮ ንምሓዝ',
             'hero-btn-services': 'ግልጋሎታትና ርኣዩ',
             'about-h2': 'ብዛዕባና (About Us)',
@@ -42,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'mission-h3': 'ልእኽቶ (Mission)',
             'mission-p': 'ብሉፅ ፅሬት፣ ተመጣጣኒ፣ ተበፃሒን ተሓታትነት ዘለዎን ሕክምና ንኹሉ ዜጋ ብምቕራብ፤ ብሉፅ ሞያዊ ክእለትን ርህራሄ ዝመልኦ ሓልዮትን ዘወሃሃደ፣ተበፃሒ፣ ፅሬቱ ዝሓለወን ተመጣጣኒ ዋጋ ዘለዎን ሕክምና ንማሕበረሰብ ብምቕራብ፤ ዓለምለኻዊ ደረጃኡ ዝሓለወ ናይ ሕክምና ኣሰራርሓ ምፍጣር ከምኡውን ዝለዓለ ናይ ሕክምና ስነ-ምግባር ምኽባርን እዩ።',
             'services-h3': 'ግልጋሎታት (Our Services)',
-            'services-p-about': 'ብርክት ዝበሉ ናይ ስፔሻሊስትን ሳብ ስፔሻሊስትን ዓውድታት (ንኣብነት፦ ልቢ፣ ካንሰር፣ ሓንጎልን መትንታትን፣ ዓፅሚ፣ካብ ክሳድ ንላዕሊ፣ዓይኒ፣ናይ ቆርበትን ስነጽባቐን፣ ናይ ኣዴታትን ህፃናትን ክንክን መርመራታትን ከምኡውን ናይ ህፁፅ ሓደጋን ግልጋሎትሎት ብዘመናዊ ቴክኖሎጂን ብሞያዊ ብቕዓትን ነቕርብ።ንዝርዝር እንህቦም ግልጋሎታት ኣብ ግልጋሎታትና ዝብል ኣርእስቲ የንቢቡ።',
+            'services-p-about': 'ብርክት ዝበሉ ናይ ስፔሻሊስትን ሳብ ስፔሻሊስትን ዓውድታት (ንኣብነት፦ ልቢ፣ ካንሰር፣ ሓንጎልን መትኒታትን፣ ዓፅሚ፣ካብ ክሳድ ንላዕሊ፣ዓይኒ፣ናይ ቆርበትን ስነጽባቐን፣ ናይ ኣዴታትን ህፃናትን ክንክን መርመራታትን ከምኡውን ናይ ህፁፅ ሓደጋን ግልጋሎትሎት ብዘመናዊ ቴክኖሎጂን ብሞያዊ ብቕዓትን ነቕርብ።ንዝርዝር እንህቦም ግልጋሎታት ኣብ ግልጋሎታትና ዝብል ኣርእስቲ የንቢቡ።',
             'our-services-h2': 'ግልጋሎታትና',
             'all-services-btn': 'ኩሎም ግልጋሎታትና',
             'doctors-h2': 'ሓኻይምና',
@@ -83,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Services.html Specific Content
             'services-page-h2': 'ግልጋሎታትና',
             'services-page-intro-p': 'ግዕዝ ሆስፒታል ዝተፈላለዩን ዘመናዊን ግልጋሎታት ብስፔሻሊስትን ብፍሉይ ስፔሻሊስትን(sub specialist)ብቕዓትት ዘለዎም ሓኻይም ግልጋሎት ይህብ።',
-            
+
             'service1-h3': 'ስፔሻሊስት ሕክምና ውሽጣዊ ሕማማት',
             'service1-p': 'ምሉእ ናይ ውሽጣዊ ሕማማት መርመራን ሕክምናን ብልዑል ተመኩሮን ሞያን ዘለዎም ስፔሻሊስት ሓኻይም ይወሃብ። እዚ ግልጋሎት ንዝተፈላለዩ ሕማማት ከም ሕማም ደም፣ ሕማም ኩላሊት፣ ሕማም ሳንቡእ፣ ሕማም ሆርሞን፣ ወዘተ ዘጠቓለለ እዩ።',
             'service2-h3': 'ፍሉይ ስፔሻሊስት ሕክምና ሕማማት ልቢ',
@@ -117,13 +120,12 @@ document.addEventListener('DOMContentLoaded', () => {
             'service16-h3': 'ናይ መዋልዳን ምሉእ ግልጋሎት',
             'service16-p': 'ምሉእ ግልጋሎት መዋልዳን፣ ካብ ቅድሚ ሕርሲ ክሳብ ድሕሪ ሕርሲ፣ ብልዑል ልምዲን ተሞኩሮን ዘለዎም ሰብ ሞያን ብስፔሻሊስት ሓኪምን ብዘመናዊ መሳርሒታትን ይወሃብ።',
             'service17-h3': 'ምሉእ ኣቕሪቦት መድሓኒት(Pharmacy)ን ኣምቡላንስን',
-            'service17-p': 'ምሉእ ኣቕሪቦት መድሓኒት(Pharmacy)ን ኣምቡላንስን ግልጋሎት ይወሃብ። 24 ሰዓት ግልጋሎት ፋርማሲን ኣምቡላንስን ድሉው እዩ።', // Corrected typo here
+            'service17-p': 'ምሉእ ኣቕሪቦት መድሓኒት(Pharmacy)ን ኣምቡላንስን ግልጋሎት ይወሃብ። 24 ሰዓት ግልጋሎት ፋርማሲን ኣምቡላንስን ድሉው እዩ።',
             'service18-h3': 'ካልኦት ግልጋሎትን ይረኽቡ',
             'service18-p': 'ግዕዝ ሆስፒታል ካልኦት ዘይተዘርዘሩ ግልጋሎት ንሕብረተሰብን ነቕርብ። ንዝኾነ ሕቶ ወይ ተወሳኺ ሓበሬታ ምሕታት ይከኣል እዩ።',
-
-            // Footer (Common)
-            'footer-text': 'Copyright © 2026 Geez Hospital. All rights reserved. Developed By Aser Teklu G'
-        },
+            // Footer (Common) - Moved here to be only one entry
+            'footer-text': 'Copyright © 2026 Geez Hospital. All rights reserved. Developed By Aser Teklu Gebrekidan'
+        }, // This closes the 'tig' block - ensure this comma is there
         'eng': {
             // Header Menu Items (Common)
             'home': 'Home',
@@ -133,6 +135,9 @@ document.addEventListener('DOMContentLoaded', () => {
             'gallery': 'Gallery',
             'contact': 'Contact',
             'logo-alt': 'Geez Hospital Logo',
+            'contact-us-btn': 'Contact Us',
+            'our-location-map': 'View Us on Map', // Corrected this to 'View Us on Map' for consistency
+            'view-on-map': 'View on Map',
 
             // Index.html Specific Content
             'hero-h2': 'Chosen for our care, trusted for our expertise',
@@ -182,11 +187,12 @@ document.addEventListener('DOMContentLoaded', () => {
             'form-gender-other': 'Other',
             'form-message': 'Message:',
             'form-submit-btn': 'Send Message',
+            'our-location': 'Our Location',
 
             // Services.html Specific Content
-            'services-page-h2': 'Our Services', // Services Page Title
+            'services-page-h2': 'Our Services',
             'services-page-intro-p': 'Geez Hospital offers various modern services provided by specialist and sub-specialist doctors with high proficiency.',
-            
+
             'service1-h3': 'Specialist Internal Medicine',
             'service1-p': 'Complete examination and treatment of internal diseases by highly experienced and qualified specialist doctors. This service includes various diseases such as blood pressure, kidney disease, lung disease, hormonal imbalance, etc.',
             'service2-h3': 'Sub-Specialist Cardiology',
@@ -223,14 +229,115 @@ document.addEventListener('DOMContentLoaded', () => {
             'service17-p': 'Full pharmacy and ambulance services are provided. 24-hour pharmacy and ambulance services are available.',
             'service18-h3': 'Other Services Available',
             'service18-p': 'Geez Hospital also offers other unlisted services to the community. Inquiries for any questions or additional information are welcome.',
-
-            // Footer (Common)
+            // Footer (Common) - Moved here to be only one entry
             'footer-text': 'Copyright © 2026 Geez Hospital. All rights reserved. Developed By Aser Teklu G'
+        }, // This closes the 'eng' block - ensure this comma is there
+        'amh': { // New Amharic translation block added
+            // Header Menu Items (Common)
+            'home': 'መነሻ',
+            'services': 'አገልግሎቶች',
+            'doctors': 'ሐኪሞቻችን',
+            'news': 'ዜና',
+            'gallery': 'ማዕከለ ስዕላት',
+            'contact': 'ያግኙን',
+            'logo-alt': 'ግዕዝ ሆስፒታል አርማ',
+            'contact-us-btn': 'ያግኙን',
+            'our-location-map': 'በካርታ ላይ ይመልከቱ',
+            'view-on-map': 'በካርታ ላይ ይመልከቱ',
+
+            // Index.html Specific Content (Example translations for Amharic)
+            'hero-h2': 'ብሓልዮትና ንምረጽ፡ብሞያዊ ብቕዓትና ንእመን',
+            'hero-p': 'ግዕዝ ሆስፒታል - ለጤናዎ ቅድሚያ በመስጠት፣ ምርጥ ስፔሻሊስት እና ሳብስፔሻሊስት ሐኪሞችን ከዘመናዊ ቴክኖሎጂ መሳሪያዎች ጋር በማጣመር እየጠበቅንዎት ነው። ቀጠሮ ለማስያዝ እዚህ ይመዝገቡ።',
+            'hero-btn-appointment': 'ቀጠሮ ያስይዙ',
+            'hero-btn-services': 'አገልግሎቶቻችንን ይመልከቱ',
+            'about-h2': 'ስለእኛ',
+            'about-p1': 'በ2011 ዓ.ም የተመሰረተው ግዕዝ ሆስፒታል በማዕከላዊ ዞንና በትግራይ ከቀዳሚዎቹ አንዱ ሲሆን አለም አቀፍ ደረጃውን የጠበቀ ዘመናዊና ቀልጣፋ የህክምና አገልግሎት የሚሰጥ ተቋም ነው። በመላው ዞኑና በአጎራባች አካባቢዎች ካሉት ትላልቅና ታማኝ የህክምና ተቋማት አንዱ በመሆን አለም አቀፍ ደረጃውን የጠበቀ የህክምና አገልግሎት ለሁሉም ዜጋ ተደራሽ ለማድረግ ያለመ ነው። በተለይም አዛኝ እንክብካቤን፣ ከፍተኛ ሙያዊ ብቃትን እና ዘመናዊ መሳሪያዎችን በማቅረብ ላይ የተመሰረተ ተቋም ነው። ለታካሚዎች ደህንነት እና ለላቀ አገልግሎት ከፍተኛ ትኩረት ይሰጣል።',
+            'vision-h3': 'ራዕይ',
+            'vision-p': 'በምንሰጠው የላቀ ሙያዊ ብቃትና ታካሚን ማዕከል ባደረገው እንክብካቤ ምክንያት አለም አቀፍ ደረጃውን የጠበቀ የህክምና አገልግሎት በማቅረብ በአፍሪካ ተከባሪ የህክምና ተቋም መሆን።',
+            'mission-h3': 'ተልዕኮ',
+            'mission-p': 'ምርጥ ጥራት ያለው፣ ተመጣጣኝ፣ ተደራሽና ተጠያቂነት ያለው የህክምና አገልግሎት ለሁሉም ዜጋ በማቅረብ፤ የላቀ ሙያዊ ክህሎትንና አዛኝ እንክብካቤን ያጣመረ፣ ተደራሽ፣ ጥራቱን የጠበቀና ተመጣጣኝ ዋጋ ያለው የህክምና አገልግሎት ለህብረተሰቡ በማቅረብ፤ አለም አቀፍ ደረጃውን የጠበቀ የህክምና አሰራር መፍጠር እንዲሁም ከፍተኛ የህክምና ስነ-ምግባርን ማክበር ነው።',
+            'services-h3': 'አገልግሎቶቻችን',
+            'services-p-about': 'በርካታ የስፔሻሊስትና የሳብ ስፔሻሊስት ዘርፎችን (ለምሳሌ፦ ልብ፣ ካንሰር፣ አእምሮና ነርቭ፣ አጥንት፣ ከነርቭ በላይ፣ አይን፣ የቆዳና ውበት፣ የእናቶችና ህጻናት እንክብካቤ ምርመራዎች እንዲሁም የድንገተኛ አገልግሎት) በዘመናዊ ቴክኖሎጂና በሙያዊ ብቃት እናቀርባለን። ለዝርዝር አገልግሎቶቻችን በአገልግሎቶቻችን ርዕስ ስር ያንብቡ።',
+            'our-services-h2': 'አገልግሎቶቻችን',
+            'all-services-btn': 'ሁሉንም አገልግሎቶቻችን',
+            'doctors-h2': 'ሐኪሞቻችን',
+            'doctors-p': 'ግዕዝ ሆስፒታል ከፍተኛ ልምድና ሙያ ባላቸው ስፔሻሊስት ሐኪሞች አገልግሎት ይሰጣል።',
+            'dr-tesfay-name': 'ዶ/ር ተስፋይ አጽብሃ',
+            'dr-tesfay-specialty': 'ሳብ-ስፔሻሊስት የልብ በሽታዎች',
+            'dr-higus-name': 'ዶ/ር ሕጉስ ተክሉ',
+            'dr-higus-specialty': 'ስፔሻሊስት የውስጥ ደዌ ህክምና',
+            'appointment-btn': 'ቀጠሮ',
+            'testimonials-h2': 'የታካሚዎች ምስክርነት',
+            'testimonial-p': '"ግዕዝ ሆስፒታል በእንክብካቤአቸው እና በሙያዊ ብቃታቸው በእውነት ልዩ ናቸው። ሐኪሞቹ እጅግ በጣም ደግ እና ምርጥ ናቸው። ለሰጡኝ የህክምና እንክብካቤ በጣም አመስጋኝ ነኝ።"',
+            'testimonial-span': '- አቶ ገብረመድህን ካህሳይ',
+            'contact-h2': 'ያግኙን',
+            'contact-p': 'ለማንኛውም ጥያቄ ወይም አስተያየት፣ ሊያገኙን ይችላሉ።',
+            'address-strong': 'አድራሻ:',
+            'address-text': 'አክሱም ከተማ፣ ክንደያ ቀበሌ፣ ከኢትዮቴሌኮም ፊት ለፊት ወረድ ብሎ፣ ከሴንትራል ካፌ በኋላ',
+            'phone-strong': 'ስልክ:',
+            'email-strong': 'ኢሜይል:',
+            'facebook-strong': 'ፌስቡክ:',
+
+            // Contact Form specific translations
+            'contact-form-title': 'መልእክት ይላኩልን',
+            'form-full-name': 'ሙሉ ስም:',
+            'form-email': 'ኢሜይል:',
+            'form-subject': 'ርዕስ:',
+            'form-phone': 'ስልክ ቁጥር:',
+            'form-address': 'አድራሻ:',
+            'form-age': 'ዕድሜ:',
+            'form-gender': 'ፆታ:',
+            'form-select-gender': 'ፆታ ይምረጡ',
+            'form-gender-male': 'ወንድ',
+            'form-gender-female': 'ሴት',
+            'form-gender-other': 'ሌላ',
+            'form-message': 'መልእክት:',
+            'form-submit-btn': 'ይላኩ',
+            'our-location': 'አድራሻችን',
+
+            // Services.html Specific Content
+            'services-page-h2': 'አገልግሎቶቻችን',
+            'services-page-intro-p': 'ግዕዝ ሆስፒታል የተለያዩ ዘመናዊ አገልግሎቶችን በስፔሻሊስት እና በልዩ ስፔሻሊስት (sub specialist) ብቃት ባላቸው ሐኪሞች ይሰጣል።',
+
+            'service1-h3': 'የስፔሻሊስት የውስጥ ደዌ ህክምና',
+            'service1-p': 'ሙሉ የውስጥ ደዌ ምርመራና ህክምና በከፍተኛ ልምድና ሙያ ባላቸው ስፔሻሊስት ሐኪሞች ይሰጣል። ይህ አገልግሎት የተለያዩ በሽታዎችን እንደ የደም ግፊት፣ የኩላሊት በሽታ፣ የሳንባ በሽታ፣ የሆርሞን መዛባት፣ ወዘተ የመሳሰሉትን ያጠቃልላል።',
+            'service2-h3': 'ልዩ የስፔሻሊስት የልብ በሽታዎች ህክምና',
+            'service2-p': 'ልዩ የልብ በሽታዎች ምርመራና ህክምና በከፍተኛ ልምድና ሙያ ባላቸው ሳብ ስፔሻሊስት ሐኪሞች ይሰጣል። ECG፣ Echocardiography፣ Stress Test የመሳሰሉ ዘመናዊ መሳሪያዎችና ዘዴዎችን እንጠቀማለን።',
+            'service3-h3': 'የስፔሻሊስት አጠቃላይ ቀዶ ጥገና',
+            'service3-p': 'የስፔሻሊስት አጠቃላይ ቀዶ ጥገና በዘመናዊ መሳሪያዎችና ዘዴዎች ይሰጣል። ይህ ለተለያዩ ለምሳሌ ለ appendices, hernias, gallbladder, ወዘተ ቀዶ ጥገናዎችን ያጠቃልላል።',
+            'service4-h3': 'የስፔሻሊስት የህጻናትና ታዳጊዎች ህክምና',
+            'service4-p': 'የህጻናትና ታዳጊዎች ምርመራና ህክምና በስፔሻሊስት ሐኪም ይሰጣል። ለህጻናት የሚመጥን ልዩ እንክብካቤ እንሰጣለን።',
+            'service5-h3': 'የስፔሻሊስት የማህፀንና ጽንስ ህክምና',
+            'service5-p': 'ሙሉ የማህፀንና ጽንስ ምርመራና ህክምና በስፔሻሊስት ሐኪም ይሰጣል። ከወሊድ በፊት፣ በወሊድ ጊዜና ከወሊድ በኋላ የሚያስፈልገውን እንክብካቤ ይሰጣል።',
+            'service6-h3': 'የስፔሻሊስት ከነርቭ በላይ (ENT) ህክምና',
+            'service6-p': 'የአንገት፣ የጆሮና የአፍንጫ ምርመራና ህክምና በስፔሻሊስት ሐኪም ይሰጣል። ለተለያዩ የ ENT በሽታዎች በዘመናዊ መሳሪያዎች (Endoscopy) ምርመራና ህክምና እንሰጣለን።',
+            'service7-h3': 'የስፔሻሊስት ራዲዮሎጂ (አልትራሳውንድ፣ ራጂ፣ ሲቲ ስካን ECGን)',
+            'service7-p': 'ዘመናዊ የራዲዮሎጂ አገልግሎት (አልትራሳውንድ፣ ራጂ፣ ሲቲ ስካን ECGን) በስፔሻሊስት ሐኪም ይሰጣል። ትክክለኛ ምርመራ ለመስጠት የሚረዳ ዘመናዊ ቴክኖሎጂ እንጠቀማለን።',
+            'service8-h3': 'የስፔሻሊስት የጥርስ ህክምና',
+            'service8-p': 'ሙሉ የጥርስ ህክምና በስፔሻሊስት ሐኪም ይሰጣል። ከንጹህ ጥርስ እስከ ኮሮናና ጥርስ መቀየርን ያካተተ አገልግሎት እንሰጣለን።',
+            'service9-h3': 'የስፔሻሊስት የአከርካሪ አጥንት፣ የአንጎል እና የነርቭ ቀዶ ጥገና',
+            'service9-p': 'የስፔሻሊስት የአከርካሪ አጥንት፣ የአንጎል እና የነርቭ ቀዶ ጥገና በከፍተኛ ልምድ ባላቸው ስፔሻሊስት ሐኪሞች ይሰጣል። ለተለያዩ ነርቭ ነክ በሽታዎች ልዩ ህክምና እንሰጣለን።',
+            'service10-h3': 'የስፔሻሊስት የአጥንትና መገጣጠሚያ፣ የነርቭና የአከርካሪ ህክምና',
+            'service10-p': 'የስፔሻሊስት የአጥንትና መገጣጠሚያ፣ የነርቭና የአከርካሪ ህክምና በስፔሻሊስት ሐኪም ይሰጣል። ለስብራት፣ ለቁስልና ለመገጣጠሚያ በሽታዎች ህክምና እንሰጣለን።',
+            'service11-h3': 'የስፔሻሊስት የቆዳ፣ የሌዘርና የውበት ህክምና',
+            'service11-p': 'የስፔሻሊስት የቆዳ፣ የሌዘርና የውበት ህክምና በስፔሻሊስት ሐኪም ይሰጣል። ለተለያዩ የቆዳ በሽታዎችና የውበት እንክብካቤ እንሰጣለን።',
+            'service12-h3': 'የስፔሻሊስት ማደንዘዣና የህመም ማስታገሻ',
+            'service12-p': 'የስፔሻሊስት ማደንዘዣና የህመም ማስታገሻ ህክምና በስፔሻሊስት ሐኪም ይሰጣል። ከቀዶ ጥገና በፊትና በኋላ የሚያስፈልገውን እንክብካቤ እንሰጣለን።',
+            'service13-h3': 'ሙሉ ዘመናዊ የላብራቶሪ አገልግሎት',
+            'service13-p': 'ሙሉ ዘመናዊ የላብራቶሪ አገልግሎት ይሰጣል። ለሁሉም አይነት የደም፣ የሽንትና ሌሎች ባዮሎጂካል ምርመራዎች በዘመናዊ መሳሪያዎች አገልግሎት እንሰጣለን።',
+            'service14-h3': 'የፊዚዮቴራፒ ምርመራና ህክምና',
+            'service14-p': 'ሙሉ የፊዚዮቴራፒ ምርመራና ህክምና በፊዚዮቴራፒ ሐኪም ይሰጣል። ለተለያዩ የአካል ቅርጽና እንቅስቃሴ መዛባቶች ህክምና እንሰጣለን።',
+            'service15-h3': 'የስፔሻሊስት የስነ-አእምሮ ህክምና',
+            'service15-p': 'የስፔሻሊስት የስነ-አእምሮ ህክምና ይሰጣል። ለተለያዩ የአእምሮ በሽታዎች ምክርና ህክምና እንሰጣለን።',
+            'service16-h3': 'ሙሉ የወሊድ አገልግሎት',
+            'service16-p': 'ሙሉ የወሊድ አገልግሎት፣ ከወሊድ በፊት እስከ ወሊድ በኋላ፣ በከፍተኛ ልምድና ክህሎት ባላቸው ባለሙያዎችና ስፔሻሊስት ሐኪሞች፣ ዘመናዊ መሳሪያዎችን በመጠቀም ይሰጣል።',
+            'service17-h3': 'ሙሉ የመድሃኒት አቅርቦት (ፋርማሲ) እና አምቡላንስ',
+            'service17-p': 'ሙሉ የመድሃኒት አቅርቦት (ፋርማሲ) እና አምቡላንስ አገልግሎት ይሰጣል። የ24 ሰዓት ፋርማሲና አምቡላንስ አገልግሎት ዝግጁ ነው።',
+            'service18-h3': 'ሌሎች አገልግሎቶችም ይገኛሉ',
+            'service18-p': 'ሌሎች ያልተዘረዘሩ አገልግሎቶችን ለማህበረሰቡ ያቀርባል። ለማንኛውም ጥያቄ ወይም ተጨማሪ መረጃ መጠየቅ ይቻላል።',
+            // Footer (Common) - Moved here to be only one entry
+            'footer-text': 'Copyright © 2026 Geez Hospital. All rights reserved. Developed By Aser Teklu Gebrekidan'
         }
-        // Amharic translation block would go here if you decide to implement it fully.
-        // 'amh': {
-        //     // ... Amharic translations
-        // }
     };
 
     const applyLanguage = (lang) => {
@@ -250,12 +357,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const headerLogoImg = document.querySelector('header .logo img');
         if (headerLogoImg) headerLogoImg.alt = currentTranslations['logo-alt'];
 
+        // Top Bar Contact Us Button (New Element)
+        const topBarContactBtn = document.querySelector('.top-bar .contact-btn'); // Assuming a class 'contact-btn' for this button
+        if (topBarContactBtn) {
+            topBarContactBtn.textContent = currentTranslations['contact-us-btn'];
+        }
+
         // Footer Text
         const footerP = document.querySelector('footer #footer-text');
         if (footerP) footerP.innerHTML = currentTranslations['footer-text'];
 
         // HTML Language attribute
-        document.documentElement.lang = (lang === 'eng') ? 'en' : 'ti'; // 'ti' for Tigrigna, 'en' for English
+        document.documentElement.lang = (lang === 'eng') ? 'en' : (lang === 'amh' ? 'am' : 'ti'); // 'ti' for Tigrigna, 'en' for English, 'am' for Amharic
 
         // Top Bar Info (Address, Phone, Email) - These are common for all pages
         const topBarAddressSpan = document.querySelector('.top-bar .address-info span');
@@ -295,7 +408,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (document.querySelector('#doctors h2')) document.querySelector('#doctors h2').textContent = currentTranslations['doctors-h2'];
             if (document.querySelector('#doctors p')) document.querySelector('#doctors p').textContent = currentTranslations['doctors-p'];
-            
+
             const doctorCards = document.querySelectorAll('.doctor-card');
             if (doctorCards[0]) {
                 if (doctorCards[0].querySelector('h3')) doctorCards[0].querySelector('h3').textContent = currentTranslations['dr-tesfay-name'];
@@ -350,7 +463,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     serviceGridIndexPage.appendChild(serviceCard);
                 });
             }
-        } 
+        }
         else if (currentPage === 'services.html') {
             // Services Page Content
             const pageHeroH2 = document.getElementById('services-page-h2');
@@ -374,7 +487,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (document.getElementById('contact-page-h2')) document.getElementById('contact-page-h2').textContent = currentTranslations['contact-h2'];
             if (document.querySelector('#contact-page-hero p')) document.querySelector('#contact-page-hero p').textContent = currentTranslations['contact-p'];
             if (document.querySelector('.contact-form-section h2')) document.querySelector('.contact-form-section h2').textContent = currentTranslations['contact-form-title'];
-            
+
             // Form Labels
             // Using data-translate for labels too
             document.querySelectorAll('label[data-translate]').forEach(label => {
@@ -393,9 +506,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (genderSelect.options[2]) genderSelect.options[2].textContent = currentTranslations['form-gender-female'];
                 if (genderSelect.options[3]) genderSelect.options[3].textContent = currentTranslations['form-gender-other'];
             }
-            
+
             // Submit Button
             if (document.querySelector('.contact-form-section button[type="submit"]')) document.querySelector('.contact-form-section button[type="submit"]').textContent = currentTranslations['form-submit-btn'];
+
+            // Our Location section title
+            const ourLocationMapTitle = document.querySelector('.contact-map-section h2');
+            if (ourLocationMapTitle) {
+                ourLocationMapTitle.textContent = currentTranslations['our-location-map'];
+            }
+
+            // View on Map button
+            const viewOnMapBtn = document.querySelector('.contact-map-section .btn'); // Assuming the button has class 'btn'
+            if (viewOnMapBtn) {
+                viewOnMapBtn.textContent = currentTranslations['view-on-map'];
+            }
 
             // Update page title
             const pageTitle = document.querySelector('title');
@@ -406,10 +531,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     languageSwitcher.addEventListener('change', (event) => {
         const selectedLang = event.target.value;
-        if (selectedLang === 'tig' || selectedLang === 'eng' || selectedLang === 'amh') { // Added amh
+        if (selectedLang === 'tig' || selectedLang === 'eng' || selectedLang === 'amh') {
             localStorage.setItem('selectedLanguage', selectedLang);
-            updateUrlLanguage(selectedLang); // Update URL before reloading
-            window.location.reload(); 
+            updateUrlLanguage(selectedLang);
+            window.location.reload();
         }
     });
 
