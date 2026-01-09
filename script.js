@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'gallery': 'ጋለሪ',
             'contact': 'ምትእስሳር',
             'logo-alt': 'ግዕዝ ሆስፒታል ሎጎ',
+            'hospital-name-h1': 'ግዕዝ ሆስፒታል', // Added for hospital name
             'contact-us-btn': 'ምትእስሳር',
             'our-location-map': 'ኣብ ካርታ ርኣዩና',
             'view-on-map': 'ኣብ ካርታ ርኣይ',
@@ -112,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'service12-h3': 'ስፔሻሊስት መደቀስን ቃንዛን',
             'service12-p': 'ስፔሻሊስት መደቀስን ቃንዛን ሕክምና ብስፔሻሊስት ሓኪም ይወሃብ። ቅድሚን ድሕሪን መጥባሕቲ ዘድሊ ክንክን ንህብ።',
             'service13-h3': 'ምሉእ ዘመናዊ ላቦራቶሪ',
-            'service13-p': 'ምሉእ ዘመናዊ ላቦራቶሪ ግልጋሎት ይወሃብ። ንኹሎም ዓይነታት መርመራ ደምን ሽንትን ካልኦት ባዮሎጂካዊ መርመራታትን ብዘመናዊ መሳርሒታትን ግልጋሎት ንህብ።',
+            'service13-p': 'ምሉእ ዘመናዊ ላቦራቶሪ ግልጋሎት ይወሃብ። ንኹሎም ዓይነታት መርመራ ደምን ሽንትን ካልኦት ባዮሎጂካዊ መርመራታትን ብዘመናዊ መሳርሒታት ግልጋሎት ንህብ።',
             'service14-h3': 'መርመራን ሕክምናን ፊዝዮቴራፒ',
             'service14-p': 'ምሉእ መርመራን ሕክምናን ብፊዝዮቴራፒ ሓኪም ግልጋሎት ይወሃብ። ንዝተፈላለዩ ዓይነት ሕማማት ቅርጺ ኣካልን ምንቅስቓስን ሕክምና ንህብ።',
             'service15-h3': 'ስፔሻሊስት ሕክምና ስነ ኣእምሮ',
@@ -122,8 +123,17 @@ document.addEventListener('DOMContentLoaded', () => {
             'service17-h3': 'ምሉእ ኣቕሪቦት መድሓኒት(Pharmacy)ን ኣምቡላንስን',
             'service17-p': 'ምሉእ ኣቕሪቦት መድሓኒት(Pharmacy)ን ኣምቡላንስን ግልጋሎት ይወሃብ። 24 ሰዓት ግልጋሎት ፋርማሲን ኣምቡላንስን ድሉው እዩ።',
             'service18-h3': 'ካልኦት ግልጋሎትን ይረኽቡ',
-            'service18-p': 'ግዕዝ ሆስፒታል ካልኦት ዘይተዘርዘሩ ግልጋሎት ንሕብረተሰብ ነቕርብ። ንዝኾነ ሕቶ ወይ ተወሳኺ ሓበሬታ ምሕታት ይከኣል እዩ።',
-            'footer-text': 'Copyright © 2026 Geez Hospital. All rights reserved. Developed By Aser Teklu Gebrekidan'
+            'service18-p': 'ግዕዝ ሆስፒታል ካልኦት ዘይተዘርዘሩ ግልጋሎት ንሕብረተሰብን ነቕርብ። ንዝኾነ ሕቶ ወይ ተወሳኺ ሓበሬታ ምሕታት ይከኣል እዩ።',
+            'footer-text': 'Copyright © 2026 Geez Hospital. All rights reserved. Developed By Aser Teklu Gebrekidan',
+            'news-page-h2': 'ሓድሽ ሓበሬታ',
+            'news-page-intro-p': 'ኣብ ግዕዝ ሆስፒታል ዝወጽኡ ሓደሽቲ ሓበሬታታት፣ ሕክምናዊ ምኽሪታትን ኣገደስቲ ዝርዝራትን ኣብዚ ተኸታተሉ።',
+            'gallery-page-h2': 'ጋለሪ',
+            'gallery-page-intro-p': 'ናይ ግዕዝ ሆስፒታል ዝተፈላለዩ ምስልታት ኩሎም ዘመነዎት መሳርሕታትን ዝተገብሩ ሕክምናዊ ክንክንን ኣብዚ ምርኣይ ይኽእሉ እዮም ።',
+            'doctors-page-h2': 'ሓኻይምና',
+            'doctors-page-intro-p': 'ግዕዝ ሆስፒታል ብልዑል ብቕዓትን ተሞኩሮን ዘለዎም ስፔሻሊስትን ፍሉይ ስፔሻሊስትን ሓኻይም ዝተፈላለዩ ግልጋሎታት ይህብ። ብሓልዮትና ንምረጽ፡ብሞያዊ ብቕዓትና ንእመን።',
+            'dr-gebreab-name': 'ዶ/ር ገብረኣብ ነጋ',
+            'dr-gebreab-specialty': 'ስፔሻሊስት ሕክምና ህፃውንቲ',
+            'dr-gebreab-experience': 'ዶ/ር ገብረኣብ ንልዕሊ 8 ዓመታት ኣብ ሕክምና ህፃውንቲ ኣገልጊሎም፣ከምኡ እዉን ኣብ ኣኽሱም ዩንቨርስቲ ሓጋዚ ፕሮፌሶር እዮም። ንህጻናት ዝምጥን ክንክንን ሕክምናን ይህቡ።'
         },
         'eng': {
             // Header Menu Items (Common)
@@ -134,6 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'gallery': 'Gallery',
             'contact': 'Contact',
             'logo-alt': 'Geez Hospital Logo',
+            'hospital-name-h1': 'Geez Hospital', // Added for hospital name
             'contact-us-btn': 'Contact Us',
             'our-location-map': 'View Us on Map',
             'view-on-map': 'View on Map',
@@ -228,7 +239,16 @@ document.addEventListener('DOMContentLoaded', () => {
             'service17-p': 'Full pharmacy and ambulance services are provided. 24-hour pharmacy and ambulance services are available.',
             'service18-h3': 'Other Services Available',
             'service18-p': 'Geez Hospital also offers other unlisted services to the community. Inquiries for any questions or additional information are welcome.',
-            'footer-text': 'Copyright © 2026 Geez Hospital. All rights reserved. Developed By Aser Teklu G'
+            'footer-text': 'Copyright © 2026 Geez Hospital. All rights reserved. Developed By Aser Teklu G',
+            'news-page-h2': 'News & Updates',
+            'news-page-intro-p': 'Follow the latest news, medical advice, and important announcements from Geez Hospital here.',
+            'gallery-page-h2': 'Gallery',
+            'gallery-page-intro-p': 'Here you can view various images of Geez Hospital, including all modern equipment and medical care provided.',
+            'doctors-page-h2': 'Our Doctors',
+            'doctors-page-intro-p': 'Geez Hospital offers various services by highly qualified and experienced specialist and sub-specialist doctors. Chosen for our care, trusted for our expertise.',
+            'dr-gebreab-name': 'Dr. Gebreab Nega',
+            'dr-gebreab-specialty': 'Specialist in Pediatrics',
+            'dr-gebreab-experience': 'Dr. Gebreab has served for over 8 years in pediatric medicine and is also an Assistant Professor at Axum University. He provides appropriate care and treatment for children.'
         },
         'amh': {
             // Header Menu Items (Common) - TEMPORARILY USING ENGLISH
@@ -239,6 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'gallery': 'ጋለሪ', // Gallery
             'contact': 'እውቂያ', // Contact
             'logo-alt': 'ግዕዝ ሆስፒታል አርማ', // Geez Hospital Logo
+            'hospital-name-h1': 'ግዕዝ ሆስፒታል', // Added for hospital name
             'contact-us-btn': 'እውቂያ', // Contact Us
             'our-location-map': 'በካርታ እኛን ይመልከቱ', // View Us on Map
             'view-on-map': 'በካርታ ይመልከቱ', // View on Map
@@ -333,7 +354,16 @@ document.addEventListener('DOMContentLoaded', () => {
             'service17-p': 'ሙሉ ፋርማሲና አምቡላንስ አገልግሎቶች ይሰጣል። 24 ሰዓት የፋርማሲና አምቡላንስ አገልግሎት ይገኛል።', // Full pharmacy and ambulance services are provided. 24-hour pharmacy and ambulance services are available.
             'service18-h3': 'ሌሎች አገልግሎቶች አሉ', // Other Services Available
             'service18-p': 'ግዕዝ ሆስፒታል ሌሎች ያልተዘረዘሩ አገልግሎቶችን ለህብረተሰቡ እናቀርባለን። ለማንኛውም ጥያቄ ወይም ተጨማሪ መረጃ መጠየቅ ይቻላል።', // Geez Hospital also offers other unlisted services to the community. Inquiries for any questions or additional information are welcome.
-            'footer-text': 'Copyright © 2026 Geez Hospital. All rights reserved. Developed By Aser Teklu Gebrekidan'
+            'footer-text': 'Copyright © 2026 Geez Hospital. All rights reserved. Developed By Aser Teklu Gebrekidan',
+            'news-page-h2': 'ዜናዎችና ዝመናዎች',
+            'news-page-intro-p': 'ከግዕዝ ሆስፒታል የሚወጡ የቅርብ ጊዜ ዜናዎችን፣ የህክምና ምክሮችን እና ጠቃሚ ማስታወቂያዎችን እዚህ ይከታተሉ።',
+            'gallery-page-h2': 'ጋለሪ',
+            'gallery-page-intro-p': 'እዚህ የግዕዝ ሆስፒታልን የተለያዩ ምስሎች ሁሉንም ዘመናዊ መሳሪያዎች እና የተሰጡ የህክምና እንክብካቤዎችን ማየት ይችላሉ።',
+            'doctors-page-h2': 'ሐኪሞቻችን',
+            'doctors-page-intro-p': 'ግዕዝ ሆስፒታል በከፍተኛ ብቃትና ልምድ ባላቸው ልዩ ባለሙያ እና ንዑስ-ልዩ ባለሙያ ሐኪሞች የተለያዩ አገልግሎቶችን ይሰጣል። በእንክብካቤአችን ተመራጭ፡ በሙያዊ ብቃታችን የታመን።',
+            'dr-gebreab-name': 'ዶ/ር ገብረኣብ ነጋ',
+            'dr-gebreab-specialty': 'የህጻናት ህክምና ልዩ ባለሙያ',
+            'dr-gebreab-experience': 'ዶ/ር ገብረኣብ ከ8 ዓመታት በላይ በህጻናት ህክምና ያገለገሉ ሲሆን በአክሱም ዩኒቨርሲቲ ረዳት ፕሮፌሰርም ናቸው። ለህጻናት ተስማሚ የሆነ እንክብካቤና ህክምና ይሰጣሉ።'
         }
     };
 
@@ -345,96 +375,100 @@ document.addEventListener('DOMContentLoaded', () => {
         // Navigation Links
         document.querySelectorAll('nav ul li a').forEach(link => {
             const key = link.getAttribute('data-translate');
-            if (key && currentTranslations && currentTranslations[key]) { // Added currentTranslations check
+            if (key && currentTranslations && currentTranslations[key]) {
                 link.textContent = currentTranslations[key];
             }
         });
 
         // Header Logo Alt Text
         const headerLogoImg = document.querySelector('header .logo img');
-        if (headerLogoImg && currentTranslations) headerLogoImg.alt = currentTranslations['logo-alt']; // Added currentTranslations check
+        if (headerLogoImg && currentTranslations) headerLogoImg.alt = currentTranslations['logo-alt'];
 
-        // Top Bar Contact Us Button (New Element)
-        const topBarContactBtn = document.querySelector('.top-bar .contact-btn');
-        if (topBarContactBtn && currentTranslations) { // Added currentTranslations check
+        // Header Hospital Name (H1)
+        const headerH1 = document.querySelector('header .logo h1');
+        if (headerH1 && currentTranslations) headerH1.textContent = currentTranslations['hospital-name-h1'];
+
+        // Top Bar Contact Us Button
+        const topBarContactBtn = document.querySelector('.top-bar .contact-button'); // Targeted directly by its class
+        if (topBarContactBtn && currentTranslations) {
             topBarContactBtn.textContent = currentTranslations['contact-us-btn'];
         }
 
         // Footer Text
         const footerP = document.querySelector('footer #footer-text');
-        if (footerP && currentTranslations) footerP.innerHTML = currentTranslations['footer-text']; // Added currentTranslations check
+        if (footerP && currentTranslations) footerP.innerHTML = currentTranslations['footer-text'];
 
         // HTML Language attribute
         document.documentElement.lang = (lang === 'eng') ? 'en' : (lang === 'amh' ? 'am' : 'ti');
 
         // Top Bar Info (Address, Phone, Email) - These are common for all pages
-        const topBarAddressSpan = document.querySelector('.top-bar .address-info .address-info-span');
-        if (topBarAddressSpan && currentTranslations) { // Added currentTranslations check
+        const topBarAddressSpan = document.querySelector('.top-bar .address-info span'); // Corrected selector
+        if (topBarAddressSpan && currentTranslations) {
             topBarAddressSpan.innerHTML = `<i class="fas fa-map-marker-alt"></i> ${currentTranslations['address-text']}`;
         }
 
         const topBarPhoneSpan = document.querySelector('.top-bar .contact-info span:nth-of-type(1)');
-        if (topBarPhoneSpan && currentTranslations) { // Added currentTranslations check
-            // Updated phone numbers with tel: links for mobile clickability
+        if (topBarPhoneSpan && currentTranslations) {
             topBarPhoneSpan.innerHTML = `<i class="fas fa-phone"></i> <a href="tel:+251920008338">+251920008338</a> / <a href="tel:+251962333388">+251962333388</a>`;
         }
 
         const topBarEmailSpan = document.querySelector('.top-bar .contact-info span:nth-of-type(2)');
-        if (topBarEmailSpan && currentTranslations) { // Added currentTranslations check
-            topBarEmailSpan.innerHTML = `<i class="fas fa-envelope"></i> info@geezhospital.com`;
+        if (topBarEmailSpan && currentTranslations) {
+            topBarEmailSpan.innerHTML = `<i class="fas fa-envelope"></i> geezhospital@gmail.com`; // Ensure email is consistent
         }
 
         // --- Page-specific content updates ---
         if (currentPage === 'index.html' || currentPage === '') {
             // Index Page Content
-            if (document.querySelector('#hero h2') && currentTranslations) document.querySelector('#hero h2').textContent = currentTranslations['hero-h2'];
-            if (document.querySelector('#hero p') && currentTranslations) document.querySelector('#hero p').textContent = currentTranslations['hero-p'];
-            if (document.querySelector('#hero .btn.btn-primary') && currentTranslations) document.querySelector('#hero .btn.btn-primary').textContent = currentTranslations['hero-btn-appointment'];
-            if (document.querySelector('#hero .btn.btn-secondary') && currentTranslations) document.querySelector('#hero .btn.btn-secondary').textContent = currentTranslations['hero-btn-services'];
+            if (document.querySelector('#hero h2')) document.querySelector('#hero h2').textContent = currentTranslations['hero-h2'];
+            if (document.querySelector('#hero p')) document.querySelector('#hero p').textContent = currentTranslations['hero-p'];
+            if (document.querySelector('#hero .btn.btn-primary')) document.querySelector('#hero .btn.btn-primary').textContent = currentTranslations['hero-btn-appointment'];
+            if (document.querySelector('#hero .btn.btn-secondary')) document.querySelector('#hero .btn.btn-secondary').textContent = currentTranslations['hero-btn-services'];
 
-            if (document.querySelector('#about h2') && currentTranslations) document.querySelector('#about h2').textContent = currentTranslations['about-h2'];
-            if (document.querySelector('#about p:nth-of-type(1)') && currentTranslations) document.querySelector('#about p:nth-of-type(1)').textContent = currentTranslations['about-p1'];
-            if (document.querySelector('#about h3:nth-of-type(1)') && currentTranslations) document.querySelector('#about h3:nth-of-type(1)').textContent = currentTranslations['vision-h3'];
-            if (document.querySelector('#about p:nth-of-type(2)') && currentTranslations) document.querySelector('#about p:nth-of-type(2)').textContent = currentTranslations['vision-p'];
-            if (document.querySelector('#about h3:nth-of-type(2)') && currentTranslations) document.querySelector('#about h3:nth-of-type(2)').textContent = currentTranslations['mission-h3'];
-            if (document.querySelector('#about p:nth-of-type(3)') && currentTranslations) document.querySelector('#about p:nth-of-type(3)').textContent = currentTranslations['mission-p'];
-            if (document.querySelector('#about h3:nth-of-type(3)') && currentTranslations) document.querySelector('#about h3:nth-of-type(3)').textContent = currentTranslations['services-h3'];
-            if (document.querySelector('#about p:nth-of-type(4)') && currentTranslations) document.querySelector('#about p:nth-of-type(4)').textContent = currentTranslations['services-p-about'];
+            if (document.querySelector('#about h2')) document.querySelector('#about h2').textContent = currentTranslations['about-h2'];
+            if (document.querySelector('#about p:nth-of-type(1)')) document.querySelector('#about p:nth-of-type(1)').textContent = currentTranslations['about-p1'];
+            if (document.querySelector('#about h3:nth-of-type(1)')) document.querySelector('#about h3:nth-of-type(1)').textContent = currentTranslations['vision-h3'];
+            if (document.querySelector('#about p:nth-of-type(2)')) document.querySelector('#about p:nth-of-type(2)').textContent = currentTranslations['vision-p'];
+            if (document.querySelector('#about h3:nth-of-type(2)')) document.querySelector('#about h3:nth-of-type(2)').textContent = currentTranslations['mission-h3'];
+            if (document.querySelector('#about p:nth-of-type(3)')) document.querySelector('#about p:nth-of-type(3)').textContent = currentTranslations['mission-p'];
+            if (document.querySelector('#about h3:nth-of-type(3)')) document.querySelector('#about h3:nth-of-type(3)').textContent = currentTranslations['services-h3'];
+            if (document.querySelector('#about p:nth-of-type(4)')) document.querySelector('#about p:nth-of-type(4)').textContent = currentTranslations['services-p-about'];
 
-            if (document.querySelector('#services h2') && currentTranslations) document.querySelector('#services h2').textContent = currentTranslations['our-services-h2'];
-            if (document.querySelector('#services .btn-secondary') && currentTranslations) document.querySelector('#services .btn-secondary').textContent = currentTranslations['all-services-btn'];
+            if (document.querySelector('#services h2')) document.querySelector('#services h2').textContent = currentTranslations['our-services-h2'];
+            if (document.querySelector('#services .btn-secondary')) document.querySelector('#services .btn-secondary').textContent = currentTranslations['all-services-btn'];
 
-            if (document.querySelector('#doctors h2') && currentTranslations) document.querySelector('#doctors h2').textContent = currentTranslations['doctors-h2'];
-            if (document.querySelector('#doctors p') && currentTranslations) document.querySelector('#doctors p').textContent = currentTranslations['doctors-p'];
+            if (document.querySelector('#doctors h2')) document.querySelector('#doctors h2').textContent = currentTranslations['doctors-h2'];
+            if (document.querySelector('#doctors p')) document.querySelector('#doctors p').textContent = currentTranslations['doctors-p'];
 
-            const doctorCards = document.querySelectorAll('.doctor-card');
-            if (doctorCards[0] && currentTranslations) {
+            const doctorCards = document.querySelectorAll('#doctors .doctor-card'); // Specific selector for index.html doctor cards
+            if (doctorCards[0]) {
                 if (doctorCards[0].querySelector('h3')) doctorCards[0].querySelector('h3').textContent = currentTranslations['dr-tesfay-name'];
                 if (doctorCards[0].querySelector('p')) doctorCards[0].querySelector('p').textContent = currentTranslations['dr-tesfay-specialty'];
                 if (doctorCards[0].querySelector('.btn-small')) doctorCards[0].querySelector('.btn-small').textContent = currentTranslations['appointment-btn'];
             }
-            if (doctorCards[1] && currentTranslations) {
+            if (doctorCards[1]) {
                 if (doctorCards[1].querySelector('h3')) doctorCards[1].querySelector('h3').textContent = currentTranslations['dr-higus-name'];
                 if (doctorCards[1].querySelector('p')) doctorCards[1].querySelector('p').textContent = currentTranslations['dr-higus-specialty'];
                 if (doctorCards[1].querySelector('.btn-small')) doctorCards[1].querySelector('.btn-small').textContent = currentTranslations['appointment-btn'];
             }
 
-            if (document.querySelector('#testimonials h2') && currentTranslations) document.querySelector('#testimonials h2').textContent = currentTranslations['testimonials-h2'];
-            if (document.querySelector('.testimonial-card p') && currentTranslations) document.querySelector('.testimonial-card p').textContent = currentTranslations['testimonial-p'];
-            if (document.querySelector('.testimonial-card span') && currentTranslations) document.querySelector('.testimonial-card span').textContent = currentTranslations['testimonial-span'];
+            if (document.querySelector('#testimonials h2')) document.querySelector('#testimonials h2').textContent = currentTranslations['testimonials-h2'];
+            if (document.querySelector('.testimonial-card p')) document.querySelector('.testimonial-card p').textContent = currentTranslations['testimonial-p'];
+            if (document.querySelector('.testimonial-card span')) document.querySelector('.testimonial-card span').textContent = currentTranslations['testimonial-span'];
 
-            // Updated selector to target the contact section by its new ID
-            if (document.querySelector('#contact-section h2') && currentTranslations) document.querySelector('#contact-section h2').textContent = currentTranslations['contact-h2'];
-            if (document.querySelector('#contact-section p:nth-of-type(1)') && currentTranslations) document.querySelector('#contact-section p:nth-of-type(1)').textContent = currentTranslations['contact-p'];
+            if (document.querySelector('#contact-section h2')) document.querySelector('#contact-section h2').textContent = currentTranslations['contact-h2'];
+            if (document.querySelector('#contact-section p')) document.querySelector('#contact-section p').textContent = currentTranslations['contact-p'];
+            if (document.querySelector('#contact-section .btn')) document.querySelector('#contact-section .btn').textContent = currentTranslations['contact-us-btn'];
 
-            // Dynamic Services Loading for index.html (This part should only run if serviceGridIndexPage exists)
+            // Dynamic Services Loading for index.html
             const serviceGridIndexPage = document.querySelector('#services .service-grid');
-            if (serviceGridIndexPage && currentTranslations) { // Added currentTranslations check
+            if (serviceGridIndexPage) {
                 const servicesForIndexPage = [
                     { name: currentTranslations["service1-h3"], icon: "fas fa-stethoscope", description: currentTranslations["service1-p"] },
                     { name: currentTranslations["service2-h3"], icon: "fas fa-heartbeat", description: currentTranslations["service2-p"] },
                     { name: currentTranslations["service3-h3"], icon: "fas fa-surgical-mask", description: currentTranslations["service3-p"] },
                     { name: currentTranslations["service4-h3"], icon: "fas fa-baby", description: currentTranslations["service4-p"] },
+                    // ... (rest of the 18 services)
                     { name: currentTranslations["service5-h3"], icon: "fas fa-venus-mars", description: currentTranslations["service5-p"] },
                     { name: currentTranslations["service6-h3"], icon: "fas fa-ear", description: currentTranslations["service6-p"] },
                     { name: currentTranslations["service7-h3"], icon: "fas fa-x-ray", description: currentTranslations["service7-p"] },
@@ -466,14 +500,14 @@ document.addEventListener('DOMContentLoaded', () => {
         else if (currentPage === 'services.html') {
             // Services Page Content
             const pageHeroH2 = document.getElementById('services-page-h2');
-            if (pageHeroH2 && currentTranslations) pageHeroH2.textContent = currentTranslations['services-page-h2'];
+            if (pageHeroH2) pageHeroH2.textContent = currentTranslations['services-page-h2'];
 
             const pageHeroP = document.getElementById('services-page-intro-p');
-            if (pageHeroP && currentTranslations) pageHeroP.textContent = currentTranslations['services-page-intro-p'];
+            if (pageHeroP) pageHeroP.textContent = currentTranslations['services-page-intro-p'];
 
             for (let i = 1; i <= 18; i++) {
                 const serviceItem = document.getElementById(`service-item-${i}`);
-                if (serviceItem && currentTranslations) { // Added currentTranslations check
+                if (serviceItem) {
                     const h3Element = serviceItem.querySelector('h3');
                     const pElement = serviceItem.querySelector('p');
                     if (h3Element) h3Element.textContent = currentTranslations[`service${i}-h3`];
@@ -481,47 +515,92 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         }
+        else if (currentPage === 'doctors.html') {
+            // Doctors Page Content
+            const pageHeroH2 = document.querySelector('#page-hero h2');
+            if (pageHeroH2) pageHeroH2.textContent = currentTranslations['doctors-page-h2'];
+            const pageHeroP = document.querySelector('#page-hero p');
+            if (pageHeroP) pageHeroP.textContent = currentTranslations['doctors-page-intro-p'];
+
+            const doctorCards = document.querySelectorAll('.doctor-full-card');
+            if (doctorCards[0]) {
+                if (doctorCards[0].querySelector('h3')) doctorCards[0].querySelector('h3').textContent = currentTranslations['dr-tesfay-name'];
+                if (doctorCards[0].querySelector('.specialty')) doctorCards[0].querySelector('.specialty').textContent = currentTranslations['dr-tesfay-specialty'];
+                if (doctorCards[0].querySelector('.experience')) doctorCards[0].querySelector('.experience').textContent = currentTranslations['dr-tesfay-experience'] || ''; // Assuming experience text can be here too.
+                if (doctorCards[0].querySelector('.btn-small')) doctorCards[0].querySelector('.btn-small').textContent = currentTranslations['appointment-btn'];
+            }
+            if (doctorCards[1]) {
+                if (doctorCards[1].querySelector('h3')) doctorCards[1].querySelector('h3').textContent = currentTranslations['dr-higus-name'];
+                if (doctorCards[1].querySelector('.specialty')) doctorCards[1].querySelector('.specialty').textContent = currentTranslations['dr-higus-specialty'];
+                if (doctorCards[1].querySelector('.experience')) doctorCards[1].querySelector('.experience').textContent = currentTranslations['dr-higus-experience'] || '';
+                if (doctorCards[1].querySelector('.btn-small')) doctorCards[1].querySelector('.btn-small').textContent = currentTranslations['appointment-btn'];
+            }
+            if (doctorCards[2]) {
+                if (doctorCards[2].querySelector('h3')) doctorCards[2].querySelector('h3').textContent = currentTranslations['dr-gebreab-name'];
+                if (doctorCards[2].querySelector('.specialty')) doctorCards[2].querySelector('.specialty').textContent = currentTranslations['dr-gebreab-specialty'];
+                if (doctorCards[2].querySelector('.experience')) doctorCards[2].querySelector('.experience').textContent = currentTranslations['dr-gebreab-experience'] || '';
+                if (doctorCards[2].querySelector('.btn-small')) doctorCards[2].querySelector('.btn-small').textContent = currentTranslations['appointment-btn'];
+            }
+
+        }
+        else if (currentPage === 'news.html') {
+            // News Page Content
+            const pageHeroH2 = document.querySelector('#page-hero h2');
+            if (pageHeroH2) pageHeroH2.textContent = currentTranslations['news-page-h2'];
+            const pageHeroP = document.querySelector('#page-hero p');
+            if (pageHeroP) pageHeroP.textContent = currentTranslations['news-page-intro-p'];
+            // You'll need to add specific data-translate attributes or IDs to news card elements if you want to translate them dynamically.
+            // For now, these are static in the HTML.
+        }
+        else if (currentPage === 'gallery.html') {
+            // Gallery Page Content
+            const pageHeroH2 = document.querySelector('#page-hero h2');
+            if (pageHeroH2) pageHeroH2.textContent = currentTranslations['gallery-page-h2'];
+            const pageHeroP = document.querySelector('#page-hero p');
+            if (pageHeroP) pageHeroP.textContent = currentTranslations['gallery-page-intro-p'];
+            // Gallery items are currently static in HTML with overlay text. If you want to translate those, add data-translate attributes.
+        }
         else if (currentPage === 'contact.html') {
             // Contact Page Content
-            if (document.getElementById('contact-page-h2') && currentTranslations) document.getElementById('contact-page-h2').textContent = currentTranslations['contact-h2'];
-            if (document.querySelector('#contact-page-hero p') && currentTranslations) document.querySelector('#contact-page-hero p').textContent = currentTranslations['contact-p'];
-            if (document.querySelector('.contact-form-section h2') && currentTranslations) document.querySelector('.contact-form-section h2').textContent = currentTranslations['contact-form-title'];
+            if (document.querySelector('#contact-page-hero h2')) document.querySelector('#contact-page-hero h2').textContent = currentTranslations['contact-h2'];
+            if (document.querySelector('#contact-page-hero p')) document.querySelector('#contact-page-hero p').textContent = currentTranslations['contact-p'];
+            if (document.querySelector('.contact-form-section h2')) document.querySelector('.contact-form-section h2').textContent = currentTranslations['contact-form-title'];
 
             // Form Labels
-            document.querySelectorAll('label[data-translate]').forEach(label => {
+            document.querySelectorAll('.form-group label').forEach(label => { // Changed selector to be more robust
                 const key = label.getAttribute('data-translate');
-                if (key && currentTranslations && currentTranslations[key]) { // Added currentTranslations check
+                if (key && currentTranslations && currentTranslations[key]) {
                     label.textContent = currentTranslations[key];
                 }
             });
 
             // Gender Options
             const genderSelect = document.getElementById('gender');
-            if (genderSelect && currentTranslations) { // Added currentTranslations check
+            if (genderSelect) {
                 if (genderSelect.options[0]) genderSelect.options[0].textContent = currentTranslations['form-select-gender'];
-                if (genderSelect.options[1]) genderSelect.options[1].textContent = currentTranslations['form-gender-male']; // Corrected syntax
-                if (genderSelect.options[2]) genderSelect.options[2].textContent = currentTranslations['form-gender-female']; // Corrected syntax
-                if (genderSelect.options[3]) genderSelect.options[3].textContent = currentTranslations['form-gender-other']; // Corrected syntax
+                if (genderSelect.options[1]) genderSelect.options[1].textContent = currentTranslations['form-gender-male'];
+                if (genderSelect.options[2]) genderSelect.options[2].textContent = currentTranslations['form-gender-female'];
+                if (genderSelect.options[3]) genderSelect.options[3].textContent = currentTranslations['form-gender-other'];
             }
 
             // Submit Button
-            if (document.querySelector('.contact-form-section button[type="submit"]') && currentTranslations) document.querySelector('.contact-form-section button[type="submit"]').textContent = currentTranslations['form-submit-btn'];
+            if (document.querySelector('.contact-form-section button[type="submit"]')) document.querySelector('.contact-form-section button[type="submit"]').textContent = currentTranslations['form-submit-btn'];
 
             // Our Location section title
-            const ourLocationMapTitle = document.querySelector('.contact-map-section h2');
-            if (ourLocationMapTitle && currentTranslations) { // Added currentTranslations check
+            const ourLocationMapTitle = document.querySelector('.map-link-section h2'); // Adjusted selector
+            if (ourLocationMapTitle) {
                 ourLocationMapTitle.textContent = currentTranslations['our-location-map'];
             }
 
             // View on Map button
-            const viewOnMapBtn = document.querySelector('.contact-map-section .btn');
-            if (viewOnMapBtn && currentTranslations) { // Added currentTranslations check
+            const viewOnMapBtn = document.querySelector('.map-link-section .map-button span'); // Adjusted selector for span inside button
+            if (viewOnMapBtn) {
                 viewOnMapBtn.textContent = currentTranslations['view-on-map'];
             }
 
             // Update page title
             const pageTitle = document.querySelector('title');
-            if (pageTitle && currentTranslations) pageTitle.textContent = currentTranslations['contact'];
+            if (pageTitle) pageTitle.textContent = currentTranslations['contact'];
         }
     };
 

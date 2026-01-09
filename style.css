@@ -350,7 +350,8 @@ footer {
         padding: 10px 20px;
         font-size: 14px;
     }
-    /* Services Page Specific Styles */
+}
+/* Services Page Specific Styles */
 #page-hero {
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-bg.jpg') no-repeat center center/cover;
     color: var(--white);
@@ -407,7 +408,8 @@ footer {
     font-size: 16px;
     color: var(--secondary-color);
     text-align: left; /* Make paragraphs left-aligned for better readability */
-}/* Doctors Page Specific Styles */
+}
+/* Doctors Page Specific Styles */
 #all-doctors .doctor-detail-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -892,7 +894,7 @@ footer {
 .top-bar .contact-info i,
 .top-bar .address-info i {
     margin-right: 8px;
-    color: var(--primary-color);
+    color: var(--white); /* Icons should be white in the top bar */
 }
 
 /* Adjust main header padding if top-bar is added */
@@ -941,8 +943,8 @@ header {
     text-align: center;
 }
 
-#contact-form-section h3 {
-    color: #007bff; /* Primary blue color */
+#contact-form-section h2 { /* Changed from h3 to h2 */
+    color: var(--primary-color); /* Primary green color */
     margin-bottom: 30px;
     font-size: 2.2em;
 }
@@ -957,6 +959,9 @@ header {
 
 #contact-form-section input[type="text"],
 #contact-form-section input[type="email"],
+#contact-form-section input[type="tel"], /* Added tel type */
+#contact-form-section input[type="number"], /* Added number type */
+#contact-form-section select, /* Added select */
 #contact-form-section textarea {
     padding: 15px;
     border: 1px solid #ddd;
@@ -977,8 +982,8 @@ header {
     min-height: 120px;
 }
 
-#contact-form-section button.btn {
-    background-color: #007bff; /* Primary blue color */
+#contact-form-section button[type="submit"] { /* Changed button.btn to button[type="submit"] */
+    background-color: var(--primary-color); /* Primary green color */
     color: white;
     padding: 15px 30px;
     border: none;
@@ -990,31 +995,45 @@ header {
     align-self: center; /* Center the button if form is flex-column */
 }
 
-#contact-form-section button.btn:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+#contact-form-section button[type="submit"]:hover {
+    background-color: #005600; /* Darker green on hover */
 }
 
 /* Google Map in Contact Page */
-#map-container-contact {
+.map-link-section { /* Renamed for clarity */
     margin-top: 50px;
     text-align: center;
 }
 
-#map-container-contact h3 {
-    color: #007bff;
+.map-link-section h2 { /* Changed h3 to h2 */
+    color: var(--primary-color);
     margin-bottom: 30px;
     font-size: 2.2em;
 }
 
-#map-container-contact iframe {
-    width: 100%;
-    max-width: 900px; /* Limit map width */
-    height: 450px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+.map-link-section .map-button { /* Changed iframe to .map-button */
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Adjustments for contact-info-card in contact.html */
+.map-link-section .map-button i {
+    margin-right: 8px;
+}
+
+.map-link-section .map-button:hover {
+    background-color: #005600; /* Darker green */
+    transform: translateY(-2px);
+}
+
+
+/* Adjustments for contact-info-card in contact.html (If used, not in your provided code) */
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1036,7 +1055,7 @@ header {
 }
 
 .contact-info-card i {
-    color: #007bff; /* Icon color */
+    color: var(--primary-color); /* Icon color */
     margin-bottom: 15px;
 }
 
@@ -1053,14 +1072,14 @@ header {
 }
 
 .contact-info-card a {
-    color: #007bff;
+    color: var(--primary-color);
     text-decoration: none;
 }
 
 .contact-info-card a:hover {
     text-decoration: underline;
 }
-/* Contact Form Layout adjustments */
+/* Contact Form Layout adjustments (If used, not in your provided code) */
 .contact-form .form-group {
     margin-bottom: 15px;
 }
@@ -1096,7 +1115,7 @@ header {
     padding: 10px 20px;
     cursor: pointer;
 }
-/* Contact Form Section Styles */
+/* Contact Form Section Styles (More specific for #contact-form-section) */
 .contact-form-section {
     padding: 60px 0;
     background-color: #f9f9f9;
@@ -1245,5 +1264,4 @@ header {
 .map-button:hover {
     background-color: #005600; /* Darker Green */
     transform: translateY(-2px);
-}
 }
