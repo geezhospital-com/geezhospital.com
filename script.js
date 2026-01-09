@@ -103,6 +103,13 @@ const translations = {
         "our-location-map": "ኣብ ካርታ ርኣዩና",
         "view-on-map": "ኣብ ካርታ ርኣይ",
 
+        // NEW DROPDOWN MENU ITEMS - ABOUT US
+        "about-us": "ብዛዕባና",
+        "menu-about-us": "ብዛዕባና",
+        "menu-mission": "ልእኽቶ",
+        "menu-vision": "ራእይ",
+        "menu-services-about": "መግለጺ ግልጋሎታት",
+
         // NEW DROPDOWN MENU ITEMS - DOCTORS
         "menu-surgeons": "መጥባሕተይቲ",
         "menu-gynecologists": "ሓኻይም ማህፀን",
@@ -117,40 +124,35 @@ const translations = {
 
         // NEW DROPDOWN MENU ITEMS - DEPARTMENTS
         "departments": "ክፍልታት",
-        "dept-internal-medicine": "ውሽጣዊ ሕማማት",
-        "dept-cardiology": "ሕማማት ልቢ",
-        "dept-surgery": "ሓፈሻዊ መጥባሕቲ",
-        "dept-pediatrics": "ህፃውንቲን ኣባፅሕን",
+        "dept-surgery": "መጥባሕቲ",
+        "dept-pediatrics": "ህፃናት",
         "dept-obsgyn": "ማህፀንን ጥንስን",
-        "dept-ent": "ክሳድ፣ እዝንን ኣፍንጫን", // Simplified for Department
+        "dept-internal-medicine": "ውሽጣዊ ሕማማት",
+        "dept-orthopedics": "ዓፅሚ",
         "dept-radiology": "ራድዮሎጂ",
-        "dept-dental": "ስኒ",
-        "dept-neurosurgery": "መትኒ፣ ዓንዲ ሑቐን ሓንጎልን",
-        "dept-orthopedics": "ዓፅምን መገጣጠምን",
-        "dept-dermatology": "ቆርበት፣ ኣበላዘርን ስነ-ፅባቐን",
-        "dept-anesthesia-pain": "መደቀስን ቃንዛን",
-        "dept-laboratory": "ላቦራቶሪ",
-        "dept-physiotherapy": "ፊዝዮቴራፒ",
+        "dept-oncology": "ካንሰር",
+        "dept-oral-dental-maxillofacial": "መጥባሕቲ ኣፍን ስኒን ገፅን",
+        "dept-dermatology": "ቆርበት",
+        "dept-ent-plastic-surgery": "ክሳድ፣ እዝንን ኣፍንጫን ስነ-ፅባቐን",
+        "dept-ophthalmology": "ዓይኒ",
         "dept-psychiatry": "ስነ ኣእምሮ",
-        "dept-maternity": "መዋልዳን",
-        "dept-pharmacy-ambulance": "ፋርማሲን ኣምቡላንስን",
-        "dept-other-services": "ካልኦት ግልጋሎት",
-
 
         // NEW DROPDOWN MENU ITEMS - MEDIA
         "facilities": "መተኣኻኸሊታት",
-        "founders": "መስረቲ",
         "media": "ሚድያ",
         "media-patient-info": "ሓበሬታ ሕሙማት",
-        "media-articles": "ጽሑፋት"
+        "media-articles": "ጽሑፋት",
+
+        // Search Bar Placeholder
+        "search-placeholder": "ሓሳሲ..."
 
     },
     "eng": {
         "home": "Home",
-        "services": "Our Services",
-        "doctors": "Our Doctors",
+        "services": "Services", // Changed to "Services" as main menu item
+        "doctors": "Doctors",
         "gallery": "Gallery",
-        "news": "News",
+        "news": "News and Events", // Changed to "News and Events" as main menu item
         "contact": "Contact Us",
         "contact-us-btn": "Contact Us",
         "hero-main-title": "Geez Hospital",
@@ -248,6 +250,13 @@ const translations = {
         "our-location-map": "View Our Location on Map",
         "view-on-map": "View on Map",
 
+        // NEW DROPDOWN MENU ITEMS - ABOUT US
+        "about-us": "About Us",
+        "menu-about-us": "About Us",
+        "menu-mission": "Mission",
+        "menu-vision": "Vision",
+        "menu-services-about": "Services Overview",
+
         // NEW DROPDOWN MENU ITEMS - DOCTORS
         "menu-surgeons": "Surgeons",
         "menu-gynecologists": "Gynecologists",
@@ -262,38 +271,34 @@ const translations = {
 
         // NEW DROPDOWN MENU ITEMS - DEPARTMENTS
         "departments": "Departments",
-        "dept-internal-medicine": "Internal Medicine",
-        "dept-cardiology": "Cardiology",
-        "dept-surgery": "General Surgery",
-        "dept-pediatrics": "Pediatrics and Adolescent Medicine",
+        "dept-surgery": "Surgery",
+        "dept-pediatrics": "Pediatrics",
         "dept-obsgyn": "Obstetrics and Gynecology",
-        "dept-ent": "ENT (Ear, Nose, Throat)", // Simplified for Department
+        "dept-internal-medicine": "Internal Medicine",
+        "dept-orthopedics": "Orthopedics",
         "dept-radiology": "Radiology",
-        "dept-dental": "Dental",
-        "dept-neurosurgery": "Neurosurgery (Spine and Brain)",
-        "dept-orthopedics": "Orthopedics (Bone and Joint)",
-        "dept-dermatology": "Dermatology, Laser, and Cosmetology",
-        "dept-anesthesia-pain": "Anesthesia and Pain Management",
-        "dept-laboratory": "Laboratory",
-        "dept-physiotherapy": "Physiotherapy",
+        "dept-oncology": "Oncology",
+        "dept-oral-dental-maxillofacial": "Oral, Dental, Maxillofacial Surgery",
+        "dept-dermatology": "Dermatology",
+        "dept-ent-plastic-surgery": "ENT and Plastic Surgery",
+        "dept-ophthalmology": "Ophthalmology",
         "dept-psychiatry": "Psychiatry",
-        "dept-maternity": "Maternity Services",
-        "dept-pharmacy-ambulance": "Pharmacy and Ambulance",
-        "dept-other-services": "Other Services",
 
         // NEW DROPDOWN MENU ITEMS - MEDIA
         "facilities": "Facilities",
-        "founders": "Founders",
         "media": "Media",
         "media-patient-info": "Patient Information",
-        "media-articles": "Articles"
+        "media-articles": "Articles",
+
+        // Search Bar Placeholder
+        "search-placeholder": "Search..."
     },
     "amh": {
         "home": "መግቢያ",
-        "services": "አገልግሎቶቻችን",
-        "doctors": "ሀኪሞቻችን",
+        "services": "አገልግሎቶች", // Changed to "አገልግሎቶች" as main menu item
+        "doctors": "ሀኪሞች",
         "gallery": "ጋለሪ",
-        "news": "ዜና",
+        "news": "ዜና እና ክስተቶች", // Changed to "ዜና እና ክስተቶች" as main menu item
         "contact": "ያግኙን",
         "contact-us-btn": "ያግኙን",
         "hero-main-title": "Geez Hospital | ግዕዝ ሆስፒታል",
@@ -391,6 +396,13 @@ const translations = {
         "our-location-map": "ቦታችንን በካርታ ይመልከቱ",
         "view-on-map": "በካርታ ይመልከቱ",
 
+        // NEW DROPDOWN MENU ITEMS - ABOUT US
+        "about-us": "ስለእኛ",
+        "menu-about-us": "ስለእኛ",
+        "menu-mission": "ተልዕኮ",
+        "menu-vision": "ራዕይ",
+        "menu-services-about": "አገልግሎቶች አጠቃላይ እይታ",
+
         // NEW DROPDOWN MENU ITEMS - DOCTORS
         "menu-surgeons": "ቀዶ ጥገና ሀኪሞች",
         "menu-gynecologists": "የማህፀን ሀኪሞች",
@@ -405,35 +417,29 @@ const translations = {
 
         // NEW DROPDOWN MENU ITEMS - DEPARTMENTS
         "departments": "ክፍሎች",
-        "dept-internal-medicine": "የውስጥ ደዌ",
-        "dept-cardiology": "የልብ ህመም",
-        "dept-surgery": "አጠቃላይ ቀዶ ጥገና",
-        "dept-pediatrics": "ህፃናትና ጎረምሶች ህክምና",
+        "dept-surgery": "ቀዶ ጥገና",
+        "dept-pediatrics": "ህፃናት",
         "dept-obsgyn": "የማህፀንና ፅንስ",
-        "dept-ent": "ከአንገት በላይ (ENT)", // Simplified for Department
+        "dept-internal-medicine": "የውስጥ ደዌ",
+        "dept-orthopedics": "አጥንት",
         "dept-radiology": "ራዲዮሎጂ",
-        "dept-dental": "ጥርስ",
-        "dept-neurosurgery": "የነርቭ፣ የአከርካሪ አጥንት እና የአንጎል",
-        "dept-orthopedics": "የአጥንትና መገጣጠሚያ",
-        "dept-dermatology": "የቆዳ፣ የሌዘር እና የውበት",
-        "dept-anesthesia-pain": "ማደንዘዣ እና ህመም አስተዳደር",
-        "dept-laboratory": "ላቦራቶሪ",
-        "dept-physiotherapy": "ፊዚዮቴራፒ",
-        "dept-psychiatry": "ስነ አእምሮ",
-        "dept-maternity": "የወሊድ አገልግሎት",
-        "dept-pharmacy-ambulance": "ፋርማሲ እና አምቡላንስ",
-        "dept-other-services": "ሌሎች አገልግሎቶች",
+        "dept-oncology": "ካንሰር",
+        "dept-oral-dental-maxillofacial": "የአፍ፣ የጥርስ እና የፊት ቀዶ ጥገና",
+        "dept-dermatology": "ቆዳ",
+        "dept-ent-plastic-surgery": "የአንገት፣ የጆሮና የአፍንጫ እና የውበት ቀዶ ጥገና",
+        "dept-ophthalmology": "የአይን ህክምና",
+        "dept-psychiatry": "የስነ አእምሮ ህክምና",
 
         // NEW DROPDOWN MENU ITEMS - MEDIA
         "facilities": "መገልገያዎች",
-        "founders": "መሥራቾች",
         "media": "ሚዲያ",
         "media-patient-info": "የታካሚ መረጃ",
-        "media-articles": "ጽሑፎች"
+        "media-articles": "ጽሑፎች",
+
+        // Search Bar Placeholder
+        "search-placeholder": "ይፈልጉ..."
     }
 };
-
-// ... (rest of your script.js code, including serviceIcons and setLanguage function) ...
 
 // Data for service icons (not translated, as icons are universal)
 const serviceIcons = {
@@ -467,7 +473,11 @@ function setLanguage(lang) {
             // For select options, update the option text
             if (element.tagName === 'OPTION') {
                 element.textContent = translations[lang][key];
-            } else {
+            } else if (element.tagName === 'INPUT' && element.type === 'text' && element.hasAttribute('placeholder')) {
+                // For input placeholders
+                element.setAttribute('placeholder', translations[lang][key]);
+            }
+             else {
                 element.textContent = translations[lang][key];
             }
         }
@@ -485,7 +495,6 @@ function setLanguage(lang) {
     // Update footer text
     const footerTextElement = document.getElementById('footer-text');
     if (footerTextElement) {
-        // Use innerHTML because the footer text now contains HTML tags (<br>)
         footerTextElement.innerHTML = translations[lang]["footer-text"];
     }
 
@@ -506,6 +515,17 @@ function setLanguage(lang) {
     }
     // --- END NEW ---
 }
+
+// Function to handle search (example - you'll need to implement actual search logic)
+function handleSearch() {
+    const searchTerm = document.getElementById('search-input').value.toLowerCase();
+    console.log("Searching for:", searchTerm);
+    // Here you would typically redirect to a search results page
+    // or filter content on the current page using JavaScript.
+    // Example: window.location.href = "search-results.html?q=" + encodeURIComponent(searchTerm);
+    alert(`Searching for "${searchTerm}"... (Actual search functionality not implemented yet)`);
+}
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const langSwitcher = document.getElementById('language-switcher');
@@ -539,5 +559,20 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         // If no language switcher, still apply default language
         setLanguage(currentLang);
+    }
+
+    // Add event listener for search button
+    const searchButton = document.getElementById('search-button');
+    if (searchButton) {
+        searchButton.addEventListener('click', handleSearch);
+    }
+    // Optional: Add event listener for Enter key on search input
+    const searchInput = document.getElementById('search-input');
+    if (searchInput) {
+        searchInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                handleSearch();
+            }
+        });
     }
 });

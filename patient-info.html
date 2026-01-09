@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate="hero-main-title">Geez Hospital</title>
+    <title data-translate="media-patient-info">Patient Information - Geez Hospital</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Top Bar -->
+    <!-- Top Bar - COPY FROM index.html -->
     <div class="top-bar">
         <div class="container">
             <div class="contact-info">
@@ -30,7 +30,7 @@
         </div>
     </div>
 
-    <!-- Header -->
+    <!-- Header - COPY FROM index.html (THE UPDATED ONE WITH DROPDOWNS AND SEARCH) -->
     <header>
         <div class="container">
             <div class="logo">
@@ -52,8 +52,6 @@
                     <li class="dropdown">
                         <a href="services.html" data-translate="services">Services <i class="fas fa-caret-down"></i></a>
                         <ul class="submenu">
-                            <!-- These will link to specific sections on the services.html page, 
-                                 or filter them if you implement JS filtering later -->
                             <li><a href="services.html?service=internal-medicine" data-translate="service1-h3">Internal Medicine</a></li>
                             <li><a href="services.html?service=cardiology" data-translate="service2-h3">Cardiology</a></li>
                             <li><a href="services.html?service=general-surgery" data-translate="service3-h3">General Surgery</a></li>
@@ -132,115 +130,58 @@
             </nav>
         </div>
     </header>
-    <!-- ... rest of your index.html content ... -->
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="container">
-            <h2 class="hero-main-title" data-translate="hero-main-title">Geez Hospital | ግዕዝ ሆስፒታል</h2> <!-- New Title -->
-            <p class="hero-tagline-eng" data-translate="hero-tagline-eng">Chosen for our care, trusted for our expertise</p> <!-- English Tagline -->
-            <h2 data-translate="hero-h2">ብሓልዮትና ንምረጽ፡ብሞያዊ ብቕዓትና ንእመን</h2>
-            <p data-translate="hero-p">ንጥዕናኹም ቀዳምነት ብምሃብ፣ ብሉፃት ስፔሻሊስትን ሳብስፔሻሊስትታትን ሓኻይም ምስ ዘመናዊ ቴክኖሎጂ መሳርሕታት(ማሽን) ኣዋዲድንና ንፅበየኩም ኣለና። ንዝኾነ ሕቶ ወይ ቆፀሮ ንምሓዝ በይዝኦም ኣብዚ ይመዝገቡ።</p>
-            <div class="hero-buttons">
-                <a href="contact.html" class="btn btn-primary" data-translate="hero-btn-appointment">ቆፀሮ ንምሓዝ</a>
-                <a href="services.html" class="btn btn-secondary" data-translate="hero-btn-services">ግልጋሎታትና ርኣዩ</a>
+    <!-- Main Content for Patient Information Page -->
+    <main>
+        <section id="patient-info-hero" class="hero-section inner-hero">
+            <div class="container">
+                <h2 data-translate="media-patient-info">Patient Information</h2>
+                <p>Find essential information for your visit, including admission, discharge, rights, and responsibilities.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="section-padding">
-        <div class="container">
-            <h2 data-translate="about-h2">ብዛዕባና (About Us)</h2>
-            <p data-translate="about-p1">ብ2011 ኣ.ግ ዝተመስረተ ሆስፒታል ግዕዝ፣ ኣብ ማእኸላይ ዞባ ኢሉ እዉን ኣብ ትግራይ ካብቶም ቀዳሞት ዝስርዑ፣ ዓለምለኻዊ ፅሬት ዘለዎ ዘመናዊን ስሉጥን ሕክምናዊ ግልጋሎት ዝህቡ ትካላት ሓደ እዩ። ኣብ መላእ እቲ ዞባን ጎረባብቲን ሓደ ካብቶም ዝዓበዩን ዝእመኑን ናይ ሕክምና ትካል ኮይኑ ዓለምለኻዊ ፅሬት ዘለዎ ሕክምና ንነፍሲ-ወከፍ ዜጋ ተበፃሒ ንምግባር ዝዓለመ እዩ።ብፍላይ ሓልዮት ዝተመልኦ ክንክን፣ ላዕለዋይ ሞያዊ ብቕዓትን ዘመናዊ መሳርሒታትን ብምቕራብ ዝተመስረተ ትካል እዩ። ንድሕንነት ሕሙማትን ንብሉፅ ግልጋሎትን ዓብዪ ቆላሕታ ይህብ።</p>
-
-            <div class="about-grid">
-                <div class="about-item">
-                    <h3 data-translate="vision-h3">ራእይ (Vision)</h3>
-                    <p data-translate="vision-p">ብምኽንያት እቲ እንህቦ ብሉፅ ሞያዊ ብቕዓትን ንሕሙም ማእከል ዝገበረ ሓልዮቱን፣ ዓለምለኻዊ ደረጃ ዘለዎ ናይ ሕክምና ግልጋሎት ብምቕራብ ኣብ ኣፍሪካ ክብሪ ዝተጎናፀፈ ናይ ሕክምና ትካል ምዃን።</p>
+        <section id="info-sections" class="content-section light-bg">
+            <div class="container">
+                <div class="info-grid">
+                    <div class="info-item">
+                        <h3><i class="fas fa-hospital-user"></i> Patient Rights & Responsibilities</h3>
+                        <p>Learn about your rights as a patient at Geez Hospital and your responsibilities in ensuring a smooth healthcare experience.</p>
+                        <a href="#" class="button secondary-button">Read More</a>
+                    </div>
+                    <div class="info-item">
+                        <h3><i class="fas fa-clipboard-list"></i> Admission & Discharge Process</h3>
+                        <p>Detailed guide on what to expect during your admission to and discharge from our hospital.</p>
+                        <a href="#" class="button secondary-button">Read More</a>
+                    </div>
+                    <div class="info-item">
+                        <h3><i class="fas fa-file-medical"></i> Medical Records Request</h3>
+                        <p>Information on how to request copies of your medical records and privacy policies.</p>
+                        <a href="#" class="button secondary-button">Read More</a>
+                    </div>
+                    <div class="info-item">
+                        <h3><i class="fas fa-hand-holding-usd"></i> Billing & Insurance</h3>
+                        <p>Understand our billing procedures and accepted insurance plans to help manage your healthcare costs.</p>
+                        <a href="#" class="button secondary-button">Read More</a>
+                    </div>
+                    <div class="info-item">
+                        <h3><i class="fas fa-utensils"></i> Food & Nutrition Services</h3>
+                        <p>Details about meal services and dietary options available during your stay.</p>
+                        <a href="#" class="button secondary-button">Read More</a>
+                    </div>
+                    <div class="info-item">
+                        <h3><i class="fas fa-users-medical"></i> Visitor Information</h3>
+                        <p>Guidelines for visitors, including visiting hours and policies to ensure a comfortable environment for all patients.</p>
+                        <a href="#" class="button secondary-button">Read More</a>
+                    </div>
                 </div>
-                <div class="about-item">
-                    <h3 data-translate="mission-h3">ልእኽቶ (Mission)</h3> <!-- Corrected 'ልእኽ' to 'ልእኽቶ' -->
-                    <p data-translate="mission-p">ብሉፅ ፅሬት፣ ተመጣጣኒ፣ ተበፃሒን ተሓታትነት ዘለዎን ሕክምና ንኹሉ ዜጋ ብምቕራብ፤ ብሉፅ ሞያዊ ክእለትን ርህራሄ ዝመልኦ ሓልዮትን ዘወሃሃደ፣ተበፃሒ፣ ፅሬቱ ዝሓለወን ተመጣጣኒ ዋጋ ዘለዎን ሕክምና ንማሕበረሰብ ብምቕራብ፤ ዓለምለኻዊ ደረጃኡ ዝሓለወ ናይ ሕክምና ኣሰራርሓ ምፍጣር ከምኡውን ዝለዓለ ናይ ሕክምና ስነ-ምግባር ምኽባርን እዩ።</p>
-                </div>
-                <div class="about-item">
-                    <h3 data-translate="services-h3">ግልጋሎታት (Our Services)</h3>
-                    <p data-translate="services-p-about">ብርክት ዝበሉ ናይ ስፔሻሊስትን ሳብ ስፔሻሊስትን ዓውድታት (ንኣብነት፦ ልቢ፣ ካንሰር፣ ሓንጎልን መትኒታትን፣ ዓፅሚ፣ካብ ክሳድ ንላዕሊ፣ዓይኒ፣ናይ ቆርበትን ስነጽባቐን፣ ናይ ኣዴታትን ህፃናትን ክንክን መርመራታትን ከምኡውን ናይ ህፁፅ ሓደጋን ግልጋሎትሎት ብዘመናዊ ቴክኖሎጂን ብሞያዊ ብቕዓትን ነቕርብ።ንዝርዝር እንህቦም ግልጋሎታት ኣብ ግልጋሎታትና ዝብል ኣርእስቲ የንቢቡ።</p>
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Services Section -->
-    <section id="services" class="section-padding">
-        <div class="container">
-            <h2 data-translate="our-services-h2">ግልጋሎታትና</h2>
-            <div class="service-grid">
-                <!-- Services will be dynamically loaded by JavaScript -->
-            </div>
-            <div class="text-center mt-4">
-                <a href="services.html" class="btn btn-secondary" data-translate="all-services-btn">ኩሎም ግልጋሎታትና</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Doctors Section -->
-    <section id="doctors" class="section-padding bg-light">
-        <div class="container">
-            <h2 data-translate="doctors-h2">ሓኻይምና</h2>
-            <p class="section-intro" data-translate="doctors-p">ግዕዝ ሆስፒታል ብልዑል ተመኩሮን ሞያን ዘለዎም ስፔሻሊስት ሓኻይም ግልጋሎት ይህብ።</p>
-            <div class="doctor-grid">
-                <div class="doctor-card">
-                    <img src="images/doctor1.jpg" alt="Dr. Tesfay Atsbeha">
-                    <h3 data-translate="dr-tesfay-name">ዶ/ር ተስፋይ ኣጽብሃ</h3>
-                    <p data-translate="dr-tesfay-specialty">ሳብ-ስፔሻሊስት ሕማማት ልቢ</p>
-                    <a href="#contact-section" class="btn btn-small" data-translate="appointment-btn">ቆፀሮ</a>
-                </div>
-                <div class="doctor-card">
-                    <img src="images/doctor2.jpg" alt="Dr. Higus Teklu">
-                    <h3 data-translate="dr-higus-name">ዶ/ር ሕጉስ ተኽሉ</h3>
-                    <p data-translate="dr-higus-specialty">ስፔሻሊስት ሕክምና ውሽጣዊ ሕማማት</p>
-                    <a href="#contact-section" class="btn btn-small" data-translate="appointment-btn">ቆፀሮ</a>
-                </div>
-                <!-- More doctor cards can be added here -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="section-padding">
-        <div class="container">
-            <h2 data-translate="testimonials-h2">ናይ ሕሙማት ምስክርነት</h2>
-            <div class="testimonial-card">
-                <p data-translate="testimonial-p">"ግዕዝ ሆስፒታል ብሓልዮቶምን ሞያዊ ብቕዓቶምን ብጣዕሚ ፍሉያት እዮም። እቶም ሓኻይም ኣዝዮም ለዋሃትን ብሉፃትን እዮም። ንዝገበሩለይ ሕክምናዊ ክንክን ኣዝየ የመስግን"</p>
-                <span data-translate="testimonial-span">- ኣይተ ገብረመድህን ካሕሳይ</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section (for Index page - simple call to action) -->
-    <!-- Changed ID from 'contact' to 'contact-section' to avoid conflict if any global 'contact' ID is used elsewhere -->
-    <section id="contact-section" class="section-padding bg-dark text-white"> 
-        <div class="container">
-            <h2 data-translate="contact-h2">ምትእስሳር</h2>
-            <p data-translate="contact-p">ንዝኾነ ሕቶ ወይ ቆፀሮ ንምሓዝ በይዝም ኣብዚ ይመዝገቡ።</p>
-            <a href="contact.html" class="btn btn-primary mt-4" data-translate="contact-us-btn">Contact Us</a>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
+    <!-- Footer - COPY FROM index.html -->
     <footer>
         <div class="container">
-            <div class="footer-logo">
-                <img src="images/logo.png" alt="Geez Hospital Logo">
-            </div>
-            <p id="footer-text"></p> <!-- Footer text will be set by JavaScript -->
-            <div class="social-links">
-                <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://t.me/Geezhospital_bot" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
-                <a href="https://linktr.ee/geezhospital" target="_blank" aria-label="Patient Survey"><i class="fas fa-poll"></i></a>
-                <a href="https://maps.app.goo.gl/yHuCuCgLMzUtyerU6" target="_blank" aria-label="Google Maps"><i class="fas fa-map-marker-alt"></i></a>
-            </div>
+            <p id="footer-text" data-translate="footer-text">Copyright © 2026 Geez Hospital<br>Developed By Aser Teklu Gebrekidan-0911179955</p>
         </div>
     </footer>
 
