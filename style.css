@@ -1265,3 +1265,32 @@ header {
     background-color: #005600; /* Darker Green */
     transform: translateY(-2px);
 }
+/* For making icons larger and colored in service items */
+#services-list .service-item h3 i {
+    font-size: 2.5em; /* Make icons significantly larger */
+    margin-right: 15px; /* Space between icon and text */
+    /* Dynamic color - alternating blue and red */
+    /* You can apply specific colors to specific icons if needed, 
+       but for alternating, we'll use Nth-child in CSS */
+}
+
+/* Specific colors for alternating icons */
+#services-list .service-item:nth-child(odd) h3 i {
+    color: #007bff; /* Blue for odd-numbered service items */
+}
+
+#services-list .service-item:nth-child(even) h3 i {
+    color: #dc3545; /* Red for even-numbered service items */
+}
+
+/* If you want all icons to be a mix of blue and red, but for specific ones, use this pattern */
+/* Example: Specific icon colors */
+#service-item-1 h3 i { /* Internal Medicine */
+    color: #007bff; /* Blue */
+}
+
+#service-item-2 h3 i { /* Cardiology */
+    color: #dc3545; /* Red */
+}
+/* ... and so on for all 18 service items, alternating or choosing specific colors */
+/* If you prefer this approach, please tell me and I can write out all 18 for you */
