@@ -37,13 +37,51 @@ const translations = {
         "contact-h2": "ምትእስሳር",
         "contact-p": "ንዝኾነ ሕቶ ወይ ቆፀሮ ንምሓዝ በይዝም ኣብዚ ይመዝገቡ።",
         "footer-text": "ኩሉ መሰል ሕጊ ግዕዝ ሆስፒታል ዝተሓወሐ እዩ © 2024",
+        "services-page-h2": "ግልጋሎታትና",
+        "services-page-intro-p": "ግዕዝ ሆስፒታል ዝተፈላለዩን ዘመናዊን ግልጋሎታት ብስፔሻሊስትን ብፍሉይ ስፔሻሊስትን(sub specialist)ብቕዓትት ዘለዎም ሓኻይም ግልጋሎት ይህብ።",
+        "service1-h3": "ስፔሻሊስት ሕክምና ውሽጣዊ ሕማማት",
+        "service1-p": "ምሉእ ናይ ውሽጣዊ ሕማማት መርመራን ሕክምናን ብልዑል ተመኩሮን ሞያን ዘለዎም ስፔሻሊስት ሓኻይም ይወሃብ። እዚ ግልጋሎት ንዝተፈላለዩ ሕማማት ከም ሕማም ደም፣ ሕማም ኩላሊት፣ ሕማም ሳንቡእ፣ ሕማም ሆርሞን፣ ወዘተ ዘጠቓለለ እዩ።",
+        "service2-h3": "ፍሉይ ስፔሻሊስት ሕክምና ሕማማት ልቢ",
+        "service2-p": "ፍሉይ ናይ ልቢ ሕማማት መርመራን ሕክምናን ብልዑል ተመኩሮን ሞያን ዘለዎም ሳብ ስፔሻሊስት ሓኻይም ይወሃብ። ECG፣ Echocardiography፣ Stress Test ዝኣመሰሉ ዘመናዊ መሳርሒታትን ኣገባባትን ንጥቀም።",
+        "service3-h3": "ስፔሻሊስት ሓፈሻዊ መጥባሕቲ",
+        "service3-p": "ስፔሻሊስት ሓፈሻዊ መጥባሕቲ ብዘመናዊ መሳርሒታትን ኣገባባትን ይወሃብ። እዚ ንዝተፈላለዩ ንኣብነት ን appendices, hernias, gallbladder, ወዘተ መጥባሕቲ ዝሓቖፈ እዩ።",
+        "service4-h3": "ስፔሻሊስት ሕክምና ህፃውንቲን ኣባፅሕን",
+        "service4-p": "ናይ ህፃውንቲን ኣባፅሕን መርመራን ሕክምናን ብስፔሻሊስት ሓኪም ይወሃብ። ንህጻናት ዝምጥን ፍሉይ ክንክን ንህብ።",
+        "service5-h3": "ስፔሻሊስት ሕክምና ማህፀንን ጥንስን",
+        "service5-p": "ምሉእ ናይ ማህፀንን ጥንስን መርመራን ሕክምናን ብስፔሻሊስት ሓኪም ይወሃብ። ቅድሚ ሕርሲ፣ ኣብ ሕርሲን ድሕሪ ሕርሲን ዘድሊ ክንክን ይህብ።",
+        "service6-h3": "ስፔሻሊስት ሕክምና ካብ ክሳድ ንላዕሊ(ENT)",
+        "service6-p": "ናይ ክሳድ፣ እዝንን ኣፍንጫን መርመራን ሕክምናን ብስፔሻሊስት ሓኪም ይወሃብ። ንዝተፈላለዩ ሕማማት ENT ብዘመናዊ መሳርሒታት(Endoscopy) መርመራን ሕክምናን ንህብ።",
+        "service7-h3": "ስፔሻሊስት ራድዮሎጂ (ኣልትራሳውንድ፣ ራጂ፣ ሲቲ ስካን ECGን)",
+        "service7-p": "ዘመናዊ ግልጋሎት ራድዮሎጂ (ኣልትራሳውንድ፣ ራጂ፣ ሲቲ ስካን ECGን) ብስፔሻሊስት ሓኪም ይወሃብ። ትክክለኛ መርመራ ንምሃብ ዝሕግዝ ዘመናዊ ቴክኖሎጂ ንጥቀም።",
+        "service8-h3": "ስፔሻሊስት ሕክምና ስኒ",
+        "service8-p": "ምሉእ ናይ ስኒ ሕክምና ብስፔሻሊስት ሓኪም ይወሃብ። ካብ ንጹህ ስኒ ክሳብ ኮሮናን ስኒ ምልዋጥን ዝሓቖፈ ግልጋሎት ንህብ።",
+        "service9-h3": "ስፔሻሊስት መጥባሕቲ መትኒ፣ ዓንዲ ሑቐን ሓንጎልን",
+        "service9-p": "ስፔሻሊስት መጥባሕቲ መትኒ፣ ዓንዲ ሑቐን ሓንጎልን ብልዑል ተመኩሮ ዘለዎም ስፔሻሊስት ሓኻይም ይወሃብ። ንዝተፈላለዩ ነርቫዊ ሕማማት ፍሉይ ሕክምና ንህብ።",
+        "service10-h3": "ስፔሻሊስት ሕክምና ዓፅምን መገጣጠምን፣ነርቭን ዓንዲሑቐን",
+        "service10-p": "ስፔሻሊስት ሕክምና ዓፅምን መገጣጠምን፣ ነርቭን ዓንዲ ሑቐን ብስፔሻሊስት ሓኪም ይወሃብ። ንስባራት፣ ቁስልን ሕማማት መገጣጠምን ሕክምና ንህብ።",
+        "service11-h3": "ስፔሻሊስት ሕክምና ቆርበት፣ ኣበላዘርን ስነ-ፅባቐን",
+        "service11-p": "ስፔሻሊስት ሕክምና ቆርበት፣ ኣበላዘርን ስነ-ፅባቐን ብስፔሻሊስት ሓኪም ይወሃብ። ንዝተፈላለዩ ሕማማት ቆርበትን ውሽጣዊን ክንክን ንህብ።",
+        "service12-h3": "ስፔሻሊስት መደቀስን ቃንዛን",
+        "service12-p": "ስፔሻሊስት መደቀስን ቃንዛን ሕክምና ብስፔሻሊስት ሓኪም ይወሃብ። ቅድሚን ድሕሪን መጥባሕቲ ዘድሊ ክንክን ንህብ።",
+        "service13-h3": "ምሉእ ዘመናዊ ላቦራቶሪ",
+        "service13-p": "ምሉእ ዘመናዊ ላቦራቶሪ ግልጋሎት ይወሃብ። ንኹሎም ዓይነታት መርመራ ደምን ሽንትን ካልኦት ባዮሎጂካዊ መርመራታትን ብዘመናዊ መሳርሒታት ግልጋሎት ንህብ።",
+        "service14-h3": "መርመራን ሕክምናን ፊዝዮቴራፒ",
+        "service14-p": "ምሉእ መርመራን ሕክምናን ብፊዝዮቴራፒ ሓኪም ግልጋሎት ይወሃብ። ንዝተፈላለዩ ዓይነት ሕማማት ቅርጺ ኣካልን ምንቅስቓስን ሕክምና ንህብ።",
+        "service15-h3": "ስፔሻሊስት ሕክምና ስነ ኣእምሮ",
+        "service15-p": "ስፔሻሊስት ሕክምና ስነ ኣእምሮ ግልጋሎት ይወሃብ። ንዝተፈላለዩ ኣእምሮኣዊ ሕማማት ምኽሪን ሕክምናን ንህብ።",
+        "service16-h3": "ናይ መዋልዳን ምሉእ ግልጋሎት",
+        "service16-p": "ምሉእ ግልጋሎት መዋልዳን፣ ካብ ቅድሚ ሕርሲ ክሳብ ድሕሪ ሕርሲ፣ ብልዑል ልምዲን ተሞኩሮን ዘለዎም ሰብ ሞያን ብስፔሻሊስት ሓኪምን ብዘመናዊ መሳርሒታትን ይወሃብ።",
+        "service17-h3": "ምሉእ ኣቕሪቦት መድሓኒት(Pharmacy)ን ኣምቡላንስን",
+        "service17-p": "ምሉእ ኣቕሪቦት መድሓኒት(Pharmacy)ን ኣምቡላንስን ግልጋሎት ይወሃብ። 24 ሰዓት ግልጋሎት ፋርማሲን ኣምቡላንስን ድሉው እዩ።",
+        "service18-h3": "ካልኦት ግልጋሎትን ይረኽቡ",
+        "service18-p": "ግዕዝ ሆስፒታል ካልኦት ዘይተዘርዘሩ ግልጋሎት ንሕብረተሰብን ነቕርብ። ንዝኾነ ሕቶ ወይ ተወሳኺ ሓበሬታ ምሕታት ይከኣል እዩ።",
         "doctors-page-title": "ሓኻይምና",
         "doctors-page-intro": "ግዕዝ ሆስፒታል ብልዑል ብቕዓትን ተሞኩሮን ዘለዎም ስፔሻሊስትን ፍሉይ ስፔሻሊስትን ሓኻይም ዝተፈላለዩ ግልጋሎታት ይህብ። ብሓልዮትና ንምረጽ፡ብሞያዊ ብቕዓትና ንእመን።",
         "dr-tesfay-exp": "ዶ/ር ተስፋይ ኣጽብሃ ንልዕሊ 10 ዓመታት ኣብ ዉሽጢ ዓዲን ወጻእን ብዝተምሃርዎ መሰረት ኣብ ሕክምና ልቢ ፍሉይ ክእለትን ሞያን ኣለዎም  ። ኣብ ዝተፈላለዩ ሆስፒታላት ብልዑል ብቕዓት ኣገልግሎም እዮም ኣለዋ። ሕዚ ድማ ኣብ ሆስፒታልና ንሕሙማት ብልዑል ተበግሶን ድሌትን ብሞያዊ ብቕዓቶም የገልግሉ ኣለዉ።",
         "dr-higus-exp": "ዶ/ር ሕጉስ ተኽሉ ንልዕሊ 12 ዓመታት ኣብ ሕክምና ውሽጣዊ ሕማማት ዶክተር እዮም። ኣብ ዝተፈላለዩ ሕክምናዊ ትካላት ኣገልጊሎም። ንዝተፈላለዩ ሕማማት ብምሉእ ዓቕሞም ብምሕካም ኣብ ህዝቦም ልዑል ተቐባልነት ኣለዎም።",
         "dr-gebreab-name": "ዶ/ር ገብረኣብ ነጋ",
         "dr-gebreab-specialty": "ስፔሻሊስት ሕክምና ህፃውንቲ",
-        "dr-gebreab-exp": "ዶ/ር ገብረኣብ ንልዕሊ 8 ዓመታት ኣብ ሕክምና ህፃውንቲ ኣገልጊሎም፣ከምኡ እዉን ኣብ ኣኽሱም ዩንቨርስቲ ሓጋዚ ፕሮፌሶር እዮም። ንህጻናት ዝምጥን ክንክንን ሕክምናን ይህቡ።",
+        "dr-gebreab-exp": "ዶ/ር ገብረኣብ ንልዕሊ 8 ዓመታት ኣብ ሕክምና ህፃውንቲ ኣገልጊሎም፣ከምኡ እዉን ኣብ ኣኽሱም ዩንቨርስቲ ሓጋዚ ፕሮፌሶር እዮም። ንህጻናት ዝምጥን ፍሉይ ክንክን ንህብ።",
         "news": "ሓድሽ ሓበሬታ",
         "news-page-intro": "ኣብ ግዕዝ ሆስፒታል ዝወጽኡ ሓደሽቲ ሓበሬታታት፣ ሕክምናዊ ምኽሪታትን ኣገደስቲ ዝርዝራትን ኣብዚ ተኸታተሉ።",
         "gallery": "ጋለሪ",
@@ -102,6 +140,44 @@ const translations = {
         "contact-h2": "Contact Us",
         "contact-p": "For any questions or to book an appointment, please register here.",
         "footer-text": "All rights reserved by Geez Hospital © 2024",
+        "services-page-h2": "Our Services",
+        "services-page-intro-p": "Geez Hospital offers diverse and modern services provided by highly qualified specialists and sub-specialists.",
+        "service1-h3": "Internal Medicine Specialist",
+        "service1-p": "Comprehensive internal medicine diagnosis and treatment are provided by highly experienced and professional specialist doctors. This service covers various diseases such as hypertension, kidney disease, lung disease, hormonal imbalance, etc.",
+        "service2-h3": "Cardiology Sub-Specialist",
+        "service2-p": "Specialized cardiac disease diagnosis and treatment are provided by highly experienced and professional sub-specialist doctors. We utilize modern equipment and procedures such as ECG, Echocardiography, and Stress Test.",
+        "service3-h3": "General Surgery Specialist",
+        "service3-p": "General surgery is performed using modern equipment and techniques. This includes surgeries for various conditions such as appendicitis, hernias, gallbladder issues, etc.",
+        "service4-h3": "Pediatrics and Adolescent Medicine Specialist",
+        "service4-p": "Pediatric and adolescent medical examinations and treatments are provided by a specialist doctor. We offer specialized care tailored for children.",
+        "service5-h3": "Obstetrics and Gynecology Specialist",
+        "service5-p": "Comprehensive obstetrics and gynecology examinations and treatments are provided by a specialist doctor. We offer necessary care before, during, and after childbirth.",
+        "service6-h3": "ENT (Ear, Nose, Throat) Specialist",
+        "service6-p": "Ear, nose, and throat examinations and treatments are provided by a specialist doctor. We offer modern endoscopic diagnosis and treatment for various ENT diseases.",
+        "service7-h3": "Radiology Specialist (Ultrasound, X-ray, CT Scan, ECG)",
+        "service7-p": "Modern radiology services (Ultrasound, X-ray, CT Scan, ECG) are provided by a specialist doctor. We use advanced technology to provide accurate diagnoses.",
+        "service8-h3": "Dental Specialist",
+        "service8-p": "Comprehensive dental treatment is provided by a specialist doctor. We offer services ranging from general dental care to crowns and tooth replacement.",
+        "service9-h3": "Neurosurgery (Spine and Brain) Specialist",
+        "service9-p": "Specialized neurosurgery for the spine and brain is performed by highly experienced specialist doctors. We provide specialized treatment for various neurological conditions.",
+        "service10-h3": "Orthopedics (Bone and Joint, Nerve, and Spine) Specialist",
+        "service10-p": "Specialized orthopedic treatment for bones, joints, nerves, and the spine is provided by a specialist doctor. We offer treatment for fractures, injuries, and joint diseases.",
+        "service11-h3": "Dermatology, Laser, and Cosmetology Specialist",
+        "service11-p": "Specialized dermatology, laser, and cosmetology treatments are provided by a specialist doctor. We offer care for various skin conditions, both external and internal.",
+        "service12-h3": "Anesthesia and Pain Management Specialist",
+        "service12-p": "Specialized anesthesia and pain management treatments are provided by a specialist doctor. We offer necessary care before and after surgery.",
+        "service13-h3": "Comprehensive Modern Laboratory",
+        "service13-p": "Comprehensive modern laboratory services are provided. We offer various types of blood, urine, and other biological tests using modern equipment.",
+        "service14-h3": "Physiotherapy Examination and Treatment",
+        "service14-p": "Comprehensive physiotherapy examination and treatment are provided by a physiotherapist. We offer treatment for various musculoskeletal and movement disorders.",
+        "service15-h3": "Psychiatry Specialist",
+        "service15-p": "Specialized psychiatric services are provided. We offer counseling and treatment for various mental health conditions.",
+        "service16-h3": "Full Maternity Services",
+        "service16-p": "Full maternity services, from prenatal to postnatal care, are provided by highly experienced professionals, specialist doctors, and modern equipment.",
+        "service17-h3": "Comprehensive Pharmacy and Ambulance Services",
+        "service17-p": "Comprehensive pharmacy and ambulance services are provided. 24-hour pharmacy and ambulance services are available.",
+        "service18-h3": "Other Services Available",
+        "service18-p": "Geez Hospital offers other unlisted services to the community. Please feel free to inquire for any questions or additional information.",
         "doctors-page-title": "Our Doctors",
         "doctors-page-intro": "Geez Hospital provides various services with highly qualified and experienced specialists and sub-specialists. Chosen for our care, trusted for our expertise.",
         "dr-tesfay-exp": "Dr. Tesfay Atsbeha has over 10 years of specialized experience and expertise in cardiology, both domestically and internationally. He has served with high competence in various hospitals and is currently dedicated to serving patients at our hospital with great initiative and professionalism.",
@@ -129,72 +205,29 @@ const translations = {
         "form-submit-btn": "Send",
         "our-location-map": "View Our Location on Map",
         "view-on-map": "View on Map"
-    },
-    "amh": {
-        "home": "መግቢያ",
-        "services": "አገልግሎቶቻችን",
-        "doctors": "ሀኪሞቻችን",
-        "gallery": "ጋለሪ",
-        "news": "ዜና",
-        "contact": "ያግኙን",
-        "contact-us-btn": "ያግኙን",
-        "hero-main-title": "Geez Hospital | ግዕዝ ሆስፒታል", // New Title
-        "hero-tagline-eng": "Chosen for our care, trusted for our expertise", // New English Tagline
-        "hero-h2": "በእንክብካቤአችን ተመርጠናል፣በሙያ ብቃታችን ታምነናል",
-        "hero-p": "ለጤናዎ ቅድሚያ በመስጠት፣ ብቁ ስፔሻሊስቶች እና ሳብስፔሻሊስቶች ሀኪሞችን ከዘመናዊ የቴክኖሎጂ መሳሪያዎች (ማሽኖች) ጋር አስተባብረን እየጠበቅንዎት ነው። ለማንኛውም ጥያቄ ወይም ቀጠሮ ለመያዝ እዚህ ይመዝገቡ።",
-        "hero-btn-appointment": "ቀጠሮ ለመያዝ",
-        "hero-btn-services": "አገልግሎቶቻችንን ይመልከቱ",
-        "about-h2": "ስለእኛ (About Us)",
-        "about-p1": "በ2011 ዓ.ም የተመሰረተው ግዕዝ ሆስፒታል በመካከለኛው ዞን እና በትግራይ ውስጥ ከቀዳሚዎቹ አንዱ ሲሆን ዓለምአቀፍ ደረጃውን የጠበቀ ዘመናዊና ቀልጣፋ የህክምና አገልግሎት የሚሰጥ ተቋም ነው። በሁሉም ዞን እና በአካባቢው ካሉ ትላልቅ እና ታማኝ የህክምና ተቋማት አንዱ በመሆን ዓለምአቀፍ ደረጃውን የጠበቀ ህክምና ለሁሉም ዜጋ ተደራሽ ለማድረግ ያለመ ነው። በተለይም አሳቢ እንክብካቤ፣ ከፍተኛ ሙያዊ ብቃት እና ዘመናዊ መሳሪያዎችን በማቅረብ የተመሰረተ ተቋም ነው። ለታካሚ ደህንነት እና ለላቀ አገልግሎት ከፍተኛ ትኩረት ይሰጣል።",
-        "vision-h3": "ራዕይ (Vision)",
-        "vision-p": "በምንሰጠው የላቀ ሙያዊ ብቃት እና ታካሚን ማዕከል ባደረገ እንክብካቤ ምክንያት፣ ዓለምአቀፍ ደረጃውን የጠበቀ የህክምና አገልግሎት በመስጠት በአፍሪካ ውስጥ የተከበረ የህክምና ተቋም መሆን።",
-        "mission-h3": "ተልዕኮ (Mission)",
-        "mission-p": "የላቀ ጥራት ያለው፣ ተመጣጣኝ፣ ተደራሽ እና ተጠያቂነት ያለው ህክምና ለሁሉም ዜጋ በማቅረብ፤ የላቀ ሙያዊ ክህሎትን ርህራሄ የተሞላበት እንክብካቤን ያጣመረ፣ ተደራሽ፣ ጥራቱን የጠበቀ እና ተመጣጣኝ ዋጋ ያለው ህክምና ለህብረተሰቡ ማቅረብ፤ ዓለምአቀፍ ደረጃውን የጠበቀ የህክምና አሰራር መፍጠር እንዲሁም ከፍተኛውን የህክምና ስነ-ምግባር ማክበር ነው።",
-        "services-h3": "አገልግሎቶች (Our Services)",
-        "services-p-about": "በርካታ የስፔሻሊስት እና የሳብስፔሻሊስት ዘርፎች (ለምሳሌ፡- ልብ፣ ካንሰር፣ አእምሮና ነርቮች፣ አጥንት፣ ከአንገት በላይ፣ አይን፣ የቆዳና የውበት፣ የእናቶችና የህፃናት እንክብካቤ ምርመራዎች እንዲሁም የድንገተኛ አደጋ አገልግሎት) በዘመናዊ ቴክኖሎጂ እና በሙያ ብቃት እናቀርባለን። ለዝርዝር አገልግሎቶቻችን በአገልግሎቶቻችን ስር ይመልከቱ።",
-        "our-services-h2": "አገልግሎቶቻችን",
-        "all-services-btn": "ሁሉም አገልግሎቶቻችን",
-        "doctors-h2": "ሀኪሞቻችን",
-        "doctors-p": "ግዕዝ ሆስፒታል ከፍተኛ ልምድና ሙያ ባላቸው ስፔሻሊስት ሀኪሞች አገልግሎት ይሰጣል።",
-        "dr-tesfay-name": "ዶ/ር ተስፋይ አፅብሃ",
-        "dr-tesfay-specialty": "የልብ ህመም ሳብ-ስፔሻሊስት",
-        "dr-higus-name": "ዶ/ር ህጉስ ተክሉ",
-        "dr-higus-specialty": "የውስጥ ደዌ ህክምና ስፔሻሊስት",
-        "appointment-btn": "ቀጠሮ",
-        "testimonials-h2": "የታካሚዎች ምስክርነት",
-        "testimonial-p": "\"ግዕዝ ሆስፒታል በአሳቢ እንክብካቤአቸውና በሙያዊ ብቃታቸው በጣም ልዩ ናቸው። ሀኪሞቹ በጣም ደጋግና ምርጥ ናቸው። ለሰጡኝ የህክምና እንክብካቤ እጅግ አመሰግናለሁ።\"",
-        "testimonial-span": "- አቶ ገብረመድህን ካህሳይ",
-        "contact-h2": "ያግኙን",
-        "contact-p": "ለማንኛውም ጥያቄ ወይም ቀጠሮ ለመያዝ እዚህ ይመዝገቡ።",
-        "footer-text": "ሁሉም ህጋዊ መብቶች በግዕዝ ሆስፒታል የተጠበቁ ናቸው © 2024",
-        "doctors-page-title": "ሀኪሞቻችን",
-        "doctors-page-intro": "ግዕዝ ሆስፒታል ከፍተኛ ብቃት እና ልምድ ባላቸው ስፔሻሊስቶች እና ሳብ-ስፔሻሊስቶች ሀኪሞች የተለያዩ አገልግሎቶችን ይሰጣል። በእንክብካቤአችን ተመርጠናል፣በሙያ ብቃታችን ታምነናል",
-        "dr-tesfay-exp": "ዶ/ር ተስፋይ አፅብሃ ከ10 ዓመታት በላይ በሀገር ውስጥና በውጭ ሀገር በልብ ህክምና ልዩ እውቀትና ሙያ አላቸው። በተለያዩ ሆስፒታሎች በከፍተኛ ብቃት አገልግለዋል። በአሁኑ ጊዜም በሆስፒታላችን ታካሚዎችን በከፍተኛ ተነሳሽነትና ፍላጎት በሙያዊ ብቃታቸው እያገለገሉ ይገኛሉ።",
-        "dr-higus-exp": "ዶ/ር ህጉስ ተክሉ ከ12 ዓመታት በላይ የውስጥ ደዌ ህክምና ሀኪም ናቸው። በተለያዩ የህክምና ተቋማት አገልግለዋል። ለተለያዩ በሽታዎች ሙሉ አቅማቸውን በመስጠት ህዝባቸው ዘንድ ከፍተኛ ተቀባይነት አላቸው።",
-        "dr-gebreab-name": "ዶ/ር ገብረአብ ነጋ",
-        "dr-gebreab-specialty": "የህፃናት ህክምና ስፔሻሊስት",
-        "dr-gebreab-exp": "ዶ/ር ገብረአብ ከ8 ዓመታት በላይ በህፃናት ህክምና አገልግለዋል፣ በተጨማሪም በአክሱም ዩኒቨርሲቲ ረዳት ፕሮፌሰር ናቸው። ለህፃናት ተስማሚ እንክብካቤ እና ህክምና ይሰጣሉ።",
-        "news": "ዜና",
-        "news-page-intro": "ከግዕዝ ሆስፒታል የሚወጡ አዳዲስ ዜናዎችን፣ የህክምና ምክሮችን እና ጠቃሚ መረጃዎችን እዚህ ይከታተሉ።",
-        "gallery": "ጋለሪ",
-        "gallery-page-intro": "የግዕዝ ሆስፒታልን የተለያዩ ምስሎች፣ ዘመናዊ መሳሪያዎችን እና የተደረጉ የህክምና እንክብካቤዎችን እዚህ ማየት ይችላሉ።",
-        "contact-form-title": "መልዕክት ይላኩልን",
-        "form-full-name": "ሙሉ ስም:",
-        "form-email": "ኢሜይል:",
-        "form-subject": "የጥያቄ/የህክምና አይነት:",
-        "form-phone": "ስልክ ቁጥር:",
-        "form-address": "አድራሻ:",
-        "form-age": "ዕድሜ:",
-        "form-gender": "ፆታ:",
-        "form-select-gender": "ፆታ ይምረጡ",
-        "form-gender-male": "ወንድ",
-        "form-gender-female": "ሴት",
-        "form-gender-other": "ሌላ",
-        "form-message": "መልዕክት:",
-        "form-submit-btn": "ይላኩ",
-        "our-location-map": "ቦታችንን በካርታ ይመልከቱ",
-        "view-on-map": "በካርታ ይመልከቱ"
     }
+};
+
+// Data for service icons (not translated, as icons are universal)
+const serviceIcons = {
+    "service-item-1": "fas fa-stethoscope",    // Internal Medicine
+    "service-item-2": "fas fa-heartbeat",      // Cardiology
+    "service-item-3": "fas fa-scalpel",        // General Surgery
+    "service-item-4": "fas fa-child",          // Pediatrics
+    "service-item-5": "fas fa-baby",           // Obstetrics/Gynecology (using baby for maternity)
+    "service-item-6": "fas fa-ear",            // ENT
+    "service-item-7": "fas fa-x-ray",          // Radiology
+    "service-item-8": "fas fa-tooth",          // Dental
+    "service-item-9": "fas fa-brain",          // Neurosurgery (brain for nervous system)
+    "service-item-10": "fas fa-bone",          // Orthopedics (bone for bones/joints)
+    "service-item-11": "fas fa-hand-sparkles", // Dermatology (hand with sparkles for skin/beauty)
+    "service-item-12": "fas fa-syringe",       // Anesthesia/Pain (syringe for injections/pain relief)
+    "service-item-13": "fas fa-flask",         // Laboratory
+    "service-item-14": "fas fa-running",       // Physiotherapy (running for movement)
+    "service-item-15": "fas fa-head-side-brain", // Psychiatry (head with brain for mental health)
+    "service-item-16": "fas fa-person-pregnant", // Maternity (pregnant person)
+    "service-item-17": "fas fa-truck-medical", // Pharmacy & Ambulance (ambulance truck)
+    "service-item-18": "fas fa-ellipsis-h"     // Other Services (ellipsis for more)
 };
 
 let currentLang = 'tig'; // Default language
@@ -227,6 +260,23 @@ function setLanguage(lang) {
     if (footerTextElement) {
         footerTextElement.textContent = translations[lang]["footer-text"];
     }
+
+    // --- NEW: Insert icons into service items on services.html ---
+    if (window.location.pathname.includes('services.html')) {
+        for (const serviceId in serviceIcons) {
+            const serviceItem = document.getElementById(serviceId);
+            if (serviceItem && !serviceItem.querySelector('i')) { // Only add if icon not already present
+                const iconElement = document.createElement('i');
+                iconElement.classList.add(...serviceIcons[serviceId].split(' ')); // Add all classes from string
+                // Prepend the icon to the h3 tag within the service item
+                const h3Element = serviceItem.querySelector('h3');
+                if (h3Element) {
+                    h3Element.insertBefore(iconElement, h3Element.firstChild);
+                }
+            }
+        }
+    }
+    // --- END NEW ---
 }
 
 document.addEventListener('DOMContentLoaded', () => {
