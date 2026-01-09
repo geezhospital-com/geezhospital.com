@@ -11,7 +11,7 @@ const translations = {
         "hero-main-title": "Geez Hospital | ግዕዝ ሆስፒታል", // New Title
         "hero-tagline-eng": "Chosen for our care, trusted for our expertise", // New English Tagline
         "hero-h2": "ብሓልዮትና ንምረጽ፡ብሞያዊ ብቕዓትና ንእመን",
-        "hero-p": "ንጥዕናኹም ቀዳምነት ብምሃብ፣ ብሉፃት ስፔሻሊስትን ሳብስፔሻሊስትታትን ሓኻይም ምስ ዘመናዊ ቴክኖሎጂ መሳርሕታት(ማሽን) ኣዋዲድንና ንፅበየኩም ኣለና። ንዝኾነ ሕቶ ወይ ቆፀሮ ንምሓዝ በይዝኦም ኣብዚ ይመዝገቡ።",
+        "hero-p": "ንጥዕናኹም ቀዳምነት ብምሃብ፣ ብሉፃት ስፔሻሊስትን ሳብስፔሻሊስትታትን ሓኻይም ምስ ዘመናዊ ቴክኖሎጂ መሳርሒታት(ማሽን) ኣዋዲድንና ንፅበየኩም ኣለና። ንዝኾነ ሕቶ ወይ ቆፀሮ ንምሓዝ በይዝኦም ኣብዚ ይመዝገቡ።",
         "hero-btn-appointment": "ቆፀሮ ንምሓዝ",
         "hero-btn-services": "ግልጋሎታትና ርኣዩ",
         "about-h2": "ብዛዕባና (About Us)",
@@ -208,28 +208,6 @@ const translations = {
     }
 };
 
-// Data for service icons (not translated, as icons are universal)
-const serviceIcons = {
-    "service-item-1": "fas fa-stethoscope",    // Internal Medicine
-    "service-item-2": "fas fa-heartbeat",      // Cardiology
-    "service-item-3": "fas fa-scalpel",        // General Surgery
-    "service-item-4": "fas fa-child",          // Pediatrics
-    "service-item-5": "fas fa-baby",           // Obstetrics/Gynecology (using baby for maternity)
-    "service-item-6": "fas fa-ear",            // ENT
-    "service-item-7": "fas fa-x-ray",          // Radiology
-    "service-item-8": "fas fa-tooth",          // Dental
-    "service-item-9": "fas fa-brain",          // Neurosurgery (brain for nervous system)
-    "service-item-10": "fas fa-bone",          // Orthopedics (bone for bones/joints)
-    "service-item-11": "fas fa-hand-sparkles", // Dermatology (hand with sparkles for skin/beauty)
-    "service-item-12": "fas fa-syringe",       // Anesthesia/Pain (syringe for injections/pain relief)
-    "service-item-13": "fas fa-flask",         // Laboratory
-    "service-item-14": "fas fa-running",       // Physiotherapy (running for movement)
-    "service-item-15": "fas fa-head-side-brain", // Psychiatry (head with brain for mental health)
-    "service-item-16": "fas fa-person-pregnant", // Maternity (pregnant person)
-    "service-item-17": "fas fa-truck-medical", // Pharmacy & Ambulance (ambulance truck)
-    "service-item-18": "fas fa-ellipsis-h"     // Other Services (ellipsis for more)
-};
-
 let currentLang = 'tig'; // Default language
 
 function setLanguage(lang) {
@@ -260,23 +238,7 @@ function setLanguage(lang) {
     if (footerTextElement) {
         footerTextElement.textContent = translations[lang]["footer-text"];
     }
-
-    // --- NEW: Insert icons into service items on services.html ---
-    if (window.location.pathname.includes('services.html')) {
-        for (const serviceId in serviceIcons) {
-            const serviceItem = document.getElementById(serviceId);
-            if (serviceItem && !serviceItem.querySelector('i')) { // Only add if icon not already present
-                const iconElement = document.createElement('i');
-                iconElement.classList.add(...serviceIcons[serviceId].split(' ')); // Add all classes from string
-                // Prepend the icon to the h3 tag within the service item
-                const h3Element = serviceItem.querySelector('h3');
-                if (h3Element) {
-                    h3Element.insertBefore(iconElement, h3Element.firstChild);
-                }
-            }
-        }
-    }
-    // --- END NEW ---
+    // No more icon insertion logic here, as icons are now directly in HTML
 }
 
 document.addEventListener('DOMContentLoaded', () => {
