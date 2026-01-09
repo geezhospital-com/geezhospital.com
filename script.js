@@ -117,16 +117,25 @@ const translations = {
 
         // NEW DROPDOWN MENU ITEMS - DEPARTMENTS
         "departments": "ክፍልታት",
-        "dept-surgery": "መጥባሕቲ",
-        "dept-pediatrics": "ህፃናት",
-        "dept-obsgyn": "ማህፀንን ጥንስን",
         "dept-internal-medicine": "ውሽጣዊ ሕማማት",
-        "dept-orthopedics": "ዓፅሚ",
+        "dept-cardiology": "ሕማማት ልቢ",
+        "dept-surgery": "ሓፈሻዊ መጥባሕቲ",
+        "dept-pediatrics": "ህፃውንቲን ኣባፅሕን",
+        "dept-obsgyn": "ማህፀንን ጥንስን",
+        "dept-ent": "ክሳድ፣ እዝንን ኣፍንጫን", // Simplified for Department
         "dept-radiology": "ራድዮሎጂ",
-        "dept-oncology": "ካንሰር",
-        "dept-oral-dental-maxillofacial": "መጥባሕቲ ኣፍን ስኒን ገፅን",
-        "dept-dermatology": "ቆርበት",
-        "dept-ent-plastic-surgery": "ክሳድ፣ እዝንን ኣፍንጫን ስነ-ፅባቐን",
+        "dept-dental": "ስኒ",
+        "dept-neurosurgery": "መትኒ፣ ዓንዲ ሑቐን ሓንጎልን",
+        "dept-orthopedics": "ዓፅምን መገጣጠምን",
+        "dept-dermatology": "ቆርበት፣ ኣበላዘርን ስነ-ፅባቐን",
+        "dept-anesthesia-pain": "መደቀስን ቃንዛን",
+        "dept-laboratory": "ላቦራቶሪ",
+        "dept-physiotherapy": "ፊዝዮቴራፒ",
+        "dept-psychiatry": "ስነ ኣእምሮ",
+        "dept-maternity": "መዋልዳን",
+        "dept-pharmacy-ambulance": "ፋርማሲን ኣምቡላንስን",
+        "dept-other-services": "ካልኦት ግልጋሎት",
+
 
         // NEW DROPDOWN MENU ITEMS - MEDIA
         "facilities": "መተኣኻኸሊታት",
@@ -253,16 +262,24 @@ const translations = {
 
         // NEW DROPDOWN MENU ITEMS - DEPARTMENTS
         "departments": "Departments",
-        "dept-surgery": "Surgery",
-        "dept-pediatrics": "Pediatrics",
-        "dept-obsgyn": "Obstetrics and Gynecology",
         "dept-internal-medicine": "Internal Medicine",
-        "dept-orthopedics": "Orthopedics",
+        "dept-cardiology": "Cardiology",
+        "dept-surgery": "General Surgery",
+        "dept-pediatrics": "Pediatrics and Adolescent Medicine",
+        "dept-obsgyn": "Obstetrics and Gynecology",
+        "dept-ent": "ENT (Ear, Nose, Throat)", // Simplified for Department
         "dept-radiology": "Radiology",
-        "dept-oncology": "Oncology",
-        "dept-oral-dental-maxillofacial": "Oral, Dental, Maxillofacial Surgery",
-        "dept-dermatology": "Dermatology",
-        "dept-ent-plastic-surgery": "ENT and Plastic Surgery",
+        "dept-dental": "Dental",
+        "dept-neurosurgery": "Neurosurgery (Spine and Brain)",
+        "dept-orthopedics": "Orthopedics (Bone and Joint)",
+        "dept-dermatology": "Dermatology, Laser, and Cosmetology",
+        "dept-anesthesia-pain": "Anesthesia and Pain Management",
+        "dept-laboratory": "Laboratory",
+        "dept-physiotherapy": "Physiotherapy",
+        "dept-psychiatry": "Psychiatry",
+        "dept-maternity": "Maternity Services",
+        "dept-pharmacy-ambulance": "Pharmacy and Ambulance",
+        "dept-other-services": "Other Services",
 
         // NEW DROPDOWN MENU ITEMS - MEDIA
         "facilities": "Facilities",
@@ -388,16 +405,24 @@ const translations = {
 
         // NEW DROPDOWN MENU ITEMS - DEPARTMENTS
         "departments": "ክፍሎች",
-        "dept-surgery": "ቀዶ ጥገና",
-        "dept-pediatrics": "ህፃናት",
-        "dept-obsgyn": "የማህፀንና ፅንስ",
         "dept-internal-medicine": "የውስጥ ደዌ",
-        "dept-orthopedics": "አጥንት",
+        "dept-cardiology": "የልብ ህመም",
+        "dept-surgery": "አጠቃላይ ቀዶ ጥገና",
+        "dept-pediatrics": "ህፃናትና ጎረምሶች ህክምና",
+        "dept-obsgyn": "የማህፀንና ፅንስ",
+        "dept-ent": "ከአንገት በላይ (ENT)", // Simplified for Department
         "dept-radiology": "ራዲዮሎጂ",
-        "dept-oncology": "ካንሰር",
-        "dept-oral-dental-maxillofacial": "የአፍ፣ የጥርስ እና የፊት ቀዶ ጥገና",
-        "dept-dermatology": "ቆዳ",
-        "dept-ent-plastic-surgery": "የአንገት፣ የጆሮና የአፍንጫ እና የውበት ቀዶ ጥገና",
+        "dept-dental": "ጥርስ",
+        "dept-neurosurgery": "የነርቭ፣ የአከርካሪ አጥንት እና የአንጎል",
+        "dept-orthopedics": "የአጥንትና መገጣጠሚያ",
+        "dept-dermatology": "የቆዳ፣ የሌዘር እና የውበት",
+        "dept-anesthesia-pain": "ማደንዘዣ እና ህመም አስተዳደር",
+        "dept-laboratory": "ላቦራቶሪ",
+        "dept-physiotherapy": "ፊዚዮቴራፒ",
+        "dept-psychiatry": "ስነ አእምሮ",
+        "dept-maternity": "የወሊድ አገልግሎት",
+        "dept-pharmacy-ambulance": "ፋርማሲ እና አምቡላንስ",
+        "dept-other-services": "ሌሎች አገልግሎቶች",
 
         // NEW DROPDOWN MENU ITEMS - MEDIA
         "facilities": "መገልገያዎች",
@@ -407,6 +432,8 @@ const translations = {
         "media-articles": "ጽሑፎች"
     }
 };
+
+// ... (rest of your script.js code, including serviceIcons and setLanguage function) ...
 
 // Data for service icons (not translated, as icons are universal)
 const serviceIcons = {

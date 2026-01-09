@@ -1,110 +1,229 @@
 <!DOCTYPE html>
-<html lang="tig">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate="doctors">ሓኻይምና - ግዕዝ ሆስፒታል</title>
+    <title data-translate="doctors-page-title">Our Doctors</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="images/favicon.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Noto+Sans+Ethiopic:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Google Search Console Verification Meta Tag (Add if needed, from index.html) -->
-    <!-- <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE_HERE" /> -->
 </head>
 <body>
+    <!-- Top Bar (Copy from index.html) -->
     <div class="top-bar">
-    <div class="container">
-        <div class="contact-info">
-            <span><i class="fas fa-phone"></i> +251920008338/+251962333388</span>
-            <span><i class="fas fa-envelope"></i> info@geezhospital.com</span>
-        </div>
-        <div class="address-info">
-            <span><i class="fas fa-map-marker-alt"></i> Axum Town, In front of Ethiotelecom, behind central cafe</span>
+        <div class="container">
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> +251 911 179955</span>
+                <span><i class="fas fa-envelope"></i> info@geezhospital.com</span>
+            </div>
+            <div class="right-section">
+                <div class="address-info">
+                    <span><i class="fas fa-map-marker-alt"></i> Mekelle, Ethiopia</span>
+                </div>
+                <div class="social-icons-top">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <a href="contact.html" class="contact-button" data-translate="contact-us-btn">Contact Us</a>
+            </div>
         </div>
     </div>
-</div>
+
+    <!-- Header (Copy from index.html) -->
     <header>
         <div class="container">
             <div class="logo">
                 <img src="images/logo.png" alt="Geez Hospital Logo">
-                <h1>ግዕዝ ሆስፒታል</h1>
+                <h1 data-translate="hero-main-title">Geez Hospital</h1>
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html" data-translate="home">መእተዊ</a></li>
-                    <li><a href="services.html" data-translate="services">ግልጋሎታትና</a></li>
-                    <li><a href="doctors.html" data-translate="doctors">ሓኻይምና</a></li>
-                    <li><a href="gallery.html" data-translate="gallery">ጋለሪ</a></li>
-                    <li><a href="news.html" data-translate="news">ሓድሽ ሓበሬታ</a></li>
-                    <li><a href="contact.html" data-translate="contact">ምትእስሳር</a></li>
-                    <li>
-                        <div class="language-selector">
-                            <select id="language-switcher">
-                                <option value="tig">ትግርኛ</option>
-                                <option value="eng">English</option>
-                                <option value="amh">አማርኛ</option>
-                            </select>
-                        </div>
+                    <li><a href="index.html" data-translate="home">Home</a></li>
+                    <li><a href="services.html" data-translate="services">Our Services</a></li>
+                    <li class="dropdown">
+                        <a href="doctors.html" data-translate="doctors">Our Doctors <i class="fas fa-caret-down"></i></a>
+                        <ul class="submenu">
+                            <li><a href="doctors.html?specialty=surgeons" data-translate="menu-surgeons">Surgeons</a></li>
+                            <li><a href="doctors.html?specialty=gynecologists" data-translate="menu-gynecologists">Gynecologists</a></li>
+                            <li><a href="doctors.html?specialty=pediatricians" data-translate="menu-pediatricians">Pediatricians</a></li>
+                            <li><a href="doctors.html?specialty=internists" data-translate="menu-internists">Internists</a></li>
+                            <li><a href="doctors.html?specialty=orthopedicians" data-translate="menu-orthopedicians">Orthopedicians</a></li>
+                            <li><a href="doctors.html?specialty=radiologists" data-translate="menu-radiologists">Radiologists</a></li>
+                            <li><a href="doctors.html?specialty=oncologists" data-translate="menu-oncologists">Oncologists</a></li>
+                            <li><a href="doctors.html?specialty=maxillofacial" data-translate="menu-maxillofacial">Maxillofacial Surgeons</a></li>
+                            <li><a href="doctors.html?specialty=ent-plastic" data-translate="menu-ent-plastic">ENT, Head & Neck and Plastic Surgeons</a></li>
+                            <li><a href="doctors.html?specialty=dermatologists" data-translate="menu-dermatologists">Dermatologists</a></li>
+                        </ul>
                     </li>
+                    <li class="dropdown">
+                        <a href="services.html" data-translate="departments">Departments <i class="fas fa-caret-down"></i></a>
+                        <ul class="submenu">
+                            <li><a href="services.html?department=internal-medicine" data-translate="dept-internal-medicine">Internal Medicine</a></li>
+                            <li><a href="services.html?department=cardiology" data-translate="dept-cardiology">Cardiology</a></li>
+                            <li><a href="services.html?department=surgery" data-translate="dept-surgery">General Surgery</a></li>
+                            <li><a href="services.html?department=pediatrics" data-translate="dept-pediatrics">Pediatrics</a></li>
+                            <li><a href="services.html?department=obsgyn" data-translate="dept-obsgyn">Obstetrics and Gynecology</a></li>
+                            <li><a href="services.html?department=ent" data-translate="dept-ent">ENT, Head & Neck</a></li>
+                            <li><a href="services.html?department=radiology" data-translate="dept-radiology">Radiology</a></li>
+                            <li><a href="services.html?department=dental" data-translate="dept-dental">Dental</a></li>
+                            <li><a href="services.html?department=neurosurgery" data-translate="dept-neurosurgery">Neurosurgery</a></li>
+                            <li><a href="services.html?department=orthopedics" data-translate="dept-orthopedics">Orthopedics</a></li>
+                            <li><a href="services.html?department=dermatology" data-translate="dept-dermatology">Dermatology</a></li>
+                            <li><a href="services.html?department=anesthesia-pain" data-translate="dept-anesthesia-pain">Anesthesia and Pain Management</a></li>
+                            <li><a href="services.html?department=laboratory" data-translate="dept-laboratory">Laboratory</a></li>
+                            <li><a href="services.html?department=physiotherapy" data-translate="dept-physiotherapy">Physiotherapy</a></li>
+                            <li><a href="services.html?department=psychiatry" data-translate="dept-psychiatry">Psychiatry</a></li>
+                            <li><a href="services.html?department=maternity" data-translate="dept-maternity">Maternity Services</a></li>
+                            <li><a href="services.html?department=pharmacy-ambulance" data-translate="dept-pharmacy-ambulance">Pharmacy and Ambulance</a></li>
+                            <li><a href="services.html?department=other" data-translate="dept-other-services">Other Services</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="facilities.html" data-translate="facilities">Facilities</a></li>
+                    <li><a href="founders.html" data-translate="founders">Founders</a></li>
+                    <li class="dropdown">
+                        <a href="#" data-translate="media">Media <i class="fas fa-caret-down"></i></a>
+                        <ul class="submenu">
+                            <li><a href="patient-info.html" data-translate="media-patient-info">Patient Information</a></li>
+                            <li><a href="articles.html" data-translate="media-articles">Articles</a></li>
+                            <li><a href="news.html" data-translate="news">News and Events</a></li>
+                            <li><a href="gallery.html" data-translate="gallery">Gallery</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html" data-translate="contact">Contact Us</a></li>
                 </ul>
+                <div class="language-selector">
+                    <select id="language-switcher">
+                        <option value="tig">ትግርኛ</option>
+                        <option value="eng">English</option>
+                        <option value="amh">አማርኛ</option>
+                    </select>
+                </div>
             </nav>
         </div>
     </header>
 
-    <section id="page-hero" class="section-padding">
-        <div class="container">
-            <h2>ሓኻይምና</h2>
-            <p>ግዕዝ ሆስፒታል ብልዑል ብቕዓትን ተሞኩሮን ዘለዎም ስፔሻሊስትን ፍሉይ ስፔሻሊስትን ሓኻይም ዝተፈላለዩ ግልጋሎታት ይህብ። ብሓልዮትና ንምረጽ፡ብሞያዊ ብቕዓትና ንእመን።</p>
+    <!-- Small Hero Section -->
+    <section class="small-hero section-padding">
+        <div class="container text-center">
+            <h2 data-translate="doctors-page-title">Our Doctors</h2>
+            <p data-translate="doctors-page-intro">Geez Hospital provides various services with highly qualified and experienced specialists and sub-specialists. Chosen for our care, trusted for our expertise.</p>
         </div>
     </section>
 
-    <section id="all-doctors" class="section-padding bg-light">
+    <!-- Doctors List Section -->
+    <section id="doctors-page" class="section-padding">
         <div class="container">
-            <div class="doctor-profile-grid">
-                <!-- Doctor profiles will be listed here -->
-                <div class="doctor-full-card">
-                    <img src="images/doctor1.jpg" alt="ዶ/ር ተስፋይ ኣጽብሃ">
-                    <h3>ዶ/ር ተስፋይ ኣጽብሃ</h3>
-                    <p class="specialty">ፍሉይ ስፔሻሊስት ሕማማት ልቢ</p>
-                    <p class="experience">ዶ/ር ተስፋይ ኣጽብሃ ንልዕሊ 10 ዓመታት ኣብ ዉሽጢ ዓዲን ወጻእን ብዝተምሃርዎ መሰረት ኣብ ሕክምና ልቢ ፍሉይ ክእለትን ሞያን ኣለዎም  ። ኣብ ዝተፈላለዩ ሆስፒታላት ብልዑል ብቕዓት ኣገልግሎም እዮም ኣለዋ። ሕዚ ድማ ኣብ ሆስፒታልና ንሕሙማት ብልዑል ተበግሶን ድሌትን ብሞያዊ ብቕዓቶም የገልግሉ ኣለዉ።</p>
-                    <a href="contact.html" class="btn btn-small" data-translate="appointment-btn">ቆጸሮ ንምሓዝ</a>
+            <div class="doctor-detail-grid">
+
+                <!-- Doctor Card 1: Dr. Tesfay Atsbeha (Cardiologist) -->
+                <div class="doctor-detail-card" data-specialty="cardiologist internists">
+                    <img src="images/doctor1.jpg" alt="Dr. Tesfay Atsbeha">
+                    <h3 data-translate="dr-tesfay-name">Dr. Tesfay Atsbeha</h3>
+                    <p class="specialty" data-translate="dr-tesfay-specialty">Sub-Specialist in Cardiology</p>
+                    <p class="experience" data-translate="dr-tesfay-exp">Dr. Tesfay Atsbeha has over 10 years of specialized experience and expertise in cardiology, both domestically and internationally. He has served with high competence in various hospitals and is currently dedicated to serving patients at our hospital with great initiative and professionalism.</p>
+                    <a href="contact.html?doctor=TesfayAtsbeha" class="appointment-btn" data-translate="appointment-btn">Book Appointment</a>
                 </div>
-                <div class="doctor-full-card">
-                    <img src="images/doctor2.jpg" alt="ዶ/ር ሕጉስ ተኽሉ">
-                    <h3>ዶ/ር ሕጉስ ተኽሉ</h3>
-                    <p class="specialty">ስፔሻሊስት ሕክምና ውሽጣዊ ሕማማት</p>
-                    <p class="experience">ዶ/ር ሕጉስ ተኽሉ ንልዕሊ 12 ዓመታት ኣብ ሕክምና ውሽጣዊ ሕማማት ዶክተር እዮም። ኣብ ዝተፈላለዩ ሕክምናዊ ትካላት ኣገልጊሎም። ንዝተፈላለዩ ሕማማት ብምሉእ ዓቕሞም ብምሕካም ኣብ ህዝቦም ልዑል ተቐባልነት ኣለዎም።</p>
-                    <a href="contact.html" class="btn btn-small" data-translate="appointment-btn">ቆጸሮ ንምሓዝ</a>
+
+                <!-- Doctor Card 2: Dr. Higus Teklu (Internal Medicine) -->
+                <div class="doctor-detail-card" data-specialty="internists">
+                    <img src="images/doctor2.jpg" alt="Dr. Higus Teklu">
+                    <h3 data-translate="dr-higus-name">Dr. Higus Teklu</h3>
+                    <p class="specialty" data-translate="dr-higus-specialty">Specialist in Internal Medicine</p>
+                    <p class="experience" data-translate="dr-higus-exp">Dr. Higus Teklu has been an internal medicine doctor for over 12 years. He has served in various medical institutions and is highly regarded by the community for his comprehensive treatment of various diseases.</p>
+                    <a href="contact.html?doctor=HigusTeklu" class="appointment-btn" data-translate="appointment-btn">Book Appointment</a>
                 </div>
-                <!-- Add more doctor full cards here -->
-                <!-- Example of another doctor: -->
-                <div class="doctor-full-card">
-                    <img src="images/doctor3.jpg" alt="ዶ/ር ገብረኣብ ነጋ"> <!-- Make sure to have doctor3.jpg in your images folder -->
-                    <h3>ዶ/ር ገብረኣብ ነጋ</h3>
-                    <p class="specialty">ስፔሻሊስት ሕክምና ህፃውንቲ</p>
-                    <p class="experience">ዶ/ር ገብረኣብ ንልዕሊ 8 ዓመታት ኣብ ሕክምና ህፃውንቲ ኣገልጊሎም፣ከምኡ እዉን ኣብ ኣኽሱም ዩንቨርስቲ ሓጋዚ ፕሮፌሶር እዮም። ንህጻናት ዝምጥን ክንክንን ሕክምናን ይህቡ።</p>
-                    <a href="contact.html" class="btn btn-small" data-translate="appointment-btn">ቆጸሮ ንምሓዝ</a>
+
+                <!-- Doctor Card 3: Dr. Gebreab Nega (Pediatrician) -->
+                <div class="doctor-detail-card" data-specialty="pediatricians">
+                    <img src="images/doctor3.jpg" alt="Dr. Gebreab Nega">
+                    <h3 data-translate="dr-gebreab-name">Dr. Gebreab Nega</h3>
+                    <p class="specialty" data-translate="dr-gebreab-specialty">Pediatrics Specialist</p>
+                    <p class="experience" data-translate="dr-gebreab-exp">Dr. Gebreab has served in pediatrics for over 8 years and is also an assistant professor at Axum University. He provides care and treatment tailored for children.</p>
+                    <a href="contact.html?doctor=GebreabNega" class="appointment-btn" data-translate="appointment-btn">Book Appointment</a>
                 </div>
+
+                <!-- Add more doctor cards here following the same structure -->
+                <!-- Example: Surgeon -->
+                <div class="doctor-detail-card" data-specialty="surgeons">
+                    <img src="images/doctor4.jpg" alt="Dr. Almaz Kebede">
+                    <h3>Dr. Almaz Kebede</h3>
+                    <p class="specialty">General Surgeon</p>
+                    <p class="experience">Dr. Almaz Kebede is a highly skilled general surgeon with 15 years of experience in various complex surgical procedures. She is known for her precision and patient-centered approach.</p>
+                    <a href="contact.html?doctor=AlmazKebede" class="appointment-btn" data-translate="appointment-btn">Book Appointment</a>
+                </div>
+
+                <!-- Example: Gynecologist -->
+                <div class="doctor-detail-card" data-specialty="gynecologists">
+                    <img src="images/doctor5.jpg" alt="Dr. Tigisti Haile">
+                    <h3>Dr. Tigisti Haile</h3>
+                    <p class="specialty">Gynecologist and Obstetrician</p>
+                    <p class="experience">Dr. Tigisti Haile provides comprehensive care for women's health, including pregnancy, childbirth, and reproductive health. She has 10 years of experience in the field.</p>
+                    <a href="contact.html?doctor=TigistiHaile" class="appointment-btn" data-translate="appointment-btn">Book Appointment</a>
+                </div>
+
+                 <!-- Example: Radiologist -->
+                <div class="doctor-detail-card" data-specialty="radiologists">
+                    <img src="images/doctor6.jpg" alt="Dr. Solomon Nega">
+                    <h3>Dr. Solomon Nega</h3>
+                    <p class="specialty">Radiologist</p>
+                    <p class="experience">Dr. Solomon Nega is an expert in diagnostic imaging, interpreting X-rays, CT scans, and MRIs to provide accurate diagnoses. He has 8 years of experience.</p>
+                    <a href="contact.html?doctor=SolomonNega" class="appointment-btn" data-translate="appointment-btn">Book Appointment</a>
+                </div>
+
+                <!-- Example: Orthopedician -->
+                <div class="doctor-detail-card" data-specialty="orthopedicians">
+                    <img src="images/doctor7.jpg" alt="Dr. Meron Gebrehiwot">
+                    <h3>Dr. Meron Gebrehiwot</h3>
+                    <p class="specialty">Orthopedic Surgeon</p>
+                    <p class="experience">Dr. Meron Gebrehiwot specializes in the diagnosis and treatment of musculoskeletal diseases and injuries, including joint replacements and fracture care. She has 12 years of experience.</p>
+                    <a href="contact.html?doctor=MeronGebrehiwot" class="appointment-btn" data-translate="appointment-btn">Book Appointment</a>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Footer copied from index.html -->
+    <!-- Footer (Copy from index.html) -->
     <footer>
         <div class="container">
             <div class="footer-logo">
                 <img src="images/logo.png" alt="Geez Hospital Logo">
             </div>
-            <p id="footer-text"></p> <!-- Footer text will be set by JavaScript -->
+            <p id="footer-text" data-translate="footer-text">Copyright © 2026 Geez Hospital<br>Developed By Aser Teklu Gebrekidan-0911179955</p>
             <div class="social-links">
-                <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://t.me/Geezhospital_bot" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
-                <a href="https://linktr.ee/geezhospital" target="_blank" aria-label="Patient Survey"><i class="fas fa-poll"></i></a>
-                <a href="https://maps.app.goo.gl/yHuCuCgLMzUtyerU6" target="_blank" aria-label="Google Maps"><i class="fas fa-map-marker-alt"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Specific script for doctors.html to filter by specialty
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const specialtyFilter = urlParams.get('specialty');
+            const doctorCards = document.querySelectorAll('.doctor-detail-card');
+
+            if (specialtyFilter) {
+                doctorCards.forEach(card => {
+                    const cardSpecialties = card.getAttribute('data-specialty');
+                    if (cardSpecialties && cardSpecialties.includes(specialtyFilter)) {
+                        card.style.display = 'block'; // Show matching cards
+                    } else {
+                        card.style.display = 'none';  // Hide non-matching cards
+                    }
+                });
+            } else {
+                // If no filter, show all doctors
+                doctorCards.forEach(card => {
+                    card.style.display = 'block';
+                });
+            }
+        });
+    </script>
 </body>
 </html>
