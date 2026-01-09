@@ -1,24 +1,960 @@
-/* Other CSS rules... */
-
-/* Styling for icons within service item headings */
-#services-list .service-item h3 i {
-    font-size: 2.5em; /* Make icons larger */
-    margin-right: 15px; /* Space between icon and text */
-    vertical-align: middle; /* Align icon vertically with text */
+/* General Body and Container Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* Alternating Blue and Red colors for icons */
-#services-list .service-item:nth-child(odd) h3 i {
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 60px 0;
+}
+
+/* Top Bar Styles */
+.top-bar {
+    background-color: #198754; /* Green */
+    color: white;
+    padding: 10px 0;
+    font-size: 0.9em;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.top-bar .contact-info span,
+.top-bar .address-info span {
+    margin-right: 20px;
+    white-space: nowrap; /* Prevent breaking into new line */
+}
+
+.top-bar .contact-info a {
+    color: white;
+    text-decoration: none;
+}
+
+.top-bar .right-section {
+    display: flex;
+    align-items: center;
+}
+
+.top-bar .social-icons-top a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.top-bar .contact-button {
+    background-color: #007bff; /* Blue */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left: 20px;
+    white-space: nowrap;
+}
+
+/* Header (Navigation Bar) Styles */
+header {
+    background-color: #fff;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 1.8em;
+    color: #198754; /* Green */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #198754; /* Green */
+}
+
+.language-selector select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+/* Hero Section Styles */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero-bg.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h2 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.3em;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+.hero .hero-buttons a {
+    background-color: #007bff; /* Blue */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+}
+
+.hero .hero-buttons a:hover {
+    background-color: #0056b3; /* Darker Blue */
+}
+
+.hero .hero-buttons .secondary-btn {
+    background-color: #198754; /* Green */
+}
+
+.hero .hero-buttons .secondary-btn:hover {
+    background-color: #146c43; /* Darker Green */
+}
+
+
+/* Small Hero for internal pages */
+.small-hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/inner-hero-bg.jpg') no-repeat center center/cover;
+    padding: 80px 20px;
+}
+
+.small-hero h2 {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+.small-hero p {
+    font-size: 1.1em;
+    max-width: 700px;
+}
+
+
+/* About Us Section */
+#about {
+    background-color: #f9f9f9;
+}
+
+#about h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #198754; /* Green */
+}
+
+#about .about-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+#about .about-text {
+    flex: 2;
+}
+
+#about .about-text p {
+    margin-bottom: 20px;
+}
+
+#about .about-image {
+    flex: 1;
+    text-align: center;
+}
+
+#about .about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.vision-mission {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.vision-mission .vm-item {
+    flex: 1;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.vision-mission h3 {
     color: #007bff; /* Blue */
+    font-size: 1.8em;
+    margin-bottom: 15px;
 }
 
-#services-list .service-item:nth-child(even) h3 i {
-    color: #dc3545; /* Red */
+/* Featured Services Section (Homepage) */
+#featured-services {
+    background-color: #fff;
+    text-align: center;
 }
 
-/* Specific icon adjustments if needed, e.g., for certain icons that might look too big/small */
-/*
-#services-list .service-item .fa-scalpel {
+#featured-services h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #198754; /* Green */
+}
+
+#featured-services .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+#featured-services .service-item {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+#featured-services .service-item:hover {
+    transform: translateY(-5px);
+}
+
+#featured-services .service-item i {
+    font-size: 3em;
+    color: #007bff; /* Blue */
+    margin-bottom: 20px;
+}
+
+#featured-services .service-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+#featured-services .service-item p {
+    font-size: 0.95em;
+    color: #555;
+}
+
+#featured-services .all-services-btn {
+    background-color: #198754; /* Green */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+#featured-services .all-services-btn:hover {
+    background-color: #146c43; /* Darker Green */
+}
+
+/* Doctors Section (Homepage) */
+#doctors {
+    background-color: #f0f8ff; /* Light Blue background */
+    text-align: center;
+}
+
+#doctors h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #198754; /* Green */
+}
+
+#doctors p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    color: #555;
+}
+
+#doctors .doctor-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.doctor-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.doctor-card:hover {
+    transform: translateY(-8px);
+}
+
+.doctor-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #007bff; /* Blue border */
+}
+
+.doctor-card h3 {
+    font-size: 1.6em;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.doctor-card p.specialty {
+    color: #198754; /* Green */
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.doctor-card .appointment-btn {
+    background-color: #007bff; /* Blue */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.95em;
+    transition: background-color 0.3s ease;
+}
+
+.doctor-card .appointment-btn:hover {
+    background-color: #0056b3; /* Darker Blue */
+}
+
+/* Testimonials Section */
+#testimonials {
+    background: #198754; /* Green background */
+    color: white;
+    text-align: center;
+}
+
+#testimonials h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.testimonial-slider {
+    max-width: 800px;
+    margin: 0 auto;
+    /* You might use a JS library for a proper slider, for now, simple centering */
+}
+
+.testimonial-item {
+    padding: 30px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+.testimonial-item span {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+    font-style: normal;
+    color: #ffc107; /* Yellow for emphasis */
+}
+
+/* Contact Section (Homepage) */
+#contact-home {
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#contact-home h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #198754; /* Green */
+}
+
+#contact-home p {
+    font-size: 1.1em;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    color: #555;
+}
+
+#contact-home .contact-button {
+    background-color: #007bff; /* Blue */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+#contact-home .contact-button:hover {
+    background-color: #0056b3; /* Darker Blue */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+footer .footer-logo img {
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+footer p {
+    margin: 0 0 20px 0;
+    font-size: 0.9em;
+}
+
+footer .social-links a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5em;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+    color: #198754; /* Green */
+}
+
+
+/* --- services.html specific styles --- */
+#services-list .service-grid-full {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+#services-list .service-item {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#services-list .service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+#services-list .service-item h3 {
+    font-size: 1.7em;
+    color: #198754; /* Green */
+    margin-bottom: 15px;
+    display: flex; /* To align icon and text horizontally */
+    align-items: center; /* Vertically center icon and text */
+}
+
+#services-list .service-item h3 i {
+    font-size: 1.2em; /* Default icon size, you can adjust this if needed */
+    margin-right: 15px;
+    color: #007bff; /* Default blue color for icons */
+}
+
+#services-list .service-item p {
+    font-size: 1em;
+    color: #555;
+}
+
+
+/* --- doctors.html specific styles --- */
+#doctors-page .doctor-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.doctor-detail-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.doctor-detail-card:hover {
+    transform: translateY(-10px);
+}
+
+.doctor-detail-card img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid #198754; /* Green border */
+}
+
+.doctor-detail-card h3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.doctor-detail-card p.specialty {
+    color: #007bff; /* Blue */
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.doctor-detail-card p.experience {
+    font-size: 0.95em;
+    color: #666;
+    line-height: 1.8;
+}
+
+/* --- gallery.html specific styles --- */
+#gallery-content .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+/* --- news.html specific styles --- */
+#news-list .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.news-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.news-item:hover {
+    transform: translateY(-5px);
+}
+
+.news-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.news-item .news-content {
+    padding: 25px;
+}
+
+.news-item h3 {
+    font-size: 1.6em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #198754; /* Green */
+}
+
+.news-item p {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.news-item .read-more {
+    background-color: #007bff; /* Blue */
+    color: white;
+    padding: 10px 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9em;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.news-item .read-more:hover {
+    background-color: #0056b3; /* Darker Blue */
+}
+
+/* --- contact.html specific styles --- */
+#contact-form-section {
+    background-color: #f9f9f9;
+}
+
+.contact-layout {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.contact-form-container {
+    flex: 2;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.contact-form-container h2 {
     font-size: 2.2em;
+    margin-bottom: 30px;
+    color: #198754; /* Green */
+    text-align: center;
 }
-*/
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form select,
+.contact-form textarea {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form button {
+    background-color: #007bff; /* Blue */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3; /* Darker Blue */
+}
+
+.contact-info-map {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contact-details-box {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.contact-details-box h3 {
+    font-size: 1.8em;
+    color: #007bff; /* Blue */
+    margin-bottom: 20px;
+}
+
+.contact-details-box p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    color: #555;
+}
+
+.contact-details-box p i {
+    margin-right: 10px;
+    color: #198754; /* Green */
+    font-size: 1.2em;
+}
+
+.contact-details-box a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-details-box a:hover {
+    text-decoration: underline;
+}
+
+.map-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.map-container h3 {
+    font-size: 1.8em;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.map-container .view-on-map {
+    background-color: #198754; /* Green */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.map-container .view-on-map:hover {
+    background-color: #146c43; /* Darker Green */
+}
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .top-bar .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .top-bar .contact-info,
+    .top-bar .address-info {
+        margin-bottom: 10px;
+    }
+
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero h2 {
+        font-size: 2.8em;
+    }
+
+    .hero p {
+        font-size: 1.1em;
+    }
+
+    .hero .hero-buttons a {
+        padding: 12px 25px;
+        font-size: 1em;
+        margin: 5px;
+    }
+
+    #about .about-content {
+        flex-direction: column;
+    }
+
+    .vision-mission {
+        flex-direction: column;
+    }
+
+    .contact-layout {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-bar .contact-info span,
+    .top-bar .address-info span {
+        margin-right: 10px;
+    }
+
+    .top-bar .social-icons-top {
+        margin-bottom: 10px;
+    }
+
+    .top-bar .contact-button {
+        margin-left: 0;
+    }
+
+    .logo h1 {
+        font-size: 1.5em;
+    }
+
+    .hero h2 {
+        font-size: 2.2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .small-hero h2 {
+        font-size: 2.5em;
+    }
+
+    #about h2, #featured-services h2, #doctors h2, #testimonials h2, #contact-home h2 {
+        font-size: 2em;
+    }
+
+    #featured-services .service-grid,
+    #doctors .doctor-card-grid,
+    #services-list .service-grid-full,
+    #doctors-page .doctor-detail-grid,
+    #gallery-content .gallery-grid,
+    #news-list .news-grid {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+
+    .contact-form-container, .contact-details-box, .map-container {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-bar .contact-info,
+    .top-bar .address-info,
+    .top-bar .right-section {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .top-bar .contact-info span,
+    .top-bar .address-info span,
+    .top-bar .social-icons-top a,
+    .top-bar .contact-button {
+        margin: 5px 0;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .logo h1 {
+        font-size: 1.2em;
+    }
+
+    nav ul li {
+        margin: 8px 0;
+    }
+
+    .hero {
+        padding: 80px 15px;
+    }
+
+    .hero h2 {
+        font-size: 1.8em;
+    }
+
+    .hero p {
+        font-size: 0.9em;
+    }
+
+    .hero .hero-buttons a {
+        font-size: 0.9em;
+        padding: 10px 20px;
+    }
+
+    .small-hero {
+        padding: 60px 15px;
+    }
+
+    .small-hero h2 {
+        font-size: 2em;
+    }
+
+    #about h2, #featured-services h2, #doctors h2, #testimonials h2, #contact-home h2 {
+        font-size: 1.8em;
+    }
+
+    .testimonial-item {
+        font-size: 1em;
+        padding: 20px;
+    }
+}
