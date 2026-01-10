@@ -1447,4 +1447,118 @@ nav ul li.dropdown:hover .submenu {
         padding: 20px;
     }
 }
+/* Geez Hospital Colors */
+.geez-color {
+    color: #0000FF; /* Blue color */
+}
+
+.hospital-color {
+    color: #FF0000; /* Red color */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333; /* Dark background for footer */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically on small screens */
+    align-items: center; /* Center items horizontally */
+    gap: 20px; /* Space between logo and info */
+}
+
+.footer-logo {
+    margin-bottom: 15px; /* Space below the logo */
+}
+
+.footer-logo img {
+    max-width: 150px; /* Adjust as needed */
+    height: auto;
+}
+
+.footer-info {
+    text-align: center;
+}
+
+.footer-info p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.social-icons-footer {
+    margin-top: 15px;
+}
+
+.social-icons-footer a {
+    color: #fff;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icons-footer a:hover {
+    color: #66ccff; /* Lighter blue on hover */
+}
+
+/* Social Icons in Top Bar (ensure they are responsive) */
+.social-icons-top {
+    display: flex; /* Make icons side-by-side */
+    gap: 10px; /* Space between icons */
+}
+
+.social-icons-top a {
+    color: #fff; /* White color for icons */
+    font-size: 18px; /* Adjust size as needed */
+    transition: color 0.3s ease;
+}
+
+.social-icons-top a:hover {
+    color: #66ccff;
+}
+
+/* Responsive adjustments for header and footer */
+@media (max-width: 768px) {
+    .top-bar {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .top-bar .contact-info,
+    .top-bar .right-section {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .social-icons-top {
+        margin-top: 10px;
+    }
+
+    .header .logo {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header .logo img {
+        margin-bottom: 10px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-logo {
+        margin-bottom: 15px;
+    }
+
+    .footer-info {
+        margin-top: 0;
+    }
+}
 }
