@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "menu-about-us": "ብዛዕባና",
             "menu-mission": "ተልእኾና",
             "menu-vision": "ራእይና",
-            "menu-services-about": "ሓፈሻዊ ኣገልግሎታት",
+            "menu-services-about": "ዝርዝር ግልጋሎታትና",
             "services": "ኣገልግሎታት",
             "service1-h3": "ውሽጣዊ ሕማማት ሕክምና",
             "service2-h3": "ሕክምና ልቢ",
