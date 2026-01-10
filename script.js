@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Language translation data
     const translations = {
         "eng": {
-            "hero-main-title": "Geez Hospital",
+            "hero-main-title": "Geez Hospital|ግዕዝ ሆስፒታል",
             "contact-us-btn": "Contact Us",
             "home": "Home",
             "about-us": "About Us",
@@ -36,9 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "menu-internists": "Internists",
             "menu-orthopedicians": "Orthopedicians",
             "menu-radiologists": "Radiologists",
-            "menu-oncologists": "Oncologists",
-            "menu-maxillofacial": "Maxillofacial Surgeons",
-            "menu-ent-plastic": "ENT, Head & Neck and Plastic Surgeons",
+             "menu-ent-plastic": "ENT, Head & Neck and Plastic Surgeons",
             "menu-dermatologists": "Dermatologists",
             "departments": "Departments",
             "dept-surgery": "Surgery",
@@ -47,8 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
             "dept-internal-medicine": "Internal Medicine",
             "dept-orthopedics": "Orthopedics",
             "dept-radiology": "Radiology",
-            "dept-oncology": "Oncology",
-            "dept-oral-dental-maxillofacial": "Oral, Dental, Maxillofacial Surgery",
             "dept-dermatology": "Dermatology",
             "dept-ent-plastic-surgery": "ENT and Plastic Surgery",
             "dept-ophthalmology": "Ophthalmology",
@@ -64,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "search-placeholder": "Search...",
             "footer-text": "Copyright © 2026 Geez Hospital<br>Developed By Aser Teklu Gebrekidan-0911179955",
             "about-h2": "About Us",
-            "about-p1": "Established in 2011 E.C., Geez Hospital is one of the leading institutions in the central zone and Tigray, providing modern and efficient medical services with international standards. We aim to make world-class healthcare accessible to every citizen, becoming one of the largest and most trusted medical institutions in the entire zone and its surroundings. We are founded on providing compassionate care, high professional competence, and modern equipment. We place great emphasis on patient safety and excellent service.",
+            "about-p1": "Geez Hospital's established in 2011 E.C., it is one of the leading institutions in the central zone and Tigray, providing modern and efficient medical services with international standards. We aim to make world-class healthcare accessible to every citizen, becoming one of the largest and most trusted medical institutions in the entire zone and its surroundings. We are founded on providing compassionate care, high professional competence, and modern equipment. We place great emphasis on patient safety and excellent service.",
             "mission-h3": "Our Mission",
             "mission-p": "To provide excellent, affordable, accessible, and accountable medical care to all citizens; to offer comprehensive, high-quality, and affordable healthcare that combines professional excellence with compassionate care; to create a world-class medical practice and uphold the highest medical ethics.",
             "vision-h3": "Our Vision",
@@ -82,20 +78,20 @@ document.addEventListener('DOMContentLoaded', () => {
             "articles-p": "Stay informed with our latest health articles, tips, and medical insights from our expert team.", // Added for articles.html hero
         },
         "tig": {
-            "hero-main-title": "ሆስፒታል ገዓዝ",
-            "contact-us-btn": "ተወከሰና",
-            "home": "መበገሲ ገጽ",
+            "hero-main-title": "ግዕዝ ሆስፒታል|Geez Hospital",
+            "contact-us-btn": "ተወከሱና",
+            "home": "መእተዊ",
             "about-us": "ብዛዕባና",
             "menu-about-us": "ብዛዕባና",
             "menu-mission": "ተልእኾና",
             "menu-vision": "ራእይና",
-            "menu-services-about": "ሓፈሻዊ ኣገልግሎታት",
-            "services": "ኣገልግሎታት",
-            "service1-h3": "ውሽጣዊ ሕክምና",
+            "menu-services-about": "ዝርዝር ግልጋሎታት",
+            "services": "ግልጋሎታት",
+            "service1-h3": "ውሽጣዊ ሕማማት ሕክምና",
             "service2-h3": "ሕክምና ልቢ",
             "service3-h3": "ሓፈሻዊ ሕክምና",
             "service4-h3": "ሕክምና ህጻናት",
-            "service5-h3": "ሕክምና ነፍሰጾራትን ደቂኣንስትዮን",
+            "service5-h3": "ሕክምና ነፍሰፁራትን ደቂኣንስትዮን",
             "service6-h3": "ሕክምና ኣፍንጫ፣ ጆሮ፣ ጉሮሮ",
             "service7-h3": "ራድዮሎጂ",
             "service8-h3": "ሕክምና ኣስናን",
@@ -117,8 +113,6 @@ document.addEventListener('DOMContentLoaded', () => {
             "menu-orthopedicians": "ኦርቶፔዲሽያን",
             "menu-radiologists": "ራድዮሎጂስትስ",
             "menu-oncologists": "ኦንኮሎጂስትስ",
-            "menu-maxillofacial": "ማክሲሎፋሻል ሰርጀንስ",
-            "menu-ent-plastic": "ENT, ርእሲን ክሳድን ከምኡ እውን ፕላስቲክ ሰርጀንስ",
             "menu-dermatologists": "ደርማቶሎጂስትስ",
             "departments": "ክፍለታት",
             "dept-surgery": "ክፍሊ ሕክምና",
@@ -127,8 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
             "dept-internal-medicine": "ክፍሊ ውሽጣዊ ሕክምና",
             "dept-orthopedics": "ክፍሊ ኦርቶፔዲክስ",
             "dept-radiology": "ክፍሊ ራድዮሎጂ",
-            "dept-oncology": "ክፍሊ ኦንኮሎጂ",
-            "dept-oral-dental-maxillofacial": "ክፍሊ ኣፍ፣ ኣስናን፣ ማክሲሎፋሻል ሕክምና",
             "dept-dermatology": "ክፍሊ ደርማቶሎጂ",
             "dept-ent-plastic-surgery": "ክፍሊ ENT and ፕላስቲክ ሕክምና",
             "dept-ophthalmology": "ክፍሊ ኣዒንቲ",
@@ -136,30 +128,30 @@ document.addEventListener('DOMContentLoaded', () => {
             "facilities": "መሳርሒታት",
             "media": "ሚድያ",
             "media-patient-info": "ሓበሬታ ሕሙማት",
-            "media-articles": "ጽሑፋት",
-            "news": "ዜናን ፍጻሜታትን",
+            "media-articles": "ፅሑፋት",
+            "news": "ዜናን ፍፃሜታትን",
             "gallery": "ጋለሪ",
-            "patient-satisfaction-survey": "ናይ ሕሙማት ሳትስፋክሽን መርመራ", // NEW
+            "patient-satisfaction-survey": "ናይ ተገልገልቲ  ዕግበት ዳህሳስ", // NEW
             "contact": "ተወከሰና",
             "search-placeholder": "ድለ...",
-            "footer-text": "መሰል ሕትመት © 2026 ሆስፒታል ገዓዝ<br>ብኣሰር ተኽሉ ገብረኪዳን ዝተሰርሐ-0911179955",
+            "footer-text": "Copy right © 2026 ሆስፒታል ግዕዝ<br>Developed By Aser Teklu Gebrekidan-0911179955",
             "about-h2": "ብዛዕባና",
-            "about-p1": "ሆስፒታል ገዓዝ ኣብ 2011 ዓ.ም. ዝተመስረተ ኮይኑ፣ ኣብ ማእከላይ ዞባን ትግራይን ካብቶም ዝመርሑ ትካላት ሓደ እዩ። ዓለማዊ ደረጃ ዘለዎ ዘመናዊን ብቑዕን ሕክምናዊ ኣገልግሎት ንኹሉ ዜጋ ተበጻሒ ንምግባር ይዓዪ። ብህዱእ ሕክምና፣ ብልዑል ሙያዊ ብቕዓትን ዘመናዊ መሳርሒታትን እዩ ዝተመስረተ። ንደህንነት ሕሙማትን ግሉጽ ኣገልግሎትን ዓብዪ ትኹረት ንህብ።",
+            "about-p1": "ሆስፒታል ግዕዝ ብ2011 ኣ.ግ ዝተመስረተ ሆስፒታል ግዕዝ፣ ኣብ ማእኸላይ ዞባ  ካብቶም ቀዳሞት ዝስርዑ፣ ዓለምለኻዊ ፅሬት ዘለዎ ዘመናዊን ስሉጥን ሕክምናዊ ግልጋሎት ዝህቡ ትካላት ሓደ እዩ። ኣብ መላእ እቲ ዞባን ጎረባብቲን ሓደ ካብቶም ዝዓበዩን ዝእመኑን ናይ ሕክምና ትካል ኮይኑ ዓለምለኻዊ ፅሬት ዘለዎ ሕክምና ንነፍሲ-ወከፍ ዜጋ ተበፃሒ ንምግባር ዝዓለመ እዩ።ብፍላይ ሓልዮት ዝተመልኦ ክንክን፣ ላዕለዋይ ሞያዊ ብቕዓትን ዘመናዊ መሳርሒታትን ብምቕራብ ዝተመስረተ ትካል እዩ። ንድሕንነት ሕሙማትን ንብሉፅ ግልጋሎትን ዓብዪ ቆላሕታ ይህብ።",
             "mission-h3": "ተልእኾና",
-            "mission-p": "ንኹሎም ዜጋታት ጽቡቕ፣ ተበጻሒ፣ ቀሊል ዋጋ ዘለዎን ተሓታቲ ዝኾነ ሕክምናዊ ክንክን ንምሃብ፤ ብሙያዊ ብቕዓትን ብህዱእ ክንክንን ዝተዋህደ ምሉእ፣ ብልዑል ጽፈትን ቀሊል ዋጋ ዘለዎን ሕክምና ንምቕራብ፤ ዓለማዊ ደረጃ ዘለዎ ሕክምናዊ ስራሕ ንምፍጣርን ንልዑል ሕክምናዊ ስነ-ምግባር ንምኽባርን።",
+            "mission-p": "ብሉፅ ፅሬት፣ ተመጣጣኒ፣ ተበፃሒን ተሓታትነት ዘለዎን ሕክምና ንኹሉ ዜጋ ብምቕራብ፤ ብሉፅ ሞያዊ ክእለትን ርህራሄ ዝመልኦ ሓልዮትን ዘወሃሃደ፣ተበፃሒ፣ ፅሬቱ ዝሓለወን ተመጣጣኒ ዋጋ ዘለዎን ሕክምና ንማሕበረሰብ ብምቕራብ፤ ዓለምለኻዊ ደረጃኡ ዝሓለወ ናይ ሕክምና ኣሰራርሓ ምፍጣር ከምኡውን ዝለዓለ ናይ ሕክምና ስነ-ምግባር ምኽባርን እዩ።",
             "vision-h3": "ራእይና",
-            "vision-p": "ብልዑል ሙያዊ ብቕዓትናን ንሕሙማት ትኹረት ብዝሃበ ክንክንናን ተደሪኽና፣ ኣብ ኣፍሪቃ ብዓለማዊ ደረጃ ዝተኸበረ ሕክምናዊ ትካል ንምዃን።",
-            "services-h3": "ሓፈሻዊ ኣገልግሎታት",
-            "services-p-about": "ብዙሕ ዝተፈላለዩ ፍሉያት ሕክምናዊ ኣገልግሎታትን ንኡሳን ፍሉያት መስካን (ከም ሕክምና ልቢ፣ ኦንኮሎጂ፣ ኒውሮሰርጀሪ፣ ኦርቶፔዲክስ፣ ENT፣ ኦፍታልሞሎጂ፣ ደርማቶሎጂ፣ ሕክምና ነፍሰጾራትን ደቂኣንስትዮን፣ ሕክምና ህጻናት፣ ዝተፈላለዩ መርመራዊ ኣገልግሎታትን ህጹጽ ሕክምናን) ብዘመናዊ ቴክኖሎጂን ሙያዊ ብቕዓትን ንህብ። ንዝርዝር ኣገልግሎታትና፣ ንክፍሊ 'ኣገልግሎታትና' ተመልከት።",
-            "all-services-btn": "ኹሎም ኣገልግሎታትና ርአ",
-            "departments-h2": "ክፍለታትና", // Added for departments.html hero
-            "departments-p": "ኣብ ሆስፒታል ገዓዝ ዝርከቡ ፍሉያት ክፍለታት ዳህስሱ፣ ብቑዕ ክንክን ምስ ዘመናዊ ቴክኖሎጂ ዝራኸበሉ ቦታ እዩ።", // Added for departments.html hero
+            "vision-p": "ብምኽንያት እቲ እነርእዮ ብሉፅ ሞያዊ ብቕዓትን ንሕሙም ማእኸል ዝገበረ ሓልዮትን፣ ዓለምለኻዊ ደረጃ ዘለዎ ናይ ሕክምና ግልጋሎት ብምቕራብ ኣብ ኣፍሪካ ክብሪ ዝተጎናፀፈ ናይ ሕክምና ትካል ምዃን።",
+            "services-h3": "ዝርዝር ግልጋሎታት",
+            "services-p-about": "ብርክት ዝበሉ ናይ ስፔሻሊስትን ሳብ ስፔሻሊስትን ዓውድታት (ንኣብነት፦ ልቢ፣ ካንሰር፣ ሓንጎልን መትንታትን፣ ዓፅሚ፣ካብ ክሳድ ንላዕሊ፣ዓይኒ፣ናይ ቆርበትን ስነጽባቐን፣ ናይ ኣዴታትን ህፃናትን ክንክን መርመራታትን ከምኡውን  ናይ ህፁፅ ሓደጋን ግልጋሎትሎት ብዘመናዊ ቴክኖሎጂን ብሞያዊ ብቕዓትን ነቕርብ።ንዝርዝር እንህቦም ግልጋሎታት ኣብ ግልጋሎታትና ይወከሱ",
+            "all-services-btn": "ኹሎም ዝርዝር ግልጋሎታትና ርአ",
+            "departments-h2": "ክፍሊታት ሕክምና", // Added for departments.html hero
+            "departments-p": "ኣብ ሆስፒታል ግዕዝ ዝርከቡ ፍሉያት ክፍሊታት ሕክምና ዝድህስሱሉ፣ ብቑዕ ክንክን ምስ ዘመናዊ ቴክኖሎጂ ዝርከቡሉ ቦታ እዩ።", // Added for departments.html hero
             "facilities-h2": "መሳርሒታትና", // Added for facilities.html hero
-            "facilities-p": "ሆስፒታል ገዓዝ ብዘመናዊ ሕክምናዊ ቴክኖሎጂን ንፉዓት መገልገሊታትን ዝተሰርዐ ኮይኑ፣ ዝበለጸ ክንክን ንምሃብ ድሉው እዩ።", // Added for facilities.html hero
+            "facilities-p": "ግዕዝ ሆስፒታል ንተገልገልቲ ዝበለጸ ሕክምና ንምሃብ ብብሉጽ ተኽኖሎጂን ዘመናዊ ሳርሕታትን ዝተዓጠቐ እዩ።", // Added for facilities.html hero
             "patient-info-h2": "ሓበሬታ ሕሙማት", // Added for patient-info.html hero
-            "patient-info-p": "ንጉብኝትኩም ኣገዳሲ ዝኾነ ሓበሬታ ንምርካብ፣ ምእታው፣ ምውጻእ፣ መሰላትን ሓላፍነታትን ተመልከቱ።", // Added for patient-info.html hero
+            "patient-info-p": "ናብ ሆስፒታልና ክትመፅእ እንተኾይንካ ወይ ክትወፅእ እንተኾይንካ፣ ከምኡ'ውን መሰላትን ሓላፍነታትን ናይ ሕክምና ንምርካብ ዘድልየካ ኩሉ ኣገዳሲ ሓበሬታ ኣብዚ ትረኽቦ።", // Added for patient-info.html hero
             "articles-h2": "ጽሑፋት ጥዕና", // Added for articles.html hero
-            "articles-p": "ካብቶም ብቑዓት ሰራሕተኛታትና ንዝመጹ ሓደሽቲ ጽሑፋት ጥዕና፣ ፍልጠትን ሕክምናዊ ሓበሬታን ተኸታተሉ።", // Added for articles.html hero
+            "articles-p": "ብብሉጻት ሓኻይም ዝምልከቶም ሰራሕተኛታትን  ጠቐምቲ ሓሳባትን ምኽሪታን ዝረኽብሉ ዓምዲ እዩ።", // Added for articles.html hero
         },
         "amh": {
             "hero-main-title": "ግዕዝ ሆስፒታል",
@@ -197,8 +189,6 @@ document.addEventListener('DOMContentLoaded', () => {
             "menu-orthopedicians": "የአጥንት ህክምና ሐኪሞች",
             "menu-radiologists": "ራዲዮሎጂስቶች",
             "menu-oncologists": "የካንሰር ህክምና ሐኪሞች",
-            "menu-maxillofacial": "ማክሲሎፌሻል የቀዶ ጥገና ሐኪሞች",
-            "menu-ent-plastic": "የአፍንጫ፣ ጆሮ፣ ጉሮሮ፣ አንገት እና የፕላስቲክ ቀዶ ጥገና ሐኪሞች",
             "menu-dermatologists": "የቆዳ ህክምና ሐኪሞች",
             "departments": "መምሪያዎች",
             "dept-surgery": "የቀዶ ጥገና ክፍል",
@@ -208,11 +198,8 @@ document.addEventListener('DOMContentLoaded', () => {
             "dept-orthopedics": "የአጥንት ህክምና ክፍል",
             "dept-radiology": "ራዲዮሎጂ ክፍል",
             "dept-oncology": "የካንሰር ህክምና ክፍል",
-            "dept-oral-dental-maxillofacial": "የአፍ፣ የጥርስ፣ የማክሲሎፌሻል ቀዶ ጥገና ክፍል",
-            "dept-dermatology": "የቆዳ ህክምና ክፍል",
-            "dept-ent-plastic-surgery": "የአፍንጫ፣ ጆሮ፣ ጉሮሮ እና የፕላስቲክ ቀዶ ጥገና ክፍል",
             "dept-ophthalmology": "የአይን ህክምና ክፍል",
-            "dept-psychiatry": "የአእምሮ ህክምና ክፍል",
+            "dept-psychiatry": "የስነ-አእምሮ ህክምና ክፍል",
             "facilities": "የህክምና መገልገያዎች",
             "media": "ሚዲያ",
             "media-patient-info": "የታካሚ መረጃ",
@@ -222,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "patient-satisfaction-survey": "የታካሚ እርካታ ጥናት", // NEW
             "contact": "ያግኙን",
             "search-placeholder": "ፈልግ...",
-            "footer-text": "የቅጂ መብት © 2026 ግዕዝ ሆስፒታል<br>በአሰር ተክሉ ገብረኪዳን የተሰራ-0911179955",
+            "footer-text": "Copy right © 2026 ግዕዝ ሆስፒታል<br>Developed By Aser Teklu Gebrekidan-0911179955",
             "about-h2": "ስለ እኛ",
             "about-p1": "ግዕዝ ሆስፒታል በ2011 ዓ.ም. የተቋቋመ ሲሆን በማዕከላዊ ዞን እና ትግራይ ውስጥ ዓለም አቀፍ ደረጃውን የጠበቀ ዘመናዊና ቀልጣፋ የህክምና አገልግሎት ከሚሰጡ ተቋማት አንዱ ነው። የአለም ደረጃ የህክምና አገልግሎትን ለእያንዳንዱ ዜጋ ተደራሽ ለማድረግ፣ በመላው ዞኑ እና አካባቢው ትልቁ እና ታማኝ የህክምና ተቋማት አንዱ ለመሆን ያለመ ነው። በአዛኝ እንክብካቤ፣ ከፍተኛ የሙያ ብቃት እና ዘመናዊ መሳሪያዎች ላይ የተመሰረተ ነው። የታካሚ ደህንነት እና እጅግ በጣም ጥሩ አገልግሎት ላይ ከፍተኛ ትኩረት እንሰጣለን።",
             "mission-h3": "ተልዕኮአችን",
