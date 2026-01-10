@@ -26,9 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
             "service13-h3": "Laboratory",
             "service14-h3": "Physiotherapy",
             "service15-h3": "Psychiatry",
-            "service16-h3": "Maternity Services",
-            "service17-h3": "Pharmacy & Ambulance",
-            "service18-h3": "Other Services",
+            "service16-h3": "Ophthamology",
+            "service17-h3": "Maternity Services",
+            "service18-h3": "Pharmacy & Ambulance",
+            "service19-h3": "Other Services",
             "doctors": "Doctors",
             "menu-surgeons": "Surgeons",
             "menu-gynecologists": "Gynecologists",
@@ -63,14 +64,16 @@ document.addEventListener('DOMContentLoaded', () => {
             "contact": "Contact Us",
             "search-placeholder": "Search...",
             "footer-text": "Copyright © 2026 Geez Hospital<br>Developed By Aser Teklu Gebrekidan-0911179955",
-            "about-h2": "About Us",
+            "about-h2": "About Us", // Hero Title
+            "about-p": "Learn more about Geez Hospital, our mission, vision, and the values that guide us in providing exceptional healthcare.", // Hero Paragraph
+            "about-h3": "About Us", // Section Title
             "about-p1": "Established in 2011 E.C., Geez Hospital is one of the leading institutions in the central zone and Tigray, providing modern and efficient medical services with international standards. We aim to make world-class healthcare accessible to every citizen, becoming one of the largest and most trusted medical institutions in the entire zone and its surroundings. We are founded on providing compassionate care, high professional competence, and modern equipment. We place great emphasis on patient safety and excellent service.",
             "mission-h3": "Our Mission",
             "mission-p": "To provide excellent, affordable, accessible, and accountable medical care to all citizens; to offer comprehensive, high-quality, and affordable healthcare that combines professional excellence with compassionate care; to create a world-class medical practice and uphold the highest medical ethics.",
             "vision-h3": "Our Vision",
-            "vision-p": "To become a globally respected medical institution in Africa by providing world-class medical services, driven by our excellent professional competence and patient-centered care.",
+            "vision-p": "We envision a future where Geez Hospital is synonymous with innovation, empathy, and unparalleled medical outcomes, setting new benchmarks for healthcare excellence across the continent.",
             "services-h3": "Services Overview",
-            "services-p-about": "We offer a wide range of specialist and sub-specialist fields (e.g., Cardiology, Oncology, Neurosurgery, Orthopedics, ENT, Ophthalmology, Dermatology, Obstetrics and Gynecology, Pediatric care, various diagnostic services, and emergency care) with modern technology and professional competence. For a detailed list of our services, please refer to the 'Our Services' section.",
+            "services-p-about": "At Geez Hospital, we are dedicated to offering a comprehensive suite of medical services designed to meet the diverse needs of our community. Our state-of-the-art facilities and a team of dedicated professionals ensure that you receive the best possible care across all specialties.",
             "all-services-btn": "View All Our Services",
             "departments-h2": "Our Departments",
             "departments-p": "Explore the specialized departments at Geez Hospital, where expert care meets advanced technology.",
@@ -82,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "articles-p": "Stay informed with our latest health articles, tips, and medical insights from our expert team.",
         },
         "tig": {
-            "hero-main-title": "ግዕዝ ሆስፒታል |Geez Hospital",
+            "hero-main-title": "ሆስፒታል ግዕዝ|Geez Hospital",
             "contact-us-btn": "ተወከሱና",
             "home": "መእተዊ",
             "about-us": "ብዛዕባና",
@@ -94,9 +97,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "service1-h3": "ውሽጣዊ ሕማማት ሕክምና",
             "service2-h3": "ሕክምና ልቢ",
             "service3-h3": "ሓፈሻዊ ሕክምና",
-            "service4-h3": "ሕክምና ህጻናት",
+            "service4-h3": "ሕክምና ህጻናትን ኣባጽሕን",
             "service5-h3": "ሕክምና ነፍሰጾራትን ደቂኣንስትዮን",
-            "service6-h3": "ሕክምና ኣፍንጫ፣ እዝኒ፣ ጎሮሮ",
+            "service6-h3": "ሕክምና ልዕሊ ክሳድ",
             "service7-h3": "ራድዮሎጂ",
             "service8-h3": "ሕክምና ስኒ",
             "service9-h3": "ኒውሮሰርጀሪ",
@@ -106,9 +109,10 @@ document.addEventListener('DOMContentLoaded', () => {
             "service13-h3": "ላብራቶሪ",
             "service14-h3": "ፊዝዮቴራፒ",
             "service15-h3": "ሳይካትሪ",
-            "service16-h3": "ኣገልግሎታት ማትርኒቲ",
-            "service17-h3": "ፋርማሲን ኣምቡላንስን",
-            "service18-h3": "ካልኦት ኣገልግሎታት",
+	    "service16-h3": "ሕክምና ዓይኒ",
+            "service17-h3": "ኣገልግሎታት ማትርኒቲ",
+            "service18-h3": "ፋርማሲን ኣምቡላንስን",
+            "service19-h3": "ካልኦት ግልጋሎታት",
             "doctors": "ሓኻይምና",
             "menu-surgeons": "ሰርጀንስ",
             "menu-gynecologists": "ጋይናኮሎጂስትስ",
@@ -124,45 +128,47 @@ document.addEventListener('DOMContentLoaded', () => {
             "menu-ophthalmologists": "ኦፍታልሞሎጂስትስ",
             "departments": "ክፍሊታት ሕክምና",
             "dept-surgery": "ክፍሊ ሕክምና",
-            "dept-pediatrics": "ክፍሊ ሕክምና ህጻናት",
+            "dept-pediatrics": "ክፍሊ ሕክምና ህጻናትን ኣባጽሕን",
             "dept-obsgyn": "ክፍሊ ሕክምና ነፍሰጾራትን ደቂኣንስትዮን",
-            "dept-internal-medicine": "ክፍሊ ውሽጣዊ ሕክምና",
+            "dept-internal-medicine": "ክፍሊ ውሽጣዊ ሕማማት ሕክምና",
             "dept-orthopedics": "ክፍሊ ኦርቶፔዲክስ",
             "dept-radiology": "ክፍሊ ራድዮሎጂ",
             "dept-oncology": "ክፍሊ ኦንኮሎጂ",
             "dept-dermatology": "ክፍሊ ደርማቶሎጂ",
             "dept-psychiatry": "ክፍሊ ሳይካትሪ",
             "dept-ophthalmology": "ክፍሊ ሕክምና ዓይኒ",
-            "facilities": "ማሽናት",
+            "facilities": "ማሽናት ሕክምና",
             "media": "ሚድያ",
             "media-patient-info": "ሓበሬታ ሕሙማት",
             "media-articles": "ጽሑፋት",
             "news": "ዜናን ፍጻሜታትን",
             "gallery": "ጋለሪ",
             "patient-satisfaction-survey": "ናይ ሕሙማት ሳትስፋክሽን መርመራ",
-            "contact": "ተወከሱና",
+            "contact": "ተወከሰና",
             "search-placeholder": "ድለ...",
             "footer-text": "Copy right © 2026 ሆስፒታል ግዕዝ<br>Developed By Aser Teklu Gebrekidan-0911179955",
-            "about-h2": "ብዛዕባና",
-            "about-p1": "ሆስፒታል ግዕዝ ብ2011 ኣ.ግ ዝተመስረተ ሆስፒታል ግዕዝ፣ ኣብ ማእኸላይ ዞባ  ካብቶም ቀዳሞት ዝስርዑ፣ ዓለምለኻዊ ፅሬት ዘለዎ ዘመናዊን ስሉጥን ሕክምናዊ ግልጋሎት ዝህቡ ትካላት ሓደ እዩ። ኣብ መላእ እቲ ዞባን ጎረባብቲን ሓደ ካብቶም ዝዓበዩን ዝእመኑን ናይ ሕክምና ትካል ኮይኑ ዓለምለኻዊ ፅሬት ዘለዎ ሕክምና ንነፍሲ-ወከፍ ዜጋ ተበፃሒ ንምግባር ዝዓለመ እዩ።ብፍላይ ሓልዮት ዝተመልኦ ክንክን፣ ላዕለዋይ ሞያዊ ብቕዓትን ዘመናዊ መሳርሒታትን ብምቕራብ ዝተመስረተ ትካል እዩ። ንድሕንነት ሕሙማትን ንብሉፅ ግልጋሎትን ዓብዪ ቆላሕታ ይህብ።",
+            "about-h2": "ብዛዕባና", // Hero Title
+            "about-p": "ብዛዕባ ሆስፒታል ግዕዝ፣ ተልእኾና፣ ራእይና፣ ከምኡ እውን ነቲ ዝለዓለ ሕክምናዊ ክንክን ንምሃብ ዝመርሑና እሴታት ዝያዳ ተማሃሩ።", // Hero Paragraph
+            "about-h3": "ብዛዕባና", // Section Title
+            "about-p1": "ሆስፒታል ግዕዝ ብ2011 ኣ.ግ ዝተመስረተ ሆስፒታል ግዕዝ፣ ኣብ ማእኸላይ ዞባ ካብቶም ቀዳሞት ዝስርዑ፣ ዓለምለኻዊ ፅሬት ዘለዎ ዘመናዊን ስሉጥን ሕክምናዊ ግልጋሎት ዝህቡ ትካላት ሓደ እዩ። ኣብ መላእ እቲ ዞባን ጎረባብቲን ሓደ ካብቶም ዝዓበዩን ዝእመኑን ናይ ሕክምና ትካል ኮይኑ ዓለምለኻዊ ፅሬት ዘለዎ ሕክምና ንነፍሲ-ወከፍ ዜጋ ተበፃሒ ንምግባር ዝዓለመ እዩ።ብፍላይ ሓልዮት ዝተመልኦ ክንክን፣ ላዕለዋይ ሞያዊ ብቕዓትን ዘመናዊ መሳርሒታትን ብምቕራብ ዝተመስረተ ትካል እዩ። ንድሕንነት ሕሙማትን ንብሉፅ ግልጋሎትን ዓብዪ ቆላሕታ ይህብ።",
             "mission-h3": "ተልእኾና",
             "mission-p": "ብሉፅ ፅሬት፣ ተመጣጣኒ፣ ተበፃሒን ተሓታትነት ዘለዎን ሕክምና ንኹሉ ዜጋ ብምቕራብ፤ ብሉፅ ሞያዊ ክእለትን ርህራሄ ዝመልኦ ሓልዮትን ዘወሃሃደ፣ተበፃሒ፣ ፅሬቱ ዝሓለወን ተመጣጣኒ ዋጋ ዘለዎን ሕክምና ንማሕበረሰብ ብምቕራብ፤ ዓለምለኻዊ ደረጃኡ ዝሓለወ ናይ ሕክምና ኣሰራርሓ ምፍጣር ከምኡውን ዝለዓለ ናይ ሕክምና ስነ-ምግባር ምኽባርን እዩ።",
             "vision-h3": "ራእይና",
             "vision-p": "ብምኽንያት እቲ እንህቦ ብሉፅ ሞያዊ ብቕዓትን ንሕሙም ማእከል ዝገበረ ሓልዮቱን፣ ዓለምለኻዊ ደረጃ ዘለዎ ናይ ሕክምና ግልጋሎት ብምቕራብ ኣብ ኣፍሪካ ክብሪ ዝተጎናፀፈ ናይ ሕክምና ትካል ምዃን።",
             "services-h3": "ዝርዝር ግልጋሎታት",
-            "services-p-about": "ብርክት ዝበሉ ናይ ስፔሻሊስትን ሳብ ስፔሻሊስትን ዓውድታት (ንኣብነት፦ ልቢ፣ ካንሰር፣ ሓንጎልን መትንታትን፣ ዓፅሚ፣ካብ ክሳድ ንላዕሊ፣ዓይኒ፣ናይ ቆርበትን ስነጽባቐን፣ ናይ ኣዴታትን ህፃናትን ክንክን መርመራታትን ከምኡውን  ናይ ህፁፅ ሓደጋን ግልጋሎትሎት ብዘመናዊ ቴክኖሎጂን ብሞያዊ ብቕዓትን ነቕርብ።",
-            "all-services-btn": "ኹሎም ግልጋሎትና ኣብዚ ተወከስ",
+            "services-p-about": "ብርክት ዝበሉ ናይ ስፔሻሊስትን ሳብ ስፔሻሊስትን ዓውድታት (ንኣብነት፦ ልቢ፣ ካንሰር፣ ሓንጎልን መትንታትን፣ ዓፅሚ፣ካብ ክሳድ ንላዕሊ፣ዓይኒ፣ናይ ቆርበትን ስነጽባቐን፣ ናይ ኣዴታትን ህፃናትን ክንክን መርመራታትን ከምኡውን ናይ ህፁፅ ሓደጋን ግልጋሎትሎት ብዘመናዊ ቴክኖሎጂን ብሞያዊ ብቕዓትን ነቕርብ።",
+            "all-services-btn": "ኹሎም ኣግልጋሎታትና ኣብዚ ርአ",
             "departments-h2": "ክፍሊታት ሕክምና",
-            "departments-p": "ኣብ ሆስፒታል ግዕዝ ዝርከቡ ፍሉያት ክፍሊታት ሕክምና ዝድህስሱሉ፣ ብቑዕ ክንክን ምስ ዘመናዊ ቴክኖሎጂ ዝርከቡሉ ቦታ እዩ።።",
-            "facilities-h2": "ማሽናትና",
-            "facilities-p": "ግዕዝ ሆስፒታል ንተገልገልቲ ዝበለጸ ሕክምና ንምሃብ ብብሉጽ ተኽኖሎጂን ዘመናዊ መሳርሕታትን ምስ ብሉጻት ሰብ ምያ ሕክምና ኣወሃሂዱይጽበየኩም ኣሎ።",
+            "departments-p": "ኣብ ሆስፒታል ግዕዝ ዝርከቡ ፍሉያት ክፍሊታት ሕክምና ዝድህስሱሉ፣ ብቑዕ ክንክን ምስ ዘመናዊ ቴክኖሎጂ ዝርከቡሉ ቦታ እዩ።",
+            "facilities-h2": "መሳርሒታት(ማሽናት) ሕክምና",
+            "facilities-p": "ግዕዝ ሆስፒታል ንተገልገልቲ ዝበለጸ ሕክምና ንምሃብ ብብሉጽ ተኽኖሎጂን ዘመናዊ መሳርሕታትን ምስ ብሉጻት ሰብ ምያ ሕክምና ኣወሃሂዱ ግልጋሎት ይህብ ኣሎ።",
             "patient-info-h2": "ሓበሬታ ሕሙማት",
             "patient-info-p": "ናብ ሆስፒታልና ክትመፅእ እንተኾይንካ ወይ ክትወፅእ እንተኾይንካ፣ ከምኡ'ውን መሰላትን ሓላፍነታትን ናይ ሕክምና ንምርካብ ዘድልየካ ኩሉ ኣገዳሲ ሓበሬታ ኣብዚ ይርከብ።",
             "articles-h2": "ጽሑፋት ጥዕና",
             "articles-p": "ብብሉጻት ሓኻይም ዝምልከቶም ሰራሕተኛታትን  ጠቐምቲ ሓሳባትን ምኽሪታን ዝረኽብሉ ዓምዲ እዩ።",
         },
         "amh": {
-            "hero-main-title": "ግዕዝ ሆስፒታል|Geez Hospital",
+            "hero-main-title": "ግዕዝ ሆስፒታል",
             "contact-us-btn": "ያግኙን",
             "home": "ዋና ገጽ",
             "about-us": "ስለ እኛ",
@@ -222,8 +228,10 @@ document.addEventListener('DOMContentLoaded', () => {
             "patient-satisfaction-survey": "የታካሚ እርካታ ጥናት",
             "contact": "ያግኙን",
             "search-placeholder": "ፈልግ...",
-            "footer-text": "Copy rihgt © 2026 ግዕዝ ሆስፒታል<br>Developed By Aser Teklu Gebrekidan-0911179955",
-            "about-h2": "ስለ እኛ",
+            "footer-text": "Copy right © 2026 ግዕዝ ሆስፒታል<br>Developed By Aser Teklu Gebrekidan-0911179955",
+            "about-h2": "ስለ እኛ", // Hero Title
+            "about-p": "ስለ ግዕዝ ሆስፒታል፣ ተልዕኮአችን፣ ራዕያችን፣ እና በልዩ የጤና እንክብካቤ አሰጣጥ ላይ የሚመሩን እሴቶች የበለጠ ይረዱ።", // Hero Paragraph
+            "about-h3": "ስለ እኛ", // Section Title
             "about-p1": "ግዕዝ ሆስፒታል በ2011 ዓ.ም. የተቋቋመ ሲሆን በማዕከላዊ ዞን እና ትግራይ ውስጥ ዓለም አቀፍ ደረጃውን የጠበቀ ዘመናዊና ቀልጣፋ የህክምና አገልግሎት ከሚሰጡ ተቋማት አንዱ ነው። የአለም ደረጃ የህክምና አገልግሎትን ለእያንዳንዱ ዜጋ ተደራሽ ለማድረግ፣ በመላው ዞኑ እና አካባቢው ትልቁ እና ታማኝ የህክምና ተቋማት አንዱ ለመሆን ያለመ ነው። በአዛኝ እንክብካቤ፣ ከፍተኛ የሙያ ብቃት እና ዘመናዊ መሳሪያዎች ላይ የተመሰረተ ነው። የታካሚ ደህንነት እና እጅግ በጣም ጥሩ አገልግሎት ላይ ከፍተኛ ትኩረት እንሰጣለን።",
             "mission-h3": "ተልዕኮአችን",
             "mission-p": "ለሁሉም ዜጎች እጅግ በጣም ጥሩ፣ ተመጣጣኝ፣ ተደራሽ እና ተጠያቂ የህክምና እንክብካቤ መስጠት፤ የሙያ ብቃትን ከአዛኝ እንክብካቤ ጋር የሚያጣምር ሁሉን አቀፍ፣ ከፍተኛ ጥራት ያለው እና ተመጣጣኝ የጤና እንክብካቤ መስጠት፤ ዓለም አቀፍ ደረጃ ያለው የህክምና አሰራር መፍጠር እና ከፍተኛ የህክምና ስነ-ምግባርን መጠበቅ።",
@@ -267,26 +275,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Handle specific elements that might need dynamic content updates beyond innerHTML
         const currentPath = window.location.pathname;
-        if (currentPath.includes('departments.html')) {
-            const heroP = document.querySelector('#departments-hero p');
-            if (heroP && translations[lang]['departments-p']) {
-                heroP.textContent = translations[lang]['departments-p'];
-            }
-        } else if (currentPath.includes('facilities.html')) {
-            const heroP = document.querySelector('#facilities-hero p');
-            if (heroP && translations[lang]['facilities-p']) {
-                heroP.textContent = translations[lang]['facilities-p'];
-            }
-        } else if (currentPath.includes('patient-info.html')) {
-            const heroP = document.querySelector('#patient-info-hero p');
-            if (heroP && translations[lang]['patient-info-p']) {
-                heroP.textContent = translations[lang]['patient-info-p'];
-            }
-        } else if (currentPath.includes('articles.html')) {
-            const heroP = document.querySelector('#articles-hero p');
-            if (heroP && translations[lang]['articles-p']) {
-                heroP.textContent = translations[lang]['articles-p'];
-            }
+        const heroP = document.querySelector('.hero-section p'); // Targeting hero p for all pages
+        if (currentPath.includes('about.html') && heroP && translations[lang]['about-p']) {
+            heroP.textContent = translations[lang]['about-p'];
+        } else if (currentPath.includes('departments.html') && heroP && translations[lang]['departments-p']) {
+            heroP.textContent = translations[lang]['departments-p'];
+        } else if (currentPath.includes('facilities.html') && heroP && translations[lang]['facilities-p']) {
+            heroP.textContent = translations[lang]['facilities-p'];
+        } else if (currentPath.includes('patient-info.html') && heroP && translations[lang]['patient-info-p']) {
+            heroP.textContent = translations[lang]['patient-info-p'];
+        } else if (currentPath.includes('articles.html') && heroP && translations[lang]['articles-p']) {
+            heroP.textContent = translations[lang]['articles-p'];
         }
     }
 
@@ -316,6 +315,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         dropdown.addEventListener('mouseleave', () => {
             if (window.innerWidth > 768) { // Only for desktop hover
+                dropdown.querySelector('.submenu').style.display = 'none';
+            }
+            // For mobile, ensure it stays hidden after mouseleave
+            if (window.innerWidth <= 768) {
                 dropdown.querySelector('.submenu').style.display = 'none';
             }
         });
