@@ -365,7 +365,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "about-h3": "ስለ እኛ",
             "about-p1": "ግዕዝ ሆስፒታል በ2011 ዓ.ም. የተቋቋመ ሲሆን በማዕከላዊ ዞን እና ትግራይ ውስጥ ዓለም አቀፍ ደረጃውን የጠበቀ ዘመናዊና ቀልጣፋ የህክምና አገልግሎት ከሚሰጡ ተቋማት አንዱ ነው። የአለም ደረጃ የህክምና አገልግሎትን ለእያንዳንዱ ዜጋ ተደራሽ ለማድረግ፣ በመላው ዞኑ እና አካባቢው ትልቁ እና ታማኝ የህክምና ተቋማት አንዱ ለመሆን ያለመ ነው። በአዛኝ እንክብካቤ፣ ከፍተኛ የሙያ ብቃት እና ዘመናዊ መሳሪያዎች ላይ የተመሰረተ ነው። የታካሚ ደህንነት እና እጅግ በጣም ጥሩ አገልግሎት ላይ ከፍተኛ ትኩረት እንሰጣለን።",
             "mission-h3": "ተልዕኮአችን",
-            "mission-p": "ለሁሉም ዜጎች እጅግ በጣም ጥሩ፣ ተመጣጣኝ፣ ተደራሽ እና ተጠያቂ የህክምና እንክብካቤ መስጠት፤ የሙያ ብቃትን ከአዛኝ እንክብካቤ ጋር የሚያጣምር ሁሉን አቀፍ፣ ከፍተኛ ጥራት ያለው እና ተመጣጣኝ የጤና እንክብካቤ መስጠት፤ ዓለም አቀፍ ደረጃ ያለው የህክምና አሰራር መፍጠር እና ከፍተኛ የህክምና ስነ-ምግባርን መጠበቅ።",
+            "mission-p": "ለሁሉም ዜጎች እጅግ በጣም ጥሩ፣ ተመጣጣኝ፣ ተደራሽ እና ተጠያቂ የህክምና እንክብካቤ መስጠት፤ የሙያ ብቃትን ከአዛኝ እንክብካቤ ጋር የሚያጣምር ሁሉን አቀፍ፣ ከፍተኛ ጥራት ያለው እና ተመጣኝ የጤና እንክብካቤ መስጠት፤ ዓለም አቀፍ ደረጃ ያለው የህክምና አሰራር መፍጠር እና ከፍተኛ የህክምና ስነ-ምግባርን መጠበቅ።",
             "vision-h3": "ራዕያችን",
             "vision-p": "በእኛ እጅግ በጣም ጥሩ ሙያዊ ብቃት እና የታካሚ ተኮር እንክብካቤ በመነዳት፣ በአፍሪካ ውስጥ ዓለም አቀፍ ደረጃ ያለው የህክምና ተቋም ለመሆን።",
             "services-h3": "የአገልግሎቶች አጠቃላይ እይታ",
@@ -452,7 +452,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else if (element.tagName === 'TITLE') {
                     // Update document title separately to ensure it's always set correctly
                     document.title = translations[lang][key];
-                } else if (element.tagName === 'SPAN' && element.closest('.footer-info')) {
+                } else if (element.tagName === 'P' && element.closest('.footer-info')) {
                     // For the footer-text, which contains spans and br tags
                     element.innerHTML = translations[lang][key];
                 }
@@ -574,7 +574,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update text for doctors.html cards (specialties)
         if (currentPath === 'doctors.html') {
             const doctorSpecialties = {
-                "doctor-tesfa": "dr-tesfa-specialty", // Example, adjust based on your doctor data in translations
+                "doctor-tesfa": "dr-tesfay-specialty", // Example, adjust based on your doctor data in translations
                 "doctor-rahel": "dr-rahel-specialty",
                 "doctor-hana": "dr-hana-specialty",
                 "doctor-samuel": "dr-samuel-specialty",
