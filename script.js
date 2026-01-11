@@ -536,7 +536,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentPath = window.location.pathname;
 
     // Function to filter items based on URL parameter
-    function applyPageFilter(pageIdentifier, paramName, itemClass, itemIdPrefix = '') {
+    function applyPageFilter(pageIdentifier, paramName, itemClass, idMapping = {}) {
         if (currentPath.includes(pageIdentifier)) {
             const urlParams = new URLSearchParams(window.location.search);
             const selectedParam = urlParams.get(paramName);
@@ -548,7 +548,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     item.style.display = 'none'; // Hide all
                 });
 
-                const targetItem = document.getElementById(`${itemIdPrefix}${selectedParam}-item`);
+                const targetId = idMapping[selectedParam] || selectedParam; // Use mapping or default to param
+                const targetItem = document.getElementById(targetId + '-item'); // Assuming IDs end with '-item'
+
                 if (targetItem) {
                     targetItem.style.display = getComputedStyle(targetItem).display === 'none' ? 'block' : getComputedStyle(targetItem).display; // Restore original display type or 'block'
                 }
@@ -561,8 +563,60 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Define ID mappings for services and doctors if their IDs don't directly match the URL parameter
+    // Ensure these match the actual IDs in your HTML files (e.g., id="service-internal-medicine-item")
+    const serviceIdMapping = {
+        "internal-medicine": "service-internal-medicine", 
+        "cardiology": "service-cardiology",
+        "general-surgery": "service-general-surgery",
+        "pediatrics": "service-pediatrics",
+        "obsgyn": "service-obsgyn",
+        "ent": "service-ent",
+        "radiology": "service-radiology",
+        "dental": "service-dental",
+        "neurosurgery": "service-neurosurgery",
+        "orthopedics": "service-orthopedics",
+        "dermatology": "service-dermatology",
+        "anesthesia": "service-anesthesia",
+        "laboratory": "service-laboratory",
+        "physiotherapy": "service-physiotherapy",
+        "psychiatry": "service-psychiatry",
+        "maternity": "service-maternity", // Corrected to match service16-h3
+        "pharmacy-ambulance": "service-pharmacy-ambulance", // Corrected to match service17-h3
+        "other": "service-other", // Corrected to match service18-h3
+    };
+
+    const doctorIdMapping = {
+        "surgeons": "doctor-surgeons",
+        "gynecologists": "doctor-gynecologists",
+        "pediatricians": "doctor-pediatricians",
+        "internists": "doctor-internists",
+        "orthopedicians": "doctor-orthopedicians",
+        "radiologists": "doctor-radiologists",
+        "oncologists": "doctor-oncologists",
+        "maxillofacial": "doctor-maxillofacial",
+        "ent-plastic": "doctor-ent-plastic",
+        "dermatologists": "doctor-dermatologists",
+        "psychiatrists": "doctor-psychiatrists",
+        // No specific mapping needed for ophthalmologists yet, as you don't have a direct link for them in doctors.html
+    };
+
+
     // Apply filters to respective pages
-    applyPageFilter('departments.html', 'dept', 'department-item', 'dept-');
-    applyPageFilter('services.html', 'service', 'service-item', ''); // Service IDs like "internal-medicine-item"
-    applyPageFilter('doctors.html', 'specialty', 'doctor-detail-card', ''); // Doctor IDs like "surgeons-item"
+    applyPageFilter('departments.html', 'dept', 'department-item', {
+        "surgery": "dept-surgery",
+        "pediatrics": "dept-pediatrics",
+        "obsgyn": "dept-obsgyn",
+        "internal-medicine": "dept-internal-medicine",
+        "orthopedics": "dept-orthopedics",
+        "radiology": "dept-radiology",
+        "oncology": "dept-oncology",
+        "oral-dental-maxillofacial": "dept-oral-dental-maxillofacial", // Ensure this matches HTML ID
+        "dermatology": "dept-dermatology",
+        "ent-plastic-surgery": "dept-ent-plastic-surgery", // Ensure this matches HTML ID
+        "ophthalmology": "dept-ophthalmology",
+        "psychiatry": "dept-psychiatry"
+    });
+    applyPageFilter('services.html', 'service', 'service-item', serviceIdMapping);
+    applyPageFilter('doctors.html', 'specialty', 'doctor-card', doctorIdMapping); 
 });
