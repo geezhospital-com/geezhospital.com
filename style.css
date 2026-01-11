@@ -40,7 +40,8 @@ body {
     white-space: nowrap; /* Prevent breaking into new line */
 }
 
-.top-bar .contact-info a {
+.top-bar .contact-info a,
+.top-bar .address-info a { /* Ensure address links also get white color */
     color: white;
     text-decoration: none;
 }
@@ -48,13 +49,23 @@ body {
 .top-bar .right-section {
     display: flex;
     align-items: center;
+    flex-wrap: wrap; /* Allow items to wrap within right-section */
+    gap: 15px; /* Space between elements in right-section */
+}
+
+.top-bar .social-icons-top {
+    display: flex; /* Make icons side-by-side */
+    gap: 10px; /* Space between icons */
 }
 
 .top-bar .social-icons-top a {
-    color: white;
-    margin-left: 15px;
-    text-decoration: none;
-    font-size: 1.1em;
+    color: #fff; /* White color for icons */
+    font-size: 1.1em; /* Adjusted size for consistency */
+    transition: color 0.3s ease;
+}
+
+.top-bar .social-icons-top a:hover {
+    color: #66ccff; /* Lighter blue on hover */
 }
 
 .top-bar .contact-button {
@@ -65,6 +76,11 @@ body {
     text-decoration: none;
     margin-left: 20px;
     white-space: nowrap;
+    transition: background-color 0.3s ease;
+}
+
+.top-bar .contact-button:hover {
+    background-color: #0056b3; /* Darker Blue */
 }
 
 /* Header (Navigation Bar) Styles */
@@ -100,6 +116,14 @@ header .container {
     color: #198754; /* Green */
 }
 
+.geez-color {
+    color: #0000FF; /* Blue color */
+}
+
+.hospital-color {
+    color: #FF0000; /* Red color */
+}
+
 nav ul {
     list-style: none;
     margin: 0;
@@ -110,6 +134,7 @@ nav ul {
 
 nav ul li {
     margin-left: 25px;
+    position: relative; /* Needed for dropdown positioning */
 }
 
 nav ul li a {
@@ -117,10 +142,62 @@ nav ul li a {
     color: #333;
     font-weight: bold;
     transition: color 0.3s ease;
+    display: flex; /* For aligning text and dropdown icon */
+    align-items: center;
 }
 
 nav ul li a:hover {
     color: #198754; /* Green */
+}
+
+/* Dropdown Menu Styles */
+nav ul li.dropdown > a i {
+    margin-left: 8px; /* Space between text and arrow icon */
+    font-size: 0.8em;
+    transition: transform 0.3s ease;
+}
+
+nav ul li.dropdown:hover > a i {
+    transform: rotate(180deg); /* Rotate arrow when dropdown is open */
+}
+
+nav ul li.dropdown .submenu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: #fff;
+    min-width: 250px; /* Adjust width as needed */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1001; /* Ensure it's above other content */
+    list-style: none;
+    padding: 10px 0;
+    margin-top: 5px; /* Space from parent menu item */
+    border-radius: 5px;
+    border: 1px solid #eee;
+}
+
+nav ul li.dropdown .submenu li {
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li.dropdown .submenu li a {
+    color: #333;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    white-space: nowrap;
+    font-weight: normal;
+}
+
+nav ul li.dropdown .submenu li a:hover {
+    background-color: #f1f1f1;
+    color: #198754; /* Green on hover */
+}
+
+/* Show the dropdown menu on hover */
+nav ul li.dropdown:hover .submenu {
+    display: block;
 }
 
 .language-selector select {
@@ -132,26 +209,69 @@ nav ul li a:hover {
     font-size: 0.9em;
 }
 
+/* Search Bar Styles */
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+#search-input {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    font-size: 0.9em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#search-input:focus {
+    border-color: #198754;
+}
+
+#search-button {
+    background-color: #198754;
+    color: white;
+    border: 1px solid #198754;
+    padding: 8px 12px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+#search-button:hover {
+    background-color: #146c43;
+}
+
+/* Hamburger menu for mobile */
+.nav-toggle {
+    display: none; /* Hidden by default on desktop */
+    font-size: 1.8em;
+    cursor: pointer;
+    color: #333;
+}
+
 /* Hero Section Styles */
-.hero {
+.hero-section { /* Renamed from .hero to .hero-section for consistency */
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero-bg.jpg') no-repeat center center/cover;
     color: white;
     text-align: center;
     padding: 100px 20px;
 }
 
-.hero h2 {
+.hero-section h2 {
     font-size: 3.5em;
     margin-bottom: 20px;
 }
 
-.hero p {
+.hero-section p {
     font-size: 1.3em;
     max-width: 800px;
     margin: 0 auto 30px auto;
 }
 
-.hero .hero-buttons a {
+.hero-section .hero-buttons a {
     background-color: #007bff; /* Blue */
     color: white;
     padding: 15px 30px;
@@ -162,33 +282,74 @@ nav ul li a:hover {
     transition: background-color 0.3s ease;
 }
 
-.hero .hero-buttons a:hover {
+.hero-section .hero-buttons a:hover {
     background-color: #0056b3; /* Darker Blue */
 }
 
-.hero .hero-buttons .secondary-btn {
+.hero-section .hero-buttons .secondary-btn {
     background-color: #198754; /* Green */
 }
 
-.hero .hero-buttons .secondary-btn:hover {
+.hero-section .hero-buttons .secondary-btn:hover {
     background-color: #146c43; /* Darker Green */
 }
 
 
-/* Small Hero for internal pages */
-.small-hero {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-bg.jpg') no-repeat center center/cover;
-    padding: 80px 20px;
+/* General Styling for Inner Hero Sections (like About, Departments, Facilities, Patient Info, Articles) */
+/* Changed from .small-hero to .hero-section.inner-hero for better specificity and consistency */
+.hero-section.inner-hero {
+    background-color: #28a745; /* A primary green color for consistency */
+    color: white;
+    padding: 80px 0 60px;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    /* Optional: If you want a specific background image for inner pages */
+    /* background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/inner-hero-bg.jpg') no-repeat center center/cover; */
 }
 
-.small-hero h2 {
+.hero-section.inner-hero h2 {
     font-size: 3em;
     margin-bottom: 15px;
 }
 
-.small-hero p {
+.hero-section.inner-hero p {
     font-size: 1.1em;
     max-width: 700px;
+}
+
+
+/* General Content Section Styles */
+.content-section {
+    padding: 60px 0;
+}
+
+.light-bg {
+    background-color: #f9f9f9;
+}
+
+.dark-bg {
+    background-color: #e9ecef;
+}
+
+.content-section h2, .content-section h3 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.content-section p {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.content-section a.button {
+    display: table; /* Make button center itself */
+    margin: 30px auto 0;
+    text-align: center;
 }
 
 
@@ -455,31 +616,49 @@ nav ul li a:hover {
 /* Footer Styles */
 footer {
     background-color: #333;
-    color: white;
+    color: #fff;
     padding: 40px 0;
     text-align: center;
 }
 
-footer .footer-logo img {
-    height: 60px;
-    margin-bottom: 20px;
+.footer-content {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically on small screens */
+    align-items: center; /* Center items horizontally */
+    gap: 20px; /* Space between logo and info */
 }
 
-footer p {
-    margin: 0 0 20px 0;
-    font-size: 0.9em;
+.footer-logo {
+    margin-bottom: 15px; /* Space below the logo */
 }
 
-footer .social-links a {
-    color: white;
+.footer-logo img {
+    max-width: 150px; /* Adjust as needed */
+    height: auto;
+}
+
+.footer-info {
+    text-align: center;
+}
+
+.footer-info p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.social-icons-footer {
+    margin-top: 15px;
+}
+
+.social-icons-footer a {
+    color: #fff;
+    font-size: 24px;
     margin: 0 10px;
-    font-size: 1.5em;
-    text-decoration: none;
     transition: color 0.3s ease;
 }
 
-footer .social-links a:hover {
-    color: #198754; /* Green */
+.social-icons-footer a:hover {
+    color: #66ccff; /* Lighter blue on hover */
 }
 
 
@@ -796,615 +975,6 @@ footer .social-links a:hover {
 }
 
 
-/* Responsive Design */
-@media (max-width: 992px) {
-    .top-bar .container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .top-bar .contact-info,
-    .top-bar .address-info {
-        margin-bottom: 10px;
-    }
-
-    header .container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    nav ul {
-        flex-direction: column;
-        margin-top: 20px;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    .hero h2 {
-        font-size: 2.8em;
-    }
-
-    .hero p {
-        font-size: 1.1em;
-    }
-
-    .hero .hero-buttons a {
-        padding: 12px 25px;
-        font-size: 1em;
-        margin: 5px;
-    }
-
-    #about .about-content {
-        flex-direction: column;
-    }
-
-    .vision-mission {
-        flex-direction: column;
-    }
-
-    .contact-layout {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 768px) {
-    .top-bar .contact-info span,
-    .top-bar .address-info span {
-        margin-right: 10px;
-    }
-
-    .top-bar .social-icons-top {
-        margin-bottom: 10px;
-    }
-
-    .top-bar .contact-button {
-        margin-left: 0;
-    }
-
-    .logo h1 {
-        font-size: 1.5em;
-    }
-
-    .hero h2 {
-        font-size: 2.2em;
-    }
-
-    .hero p {
-        font-size: 1em;
-    }
-
-    .small-hero h2 {
-        font-size: 2.5em;
-    }
-
-    #about h2, #featured-services h2, #doctors h2, #testimonials h2, #contact-home h2 {
-        font-size: 2em;
-    }
-
-    #featured-services .service-grid,
-    #doctors .doctor-card-grid,
-    #services-list .service-grid-full,
-    #doctors-page .doctor-detail-grid,
-    #gallery-content .gallery-grid,
-    #news-list .news-grid {
-        grid-template-columns: 1fr; /* Single column layout */
-    }
-
-    .contact-form-container, .contact-details-box, .map-container {
-        padding: 25px;
-    }
-}
-
-@media (max-width: 480px) {
-    .top-bar .contact-info,
-    .top-bar .address-info,
-    .top-bar .right-section {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-    .top-bar .contact-info span,
-    .top-bar .address-info span,
-    .top-bar .social-icons-top a,
-    .top-bar .contact-button {
-        margin: 5px 0;
-    }
-
-    .logo img {
-        height: 40px;
-    }
-
-    .logo h1 {
-        font-size: 1.2em;
-    }
-
-    nav ul li {
-        margin: 8px 0;
-    }
-
-    .hero {
-        padding: 80px 15px;
-    }
-
-    .hero h2 {
-        font-size: 1.8em;
-    }
-
-    .hero p {
-        font-size: 0.9em;
-    }
-
-    .hero .hero-buttons a {
-        font-size: 0.9em;
-        padding: 10px 20px;
-    }
-
-    .small-hero {
-        padding: 60px 15px;
-    }
-
-    .small-hero h2 {
-        font-size: 2em;
-    }
-
-    #about h2, #featured-services h2, #doctors h2, #testimonials h2, #contact-home h2 {
-        font-size: 1.8em;
-    }
-
-    .testimonial-item {
-        font-size: 1em;
-        padding: 20px;
-    }
-    /* Dropdown Menu Styles */
-nav ul li.dropdown {
-    position: relative;
-}
-
-nav ul li.dropdown .submenu {
-    display: none; /* Hidden by default */
-    position: absolute;
-    background-color: #fff;
-    min-width: 250px; /* Adjust width as needed */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    list-style: none;
-    padding: 10px 0;
-    margin-top: 5px; /* Space from parent menu item */
-    border-radius: 5px;
-    border: 1px solid #eee;
-}
-
-nav ul li.dropdown .submenu li {
-    padding: 0; /* Remove default padding for submenu items */
-    margin: 0; /* Remove default margin for submenu items */
-}
-
-nav ul li.dropdown .submenu li a {
-    color: #333;
-    padding: 12px 20px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    white-space: nowrap; /* Prevent text wrapping */
-    font-weight: normal; /* Submenu items usually not bold */
-}
-
-nav ul li.dropdown .submenu li a:hover {
-    background-color: #f1f1f1;
-    color: #198754; /* Green on hover */
-}
-
-/* Show the dropdown menu on hover */
-nav ul li.dropdown:hover .submenu {
-    display: block;
-}
-
-/* Responsive adjustments for dropdowns */
-@media (max-width: 992px) {
-    nav ul li.dropdown .submenu {
-        position: static; /* Stack submenus vertically on small screens */
-        box-shadow: none;
-        border: none;
-        background-color: #f0f0f0; /* Slightly different background for submenus */
-        padding: 0 0 0 20px; /* Indent submenu items */
-        margin-top: 0;
-    }
-
-    nav ul li.dropdown .submenu li a {
-        padding: 8px 15px;
-    }
-}
-/* Dropdown Menu Styles */
-nav ul li.dropdown {
-    position: relative;
-}
-
-nav ul li.dropdown > a {
-    display: flex;
-    align-items: center;
-}
-
-nav ul li.dropdown > a i {
-    margin-left: 8px; /* Space between text and arrow icon */
-    font-size: 0.8em;
-    transition: transform 0.3s ease;
-}
-
-nav ul li.dropdown:hover > a i {
-    transform: rotate(180deg); /* Rotate arrow when dropdown is open */
-}
-
-nav ul li.dropdown .submenu {
-    display: none; /* Hidden by default */
-    position: absolute;
-    background-color: #fff;
-    min-width: 250px; /* Adjust width as needed */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1001; /* Ensure it's above other content */
-    list-style: none;
-    padding: 10px 0;
-    margin-top: 5px; /* Space from parent menu item */
-    border-radius: 5px;
-    border: 1px solid #eee;
-}
-
-nav ul li.dropdown .submenu li {
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li.dropdown .submenu li a {
-    color: #333;
-    padding: 12px 20px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    white-space: nowrap;
-    font-weight: normal;
-}
-
-nav ul li.dropdown .submenu li a:hover {
-    background-color: #f1f1f1;
-    color: #198754; /* Green on hover */
-}
-
-/* Show the dropdown menu on hover */
-nav ul li.dropdown:hover .submenu {
-    display: block;
-}
-
-/* Search Bar Styles */
-.search-container {
-    display: flex;
-    align-items: center;
-    margin-left: 20px;
-}
-
-#search-input {
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px 0 0 5px;
-    font-size: 0.9em;
-    outline: none;
-    transition: border-color 0.3s ease;
-}
-
-#search-input:focus {
-    border-color: #198754;
-}
-
-#search-button {
-    background-color: #198754;
-    color: white;
-    border: 1px solid #198754;
-    padding: 8px 12px;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    font-size: 0.9em;
-    transition: background-color 0.3s ease;
-}
-
-#search-button:hover {
-    background-color: #146c43;
-}
-
-
-/* Responsive adjustments for dropdowns and search */
-@media (max-width: 992px) {
-    nav ul {
-        align-items: flex-start; /* Align menu items to the start */
-    }
-
-    nav ul li.dropdown .submenu {
-        position: static;
-        box-shadow: none;
-        border: none;
-        background-color: #f0f0f0;
-        padding: 0 0 0 20px;
-        margin-top: 0;
-        width: 100%; /* Take full width */
-    }
-
-    nav ul li.dropdown .submenu li a {
-        padding: 8px 15px;
-    }
-
-    .search-container {
-        width: 100%; /* Full width search bar */
-        margin-top: 15px;
-        margin-left: 0;
-        justify-content: center; /* Center search elements */
-    }
-
-    #search-input {
-        width: 70%; /* Adjust width to make room for button */
-        border-radius: 5px 0 0 5px;
-    }
-}
-
-@media (max-width: 768px) {
-    .search-container {
-        width: 90%;
-    }
-    #search-input {
-        width: 65%;
-    }
-}
-
-@media (max-width: 480px) {
-    #search-input {
-        width: 60%;
-    }
-}
-/* General Styling for Inner Hero Sections (like About, Departments, Facilities, Patient Info, Articles) */
-.inner-hero {
-    background-color: #28a745; /* A primary green color for consistency */
-    color: white;
-    padding: 80px 0 60px;
-    text-align: center;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-
-.inner-hero h2 {
-    font-size: 3em;
-    margin-bottom: 15px;
-}
-
-.inner-hero p {
-    font-size: 1.2em;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* General Content Section Styles */
-.content-section {
-    padding: 60px 0;
-}
-
-.light-bg {
-    background-color: #f9f9f9;
-}
-
-.dark-bg {
-    background-color: #e9ecef;
-}
-
-.content-section h2, .content-section h3 {
-    color: #333;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.content-section p {
-    color: #555;
-    line-height: 1.8;
-    margin-bottom: 20px;
-    text-align: justify;
-}
-
-.content-section a.button {
-    display: table; /* Make button center itself */
-    margin: 30px auto 0;
-    text-align: center;
-}
-
-
-/* Departments Grid Styles */
-.departments-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.department-item {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    padding: 30px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.department-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.department-item i {
-    font-size: 3.5em;
-    color: #198754;
-    margin-bottom: 20px;
-}
-
-.department-item h3 {
-    font-size: 1.8em;
-    margin-bottom: 15px;
-    color: #333;
-}
-
-.department-item p {
-    font-size: 1em;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.department-item .button {
-    margin-top: 15px;
-}
-
-/* Facilities Grid Styles */
-.facilities-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.facility-item {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden; /* Ensures image corners are rounded */
-}
-
-.facility-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.facility-item img {
-    width: 100%;
-    height: 200px; /* Fixed height for consistent look */
-    object-fit: cover; /* Ensures image covers area without distortion */
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-}
-
-.facility-item h3 {
-    font-size: 1.6em;
-    padding: 15px 20px 0;
-    margin-bottom: 10px;
-    color: #333;
-    text-align: left;
-}
-
-.facility-item p {
-    font-size: 0.95em;
-    color: #666;
-    padding: 0 20px 20px;
-    text-align: left;
-}
-
-
-/* Patient Info Grid Styles */
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.info-item {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    padding: 30px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.info-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.info-item h3 {
-    font-size: 1.6em;
-    margin-bottom: 15px;
-    color: #333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.info-item h3 i {
-    font-size: 1.2em;
-    color: #198754;
-    margin-right: 10px;
-}
-
-.info-item p {
-    font-size: 1em;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.info-item .button {
-    margin-top: 15px;
-}
-
-
-/* Articles Grid Styles */
-.articles-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.article-item {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-}
-
-.article-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.article-item img {
-    width: 100%;
-    height: 180px; /* Consistent image height */
-    object-fit: cover;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-}
-
-.article-item h3 {
-    font-size: 1.5em;
-    padding: 15px 20px 0;
-    margin-bottom: 5px;
-    color: #333;
-    text-align: left;
-}
-
-.article-item .article-meta {
-    font-size: 0.85em;
-    color: #888;
-    padding: 0 20px;
-    margin-bottom: 10px;
-    text-align: left;
-}
-
-.article-item p {
-    font-size: 0.95em;
-    color: #666;
-    padding: 0 20px 20px;
-    text-align: left;
-}
-
-.article-item .button {
-    display: block;
-    width: calc(100% - 40px); /* Adjust button width */
-    margin: 0 20px 20px;
-    text-align: center;
-}
-
 /* Basic styles for buttons within content sections */
 .button {
     display: inline-block;
@@ -1437,128 +1007,229 @@ nav ul li.dropdown:hover .submenu {
     border-color: #adadad;
 }
 
-/* Responsive adjustments for grids */
-@media (max-width: 768px) {
-    .departments-grid, .facilities-grid, .info-grid, .articles-grid {
-        grid-template-columns: 1fr; /* Stack items on small screens */
-    }
 
-    .department-item, .facility-item, .info-item, .article-item {
-        padding: 20px;
-    }
-}
-/* Geez Hospital Colors */
-.geez-color {
-    color: #0000FF; /* Blue color */
-}
-
-.hospital-color {
-    color: #FF0000; /* Red color */
-}
-
-/* Footer Styling */
-footer {
-    background-color: #333; /* Dark background for footer */
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-.footer-content {
-    display: flex;
-    flex-direction: column; /* Stack elements vertically on small screens */
-    align-items: center; /* Center items horizontally */
-    gap: 20px; /* Space between logo and info */
-}
-
-.footer-logo {
-    margin-bottom: 15px; /* Space below the logo */
-}
-
-.footer-logo img {
-    max-width: 150px; /* Adjust as needed */
-    height: auto;
-}
-
-.footer-info {
-    text-align: center;
-}
-
-.footer-info p {
-    margin-bottom: 10px;
-    line-height: 1.6;
-}
-
-.social-icons-footer {
-    margin-top: 15px;
-}
-
-.social-icons-footer a {
-    color: #fff;
-    font-size: 24px;
-    margin: 0 10px;
-    transition: color 0.3s ease;
-}
-
-.social-icons-footer a:hover {
-    color: #66ccff; /* Lighter blue on hover */
-}
-
-/* Social Icons in Top Bar (ensure they are responsive) */
-.social-icons-top {
-    display: flex; /* Make icons side-by-side */
-    gap: 10px; /* Space between icons */
-}
-
-.social-icons-top a {
-    color: #fff; /* White color for icons */
-    font-size: 18px; /* Adjust size as needed */
-    transition: color 0.3s ease;
-}
-
-.social-icons-top a:hover {
-    color: #66ccff;
-}
-
-/* Responsive adjustments for header and footer */
-@media (max-width: 768px) {
-    .top-bar {
+/* Responsive Design */
+@media (max-width: 992px) {
+    .top-bar .container {
         flex-direction: column;
-        align-items: center;
         text-align: center;
     }
 
     .top-bar .contact-info,
-    .top-bar .right-section {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
+    .top-bar .address-info {
         margin-bottom: 10px;
     }
-
-    .social-icons-top {
+    
+    .top-bar .right-section {
         margin-top: 10px;
+        justify-content: center; /* Center items for better appearance */
     }
 
-    .header .logo {
+    header .container {
         flex-direction: column;
         text-align: center;
     }
 
-    .header .logo img {
-        margin-bottom: 10px;
+    nav ul {
+        flex-direction: column;
+        margin-top: 20px;
+        /* Hidden by default on mobile, revealed by JS toggle */
+        display: none;
+        width: 100%;
     }
 
-    .footer-content {
+    nav ul.active {
+        display: flex; /* Show when active */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        width: 100%; /* Full width for stacked menu items */
+    }
+    
+    nav ul li a {
+        padding: 10px 0; /* Add padding for clickable area */
+        justify-content: center; /* Center text in mobile menu */
+    }
+
+    .nav-toggle {
+        display: block; /* Show hamburger menu icon */
+    }
+
+    .hero-section h2 {
+        font-size: 2.8em;
+    }
+
+    .hero-section p {
+        font-size: 1.1em;
+    }
+
+    .hero-section .hero-buttons a {
+        padding: 12px 25px;
+        font-size: 1em;
+        margin: 5px;
+    }
+
+    #about .about-content {
         flex-direction: column;
     }
 
-    .footer-logo {
-        margin-bottom: 15px;
+    .vision-mission {
+        flex-direction: column;
     }
 
-    .footer-info {
+    .contact-layout {
+        flex-direction: column;
+    }
+
+    /* Dropdown adjustments for smaller screens */
+    nav ul li.dropdown .submenu {
+        position: static; /* Stack submenus vertically on small screens */
+        box-shadow: none;
+        border: none;
+        background-color: #f0f0f0; /* Slightly different background for submenus */
+        padding: 0 0 0 20px; /* Indent submenu items */
         margin-top: 0;
+        width: 100%; /* Take full width */
+    }
+
+    nav ul li.dropdown .submenu li a {
+        padding: 8px 15px;
+        justify-content: flex-start; /* Align submenu text to start */
+    }
+
+    /* Search bar adjustments for smaller screens */
+    .search-container {
+        width: 100%; /* Full width search bar */
+        margin-top: 15px;
+        margin-left: 0;
+        justify-content: center; /* Center search elements */
+    }
+
+    #search-input {
+        width: 70%; /* Adjust width to make room for button */
+        border-radius: 5px 0 0 5px;
     }
 }
+
+@media (max-width: 768px) {
+    .top-bar .contact-info span,
+    .top-bar .address-info span {
+        margin-right: 10px;
+    }
+
+    .top-bar .social-icons-top {
+        margin-bottom: 10px;
+    }
+
+    .top-bar .contact-button {
+        margin-left: 0;
+    }
+
+    .logo h1 {
+        font-size: 1.5em;
+    }
+
+    .hero-section h2 {
+        font-size: 2.2em;
+    }
+
+    .hero-section p {
+        font-size: 1em;
+    }
+
+    .hero-section.inner-hero h2 {
+        font-size: 2.5em;
+    }
+
+    #about h2, #featured-services h2, #doctors h2, #testimonials h2, #contact-home h2 {
+        font-size: 2em;
+    }
+
+    #featured-services .service-grid,
+    #doctors .doctor-card-grid,
+    #services-list .service-grid-full,
+    #doctors-page .doctor-detail-grid,
+    #gallery-content .gallery-grid,
+    #news-list .news-grid,
+    .departments-grid, .facilities-grid, .info-grid, .articles-grid {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+
+    .contact-form-container, .contact-details-box, .map-container {
+        padding: 25px;
+    }
+
+    .search-container {
+        width: 90%;
+    }
+    #search-input {
+        width: 65%;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-bar .contact-info,
+    .top-bar .address-info,
+    .top-bar .right-section {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .top-bar .contact-info span,
+    .top-bar .address-info span,
+    .top-bar .social-icons-top a,
+    .top-bar .contact-button {
+        margin: 5px 0;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .logo h1 {
+        font-size: 1.2em;
+    }
+
+    nav ul li {
+        margin: 8px 0;
+    }
+
+    .hero-section {
+        padding: 80px 15px;
+    }
+
+    .hero-section h2 {
+        font-size: 1.8em;
+    }
+
+    .hero-section p {
+        font-size: 0.9em;
+    }
+
+    .hero-section .hero-buttons a {
+        font-size: 0.9em;
+        padding: 10px 20px;
+    }
+
+    .hero-section.inner-hero {
+        padding: 60px 15px;
+    }
+
+    .hero-section.inner-hero h2 {
+        font-size: 2em;
+    }
+
+    #about h2, #featured-services h2, #doctors h2, #testimonials h2, #contact-home h2 {
+        font-size: 1.8em;
+    }
+
+    .testimonial-item {
+        font-size: 1em;
+        padding: 20px;
+    }
+
+    #search-input {
+        width: 60%;
+    }
 }

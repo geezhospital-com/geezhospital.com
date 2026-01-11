@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Language translation data
     const translations = {
         "eng": {
-            "hero-main-title": "Geez Hospital|ግዕዝ ሆስፒታል",
+            "hero-main-title": "Geez Hospital", // Simplified
             "contact-us-btn": "Contact Us",
             "home": "Home",
             "about-us": "About Us",
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "service13-h3": "Laboratory",
             "service14-h3": "Physiotherapy",
             "service15-h3": "Psychiatry",
-            "service16-h3": "Ophthalmology", // Corrected spelling
+            "service16-h3": "Ophthalmology",
             "service17-h3": "Maternity Services",
             "service18-h3": "Pharmacy & Ambulance",
             "service19-h3": "Other Services",
@@ -63,10 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
             "patient-satisfaction-survey": "Patient Satisfaction Survey",
             "contact": "Contact Us",
             "search-placeholder": "Search...",
-            "footer-text": "Copyright © 2026 <span class=\"geez-color\">Geez</span> <span class=\"hospital-color\">Hospital</span><br>Developed By Aser Teklu Gebrekidan-0911179955", // Added spans for color
-            "about-h2": "About Us", // Hero Title
-            "about-p": "Learn more about Geez Hospital, our mission, vision, and the core values that guide us in providing exceptional healthcare.", // Corrected description
-            "about-h3": "About Us", // Section Title
+            "footer-text": "Copyright © 2026 <span class=\"geez-color\">Geez</span> <span class=\"hospital-color\">Hospital</span><br>Developed By Aser Teklu Gebrekidan-0911179955",
+            "about-h2": "About Us",
+            "about-p": "Learn more about Geez Hospital, our mission, vision, and the core values that guide us in providing exceptional healthcare.",
+            "about-h3": "About Us",
             "about-p1": "Established in 2011 E.C., Geez Hospital is one of the leading institutions in the central zone and Tigray, providing modern and efficient medical services with international standards. We aim to make world-class healthcare accessible to every citizen, becoming one of the largest and most trusted medical institutions in the entire zone and its surroundings. We are founded on providing compassionate care, high professional competence, and modern equipment. We place great emphasis on patient safety and excellent service.",
             "mission-h3": "Our Mission",
             "mission-p": "To provide excellent, affordable, accessible, and accountable medical care to all citizens; to offer comprehensive, high-quality, and affordable healthcare that combines professional excellence with compassionate care; to create a world-class medical practice and uphold the highest medical ethics.",
@@ -83,25 +83,43 @@ document.addEventListener('DOMContentLoaded', () => {
             "patient-info-p": "Find essential information for your visit, including admission, discharge, rights, and responsibilities.",
             "articles-h2": "Health Articles",
             "articles-p": "Stay informed with our latest health articles, tips, and medical insights from our expert team.",
+            "contact-h2": "Contact Us", // Added for contact page hero title
+            "contact-p": "For any inquiries or to book an appointment, please reach out to us.", // Added for contact page hero paragraph
+            "contact-form-title": "Send us a Message", // Added for contact form title
+            "form-full-name": "Full Name:", // Added for form labels
+            "form-email": "Email:",
+            "form-subject": "Subject/Service:",
+            "form-phone": "Phone Number:",
+            "form-address": "Address:",
+            "form-age": "Age:",
+            "form-gender": "Gender:",
+            "form-select-gender": "Select Gender",
+            "form-gender-male": "Male",
+            "form-gender-female": "Female",
+            "form-gender-other": "Other",
+            "form-message": "Message:",
+            "form-submit-btn": "Send",
+            "our-location-map": "Our Location on Map", // Added for map section title
+            "view-on-map": "View on Map" // Added for map button text
         },
         "tig": {
-            "hero-main-title": "ግዕዝ ሆስፒታል", // Corrected
-            "contact-us-btn": "ተወከሰና", // Corrected (from ተወከሱና)
-            "home": "መበገሲ ገጽ", // Corrected (from መእተዊ)
+            "hero-main-title": "ግዕዝ ሆስፒታል",
+            "contact-us-btn": "ተወከሰና", // Changed to "ተወከሱና" if preferred for politeness or left as "ተወከሰና"
+            "home": "መበገሲ ገጽ",
             "about-us": "ብዛዕባና",
             "menu-about-us": "ብዛዕባና",
             "menu-mission": "ተልእኾና",
             "menu-vision": "ራእይና",
-            "menu-services-about": "ሓፈሻዊ ኣገልግሎታት", // Corrected (from ዝርዝር ግልጋሎታትና)
-            "services": "ኣገልግሎታት", // Corrected (from ግልጋሎታትና)
-            "service1-h3": "ውሽጣዊ ሕክምና", // Corrected (from ውሽጣዊ ሕማማት ሕክምና)
+            "menu-services-about": "ዝርዝር ግልጋሎታት",
+            "services": "ግልጋሎታት",
+            "service1-h3": "ውሽጣዊ ሕክምና",
             "service2-h3": "ሕክምና ልቢ",
-            "service3-h3": "ሓፈሻዊ ሕክምና", // Corrected (from ሓፈሻዊ ሕክምና)
-            "service4-h3": "ሕክምና ህጻናት", // Corrected (from ሕክምና ህጻናትን ኣባጽሕን)
+            "service3-h3": "ሓፈሻዊ ሕክምና",
+            "service4-h3": "ሕክምና ህጻናትን ኣባጽሕን", // Retained for clarity
             "service5-h3": "ሕክምና ነፍሰጾራትን ደቂኣንስትዮን",
-            "service6-h3": "ENT", // Changed back to ENT for consistency with English, or use "ሕክምና ኣፍንጫ፣ እዝኒ፣ ጎሮሮ"
+            "service6-h3": "ENT",
             "service7-h3": "ራድዮሎጂ",
-            "service8-h3": "ሕክምና ስኒ", // Corrected (from ሕክምና ስኒ)
+            "service8-h3": "ሕክምና ስኒ",
             "service9-h3": "ኒውሮሰርጀሪ",
             "service10-h3": "ኦርቶፔዲክስ",
             "service11-h3": "ደርማቶሎጂን ኮስመቶሎጂን",
@@ -109,11 +127,11 @@ document.addEventListener('DOMContentLoaded', () => {
             "service13-h3": "ላብራቶሪ",
             "service14-h3": "ፊዝዮቴራፒ",
             "service15-h3": "ሳይካትሪ",
-            "service16-h3": "ሕክምና ዓይኒ", // Corrected (from ሕክምና ዓይኒ)
+            "service16-h3": "ሕክምና ዓይኒ",
             "service17-h3": "ኣገልግሎታት ማትርኒቲ",
             "service18-h3": "ፋርማሲን ኣምቡላንስን",
-            "service19-h3": "ካልኦት ግልጋሎታት", 
-            "doctors": "ሓኻይምና", 
+            "service19-h3": "ካልኦት ግልጋሎታት",
+            "doctors": "ሓኻይምና",
             "menu-surgeons": "ሰርጀንስ",
             "menu-gynecologists": "ጋይናኮሎጂስትስ",
             "menu-pediatricians": "ፔዲያትሪሽያን",
@@ -126,50 +144,67 @@ document.addEventListener('DOMContentLoaded', () => {
             "menu-dermatologists": "ደርማቶሎጂስትስ",
             "menu-psychiatrists": "ሳይካትሪስትስ",
             "menu-ophthalmologists": "ኦፍታልሞሎጂስትስ",
-            "departments": "ክፍለታት", // Corrected (from ክፍሊታት ሕክምና)
+            "departments": "ክፍለታት",
             "dept-surgery": "ክፍሊ ሕክምና",
-            "dept-pediatrics": "ክፍሊ ሕክምና ህጻናትን ኣባጽሕን", // Corrected (from ክፍሊ ሕክምና ህጻናትን ኣባጽሕን)
+            "dept-pediatrics": "ክፍሊ ሕክምና ህጻናትን ኣባጽሕን",
             "dept-obsgyn": "ክፍሊ ሕክምና ነፍሰጾራትን ደቂኣንስትዮን",
-            "dept-internal-medicine": "ክፍሊ ውሽጣዊ ሕማማት ሕክምና", // Corrected (from ክፍሊ ውሽጣዊ ሕማማት ሕክምና)
+            "dept-internal-medicine": "ክፍሊ ውሽጣዊ ሕማማት ሕክምና",
             "dept-orthopedics": "ክፍሊ ኦርቶፔዲክስ",
             "dept-radiology": "ክፍሊ ራድዮሎጂ",
             "dept-oncology": "ክፍሊ ኦንኮሎጂ",
             "dept-dermatology": "ክፍሊ ደርማቶሎጂ",
             "dept-psychiatry": "ክፍሊ ሳይካትሪ",
             "dept-ophthalmology": "ክፍሊ ሕክምና ዓይኒ",
-            "facilities": "መሳርሒታት ሕክምና", // Corrected (from ማሽናት ሕክምና)
+            "facilities": "መሳርሒታት ሕክምና",
             "media": "ሚድያ",
             "media-patient-info": "ሓበሬታ ሕሙማት",
-            "media-articles": "ጽሑፋት",
+            "media-articles": "ጽሑፋት ጥዕና", // Corrected duplicate key
             "news": "ዜናን ፍጻሜታትን",
             "gallery": "ጋለሪ",
             "patient-satisfaction-survey": "ናይ ሕሙማት ሳትስፋክሽን መርመራ",
             "contact": "ተወከሰና",
             "search-placeholder": "ድለ...",
-            "footer-text": "Copyright © 2026 <span class=\"geez-color\">ሆስፒታል</span> <span class=\"hospital-color\">ግዕዝ</span><br>Developed By Aser Teklu Gebrekidan-0911179955", // Added spans for color
-            "about-h2": "ብዛዕባና", // Hero Title
+            "footer-text": "Copyright © 2026 <span class=\"geez-color\">ግዕዝ</span> <span class=\"hospital-color\">ሆስፒታል</span><br>Developed By Aser Teklu Gebrekidan-0911179955",
+            "about-h2": "ብዛዕባና",
             "about-p": "ብዛዕባ ሆስፒታል ግዕዝ፣ ተልእኾና፣ ራእይና፣ ከምኡ እውን ነቲ ዝለዓለ ሕክምናዊ ክንክን ንምሃብ ዝመርሑና መሰረታዊ መትከላት እዞም ዝስዑቡ እዮም።",
-            "about-h3": "ብዛዕባና", // Section Title
+            "about-h3": "ብዛዕባና",
             "about-p1": "ብ2011 ኣ.ግ ዝተመስረተ ሆስፒታል ግዕዝ፣ ኣብ ማእኸላይ ዞባ ካብቶም ቀዳሞት ዝስርዑ፣ ዓለምለኻዊ ፅሬት ዘለዎ ዘመናዊን ስሉጥን ሕክምናዊ ግልጋሎት ዝህቡ ትካላት ሓደ እዩ። ኣብ መላእ እቲ ዞባን ጎረባብቲን ሓደ ካብቶም ዝዓበዩን ዝእመኑን ናይ ሕክምና ትካል ኮይኑ ዓለምለኻዊ ፅሬት ዘለዎ ሕክምና ንነፍሲ-ወከፍ ዜጋ ተበፃሒ ንምግባር ዝዓለመ እዩ።ብፍላይ ሓልዮት ዝተመልኦ ክንክን፣ ላዕለዋይ ሞያዊ ብቕዓትን ዘመናዊ መሳርሒታትን ብምቕራብ ዝተመስረተ ትካል እዩ። ንድሕንነት ሕሙማትን ንብሉፅ ግልጋሎትን ዓብዪ ቆላሕታ ይህብ።",
             "mission-h3": "ተልእኾና",
             "mission-p": "ብሉፅ ፅሬት፣ ተመጣጣኒ፣ ተበፃሒን ተሓታትነት ዘለዎን ሕክምና ንኹሉ ዜጋ ብምቕራብ፤ ብሉፅ ሞያዊ ክእለትን ርህራሄ ዝመልኦ ሓልዮትን ዘወሃሃደ፣ተበፃሒ፣ ፅሬቱ ዝሓለወን ተመጣጣኒ ዋጋ ዘለዎን ሕክምና ንማሕበረሰብ ብምቕራብ፤ ዓለምለኻዊ ደረጃኡ ዝሓለወ ናይ ሕክምና ኣሰራርሓ ምፍጣር ከምኡውን ዝለዓለ ናይ ሕክምና ስነ-ምግባር ምኽባርን እዩ።",
             "vision-h3": "ራእይና",
             "vision-p": "ብምኽንያት እቲ እንህቦ ብሉፅ ሞያዊ ብቕዓትን ንሕሙም ማእከል ዝገበረ ሓልዮቱን፣ ዓለምለኻዊ ደረጃ ዘለዎ ናይ ሕክምና ግልጋሎት ብምቕራብ ኣብ ኣፍሪካ ክብሪ ዝተጎናፀፈ ናይ ሕክምና ትካል ምዃን።",
-            "services-h3":"ዝርዝር ግልጋሎታት",
+            "services-h3": "ዝርዝር ግልጋሎታት",
             "services-p-about": "ብርክት ዝበሉ ናይ ስፔሻሊስትን ሳብ ስፔሻሊስትን ዓውድታት (ንኣብነት፦ሕክምና ዉሽጣዊ ሕማማት፣ ልቢ፣ ካንሰር፣ ሓንጎልን መትንታትን፣ ዓፅሚ፣ካብ ክሳድ ንላዕሊ፣ዓይኒ፣ናይ ቆርበትን ስነጽባቐን፣ ናይ ኣዴታትን ህፃናትን ክንክን መርመራታትን ከምኡውን ናይ ሃንደበታዊ ሓደጋን ግልጋሎትሎት ብዘመናዊ ቴክኖሎጂን ብሞያዊ ብቕዓትን ነቕርብ።",
             "all-services-btn": "ኹሎም ግልጋሎታትና ኣብዚ ርአ",
-            "departments-h2": "ክፍሊታት ሕክምና",
+            "departments-h2": "ክፍለታት ሕክምና",
             "departments-p": "ኣብ ሆስፒታል ግዕዝ ዝርከቡ ፍሉያት ክፍሊታት ሕክምና ዝድህስሱሉ፣ ብቑዕ ክንክን ምስ ዘመናዊ ቴክኖሎጂ ዝርከቡሉ ቦታ እዩ።",
-            "facilities-h2": "መሳርሒታት(ማሽናት) ሕክምና",
+            "facilities-h2": "መሳርሒታት ሕክምና",
             "facilities-p": "ግዕዝ ሆስፒታል ንተገልገልቲ ዝበለጸ ሕክምና ንምሃብ ብብሉጽ ተኽኖሎጂን ዘመናዊ መሳርሕታትን ምስ ብሉጻት ሰብ ምያ ሕክምና ኣወሃሂዱ ግልጋሎት ይህብ ኣሎ።",
             "patient-info-h2": "ሓበሬታ ሕሙማት",
             "patient-info-p": "ናብ ሆስፒታልና ክትመፅእ እንተኾይንካ ወይ ክትወፅእ እንተኾይንካ፣ ከምኡ'ውን መሰላትን ሓላፍነታትን ናይ ሕክምና ንምርካብ ዘድልየካ ኩሉ ኣገዳሲ ሓበሬታ ኣብዚ ይርከብ።",
             "articles-h2": "ጽሑፋት ጥዕና",
-            "articles-h2": "ጽሑፋት ጥዕና",
-            "articles-p": "ብብሉጻት ሓኻይም ዝምልከቶም ሰራሕተኛታትን  ጠቐምቲ ሓሳባትን ምኽሪታን ዝረኽብሉ ዓምዲ እዩ።",
+            "articles-p": "ብብሉጻት ሓኻይም ዝምልከቶም ሰራሕተኛታትን ጠቐምቲ ሓሳባትን ምኽሪታን ዝረኽብሉ ዓምዲ እዩ።",
+            "contact-h2": "ተራኸቡና", // Added for contact page hero title
+            "contact-p": "ንዝኾነ ሕቶ ወይ ቆፀሮ ንምሓዝ በይዝኦም ኣብዚ ይመዝገቡ።", // Added for contact page hero paragraph
+            "contact-form-title": "መልእኽቲ ስደዱልና", // Added for form labels
+            "form-full-name": "ምሉእ ሽም:",
+            "form-email": "ኢሜይል:",
+            "form-subject": "ዝደለይዎ ሕቶ/ሕክምና:",
+            "form-phone": "ቁፅሪ ስልኪ:",
+            "form-address": "ኣድራሻ:",
+            "form-age": "ዕድመ:",
+            "form-gender": "ፆታ:",
+            "form-select-gender": "ጾታ ምረፅ",
+            "form-gender-male": "ተባዕታይ",
+            "form-gender-female": "ኣንስተይቲ",
+            "form-gender-other": "ካልእ",
+            "form-message": "መልእኽቲ:",
+            "form-submit-btn": "ልኣኽ",
+            "our-location-map": "ኣድራሻና ብካርታ", // Added for map section title
+            "view-on-map": "ኣብ ካርታ ርኣይ" // Added for map button text
         },
         "amh": {
-            "hero-main-title": "ግዕዝ ሆስፒታል|Geez Hospital",
+            "hero-main-title": "ግዕዝ ሆስፒታል", // Simplified
             "contact-us-btn": "ያግኙን",
             "home": "ዋና ገጽ",
             "about-us": "ስለ እኛ",
@@ -193,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "service13-h3": "ላብራቶሪ",
             "service14-h3": "ፊዚዮቴራፒ",
             "service15-h3": "የአእምሮ ህክምና",
-            "service16-h3": "የአይን ህክምና", // Corrected spelling
+            "service16-h3": "የአይን ህክምና",
             "service17-h3": "የወሊድ አገልግሎቶች",
             "service18-h3": "ፋርማሲ እና አምቡላንስ",
             "service19-h3": "ሌሎች አገልግሎቶች",
@@ -230,10 +265,10 @@ document.addEventListener('DOMContentLoaded', () => {
             "patient-satisfaction-survey": "የታካሚ እርካታ ጥናት",
             "contact": "ያግኙን",
             "search-placeholder": "ፈልግ...",
-            "footer-text": "Copyright © 2026 <span class=\"geez-color\">ግዕዝ</span> <span class=\"hospital-color\">ሆስፒታል</span><br>Developed By Aser Teklu Gebrekidan-0911179955", // Added spans for color
-            "about-h2": "ስለ እኛ", // Hero Title
-            "about-p": "ስለ ግዕዝ ሆስፒታል፣ ተልዕኮአችን፣ ራዕያችን፣ እና በልዩ የጤና እንክብካቤ አሰጣጥ ላይ የሚመሩን መሰረታዊ እሴቶች የበለጠ ይረዱ።", // Corrected description
-            "about-h3": "ስለ እኛ", // Section Title
+            "footer-text": "Copyright © 2026 <span class=\"geez-color\">ግዕዝ</span> <span class=\"hospital-color\">ሆስፒታል</span><br>Developed By Aser Teklu Gebrekidan-0911179955",
+            "about-h2": "ስለ እኛ",
+            "about-p": "ስለ ግዕዝ ሆስፒታል፣ ተልዕኮአችን፣ ራዕያችን፣ እና በልዩ የጤና እንክብካቤ አሰጣጥ ላይ የሚመሩን መሰረታዊ እሴቶች የበለጠ ይረዱ።",
+            "about-h3": "ስለ እኛ",
             "about-p1": "ግዕዝ ሆስፒታል በ2011 ዓ.ም. የተቋቋመ ሲሆን በማዕከላዊ ዞን እና ትግራይ ውስጥ ዓለም አቀፍ ደረጃውን የጠበቀ ዘመናዊና ቀልጣፋ የህክምና አገልግሎት ከሚሰጡ ተቋማት አንዱ ነው። የአለም ደረጃ የህክምና አገልግሎትን ለእያንዳንዱ ዜጋ ተደራሽ ለማድረግ፣ በመላው ዞኑ እና አካባቢው ትልቁ እና ታማኝ የህክምና ተቋማት አንዱ ለመሆን ያለመ ነው። በአዛኝ እንክብካቤ፣ ከፍተኛ የሙያ ብቃት እና ዘመናዊ መሳሪያዎች ላይ የተመሰረተ ነው። የታካሚ ደህንነት እና እጅግ በጣም ጥሩ አገልግሎት ላይ ከፍተኛ ትኩረት እንሰጣለን።",
             "mission-h3": "ተልዕኮአችን",
             "mission-p": "ለሁሉም ዜጎች እጅግ በጣም ጥሩ፣ ተመጣጣኝ፣ ተደራሽ እና ተጠያቂ የህክምና እንክብካቤ መስጠት፤ የሙያ ብቃትን ከአዛኝ እንክብካቤ ጋር የሚያጣምር ሁሉን አቀፍ፣ ከፍተኛ ጥራት ያለው እና ተመጣጣኝ የጤና እንክብካቤ መስጠት፤ ዓለም አቀፍ ደረጃ ያለው የህክምና አሰራር መፍጠር እና ከፍተኛ የህክምና ስነ-ምግባርን መጠበቅ።",
@@ -250,6 +285,24 @@ document.addEventListener('DOMContentLoaded', () => {
             "patient-info-p": "ጉብኝትዎን በተመለከተ አስፈላጊ መረጃዎችን፣ የመግቢያ፣ የመውጫ፣ መብቶችን እና ኃላፊነቶችን ጨምሮ ያግኙ።",
             "articles-h2": "የጤና ጽሑፎች",
             "articles-p": "ከባለሙያ ቡድናችን የቅርብ ጊዜ የጤና ጽሑፎችን፣ ምክሮችን እና የህክምና ግንዛቤዎችን ያግኙ።",
+            "contact-h2": "ያግኙን",
+            "contact-p": "ለሁሉም ጥያቄዎችዎ ወይም ቀጠሮ ለመያዝ፣ እባክዎ ያግኙን።",
+            "contact-form-title": "መልእክት ይላኩልን",
+            "form-full-name": "ሙሉ ስም:",
+            "form-email": "ኢሜይል:",
+            "form-subject": "ርዕስ/አገልግሎት:",
+            "form-phone": "ስልክ ቁጥር:",
+            "form-address": "አድራሻ:",
+            "form-age": "እድሜ:",
+            "form-gender": "ጾታ:",
+            "form-select-gender": "ጾታ ይምረጡ",
+            "form-gender-male": "ወንድ",
+            "form-gender-female": "ሴት",
+            "form-gender-other": "ሌላ",
+            "form-message": "መልእክት:",
+            "form-submit-btn": "ላክ",
+            "our-location-map": "አድራሻችን በካርታ",
+            "view-on-map": "በካርታ ይመልከቱ"
         }
     };
 
@@ -261,7 +314,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 // For input placeholders
                 if (element.tagName === 'INPUT' && element.hasAttribute('placeholder')) {
                     element.setAttribute('placeholder', translations[lang][key]);
-                } else {
+                } else if (element.tagName === 'OPTION' && element.parentElement.id === 'gender') {
+                    // Specific handling for gender select options if needed, but innerHTML should work
+                    element.innerHTML = translations[lang][key];
+                }
+                else {
                     element.innerHTML = translations[lang][key];
                 }
             }
@@ -277,34 +334,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Handle specific elements that might need dynamic content updates beyond innerHTML
         const currentPath = window.location.pathname;
-        // Use querySelector to ensure we target the correct paragraph for the hero section of each page
-        // For about.html, the hero paragraph is associated with 'about-p'
-        if (currentPath.includes('about.html')) {
-            const aboutHeroP = document.querySelector('.hero-section p');
-            if (aboutHeroP && translations[lang]['about-p']) {
-                aboutHeroP.textContent = translations[lang]['about-p'];
+
+        // Generic function for updating hero paragraph
+        const updateHeroParagraph = (pageIdentifier, translationKey) => {
+            if (currentPath.includes(pageIdentifier)) {
+                const heroP = document.querySelector('.hero-section p');
+                if (heroP && translations[lang][translationKey]) {
+                    heroP.textContent = translations[lang][translationKey];
+                }
             }
-        } else if (currentPath.includes('departments.html')) {
-            const departmentsHeroP = document.querySelector('.hero-section p');
-            if (departmentsHeroP && translations[lang]['departments-p']) {
-                departmentsHeroP.textContent = translations[lang]['departments-p'];
-            }
-        } else if (currentPath.includes('facilities.html')) {
-            const facilitiesHeroP = document.querySelector('.hero-section p');
-            if (facilitiesHeroP && translations[lang]['facilities-p']) {
-                facilitiesHeroP.textContent = translations[lang]['facilities-p'];
-            }
-        } else if (currentPath.includes('patient-info.html')) {
-            const patientInfoHeroP = document.querySelector('.hero-section p');
-            if (patientInfoHeroP && translations[lang]['patient-info-p']) {
-                patientInfoHeroP.textContent = translations[lang]['patient-info-p'];
-            }
-        } else if (currentPath.includes('articles.html')) {
-            const articlesHeroP = document.querySelector('.hero-section p');
-            if (articlesHeroP && translations[lang]['articles-p']) {
-                articlesHeroP.textContent = translations[lang]['articles-p'];
-            }
-        }
+        };
+
+        // Apply to specific pages
+        updateHeroParagraph('index.html', 'about-p'); // Assuming index might also have a hero paragraph
+        updateHeroParagraph('about.html', 'about-p');
+        updateHeroParagraph('departments.html', 'departments-p');
+        updateHeroParagraph('facilities.html', 'facilities-p');
+        updateHeroParagraph('patient-info.html', 'patient-info-p');
+        updateHeroParagraph('articles.html', 'articles-p');
+        updateHeroParagraph('contact.html', 'contact-p'); // Added for contact page hero paragraph
     }
 
 
@@ -335,10 +383,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (window.innerWidth > 768) { // Only for desktop hover
                 dropdown.querySelector('.submenu').style.display = 'none';
             }
-            // For mobile, ensure it stays hidden after mouseleave
-            if (window.innerWidth <= 768) {
-                dropdown.querySelector('.submenu').style.display = 'none';
-            }
+            // For mobile, ensure it stays hidden after mouseleave if not clicked
+            // No explicit action needed here as click toggle handles it.
         });
 
         // For mobile/touch devices, allow click to toggle
@@ -346,11 +392,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (window.innerWidth <= 768) { // Adjust breakpoint as needed for mobile
                 e.preventDefault(); // Prevent navigating immediately
                 const submenu = dropdown.querySelector('.submenu');
-                if (submenu.style.display === 'block') {
-                    submenu.style.display = 'none';
-                } else {
-                    submenu.style.display = 'block';
-                }
+                // Close other open submenus before opening current one
+                document.querySelectorAll('.dropdown .submenu').forEach(otherSubmenu => {
+                    if (otherSubmenu !== submenu) {
+                        otherSubmenu.style.display = 'none';
+                    }
+                });
+                submenu.style.display = (submenu.style.display === 'block') ? 'none' : 'block';
             }
         });
     });
@@ -361,8 +409,29 @@ document.addEventListener('DOMContentLoaded', () => {
     if (navToggle && navMenu) {
         navToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active'); // Add/remove 'active' class
+            // Close any open dropdowns when main nav is toggled
+            document.querySelectorAll('.dropdown .submenu').forEach(submenu => {
+                submenu.style.display = 'none';
+            });
         });
     }
+
+    // Close mobile menu and dropdowns if clicking outside
+    document.addEventListener('click', (event) => {
+        if (window.innerWidth <= 768) {
+            const nav = document.querySelector('nav');
+            const isClickInsideNav = nav.contains(event.target);
+            const isClickOnNavToggle = navToggle && navToggle.contains(event.target);
+
+            if (!isClickInsideNav && !isClickOnNavToggle) {
+                navMenu.classList.remove('active');
+                document.querySelectorAll('.dropdown .submenu').forEach(submenu => {
+                    submenu.style.display = 'none';
+                });
+            }
+        }
+    });
+
 
     // Search functionality
     const searchInput = document.getElementById('search-input');
@@ -385,15 +454,49 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Dynamic content filtering for departments.html (and similar for services/doctors)
-    const urlParams = new URLSearchParams(window.location.search);
-    const selectedDept = urlParams.get('dept');
-    if (selectedDept) {
-        document.querySelectorAll('.department-item').forEach(item => {
-            item.style.display = 'none';
-        });
-        const targetDept = document.getElementById(selectedDept + '-item');
-        if (targetDept) {
-            targetDept.style.display = 'block'; // Or 'flex', 'grid' depending on your layout
+    const currentPath = window.location.pathname; // Re-declare or ensure it's accessible
+
+    if (currentPath.includes('departments.html')) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const selectedDept = urlParams.get('dept');
+        if (selectedDept) {
+            document.querySelectorAll('.department-item').forEach(item => {
+                item.style.display = 'none';
+            });
+            const targetDept = document.getElementById(selectedDept + '-item');
+            if (targetDept) {
+                targetDept.style.display = 'block'; // Or 'flex', 'grid' depending on your layout
+            }
         }
     }
+    // You might want similar logic for services.html and doctors.html
+    // Example for services.html
+    else if (currentPath.includes('services.html')) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const selectedService = urlParams.get('service');
+        if (selectedService) {
+            document.querySelectorAll('.service-item').forEach(item => {
+                item.style.display = 'none';
+            });
+            const targetService = document.getElementById(selectedService + '-item'); // Assuming IDs like "internal-medicine-item"
+            if (targetService) {
+                targetService.style.display = 'block';
+            }
+        }
+    }
+    // Example for doctors.html
+    else if (currentPath.includes('doctors.html')) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const selectedSpecialty = urlParams.get('specialty');
+        if (selectedSpecialty) {
+            document.querySelectorAll('.doctor-item').forEach(item => {
+                item.style.display = 'none';
+            });
+            const targetSpecialty = document.getElementById(selectedSpecialty + '-item'); // Assuming IDs like "surgeons-item"
+            if (targetSpecialty) {
+                targetSpecialty.style.display = 'block';
+            }
+        }
+    }
+
 });
