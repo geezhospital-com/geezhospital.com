@@ -1,28 +1,132 @@
-/* General Body and Container Styles */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: #333;
-    line-height: 1.6;
+/* General Body and HTML Styles */
+:root {
+    --primary-color: #007bff; /* Blue */
+    --secondary-color: #6c757d; /* Gray */
+    --accent-color: #28a745; /* Green */
+    --dark-bg-color: #343a40; /* Dark gray */
+    --light-bg-color: #f8f9fa; /* Light gray */
+    --text-color: #333;
+    --light-text-color: #f8f9fa;
+    --border-color: #dee2e6;
+    --font-family: 'Arial', sans-serif;
+    --transition-speed: 0.3s;
 }
 
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: #fff; /* Default white background */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--dark-bg-color); /* Darker headings */
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Remove extra space below images */
+}
+
+/* Utility Classes */
 .container {
-    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-.section-padding {
-    padding: 60px 0;
+.text-center {
+    text-align: center;
 }
+
+.light-bg {
+    background-color: var(--light-bg-color);
+}
+
+.dark-bg {
+    background-color: var(--dark-bg-color);
+    color: var(--light-text-color);
+}
+
+.section-title {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+    text-align: center;
+    color: var(--dark-bg-color);
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+    cursor: pointer;
+}
+
+.primary-button {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: 1px solid var(--primary-color);
+}
+
+.primary-button:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+.secondary-button {
+    background-color: var(--accent-color);
+    color: #fff;
+    border: 1px solid var(--accent-color);
+}
+
+.secondary-button:hover {
+    background-color: #218838;
+    color: #fff;
+}
+
+/* Specific text colors */
+.geez-color {
+    color: var(--primary-color);
+}
+
+.hospital-color {
+    color: var(--accent-color);
+}
+
 
 /* Top Bar Styles */
 .top-bar {
-    background-color: #198754; /* Green */
-    color: white;
+    background-color: var(--dark-bg-color);
+    color: var(--light-text-color);
     padding: 10px 0;
     font-size: 0.9em;
 }
@@ -37,67 +141,78 @@ body {
 .top-bar .contact-info span,
 .top-bar .address-info span {
     margin-right: 20px;
-    white-space: nowrap; /* Prevent breaking into new line */
+    display: inline-block; /* Ensure they stay on one line until wrap */
 }
 
 .top-bar .contact-info a,
-.top-bar .address-info a { /* Ensure address links also get white color */
-    color: white;
-    text-decoration: none;
+.top-bar .address-info a {
+    color: var(--light-text-color);
+    font-style: normal;
 }
 
-.top-bar .right-section {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap; /* Allow items to wrap within right-section */
-    gap: 15px; /* Space between elements in right-section */
+.top-bar .contact-info a:hover,
+.top-bar .address-info a:hover {
+    color: var(--primary-color);
 }
 
 .top-bar .social-icons-top {
-    display: flex; /* Make icons side-by-side */
-    gap: 10px; /* Space between icons */
+    display: inline-block;
+    margin-left: 20px;
 }
 
 .top-bar .social-icons-top a {
-    color: #fff; /* White color for icons */
-    font-size: 1.1em; /* Adjusted size for consistency */
-    transition: color 0.3s ease;
+    color: var(--light-text-color);
+    margin-left: 10px;
+    font-size: 1.1em;
 }
 
 .top-bar .social-icons-top a:hover {
-    color: #66ccff; /* Lighter blue on hover */
+    color: var(--primary-color);
 }
 
 .top-bar .contact-button {
-    background-color: #007bff; /* Blue */
-    color: white;
+    background-color: var(--primary-color);
+    color: #fff;
     padding: 8px 15px;
     border-radius: 5px;
-    text-decoration: none;
     margin-left: 20px;
-    white-space: nowrap;
-    transition: background-color 0.3s ease;
 }
 
 .top-bar .contact-button:hover {
-    background-color: #0056b3; /* Darker Blue */
+    background-color: #0056b3;
 }
 
-/* Header (Navigation Bar) Styles */
+/* Header/Navigation Styles */
 header {
     background-color: #fff;
     padding: 15px 0;
-    border-bottom: 1px solid #eee;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    z-index: 999; /* Ensure header is on top */
 }
+
+header.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    animation: slideDown 0.5s forwards; /* Smooth animation for sticky header */
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
 
 header .container {
     display: flex;
-    justify-content: space-between; /* Keeps logo left, nav-toggle/nav right */
+    justify-content: space-between;
     align-items: center;
+    position: relative; /* For positioning nav-toggle */
 }
 
 .logo {
@@ -106,229 +221,178 @@ header .container {
 }
 
 .logo img {
-    height: 50px;
+    height: 50px; /* Adjust logo size */
     margin-right: 10px;
 }
 
 .logo h1 {
-    margin: 0;
     font-size: 1.8em;
-    color: #198754; /* Green */
-}
-
-.geez-color {
-    color: #0000FF; /* Blue color */
-}
-
-.hospital-color {
-    color: #FF0000; /* Red color */
-}
-
-nav {
-    display: flex; /* To manage nav and its toggle */
-    align-items: center;
+    margin: 0;
+    white-space: nowrap; /* Prevent title from wrapping */
 }
 
 nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+    display: flex; /* Horizontal menu */
     align-items: center;
 }
 
 nav ul li {
-    margin-left: 25px;
-    position: relative; /* Needed for dropdown positioning */
+    position: relative;
+    margin-left: 20px;
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: #333;
+    display: block;
+    padding: 10px 15px;
+    color: var(--dark-bg-color);
     font-weight: bold;
-    transition: color 0.3s ease;
-    display: flex; /* For aligning text and dropdown icon */
-    align-items: center;
+    font-size: 1em;
 }
 
 nav ul li a:hover {
-    color: #198754; /* Green */
+    color: var(--primary-color);
 }
 
 /* Dropdown Menu Styles */
-nav ul li.dropdown > a i {
-    margin-left: 8px; /* Space between text and arrow icon */
-    font-size: 0.8em;
-    transition: transform 0.3s ease;
-}
-
-nav ul li.dropdown:hover > a i {
-    transform: rotate(180deg); /* Rotate arrow when dropdown is open */
-}
-
-nav ul li.dropdown .submenu {
+.submenu {
     display: none; /* Hidden by default */
     position: absolute;
+    top: 100%; /* Position below the parent link */
+    left: 0;
     background-color: #fff;
-    min-width: 250px; /* Adjust width as needed */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1001; /* Ensure it's above other content */
-    list-style: none;
-    padding: 10px 0;
-    margin-top: 5px; /* Space from parent menu item */
-    border-radius: 5px;
-    border: 1px solid #eee;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    min-width: 220px; /* Adjust as needed */
+    z-index: 1000;
+    border-top: 3px solid var(--primary-color);
+    animation: fadeIn 0.3s ease-out forwards;
 }
 
-nav ul li.dropdown .submenu li {
-    padding: 0;
+.submenu li {
     margin: 0;
+    border-bottom: 1px solid var(--border-color);
 }
 
-nav ul li.dropdown .submenu li a {
-    color: #333;
+.submenu li:last-child {
+    border-bottom: none;
+}
+
+.submenu li a {
     padding: 12px 20px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    white-space: nowrap;
+    white-space: nowrap; /* Prevent submenu items from wrapping */
     font-weight: normal;
+    font-size: 0.95em;
+    color: var(--text-color);
 }
 
-nav ul li.dropdown .submenu li a:hover {
-    background-color: #f1f1f1;
-    color: #198754; /* Green on hover */
+.submenu li a:hover {
+    background-color: var(--light-bg-color);
+    color: var(--primary-color);
 }
 
-/* Show the dropdown menu on hover */
-nav ul li.dropdown:hover .submenu {
-    display: block;
+/* Animation for dropdown */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* Language selector and Search container within the header for desktop */
-.desktop-controls {
-    display: flex;
-    align-items: center;
-    gap: 20px; /* Space between language selector and search */
+/* Language Selector */
+.language-selector {
     margin-left: 20px;
 }
 
 .language-selector select {
-    padding: 8px 12px;
-    border: 1px solid #ccc;
+    padding: 8px 10px;
+    border: 1px solid var(--border-color);
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: #fff;
+    color: var(--text-color);
     cursor: pointer;
     font-size: 0.9em;
 }
 
-/* Search Bar Styles */
+/* Search Bar */
 .search-container {
     display: flex;
     align-items: center;
+    margin-left: 20px;
 }
 
-#search-input {
+.search-container input {
+    border: 1px solid var(--border-color);
     padding: 8px 12px;
-    border: 1px solid #ccc;
     border-radius: 5px 0 0 5px;
     font-size: 0.9em;
     outline: none;
-    transition: border-color 0.3s ease;
+    transition: border-color var(--transition-speed) ease;
 }
 
-#search-input:focus {
-    border-color: #198754;
+.search-container input:focus {
+    border-color: var(--primary-color);
 }
 
-#search-button {
-    background-color: #198754;
-    color: white;
-    border: 1px solid #198754;
+.search-container button {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: 1px solid var(--primary-color);
     padding: 8px 12px;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
-    font-size: 0.9em;
-    transition: background-color 0.3s ease;
+    transition: background-color var(--transition-speed) ease;
 }
 
-#search-button:hover {
-    background-color: #146c43;
+.search-container button:hover {
+    background-color: #0056b3;
 }
 
-/* Hamburger menu for mobile */
-.nav-toggle {
-    display: none; /* Hidden by default on desktop */
-    font-size: 1.8em;
-    cursor: pointer;
-    color: #333;
-    margin-left: auto; /* Push toggle to the right on desktop if nav is removed */
-}
 
-/* Hero Section Styles */
+/* Hero Section Styles (for index.html) */
 .hero-section {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero-bg.jpg') no-repeat center center/cover;
-    color: white;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-bg.jpg') no-repeat center center/cover; /* Replace with your hero image */
+    color: #fff;
     text-align: center;
     padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh; /* Minimum height for hero */
 }
 
-.hero-section h1 { /* Added specific styling for H1 on hero section */
-    font-size: 4em;
-    margin-bottom: 20px;
+.hero-section h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: #fff;
 }
 
 .hero-section h2 {
-    font-size: 2.5em; /* Adjusted for consistency, main title is H1 */
+    font-size: 2.5em;
     margin-bottom: 20px;
+    color: #fff;
 }
 
 .hero-section p {
-    font-size: 1.3em;
+    font-size: 1.2em;
+    margin-bottom: 30px;
     max-width: 800px;
-    margin: 0 auto 30px auto;
+    line-height: 1.5;
+    color: #fff;
 }
 
-.hero-section .hero-buttons a {
-    background-color: #007bff; /* Blue */
-    color: white;
-    padding: 15px 30px;
-    border-radius: 5px;
-    text-decoration: none;
+.hero-section .button {
     font-size: 1.1em;
     margin: 0 10px;
-    transition: background-color 0.3s ease;
 }
 
-.hero-section .hero-buttons a:hover {
-    background-color: #0056b3; /* Darker Blue */
-}
-
-.hero-section .hero-buttons .secondary-btn {
-    background-color: #198754; /* Green */
-}
-
-.hero-section .hero-buttons .secondary-btn:hover {
-    background-color: #146c43; /* Darker Green */
-}
-
-
-/* General Styling for Inner Hero Sections (like About, Departments, Facilities, Patient Info, Articles) */
+/* Inner Hero Section (for other pages with hero) */
 .hero-section.inner-hero {
-    background-color: #28a745; /* A primary green color for consistency */
-    color: white;
-    padding: 80px 0 60px;
-    text-align: center;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    /* Optional: If you want a specific background image for inner pages */
-    /* background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/inner-hero-bg.jpg') no-repeat center center/cover; */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/inner-hero-bg.jpg') no-repeat center center/cover; /* Use a different or generic image */
+    min-height: 30vh;
+    padding: 60px 20px;
 }
 
 .hero-section.inner-hero h2 {
-    font-size: 3em;
-    margin-bottom: 15px;
+    font-size: 2.8em;
+    margin-bottom: 10px;
 }
 
 .hero-section.inner-hero p {
@@ -336,1068 +400,334 @@ nav ul li.dropdown:hover .submenu {
     max-width: 700px;
 }
 
-
-/* General Content Section Styles */
+/* Content Section General Styles */
 .content-section {
-    padding: 60px 0;
+    padding: 80px 0;
 }
 
-.light-bg {
-    background-color: #f9f9f9;
-}
-
-.dark-bg {
-    background-color: #e9ecef;
-}
-
-.content-section h2, .content-section h3 {
-    color: #333;
-    text-align: center;
-    margin-bottom: 30px;
+.content-section .section-title {
+    margin-bottom: 40px;
 }
 
 .content-section p {
-    color: #555;
-    line-height: 1.8;
-    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1em;
     text-align: justify;
 }
 
-.content-section a.button {
-    display: table; /* Make button center itself */
-    margin: 30px auto 0;
+/* About Page Specific Styles */
+#about-section, #mission-section, #vision-section {
+    padding: 60px 0;
     text-align: center;
 }
 
-
-/* About Us Section */
-#about {
-    background-color: #f9f9f9;
-}
-
-#about h2 {
-    text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 40px;
-    color: #198754; /* Green */
-}
-
-#about .about-content {
-    display: flex;
-    align-items: flex-start;
-    gap: 40px;
-}
-
-#about .about-text {
-    flex: 2;
-}
-
-#about .about-text p {
-    margin-bottom: 20px;
-}
-
-#about .about-image {
-    flex: 1;
-    text-align: center;
-}
-
-#about .about-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.vision-mission {
-    display: flex;
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.vision-mission .vm-item {
-    flex: 1;
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-.vision-mission h3 {
-    color: #007bff; /* Blue */
-    font-size: 1.8em;
-    margin-bottom: 15px;
-}
-
-/* Featured Services Section (Homepage) */
-#featured-services {
-    background-color: #fff;
-    text-align: center;
-}
-
-#featured-services h2 {
-    font-size: 2.5em;
-    margin-bottom: 40px;
-    color: #198754; /* Green */
-}
-
-#featured-services .service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-bottom: 40px;
-}
-
-#featured-services .service-item {
-    background-color: #f9f9f9;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
-}
-
-#featured-services .service-item:hover {
-    transform: translateY(-5px);
-}
-
-#featured-services .service-item i {
-    font-size: 3em;
-    color: #007bff; /* Blue */
-    margin-bottom: 20px;
-}
-
-#featured-services .service-item h3 {
-    font-size: 1.5em;
-    margin-bottom: 15px;
-    color: #333;
-}
-
-#featured-services .service-item p {
-    font-size: 0.95em;
-    color: #555;
-}
-
-#featured-services .all-services-btn {
-    background-color: #198754; /* Green */
-    color: white;
-    padding: 15px 30px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1.1em;
-    transition: background-color 0.3s ease;
-}
-
-#featured-services .all-services-btn:hover {
-    background-color: #146c43; /* Darker Green */
-}
-
-/* Doctors Section (Homepage) */
-#doctors {
-    background-color: #f0f8ff; /* Light Blue background */
-    text-align: center;
-}
-
-#doctors h2 {
-    font-size: 2.5em;
-    margin-bottom: 40px;
-    color: #198754; /* Green */
-}
-
-#doctors p {
-    font-size: 1.1em;
-    max-width: 800px;
-    margin: 0 auto 50px auto;
-    color: #555;
-}
-
-#doctors .doctor-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.doctor-card {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.doctor-card:hover {
-    transform: translateY(-8px);
-}
-
-.doctor-card img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
-    border: 3px solid #007bff; /* Blue border */
-}
-
-.doctor-card h3 {
-    font-size: 1.6em;
-    margin-bottom: 5px;
-    color: #333;
-}
-
-.doctor-card p.specialty {
-    color: #198754; /* Green */
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.doctor-card .appointment-btn {
-    background-color: #007bff; /* Blue */
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 0.95em;
-    transition: background-color 0.3s ease;
-}
-
-.doctor-card .appointment-btn:hover {
-    background-color: #0056b3; /* Darker Blue */
-}
-
-/* Testimonials Section */
-#testimonials {
-    background: #198754; /* Green background */
-    color: white;
-    text-align: center;
-}
-
-#testimonials h2 {
-    font-size: 2.5em;
-    margin-bottom: 40px;
-}
-
-.testimonial-slider {
-    max-width: 800px;
-    margin: 0 auto;
-    /* You might use a JS library for a proper slider, for now, simple centering */
-}
-
-.testimonial-item {
-    padding: 30px;
-    background-color: rgba(255,255,255,0.1);
-    border-radius: 8px;
-    font-style: italic;
-    font-size: 1.1em;
-}
-
-.testimonial-item span {
-    display: block;
-    margin-top: 20px;
-    font-weight: bold;
-    font-style: normal;
-    color: #ffc107; /* Yellow for emphasis */
-}
-
-/* Contact Section (Homepage) */
-#contact-home {
-    background-color: #f9f9f9;
-    text-align: center;
-}
-
-#contact-home h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #198754; /* Green */
-}
-
-#contact-home p {
-    font-size: 1.1em;
-    max-width: 700px;
-    margin: 0 auto 40px auto;
-    color: #555;
-}
-
-#contact-home .contact-button {
-    background-color: #007bff; /* Blue */
-    color: white;
-    padding: 15px 30px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1.1em;
-    transition: background-color 0.3s ease;
-}
-
-#contact-home .contact-button:hover {
-    background-color: #0056b3; /* Darker Blue */
-}
-
-/* Footer Styles */
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 40px 0;
-    text-align: center;
-}
-
-.footer-content {
-    display: flex;
-    flex-direction: column; /* Stack elements vertically on small screens */
-    align-items: center; /* Center items horizontally */
-    gap: 20px; /* Space between logo and info */
-}
-
-.footer-logo {
-    margin-bottom: 15px; /* Space below the logo */
-}
-
-.footer-logo img {
-    max-width: 150px; /* Adjust as needed */
-    height: auto;
-}
-
-.footer-info {
-    text-align: center;
-}
-
-.footer-info p {
-    margin-bottom: 10px;
-    line-height: 1.6;
-}
-
-.social-icons-footer {
-    margin-top: 15px;
-}
-
-.social-icons-footer a {
-    color: #fff;
-    font-size: 24px;
-    margin: 0 10px;
-    transition: color 0.3s ease;
-}
-
-.social-icons-footer a:hover {
-    color: #66ccff; /* Lighter blue on hover */
-}
-
-
-/* --- services.html specific styles --- */
-#services-list .service-grid-full {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-#services-list .service-item {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#services-list .service-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-}
-
-#services-list .service-item h3 {
-    font-size: 1.7em;
-    color: #198754; /* Green */
-    margin-bottom: 15px;
-    display: flex; /* To align icon and text horizontally */
-    align-items: center; /* Vertically center icon and text */
-}
-
-#services-list .service-item h3 i {
-    font-size: 1.2em; /* Default icon size, you can adjust this if needed */
-    margin-right: 15px;
-    color: #007bff; /* Default blue color for icons */
-}
-
-#services-list .service-item p {
-    font-size: 1em;
-    color: #555;
-}
-
-
-/* --- doctors.html specific styles --- */
-#doctors-page .doctor-detail-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    margin-top: 50px;
-}
-
-.doctor-detail-card {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.doctor-detail-card:hover {
-    transform: translateY(-10px);
-}
-
-.doctor-detail-card img {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
-    border: 4px solid #198754; /* Green border */
-}
-
-.doctor-detail-card h3 {
+#about-section h3, #mission-section h3, #vision-section h3 {
     font-size: 2em;
-    margin-bottom: 10px;
-    color: #333;
+    color: var(--primary-color);
+    margin-bottom: 20px;
 }
 
-.doctor-detail-card p.specialty {
-    color: #007bff; /* Blue */
-    font-weight: bold;
-    font-size: 1.1em;
-    margin-bottom: 15px;
-}
-
-.doctor-detail-card p.experience {
-    font-size: 0.95em;
-    color: #666;
-    line-height: 1.8;
-}
-
-/* --- departments.html specific styles --- */
-#department-list .departments-grid {
+/* Services Page (and similar dynamic content pages) */
+.services-grid, .departments-grid, .doctors-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
+    padding: 50px 0;
 }
 
-#department-list .department-item {
+.service-item, .department-item, .doctor-card {
     background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
     padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#department-list .department-item:hover {
+.service-item:hover, .department-item:hover, .doctor-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
-#department-list .department-item i {
-    font-size: 3em;
-    color: #007bff;
-    margin-bottom: 20px;
+.service-item img, .department-item img, .doctor-card img {
+    width: 100px; /* Icon/image size */
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%; /* For doctor images */
+    margin: 0 auto 20px auto;
 }
 
-#department-list .department-item h3 {
-    font-size: 1.7em;
-    color: #198754;
+.service-item h3, .department-item h3, .doctor-card h3 {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.doctor-card .doctor-specialty {
+    color: var(--secondary-color);
+    font-style: italic;
     margin-bottom: 15px;
 }
 
-#department-list .department-item p {
-    font-size: 1em;
-    color: #555;
-    margin-bottom: 20px;
+/* Contact Page Form */
+.contact-form-section {
+    padding: 60px 0;
 }
 
-/* --- gallery.html specific styles --- */
-#gallery-content .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-.gallery-item img:hover {
-    transform: scale(1.05);
-}
-
-/* --- news.html specific styles --- */
-#news-list .news-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.news-item {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    overflow: hidden;
-    transition: transform 0.3s ease;
-}
-
-.news-item:hover {
-    transform: translateY(-5px);
-}
-
-.news-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-}
-
-.news-item .news-content {
-    padding: 25px;
-}
-
-.news-item h3 {
-    font-size: 1.6em;
-    margin-top: 0;
-    margin-bottom: 15px;
-    color: #198754; /* Green */
-}
-
-.news-item p {
-    font-size: 0.95em;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-.news-item .read-more {
-    background-color: #007bff; /* Blue */
-    color: white;
-    padding: 10px 18px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 0.9em;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-}
-
-.news-item .read-more:hover {
-    background-color: #0056b3; /* Darker Blue */
-}
-
-/* --- contact.html specific styles --- */
-#contact-form-section {
-    background-color: #f9f9f9;
-}
-
-.contact-layout {
-    display: flex;
-    gap: 40px;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-}
-
-.contact-form-container {
-    flex: 2;
+.contact-form-section .form-container {
+    max-width: 700px;
+    margin: 0 auto;
     background-color: #fff;
     padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.contact-form-container h2 {
-    font-size: 2.2em;
-    margin-bottom: 30px;
-    color: #198754; /* Green */
+.contact-form-section h2 {
     text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 30px;
 }
 
-.contact-form label {
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
-    color: #333;
+    color: var(--text-color);
 }
 
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form input[type="tel"],
-.contact-form select,
-.contact-form textarea {
-    width: calc(100% - 20px);
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
     padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
     border-radius: 5px;
     font-size: 1em;
+    box-sizing: border-box; /* Include padding in width */
+    transition: border-color 0.3s ease;
 }
 
-.contact-form textarea {
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.form-group textarea {
     resize: vertical;
     min-height: 120px;
 }
 
-.contact-form button {
-    background-color: #007bff; /* Blue */
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 5px;
+.form-group button {
+    width: auto;
+    padding: 12px 30px;
     font-size: 1.1em;
+    border-radius: 5px;
     cursor: pointer;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
     transition: background-color 0.3s ease;
 }
 
-.contact-form button:hover {
-    background-color: #0056b3; /* Darker Blue */
+.form-group button:hover {
+    background-color: #0056b3;
 }
 
-.contact-info-map {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+.map-section {
+    padding: 60px 0;
+    text-align: center;
+    background-color: var(--light-bg-color);
 }
 
-.contact-details-box {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-}
-
-.contact-details-box h3 {
-    font-size: 1.8em;
-    color: #007bff; /* Blue */
-    margin-bottom: 20px;
-}
-
-.contact-details-box p {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    font-size: 1em;
-    color: #555;
-}
-
-.contact-details-box p i {
-    margin-right: 10px;
-    color: #198754; /* Green */
-    font-size: 1.2em;
-}
-
-.contact-details-box a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.contact-details-box a:hover {
-    text-decoration: underline;
+.map-section h2 {
+    margin-bottom: 30px;
+    color: var(--dark-bg-color);
 }
 
 .map-container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.map-container h3 {
-    font-size: 1.8em;
-    color: #007bff;
-    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #ccc;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 300px;
+    height: 100%;
     border: 0;
-    border-radius: 8px;
+}
+
+.map-section .button {
+    margin-top: 30px;
+}
+
+
+/* Footer Styles */
+footer {
+    background-color: var(--dark-bg-color);
+    color: var(--light-text-color);
+    padding: 40px 0;
+    font-size: 0.9em;
+}
+
+footer .container {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center; /* Center text if content wraps */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column; /* Stack logo and info vertically */
+    align-items: center;
+}
+
+.footer-logo img {
+    height: 60px;
     margin-bottom: 15px;
 }
 
-.map-container .view-on-map {
-    background-color: #198754; /* Green */
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
+.footer-info p {
+    margin-bottom: 15px;
     font-size: 1em;
-    transition: background-color 0.3s ease;
+    max-width: 400px; /* Limit width of text */
 }
 
-.map-container .view-on-map:hover {
-    background-color: #146c43; /* Darker Green */
+.social-icons-footer a {
+    color: var(--light-text-color);
+    margin: 0 10px;
+    font-size: 1.3em;
 }
 
-
-/* Basic styles for buttons within content sections */
-.button {
-    display: inline-block;
-    padding: 10px 25px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.primary-button {
-    background-color: #198754;
-    color: white;
-    border: 1px solid #198754;
-}
-
-.primary-button:hover {
-    background-color: #146c43;
-    border-color: #146c43;
-}
-
-.secondary-button {
-    background-color: #f0f0f0;
-    color: #198754;
-    border: 1px solid #ccc;
-}
-
-.secondary-button:hover {
-    background-color: #e2e6ea;
-    border-color: #adadad;
+.social-icons-footer a:hover {
+    color: var(--primary-color);
 }
 
 
-/* Responsive Design */
-@media (max-width: 992px) {
-    .top-bar .container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .top-bar .contact-info,
-    .top-bar .address-info {
-        margin-bottom: 10px;
-    }
-    
-    .top-bar .right-section {
-        margin-top: 10px;
-        justify-content: center; /* Center items for better appearance */
-    }
-
-    /* Header for mobile: align logo left, toggle right */
-    header .container {
-        flex-direction: row; /* Keep elements in a row */
-        justify-content: space-between; /* Space out logo and toggle */
-        align-items: center;
-    }
-
-    .logo {
-        margin-right: auto; /* Push logo to the left */
-    }
-
-    /* Main Navigation List */
-    nav ul {
-        flex-direction: column;
-        margin-top: 0; /* Adjusted for absolute positioning */
-        position: absolute; /* Position the menu absolutely */
-        top: 80px; /* Adjust based on your header height */
-        left: 0;
-        width: 100%;
-        background-color: #fff; /* Background for the mobile menu */
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-        display: none; /* Hidden by default */
-        z-index: 999; /* Ensure it's below sticky header but above content */
-        max-height: calc(100vh - 80px); /* Limit height to viewport */
-        overflow-y: auto; /* Enable scrolling for long menus */
-        padding-bottom: 20px; /* Add padding at the bottom */
-    }
-
-    nav ul.active {
-        display: flex; /* Show when active */
-    }
-
-    nav ul li {
-        margin: 0; /* Remove side margins */
-        width: 100%; /* Full width for stacked menu items */
-        border-bottom: 1px solid #eee; /* Separator for menu items */
-    }
-    
-    nav ul li:last-child {
-        border-bottom: none; /* No border for the last item */
-    }
-
-    nav ul li a {
-        padding: 15px 20px; /* Add padding for clickable area */
-        justify-content: flex-start; /* Align text to start */
-    }
-
-    .nav-toggle {
-        display: block; /* Show hamburger menu icon */
-    }
-
-    /* Hide desktop language selector and search */
-    .desktop-controls {
-        display: none;
-    }
-
-    /* Show mobile-specific language selector and search */
-    .language-selector-mobile {
-        display: block; /* Show as a list item */
-        width: calc(100% - 40px); /* Adjust width considering padding */
-        margin: 15px auto; /* Center with margin */
-        padding: 0 20px; /* Consistent padding */
-        text-align: center; /* Center the select box */
-    }
-    .language-selector-mobile select {
-        width: 100%;
-        padding: 10px;
-    }
-
-    .search-container-mobile {
-        display: flex; /* Show as a list item, using flex */
-        width: calc(100% - 40px); /* Adjust width considering padding */
-        margin: 15px auto; /* Center with margin */
-        padding: 0 20px; /* Consistent padding */
-        justify-content: flex-start; /* Align search elements to start */
-    }
-    .search-container-mobile #search-input-mobile {
-        width: calc(100% - 50px); /* Adjust for button width */
-        border-radius: 5px 0 0 5px;
-    }
-    .search-container-mobile #search-button-mobile {
-        width: 50px;
-    }
-
-    /* Dropdown adjustments for smaller screens */
-    nav ul li.dropdown .submenu {
-        position: static; /* Stack submenus vertically on small screens */
-        box-shadow: none;
-        border: none;
-        background-color: #f0f0f0; /* Slightly different background for submenus */
-        padding: 0 0 0 20px; /* Indent submenu items */
-        margin-top: 0;
-        width: 100%; /* Take full width */
-        border-bottom: 1px solid #e0e0e0; /* Add border for submenus */
-    }
-
-    nav ul li.dropdown .submenu li a {
-        padding: 10px 15px; /* Adjust padding for submenu items */
-        justify-content: flex-start; /* Align submenu text to start */
-    }
-
-    .hero-section h1 { /* Adjusted for mobile */
-        font-size: 2.8em;
-    }
-    .hero-section h2 { /* Adjusted for mobile */
-        font-size: 2em;
-    }
-
-    .hero-section p {
-        font-size: 1.1em;
-    }
-
-    .hero-section .hero-buttons a {
-        padding: 12px 25px;
-        font-size: 1em;
-        margin: 5px;
-    }
-
-    #about .about-content {
-        flex-direction: column;
-    }
-
-    .vision-mission {
-        flex-direction: column;
-    }
-
-    .contact-layout {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 768px) {
-    .top-bar .contact-info span,
-    .top-bar .address-info span {
-        margin-right: 10px;
-    }
-
-    .top-bar .social-icons-top {
-        margin-bottom: 10px;
-    }
-
-    .top-bar .contact-button {
-        margin-left: 0;
-    }
-
-    .logo h1 {
-        font-size: 1.5em;
-    }
-
-    .hero-section h1 {
-        font-size: 2.2em;
-    }
-    .hero-section h2 {
-        font-size: 1.8em;
-    }
-
-    .hero-section p {
-        font-size: 1em;
-    }
-
-    .hero-section.inner-hero h2 {
-        font-size: 2.5em;
-    }
-
-    #about h2, #featured-services h2, #doctors h2, #testimonials h2, #contact-home h2 {
-        font-size: 2em;
-    }
-
-    #featured-services .service-grid,
-    #doctors .doctor-card-grid,
-    #services-list .service-grid-full,
-    #doctors-page .doctor-detail-grid,
-    #gallery-content .gallery-grid,
-    #news-list .news-grid,
-    .departments-grid /* Removed separate .departments-grid */ {
-        grid-template-columns: 1fr; /* Single column layout */
-    }
-
-    .contact-form-container, .contact-details-box, .map-container {
-        padding: 25px;
-    }
-
-    .search-container-mobile {
-        width: 90%;
-    }
-    .search-container-mobile #search-input-mobile {
-        width: 65%;
-    }
-}
-
-@media (max-width: 480px) {
-    .top-bar .contact-info,
-    .top-bar .address-info,
-    .top-bar .right-section {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-    .top-bar .contact-info span,
-    .top-bar .address-info span,
-    .top-bar .social-icons-top a,
-    .top-bar .contact-button {
-        margin: 5px 0;
-    }
-
-    .logo img {
-        height: 40px;
-    }
-
-    .logo h1 {
-        font-size: 1.2em;
-    }
-
-    nav ul li {
-        margin: 8px 0;
-    }
-
-    .hero-section {
-        padding: 80px 15px;
-    }
-
-    .hero-section h1 {
-        font-size: 1.8em;
-    }
-    .hero-section h2 {
-        font-size: 1.5em;
-    }
-
-    .hero-section p {
-        font-size: 0.9em;
-    }
-
-    .hero-section .hero-buttons a {
-        font-size: 0.9em;
-        padding: 10px 20px;
-    }
-
-    .hero-section.inner-hero {
-        padding: 60px 15px;
-    }
-
-    .hero-section.inner-hero h2 {
-        font-size: 2em;
-    }
-
-    #about h2, #featured-services h2, #doctors h2, #testimonials h2, #contact-home h2 {
-        font-size: 1.8em;
-    }
-
-    .testimonial-item {
-        font-size: 1em;
-        padding: 20px;
-    }
-
-    .search-container-mobile #search-input-mobile {
-        width: 60%;
-    }
-    /* General styles for the nav-toggle button */
+/* Hamburger Menu Icon (hidden by default on desktop) */
 .nav-toggle {
-    display: none; /* Hide by default for desktop */
+    display: none; /* Hidden by default for desktop */
     background: none;
     border: none;
     font-size: 1.8em;
-    color: var(--primary-color); /* Or any color you prefer */
+    color: var(--primary-color); /* Color of the hamburger icon */
     cursor: pointer;
     padding: 5px;
     z-index: 1001; /* Ensure it's above other content */
+    outline: none; /* Remove outline on focus */
 }
 
-/* Styles for mobile navigation within a media query */
-@media (max-width: 992px) { /* Adjust breakpoint as needed */
-    .nav-toggle {
-        display: block; /* Show hamburger icon on mobile/tablet */
-        position: absolute;
-        top: 25px; /* Adjust vertical position */
-        right: 20px; /* Adjust horizontal position */
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+@media (max-width: 992px) { /* Tablet and Mobile Devices */
+
+    .top-bar .container {
+        flex-direction: column;
+        align-items: flex-start; /* Align items to the start for better stacking */
     }
 
+    .top-bar .contact-info,
+    .top-bar .address-info,
+    .top-bar .right-section {
+        width: 100%;
+        text-align: center; /* Center text within each block */
+        margin-bottom: 10px; /* Add space between stacked blocks */
+    }
+
+    .top-bar .contact-info span,
+    .top-bar .address-info span {
+        margin-right: 10px; /* Reduce margin */
+        margin-bottom: 5px; /* Add vertical spacing */
+        display: block; /* Stack contact info vertically */
+    }
+
+    .top-bar .social-icons-top {
+        margin-left: 0;
+        margin-top: 10px; /* Space from contact button */
+        display: block; /* Take full width */
+    }
+    .top-bar .social-icons-top a {
+        margin: 0 8px; /* Adjust spacing between icons */
+    }
+
+    .top-bar .contact-button {
+        margin: 10px auto 0 auto; /* Center button */
+        display: block; /* Make it block level */
+        width: fit-content; /* Only take content width */
+    }
+
+
+    /* Header/Navigation Mobile Specifics */
     header .container {
         flex-wrap: wrap; /* Allow items to wrap */
         justify-content: space-between; /* Space out logo and toggle */
     }
 
-    header nav ul {
+    .nav-toggle {
+        display: block; /* Show hamburger icon on mobile/tablet */
+        position: absolute;
+        top: 25px; /* Adjust vertical position relative to header */
+        right: 20px; /* Adjust horizontal position */
+    }
+
+    nav ul {
         display: none; /* Hide the main menu by default on mobile */
         flex-direction: column; /* Stack menu items vertically */
         width: 100%; /* Take full width */
         background-color: var(--light-bg-color); /* Background for mobile menu */
         position: absolute;
-        top: 80px; /* Adjust based on your header's height */
+        top: 80px; /* Adjust based on your header's total height (logo + padding) */
         left: 0;
         padding: 10px 0;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         z-index: 1000;
+        transition: all 0.3s ease-in-out; /* Smooth transition for menu */
+        transform: translateY(-100%); /* Start hidden above */
     }
 
-    header nav ul.active {
+    nav ul.active {
         display: flex; /* Show the menu when 'active' class is present */
+        transform: translateY(0); /* Slide down */
     }
 
-    header nav ul li {
+    nav ul li {
         width: 100%;
         text-align: center;
         border-bottom: 1px solid #eee; /* Separator for menu items */
     }
 
-    header nav ul li:last-child {
+    nav ul li:last-child {
         border-bottom: none;
     }
 
-    header nav ul li a {
+    nav ul li a {
         padding: 15px 20px; /* Increase padding for touch targets */
         display: block; /* Make the whole area clickable */
     }
 
     /* Submenus for mobile */
-    header nav ul li.dropdown .submenu {
+    .submenu {
         position: static; /* Submenus should not be absolutely positioned on mobile */
         display: none; /* Hidden by default */
         background-color: var(--dark-bg-color); /* Different background for submenu */
@@ -1407,33 +737,152 @@ footer {
         box-shadow: none; /* No shadow for submenus on mobile */
     }
 
-    header nav ul li.dropdown .submenu li {
+    .submenu li {
         border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Lighter border for submenu items */
     }
 
-    header nav ul li.dropdown .submenu li:last-child {
+    .submenu li:last-child {
         border-bottom: none;
     }
 
-    header nav ul li.dropdown .submenu a {
+    .submenu li a {
         padding-left: 40px; /* Indent submenu items */
         color: #fff; /* White text for dark submenu background */
     }
 
     /* Language selector and search container for mobile */
-    header .language-selector,
-    header .search-container {
-        width: 100%;
+    .language-selector,
+    .search-container {
+        width: calc(100% - 40px); /* Account for 20px padding on each side */
         padding: 10px 20px;
         margin-top: 10px;
         box-sizing: border-box; /* Include padding in width */
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    header .search-container {
+    .search-container {
         display: flex; /* Ensure search input and button are inline */
+        justify-content: center;
     }
-    header .search-container input {
+    .search-container input {
         flex-grow: 1; /* Allow input to take available space */
+        max-width: 250px; /* Limit input width */
+    }
+
+
+    /* Hero Section Mobile */
+    .hero-section {
+        padding: 80px 15px;
+        min-height: 60vh;
+    }
+    .hero-section h1 {
+        font-size: 2.5em;
+    }
+    .hero-section h2 {
+        font-size: 1.8em;
+    }
+    .hero-section p {
+        font-size: 1em;
+    }
+    .hero-section .button {
+        font-size: 1em;
+        padding: 10px 20px;
+        margin: 5px;
+    }
+
+    .hero-section.inner-hero {
+        padding: 40px 15px;
+        min-height: 25vh;
+    }
+    .hero-section.inner-hero h2 {
+        font-size: 2em;
+    }
+    .hero-section.inner-hero p {
+        font-size: 0.9em;
+    }
+
+    /* Content Section Mobile */
+    .content-section {
+        padding: 50px 0;
+    }
+    .section-title {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+    .content-section p {
+        font-size: 1em;
+        padding: 0 15px; /* Add padding to text paragraphs */
+    }
+
+    /* Grids (services, departments, doctors) Mobile */
+    .services-grid, .departments-grid, .doctors-grid {
+        grid-template-columns: 1fr; /* Single column layout */
+        padding: 30px 15px;
+    }
+    .service-item, .department-item, .doctor-card {
+        padding: 20px;
+    }
+
+    /* Contact Form Mobile */
+    .contact-form-section .form-container {
+        padding: 30px 20px;
+    }
+    .map-section {
+        padding: 40px 0;
+    }
+
+    /* Footer Mobile */
+    footer .container {
+        padding: 0 15px;
+    }
+    .footer-content {
+        width: 100%;
+    }
+    .footer-info p {
+        font-size: 0.85em;
+        margin-top: 10px;
+    }
+    .social-icons-footer {
+        margin-top: 15px;
     }
 }
+
+@media (max-width: 576px) { /* Extra small devices / smaller phones */
+    .logo h1 {
+        font-size: 1.5em; /* Smaller title on very small screens */
+    }
+    .nav-toggle {
+        top: 20px;
+        right: 15px;
+        font-size: 1.5em;
+    }
+    nav ul {
+        top: 70px; /* Adjust top position for smaller header */
+    }
+    .hero-section {
+        padding: 60px 10px;
+        min-height: 50vh;
+    }
+    .hero-section h1 {
+        font-size: 2em;
+    }
+    .hero-section h2 {
+        font-size: 1.5em;
+    }
+    .hero-section p {
+        font-size: 0.9em;
+    }
+    .hero-section .button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+        margin: 5px 0; /* Stack buttons if needed */
+    }
+    .top-bar .contact-info span,
+    .top-bar .address-info span {
+        margin-right: 0;
+    }
+    .top-bar .social-icons-top {
+        margin-left: 0;
+    }
 }
