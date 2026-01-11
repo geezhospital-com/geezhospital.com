@@ -3,6 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const translations = {
         "eng": {
             "hero-main-title": "Geez Hospital", // Simplified
+            "hero-h2": "Chosen for our care, trusted for our expertise!.",
+            "hero-p": "Prioritizing your health, we offer comprehensive services with the finest specialists and sub-specialists, combined with modern technological equipment. For any inquiries or to book an appointment, please register here.",
+            "hero-btn-appointment": "Book an Appointment",
+            "hero-btn-services": "View Our Services",
             "contact-us-btn": "Contact Us",
             "home": "Home",
             "about-us": "About Us",
@@ -74,15 +78,23 @@ document.addEventListener('DOMContentLoaded', () => {
             "vision-p": "We envision a future where Geez Hospital is synonymous with innovation, empathy, and unparalleled medical outcomes, setting new benchmarks for healthcare excellence across the continent.",
             "services-h3": "Services Overview",
             "services-p-about": "At Geez Hospital, we are dedicated to offering a comprehensive suite of medical services designed to meet the diverse needs of our community. Our state-of-the-art facilities and a team of dedicated professionals ensure that you receive the best possible care across all specialties.",
+            "services-page-h2": "Our Services",
+            "services-page-intro-p": "Geez Hospital offers diverse and modern services provided by highly qualified specialists and sub-specialists.",
             "all-services-btn": "View All Our Services",
             "departments-h2": "Our Departments",
             "departments-p": "Explore the specialized departments at Geez Hospital, where expert care meets advanced technology.",
             "facilities-h2": "Our Facilities",
             "facilities-p": "Geez Hospital is equipped with state-of-the-art medical technology and modern facilities to provide you with the best possible care.",
+            "doctors-page-title": "Our Doctors",
+            "doctors-page-intro": "Geez Hospital provides various services with highly qualified and experienced specialists and sub-specialists. Chosen for our care, trusted for our expertise.",
             "patient-info-h2": "Patient Information",
             "patient-info-p": "Find essential information for your visit, including admission, discharge, rights, and responsibilities.",
             "articles-h2": "Health Articles",
             "articles-p": "Stay informed with our latest health articles, tips, and medical insights from our expert team.",
+            "news-h2": "News and Events",
+            "news-p": "Follow the latest news, medical advice, and important updates from Geez Hospital here.",
+            "gallery-h2": "Gallery",
+            "gallery-p": "View various images of Geez Hospital, including all modern equipment and medical care provided.",
             "contact-h2": "Contact Us", // Added for contact page hero title
             "contact-p": "For any inquiries or to book an appointment, please reach out to us.", // Added for contact page hero paragraph
             "contact-form-title": "Send us a Message", // Added for contact form title
@@ -104,6 +116,10 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         "tig": {
             "hero-main-title": "ግዕዝ ሆስፒታል",
+            "hero-h2": "ብሓልዮትና ንምረጽ፡ብሞያዊ ብቕዓትና ንእመን",
+            "hero-p": "ንጥዕናኹም ቀዳምነት ብምሃብ፣ ብሉፃት ስፔሻሊስትን ሳብስፔሻሊስትታትን ሓኻይም ምስ ዘመናዊ ቴክኖሎጂ መሳርሒታት(ማሽን) ኣዋዲድንና ንፅበየኩም ኣለና። ንዝኾነ ሕቶ ወይ ቆፀሮ ንምሓዝ በይዝኦም ኣብዚ ይመዝገቡ።",
+            "hero-btn-appointment": "ቆፀሮ ንምሓዝ",
+            "hero-btn-services": "ግልጋሎታትና ርኣዩ",
             "contact-us-btn": "ተወከሰና", // Changed to "ተወከሱና" if preferred for politeness or left as "ተወከሰና"
             "home": "መበገሲ ገጽ",
             "about-us": "ብዛዕባና",
@@ -175,15 +191,23 @@ document.addEventListener('DOMContentLoaded', () => {
             "vision-p": "ብምኽንያት እቲ እንህቦ ብሉፅ ሞያዊ ብቕዓትን ንሕሙም ማእከል ዝገበረ ሓልዮቱን፣ ዓለምለኻዊ ደረጃ ዘለዎ ናይ ሕክምና ግልጋሎት ብምቕራብ ኣብ ኣፍሪካ ክብሪ ዝተጎናፀፈ ናይ ሕክምና ትካል ምዃን።",
             "services-h3": "ዝርዝር ግልጋሎታት",
             "services-p-about": "ብርክት ዝበሉ ናይ ስፔሻሊስትን ሳብ ስፔሻሊስትን ዓውድታት (ንኣብነት፦ሕክምና ዉሽጣዊ ሕማማት፣ ልቢ፣ ካንሰር፣ ሓንጎልን መትንታትን፣ ዓፅሚ፣ካብ ክሳድ ንላዕሊ፣ዓይኒ፣ናይ ቆርበትን ስነጽባቐን፣ ናይ ኣዴታትን ህፃናትን ክንክን መርመራታትን ከምኡውን ናይ ሃንደበታዊ ሓደጋን ግልጋሎትሎት ብዘመናዊ ቴክኖሎጂን ብሞያዊ ብቕዓትን ነቕርብ።",
+            "services-page-h2": "ግልጋሎታትና",
+            "services-page-intro-p": "ግዕዝ ሆስፒታል ብብሉፃት ስፔሻሊስትን ሳብስፔሻሊስትታትን ሓኻይም ዝወሃቡ ዝተፈላለዩን ዘመናዊን ግልጋሎታት ይህብ።",
             "all-services-btn": "ኹሎም ግልጋሎታትና ኣብዚ ርአ",
             "departments-h2": "ክፍለታት ሕክምና",
             "departments-p": "ኣብ ሆስፒታል ግዕዝ ዝርከቡ ፍሉያት ክፍሊታት ሕክምና ዝድህስሱሉ፣ ብቑዕ ክንክን ምስ ዘመናዊ ቴክኖሎጂ ዝርከቡሉ ቦታ እዩ።",
             "facilities-h2": "መሳርሒታት ሕክምና",
             "facilities-p": "ግዕዝ ሆስፒታል ንተገልገልቲ ዝበለጸ ሕክምና ንምሃብ ብብሉጽ ተኽኖሎጂን ዘመናዊ መሳርሕታትን ምስ ብሉጻት ሰብ ምያ ሕክምና ኣወሃሂዱ ግልጋሎት ይህብ ኣሎ።",
+            "doctors-page-title": "ሓኻይምና",
+            "doctors-page-intro": "ግዕዝ ሆስፒታል ብብሉፃት ብቑዓትን ተመኩሮ ዘለዎምን ስፔሻሊስትን ሳብስፔሻሊስትታትን ሓኻይም ዝተፈላለዩ ግልጋሎታት ይህብ። ብሓልዮትና ንምረጽ፡ብሞያዊ ብቕዓትና ንእመን።",
             "patient-info-h2": "ሓበሬታ ሕሙማት",
             "patient-info-p": "ናብ ሆስፒታልና ክትመፅእ እንተኾይንካ ወይ ክትወፅእ እንተኾይንካ፣ ከምኡ'ውን መሰላትን ሓላፍነታትን ናይ ሕክምና ንምርካብ ዘድልየካ ኩሉ ኣገዳሲ ሓበሬታ ኣብዚ ይርከብ።",
             "articles-h2": "ጽሑፋት ጥዕና",
             "articles-p": "ብብሉጻት ሓኻይም ዝምልከቶም ሰራሕተኛታትን ጠቐምቲ ሓሳባትን ምኽሪታን ዝረኽብሉ ዓምዲ እዩ።",
+            "news-h2": "ዜናን ፍጻሜታትን",
+            "news-p": "ኣብ ግዕዝ ሆስፒታል ዝወፅኡ ሓደሽቲ ሓበሬታታት፣ ሕክምናዊ ምኽሪታትን ኣገደስቲ ዝርዝራትን ኣብዚ ተኸታተሉ።",
+            "gallery-h2": "ጋለሪ",
+            "gallery-p": "ናይ ግዕዝ ሆስፒታል ዝተፈላለዩ ምስልታት ኩሎም ዘመነዎት መሳርሕታትን ዝተገብሩ ሕክምናዊ ክንክንን ኣብዚ ምርኣይ ይኽእሉ እዮም ።",
             "contact-h2": "ተራኸቡና", // Added for contact page hero title
             "contact-p": "ንዝኾነ ሕቶ ወይ ቆፀሮ ንምሓዝ በይዝኦም ኣብዚ ይመዝገቡ።", // Added for contact page hero paragraph
             "contact-form-title": "መልእኽቲ ስደዱልና", // Added for form labels
@@ -205,6 +229,10 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         "amh": {
             "hero-main-title": "ግዕዝ ሆስፒታል", // Simplified
+            "hero-h2": "በእንክብካቤያችን ተመርጠናል፣ በሙያችን ታምነናል",
+            "hero-p": "ጤንነትዎን ቅድሚያ በመስጠት፣ የላቀ ብቃት ካላቸው ስፔሻሊስቶች እና ንዑስ-ስፔሻሊስቶች ጋር፣ ዘመናዊ የቴክኖሎጂ መሳሪያዎችን በማጣመር አጠቃላይ አገልግሎት እንሰጣለን። ለማንኛውም ጥያቄ ወይም ቀጠሮ ለመያዝ እዚህ ይመዝገቡ።",
+            "hero-btn-appointment": "ቀጠሮ ይያዙ",
+            "hero-btn-services": "አገልግሎቶቻችንን ይመልከቱ",
             "contact-us-btn": "ያግኙን",
             "home": "ዋና ገጽ",
             "about-us": "ስለ እኛ",
@@ -276,15 +304,23 @@ document.addEventListener('DOMContentLoaded', () => {
             "vision-p": "በእኛ እጅግ በጣም ጥሩ ሙያዊ ብቃት እና የታካሚ ተኮር እንክብካቤ በመነዳት፣ በአፍሪካ ውስጥ ዓለም አቀፍ ደረጃ ያለው የህክምና ተቋም ለመሆን።",
             "services-h3": "የአገልግሎቶች አጠቃላይ እይታ",
             "services-p-about": "ብዙ አይነት ልዩ ልዩ እና ንዑስ ልዩ ልዩ መስኮች (ለምሳሌ የልብ ህክምና፣ ኦንኮሎጂ፣ የነርቭ ቀዶ ጥገና፣ የአጥንት ህክምና፣ የአፍንጫ፣ ጆሮ፣ ጉሮሮ ህክምና፣ የአይን ህክምና፣ የቆዳ ህክምና፣ የማህፀንና ፅንስ ህክምና፣ የህፃናት ህክምና፣ የተለያዩ የምርመራ አገልግሎቶች እና የድንገተኛ ህክምና) በዘመናዊ ቴክኖሎጂ እና በሙያ ብቃት እናቀርባለን። ለዝርዝር አገልግሎቶቻችን፣ 'የእኛ አገልግሎቶች' የሚለውን ክፍል ይመልከቱ።",
+            "services-page-h2": "አገልግሎቶቻችን",
+            "services-page-intro-p": "ግዕዝ ሆስፒታል ከፍተኛ ብቃት ባላቸው ስፔሻሊስቶች እና ንዑስ-ስፔሻሊስቶች የሚሰጡ የተለያዩ እና ዘመናዊ አገልግሎቶችን ይሰጣል።",
             "all-services-btn": "ሁሉንም አገልግሎቶቻችንን ይመልከቱ",
             "departments-h2": "የእኛ መምሪያዎች",
             "departments-p": "በግዕዝ ሆስፒታል ያሉትን ልዩ ልዩ ክፍሎች ያስሱ፣ የባለሙያ እንክብካቤ ከዘመናዊ ቴክኖሎጂ ጋር የሚገናኝበት ቦታ ነው።",
             "facilities-h2": "የእኛ መገልገያዎች",
             "facilities-p": "ግዕዝ ሆስፒታል ዘመናዊ የህክምና ቴክኖሎጂ እና ዘመናዊ መገልገያዎች የተገጠመለት ሲሆን የተሻለውን እንክብካቤ ለእርስዎ ለማቅረብ ነው።",
+            "doctors-page-title": "የእኛ ሐኪሞች",
+            "doctors-page-intro": "ግዕዝ ሆስፒታል ከፍተኛ ብቃት ባላቸው እና ልምድ ባላቸው ስፔሻሊስቶች እና ንዑስ-ስፔሻሊስቶች የተለያዩ አገልግሎቶችን ይሰጣል። በእንክብካቤያችን ተመርጠናል፣ በሙያችን ታምነናል።",
             "patient-info-h2": "የታካሚ መረጃ",
             "patient-info-p": "ጉብኝትዎን በተመለከተ አስፈላጊ መረጃዎችን፣ የመግቢያ፣ የመውጫ፣ መብቶችን እና ኃላፊነቶችን ጨምሮ ያግኙ።",
             "articles-h2": "የጤና ጽሑፎች",
             "articles-p": "ከባለሙያ ቡድናችን የቅርብ ጊዜ የጤና ጽሑፎችን፣ ምክሮችን እና የህክምና ግንዛቤዎችን ያግኙ።",
+            "news-h2": "ዜናዎች እና ዝግጅቶች",
+            "news-p": "ከግዕዝ ሆስፒታል የቅርብ ጊዜ ዜናዎችን፣ የህክምና ምክሮችን እና ጠቃሚ መረጃዎችን እዚህ ይከታተሉ።",
+            "gallery-h2": "ጋለሪ",
+            "gallery-p": "የግዕዝ ሆስፒታል የተለያዩ ምስሎችን፣ ሁሉንም ዘመናዊ መሳሪያዎች እና የተሰጡ የህክምና አገልግሎቶችን እዚህ ማየት ይችላሉ።",
             "contact-h2": "ያግኙን",
             "contact-p": "ለሁሉም ጥያቄዎችዎ ወይም ቀጠሮ ለመያዝ፣ እባክዎ ያግኙን።",
             "contact-form-title": "መልእክት ይላኩልን",
@@ -336,96 +372,121 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentPath = window.location.pathname;
 
         // Generic function for updating hero paragraph
-        const updateHeroParagraph = (pageIdentifier, translationKey) => {
+        const updateHeroParagraph = (pageIdentifier, h2Key, pKey) => {
             if (currentPath.includes(pageIdentifier)) {
-                const heroP = document.querySelector('.hero-section p');
-                if (heroP && translations[lang][translationKey]) {
-                    heroP.textContent = translations[lang][translationKey];
+                const heroH2 = document.querySelector('.hero-section.inner-hero h2');
+                const heroP = document.querySelector('.hero-section.inner-hero p');
+                if (heroH2 && translations[lang][h2Key]) {
+                    heroH2.textContent = translations[lang][h2Key];
+                }
+                if (heroP && translations[lang][pKey]) {
+                    heroP.textContent = translations[lang][pKey];
                 }
             }
         };
 
-        // Apply to specific pages
-        updateHeroParagraph('index.html', 'about-p'); // Assuming index might also have a hero paragraph
-        updateHeroParagraph('about.html', 'about-p');
-        updateHeroParagraph('departments.html', 'departments-p');
-        updateHeroParagraph('facilities.html', 'facilities-p');
-        updateHeroParagraph('patient-info.html', 'patient-info-p');
-        updateHeroParagraph('articles.html', 'articles-p');
-        updateHeroParagraph('contact.html', 'contact-p'); // Added for contact page hero paragraph
+        // Apply to specific pages that use inner-hero
+        updateHeroParagraph('about.html', 'about-h2', 'about-p');
+        updateHeroParagraph('departments.html', 'departments-h2', 'departments-p');
+        updateHeroParagraph('facilities.html', 'facilities-h2', 'facilities-p');
+        updateHeroParagraph('patient-info.html', 'patient-info-h2', 'patient-info-p');
+        updateHeroParagraph('articles.html', 'articles-h2', 'articles-p');
+        updateHeroParagraph('contact.html', 'contact-h2', 'contact-p');
+        updateHeroParagraph('gallery.html', 'gallery-h2', 'gallery-p');
+        updateHeroParagraph('news.html', 'news-h2', 'news-p');
+        updateHeroParagraph('services.html', 'services-page-h2', 'services-page-intro-p'); // Specific for services
+        updateHeroParagraph('doctors.html', 'doctors-page-title', 'doctors-page-intro'); // Specific for doctors
     }
 
 
     // Language Switcher functionality
-    const languageSwitcher = document.getElementById('language-switcher');
-    if (languageSwitcher) {
-        languageSwitcher.addEventListener('change', (event) => {
-            const selectedLang = event.target.value;
-            localStorage.setItem('selectedLang', selectedLang); // Save selected language
-            applyTranslations(selectedLang);
-        });
+    const languageSwitcherDesktop = document.getElementById('language-switcher');
+    const languageSwitcherMobile = document.getElementById('language-switcher-mobile');
 
-        // Set initial language from localStorage or default to Tigrigna
-        const savedLang = localStorage.getItem('selectedLang') || 'tig';
-        languageSwitcher.value = savedLang;
-        applyTranslations(savedLang);
+    // Function to handle language change (can be reused)
+    function handleLanguageChange(event) {
+        const selectedLang = event.target.value;
+        localStorage.setItem('selectedLang', selectedLang); // Save selected language
+        applyTranslations(selectedLang);
+        // Ensure both dropdowns reflect the change if they exist
+        if (languageSwitcherDesktop) languageSwitcherDesktop.value = selectedLang;
+        if (languageSwitcherMobile) languageSwitcherMobile.value = selectedLang;
     }
 
-    // Dropdown functionality
-    document.querySelectorAll('.dropdown').forEach(dropdown => {
+    if (languageSwitcherDesktop) {
+        languageSwitcherDesktop.addEventListener('change', handleLanguageChange);
+    }
+    if (languageSwitcherMobile) {
+        languageSwitcherMobile.addEventListener('change', handleLanguageChange);
+    }
+
+    // Set initial language from localStorage or default to Tigrigna
+    const savedLang = localStorage.getItem('selectedLang') || 'tig';
+    if (languageSwitcherDesktop) languageSwitcherDesktop.value = savedLang;
+    if (languageSwitcherMobile) languageSwitcherMobile.value = savedLang;
+    applyTranslations(savedLang);
+
+
+    // Dropdown functionality for desktop
+    document.querySelectorAll('nav ul li.dropdown').forEach(dropdown => {
         dropdown.addEventListener('mouseenter', () => {
-            if (window.innerWidth > 768) { // Only for desktop hover
+            if (window.innerWidth > 992) { // Only for desktop hover (matching CSS breakpoint)
                 dropdown.querySelector('.submenu').style.display = 'block';
             }
         });
 
         dropdown.addEventListener('mouseleave', () => {
-            if (window.innerWidth > 768) { // Only for desktop hover
+            if (window.innerWidth > 992) { // Only for desktop hover
                 dropdown.querySelector('.submenu').style.display = 'none';
-            }
-            // For mobile, ensure it stays hidden after mouseleave if not clicked
-            // No explicit action needed here as click toggle handles it.
-        });
-
-        // For mobile/touch devices, allow click to toggle
-        dropdown.querySelector('a').addEventListener('click', (e) => {
-            if (window.innerWidth <= 768) { // Adjust breakpoint as needed for mobile
-                e.preventDefault(); // Prevent navigating immediately
-                const submenu = dropdown.querySelector('.submenu');
-                // Close other open submenus before opening current one
-                document.querySelectorAll('.dropdown .submenu').forEach(otherSubmenu => {
-                    if (otherSubmenu !== submenu) {
-                        otherSubmenu.style.display = 'none';
-                    }
-                });
-                submenu.style.display = (submenu.style.display === 'block') ? 'none' : 'block';
             }
         });
     });
 
     // Mobile Navigation Toggle (Hamburger menu toggle)
-    const navToggle = document.getElementById('nav-toggle'); // Assuming you have a toggle button for mobile
+    const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.querySelector('nav ul');
     if (navToggle && navMenu) {
         navToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active'); // Add/remove 'active' class
             // Close any open dropdowns when main nav is toggled
-            document.querySelectorAll('.dropdown .submenu').forEach(submenu => {
+            document.querySelectorAll('nav ul li.dropdown .submenu').forEach(submenu => {
                 submenu.style.display = 'none';
             });
         });
     }
 
+    // Toggle dropdowns for mobile (click on parent link)
+    document.querySelectorAll('nav ul li.dropdown > a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            if (window.innerWidth <= 992) { // Only for mobile/tablet
+                e.preventDefault(); // Prevent navigating immediately
+                const parentLi = link.closest('li.dropdown');
+                const submenu = parentLi.querySelector('.submenu');
+
+                // Close other open submenus first
+                document.querySelectorAll('nav ul li.dropdown .submenu').forEach(otherSubmenu => {
+                    if (otherSubmenu !== submenu && otherSubmenu.style.display === 'block') {
+                        otherSubmenu.style.display = 'none';
+                    }
+                });
+
+                // Toggle current submenu
+                submenu.style.display = (submenu.style.display === 'block') ? 'none' : 'block';
+            }
+        });
+    });
+
+
     // Close mobile menu and dropdowns if clicking outside
     document.addEventListener('click', (event) => {
-        if (window.innerWidth <= 768) {
-            const nav = document.querySelector('nav');
-            const isClickInsideNav = nav.contains(event.target);
+        if (window.innerWidth <= 992) { // Match breakpoint
+            const header = document.querySelector('header');
+            const isClickInsideHeader = header.contains(event.target);
             const isClickOnNavToggle = navToggle && navToggle.contains(event.target);
 
-            if (!isClickInsideNav && !isClickOnNavToggle) {
+            if (!isClickInsideHeader && !isClickOnNavToggle) { // Only close if click is completely outside header
                 navMenu.classList.remove('active');
-                document.querySelectorAll('.dropdown .submenu').forEach(submenu => {
+                document.querySelectorAll('nav ul li.dropdown .submenu').forEach(submenu => {
                     submenu.style.display = 'none';
                 });
             }
@@ -434,69 +495,74 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // Search functionality
-    const searchInput = document.getElementById('search-input');
-    const searchButton = document.getElementById('search-button');
+    const searchInputDesktop = document.getElementById('search-input');
+    const searchButtonDesktop = document.getElementById('search-button');
+    const searchInputMobile = document.getElementById('search-input-mobile');
+    const searchButtonMobile = document.getElementById('search-button-mobile');
 
-    if (searchButton && searchInput) {
-        searchButton.addEventListener('click', handleSearch);
-        searchInput.addEventListener('keypress', (e) => {
+
+    function handleSearch() {
+        let query = '';
+        if (window.innerWidth > 992 && searchInputDesktop) {
+            query = searchInputDesktop.value.toLowerCase();
+        } else if (window.innerWidth <= 992 && searchInputMobile) {
+            query = searchInputMobile.value.toLowerCase();
+        }
+
+        if (query) {
+            window.location.href = `search.html?query=${encodeURIComponent(query)}`;
+        }
+    }
+
+    if (searchButtonDesktop && searchInputDesktop) {
+        searchButtonDesktop.addEventListener('click', handleSearch);
+        searchInputDesktop.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                handleSearch();
+            }
+        });
+    }
+    if (searchButtonMobile && searchInputMobile) {
+        searchButtonMobile.addEventListener('click', handleSearch);
+        searchInputMobile.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 handleSearch();
             }
         });
     }
 
-    function handleSearch() {
-        const query = searchInput.value.toLowerCase();
-        if (query) {
-            window.location.href = `search.html?query=${encodeURIComponent(query)}`;
-        }
-    }
 
     // Dynamic content filtering for departments.html (and similar for services/doctors)
-    const currentPath = window.location.pathname; // Re-declare or ensure it's accessible
+    const currentPath = window.location.pathname;
 
-    if (currentPath.includes('departments.html')) {
-        const urlParams = new URLSearchParams(window.location.search);
-        const selectedDept = urlParams.get('dept');
-        if (selectedDept) {
-            document.querySelectorAll('.department-item').forEach(item => {
-                item.style.display = 'none';
-            });
-            const targetDept = document.getElementById(selectedDept + '-item');
-            if (targetDept) {
-                targetDept.style.display = 'block'; // Or 'flex', 'grid' depending on your layout
-            }
-        }
-    }
-    // You might want similar logic for services.html and doctors.html
-    // Example for services.html
-    else if (currentPath.includes('services.html')) {
-        const urlParams = new URLSearchParams(window.location.search);
-        const selectedService = urlParams.get('service');
-        if (selectedService) {
-            document.querySelectorAll('.service-item').forEach(item => {
-                item.style.display = 'none';
-            });
-            const targetService = document.getElementById(selectedService + '-item'); // Assuming IDs like "internal-medicine-item"
-            if (targetService) {
-                targetService.style.display = 'block';
-            }
-        }
-    }
-    // Example for doctors.html
-    else if (currentPath.includes('doctors.html')) {
-        const urlParams = new URLSearchParams(window.location.search);
-        const selectedSpecialty = urlParams.get('specialty');
-        if (selectedSpecialty) {
-            document.querySelectorAll('.doctor-item').forEach(item => {
-                item.style.display = 'none';
-            });
-            const targetSpecialty = document.getElementById(selectedSpecialty + '-item'); // Assuming IDs like "surgeons-item"
-            if (targetSpecialty) {
-                targetSpecialty.style.display = 'block';
+    // Function to filter items based on URL parameter
+    function applyPageFilter(pageIdentifier, paramName, itemClass, itemIdPrefix = '') {
+        if (currentPath.includes(pageIdentifier)) {
+            const urlParams = new URLSearchParams(window.location.search);
+            const selectedParam = urlParams.get(paramName);
+
+            const allItems = document.querySelectorAll(`.${itemClass}`);
+
+            if (selectedParam) {
+                allItems.forEach(item => {
+                    item.style.display = 'none'; // Hide all
+                });
+
+                const targetItem = document.getElementById(`${itemIdPrefix}${selectedParam}-item`);
+                if (targetItem) {
+                    targetItem.style.display = getComputedStyle(targetItem).display === 'none' ? 'block' : getComputedStyle(targetItem).display; // Restore original display type or 'block'
+                }
+            } else {
+                // If no specific parameter, ensure all items are visible
+                allItems.forEach(item => {
+                    item.style.display = getComputedStyle(item).display === 'none' ? 'block' : getComputedStyle(item).display; // Restore original display
+                });
             }
         }
     }
 
+    // Apply filters to respective pages
+    applyPageFilter('departments.html', 'dept', 'department-item', 'dept-');
+    applyPageFilter('services.html', 'service', 'service-item', ''); // Service IDs like "internal-medicine-item"
+    applyPageFilter('doctors.html', 'specialty', 'doctor-detail-card', ''); // Doctor IDs like "surgeons-item"
 });
