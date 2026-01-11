@@ -138,21 +138,22 @@
         <section id="departments-hero" class="hero-section inner-hero">
             <div class="container">
                 <h2 data-translate="departments">Our Departments</h2>
-                <p>Explore the specialized departments at Geez Hospital, where expert care meets advanced technology.</p>
+                <p data-translate="departments-p">Explore the specialized departments at Geez Hospital, where expert care meets advanced technology.</p>
             </div>
         </section>
 
         <section id="department-list" class="content-section light-bg">
             <div class="container">
                 <div class="departments-grid">
-                    <!-- Example Department Item -->
+                    <!-- Department Item: Surgery -->
                     <div class="department-item" id="dept-surgery-item">
-                        <i class="fas fa-cut"></i> <!-- Example icon for surgery -->
+                        <i class="fas fa-cut"></i>
                         <h3 data-translate="dept-surgery">Surgery</h3>
                         <p>Our surgery department offers a wide range of surgical procedures, from general to highly specialized operations, performed by experienced surgeons using state-of-the-art equipment.</p>
                         <a href="doctors.html?specialty=surgeons" class="button secondary-button">View Our Surgeons</a>
                     </div>
                     
+                    <!-- Department Item: Pediatrics -->
                     <div class="department-item" id="dept-pediatrics-item">
                         <i class="fas fa-child"></i>
                         <h3 data-translate="dept-pediatrics">Pediatrics</h3>
@@ -160,6 +161,7 @@
                         <a href="doctors.html?specialty=pediatricians" class="button secondary-button">View Our Pediatricians</a>
                     </div>
 
+                    <!-- Department Item: Obstetrics and Gynecology -->
                     <div class="department-item" id="dept-obsgyn-item">
                         <i class="fas fa-venus-mars"></i>
                         <h3 data-translate="dept-obsgyn">Obstetrics and Gynecology</h3>
@@ -167,6 +169,7 @@
                         <a href="doctors.html?specialty=gynecologists" class="button secondary-button">View Our Gynecologists</a>
                     </div>
 
+                    <!-- Department Item: Internal Medicine -->
                     <div class="department-item" id="dept-internal-medicine-item">
                         <i class="fas fa-stethoscope"></i>
                         <h3 data-translate="dept-internal-medicine">Internal Medicine</h3>
@@ -174,6 +177,7 @@
                         <a href="doctors.html?specialty=internists" class="button secondary-button">View Our Internists</a>
                     </div>
 
+                    <!-- Department Item: Orthopedics -->
                     <div class="department-item" id="dept-orthopedics-item">
                         <i class="fas fa-bone"></i>
                         <h3 data-translate="dept-orthopedics">Orthopedics</h3>
@@ -181,6 +185,7 @@
                         <a href="doctors.html?specialty=orthopedicians" class="button secondary-button">View Our Orthopedicians</a>
                     </div>
 
+                    <!-- Department Item: Radiology -->
                     <div class="department-item" id="dept-radiology-item">
                         <i class="fas fa-x-ray"></i>
                         <h3 data-translate="dept-radiology">Radiology</h3>
@@ -188,6 +193,7 @@
                         <a href="doctors.html?specialty=radiologists" class="button secondary-button">View Our Radiologists</a>
                     </div>
 
+                    <!-- Department Item: Oncology -->
                     <div class="department-item" id="dept-oncology-item">
                         <i class="fas fa-cancer"></i>
                         <h3 data-translate="dept-oncology">Oncology</h3>
@@ -195,6 +201,7 @@
                         <a href="doctors.html?specialty=oncologists" class="button secondary-button">View Our Oncologists</a>
                     </div>
 
+                    <!-- Department Item: Oral, Dental, Maxillofacial Surgery -->
                     <div class="department-item" id="dept-oral-dental-maxillofacial-item">
                         <i class="fas fa-tooth"></i>
                         <h3 data-translate="dept-oral-dental-maxillofacial">Oral, Dental, Maxillofacial Surgery</h3>
@@ -202,6 +209,7 @@
                         <a href="doctors.html?specialty=maxillofacial" class="button secondary-button">View Our Maxillofacial Surgeons</a>
                     </div>
 
+                    <!-- Department Item: Dermatology -->
                     <div class="department-item" id="dept-dermatology-item">
                         <i class="fas fa-hand-sparkles"></i>
                         <h3 data-translate="dept-dermatology">Dermatology</h3>
@@ -209,6 +217,7 @@
                         <a href="doctors.html?specialty=dermatologists" class="button secondary-button">View Our Dermatologists</a>
                     </div>
 
+                    <!-- Department Item: ENT and Plastic Surgery -->
                     <div class="department-item" id="dept-ent-plastic-surgery-item">
                         <i class="fas fa-ear"></i>
                         <h3 data-translate="dept-ent-plastic-surgery">ENT and Plastic Surgery</h3>
@@ -216,19 +225,21 @@
                         <a href="doctors.html?specialty=ent-plastic" class="button secondary-button">View Our ENT & Plastic Surgeons</a>
                     </div>
                     
-                     <div class="department-item" id="dept-ophthalmology-item">
+                     <!-- Department Item: Ophthalmology -->
+                    <div class="department-item" id="dept-ophthalmology-item">
                         <i class="fas fa-eye"></i>
                         <h3 data-translate="dept-ophthalmology">Ophthalmology</h3>
                         <p>Comprehensive eye care services, including diagnosis and treatment of eye diseases, vision correction, and surgical procedures.</p>
-                        <!-- You might create a specific doctors.html?specialty=ophthalmologists later -->
+                        <!-- For now, this links to all doctors. You might create a specific doctors.html?specialty=ophthalmologists later -->
                         <a href="doctors.html" class="button secondary-button">View Our Doctors</a> 
                     </div>
 
+                    <!-- Department Item: Psychiatry -->
                     <div class="department-item" id="dept-psychiatry-item">
                         <i class="fas fa-head-side-brain"></i>
                         <h3 data-translate="dept-psychiatry">Psychiatry</h3>
                         <p>Mental health services for various psychiatric conditions, offering diagnosis, therapy, and medication management.</p>
-                        <!-- You might create a specific doctors.html?specialty=psychiatrists later -->
+                        <!-- For now, this links to all doctors. You might create a specific doctors.html?specialty=psychiatrists later -->
                         <a href="doctors.html" class="button secondary-button">View Our Doctors</a>
                     </div>
                     <!-- Add more department items as needed -->
@@ -262,20 +273,28 @@
     <script src="script.js"></script>
     <!-- Add this script for department filtering if needed -->
     <script>
+        // This small script is just a fallback/example. The main filtering is now in script.js
         document.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
             const selectedDept = urlParams.get('dept');
 
             if (selectedDept) {
-                // Hide all department items first
+                // The main filtering logic is now in script.js's applyPageFilter.
+                // This block can be removed if applyPageFilter covers all cases.
+                // However, for direct URL access without the script.js always loaded/executed at the right time,
+                // a simple direct filter here might still be useful as a quick fix,
+                // but it's better to rely solely on applyPageFilter in script.js.
+                // For now, I'll leave it as a comment to indicate where the action happens.
+
+                /*
                 document.querySelectorAll('.department-item').forEach(item => {
                     item.style.display = 'none';
                 });
-                // Show only the selected department item
-                const targetDept = document.getElementById(selectedDept + '-item'); // Assuming IDs like "dept-surgery-item"
+                const targetDept = document.getElementById('dept-' + selectedDept + '-item');
                 if (targetDept) {
-                    targetDept.style.display = 'block'; // Or 'flex', 'grid' depending on your layout
+                    targetDept.style.display = 'block';
                 }
+                */
             }
         });
     </script>

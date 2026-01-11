@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate="services-page-h2">Our Services</title>
+    <title data-translate="services">Services - Geez Hospital</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <!-- Top Bar - Corrected single instance -->
+    <!-- Top Bar -->
     <div class="top-bar">
         <div class="container">
             <div class="contact-info">
@@ -18,20 +18,18 @@
             </div>
             <div class="right-section">
                 <div class="address-info">
-                    <!-- Google Map link updated here -->
                     <span><a href="https://maps.app.goo.gl/yHuCuCgLMzUtyerU6" target="_blank"><i class="fas fa-map-marker-alt"></i> Axum, Infront of Ethiotelecom, Behind Central Cafe</a></span>
                 </div>
                 <div class="social-icons-top">
                     <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://t.me/geezhospital_bot" target="_blank"><i class="fab fa-telegram-plane"></i></a>
-                    <!-- Add other social links if available -->
                 </div>
                 <a href="contact.html" class="contact-button" data-translate="contact-us-btn">Contact Us</a>
             </div>
         </div>
     </div>
 
-    <!-- Header - Corrected single instance -->
+    <!-- Header -->
     <header>
         <div class="container">
             <div class="logo">
@@ -133,131 +131,156 @@
         </div>
     </header>
 
-    <!-- Small Hero Section -->
+    <!-- Hero Section -->
     <section id="services-hero" class="hero-section inner-hero">
-    <div class="container text-center">
-        <h2 data-translate="services-page-h2">Our Services</h2>
-        <p data-translate="services-page-intro-p">Geez Hospital offers diverse and modern services provided by highly qualified specialists and sub-specialists.</p>
-    </div>
-</section>
-    <!-- Services List Section -->
-    <section id="services-list" class="section-padding">
-        <div class="container">
-            <div class="service-grid-full">
+        <div class="container text-center">
+            <h2 data-translate="services-page-h2">Our Services</h2>
+            <p data-translate="services-page-intro-p">Geez Hospital offers diverse and modern services provided by highly qualified specialists and sub-specialists.</p>
+        </div>
+    </section>
 
+    <!-- Services Grid Section -->
+    <section id="services-grid" class="content-section section-padding">
+        <div class="container">
+            <div class="service-items-grid">
                 <!-- Service Item 1: Internal Medicine -->
-                <div class="service-item" id="service-item-1" data-department="internal-medicine">
-                    <h3><i class="fas fa-stethoscope"></i> <span data-translate="service1-h3">ስፔሻሊስት ሕክምና ውሽጣዊ ሕማማት</span></h3>
-                    <p data-translate="service1-p">ምሉእ ናይ ውሽጣዊ ሕማማት መርመራን ሕክምናን ብልዑል ተመኩሮን ሞያን ዘለዎም ስፔሻሊስት ሓኻይም ይወሃብ። እዚ ግልጋሎት ንዝተፈላለዩ ሕማማት ከም ሕማም ደም፣ ሕማም ኩላሊት፣ ሕማም ሳንቡእ፣ ሕማም ሆርሞን፣ ወዘተ ዘጠቓለለ እዩ።</p>
+                <div class="service-item" id="service-internal-medicine-item">
+                    <i class="fas fa-stethoscope"></i>
+                    <h3 data-translate="service1-h3">Internal Medicine</h3>
+                    <p>Comprehensive diagnosis and treatment for adult diseases, focusing on non-surgical approaches and long-term health management.</p>
                 </div>
 
                 <!-- Service Item 2: Cardiology -->
-                <div class="service-item" id="service-item-2" data-department="cardiology">
-                    <h3><i class="fas fa-heartbeat"></i> <span data-translate="service2-h3">ፍሉይ ስፔሻሊስት ሕክምና ሕማማት ልቢ</span></h3>
-                    <p data-translate="service2-p">ፍሉይ ናይ ልቢ ሕማማት መርመራን ሕክምናን ብልዑል ተመኩሮን ሞያን ዘለዎም ሳብ ስፔሻሊስት ሓኻይም ይወሃብ። ECG፣ Echocardiography፣ Stress Test ዝኣመሰሉ ዘመናዊ መሳርሒታትን ኣገባባትን ንጥቀም።</p>
+                <div class="service-item" id="service-cardiology-item">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3 data-translate="service2-h3">Cardiology</h3>
+                    <p>Specialized care for heart and vascular conditions, including diagnostics, treatment, and preventive programs.</p>
                 </div>
 
                 <!-- Service Item 3: General Surgery -->
-                <div class="service-item" id="service-item-3" data-department="surgery">
-                    <h3><i class="fas fa-scalpel"></i> <span data-translate="service3-h3">ስፔሻሊስት ሓፈሻዊ መጥባሕቲ</span></h3>
-                    <p data-translate="service3-p">ስፔሻሊስት ሓፈሻዊ መጥባሕቲ ብዘመናዊ መሳርሒታትን ኣገባባትን ይወሃብ። እዚ ንዝተፈላለዩ ንኣብነት ን appendices, hernias, gallbladder, ወዘተ መጥባሕቲ ዝሓቖፈ እዩ።</p>
+                <div class="service-item" id="service-general-surgery-item">
+                    <i class="fas fa-cut"></i>
+                    <h3 data-translate="service3-h3">General Surgery</h3>
+                    <p>Offering a wide range of surgical procedures, from routine to complex operations, performed by skilled surgeons.</p>
                 </div>
 
-                <!-- Service Item 4: Pediatrics -->
-                <div class="service-item" id="service-item-4" data-department="pediatrics">
-                    <h3><i class="fas fa-child"></i> <span data-translate="service4-h3">ስፔሻሊስት ሕክምና ህፃውንቲን ኣባፅሕን</span></h3>
-                    <p data-translate="service4-p">ናይ ህፃውንቲን ኣባፅሕን መርመራን ሕክምናን ብስፔሻሊስት ሓኪም ይወሃብ። ንህጻናት ዝምጥን ፍሉይ ክንክን ንህብ።</p>
+                <!-- Service Item 4: Pediatrics & Adolescents -->
+                <div class="service-item" id="service-pediatrics-item">
+                    <i class="fas fa-child"></i>
+                    <h3 data-translate="service4-h3">Pediatrics & Adolescents</h3>
+                    <p>Dedicated medical care for infants, children, and teenagers, covering their growth, development, and specific health issues.</p>
                 </div>
 
-                <!-- Service Item 5: Obstetrics and Gynecology -->
-                <div class="service-item" id="service-item-5" data-department="obsgyn">
-                    <h3><i class="fas fa-baby"></i> <span data-translate="service5-h3">ስፔሻሊስት ሕክምና ማህፀንን ጥንስን</span></h3>
-                    <p data-translate="service5-p">ምሉእ ናይ ማህፀንን ጥንስን መርመራን ሕክምናን ብስፔሻሊስት ሓኪም ይወሃብ። ቅድሚ ሕርሲ፣ ኣብ ሕርሲን ድሕሪ ሕርሲን ዘድሊ ክንክን ይህብ።</p>
+                <!-- Service Item 5: Obstetrics & Gynecology -->
+                <div class="service-item" id="service-obsgyn-item">
+                    <i class="fas fa-venus-mars"></i>
+                    <h3 data-translate="service5-h3">Obstetrics & Gynecology</h3>
+                    <p>Comprehensive health services for women, including prenatal care, childbirth, postnatal care, and reproductive health.</p>
                 </div>
 
-                <!-- Service Item 6: ENT -->
-                <div class="service-item" id="service-item-6" data-department="ent">
-                    <h3><i class="fas fa-ear"></i> <span data-translate="service6-h3">ስፔሻሊስት ሕክምና ካብ ክሳድ ንላዕሊ(ENT)</span></h3>
-                    <p data-translate="service6-p">ናይ ክሳድ፣ እዝንን ኣፍንጫን መርመራን ሕክምናን ብስፔሻሊስት ሓኪም ይወሃብ። ንዝተፈላለዩ ሕማማት ENT ብዘመናዊ መሳርሒታት(Endoscopy) መርመራን ሕክምናን ንህብ።</p>
+                <!-- Service Item 6: ENT (Ear, Nose, Throat) -->
+                <div class="service-item" id="service-ent-item">
+                    <i class="fas fa-ear"></i>
+                    <h3 data-translate="service6-h3">ENT</h3>
+                    <p>Diagnosis and treatment of disorders related to the ear, nose, and throat, including head and neck conditions.</p>
                 </div>
 
                 <!-- Service Item 7: Radiology -->
-                <div class="service-item" id="service-item-7" data-department="radiology">
-                    <h3><i class="fas fa-x-ray"></i> <span data-translate="service7-h3">ስፔሻሊስት ራድዮሎጂ (ኣልትራሳውንድ፣ ራጂ፣ ሲቲ ስካን ECGን)</span></h3>
-                    <p data-translate="service7-p">ዘመናዊ ግልጋሎት ራድዮሎጂ (ኣልትራሳውንድ፣ ራጂ፣ ሲቲ ስካን ECGን) ብስፔሻሊስት ሓኪም ይወሃብ። ትክክለኛ መርመራ ንምሃብ ዝሕግዝ ዘመናዊ ቴክኖሎጂ ንጥቀም።</p>
+                <div class="service-item" id="service-radiology-item">
+                    <i class="fas fa-x-ray"></i>
+                    <h3 data-translate="service7-h3">Radiology</h3>
+                    <p>Advanced diagnostic imaging services such as X-rays, CT scans, MRI, and ultrasound to aid in accurate medical diagnosis.</p>
                 </div>
 
                 <!-- Service Item 8: Dental -->
-                <div class="service-item" id="service-item-8" data-department="dental">
-                    <h3><i class="fas fa-tooth"></i> <span data-translate="service8-h3">ስፔሻሊስት ሕክምና ስኒ</span></h3>
-                    <p data-translate="service8-p">ምሉእ ናይ ስኒ ሕክምና ብስፔሻሊስት ሓኪም ይወሃብ። ካብ ንጹህ ስኒ ክሳብ ኮሮናን ስኒ ምልዋጥን ዝሓቖፈ ግልጋሎት ንህብ።</p>
+                <div class="service-item" id="service-dental-item">
+                    <i class="fas fa-tooth"></i>
+                    <h3 data-translate="service8-h3">Dental</h3>
+                    <p>Full range of dental services, from routine check-ups and cleanings to complex restorative and cosmetic dentistry.</p>
                 </div>
 
                 <!-- Service Item 9: Neurosurgery -->
-                <div class="service-item" id="service-item-9" data-department="neurosurgery">
-                    <h3><i class="fas fa-brain"></i> <span data-translate="service9-h3">ስፔሻሊስት መጥባሕቲ መትኒ፣ ዓንዲ ሑቐን ሓንጎልን</span></h3>
-                    <p data-translate="service9-p">ስፔሻሊስት መጥባሕቲ መትኒ፣ ዓንዲ ሑቐን ሓንጎልን ብልዑል ተመኩሮ ዘለዎም ስፔሻሊስት ሓኻይም ይወሃብ። ንዝተፈላለዩ ነርቫዊ ሕማማት ፍሉይ ሕክምና ንህብ።</p>
+                <div class="service-item" id="service-neurosurgery-item">
+                    <i class="fas fa-brain"></i>
+                    <h3 data-translate="service9-h3">Neurosurgery</h3>
+                    <p>Surgical treatment for conditions affecting the brain, spinal cord, and peripheral nerves.</p>
                 </div>
 
                 <!-- Service Item 10: Orthopedics -->
-                <div class="service-item" id="service-item-10" data-department="orthopedics">
-                    <h3><i class="fas fa-bone"></i> <span data-translate="service10-h3">ስፔሻሊስት ሕክምና ዓፅምን መገጣጠምን፣ነርቭን ዓንዲሑቐን</span></h3>
-                    <p data-translate="service10-p">ስፔሻሊስት ሕክምና ዓፅምን መገጣጠምን፣ ነርቭን ዓንዲ ሑቐን ብስፔሻሊስት ሓኪም ይወሃብ። ንስባራት፣ ቁስልን ሕማማት መገጣጠምን ሕክምና ንህብ።</p>
+                <div class="service-item" id="service-orthopedics-item">
+                    <i class="fas fa-bone"></i>
+                    <h3 data-translate="service10-h3">Orthopedics</h3>
+                    <p>Care for musculoskeletal system disorders, including bones, joints, ligaments, tendons, and muscles.</p>
                 </div>
 
-                <!-- Service Item 11: Dermatology -->
-                <div class="service-item" id="service-item-11" data-department="dermatology">
-                    <h3><i class="fas fa-hand-sparkles"></i> <span data-translate="service11-h3">ስፔሻሊስት ሕክምና ቆርበት፣ ኣበላዘርን ስነ-ፅባቐን</span></h3>
-                    <p data-translate="service11-p">ስፔሻሊስት ሕክምና ቆርበት፣ ኣበላዘርን ስነ-ፅባቐን ብስፔሻሊስት ሓኪም ይወሃብ። ንዝተፈላለዩ ሕማማት ቆርበትን ውሽጣዊን ክንክን ንህብ።</p>
+                <!-- Service Item 11: Dermatology & Cosmetology -->
+                <div class="service-item" id="service-dermatology-item">
+                    <i class="fas fa-hand-sparkles"></i>
+                    <h3 data-translate="service11-h3">Dermatology & Cosmetology</h3>
+                    <p>Diagnosis and treatment of skin, hair, and nail conditions, along with aesthetic and cosmetic procedures.</p>
                 </div>
 
-                <!-- Service Item 12: Anesthesia and Pain Management -->
-                <div class="service-item" id="service-item-12" data-department="anesthesia-pain">
-                    <h3><i class="fas fa-syringe"></i> <span data-translate="service12-h3">ስፔሻሊስት መደቀስን ቃንዛን</span></h3>
-                    <p data-translate="service12-p">ስፔሻሊስት መደቀስን ቃንዛን ሕክምና ብስፔሻሊስት ሓኪም ይወሃብ። ቅድሚን ድሕሪን መጥባሕቲ ዘድሊ ክንክን ንህብ።</p>
+                <!-- Service Item 12: Anesthesia & Pain Management -->
+                <div class="service-item" id="service-anesthesia-item">
+                    <i class="fas fa-syringe"></i>
+                    <h3 data-translate="service12-h3">Anesthesia & Pain Management</h3>
+                    <p>Providing safe anesthesia for surgeries and effective management of acute and chronic pain conditions.</p>
                 </div>
 
                 <!-- Service Item 13: Laboratory -->
-                <div class="service-item" id="service-item-13" data-department="laboratory">
-                    <h3><i class="fas fa-flask"></i> <span data-translate="service13-h3">ምሉእ ዘመናዊ ላቦራቶሪ</span></h3>
-                    <p data-translate="service13-p">ምሉእ ዘመናዊ ላቦራቶሪ ግልጋሎት ይወሃብ። ንኹሎም ዓይነታት መርመራ ደምን ሽንትን ካልኦት ባዮሎጂካዊ መርመራታትን ብዘመናዊ መሳርሒታት ግልጋሎት ንህብ።</p>
+                <div class="service-item" id="service-laboratory-item">
+                    <i class="fas fa-flask"></i>
+                    <h3 data-translate="service13-h3">Laboratory</h3>
+                    <p>Comprehensive laboratory testing services crucial for accurate diagnosis and effective patient management.</p>
                 </div>
 
                 <!-- Service Item 14: Physiotherapy -->
-                <div class="service-item" id="service-item-14" data-department="physiotherapy">
-                    <h3><i class="fas fa-running"></i> <span data-translate="service14-h3">መርመራን ሕክምናን ፊዝዮቴራፒ</span></h3>
-                    <p data-translate="service14-p">ምሉእ መርመራን ሕክምናን ብፊዝዮቴራፒ ሓኪም ግልጋሎት ይወሃብ። ንዝተፈላለዩ ዓይነት ሕማማት ቅርጺ ኣካልን ምንቅስቓስን ሕክምና ንህብ።</p>
+                <div class="service-item" id="service-physiotherapy-item">
+                    <i class="fas fa-running"></i>
+                    <h3 data-translate="service14-h3">Physiotherapy</h3>
+                    <p>Rehabilitation services to restore movement, strength, and function for patients recovering from injury or illness.</p>
                 </div>
 
                 <!-- Service Item 15: Psychiatry -->
-                <div class="service-item" id="service-item-15" data-department="psychiatry">
-                    <h3><i class="fas fa-head-side-brain"></i> <span data-translate="service15-h3">ስፔሻሊስት ሕክምና ስነ ኣእምሮ</span></h3>
-                    <p data-translate="service15-p">ስፔሻሊስት ሕክምና ስነ ኣእምሮ ግልጋሎት ይወሃብ። ንዝተፈላለዩ ኣእምሮኣዊ ሕማማት ምኽሪን ሕክምናን ንህብ።</p>
+                <div class="service-item" id="service-psychiatry-item">
+                    <i class="fas fa-head-side-brain"></i>
+                    <h3 data-translate="service15-h3">Psychiatry</h3>
+                    <p>Mental health services focusing on the diagnosis, treatment, and prevention of mental, emotional, and behavioral disorders.</p>
+                </div>
+                
+                 <!-- Service Item 16: Ophthalmology -->
+                <div class="service-item" id="service-ophthalmology-item">
+                    <i class="fas fa-eye"></i>
+                    <h3 data-translate="service16-h3">Ophthalmology</h3>
+                    <p>Comprehensive eye care services, including diagnosis and treatment of eye diseases, vision correction, and surgical procedures.</p>
                 </div>
 
-                <!-- Service Item 16: Maternity -->
-                <div class="service-item" id="service-item-16" data-department="maternity">
-                    <h3><i class="fas fa-person-pregnant"></i> <span data-translate="service16-h3">ናይ መዋልዳን ምሉእ ግልጋሎት</span></h3>
-                    <p data-translate="service16-p">ምሉእ ግልጋሎት መዋልዳን፣ ካብ ቅድሚ ሕርሲ ክሳብ ድሕሪ ሕርሲ፣ ብልዑል ልምዲን ተሞኩሮን ዘለዎም ሰብ ሞያን ብስፔሻሊስት ሓኪምን ብዘመናዊ መሳርሒታትን ይወሃብ።</p>
+                <!-- Service Item 17: Maternity Services -->
+                <div class="service-item" id="service-maternity-item">
+                    <i class="fas fa-baby"></i>
+                    <h3 data-translate="service17-h3">Maternity Services</h3>
+                    <p>Full range of maternity care, from prenatal to postpartum, ensuring the health and well-being of mother and baby.</p>
                 </div>
 
-                <!-- Service Item 17: Pharmacy and Ambulance -->
-                <div class="service-item" id="service-item-17" data-department="pharmacy-ambulance">
-                    <h3><i class="fas fa-truck-medical"></i> <span data-translate="service17-h3">ምሉእ ኣቕሪቦት መድሓኒት(Pharmacy)ን ኣምቡላንስን</span></h3>
-                    <p data-translate="service17-p">ምሉእ ኣቕሪቦት መድሓኒት(Pharmacy)ን ኣምቡላንስን ግልጋሎት ይወሃብ። 24 ሰዓት ግልጋሎት ፋርማሲን ኣምቡላንስን ድሉው እዩ።</p>
+                <!-- Service Item 18: Pharmacy & Ambulance -->
+                <div class="service-item" id="service-pharmacy-ambulance-item">
+                    <i class="fas fa-ambulance"></i>
+                    <h3 data-translate="service18-h3">Pharmacy & Ambulance</h3>
+                    <p>24/7 pharmacy services and emergency ambulance transportation for critical care and patient transfer.</p>
                 </div>
 
-                <!-- Service Item 18: Other Services -->
-                <div class="service-item" id="service-item-18" data-department="other">
-                    <h3><i class="fas fa-ellipsis-h"></i> <span data-translate="service18-h3">ካልኦት ግልጋሎትን ይረኽቡ</span></h3>
-                    <p data-translate="service18-p">ግዕዝ ሆስፒታል ካልኦት ዘይተዘርዘሩ ግልጋሎት ንሕብረተሰብን ነቕርብ። ንዝኾነ ሕቶ ወወይ ተወሳኺ ሓበሬታ ምሕታት ይከኣል እዩ።</p>
+                <!-- Service Item 19: Other Services -->
+                <div class="service-item" id="service-other-item">
+                    <i class="fas fa-hospital"></i>
+                    <h3 data-translate="service19-h3">Other Services</h3>
+                    <p>Beyond our core specialties, we offer a variety of additional medical and supportive services to ensure holistic patient care.</p>
                 </div>
-
+                
             </div>
         </div>
     </section>
 
-    <!-- Footer - Corrected single instance -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -280,30 +303,5 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        // Specific script for services.html to filter by department
-        document.addEventListener('DOMContentLoaded', () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const serviceFilter = urlParams.get('service'); // Changed from 'department' to 'service' as per your dropdown
-
-            const serviceItems = document.querySelectorAll('.service-item');
-
-            if (serviceFilter) {
-                serviceItems.forEach(item => {
-                    const itemService = item.getAttribute('id').replace('service-item-', ''); // Extract service name from ID
-                    if (itemService === serviceFilter) {
-                        item.style.display = 'block'; // Show matching services
-                    } else {
-                        item.style.display = 'none';  // Hide non-matching services
-                    }
-                });
-            } else {
-                // If no filter, show all services
-                serviceItems.forEach(item => {
-                    item.style.display = 'block';
-                });
-            }
-        });
-    </script>
 </body>
 </html>
