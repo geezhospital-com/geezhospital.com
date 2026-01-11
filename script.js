@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "menu-ent-plastic": "ENT, Head & Neck and Plastic Surgeons",
             "menu-dermatologists": "Dermatologists",
             "menu-psychiatrists": "Psychiatrists",
-            "menu-ophthalmologists": "Ophthalmologists",
+            "menu-ophthalmologists": "Ophthalmologists", // This key is present in your translations but not directly in the HTML menu
             "departments": "Departments",
             "dept-surgery": "Surgery",
             "dept-pediatrics": "Pediatrics",
@@ -68,33 +68,33 @@ document.addEventListener('DOMContentLoaded', () => {
             "contact": "Contact Us",
             "search-placeholder": "Search...",
             "footer-text": "Copyright © 2026 <span class=\"geez-color\">Geez</span> <span class=\"hospital-color\">Hospital</span><br>Developed By Aser Teklu Gebrekidan-0911179955",
-            "about-h2": "About Us",
-            "about-p": "Learn more about Geez Hospital, our mission, vision, and the core values that guide us in providing exceptional healthcare.",
-            "about-h3": "About Us",
+            "about-h2": "About Us", // Assuming this is for about.html hero
+            "about-p": "Learn more about Geez Hospital, our mission, vision, and the core values that guide us in providing exceptional healthcare.", // Assuming for about.html hero
+            "about-h3": "About Us", // Assuming for about.html general section title
             "about-p1": "Established in 2011 E.C., Geez Hospital is one of the leading institutions in the central zone and Tigray, providing modern and efficient medical services with international standards. We aim to make world-class healthcare accessible to every citizen, becoming one of the largest and most trusted medical institutions in the entire zone and its surroundings. We are founded on providing compassionate care, high professional competence, and modern equipment. We place great emphasis on patient safety and excellent service.",
             "mission-h3": "Our Mission",
             "mission-p": "To provide excellent, affordable, accessible, and accountable medical care to all citizens; to offer comprehensive, high-quality, and affordable healthcare that combines professional excellence with compassionate care; to create a world-class medical practice and uphold the highest medical ethics.",
             "vision-h3": "Our Vision",
             "vision-p": "We envision a future where Geez Hospital is synonymous with innovation, empathy, and unparalleled medical outcomes, setting new benchmarks for healthcare excellence across the continent.",
-            "services-h3": "Services Overview",
+            "services-h3": "Services Overview", // For about.html services overview section
             "services-p-about": "At Geez Hospital, we are dedicated to offering a comprehensive suite of medical services designed to meet the diverse needs of our community. Our state-of-the-art facilities and a team of dedicated professionals ensure that you receive the best possible care across all specialties.",
-            "services-page-h2": "Our Services",
-            "services-page-intro-p": "Geez Hospital offers diverse and modern services provided by highly qualified specialists and sub-specialists.",
+            "services-page-h2": "Our Services", // For services.html hero
+            "services-page-intro-p": "Geez Hospital offers diverse and modern services provided by highly qualified specialists and sub-specialists.", // For services.html hero
             "all-services-btn": "View All Our Services",
-            "departments-h2": "Our Departments",
-            "departments-p": "Explore the specialized departments at Geez Hospital, where expert care meets advanced technology.",
-            "facilities-h2": "Our Facilities",
-            "facilities-p": "Geez Hospital is equipped with state-of-the-art medical technology and modern facilities to provide you with the best possible care.",
-            "doctors-page-title": "Our Doctors",
-            "doctors-page-intro": "Geez Hospital provides various services with highly qualified and experienced specialists and sub-specialists. Chosen for our care, trusted for our expertise.",
-            "patient-info-h2": "Patient Information",
-            "patient-info-p": "Find essential information for your visit, including admission, discharge, rights, and responsibilities.",
-            "articles-h2": "Health Articles",
-            "articles-p": "Stay informed with our latest health articles, tips, and medical insights from our expert team.",
-            "news-h2": "News and Events",
-            "news-p": "Follow the latest news, medical advice, and important updates from Geez Hospital here.",
-            "gallery-h2": "Gallery",
-            "gallery-p": "View various images of Geez Hospital, including all modern equipment and medical care provided.",
+            "departments-h2": "Our Departments", // For departments.html hero
+            "departments-p": "Explore the specialized departments at Geez Hospital, where expert care meets advanced technology.", // For departments.html hero
+            "facilities-h2": "Our Facilities", // For facilities.html hero
+            "facilities-p": "Geez Hospital is equipped with state-of-the-art medical technology and modern facilities to provide you with the best possible care.", // For facilities.html hero
+            "doctors-page-title": "Our Doctors", // For doctors.html hero
+            "doctors-page-intro": "Geez Hospital provides various services with highly qualified and experienced specialists and sub-specialists. Chosen for our care, trusted for our expertise.", // For doctors.html hero
+            "patient-info-h2": "Patient Information", // For patient-info.html hero
+            "patient-info-p": "Find essential information for your visit, including admission, discharge, rights, and responsibilities.", // For patient-info.html hero
+            "articles-h2": "Health Articles", // For articles.html hero
+            "articles-p": "Stay informed with our latest health articles, tips, and medical insights from our expert team.", // For articles.html hero
+            "news-h2": "News and Events", // For news.html hero
+            "news-p": "Follow the latest news, medical advice, and important updates from Geez Hospital here.", // For news.html hero
+            "gallery-h2": "Gallery", // For gallery.html hero
+            "gallery-p": "View various images of Geez Hospital, including all modern equipment and medical care provided.", // For gallery.html hero
             "contact-h2": "Contact Us", // Added for contact page hero title
             "contact-p": "For any inquiries or to book an appointment, please reach out to us.", // Added for contact page hero paragraph
             "contact-form-title": "Send us a Message", // Added for contact form title
@@ -112,7 +112,40 @@ document.addEventListener('DOMContentLoaded', () => {
             "form-message": "Message:",
             "form-submit-btn": "Send",
             "our-location-map": "Our Location on Map", // Added for map section title
-            "view-on-map": "View on Map" // Added for map button text
+            "view-on-map": "View on Map", // Added for map button text
+
+            // Individual Service descriptions for services.html
+            "internal-medicine-desc": "Comprehensive internal medicine diagnosis and treatment are provided by highly experienced and professional specialist doctors.",
+            "cardiology-desc": "Specialized cardiac disease diagnosis and treatment are provided by highly experienced and professional sub-specialist doctors.",
+            "general-surgery-desc": "General surgery is performed using modern equipment and techniques.",
+            "pediatrics-adolescents-desc": "Dedicated medical care for infants, children, and teenagers, covering their growth, development, and specific health issues.",
+            "obsgyn-desc": "Comprehensive health services for women, including prenatal care, childbirth, postnatal care, and reproductive health.",
+            "ent-desc": "Diagnosis and treatment of disorders related to the ear, nose, and throat, including head and neck conditions.",
+            "radiology-desc": "Advanced diagnostic imaging services such as X-rays, CT scans, MRI, and ultrasound to aid in accurate medical diagnosis.",
+            "dental-desc": "Full range of dental services, from routine check-ups and cleanings to complex restorative and cosmetic dentistry.",
+            "neurosurgery-desc": "Surgical treatment for conditions affecting the brain, spinal cord, and peripheral nerves.",
+            "orthopedics-desc": "Care for musculoskeletal system disorders, including bones, joints, ligaments, tendons, and muscles.",
+            "dermatology-cosmetology-desc": "Diagnosis and treatment of skin, hair, and nail conditions, along with aesthetic and cosmetic procedures.",
+            "anesthesia-pain-management-desc": "Providing safe anesthesia for surgeries and effective management of acute and chronic pain conditions.",
+            "laboratory-desc": "Comprehensive laboratory testing services crucial for accurate diagnosis and effective patient management.",
+            "physiotherapy-desc": "Rehabilitation services to restore movement, strength, and function for patients recovering from injury or illness.",
+            "psychiatry-desc": "Mental health services focusing on the diagnosis, treatment, and prevention of mental, emotional, and behavioral disorders.",
+            "ophthalmology-desc": "Comprehensive eye care services, including diagnosis and treatment of eye diseases, vision correction, and surgical procedures.",
+            "maternity-services-desc": "Full range of maternity care, from prenatal to postpartum, ensuring the health and well-being of mother and baby.",
+            "pharmacy-ambulance-desc-full": "24/7 pharmacy services and emergency ambulance transportation for critical care and patient transfer.",
+            "other-services-desc": "Beyond our core specialties, we offer a variety of additional medical and supportive services to ensure holistic patient care.",
+
+            // Individual Department descriptions for departments.html
+            "dept-surgery-desc": "Our surgery department offers a wide range of surgical procedures, from general to highly specialized operations, performed by experienced surgeons using state-of-the-art equipment.",
+            "dept-pediatrics-desc": "Dedicated care for infants, children, and adolescents, focusing on their unique health needs with compassion and expertise.",
+            "dept-obsgyn-desc": "Comprehensive healthcare for women, including pregnancy, childbirth, and reproductive health services.",
+            "dept-internal-medicine-desc": "Diagnosis and treatment of adult diseases, providing primary care and managing complex health conditions.",
+            "dept-orthopedics-desc": "Specialized care for musculoskeletal system, including bone, joint, ligament, and muscle injuries and diseases.",
+            "dept-radiology-desc": "Advanced diagnostic imaging services including X-rays, CT scans, MRIs, and ultrasounds to aid in accurate diagnosis.",
+            "dept-oncology-desc": "Comprehensive cancer care, from diagnosis and treatment to supportive care and survivorship programs.",
+            "dept-dermatology-desc": "Diagnosis and treatment of skin, hair, and nail conditions, including cosmetic and aesthetic services.",
+            "dept-psychiatry-desc": "Mental health services for various psychiatric conditions, offering diagnosis, therapy, and medication management.",
+            "dept-ophthalmology-desc": "Comprehensive eye care services, including diagnosis and treatment of eye diseases, vision correction, and surgical procedures."
         },
         "tig": {
             "hero-main-title": "ግዕዝ ሆስፒታል",
@@ -121,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "hero-btn-appointment": "ቆፀሮ ንምሓዝ",
             "hero-btn-services": "ግልጋሎታትና ርኣዩ",
             "contact-us-btn": "ተወከሰና", // Changed to "ተወከሱና" if preferred for politeness or left as "ተወከሰና"
-            "home": "መበገሲ ገጽ",
+            "home": "መእተዊ",
             "about-us": "ብዛዕባና",
             "menu-about-us": "ብዛዕባና",
             "menu-mission": "ተልእኾና",
@@ -210,8 +243,8 @@ document.addEventListener('DOMContentLoaded', () => {
             "gallery-p": "ናይ ግዕዝ ሆስፒታል ዝተፈላለዩ ምስልታት ኩሎም ዘመነዎት መሳርሕታትን ዝተገብሩ ሕክምናዊ ክንክንን ኣብዚ ምርኣይ ይኽእሉ እዮም ።",
             "contact-h2": "ተራኸቡና", // Added for contact page hero title
             "contact-p": "ንዝኾነ ሕቶ ወይ ቆፀሮ ንምሓዝ በይዝኦም ኣብዚ ይመዝገቡ።", // Added for contact page hero paragraph
-            "contact-form-title": "መልእኽቲ ስደዱልና", // Added for form labels
-            "form-full-name": "ምሉእ ሽም:",
+            "contact-form-title": "መልእኽቲ ስደዱልና", // Added for contact form title
+            "form-full-name": "ምሉእ ሽም:", // Added for form labels
             "form-email": "ኢሜይል:",
             "form-subject": "ዝደለይዎ ሕቶ/ሕክምና:",
             "form-phone": "ቁፅሪ ስልኪ:",
@@ -225,7 +258,40 @@ document.addEventListener('DOMContentLoaded', () => {
             "form-message": "መልእኽቲ:",
             "form-submit-btn": "ልኣኽ",
             "our-location-map": "ኣድራሻና ብካርታ", // Added for map section title
-            "view-on-map": "ኣብ ካርታ ርኣይ" // Added for map button text
+            "view-on-map": "ኣብ ካርታ ርኣይ", // Added for map button text
+
+            // Individual Service descriptions for services.html
+            "internal-medicine-desc": "ሓፈሻዊ ናይ ሕክምና ውሽጢ ምርመራን ሕክምናን ብልዑል ተመክሮን ሞያዊ ብቕዓትን ዝለዎም ስፔሻሊስት ሓኻይም ይወሃብ።",
+            "cardiology-desc": "ፍሉይ ናይ ሕማም ልቢ ምርመራን ሕክምናን ብልዑል ተመክሮን ሞያዊ ብቕዓትን ዝለዎም ሳብስፔሻሊስት ሓኻይም ይወሃብ።",
+            "general-surgery-desc": "ሓፈሻዊ ናይ ሕክምና ሰርጀሪ ብዘመናዊ መሳርሒታትን ኣገባብን ይስራሕ።",
+            "pediatrics-adolescents-desc": "ፍሉይ ሕክምናዊ ክንክን ንጨናዉን፣ ህፃናትን ታሕተዋይን፣ ንዕቤትኦም፣ ምዕባለኦምን ፍሉይ ጥዕናኦም ትኹረት ዝገብር።",
+            "obsgyn-desc": "ምሉእ ጥዕናዊ ግልጋሎታት ንደቂኣንስትዮ፣ ቅድሚ ሕርሲ፣ ሕርሲ፣ ድሕሪ ሕርሲ ክንክንን ዝራባሕ ጥዕናን ዝሓወሰ።",
+            "ent-desc": "ምርመራን ሕክምናን ንሕማማት ኣፍንጫ፣ ቖርበት፣ ጕርዲ፣ ከምኡ’ውን ሕማማት ርእስን ቖርበትን።",
+            "radiology-desc": "ዘመናዊ ናይ ምስልታት ምርመራ (X-ray, CT scan, MRI, Ultrasound) ንቅኑዕ ሕክምናዊ ምርመራ ዝሕግዝ።",
+            "dental-desc": "ምሉእ ናይ ጥርስ ሕክምና ግልጋሎታት፣ ካብ ልሙድ ምርመራን ጽሬትን ክሳብ ዝተሓላለኸ ተሃድሶን ጽባቐን።",
+            "neurosurgery-desc": "ሰርጀሪ ሕክምና ንሕማማት ኣእምሮ፣ ሓዋስን ካልኦት ነርቮች።",
+            "orthopedics-desc": "ክንክን ንሕማማት ኣዕጽምቲ፣ መገጣጠሚታት፣ ስራቓት፣ ጅማትን ጭዋዳታትን።",
+            "dermatology-cosmetology-desc": "ምርመራን ሕክምናን ንሕማማት ቖርበት፣ ጸጉርን ጽፍርን፣ ከምኡ’ውን ጽባቐን ኣስቴቲካዊን ግልጋሎታት።",
+            "anesthesia-pain-management-desc": "ንሰርጀሪ ዝኸውን ድሕንነታዊ ኣኔስቴዥያን ንዝተፋላለየ ቃንዛን ዘይምቕርን ኣድካሚ ሕክምናን።",
+            "laboratory-desc": "ምሉእ ናይ ላቦራቶሪ ምርመራ ግልጋሎታት ንቅኑዕ ምርመራን ንጥጡሕ ሕሙማት ምሕደራን።",
+            "physiotherapy-desc": "ተሃድሶ ግልጋሎታት ንምንቅስቓስ፣ ሓይልን ተግባርን ንምምላስ ንሕሙማት ድሕሪ ሕማም ወይ መጕዳእቲ።",
+            "psychiatry-desc": "ኣእምሮኣዊ ጥዕና ግልጋሎታት፣ ኣብ ምርመራ፣ ሕክምናን ምክልኻል ስነ-ኣእምሮኣዊ፣ ስምዒታዊን ናይ ባህሪ ሕማማትን ትኹረት ዝገብር።",
+            "ophthalmology-desc": "ምሉእ ናይ ኣዒንቲ ክንክን ግልጋሎታት፣ ምርመራን ሕክምናን ንሕማማት ኣዒንቲ፣ ምስትኽኻል ራእይን ሰርጀሪ ሕክምናን።",
+            "maternity-services-desc": "ምሉእ ናይ ሕርሲ ክንክን፣ ቅድሚ ሕርሲ ክሳብ ድሕሪ ሕርሲ፣ ንጥዕና ወላድን ህፃንን ንምርግጋጽ።",
+            "pharmacy-ambulance-desc-full": "24/7 ፋርማሲ ግልጋሎታትን ኣምቡላንስ ኣገልግሎትን ንኣሳሲ ሕክምናን ሕሙማት ንምብጻሕን።",
+            "other-services-desc": "ካብ ቀንዲ ስፔሻሊስትታትና ወጻኢ፣ ንምሉእ ሕክምናዊ ክንክን ሕሙማት ዝተፈላለዩ ተወሳኺ ሕክምናዊን ደገፍን ግልጋሎታት ንህብ።",
+
+            // Individual Department descriptions for departments.html
+            "dept-surgery-desc": "ክፍሊ ሰርጀሪና ካብ ሓፈሻዊ ክሳብ ልዑል ፍሉይነት ዘለዎም ዝተፈላለዩ ናይ ሰርጀሪ ስርሓት የቕርብ፣ ብልምዲ ዝለዎም ሓኻይም ሰርጀሪ ብምጥቃም ዘመናዊ መሳርሒታት ይካየድ።",
+            "dept-pediatrics-desc": "ፍሉይ ክንክን ንጨናዉን፣ ህፃናትን ታሕተዋይን፣ ኣብ ፍሉይ ጥዕናኦም ብሓልዮትን ብሞያን ትኹረት ዝገብር።",
+            "dept-obsgyn-desc": "ምሉእ ጥዕናዊ ግልጋሎት ንደቂኣንስትዮ፣ ሕርሲ፣ ምውላድ፣ ከምኡ’ውን ዝራባሕ ጥዕና ግልጋሎታት ዝሓወሰ።",
+            "dept-internal-medicine-desc": "ምርመራን ሕክምናን ንሕማማት ዓበይቲ፣ ቀዳማይ ክንክን ብምሃብን ንዝተሓላለኸ ጥዕናዊ ኩነታት ምምሕዳርን።",
+            "dept-orthopedics-desc": "ፍሉይ ክንክን ንስርዓተ-ኣዕጽምቲ፣ ኣዕጽምቲ፣ መገጣጠሚታት፣ ስራቓትን ሕማማት ጭዋዳታትን ዝሓወሰ።",
+            "dept-radiology-desc": "ዘመናዊ ናይ ምርመራ ምስልታት ግልጋሎታት ከም X-ray, CT scan, MRI, and ultrasound ንቅኑዕ ምርመራ ዝሕግዝ።",
+            "dept-oncology-desc": "ምሉእ ሕክምና ነቀርሳ፣ ካብ ምርመራን ሕክምናን ክሳብ ደገፍን ድሕሪ ሕክምና ፕሮግራማትን።",
+            "dept-dermatology-desc": "ምርመራን ሕክምናን ንሕማማት ቖርበት፣ ጸጉርን ጽፍርን፣ ከምኡ’ውን ጽባቐን ኣስቴቲካዊ ግልጋሎታትን።",
+            "dept-psychiatry-desc": "ኣእምሮኣዊ ጥዕና ግልጋሎታት ንዝተፈላለዩ ናይ ስነ-ኣእምሮ ሕማማት፣ ምርመራ፣ ሕክምናን መድሃኒት ምሕደራን ዝቕርብ።",
+            "dept-ophthalmology-desc": "ምሉእ ናይ ኣዒንቲ ክንክን ግልጋሎታት፣ ምርመራን ሕክምናን ንሕማማት ኣዒንቲ፣ ምስትኽኻል ራእይን ሰርጀሪ ሕክምናን።"
         },
         "amh": {
             "hero-main-title": "ግዕዝ ሆስፒታል", // Simplified
@@ -338,7 +404,40 @@ document.addEventListener('DOMContentLoaded', () => {
             "form-message": "መልእክት:",
             "form-submit-btn": "ላክ",
             "our-location-map": "አድራሻችን በካርታ",
-            "view-on-map": "በካርታ ይመልከቱ"
+            "view-on-map": "በካርታ ይመልከቱ",
+
+            // Individual Service descriptions for services.html
+            "internal-medicine-desc": "ሁሉን አቀፍ የውስጥ ደዌ ህክምና ምርመራ እና ህክምና ለአዋቂዎች በሽታዎች፣ ከቀዶ ጥገና ውጭ በሆኑ ዘዴዎች እና የረጅም ጊዜ የጤና አስተዳደር ላይ ትኩረት በማድረግ የሚሰጥ።",
+            "cardiology-desc": "ለልብ እና የደም ቧንቧ ሁኔታዎች ልዩ እንክብካቤ፣ የምርመራ፣ ህክምና እና የመከላከያ ፕሮግራሞችን ጨምሮ።",
+            "general-surgery-desc": "ከመደበኛ እስከ ውስብስብ ቀዶ ህክምናዎች ድረስ ሰፊ የሆነ የቀዶ ህክምና አገልግሎት በሰለጠኑ የቀዶ ህክምና ባለሙያዎች የሚከናወን።",
+            "pediatrics-adolescents-desc": "ለጨቅላ ህጻናት፣ ህጻናት እና ወጣቶች የተወሰነ የህክምና እንክብካቤ፣ እድገታቸውን፣ ልማታቸውን እና ልዩ የጤና ችግሮችን የሚሸፍን።",
+            "obsgyn-desc": "ለሴቶች ሁሉን አቀፍ የጤና አገልግሎቶች፣ ከወሊድ በፊት የሚደረግ እንክብካቤ፣ ወሊድ፣ ከወሊድ በኋላ የሚደረግ እንክብካቤ እና የመራቢያ ጤና አገልግሎቶችን ጨምሮ።",
+            "ent-desc": "ከጆሮ፣ አፍንጫ እና ጉሮሮ ጋር የተያያዙ ችግሮችን መመርመር እና ማከም፣ የራስ እና የአንገት ሁኔታዎችን ጨምሮ።",
+            "radiology-desc": "የላቀ የምርመራ ምስል አገልግሎቶች እንደ ኤክስሬይ፣ ሲቲ ስካን፣ ኤምአርአይ እና አልትራሳውንድ ትክክለኛ የህክምና ምርመራን ለመርዳት።",
+            "dental-desc": "ከመደበኛ ምርመራዎች እና ጽዳት እስከ ውስብስብ የማገገሚያ እና የኮስሜቲክ የጥርስ ህክምና ድረስ ሙሉ የጥርስ ህክምና አገልግሎቶች።",
+            "neurosurgery-desc": "አንጎልን፣ የአከርካሪ አጥንትን እና የዳርቻ ነርቮችን የሚያካትቱ ሁኔታዎች የቀዶ ህክምና።",
+            "orthopedics-desc": "የአጥንት፣ የመገጣጠሚያዎች፣ ጅማቶች፣ ጅማቶች እና ጡንቻዎችን ጨምሮ የአጥንትና ጡንቻ ስርዓት ችግሮችን መንከባከብ።",
+            "dermatology-cosmetology-desc": "የቆዳ፣ የፀጉር እና የጥፍር ሁኔታዎችን መመርመር እና ማከም፣ ከውበት እና የኮስሜቲክ ሂደቶች ጋር።",
+            "anesthesia-pain-management-desc": "ለቀዶ ጥገና ደህንነቱ የተጠበቀ ማደንዘዣ እና የከባድ እና ሥር የሰደደ የህመም ሁኔታዎችን ውጤታማ አስተዳደር መስጠት።",
+            "laboratory-desc": "ትክክለኛ ምርመራ እና ውጤታማ የታካሚ አስተዳደር ወሳኝ የሆኑ አጠቃላይ የላቦራቶሪ ምርመራ አገልግሎቶች።",
+            "physiotherapy-desc": "ከጉዳት ወይም ከበሽታ ለሚያገግሙ ታካሚዎች እንቅስቃሴን፣ ጥንካሬን እና ተግባርን ለመመለስ የማገገሚያ አገልግሎቶች።",
+            "psychiatry-desc": "የአእምሮ፣ ስሜታዊ እና የባህሪ ችግሮችን መመርመር፣ ማከም እና መከላከል ላይ የሚያተኩሩ የአእምሮ ጤና አገልግሎቶች።",
+            "ophthalmology-desc": "ሁሉን አቀፍ የአይን ህክምና አገልግሎቶች፣ የአይን በሽታዎችን መመርመር እና ማከም፣ የማየት ችሎታ ማስተካከያ እና የቀዶ ህክምና ሂደቶችን ጨምሮ።",
+            "maternity-services-desc": "ከወሊድ በፊት እስከ ድህረ ወሊድ ድረስ ሙሉ የወሊድ እንክብካቤ፣ የእናትና ልጅ ጤና እና ደህንነት ማረጋገጥ።",
+            "pharmacy-ambulance-desc-full": "24/7 ፋርማሲ አገልግሎቶች እና የአደጋ ጊዜ አምቡላንስ መጓጓዣ ለከባድ እንክብካቤ እና የታካሚ ዝውውር።",
+            "other-services-desc": "ከዋና ዋና ልዩ ባለሙያዎቻችን በተጨማሪ ሁሉን አቀፍ የታካሚ እንክብካቤን ለማረጋገጥ የተለያዩ ተጨማሪ የህክምና እና የድጋፍ አገልግሎቶችን እናቀርባለን።",
+
+            // Individual Department descriptions for departments.html
+            "dept-surgery-desc": "የቀዶ ህክምና ክፍል አጠቃላይ ከሆኑት እስከ ከፍተኛ ልዩ ለሆኑት ድረስ ሰፊ የሆነ የቀዶ ህክምና አገልግሎቶችን ይሰጣል፣ እነዚህም ልምድ ባላቸው የቀዶ ህክምና ባለሙያዎች ዘመናዊ መሳሪያዎችን በመጠቀም ይከናወናሉ።",
+            "dept-pediatrics-desc": "ለጨቅላ ህጻናት፣ ህጻናት እና ወጣቶች የተወሰነ እንክብካቤ፣ በእዝነትና በሙያዊ ብቃት በልዩ የጤና ፍላጎቶቻቸው ላይ ያተኩራል።",
+            "dept-obsgyn-desc": "ለሴቶች ሁሉን አቀፍ የጤና እንክብካቤ፣ እርግዝናን፣ ወሊድን እና የመራቢያ ጤና አገልግሎቶችን ጨምሮ።",
+            "dept-internal-medicine-desc": "የአዋቂዎች በሽታዎችን መመርመር እና ማከም፣ የመጀመሪያ ደረጃ እንክብካቤን መስጠት እና ውስብስብ የጤና ሁኔታዎችን ማስተዳደር።",
+            "dept-orthopedics-desc": "የአጥንት፣ የመገጣጠሚያዎች፣ ጅማቶች እና ጡንቻዎችን ጨምሮ የጡንቻኮስክሌትታል ስርዓት ችግሮችን ልዩ እንክብካቤ።",
+            "dept-radiology-desc": "ትክክለኛ ምርመራን ለመርዳት እንደ ኤክስሬይ፣ ሲቲ ስካን፣ ኤምአርአይ እና አልትራሳውንድ ያሉ የላቀ የምርመራ ምስል አገልግሎቶች።",
+            "dept-oncology-desc": "ከምርመራ እና ህክምና እስከ ደጋፊ እንክብካቤ እና የድህረ-ህክምና ፕሮግራሞች ድረስ ሁሉን አቀፍ የካንሰር እንክብካቤ።",
+            "dept-dermatology-desc": "የቆዳ፣ የፀጉር እና የጥፍር ሁኔታዎችን መመርመር እና ማከም፣ የውበት እና የመዋቢያ አገልግሎቶችን ጨምሮ።",
+            "dept-psychiatry-desc": "ለተለያዩ የአእምሮ ህክምና ሁኔታዎች የአእምሮ ጤና አገልግሎቶች፣ ምርመራ፣ ህክምና እና የመድሃኒት አስተዳደርን ጨምሮ።",
+            "dept-ophthalmology-desc": "ሁሉን አቀፍ የአይን ህክምና አገልግሎቶች፣ የአይን በሽታዎችን መመርመር እና ማከም፣ የማየት ችሎታ ማስተካከያ እና የቀዶ ህክምና ሂደቶችን ጨምሮ።"
         }
     };
 
@@ -350,30 +449,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 // For input placeholders
                 if (element.tagName === 'INPUT' && element.hasAttribute('placeholder')) {
                     element.setAttribute('placeholder', translations[lang][key]);
-                } else if (element.tagName === 'OPTION' && element.parentElement.id === 'gender') {
-                    // Specific handling for gender select options if needed, but innerHTML should work
+                } else if (element.tagName === 'TITLE') {
+                    // Update document title separately to ensure it's always set correctly
+                    document.title = translations[lang][key];
+                } else if (element.tagName === 'SPAN' && element.closest('.footer-info')) {
+                    // For the footer-text, which contains spans and br tags
                     element.innerHTML = translations[lang][key];
                 }
                 else {
+                    // For general elements, use innerHTML to allow for HTML tags within translations
                     element.innerHTML = translations[lang][key];
                 }
             }
         });
-        // Update document title
-        const titleElement = document.querySelector('title');
-        if (titleElement && titleElement.hasAttribute('data-translate')) {
-            const titleKey = titleElement.getAttribute('data-translate');
-            if (translations[lang] && translations[lang][titleKey]) {
-                titleElement.textContent = translations[lang][titleKey];
-            }
-        }
 
         // Handle specific elements that might need dynamic content updates beyond innerHTML
-        const currentPath = window.location.pathname;
+        const currentPath = window.location.pathname.split('/').pop(); // Get just the filename
 
         // Generic function for updating hero paragraph
-        const updateHeroParagraph = (pageIdentifier, h2Key, pKey) => {
-            if (currentPath.includes(pageIdentifier)) {
+        const updateHeroSectionContent = (pageFilename, h2Key, pKey) => {
+            if (currentPath === pageFilename) {
                 const heroH2 = document.querySelector('.hero-section.inner-hero h2');
                 const heroP = document.querySelector('.hero-section.inner-hero p');
                 if (heroH2 && translations[lang][h2Key]) {
@@ -386,16 +481,119 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         // Apply to specific pages that use inner-hero
-        updateHeroParagraph('about.html', 'about-h2', 'about-p');
-        updateHeroParagraph('departments.html', 'departments-h2', 'departments-p');
-        updateHeroParagraph('facilities.html', 'facilities-h2', 'facilities-p');
-        updateHeroParagraph('patient-info.html', 'patient-info-h2', 'patient-info-p');
-        updateHeroParagraph('articles.html', 'articles-h2', 'articles-p');
-        updateHeroParagraph('contact.html', 'contact-h2', 'contact-p');
-        updateHeroParagraph('gallery.html', 'gallery-h2', 'gallery-p');
-        updateHeroParagraph('news.html', 'news-h2', 'news-p');
-        updateHeroParagraph('services.html', 'services-page-h2', 'services-page-intro-p'); // Specific for services
-        updateHeroParagraph('doctors.html', 'doctors-page-title', 'doctors-page-intro'); // Specific for doctors
+        updateHeroSectionContent('about.html', 'about-h2', 'about-p');
+        updateHeroSectionContent('departments.html', 'departments-h2', 'departments-p');
+        updateHeroSectionContent('facilities.html', 'facilities-h2', 'facilities-p');
+        updateHeroSectionContent('patient-info.html', 'patient-info-h2', 'patient-info-p');
+        updateHeroSectionContent('articles.html', 'articles-h2', 'articles-p');
+        updateHeroSectionContent('contact.html', 'contact-h2', 'contact-p');
+        updateHeroSectionContent('gallery.html', 'gallery-h2', 'gallery-p');
+        updateHeroSectionContent('news.html', 'news-h2', 'news-p');
+        updateHeroSectionContent('services.html', 'services-page-h2', 'services-page-intro-p');
+        updateHeroSectionContent('doctors.html', 'doctors-page-title', 'doctors-page-intro');
+
+        // Special handling for index.html hero section
+        if (currentPath === 'index.html') {
+            const indexHeroH1 = document.querySelector('#hero-section h1[data-translate="hero-main-title"]');
+            const indexHeroH2 = document.querySelector('#hero-section h2[data-translate="hero-h2"]');
+            const indexHeroP = document.querySelector('#hero-section p[data-translate="hero-p"]');
+
+            if (indexHeroH1 && translations[lang]['hero-main-title']) {
+                // Ensure the span tags are preserved for styling, update only text content
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = translations[lang]['hero-main-title'];
+                indexHeroH1.innerHTML = tempDiv.innerHTML;
+            }
+            if (indexHeroH2 && translations[lang]['hero-h2']) {
+                indexHeroH2.textContent = translations[lang]['hero-h2'];
+            }
+            if (indexHeroP && translations[lang]['hero-p']) {
+                indexHeroP.textContent = translations[lang]['hero-p'];
+            }
+        }
+
+
+        // Update specific descriptions on services.html
+        if (currentPath === 'services.html') {
+            const serviceDescriptions = {
+                "service-internal-medicine-item": "internal-medicine-desc",
+                "service-cardiology-item": "cardiology-desc",
+                "service-general-surgery-item": "general-surgery-desc",
+                "service-pediatrics-item": "pediatrics-adolescents-desc", // Corrected key
+                "service-obsgyn-item": "obsgyn-desc",
+                "service-ent-item": "ent-desc",
+                "service-radiology-item": "radiology-desc",
+                "service-dental-item": "dental-desc",
+                "service-neurosurgery-item": "neurosurgery-desc",
+                "service-orthopedics-item": "orthopedics-desc",
+                "service-dermatology-item": "dermatology-cosmetology-desc", // Corrected key
+                "service-anesthesia-item": "anesthesia-pain-management-desc", // Corrected key
+                "service-laboratory-item": "laboratory-desc",
+                "service-physiotherapy-item": "physiotherapy-desc",
+                "service-psychiatry-item": "psychiatry-desc",
+                "service-ophthalmology-item": "ophthalmology-desc",
+                "service-maternity-item": "maternity-services-desc", // Corrected key
+                "service-pharmacy-ambulance-item": "pharmacy-ambulance-desc-full", // Corrected key
+                "service-other-item": "other-services-desc"
+            };
+
+            for (const id in serviceDescriptions) {
+                const element = document.querySelector(`#${id} p`);
+                if (element && translations[lang][serviceDescriptions[id]]) {
+                    element.textContent = translations[lang][serviceDescriptions[id]];
+                }
+            }
+        }
+
+        // Update specific descriptions on departments.html
+        if (currentPath === 'departments.html') {
+            const departmentDescriptions = {
+                "dept-surgery-item": "dept-surgery-desc",
+                "dept-pediatrics-item": "dept-pediatrics-desc",
+                "dept-obsgyn-item": "dept-obsgyn-desc",
+                "dept-internal-medicine-item": "dept-internal-medicine-desc",
+                "dept-orthopedics-item": "dept-orthopedics-desc",
+                "dept-radiology-item": "dept-radiology-desc",
+                "dept-oncology-item": "dept-oncology-desc",
+                "dept-dermatology-item": "dept-dermatology-desc",
+                "dept-psychiatry-item": "dept-psychiatry-desc",
+                "dept-ophthalmology-item": "dept-ophthalmology-desc",
+                // Add keys for oral-dental-maxillofacial and ent-plastic-surgery if they have distinct descriptions
+                "dept-oral-dental-maxillofacial-item": "dept-oral-dental-maxillofacial-desc", // Assuming you'll add this desc to translations
+                "dept-ent-plastic-surgery-item": "dept-ent-plastic-surgery-desc" // Assuming you'll add this desc to translations
+            };
+
+            for (const id in departmentDescriptions) {
+                const element = document.querySelector(`#${id} p`);
+                if (element && translations[lang][departmentDescriptions[id]]) {
+                    element.textContent = translations[lang][departmentDescriptions[id]];
+                }
+            }
+        }
+
+        // Update text for doctors.html cards (specialties)
+        if (currentPath === 'doctors.html') {
+            const doctorSpecialties = {
+                "doctor-tesfa": "dr-tesfa-specialty", // Example, adjust based on your doctor data in translations
+                "doctor-rahel": "dr-rahel-specialty",
+                "doctor-hana": "dr-hana-specialty",
+                "doctor-samuel": "dr-samuel-specialty",
+                "doctor-yonas": "dr-yonas-specialty",
+                "doctor-sara": "dr-sara-specialty",
+                "doctor-dawit": "dr-dawit-specialty",
+                "doctor-eden": "dr-eden-specialty",
+                "doctor-mekonen": "dr-mekonen-specialty",
+                "doctor-senait": "dr-senait-specialty",
+                "doctor-fisseha": "dr-fisseha-specialty"
+            };
+
+            for (const id in doctorSpecialties) {
+                const element = document.querySelector(`#${id} .doctor-specialty`); // Assuming a class 'doctor-specialty' for the p tag
+                if (element && translations[lang][doctorSpecialties[id]]) {
+                    element.textContent = translations[lang][doctorSpecialties[id]];
+                }
+            }
+        }
     }
 
 
@@ -444,7 +642,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mobile Navigation Toggle (Hamburger menu toggle)
     const navToggle = document.getElementById('nav-toggle');
-    const navMenu = document.querySelector('nav ul');
+    const navMenu = document.querySelector('nav ul'); // Assumed nav ul is the main menu for mobile
     if (navToggle && navMenu) {
         navToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active'); // Add/remove 'active' class
@@ -481,11 +679,11 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', (event) => {
         if (window.innerWidth <= 992) { // Match breakpoint
             const header = document.querySelector('header');
-            const isClickInsideHeader = header.contains(event.target);
+            const isClickInsideHeader = header && header.contains(event.target);
             const isClickOnNavToggle = navToggle && navToggle.contains(event.target);
 
             if (!isClickInsideHeader && !isClickOnNavToggle) { // Only close if click is completely outside header
-                navMenu.classList.remove('active');
+                if (navMenu) navMenu.classList.remove('active');
                 document.querySelectorAll('nav ul li.dropdown .submenu').forEach(submenu => {
                     submenu.style.display = 'none';
                 });
@@ -497,19 +695,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // Search functionality
     const searchInputDesktop = document.getElementById('search-input');
     const searchButtonDesktop = document.getElementById('search-button');
-    const searchInputMobile = document.getElementById('search-input-mobile');
-    const searchButtonMobile = document.getElementById('search-button-mobile');
+    // Assuming you have mobile search input/button as well, e.g., on a mobile header
+    const searchInputMobile = document.getElementById('search-input-mobile'); // Placeholder
+    const searchButtonMobile = document.getElementById('search-button-mobile'); // Placeholder
 
 
     function handleSearch() {
         let query = '';
         if (window.innerWidth > 992 && searchInputDesktop) {
             query = searchInputDesktop.value.toLowerCase();
-        } else if (window.innerWidth <= 992 && searchInputMobile) {
+        } else if (window.innerWidth <= 992 && searchInputMobile) { // Use mobile if screen is small
             query = searchInputMobile.value.toLowerCase();
         }
 
         if (query) {
+            // For now, redirect to a generic search page. You can implement in-page search later.
             window.location.href = `search.html?query=${encodeURIComponent(query)}`;
         }
     }
@@ -522,6 +722,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    // Only attach if mobile search elements exist
     if (searchButtonMobile && searchInputMobile) {
         searchButtonMobile.addEventListener('click', handleSearch);
         searchInputMobile.addEventListener('keypress', (e) => {
@@ -532,12 +733,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // Dynamic content filtering for departments.html (and similar for services/doctors)
-    const currentPath = window.location.pathname;
+    // Dynamic content filtering for services, departments, doctors pages
+    const currentPath = window.location.pathname.split('/').pop(); // Get just the filename
 
     // Function to filter items based on URL parameter
-    function applyPageFilter(pageIdentifier, paramName, itemClass, idMapping = {}) {
-        if (currentPath.includes(pageIdentifier)) {
+    function applyPageFilter(pageFilename, paramName, itemClass, idPrefix = '') {
+        if (currentPath === pageFilename) {
             const urlParams = new URLSearchParams(window.location.search);
             const selectedParam = urlParams.get(paramName);
 
@@ -548,75 +749,120 @@ document.addEventListener('DOMContentLoaded', () => {
                     item.style.display = 'none'; // Hide all
                 });
 
-                const targetId = idMapping[selectedParam] || selectedParam; // Use mapping or default to param
-                const targetItem = document.getElementById(targetId + '-item'); // Assuming IDs end with '-item'
+                const targetId = `${idPrefix}${selectedParam}-item`; // Construct ID like 'service-internal-medicine-item'
+                const targetItem = document.getElementById(targetId);
 
                 if (targetItem) {
-                    targetItem.style.display = getComputedStyle(targetItem).display === 'none' ? 'block' : getComputedStyle(targetItem).display; // Restore original display type or 'block'
+                    targetItem.style.display = 'block'; // Show the selected item
+                    targetItem.scrollIntoView({ behavior: 'smooth', block: 'center' }); // Scroll to it
                 }
             } else {
                 // If no specific parameter, ensure all items are visible
                 allItems.forEach(item => {
-                    item.style.display = getComputedStyle(item).display === 'none' ? 'block' : getComputedStyle(item).display; // Restore original display
+                    item.style.display = 'block'; // Show all
                 });
             }
         }
     }
-
-    // Define ID mappings for services and doctors if their IDs don't directly match the URL parameter
-    // Ensure these match the actual IDs in your HTML files (e.g., id="service-internal-medicine-item")
-    const serviceIdMapping = {
-        "internal-medicine": "service-internal-medicine", 
-        "cardiology": "service-cardiology",
-        "general-surgery": "service-general-surgery",
-        "pediatrics": "service-pediatrics",
-        "obsgyn": "service-obsgyn",
-        "ent": "service-ent",
-        "radiology": "service-radiology",
-        "dental": "service-dental",
-        "neurosurgery": "service-neurosurgery",
-        "orthopedics": "service-orthopedics",
-        "dermatology": "service-dermatology",
-        "anesthesia": "service-anesthesia",
-        "laboratory": "service-laboratory",
-        "physiotherapy": "service-physiotherapy",
-        "psychiatry": "service-psychiatry",
-        "maternity": "service-maternity", // Corrected to match service16-h3
-        "pharmacy-ambulance": "service-pharmacy-ambulance", // Corrected to match service17-h3
-        "other": "service-other", // Corrected to match service18-h3
-    };
-
-    const doctorIdMapping = {
-        "surgeons": "doctor-surgeons",
-        "gynecologists": "doctor-gynecologists",
-        "pediatricians": "doctor-pediatricians",
-        "internists": "doctor-internists",
-        "orthopedicians": "doctor-orthopedicians",
-        "radiologists": "doctor-radiologists",
-        "oncologists": "doctor-oncologists",
-        "maxillofacial": "doctor-maxillofacial",
-        "ent-plastic": "doctor-ent-plastic",
-        "dermatologists": "doctor-dermatologists",
-        "psychiatrists": "doctor-psychiatrists",
-        // No specific mapping needed for ophthalmologists yet, as you don't have a direct link for them in doctors.html
-    };
-
-
+    
     // Apply filters to respective pages
-    applyPageFilter('departments.html', 'dept', 'department-item', {
-        "surgery": "dept-surgery",
-        "pediatrics": "dept-pediatrics",
-        "obsgyn": "dept-obsgyn",
-        "internal-medicine": "dept-internal-medicine",
-        "orthopedics": "dept-orthopedics",
-        "radiology": "dept-radiology",
-        "oncology": "dept-oncology",
-        "oral-dental-maxillofacial": "dept-oral-dental-maxillofacial", // Ensure this matches HTML ID
-        "dermatology": "dept-dermatology",
-        "ent-plastic-surgery": "dept-ent-plastic-surgery", // Ensure this matches HTML ID
-        "ophthalmology": "dept-ophthalmology",
-        "psychiatry": "dept-psychiatry"
-    });
-    applyPageFilter('services.html', 'service', 'service-item', serviceIdMapping);
-    applyPageFilter('doctors.html', 'specialty', 'doctor-card', doctorIdMapping); 
+    // Note: The idPrefix ensures the generated ID matches your HTML IDs
+    applyPageFilter('services.html', 'service', 'service-item', 'service-');
+    applyPageFilter('departments.html', 'dept', 'department-item', 'dept-');
+    applyPageFilter('doctors.html', 'specialty', 'doctor-card', 'doctor-');
+
+    // Sticky Header (optional, can be done with CSS too)
+    const header = document.querySelector('header');
+    const topBar = document.querySelector('.top-bar'); // Get the top bar
+    let headerOffset = 0;
+    if (header) {
+        headerOffset = header.offsetTop;
+    }
+
+    function stickyHeader() {
+        if (header) {
+            if (window.pageYOffset > headerOffset) {
+                header.classList.add('sticky');
+                // Optional: add padding to body to prevent content jump
+                // document.body.style.paddingTop = header.offsetHeight + 'px';
+            } else {
+                header.classList.remove('sticky');
+                // document.body.style.paddingTop = '0';
+            }
+        }
+    }
+    window.addEventListener('scroll', stickyHeader);
+
+
+    // Initial setup of dynamic menu links on page load
+    function setupDynamicMenuLinks() {
+        // Services Submenu
+        document.querySelectorAll('ul.submenu a[href^="services.html?service="]').forEach(link => {
+            // Extract the data-translate key and use it to build the service parameter
+            const dataTranslateKey = link.getAttribute('data-translate');
+            // Example: "service1-h3" -> "service1" or "internal-medicine" if your translation key is structured that way
+            let serviceParam = '';
+            if (dataTranslateKey.includes('-h3')) {
+                // If key is like "service1-h3", remove "-h3" to get "service1"
+                serviceParam = dataTranslateKey.replace('-h3', '');
+            } else {
+                // If key is already clean like "internal-medicine"
+                // You might need a more robust mapping here if translation keys are not direct service names
+                const serviceKeyMap = {
+                    "internal-medicine": "internal-medicine",
+                    "cardiology": "cardiology",
+                    "general-surgery": "general-surgery",
+                    "pediatrics-adolescents": "pediatrics", // Maps "pediatrics-adolescents" to "pediatrics" in URL
+                    "obsgyn": "obsgyn",
+                    "ent": "ent",
+                    "radiology": "radiology",
+                    "dental": "dental",
+                    "neurosurgery": "neurosurgery",
+                    "orthopedics": "orthopedics",
+                    "dermatology-cosmetology": "dermatology", // Maps "dermatology-cosmetology" to "dermatology" in URL
+                    "anesthesia-pain-management": "anesthesia", // Maps to "anesthesia"
+                    "laboratory": "laboratory",
+                    "physiotherapy": "physiotherapy",
+                    "psychiatry": "psychiatry",
+                    "ophthalmology": "ophthalmology",
+                    "maternity-services": "maternity", // Maps "maternity-services" to "maternity"
+                    "pharmacy-ambulance": "pharmacy-ambulance", // Maps "pharmacy-ambulance" to "pharmacy-ambulance"
+                    "other-services": "other" // Maps "other-services" to "other"
+                };
+                serviceParam = serviceKeyMap[dataTranslateKey] || dataTranslateKey; // Use map or fallback
+            }
+            link.href = `services.html?service=${serviceParam}`;
+        });
+
+        // Doctors Submenu
+        document.querySelectorAll('ul.submenu a[href^="doctors.html?specialty="]').forEach(link => {
+            const dataTranslateKey = link.getAttribute('data-translate');
+            let specialtyParam = dataTranslateKey.replace('menu-', ''); // e.g., "menu-surgeons" -> "surgeons"
+            // You might need more specific mappings here if your URL parameters differ from menu-keys
+            // E.g., if "menu-ent-plastic" should map to "ent-plastic-surgery" in URL
+            const doctorKeyMap = {
+                "ent-plastic": "ent-plastic-surgery",
+                "maxillofacial": "maxillofacial" // Assuming it's already "maxillofacial"
+            };
+            specialtyParam = doctorKeyMap[specialtyParam] || specialtyParam;
+            link.href = `doctors.html?specialty=${specialtyParam}`;
+        });
+
+        // Departments Submenu
+        document.querySelectorAll('ul.submenu a[href^="departments.html?dept="]').forEach(link => {
+            const dataTranslateKey = link.getAttribute('data-translate');
+            let deptParam = dataTranslateKey.replace('dept-', ''); // e.g., "dept-surgery" -> "surgery"
+            // Specific mappings for department URLs if needed
+            const departmentKeyMap = {
+                "oral-dental-maxillofacial": "oral-dental-maxillofacial", // Example mapping
+                "ent-plastic-surgery": "ent-plastic-surgery" // Example mapping
+            };
+            deptParam = departmentKeyMap[deptParam] || deptParam;
+            link.href = `departments.html?dept=${deptParam}`;
+        });
+    }
+
+    // Call setupDynamicMenuLinks on initial load
+    setupDynamicMenuLinks();
+
 });
