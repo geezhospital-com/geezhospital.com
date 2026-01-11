@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Language translation data
     const translations = {
         "eng": {
-            "hero-main-title": "Geez Hospital", // Simplified
-            "hero-h2": "Chosen for our care, trusted for our expertise!.",
+            "hero-main-title": "Geez Hospital",
+            "hero-h2": "Chosen for our care, trusted for our expertise!",
             "hero-p": "Prioritizing your health, we offer comprehensive services with the finest specialists and sub-specialists, combined with modern technological equipment. For any inquiries or to book an appointment, please register here.",
             "hero-btn-appointment": "Book an Appointment",
             "hero-btn-services": "View Our Services",
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "menu-ent-plastic": "ENT, Head & Neck and Plastic Surgeons",
             "menu-dermatologists": "Dermatologists",
             "menu-psychiatrists": "Psychiatrists",
-            "menu-ophthalmologists": "Ophthalmologists", // This key is present in your translations but not directly in the HTML menu
+            "menu-ophthalmologists": "Ophthalmologists",
             "departments": "Departments",
             "dept-surgery": "Surgery",
             "dept-pediatrics": "Pediatrics",
@@ -67,38 +67,43 @@ document.addEventListener('DOMContentLoaded', () => {
             "patient-satisfaction-survey": "Patient Satisfaction Survey",
             "contact": "Contact Us",
             "search-placeholder": "Search...",
-            "footer-text": "Copyright © 2026 <span class=\"geez-color\">Geez</span> <span class=\"hospital-color\">Hospital</span><br>Developed By Aser Teklu Gebrekidan-0911179955",
-            "about-h2": "About Us", // Assuming this is for about.html hero
-            "about-p": "Learn more about Geez Hospital, our mission, vision, and the core values that guide us in providing exceptional healthcare.", // Assuming for about.html hero
-            "about-h3": "About Us", // Assuming for about.html general section title
+            "site-main-title": "<span class=\"geez-color\">Geez</span> <span class=\"hospital-color\">Hospital</span>", // New key for the logo title
+            "footer-copyright-text": "Copyright © 2026 Geez Hospital<br>Developed By Aser Teklu Gebrekidan-0911179955", // Updated key
+
+            "about-h2": "About Us",
+            "about-p": "Learn more about Geez Hospital, our mission, vision, and the core values that guide us in providing exceptional healthcare.",
+            "about-h3": "About Us",
             "about-p1": "Established in 2011 E.C., Geez Hospital is one of the leading institutions in the central zone and Tigray, providing modern and efficient medical services with international standards. We aim to make world-class healthcare accessible to every citizen, becoming one of the largest and most trusted medical institutions in the entire zone and its surroundings. We are founded on providing compassionate care, high professional competence, and modern equipment. We place great emphasis on patient safety and excellent service.",
             "mission-h3": "Our Mission",
             "mission-p": "To provide excellent, affordable, accessible, and accountable medical care to all citizens; to offer comprehensive, high-quality, and affordable healthcare that combines professional excellence with compassionate care; to create a world-class medical practice and uphold the highest medical ethics.",
             "vision-h3": "Our Vision",
             "vision-p": "We envision a future where Geez Hospital is synonymous with innovation, empathy, and unparalleled medical outcomes, setting new benchmarks for healthcare excellence across the continent.",
-            "services-h3": "Services Overview", // For about.html services overview section
+            "services-h3": "Services Overview",
             "services-p-about": "At Geez Hospital, we are dedicated to offering a comprehensive suite of medical services designed to meet the diverse needs of our community. Our state-of-the-art facilities and a team of dedicated professionals ensure that you receive the best possible care across all specialties.",
-            "services-page-h2": "Our Services", // For services.html hero
-            "services-page-intro-p": "Geez Hospital offers diverse and modern services provided by highly qualified specialists and sub-specialists.", // For services.html hero
+            "services-page-title": "Our Services", // New key for services.html hero h2
+            "services-page-description": "Geez Hospital offers diverse and modern services provided by highly qualified specialists and sub-specialists.", // New key for services.html hero p
+            "our-services-heading": "Explore Our Specialized Services", // New key for services grid section title
+            "services-intro-text": "At Geez Hospital, we are dedicated to providing a wide range of high-quality medical services to meet the diverse needs of our patients. Our specialized departments are staffed by experienced professionals committed to your health and well-being.", // New key for services grid intro
+            "read-more": "Read More", // New key for read more buttons
             "all-services-btn": "View All Our Services",
-            "departments-h2": "Our Departments", // For departments.html hero
-            "departments-p": "Explore the specialized departments at Geez Hospital, where expert care meets advanced technology.", // For departments.html hero
-            "facilities-h2": "Our Facilities", // For facilities.html hero
-            "facilities-p": "Geez Hospital is equipped with state-of-the-art medical technology and modern facilities to provide you with the best possible care.", // For facilities.html hero
-            "doctors-page-title": "Our Doctors", // For doctors.html hero
-            "doctors-page-intro": "Geez Hospital provides various services with highly qualified and experienced specialists and sub-specialists. Chosen for our care, trusted for our expertise.", // For doctors.html hero
-            "patient-info-h2": "Patient Information", // For patient-info.html hero
-            "patient-info-p": "Find essential information for your visit, including admission, discharge, rights, and responsibilities.", // For patient-info.html hero
-            "articles-h2": "Health Articles", // For articles.html hero
-            "articles-p": "Stay informed with our latest health articles, tips, and medical insights from our expert team.", // For articles.html hero
-            "news-h2": "News and Events", // For news.html hero
-            "news-p": "Follow the latest news, medical advice, and important updates from Geez Hospital here.", // For news.html hero
-            "gallery-h2": "Gallery", // For gallery.html hero
-            "gallery-p": "View various images of Geez Hospital, including all modern equipment and medical care provided.", // For gallery.html hero
-            "contact-h2": "Contact Us", // Added for contact page hero title
-            "contact-p": "For any inquiries or to book an appointment, please reach out to us.", // Added for contact page hero paragraph
-            "contact-form-title": "Send us a Message", // Added for contact form title
-            "form-full-name": "Full Name:", // Added for form labels
+            "departments-h2": "Our Departments",
+            "departments-p": "Explore the specialized departments at Geez Hospital, where expert care meets advanced technology.",
+            "facilities-h2": "Our Facilities",
+            "facilities-p": "Geez Hospital is equipped with state-of-the-art medical technology and modern facilities to provide you with the best possible care.",
+            "doctors-page-title": "Our Doctors",
+            "doctors-page-intro": "Geez Hospital provides various services with highly qualified and experienced specialists and sub-specialists. Chosen for our care, trusted for our expertise.",
+            "patient-info-h2": "Patient Information",
+            "patient-info-p": "Find essential information for your visit, including admission, discharge, rights, and responsibilities.",
+            "articles-h2": "Health Articles",
+            "articles-p": "Stay informed with our latest health articles, tips, and medical insights from our expert team.",
+            "news-h2": "News and Events",
+            "news-p": "Follow the latest news, medical advice, and important updates from Geez Hospital here.",
+            "gallery-h2": "Gallery",
+            "gallery-p": "View various images of Geez Hospital, including all modern equipment and medical care provided.",
+            "contact-h2": "Contact Us",
+            "contact-p": "For any inquiries or to book an appointment, please reach out to us.",
+            "contact-form-title": "Send us a Message",
+            "form-full-name": "Full Name:",
             "form-email": "Email:",
             "form-subject": "Subject/Service:",
             "form-phone": "Phone Number:",
@@ -111,29 +116,34 @@ document.addEventListener('DOMContentLoaded', () => {
             "form-gender-other": "Other",
             "form-message": "Message:",
             "form-submit-btn": "Send",
-            "our-location-map": "Our Location on Map", // Added for map section title
-            "view-on-map": "View on Map", // Added for map button text
+            "our-location-map": "Our Location on Map",
+            "view-on-map": "View on Map",
+            
+            // Service Detail Page specific translations
+            "service-detail-page-title": "Service Detail - Geez Hospital",
+            "service-detail-page-description": "Detailed information about our specialized medical services.",
 
-            // Individual Service descriptions for services.html
-            "internal-medicine-desc": "Comprehensive internal medicine diagnosis and treatment are provided by highly experienced and professional specialist doctors.",
-            "cardiology-desc": "Specialized cardiac disease diagnosis and treatment are provided by highly experienced and professional sub-specialist doctors.",
-            "general-surgery-desc": "General surgery is performed using modern equipment and techniques.",
-            "pediatrics-adolescents-desc": "Dedicated medical care for infants, children, and teenagers, covering their growth, development, and specific health issues.",
-            "obsgyn-desc": "Comprehensive health services for women, including prenatal care, childbirth, postnatal care, and reproductive health.",
-            "ent-desc": "Diagnosis and treatment of disorders related to the ear, nose, and throat, including head and neck conditions.",
-            "radiology-desc": "Advanced diagnostic imaging services such as X-rays, CT scans, MRI, and ultrasound to aid in accurate medical diagnosis.",
-            "dental-desc": "Full range of dental services, from routine check-ups and cleanings to complex restorative and cosmetic dentistry.",
-            "neurosurgery-desc": "Surgical treatment for conditions affecting the brain, spinal cord, and peripheral nerves.",
-            "orthopedics-desc": "Care for musculoskeletal system disorders, including bones, joints, ligaments, tendons, and muscles.",
-            "dermatology-cosmetology-desc": "Diagnosis and treatment of skin, hair, and nail conditions, along with aesthetic and cosmetic procedures.",
-            "anesthesia-pain-management-desc": "Providing safe anesthesia for surgeries and effective management of acute and chronic pain conditions.",
-            "laboratory-desc": "Comprehensive laboratory testing services crucial for accurate diagnosis and effective patient management.",
-            "physiotherapy-desc": "Rehabilitation services to restore movement, strength, and function for patients recovering from injury or illness.",
-            "psychiatry-desc": "Mental health services focusing on the diagnosis, treatment, and prevention of mental, emotional, and behavioral disorders.",
-            "ophthalmology-desc": "Comprehensive eye care services, including diagnosis and treatment of eye diseases, vision correction, and surgical procedures.",
-            "maternity-services-desc": "Full range of maternity care, from prenatal to postpartum, ensuring the health and well-being of mother and baby.",
-            "pharmacy-ambulance-desc-full": "24/7 pharmacy services and emergency ambulance transportation for critical care and patient transfer.",
-            "other-services-desc": "Beyond our core specialties, we offer a variety of additional medical and supportive services to ensure holistic patient care.",
+
+            // Individual Service descriptions (short for services.html, full for service-detail.html)
+            "service1-desc-short": "Comprehensive diagnosis and treatment for adult diseases, focusing on non-surgical approaches and long-term health management.",
+            "service2-desc-short": "Specialized care for heart and vascular conditions, including diagnostics, treatment, and preventive programs.",
+            "service3-desc-short": "Offering a wide range of surgical procedures, from routine to complex operations, performed by skilled surgeons.",
+            "service4-desc-short": "Dedicated medical care for infants, children, and teenagers, covering their growth, development, and specific health issues.",
+            "service5-desc-short": "Comprehensive health services for women, including prenatal care, childbirth, postnatal care, and reproductive health.",
+            "service6-desc-short": "Diagnosis and treatment of disorders related to the ear, nose, and throat, including head and neck conditions.",
+            "service7-desc-short": "Advanced diagnostic imaging services such as X-rays, CT scans, MRI, and ultrasound to aid in accurate medical diagnosis.",
+            "service8-desc-short": "Full range of dental services, from routine check-ups and cleanings to complex restorative and cosmetic dentistry.",
+            "service9-desc-short": "Surgical treatment for conditions affecting the brain, spinal cord, and peripheral nerves.",
+            "service10-desc-short": "Care for musculoskeletal system disorders, including bones, joints, ligaments, tendons, and muscles.",
+            "service11-desc-short": "Diagnosis and treatment of skin, hair, and nail conditions, along with aesthetic and cosmetic procedures.",
+            "service12-desc-short": "Providing safe anesthesia for surgeries and effective management of acute and chronic pain conditions.",
+            "service13-desc-short": "Comprehensive laboratory testing services crucial for accurate diagnosis and effective patient management.",
+            "service14-desc-short": "Rehabilitation services to restore movement, strength, and function for patients recovering from injury or illness.",
+            "service15-desc-short": "Mental health services focusing on the diagnosis, treatment, and prevention of mental, emotional, and behavioral disorders.",
+            "service16-desc-short": "Comprehensive eye care services, including diagnosis and treatment of eye diseases, vision correction, and surgical procedures.",
+            "service17-desc-short": "Full range of maternity care, from prenatal to postpartum, ensuring the health and well-being of mother and baby.",
+            "service18-desc-short": "24/7 pharmacy services and emergency ambulance transportation for critical care and patient transfer.",
+            "service19-desc-short": "Beyond our core specialties, we offer a variety of additional medical and supportive services to ensure holistic patient care.",
 
             // Individual Department descriptions for departments.html
             "dept-surgery-desc": "Our surgery department offers a wide range of surgical procedures, from general to highly specialized operations, performed by experienced surgeons using state-of-the-art equipment.",
@@ -145,7 +155,22 @@ document.addEventListener('DOMContentLoaded', () => {
             "dept-oncology-desc": "Comprehensive cancer care, from diagnosis and treatment to supportive care and survivorship programs.",
             "dept-dermatology-desc": "Diagnosis and treatment of skin, hair, and nail conditions, including cosmetic and aesthetic services.",
             "dept-psychiatry-desc": "Mental health services for various psychiatric conditions, offering diagnosis, therapy, and medication management.",
-            "dept-ophthalmology-desc": "Comprehensive eye care services, including diagnosis and treatment of eye diseases, vision correction, and surgical procedures."
+            "dept-ophthalmology-desc": "Comprehensive eye care services, including diagnosis and treatment of eye diseases, vision correction, and surgical procedures.",
+            "dept-oral-dental-maxillofacial-desc": "Specialized care for oral, dental, and maxillofacial conditions, including surgical and reconstructive procedures.", // Example description
+            "dept-ent-plastic-surgery-desc": "Comprehensive services for ENT conditions, head and neck surgery, and reconstructive plastic surgery.", // Example description
+
+            // Doctor Specialties (for doctors.html or doctor-detail.html if implemented)
+            "dr-tesfay-specialty": "Internal Medicine Specialist", // Example
+            "dr-rahel-specialty": "Cardiologist",
+            "dr-hana-specialty": "General Surgeon",
+            "dr-samuel-specialty": "Pediatrician",
+            "dr-yonas-specialty": "Obstetrician & Gynecologist",
+            "dr-sara-specialty": "ENT Specialist",
+            "dr-dawit-specialty": "Radiologist",
+            "dr-eden-specialty": "Dental Surgeon",
+            "dr-mekonen-specialty": "Neurosurgeon",
+            "dr-senait-specialty": "Orthopedic Surgeon",
+            "dr-fisseha-specialty": "Dermatologist"
         },
         "tig": {
             "hero-main-title": "ግዕዝ ሆስፒታል",
@@ -153,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "hero-p": "ንጥዕናኹም ቀዳምነት ብምሃብ፣ ብሉፃት ስፔሻሊስትን ሳብስፔሻሊስትታትን ሓኻይም ምስ ዘመናዊ ቴክኖሎጂ መሳርሒታት(ማሽን) ኣዋዲድንና ንፅበየኩም ኣለና። ንዝኾነ ሕቶ ወይ ቆፀሮ ንምሓዝ በይዝኦም ኣብዚ ይመዝገቡ።",
             "hero-btn-appointment": "ቆፀሮ ንምሓዝ",
             "hero-btn-services": "ግልጋሎታትና ርኣዩ",
-            "contact-us-btn": "ተወከሰና", // Changed to "ተወከሱና" if preferred for politeness or left as "ተወከሰና"
+            "contact-us-btn": "ተወከሱና",
             "home": "መእተዊ",
             "about-us": "ብዛዕባና",
             "menu-about-us": "ብዛዕባና",
@@ -164,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "service1-h3": "ውሽጣዊ ሕክምና",
             "service2-h3": "ሕክምና ልቢ",
             "service3-h3": "ሓፈሻዊ ሕክምና",
-            "service4-h3": "ሕክምና ህጻናትን ኣባጽሕን", // Retained for clarity
+            "service4-h3": "ሕክምና ህጻናትን ኣባጽሕን",
             "service5-h3": "ሕክምና ነፍሰጾራትን ደቂኣንስትዮን",
             "service6-h3": "ENT",
             "service7-h3": "ራድዮሎጂ",
@@ -207,13 +232,15 @@ document.addEventListener('DOMContentLoaded', () => {
             "facilities": "መሳርሒታት ሕክምና",
             "media": "ሚድያ",
             "media-patient-info": "ሓበሬታ ሕሙማት",
-            "media-articles": "ጽሑፋት ጥዕና", // Corrected duplicate key
+            "media-articles": "ጽሑፋት ጥዕና",
             "news": "ዜናን ፍጻሜታትን",
             "gallery": "ጋለሪ",
             "patient-satisfaction-survey": "ናይ ሕሙማት ሳትስፋክሽን መርመራ",
-            "contact": "ተወከሰና",
+            "contact": "ተወከሱና",
             "search-placeholder": "ድለ...",
-            "footer-text": "Copyright © 2026 <span class=\"geez-color\">ግዕዝ</span> <span class=\"hospital-color\">ሆስፒታል</span><br>Developed By Aser Teklu Gebrekidan-0911179955",
+            "site-main-title": "<span class=\"geez-color\">ግዕዝ</span> <span class=\"hospital-color\">ሆስፒታል</span>",
+            "footer-copyright-text": "Copyright © 2026 ግዕዝ ሆስፒታል<br>Developed By Aser Teklu Gebrekidan-0911179955",
+
             "about-h2": "ብዛዕባና",
             "about-p": "ብዛዕባ ሆስፒታል ግዕዝ፣ ተልእኾና፣ ራእይና፣ ከምኡ እውን ነቲ ዝለዓለ ሕክምናዊ ክንክን ንምሃብ ዝመርሑና መሰረታዊ መትከላት እዞም ዝስዑቡ እዮም።",
             "about-h3": "ብዛዕባና",
@@ -224,8 +251,11 @@ document.addEventListener('DOMContentLoaded', () => {
             "vision-p": "ብምኽንያት እቲ እንህቦ ብሉፅ ሞያዊ ብቕዓትን ንሕሙም ማእከል ዝገበረ ሓልዮቱን፣ ዓለምለኻዊ ደረጃ ዘለዎ ናይ ሕክምና ግልጋሎት ብምቕራብ ኣብ ኣፍሪካ ክብሪ ዝተጎናፀፈ ናይ ሕክምና ትካል ምዃን።",
             "services-h3": "ዝርዝር ግልጋሎታት",
             "services-p-about": "ብርክት ዝበሉ ናይ ስፔሻሊስትን ሳብ ስፔሻሊስትን ዓውድታት (ንኣብነት፦ሕክምና ዉሽጣዊ ሕማማት፣ ልቢ፣ ካንሰር፣ ሓንጎልን መትንታትን፣ ዓፅሚ፣ካብ ክሳድ ንላዕሊ፣ዓይኒ፣ናይ ቆርበትን ስነጽባቐን፣ ናይ ኣዴታትን ህፃናትን ክንክን መርመራታትን ከምኡውን ናይ ሃንደበታዊ ሓደጋን ግልጋሎትሎት ብዘመናዊ ቴክኖሎጂን ብሞያዊ ብቕዓትን ነቕርብ።",
-            "services-page-h2": "ግልጋሎታትና",
-            "services-page-intro-p": "ግዕዝ ሆስፒታል ብብሉፃት ስፔሻሊስትን ሳብስፔሻሊስትታትን ሓኻይም ዝወሃቡ ዝተፈላለዩን ዘመናዊን ግልጋሎታት ይህብ።",
+            "services-page-title": "ግልጋሎታትና",
+            "services-page-description": "ግዕዝ ሆስፒታል ብብሉፃት ስፔሻሊስትን ሳብስፔሻሊስትታትን ሓኻይም ዝወሃቡ ዝተፈላለዩን ዘመናዊን ግልጋሎታት ይህብ።",
+            "our-services-heading": "ፍሉያት ግልጋሎታትና ዳህስሱ",
+            "services-intro-text": "ኣብ ግዕዝ ሆስፒታል፣ ነቲ ዝተፈላለየ ድሌታት ሕሙማትና ንምምላእ ሰፊሕን ብሉጽን ሕክምናዊ ግልጋሎታት ንምቕራብ ንጽዕር። ፍሉያት ክፍለታትና ብልምዲ ብቑዓት ሰብ ሞያ ዝተዋደዱ ኮይኖም፣ ንጥዕናኹምን ድሕንነትኩምን ትኹረት ይህቡ።",
+            "read-more": "ተወሳኺ ኣንብብ",
             "all-services-btn": "ኹሎም ግልጋሎታትና ኣብዚ ርአ",
             "departments-h2": "ክፍለታት ሕክምና",
             "departments-p": "ኣብ ሆስፒታል ግዕዝ ዝርከቡ ፍሉያት ክፍሊታት ሕክምና ዝድህስሱሉ፣ ብቑዕ ክንክን ምስ ዘመናዊ ቴክኖሎጂ ዝርከቡሉ ቦታ እዩ።",
@@ -241,10 +271,10 @@ document.addEventListener('DOMContentLoaded', () => {
             "news-p": "ኣብ ግዕዝ ሆስፒታል ዝወፅኡ ሓደሽቲ ሓበሬታታት፣ ሕክምናዊ ምኽሪታትን ኣገደስቲ ዝርዝራትን ኣብዚ ተኸታተሉ።",
             "gallery-h2": "ጋለሪ",
             "gallery-p": "ናይ ግዕዝ ሆስፒታል ዝተፈላለዩ ምስልታት ኩሎም ዘመነዎት መሳርሕታትን ዝተገብሩ ሕክምናዊ ክንክንን ኣብዚ ምርኣይ ይኽእሉ እዮም ።",
-            "contact-h2": "ተራኸቡና", // Added for contact page hero title
-            "contact-p": "ንዝኾነ ሕቶ ወይ ቆፀሮ ንምሓዝ በይዝኦም ኣብዚ ይመዝገቡ።", // Added for contact page hero paragraph
-            "contact-form-title": "መልእኽቲ ስደዱልና", // Added for contact form title
-            "form-full-name": "ምሉእ ሽም:", // Added for form labels
+            "contact-h2": "ተራኸቡና",
+            "contact-p": "ንዝኾነ ሕቶ ወይ ቆፀሮ ንምሓዝ በይዝኦም ኣብዚ ይመዝገቡ።",
+            "contact-form-title": "መልእኽቲ ስደዱልና",
+            "form-full-name": "ምሉእ ሽም:",
             "form-email": "ኢሜይል:",
             "form-subject": "ዝደለይዎ ሕቶ/ሕክምና:",
             "form-phone": "ቁፅሪ ስልኪ:",
@@ -257,29 +287,33 @@ document.addEventListener('DOMContentLoaded', () => {
             "form-gender-other": "ካልእ",
             "form-message": "መልእኽቲ:",
             "form-submit-btn": "ልኣኽ",
-            "our-location-map": "ኣድራሻና ብካርታ", // Added for map section title
-            "view-on-map": "ኣብ ካርታ ርኣይ", // Added for map button text
+            "our-location-map": "ኣድራሻና ብካርታ",
+            "view-on-map": "ኣብ ካርታ ርኣይ",
 
-            // Individual Service descriptions for services.html
-            "internal-medicine-desc": "ሓፈሻዊ ናይ ሕክምና ውሽጢ ምርመራን ሕክምናን ብልዑል ተመክሮን ሞያዊ ብቕዓትን ዝለዎም ስፔሻሊስት ሓኻይም ይወሃብ።",
-            "cardiology-desc": "ፍሉይ ናይ ሕማም ልቢ ምርመራን ሕክምናን ብልዑል ተመክሮን ሞያዊ ብቕዓትን ዝለዎም ሳብስፔሻሊስት ሓኻይም ይወሃብ።",
-            "general-surgery-desc": "ሓፈሻዊ ናይ ሕክምና ሰርጀሪ ብዘመናዊ መሳርሒታትን ኣገባብን ይስራሕ።",
-            "pediatrics-adolescents-desc": "ፍሉይ ሕክምናዊ ክንክን ንጨናዉን፣ ህፃናትን ታሕተዋይን፣ ንዕቤትኦም፣ ምዕባለኦምን ፍሉይ ጥዕናኦም ትኹረት ዝገብር።",
-            "obsgyn-desc": "ምሉእ ጥዕናዊ ግልጋሎታት ንደቂኣንስትዮ፣ ቅድሚ ሕርሲ፣ ሕርሲ፣ ድሕሪ ሕርሲ ክንክንን ዝራባሕ ጥዕናን ዝሓወሰ።",
-            "ent-desc": "ምርመራን ሕክምናን ንሕማማት ኣፍንጫ፣ ቖርበት፣ ጕርዲ፣ ከምኡ’ውን ሕማማት ርእስን ቖርበትን።",
-            "radiology-desc": "ዘመናዊ ናይ ምስልታት ምርመራ (X-ray, CT scan, MRI, Ultrasound) ንቅኑዕ ሕክምናዊ ምርመራ ዝሕግዝ።",
-            "dental-desc": "ምሉእ ናይ ጥርስ ሕክምና ግልጋሎታት፣ ካብ ልሙድ ምርመራን ጽሬትን ክሳብ ዝተሓላለኸ ተሃድሶን ጽባቐን።",
-            "neurosurgery-desc": "ሰርጀሪ ሕክምና ንሕማማት ኣእምሮ፣ ሓዋስን ካልኦት ነርቮች።",
-            "orthopedics-desc": "ክንክን ንሕማማት ኣዕጽምቲ፣ መገጣጠሚታት፣ ስራቓት፣ ጅማትን ጭዋዳታትን።",
-            "dermatology-cosmetology-desc": "ምርመራን ሕክምናን ንሕማማት ቖርበት፣ ጸጉርን ጽፍርን፣ ከምኡ’ውን ጽባቐን ኣስቴቲካዊን ግልጋሎታት።",
-            "anesthesia-pain-management-desc": "ንሰርጀሪ ዝኸውን ድሕንነታዊ ኣኔስቴዥያን ንዝተፋላለየ ቃንዛን ዘይምቕርን ኣድካሚ ሕክምናን።",
-            "laboratory-desc": "ምሉእ ናይ ላቦራቶሪ ምርመራ ግልጋሎታት ንቅኑዕ ምርመራን ንጥጡሕ ሕሙማት ምሕደራን።",
-            "physiotherapy-desc": "ተሃድሶ ግልጋሎታት ንምንቅስቓስ፣ ሓይልን ተግባርን ንምምላስ ንሕሙማት ድሕሪ ሕማም ወይ መጕዳእቲ።",
-            "psychiatry-desc": "ኣእምሮኣዊ ጥዕና ግልጋሎታት፣ ኣብ ምርመራ፣ ሕክምናን ምክልኻል ስነ-ኣእምሮኣዊ፣ ስምዒታዊን ናይ ባህሪ ሕማማትን ትኹረት ዝገብር።",
-            "ophthalmology-desc": "ምሉእ ናይ ኣዒንቲ ክንክን ግልጋሎታት፣ ምርመራን ሕክምናን ንሕማማት ኣዒንቲ፣ ምስትኽኻል ራእይን ሰርጀሪ ሕክምናን።",
-            "maternity-services-desc": "ምሉእ ናይ ሕርሲ ክንክን፣ ቅድሚ ሕርሲ ክሳብ ድሕሪ ሕርሲ፣ ንጥዕና ወላድን ህፃንን ንምርግጋጽ።",
-            "pharmacy-ambulance-desc-full": "24/7 ፋርማሲ ግልጋሎታትን ኣምቡላንስ ኣገልግሎትን ንኣሳሲ ሕክምናን ሕሙማት ንምብጻሕን።",
-            "other-services-desc": "ካብ ቀንዲ ስፔሻሊስትታትና ወጻኢ፣ ንምሉእ ሕክምናዊ ክንክን ሕሙማት ዝተፈላለዩ ተወሳኺ ሕክምናዊን ደገፍን ግልጋሎታት ንህብ።",
+            // Service Detail Page specific translations
+            "service-detail-page-title": "ዝርዝር ግልጋሎት - ግዕዝ ሆስፒታል",
+            "service-detail-page-description": "ብዛዕባ ፍሉያት ሕክምናዊ ግልጋሎታትና ዝርዝር ሓበሬታ።",
+
+            // Individual Service descriptions (short for services.html, full for service-detail.html)
+            "service1-desc-short": "ሓፈሻዊ ናይ ሕክምና ውሽጢ ምርመራን ሕክምናን ብልዑል ተመክሮን ሞያዊ ብቕዓትን ዝለዎም ስፔሻሊስት ሓኻይም ይወሃብ።",
+            "service2-desc-short": "ፍሉይ ናይ ሕማም ልቢ ምርመራን ሕክምናን ብልዑል ተመክሮን ሞያዊ ብቕዓትን ዝለዎም ሳብስፔሻሊስት ሓኻይም ይወሃብ።",
+            "service3-desc-short": "ሓፈሻዊ ናይ ሕክምና ሰርጀሪ ብዘመናዊ መሳርሒታትን ኣገባብን ይስራሕ።",
+            "service4-desc-short": "ፍሉይ ሕክምናዊ ክንክን ንጨናዉን፣ ህፃናትን ታሕተዋይን፣ ንዕቤትኦም፣ ምዕባለኦምን ፍሉይ ጥዕናኦም ትኹረት ዝገብር።",
+            "service5-desc-short": "ምሉእ ጥዕናዊ ግልጋሎታት ንደቂኣንስትዮ፣ ቅድሚ ሕርሲ፣ ሕርሲ፣ ድሕሪ ሕርሲ ክንክንን ዝራባሕ ጥዕናን ዝሓወሰ።",
+            "service6-desc-short": "ምርመራን ሕክምናን ንሕማማት ኣፍንጫ፣ ጆሮ፣ ጕርዲ፣ ከምኡ’ውን ሕማማት ርእስን ቖርበትን።",
+            "service7-desc-short": "ዘመናዊ ናይ ምስልታት ምርመራ (X-ray, CT scan, MRI, Ultrasound) ንቅኑዕ ሕክምናዊ ምርመራ ዝሕግዝ።",
+            "service8-desc-short": "ምሉእ ናይ ጥርስ ሕክምና ግልጋሎታት፣ ካብ ልሙድ ምርመራን ጽሬትን ክሳብ ዝተሓላለኸ ተሃድሶን ጽባቐን።",
+            "service9-desc-short": "ሰርጀሪ ሕክምና ንሕማማት ኣእምሮ፣ ሓዋስን ካልኦት ነርቮች።",
+            "service10-desc-short": "ክንክን ንሕማማት ኣዕጽምቲ፣ መገጣጠሚታት፣ ስራቓት፣ ጅማትን ጭዋዳታትን።",
+            "service11-desc-short": "ምርመራን ሕክምናን ንሕማማት ቖርበት፣ ጸጉርን ጽፍርን፣ ከምኡ’ውን ጽባቐን ኣስቴቲካዊን ግልጋሎታት።",
+            "service12-desc-short": "ንሰርጀሪ ዝኸውን ድሕንነታዊ ኣኔስቴዥያን ንዝተፋላለየ ቃንዛን ዘይምቕርን ኣድካሚ ሕክምናን።",
+            "service13-desc-short": "ምሉእ ናይ ላቦራቶሪ ምርመራ ግልጋሎታት ንቅኑዕ ምርመራን ንጥጡሕ ሕሙማት ምሕደራን።",
+            "service14-desc-short": "ተሃድሶ ግልጋሎታት ንምንቅስቓስ፣ ሓይልን ተግባርን ንምምላስ ንሕሙማት ድሕሪ ሕማም ወይ መጕዳእቲ።",
+            "service15-desc-short": "ኣእምሮኣዊ ጥዕና ግልጋሎታት፣ ኣብ ምርመራ፣ ሕክምናን ምክልኻል ስነ-ኣእምሮኣዊ፣ ስምዒታዊን ናይ ባህሪ ሕማማትን ትኹረት ዝገብር።",
+            "service16-desc-short": "ምሉእ ናይ ኣዒንቲ ክንክን ግልጋሎታት፣ ምርመራን ሕክምናን ንሕማማት ኣዒንቲ፣ ምስትኽኻል ራእይን ሰርጀሪ ሕክምናን።",
+            "service17-desc-short": "ምሉእ ናይ ሕርሲ ክንክን፣ ቅድሚ ሕርሲ ክሳብ ድሕሪ ሕርሲ፣ ንጥዕና ወላድን ህፃንን ንምርግጋጽ።",
+            "service18-desc-short": "24/7 ፋርማሲ ግልጋሎታትን ኣምቡላንስ ኣገልግሎትን ንኣሳሲ ሕክምናን ሕሙማት ንምብጻሕን።",
+            "service19-desc-short": "ካብ ቀንዲ ስፔሻሊስትታትና ወጻኢ፣ ንምሉእ ሕክምናዊ ክንክን ሕሙማት ዝተፈላለዩ ተወሳኺ ሕክምናዊን ደገፍን ግልጋሎታት ንህብ።",
 
             // Individual Department descriptions for departments.html
             "dept-surgery-desc": "ክፍሊ ሰርጀሪና ካብ ሓፈሻዊ ክሳብ ልዑል ፍሉይነት ዘለዎም ዝተፈላለዩ ናይ ሰርጀሪ ስርሓት የቕርብ፣ ብልምዲ ዝለዎም ሓኻይም ሰርጀሪ ብምጥቃም ዘመናዊ መሳርሒታት ይካየድ።",
@@ -291,10 +325,25 @@ document.addEventListener('DOMContentLoaded', () => {
             "dept-oncology-desc": "ምሉእ ሕክምና ነቀርሳ፣ ካብ ምርመራን ሕክምናን ክሳብ ደገፍን ድሕሪ ሕክምና ፕሮግራማትን።",
             "dept-dermatology-desc": "ምርመራን ሕክምናን ንሕማማት ቖርበት፣ ጸጉርን ጽፍርን፣ ከምኡ’ውን ጽባቐን ኣስቴቲካዊ ግልጋሎታትን።",
             "dept-psychiatry-desc": "ኣእምሮኣዊ ጥዕና ግልጋሎታት ንዝተፈላለዩ ናይ ስነ-ኣእምሮ ሕማማት፣ ምርመራ፣ ሕክምናን መድሃኒት ምሕደራን ዝቕርብ።",
-            "dept-ophthalmology-desc": "ምሉእ ናይ ኣዒንቲ ክንክን ግልጋሎታት፣ ምርመራን ሕክምናን ንሕማማት ኣዒንቲ፣ ምስትኽኻል ራእይን ሰርጀሪ ሕክምናን።"
+            "dept-ophthalmology-desc": "ምሉእ ናይ ኣዒንቲ ክንክን ግልጋሎታት፣ ምርመራን ሕክምናን ንሕማማት ኣዒንቲ፣ ምስትኽኻል ራእይን ሰርጀሪ ሕክምናን።",
+            "dept-oral-dental-maxillofacial-desc": "ፍሉይ ክንክን ንኣፍ፣ ስኒ፣ ከምኡ'ውን ማክሲሎፋሻል ሕማማት፣ ሰርጀሪን ተሃድሶን ዝሓወሰ።",
+            "dept-ent-plastic-surgery-desc": "ምሉእ ግልጋሎታት ን ENT ሕማማት፣ ሰርጀሪ ርእስን ክሳድን፣ ከምኡ'ውን ተሃድሶ ፕላስቲክ ሰርጀሪ።",
+
+            // Doctor Specialties
+            "dr-tesfay-specialty": "ስፔሻሊስት ሕክምና ውሽጢ",
+            "dr-rahel-specialty": "ሓኪም ሕማም ልቢ",
+            "dr-hana-specialty": "ሓፈሻዊ ሰርጀን",
+            "dr-samuel-specialty": "ስፔሻሊስት ህጻናት",
+            "dr-yonas-specialty": "ስፔሻሊስት ነፍሰጾራትን ደቂኣንስትዮን",
+            "dr-sara-specialty": "ስፔሻሊስት ENT",
+            "dr-dawit-specialty": "ራድዮሎጂስት",
+            "dr-eden-specialty": "ሰርጀን ስኒ",
+            "dr-mekonen-specialty": "ኒውሮሰርጀን",
+            "dr-senait-specialty": "ኦርቶፔዲክ ሰርጀን",
+            "dr-fisseha-specialty": "ደርማቶሎጂስት"
         },
         "amh": {
-            "hero-main-title": "ግዕዝ ሆስፒታል", // Simplified
+            "hero-main-title": "ግዕዝ ሆስፒታል",
             "hero-h2": "በእንክብካቤያችን ተመርጠናል፣ በሙያችን ታምነናል",
             "hero-p": "ጤንነትዎን ቅድሚያ በመስጠት፣ የላቀ ብቃት ካላቸው ስፔሻሊስቶች እና ንዑስ-ስፔሻሊስቶች ጋር፣ ዘመናዊ የቴክኖሎጂ መሳሪያዎችን በማጣመር አጠቃላይ አገልግሎት እንሰጣለን። ለማንኛውም ጥያቄ ወይም ቀጠሮ ለመያዝ እዚህ ይመዝገቡ።",
             "hero-btn-appointment": "ቀጠሮ ይያዙ",
@@ -359,7 +408,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "patient-satisfaction-survey": "የታካሚ እርካታ ጥናት",
             "contact": "ያግኙን",
             "search-placeholder": "ፈልግ...",
-            "footer-text": "Copyright © 2026 <span class=\"geez-color\">ግዕዝ</span> <span class=\"hospital-color\">ሆስፒታል</span><br>Developed By Aser Teklu Gebrekidan-0911179955",
+            "site-main-title": "<span class=\"geez-color\">ግዕዝ</span> <span class=\"hospital-color\">ሆስፒታል</span>",
+            "footer-copyright-text": "Copyright © 2026 ግዕዝ ሆስፒታል<br>Developed By Aser Teklu Gebrekidan-0911179955",
+
             "about-h2": "ስለ እኛ",
             "about-p": "ስለ ግዕዝ ሆስፒታል፣ ተልዕኮአችን፣ ራዕያችን፣ እና በልዩ የጤና እንክብካቤ አሰጣጥ ላይ የሚመሩን መሰረታዊ እሴቶች የበለጠ ይረዱ።",
             "about-h3": "ስለ እኛ",
@@ -370,8 +421,11 @@ document.addEventListener('DOMContentLoaded', () => {
             "vision-p": "በእኛ እጅግ በጣም ጥሩ ሙያዊ ብቃት እና የታካሚ ተኮር እንክብካቤ በመነዳት፣ በአፍሪካ ውስጥ ዓለም አቀፍ ደረጃ ያለው የህክምና ተቋም ለመሆን።",
             "services-h3": "የአገልግሎቶች አጠቃላይ እይታ",
             "services-p-about": "ብዙ አይነት ልዩ ልዩ እና ንዑስ ልዩ ልዩ መስኮች (ለምሳሌ የልብ ህክምና፣ ኦንኮሎጂ፣ የነርቭ ቀዶ ጥገና፣ የአጥንት ህክምና፣ የአፍንጫ፣ ጆሮ፣ ጉሮሮ ህክምና፣ የአይን ህክምና፣ የቆዳ ህክምና፣ የማህፀንና ፅንስ ህክምና፣ የህፃናት ህክምና፣ የተለያዩ የምርመራ አገልግሎቶች እና የድንገተኛ ህክምና) በዘመናዊ ቴክኖሎጂ እና በሙያ ብቃት እናቀርባለን። ለዝርዝር አገልግሎቶቻችን፣ 'የእኛ አገልግሎቶች' የሚለውን ክፍል ይመልከቱ።",
-            "services-page-h2": "አገልግሎቶቻችን",
-            "services-page-intro-p": "ግዕዝ ሆስፒታል ከፍተኛ ብቃት ባላቸው ስፔሻሊስቶች እና ንዑስ-ስፔሻሊስቶች የሚሰጡ የተለያዩ እና ዘመናዊ አገልግሎቶችን ይሰጣል።",
+            "services-page-title": "አገልግሎቶቻችን",
+            "services-page-description": "ግዕዝ ሆስፒታል ከፍተኛ ብቃት ባላቸው ስፔሻሊስቶች እና ንዑስ-ስፔሻሊስቶች የሚሰጡ የተለያዩ እና ዘመናዊ አገልግሎቶችን ይሰጣል።",
+            "our-services-heading": "ልዩ አገልግሎቶቻችንን ያስሱ",
+            "services-intro-text": "በግዕዝ ሆስፒታል፣ የታካሚዎቻችንን የተለያዩ ፍላጎቶች ለማሟላት ሰፊ እና ከፍተኛ ጥራት ያላቸውን የህክምና አገልግሎቶች ለመስጠት ቁርጠኛ ነን። የእኛ ልዩ ልዩ ክፍሎች በጤናዎ እና ደህንነትዎ ላይ ቁርጠኛ በሆኑ ልምድ ባላቸው ባለሙያዎች የተሞሉ ናቸው።",
+            "read-more": "ተጨማሪ ያንብቡ",
             "all-services-btn": "ሁሉንም አገልግሎቶቻችንን ይመልከቱ",
             "departments-h2": "የእኛ መምሪያዎች",
             "departments-p": "በግዕዝ ሆስፒታል ያሉትን ልዩ ልዩ ክፍሎች ያስሱ፣ የባለሙያ እንክብካቤ ከዘመናዊ ቴክኖሎጂ ጋር የሚገናኝበት ቦታ ነው።",
@@ -406,26 +460,30 @@ document.addEventListener('DOMContentLoaded', () => {
             "our-location-map": "አድራሻችን በካርታ",
             "view-on-map": "በካርታ ይመልከቱ",
 
-            // Individual Service descriptions for services.html
-            "internal-medicine-desc": "ሁሉን አቀፍ የውስጥ ደዌ ህክምና ምርመራ እና ህክምና ለአዋቂዎች በሽታዎች፣ ከቀዶ ጥገና ውጭ በሆኑ ዘዴዎች እና የረጅም ጊዜ የጤና አስተዳደር ላይ ትኩረት በማድረግ የሚሰጥ።",
-            "cardiology-desc": "ለልብ እና የደም ቧንቧ ሁኔታዎች ልዩ እንክብካቤ፣ የምርመራ፣ ህክምና እና የመከላከያ ፕሮግራሞችን ጨምሮ።",
-            "general-surgery-desc": "ከመደበኛ እስከ ውስብስብ ቀዶ ህክምናዎች ድረስ ሰፊ የሆነ የቀዶ ህክምና አገልግሎት በሰለጠኑ የቀዶ ህክምና ባለሙያዎች የሚከናወን።",
-            "pediatrics-adolescents-desc": "ለጨቅላ ህጻናት፣ ህጻናት እና ወጣቶች የተወሰነ የህክምና እንክብካቤ፣ እድገታቸውን፣ ልማታቸውን እና ልዩ የጤና ችግሮችን የሚሸፍን።",
-            "obsgyn-desc": "ለሴቶች ሁሉን አቀፍ የጤና አገልግሎቶች፣ ከወሊድ በፊት የሚደረግ እንክብካቤ፣ ወሊድ፣ ከወሊድ በኋላ የሚደረግ እንክብካቤ እና የመራቢያ ጤና አገልግሎቶችን ጨምሮ።",
-            "ent-desc": "ከጆሮ፣ አፍንጫ እና ጉሮሮ ጋር የተያያዙ ችግሮችን መመርመር እና ማከም፣ የራስ እና የአንገት ሁኔታዎችን ጨምሮ።",
-            "radiology-desc": "የላቀ የምርመራ ምስል አገልግሎቶች እንደ ኤክስሬይ፣ ሲቲ ስካን፣ ኤምአርአይ እና አልትራሳውንድ ትክክለኛ የህክምና ምርመራን ለመርዳት።",
-            "dental-desc": "ከመደበኛ ምርመራዎች እና ጽዳት እስከ ውስብስብ የማገገሚያ እና የኮስሜቲክ የጥርስ ህክምና ድረስ ሙሉ የጥርስ ህክምና አገልግሎቶች።",
-            "neurosurgery-desc": "አንጎልን፣ የአከርካሪ አጥንትን እና የዳርቻ ነርቮችን የሚያካትቱ ሁኔታዎች የቀዶ ህክምና።",
-            "orthopedics-desc": "የአጥንት፣ የመገጣጠሚያዎች፣ ጅማቶች፣ ጅማቶች እና ጡንቻዎችን ጨምሮ የአጥንትና ጡንቻ ስርዓት ችግሮችን መንከባከብ።",
-            "dermatology-cosmetology-desc": "የቆዳ፣ የፀጉር እና የጥፍር ሁኔታዎችን መመርመር እና ማከም፣ ከውበት እና የኮስሜቲክ ሂደቶች ጋር።",
-            "anesthesia-pain-management-desc": "ለቀዶ ጥገና ደህንነቱ የተጠበቀ ማደንዘዣ እና የከባድ እና ሥር የሰደደ የህመም ሁኔታዎችን ውጤታማ አስተዳደር መስጠት።",
-            "laboratory-desc": "ትክክለኛ ምርመራ እና ውጤታማ የታካሚ አስተዳደር ወሳኝ የሆኑ አጠቃላይ የላቦራቶሪ ምርመራ አገልግሎቶች።",
-            "physiotherapy-desc": "ከጉዳት ወይም ከበሽታ ለሚያገግሙ ታካሚዎች እንቅስቃሴን፣ ጥንካሬን እና ተግባርን ለመመለስ የማገገሚያ አገልግሎቶች።",
-            "psychiatry-desc": "የአእምሮ፣ ስሜታዊ እና የባህሪ ችግሮችን መመርመር፣ ማከም እና መከላከል ላይ የሚያተኩሩ የአእምሮ ጤና አገልግሎቶች።",
-            "ophthalmology-desc": "ሁሉን አቀፍ የአይን ህክምና አገልግሎቶች፣ የአይን በሽታዎችን መመርመር እና ማከም፣ የማየት ችሎታ ማስተካከያ እና የቀዶ ህክምና ሂደቶችን ጨምሮ።",
-            "maternity-services-desc": "ከወሊድ በፊት እስከ ድህረ ወሊድ ድረስ ሙሉ የወሊድ እንክብካቤ፣ የእናትና ልጅ ጤና እና ደህንነት ማረጋገጥ።",
-            "pharmacy-ambulance-desc-full": "24/7 ፋርማሲ አገልግሎቶች እና የአደጋ ጊዜ አምቡላንስ መጓጓዣ ለከባድ እንክብካቤ እና የታካሚ ዝውውር።",
-            "other-services-desc": "ከዋና ዋና ልዩ ባለሙያዎቻችን በተጨማሪ ሁሉን አቀፍ የታካሚ እንክብካቤን ለማረጋገጥ የተለያዩ ተጨማሪ የህክምና እና የድጋፍ አገልግሎቶችን እናቀርባለን።",
+            // Service Detail Page specific translations
+            "service-detail-page-title": "የአገልግሎት ዝርዝር - ግዕዝ ሆስፒታል",
+            "service-detail-page-description": "ስለ ልዩ የህክምና አገልግሎቶቻችን ዝርዝር መረጃ።",
+
+            // Individual Service descriptions (short for services.html, full for service-detail.html)
+            "service1-desc-short": "ሁሉን አቀፍ የውስጥ ደዌ ህክምና ምርመራ እና ህክምና ለአዋቂዎች በሽታዎች፣ ከቀዶ ጥገና ውጭ በሆኑ ዘዴዎች እና የረጅም ጊዜ የጤና አስተዳደር ላይ ትኩረት በማድረግ የሚሰጥ።",
+            "service2-desc-short": "ለልብ እና የደም ቧንቧ ሁኔታዎች ልዩ እንክብካቤ፣ የምርመራ፣ ህክምና እና የመከላከያ ፕሮግራሞችን ጨምሮ።",
+            "service3-desc-short": "ከመደበኛ እስከ ውስብስብ ቀዶ ህክምናዎች ድረስ ሰፊ የሆነ የቀዶ ህክምና አገልግሎት በሰለጠኑ የቀዶ ህክምና ባለሙያዎች የሚከናወን።",
+            "service4-desc-short": "ለጨቅላ ህጻናት፣ ህጻናት እና ወጣቶች የተወሰነ የህክምና እንክብካቤ፣ እድገታቸውን፣ ልማታቸውን እና ልዩ የጤና ችግሮችን የሚሸፍን።",
+            "service5-desc-short": "ለሴቶች ሁሉን አቀፍ የጤና አገልግሎቶች፣ ከወሊድ በፊት የሚደረግ እንክብካቤ፣ ወሊድ፣ ከወሊድ በኋላ የሚደረግ እንክብካቤ እና የመራቢያ ጤና አገልግሎቶችን ጨምሮ።",
+            "service6-desc-short": "ከጆሮ፣ አፍንጫ እና ጉሮሮ ጋር የተያያዙ ችግሮችን መመርመር እና ማከም፣ የራስ እና የአንገት ሁኔታዎችን ጨምሮ።",
+            "service7-desc-short": "የላቀ የምርመራ ምስል አገልግሎቶች እንደ ኤክስሬይ፣ ሲቲ ስካን፣ ኤምአርአይ እና አልትራሳውንድ ትክክለኛ የህክምና ምርመራን ለመርዳት።",
+            "service8-desc-short": "ከመደበኛ ምርመራዎች እና ጽዳት እስከ ውስብስብ የማገገሚያ እና የኮስሜቲክ የጥርስ ህክምና ድረስ ሙሉ የጥርስ ህክምና አገልግሎቶች።",
+            "service9-desc-short": "አንጎልን፣ የአከርካሪ አጥንትን እና የዳርቻ ነርቮችን የሚያካትቱ ሁኔታዎች የቀዶ ህክምና።",
+            "service10-desc-short": "የአጥንት፣ የመገጣጠሚያዎች፣ ጅማቶች፣ ጅማቶች እና ጡንቻዎችን ጨምሮ የአጥንትና ጡንቻ ስርዓት ችግሮችን መንከባከብ።",
+            "service11-desc-short": "የቆዳ፣ የፀጉር እና የጥፍር ሁኔታዎችን መመርመር እና ማከም፣ ከውበት እና የኮስሜቲክ ሂደቶች ጋር።",
+            "service12-desc-short": "ለቀዶ ጥገና ደህንነቱ የተጠበቀ ማደንዘዣ እና የከባድ እና ሥር የሰደደ የህመም ሁኔታዎችን ውጤታማ አስተዳደር መስጠት።",
+            "service13-desc-short": "ትክክለኛ ምርመራ እና ውጤታማ የታካሚ አስተዳደር ወሳኝ የሆኑ አጠቃላይ የላቦራቶሪ ምርመራ አገልግሎቶች።",
+            "service14-desc-short": "ከጉዳት ወይም ከበሽታ ለሚያገግሙ ታካሚዎች እንቅስቃሴን፣ ጥንካሬን እና ተግባርን ለመመለስ የማገገሚያ አገልግሎቶች።",
+            "service15-desc-short": "የአእምሮ፣ ስሜታዊ እና የባህሪ ችግሮችን መመርመር፣ ማከም እና መከላከል ላይ የሚያተኩሩ የአእምሮ ጤና አገልግሎቶች።",
+            "service16-desc-short": "ሁሉን አቀፍ የአይን ህክምና አገልግሎቶች፣ የአይን በሽታዎችን መመርመር እና ማከም፣ የማየት ችሎታ ማስተካከያ እና የቀዶ ህክምና ሂደቶችን ጨምሮ።",
+            "service17-desc-short": "ከወሊድ በፊት እስከ ድህረ ወሊድ ድረስ ሙሉ የወሊድ እንክብካቤ፣ የእናትና ልጅ ጤና እና ደህንነት ማረጋገጥ።",
+            "service18-desc-short": "24/7 ፋርማሲ አገልግሎቶች እና የአደጋ ጊዜ አምቡላንስ መጓጓዣ ለከባድ እንክብካቤ እና የታካሚ ዝውውር።",
+            "service19-desc-short": "ከዋና ዋና ልዩ ባለሙያዎቻችን በተጨማሪ ሁሉን አቀፍ የታካሚ እንክብካቤን ለማረጋገጥ የተለያዩ ተጨማሪ የህክምና እና የድጋፍ አገልግሎቶችን እናቀርባለን።",
 
             // Individual Department descriptions for departments.html
             "dept-surgery-desc": "የቀዶ ህክምና ክፍል አጠቃላይ ከሆኑት እስከ ከፍተኛ ልዩ ለሆኑት ድረስ ሰፊ የሆነ የቀዶ ህክምና አገልግሎቶችን ይሰጣል፣ እነዚህም ልምድ ባላቸው የቀዶ ህክምና ባለሙያዎች ዘመናዊ መሳሪያዎችን በመጠቀም ይከናወናሉ።",
@@ -437,9 +495,264 @@ document.addEventListener('DOMContentLoaded', () => {
             "dept-oncology-desc": "ከምርመራ እና ህክምና እስከ ደጋፊ እንክብካቤ እና የድህረ-ህክምና ፕሮግራሞች ድረስ ሁሉን አቀፍ የካንሰር እንክብካቤ።",
             "dept-dermatology-desc": "የቆዳ፣ የፀጉር እና የጥፍር ሁኔታዎችን መመርመር እና ማከም፣ የውበት እና የመዋቢያ አገልግሎቶችን ጨምሮ።",
             "dept-psychiatry-desc": "ለተለያዩ የአእምሮ ህክምና ሁኔታዎች የአእምሮ ጤና አገልግሎቶች፣ ምርመራ፣ ህክምና እና የመድሃኒት አስተዳደርን ጨምሮ።",
-            "dept-ophthalmology-desc": "ሁሉን አቀፍ የአይን ህክምና አገልግሎቶች፣ የአይን በሽታዎችን መመርመር እና ማከም፣ የማየት ችሎታ ማስተካከያ እና የቀዶ ህክምና ሂደቶችን ጨምሮ።"
+            "dept-ophthalmology-desc": "ሁሉን አቀፍ የአይን ህክምና አገልግሎቶች፣ የአይን በሽታዎችን መመርመር እና ማከም፣ የማየት ችሎታ ማስተካከያ እና የቀዶ ህክምና ሂደቶችን ጨምሮ።",
+            "dept-oral-dental-maxillofacial-desc": "ለአፍ፣ ለጥርስ እና ለማክሲሎፌሻል ሁኔታዎች ልዩ እንክብካቤ፣ የቀዶ ጥገና እና መልሶ ገንቢ ሂደቶችን ጨምሮ።",
+            "dept-ent-plastic-surgery-desc": "ለ ENT ሁኔታዎች፣ ለራስ እና ለአንገት ቀዶ ጥገና እና ለፕላስቲክ መልሶ ገንቢ ቀዶ ጥገና ሁሉን አቀፍ አገልግሎቶች።",
+
+            // Doctor Specialties
+            "dr-tesfay-specialty": "የውስጥ ደዌ ህክምና ስፔሻሊስት",
+            "dr-rahel-specialty": "የልብ ህክምና ባለሙያ",
+            "dr-hana-specialty": "አጠቃላይ የቀዶ ህክምና ባለሙያ",
+            "dr-samuel-specialty": "የህፃናት ህክምና ስፔሻሊስት",
+            "dr-yonas-specialty": "የማህፀንና ፅንስ ህክምና ስፔሻሊስት",
+            "dr-sara-specialty": "የአፍንጫ፣ ጆሮ፣ ጉሮሮ ህክምና ስፔሻሊስት",
+            "dr-dawit-specialty": "ራዲዮሎጂስት",
+            "dr-eden-specialty": "የጥርስ ቀዶ ህክምና ባለሙያ",
+            "dr-mekonen-specialty": "የነርቭ ቀዶ ህክምና ባለሙያ",
+            "dr-senait-specialty": "የአጥንት ህክምና ቀዶ ህክምና ባለሙያ",
+            "dr-fisseha-specialty": "የቆዳ ህክምና ስፔሻሊስት"
         }
     };
+
+    // START OF NEW ADDITIONS FOR service-detail.html //
+
+    // Service Details Object - YOU NEED TO FILL THIS COMPLETELY
+    const serviceDetails = {
+        "internal-medicine": {
+            "title_eng": "Internal Medicine",
+            "title_tig": "ውሽጣዊ ሕክምና",
+            "title_amh": "የውስጥ ደዌ ህክምና",
+            "full_desc_eng": `The Internal Medicine Department at Geez Hospital is a major department specializing in the diagnosis, treatment, and prevention of a wide range of adult diseases and conditions. Our team of internal medicine physicians, also known as internists, are highly trained in providing comprehensive and personalized medical care for adults.
+            
+            Key services include:
+            <ul>
+                <li>Diagnosis and management of chronic diseases like diabetes, hypertension, and heart disease.</li>
+                <li>Treatment of acute illnesses such as infections, respiratory conditions, and digestive problems.</li>
+                <li>Preventive care, including health screenings, vaccinations, and lifestyle counseling.</li>
+                <li>Coordination of care with other specialists for complex medical conditions.</li>
+                <li>Comprehensive medical evaluations and pre-operative assessments.</li>
+            </ul>
+            Our internists focus on a holistic approach, considering all aspects of a patient's health and well-being.`,
+            "full_desc_tig": `ኣብ ሆስፒታል ግዕዝ ዝርከብ ክፍሊ ውሽጣዊ ሕክምና፣ ንዝተፈላለዩ ሕማማትን ኩነታትን ዓበይቲ ሰባት ብምርመራ፣ ሕክምናን ምክልኻልን ዝተሓላለኸ ክፍሊ እዩ። እቲ ንውሽጣዊ ሕክምና ዝምልከት ሓኻይምና፣ ካልኦት ሰባት ኢንተርኒስትስ ዝበሃሉ፣ ንዓበይቲ ሰባት ምሉእ ብምሉእ ሕክምናዊ ክንክን ንምሃብ ልዑል ብቕዓት ኣለዎም።
+            
+            ቀንዲ ግልጋሎታትና ዝሓዙ:
+            <ul>
+                <li>ምርመራን ምምሕዳርን ንዝቕጽሉ ሕማማት ከም ሽኮርያ፣ ልዑል ጸቕጢ ደምን ሕማም ልብን።</li>
+                <li>ሕክምና ንዝሓጸሩ ሕማማት ከም ኢንፌክሽናት፣ ሕማማት ኣየርን ምግቢ ምሕላፍን።</li>
+                <li>ምክልኻል ሕክምና፣ ከም ምርመራ ጥዕና፣ ክታበትን ምኽሪ ኣነባብራን።</li>
+                <li>ምስ ካልኦት ስፔሻሊስትታት ምትሕብባር ንዝተሓላለኹ ሕክምናዊ ኩነታት።</li>
+                <li>ምሉእ ሕክምናዊ ምግምጋምን ቅድሚ ሰርጀሪ ዝግበር ምርመራን።</li>
+            </ul>
+            እቶም ኢንተርኒስትታትና ኣብ ምሉእ ሕክምናዊ ኣተሓሕዛ ትኹረት ይገብሩ፣ ንኩሉ ገጽታ ናይ ጥዕናን ድሕንነትን ሕሙም ኣብ ግምት የእትዉ።`,
+            "full_desc_amh": `በግዕዝ ሆስፒታል የሚገኘው የውስጥ ደዌ ህክምና ክፍል፣ የተለያዩ የአዋቂዎችን በሽታዎች እና ሁኔታዎችን በመመርመር፣ በማከም እና በመከላከል ላይ የተሰማራ ትልቅ ክፍል ነው። የውስጥ ደዌ ህክምና ባለሙያዎቻችን፣ ኢንተርኒስቶች ተብለውም የሚታወቁት፣ ለአዋቂዎች ሁሉን አቀፍ እና ግላዊ የህክምና እንክብካቤ ለመስጠት ከፍተኛ ስልጠና አግኝተዋል።
+            
+            ቁልፍ አገልግሎቶቻችን የሚከተሉትን ያካትታሉ:
+            <ul>
+                <li>እንደ ስኳር በሽታ፣ የደም ግፊት እና የልብ ህመም ያሉ ሥር የሰደዱ በሽታዎችን መመርመር እና ማስተዳደር።</li>
+                <li>እንደ ኢንፌክሽኖች፣ የመተንፈሻ አካላት ችግሮች እና የምግብ መፈጨት ችግሮች ያሉ አጣዳፊ በሽታዎችን ማከም።</li>
+                <li>የጤና ምርመራዎችን፣ ክትባቶችን እና የአኗኗር ዘይቤ ምክርን ጨምሮ የመከላከያ እንክብካቤ።</li>
+                <li>ለተወሳሰቡ የህክምና ሁኔታዎች ከሌሎች ስፔሻሊስቶች ጋር እንክብካቤን ማስተባበር።</li>
+                <li>አጠቃላይ የህክምና ግምገማዎች እና ከቀዶ ጥገና በፊት የሚደረጉ ግምገማዎች።</li>
+            </ul>
+            የእኛ ኢንተርኒስቶች የታካሚውን ጤና እና ደህንነት ሁሉንም ገጽታዎች ከግምት ውስጥ በማስገባት ሁሉን አቀፍ በሆነ አቀራረብ ላይ ያተኩራሉ።`
+            // Image might be added here in future iterations
+        },
+        "cardiology": {
+            "title_eng": "Cardiology",
+            "title_tig": "ሕክምና ልቢ",
+            "title_amh": "የልብ ህክምና",
+            "full_desc_eng": "Full detailed description of Cardiology services...", // **FILL THIS**
+            "full_desc_tig": "ሙሉ ዝርዝር መግለጺ ናይ ሕክምና ልቢ ግልጋሎታት...", // **FILL THIS**
+            "full_desc_amh": "የልብ ህክምና አገልግሎቶች ሙሉ ዝርዝር መግለጫ...", // **FILL THIS**
+        },
+        "general-surgery": {
+            "title_eng": "General Surgery",
+            "title_tig": "ሓፈሻዊ ሕክምና",
+            "title_amh": "አጠቃላይ ቀዶ ጥገና",
+            "full_desc_eng": "Full detailed description of General Surgery services...", // **FILL THIS**
+            "full_desc_tig": "ሙሉ ዝርዝር መግለጺ ናይ ሓፈሻዊ ሕክምና ግልጋሎታት...", // **FILL THIS**
+            "full_desc_amh": "አጠቃላይ የቀዶ ጥገና አገልግሎቶች ሙሉ ዝርዝር መግለጫ...", // **FILL THIS**
+        },
+        "pediatrics": {
+            "title_eng": "Pediatrics & Adolescents",
+            "title_tig": "ሕክምና ህጻናትን ኣባጽሕን",
+            "title_amh": "የህፃናት እና ወጣቶች ህክምና",
+            "full_desc_eng": "Full detailed description of Pediatrics & Adolescents services...", // **FILL THIS**
+            "full_desc_tig": "ሙሉ ዝርዝር መግለጺ ናይ ሕክምና ህጻናትን ኣባጽሕን ግልጋሎታት...", // **FILL THIS**
+            "full_desc_amh": "የህፃናት እና ወጣቶች ህክምና አገልግሎቶች ሙሉ ዝርዝር መግለጫ...", // **FILL THIS**
+        },
+        "obsgyn": {
+            "title_eng": "Obstetrics & Gynecology",
+            "title_tig": "ሕክምና ነፍሰጾራትን ደቂኣንስትዮን",
+            "title_amh": "የማህፀንና ፅንስ ህክምና",
+            "full_desc_eng": "Full detailed description of Obstetrics & Gynecology services...", // **FILL THIS**
+            "full_desc_tig": "ሙሉ ዝርዝር መግለጺ ናይ ሕክምና ነፍሰጾራትን ደቂኣንስትዮን ግልጋሎታት...", // **FILL THIS**
+            "full_desc_amh": "የማህፀንና ፅንስ ህክምና አገልግሎቶች ሙሉ ዝርዝር መግለጫ...", // **FILL THIS**
+        },
+        "ent": {
+            "title_eng": "ENT (Ear, Nose, Throat)",
+            "title_tig": "ENT (ኣፍንጫ፣ ጆሮ፣ ጕርዲ)",
+            "title_amh": "የአፍንጫ፣ ጆሮ፣ ጉሮሮ ህክምና",
+            "full_desc_eng": "Full detailed description of ENT services...", // **FILL THIS**
+            "full_desc_tig": "ሙሉ ዝርዝር መግለጺ ናይ ENT ግልጋሎታት...", // **FILL THIS**
+            "full_desc_amh": "የአፍንጫ፣ ጆሮ፣ ጉሮሮ ህክምና አገልግሎቶች ሙሉ ዝርዝር መግለጫ...", // **FILL THIS**
+        },
+        "radiology": {
+            "title_eng": "Radiology",
+            "title_tig": "ራድዮሎጂ",
+            "title_amh": "ራዲዮሎጂ",
+            "full_desc_eng": "Full detailed description of Radiology services...", // **FILL THIS**
+            "full_desc_tig": "ሙሉ ዝርዝር መግለጺ ናይ ራድዮሎጂ ግልጋሎታት...", // **FILL THIS**
+            "full_desc_amh": "ራዲዮሎጂ አገልግሎቶች ሙሉ ዝርዝር መግለጫ...", // **FILL THIS**
+        },
+        "dental": {
+            "title_eng": "Dental",
+            "title_tig": "ሕክምና ስኒ",
+            "title_amh": "የጥርስ ህክምና",
+            "full_desc_eng": "Full detailed description of Dental services...", // **FILL THIS**
+            "full_desc_tig": "ሙሉ ዝርዝር መግለጺ ናይ ሕክምና ስኒ ግልጋሎታት...", // **FILL THIS**
+            "full_desc_amh": "የጥርስ ህክምና አገልግሎቶች ሙሉ ዝርዝር መግለጫ...", // **FILL THIS**
+        },
+        "neurosurgery": {
+            "title_eng": "Neurosurgery",
+            "title_tig": "ኒውሮሰርጀሪ",
+            "title_amh": "የነርቭ ቀዶ ጥገና",
+            "full_desc_eng": "Full detailed description of Neurosurgery services...", // **FILL THIS**
+            "full_desc_tig": "ሙሉ ዝርዝር መግለጺ ናይ ኒውሮሰርጀሪ ግልጋሎታት...", // **FILL THIS**
+            "full_desc_amh": "የነርቭ ቀዶ ጥገና አገልግሎቶች ሙሉ ዝርዝር መግለጫ...", // **FILL THIS**
+        },
+        "orthopedics": {
+            "title_eng": "Orthopedics",
+            "title_tig": "ኦርቶፔዲክስ",
+            "title_amh": "የአጥንት ህክምና",
+            "full_desc_eng": "Full detailed description of Orthopedics services...", // **FILL THIS**
+            "full_desc_tig": "ሙሉ ዝርዝር መግለጺ ናይ ኦርቶፔዲክስ ግልጋሎታት...", // **FILL THIS**
+            "full_desc_amh": "የአጥንት ህክምና አገልግሎቶች ሙሉ ዝርዝር መግለጫ...", // **FILL THIS**
+        },
+        "dermatology": {
+            "title_eng": "Dermatology & Cosmetology",
+            "title_tig": "ደርማቶሎጂን ኮስመቶሎጂን",
+            "title_amh": "የቆዳ ህክምና እና ውበት",
+            "full_desc_eng": "Full detailed description of Dermatology & Cosmetology services...", // **FILL THIS**
+            "full_desc_tig": "ሙሉ ዝርዝር መግለጺ ናይ ደርማቶሎጂን ኮስመቶሎጂን ግልጋሎታት...", // **FILL THIS**
+            "full_desc_amh": "የቆዳ ህክምና እና ውበት አገልግሎቶች ሙሉ ዝርዝር መግለጫ...", // **FILL THIS**
+        },
+        "anesthesia": {
+            "title_eng": "Anesthesia & Pain Management",
+            "title_tig": "ኣነስቴዥያን ሕክምና ሕማምን",
+            "title_amh": "ማደንዘዣ እና ህመም ማስታገሻ",
+            "full_desc_eng": "Full detailed description of Anesthesia & Pain Management services...", // **FILL THIS**
+            "full_desc_tig": "ሙሉ ዝርዝር መግለጺ ናይ ኣነስቴዥያን ሕክምና ሕማምን ግልጋሎታት...", // **FILL THIS**
+            "full_desc_amh": "ማደንዘዣ እና ህመም ማስታገሻ አገልግሎቶች ሙሉ ዝርዝር መግለጫ...", // **FILL THIS**
+        },
+        "laboratory": {
+            "title_eng": "Laboratory",
+            "title_tig": "ላብራቶሪ",
+            "title_amh": "ላብራቶሪ",
+            "full_desc_eng": "Full detailed description of Laboratory services...", // **FILL THIS**
+            "full_desc_tig": "ሙሉ ዝርዝር መግለጺ ናይ ላብራቶሪ ግልጋሎታት...", // **FILL THIS**
+            "full_desc_amh": "ላብራቶሪ አገልግሎቶች ሙሉ ዝርዝር መግለጫ...", // **FILL THIS**
+        },
+        "physiotherapy": {
+            "title_eng": "Physiotherapy",
+            "title_tig": "ፊዝዮቴራፒ",
+            "title_amh": "ፊዚዮቴራፒ",
+            "full_desc_eng": "Full detailed description of Physiotherapy services...", // **FILL THIS**
+            "full_desc_tig": "ሙሉ ዝርዝር መግለጺ ናይ ፊዝዮቴራፒ ግልጋሎታት...", // **FILL THIS**
+            "full_desc_amh": "ፊዚዮቴራፒ አገልግሎቶች ሙሉ ዝርዝር መግለጫ...", // **FILL THIS**
+        },
+        "psychiatry": {
+            "title_eng": "Psychiatry",
+            "title_tig": "ሳይካትሪ",
+            "title_amh": "የአእምሮ ህክምና",
+            "full_desc_eng": "Full detailed description of Psychiatry services...", // **FILL THIS**
+            "full_desc_tig": "ሙሉ ዝርዝር መግለጺ ናይ ሳይካትሪ ግልጋሎታት...", // **FILL THIS**
+            "full_desc_amh": "የአእምሮ ህክምና አገልግሎቶች ሙሉ ዝርዝር መግለጫ...", // **FILL THIS**
+        },
+        "ophthalmology": {
+            "title_eng": "Ophthalmology",
+            "title_tig": "ሕክምና ዓይኒ",
+            "title_amh": "የአይን ህክምና",
+            "full_desc_eng": "Full detailed description of Ophthalmology services...", // **FILL THIS**
+            "full_desc_tig": "ሙሉ ዝርዝር መግለጺ ናይ ሕክምና ዓይኒ ግልጋሎታት...", // **FILL THIS**
+            "full_desc_amh": "የአይን ህክምና አገልግሎቶች ሙሉ ዝርዝር መግለጫ...", // **FILL THIS**
+        },
+        "maternity": {
+            "title_eng": "Maternity Services",
+            "title_tig": "ኣገልግሎታት ማትርኒቲ",
+            "title_amh": "የወሊድ አገልግሎቶች",
+            "full_desc_eng": "Full detailed description of Maternity Services...", // **FILL THIS**
+            "full_desc_tig": "ሙሉ ዝርዝር መግለጺ ናይ ኣገልግሎታት ማትርኒቲ ግልጋሎታት...", // **FILL THIS**
+            "full_desc_amh": "የወሊድ አገልግሎቶች ሙሉ ዝርዝር መግለጫ...", // **FILL THIS**
+        },
+        "pharmacy-ambulance": {
+            "title_eng": "Pharmacy & Ambulance",
+            "title_tig": "ፋርማሲን ኣምቡላንስን",
+            "title_amh": "ፋርማሲ እና አምቡላንስ",
+            "full_desc_eng": "Full detailed description of Pharmacy & Ambulance services...", // **FILL THIS**
+            "full_desc_tig": "ሙሉ ዝርዝር መግለጺ ናይ ፋርማሲን ኣምቡላንስን ግልጋሎታት...", // **FILL THIS**
+            "full_desc_amh": "ፋርማሲ እና አምቡላንስ አገልግሎቶች ሙሉ ዝርዝር መግለጫ...", // **FILL THIS**
+        },
+        "other": {
+            "title_eng": "Other Services",
+            "title_tig": "ካልኦት ግልጋሎታት",
+            "title_amh": "ሌሎች አገልግሎቶች",
+            "full_desc_eng": "Full detailed description of Other Services...", // **FILL THIS**
+            "full_desc_tig": "ሙሉ ዝርዝር መግለጺ ናይ ካልኦት ግልጋሎታት...", // **FILL THIS**
+            "full_desc_amh": "ሌሎች አገልግሎቶች ሙሉ ዝርዝር መግለጫ...", // **FILL THIS**
+        }
+    };
+
+    // Helper function to get query parameters from URL
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    // Function to load service details onto service-detail.html
+    function loadServiceDetails() {
+        const serviceId = getQueryParam('service');
+        const lang = localStorage.getItem('selectedLang') || 'tig'; // Get current language
+
+        const serviceTitleElement = document.getElementById('service-detail-title');
+        const serviceDescriptionElement = document.getElementById('service-detail-description');
+        const serviceHeroTitleElement = document.querySelector('.hero-section.inner-hero h2');
+        const serviceHeroPElement = document.querySelector('.hero-section.inner-hero p');
+
+        if (serviceId && serviceDetails[serviceId]) {
+            const detail = serviceDetails[serviceId];
+
+            // Update page title and meta description
+            document.title = translations[lang]["service-detail-page-title"].replace("Service Detail", detail[`title_${lang}`] || detail.title_eng);
+            const metaDescription = document.querySelector('meta[name="description"]');
+            if (metaDescription) {
+                metaDescription.setAttribute('content', detail[`full_desc_${lang}`] ? detail[`full_desc_${lang}`].substring(0, 150) + '...' : detail.full_desc_eng.substring(0, 150) + '...');
+            }
+
+
+            if (serviceTitleElement) {
+                serviceTitleElement.textContent = detail[`title_${lang}`] || detail.title_eng;
+            }
+            if (serviceDescriptionElement) {
+                serviceDescriptionElement.innerHTML = detail[`full_desc_${lang}`] || detail.full_desc_eng; // Use innerHTML to render lists
+            }
+            if (serviceHeroTitleElement) {
+                serviceHeroTitleElement.textContent = detail[`title_${lang}`] || detail.title_eng;
+            }
+            if (serviceHeroPElement) {
+                // You might want a shorter intro text for the hero, or just use part of the full desc
+                serviceHeroPElement.textContent = (detail[`full_desc_${lang}`] || detail.full_desc_eng).split('.')[0] + '.'; // First sentence
+            }
+        } else if (serviceTitleElement) {
+            serviceTitleElement.textContent = "Service Not Found";
+            serviceDescriptionElement.innerHTML = "<p>The requested service could not be found. Please return to the <a href='services.html'>Services page</a>.</p>";
+            if (serviceHeroTitleElement) serviceHeroTitleElement.textContent = "Service Not Found";
+            if (serviceHeroPElement) serviceHeroPElement.textContent = "";
+        }
+    }
+
+    // END OF NEW ADDITIONS FOR service-detail.html //
+
 
     // Function to apply translations
     function applyTranslations(lang) {
@@ -455,8 +768,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else if (element.tagName === 'P' && element.closest('.footer-info')) {
                     // For the footer-text, which contains spans and br tags
                     element.innerHTML = translations[lang][key];
-                }
-                else {
+                } else {
                     // For general elements, use innerHTML to allow for HTML tags within translations
                     element.innerHTML = translations[lang][key];
                 }
@@ -489,19 +801,18 @@ document.addEventListener('DOMContentLoaded', () => {
         updateHeroSectionContent('contact.html', 'contact-h2', 'contact-p');
         updateHeroSectionContent('gallery.html', 'gallery-h2', 'gallery-p');
         updateHeroSectionContent('news.html', 'news-h2', 'news-p');
-        updateHeroSectionContent('services.html', 'services-page-h2', 'services-page-intro-p');
+        updateHeroSectionContent('services.html', 'services-page-title', 'services-page-description'); // Updated keys
         updateHeroSectionContent('doctors.html', 'doctors-page-title', 'doctors-page-intro');
 
         // Special handling for index.html hero section
         if (currentPath === 'index.html') {
-            const indexHeroH1 = document.querySelector('#hero-section h1[data-translate="hero-main-title"]');
+            const indexHeroH1 = document.querySelector('#hero-section h1[data-translate="site-main-title"]'); // Updated key
             const indexHeroH2 = document.querySelector('#hero-section h2[data-translate="hero-h2"]');
             const indexHeroP = document.querySelector('#hero-section p[data-translate="hero-p"]');
 
-            if (indexHeroH1 && translations[lang]['hero-main-title']) {
-                // Ensure the span tags are preserved for styling, update only text content
+            if (indexHeroH1 && translations[lang]['site-main-title']) {
                 const tempDiv = document.createElement('div');
-                tempDiv.innerHTML = translations[lang]['hero-main-title'];
+                tempDiv.innerHTML = translations[lang]['site-main-title'];
                 indexHeroH1.innerHTML = tempDiv.innerHTML;
             }
             if (indexHeroH2 && translations[lang]['hero-h2']) {
@@ -512,38 +823,33 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-
-        // Update specific descriptions on services.html
+        // Update specific descriptions on services.html (short descriptions for grid)
         if (currentPath === 'services.html') {
-            const serviceDescriptions = {
-                "service-internal-medicine-item": "internal-medicine-desc",
-                "service-cardiology-item": "cardiology-desc",
-                "service-general-surgery-item": "general-surgery-desc",
-                "service-pediatrics-item": "pediatrics-adolescents-desc", // Corrected key
-                "service-obsgyn-item": "obsgyn-desc",
-                "service-ent-item": "ent-desc",
-                "service-radiology-item": "radiology-desc",
-                "service-dental-item": "dental-desc",
-                "service-neurosurgery-item": "neurosurgery-desc",
-                "service-orthopedics-item": "orthopedics-desc",
-                "service-dermatology-item": "dermatology-cosmetology-desc", // Corrected key
-                "service-anesthesia-item": "anesthesia-pain-management-desc", // Corrected key
-                "service-laboratory-item": "laboratory-desc",
-                "service-physiotherapy-item": "physiotherapy-desc",
-                "service-psychiatry-item": "psychiatry-desc",
-                "service-ophthalmology-item": "ophthalmology-desc",
-                "service-maternity-item": "maternity-services-desc", // Corrected key
-                "service-pharmacy-ambulance-item": "pharmacy-ambulance-desc-full", // Corrected key
-                "service-other-item": "other-services-desc"
-            };
-
-            for (const id in serviceDescriptions) {
-                const element = document.querySelector(`#${id} p`);
-                if (element && translations[lang][serviceDescriptions[id]]) {
-                    element.textContent = translations[lang][serviceDescriptions[id]];
+            document.querySelector('.section-title[data-translate="our-services-heading"]').textContent = translations[lang]["our-services-heading"];
+            document.querySelector('.text-center[data-translate="services-intro-text"]').textContent = translations[lang]["services-intro-text"];
+            
+            // Loop through all service items to update their short descriptions
+            for(let i = 1; i <= 19; i++) {
+                const h3Key = `service${i}-h3`;
+                const descKey = `service${i}-desc-short`;
+                const serviceItem = document.querySelector(`.service-item:nth-child(${i})`); // Target individual service item
+                if (serviceItem) {
+                    const h3Element = serviceItem.querySelector('h3');
+                    const pElement = serviceItem.querySelector('p');
+                    if (h3Element && translations[lang][h3Key]) {
+                        h3Element.textContent = translations[lang][h3Key];
+                    }
+                    if (pElement && translations[lang][descKey]) {
+                        pElement.textContent = translations[lang][descKey];
+                    }
+                    const readMoreButton = serviceItem.querySelector('a.button.primary-button');
+                    if(readMoreButton) {
+                        readMoreButton.textContent = translations[lang]["read-more"];
+                    }
                 }
             }
         }
+
 
         // Update specific descriptions on departments.html
         if (currentPath === 'departments.html') {
@@ -558,9 +864,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 "dept-dermatology-item": "dept-dermatology-desc",
                 "dept-psychiatry-item": "dept-psychiatry-desc",
                 "dept-ophthalmology-item": "dept-ophthalmology-desc",
-                // Add keys for oral-dental-maxillofacial and ent-plastic-surgery if they have distinct descriptions
-                "dept-oral-dental-maxillofacial-item": "dept-oral-dental-maxillofacial-desc", // Assuming you'll add this desc to translations
-                "dept-ent-plastic-surgery-item": "dept-ent-plastic-surgery-desc" // Assuming you'll add this desc to translations
+                "dept-oral-dental-maxillofacial-item": "dept-oral-dental-maxillofacial-desc",
+                "dept-ent-plastic-surgery-item": "dept-ent-plastic-surgery-desc"
             };
 
             for (const id in departmentDescriptions) {
@@ -574,7 +879,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update text for doctors.html cards (specialties)
         if (currentPath === 'doctors.html') {
             const doctorSpecialties = {
-                "doctor-tesfa": "dr-tesfay-specialty", // Example, adjust based on your doctor data in translations
+                "doctor-tesfa": "dr-tesfay-specialty",
                 "doctor-rahel": "dr-rahel-specialty",
                 "doctor-hana": "dr-hana-specialty",
                 "doctor-samuel": "dr-samuel-specialty",
@@ -588,7 +893,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             for (const id in doctorSpecialties) {
-                const element = document.querySelector(`#${id} .doctor-specialty`); // Assuming a class 'doctor-specialty' for the p tag
+                const element = document.querySelector(`#${id} .doctor-specialty`);
                 if (element && translations[lang][doctorSpecialties[id]]) {
                     element.textContent = translations[lang][doctorSpecialties[id]];
                 }
@@ -599,16 +904,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Language Switcher functionality
     const languageSwitcherDesktop = document.getElementById('language-switcher');
-    const languageSwitcherMobile = document.getElementById('language-switcher-mobile');
+    const languageSwitcherMobile = document.getElementById('language-switcher-mobile'); // Assuming this exists
 
-    // Function to handle language change (can be reused)
     function handleLanguageChange(event) {
         const selectedLang = event.target.value;
-        localStorage.setItem('selectedLang', selectedLang); // Save selected language
+        localStorage.setItem('selectedLang', selectedLang);
         applyTranslations(selectedLang);
-        // Ensure both dropdowns reflect the change if they exist
         if (languageSwitcherDesktop) languageSwitcherDesktop.value = selectedLang;
         if (languageSwitcherMobile) languageSwitcherMobile.value = selectedLang;
+        // Reload service details if on service-detail page to apply new language
+        if (window.location.pathname.includes('service-detail.html')) {
+            loadServiceDetails();
+        }
     }
 
     if (languageSwitcherDesktop) {
@@ -618,23 +925,27 @@ document.addEventListener('DOMContentLoaded', () => {
         languageSwitcherMobile.addEventListener('change', handleLanguageChange);
     }
 
-    // Set initial language from localStorage or default to Tigrigna
     const savedLang = localStorage.getItem('selectedLang') || 'tig';
     if (languageSwitcherDesktop) languageSwitcherDesktop.value = savedLang;
     if (languageSwitcherMobile) languageSwitcherMobile.value = savedLang;
     applyTranslations(savedLang);
 
+    // Initial load for service-detail.html when the page first loads
+    if (window.location.pathname.includes('service-detail.html')) {
+        loadServiceDetails();
+    }
 
-    // Dropdown functionality for desktop
+
+    // Dropdown functionality for desktop (mouseenter/mouseleave for submenus)
     document.querySelectorAll('nav ul li.dropdown').forEach(dropdown => {
         dropdown.addEventListener('mouseenter', () => {
-            if (window.innerWidth > 992) { // Only for desktop hover (matching CSS breakpoint)
+            if (window.innerWidth > 992) {
                 dropdown.querySelector('.submenu').style.display = 'block';
             }
         });
 
         dropdown.addEventListener('mouseleave', () => {
-            if (window.innerWidth > 992) { // Only for desktop hover
+            if (window.innerWidth > 992) {
                 dropdown.querySelector('.submenu').style.display = 'none';
             }
         });
@@ -642,11 +953,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mobile Navigation Toggle (Hamburger menu toggle)
     const navToggle = document.getElementById('nav-toggle');
-    const navMenu = document.querySelector('nav ul'); // Assumed nav ul is the main menu for mobile
+    const navMenu = document.querySelector('nav ul');
     if (navToggle && navMenu) {
         navToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active'); // Add/remove 'active' class
-            // Close any open dropdowns when main nav is toggled
+            navMenu.classList.toggle('active');
             document.querySelectorAll('nav ul li.dropdown .submenu').forEach(submenu => {
                 submenu.style.display = 'none';
             });
@@ -656,33 +966,44 @@ document.addEventListener('DOMContentLoaded', () => {
     // Toggle dropdowns for mobile (click on parent link)
     document.querySelectorAll('nav ul li.dropdown > a').forEach(link => {
         link.addEventListener('click', (e) => {
-            if (window.innerWidth <= 992) { // Only for mobile/tablet
-                e.preventDefault(); // Prevent navigating immediately
+            if (window.innerWidth <= 992) {
                 const parentLi = link.closest('li.dropdown');
                 const submenu = parentLi.querySelector('.submenu');
 
-                // Close other open submenus first
-                document.querySelectorAll('nav ul li.dropdown .submenu').forEach(otherSubmenu => {
-                    if (otherSubmenu !== submenu && otherSubmenu.style.display === 'block') {
-                        otherSubmenu.style.display = 'none';
+                if (submenu.style.display === 'block') {
+                    // If submenu is open, allow click to navigate (or close if it's the current page's submenu)
+                    if (link.getAttribute('href') && link.getAttribute('href') !== '#') {
+                        // Allow navigation if it's a real link, and close submenu
+                        submenu.style.display = 'none';
+                        return; // Let the browser handle navigation
+                    } else {
+                        // If it's just a placeholder link or current page's parent, close it
+                        submenu.style.display = 'none';
+                        e.preventDefault(); // Prevent default if it's a placeholder
                     }
-                });
-
-                // Toggle current submenu
-                submenu.style.display = (submenu.style.display === 'block') ? 'none' : 'block';
+                } else {
+                    // Close other open submenus first
+                    document.querySelectorAll('nav ul li.dropdown .submenu').forEach(otherSubmenu => {
+                        if (otherSubmenu !== submenu && otherSubmenu.style.display === 'block') {
+                            otherSubmenu.style.display = 'none';
+                        }
+                    });
+                    // Open current submenu
+                    submenu.style.display = 'block';
+                    e.preventDefault(); // Prevent navigating immediately when opening
+                }
             }
         });
     });
 
-
     // Close mobile menu and dropdowns if clicking outside
     document.addEventListener('click', (event) => {
-        if (window.innerWidth <= 992) { // Match breakpoint
+        if (window.innerWidth <= 992) {
             const header = document.querySelector('header');
             const isClickInsideHeader = header && header.contains(event.target);
             const isClickOnNavToggle = navToggle && navToggle.contains(event.target);
 
-            if (!isClickInsideHeader && !isClickOnNavToggle) { // Only close if click is completely outside header
+            if (!isClickInsideHeader && !isClickOnNavToggle) {
                 if (navMenu) navMenu.classList.remove('active');
                 document.querySelectorAll('nav ul li.dropdown .submenu').forEach(submenu => {
                     submenu.style.display = 'none';
@@ -691,25 +1012,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-
     // Search functionality
     const searchInputDesktop = document.getElementById('search-input');
     const searchButtonDesktop = document.getElementById('search-button');
-    // Assuming you have mobile search input/button as well, e.g., on a mobile header
-    const searchInputMobile = document.getElementById('search-input-mobile'); // Placeholder
-    const searchButtonMobile = document.getElementById('search-button-mobile'); // Placeholder
+    const searchInputMobile = document.getElementById('search-input-mobile'); // Assuming this exists
+    const searchButtonMobile = document.getElementById('search-button-mobile'); // Assuming this exists
 
 
     function handleSearch() {
         let query = '';
         if (window.innerWidth > 992 && searchInputDesktop) {
             query = searchInputDesktop.value.toLowerCase();
-        } else if (window.innerWidth <= 992 && searchInputMobile) { // Use mobile if screen is small
+        } else if (searchInputMobile) { // Use mobile if screen is small (no need to re-check innerWidth)
             query = searchInputMobile.value.toLowerCase();
         }
 
         if (query) {
-            // For now, redirect to a generic search page. You can implement in-page search later.
             window.location.href = `search.html?query=${encodeURIComponent(query)}`;
         }
     }
@@ -722,7 +1040,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    // Only attach if mobile search elements exist
     if (searchButtonMobile && searchInputMobile) {
         searchButtonMobile.addEventListener('click', handleSearch);
         searchInputMobile.addEventListener('keypress', (e) => {
@@ -734,9 +1051,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // Dynamic content filtering for services, departments, doctors pages
-    const currentPath = window.location.pathname.split('/').pop(); // Get just the filename
+    const currentPath = window.location.pathname.split('/').pop();
 
-    // Function to filter items based on URL parameter
     function applyPageFilter(pageFilename, paramName, itemClass, idPrefix = '') {
         if (currentPath === pageFilename) {
             const urlParams = new URLSearchParams(window.location.search);
@@ -746,34 +1062,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (selectedParam) {
                 allItems.forEach(item => {
-                    item.style.display = 'none'; // Hide all
+                    item.style.display = 'none';
                 });
 
-                const targetId = `${idPrefix}${selectedParam}-item`; // Construct ID like 'service-internal-medicine-item'
+                const targetId = `${idPrefix}${selectedParam}-item`;
                 const targetItem = document.getElementById(targetId);
 
                 if (targetItem) {
-                    targetItem.style.display = 'block'; // Show the selected item
-                    targetItem.scrollIntoView({ behavior: 'smooth', block: 'center' }); // Scroll to it
+                    targetItem.style.display = 'block';
+                    targetItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
             } else {
-                // If no specific parameter, ensure all items are visible
                 allItems.forEach(item => {
-                    item.style.display = 'block'; // Show all
+                    item.style.display = 'block';
                 });
             }
         }
     }
     
-    // Apply filters to respective pages
-    // Note: The idPrefix ensures the generated ID matches your HTML IDs
     applyPageFilter('services.html', 'service', 'service-item', 'service-');
     applyPageFilter('departments.html', 'dept', 'department-item', 'dept-');
     applyPageFilter('doctors.html', 'specialty', 'doctor-card', 'doctor-');
 
-    // Sticky Header (optional, can be done with CSS too)
+    // Sticky Header
     const header = document.querySelector('header');
-    const topBar = document.querySelector('.top-bar'); // Get the top bar
     let headerOffset = 0;
     if (header) {
         headerOffset = header.offsetTop;
@@ -783,11 +1095,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (header) {
             if (window.pageYOffset > headerOffset) {
                 header.classList.add('sticky');
-                // Optional: add padding to body to prevent content jump
-                // document.body.style.paddingTop = header.offsetHeight + 'px';
             } else {
                 header.classList.remove('sticky');
-                // document.body.style.paddingTop = '0';
             }
         }
     }
@@ -797,52 +1106,54 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial setup of dynamic menu links on page load
     function setupDynamicMenuLinks() {
         // Services Submenu
-        document.querySelectorAll('ul.submenu a[href^="services.html?service="]').forEach(link => {
-            // Extract the data-translate key and use it to build the service parameter
+        document.querySelectorAll('ul.submenu a[href^="service-detail.html?service="]').forEach(link => {
             const dataTranslateKey = link.getAttribute('data-translate');
-            // Example: "service1-h3" -> "service1" or "internal-medicine" if your translation key is structured that way
             let serviceParam = '';
-            if (dataTranslateKey.includes('-h3')) {
-                // If key is like "service1-h3", remove "-h3" to get "service1"
-                serviceParam = dataTranslateKey.replace('-h3', '');
-            } else {
-                // If key is already clean like "internal-medicine"
-                // You might need a more robust mapping here if translation keys are not direct service names
-                const serviceKeyMap = {
-                    "internal-medicine": "internal-medicine",
-                    "cardiology": "cardiology",
-                    "general-surgery": "general-surgery",
-                    "pediatrics-adolescents": "pediatrics", // Maps "pediatrics-adolescents" to "pediatrics" in URL
-                    "obsgyn": "obsgyn",
-                    "ent": "ent",
-                    "radiology": "radiology",
-                    "dental": "dental",
-                    "neurosurgery": "neurosurgery",
-                    "orthopedics": "orthopedics",
-                    "dermatology-cosmetology": "dermatology", // Maps "dermatology-cosmetology" to "dermatology" in URL
-                    "anesthesia-pain-management": "anesthesia", // Maps to "anesthesia"
-                    "laboratory": "laboratory",
-                    "physiotherapy": "physiotherapy",
-                    "psychiatry": "psychiatry",
-                    "ophthalmology": "ophthalmology",
-                    "maternity-services": "maternity", // Maps "maternity-services" to "maternity"
-                    "pharmacy-ambulance": "pharmacy-ambulance", // Maps "pharmacy-ambulance" to "pharmacy-ambulance"
-                    "other-services": "other" // Maps "other-services" to "other"
-                };
-                serviceParam = serviceKeyMap[dataTranslateKey] || dataTranslateKey; // Use map or fallback
-            }
-            link.href = `services.html?service=${serviceParam}`;
+            // This mapping ensures that your data-translate keys (like "service1-h3") map to the correct URL parameters (like "internal-medicine")
+            const serviceKeyMap = {
+                "service1-h3": "internal-medicine",
+                "service2-h3": "cardiology",
+                "service3-h3": "general-surgery",
+                "service4-h3": "pediatrics",
+                "service5-h3": "obsgyn",
+                "service6-h3": "ent",
+                "service7-h3": "radiology",
+                "service8-h3": "dental",
+                "service9-h3": "neurosurgery",
+                "service10-h3": "orthopedics",
+                "service11-h3": "dermatology",
+                "service12-h3": "anesthesia",
+                "service13-h3": "laboratory",
+                "service14-h3": "physiotherapy",
+                "service15-h3": "psychiatry",
+                "service16-h3": "ophthalmology",
+                "service17-h3": "maternity",
+                "service18-h3": "pharmacy-ambulance",
+                "service19-h3": "other"
+            };
+            serviceParam = serviceKeyMap[dataTranslateKey] || dataTranslateKey; // Use map or fallback
+
+            link.href = `service-detail.html?service=${serviceParam}`;
         });
+
 
         // Doctors Submenu
         document.querySelectorAll('ul.submenu a[href^="doctors.html?specialty="]').forEach(link => {
             const dataTranslateKey = link.getAttribute('data-translate');
-            let specialtyParam = dataTranslateKey.replace('menu-', ''); // e.g., "menu-surgeons" -> "surgeons"
-            // You might need more specific mappings here if your URL parameters differ from menu-keys
-            // E.g., if "menu-ent-plastic" should map to "ent-plastic-surgery" in URL
+            let specialtyParam = dataTranslateKey.replace('menu-', '');
             const doctorKeyMap = {
                 "ent-plastic": "ent-plastic-surgery",
-                "maxillofacial": "maxillofacial" // Assuming it's already "maxillofacial"
+                "maxillofacial": "maxillofacial-surgeons",
+                "surgeons": "surgeons",
+                "gynecologists": "gynecologists",
+                "pediatricians": "pediatricians",
+                "internists": "internists",
+                "orthopedicians": "orthopedicians",
+                "radiologists": "radiologists",
+                "oncologists": "oncologists",
+                "dermatologists": "dermatologists",
+                "psychiatrists": "psychiatrists",
+                "ophthalmologists": "ophthalmologists"
             };
             specialtyParam = doctorKeyMap[specialtyParam] || specialtyParam;
             link.href = `doctors.html?specialty=${specialtyParam}`;
@@ -851,18 +1162,26 @@ document.addEventListener('DOMContentLoaded', () => {
         // Departments Submenu
         document.querySelectorAll('ul.submenu a[href^="departments.html?dept="]').forEach(link => {
             const dataTranslateKey = link.getAttribute('data-translate');
-            let deptParam = dataTranslateKey.replace('dept-', ''); // e.g., "dept-surgery" -> "surgery"
-            // Specific mappings for department URLs if needed
+            let deptParam = dataTranslateKey.replace('dept-', '');
             const departmentKeyMap = {
-                "oral-dental-maxillofacial": "oral-dental-maxillofacial", // Example mapping
-                "ent-plastic-surgery": "ent-plastic-surgery" // Example mapping
+                "surgery": "surgery",
+                "pediatrics": "pediatrics",
+                "obsgyn": "obsgyn",
+                "internal-medicine": "internal-medicine",
+                "orthopedics": "orthopedics",
+                "radiology": "radiology",
+                "oncology": "oncology",
+                "dermatology": "dermatology",
+                "psychiatry": "psychiatry",
+                "ophthalmology": "ophthalmology",
+                "oral-dental-maxillofacial": "oral-dental-maxillofacial",
+                "ent-plastic-surgery": "ent-plastic-surgery"
             };
             deptParam = departmentKeyMap[deptParam] || deptParam;
             link.href = `departments.html?dept=${deptParam}`;
         });
     }
 
-    // Call setupDynamicMenuLinks on initial load
     setupDynamicMenuLinks();
 
 });
