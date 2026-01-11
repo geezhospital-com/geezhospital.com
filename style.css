@@ -689,13 +689,15 @@ footer .container {
         position: absolute;
         top: 25px; /* Adjust vertical position relative to header */
         right: 20px; /* Adjust horizontal position */
+        color: var(--primary-color); /* Color of the hamburger icon */
     }
 
     nav ul {
         display: none; /* Hide the main menu by default on mobile */
         flex-direction: column; /* Stack menu items vertically */
         width: 100%; /* Take full width */
-        background-color: var(--light-bg-color); /* Background for mobile menu */
+        /* MODIFIED: Changed background to white for better contrast with dark text */
+        background-color: #ffffff; /* White background for readability */
         position: absolute;
         top: 80px; /* Adjust based on your header's total height (logo + padding) */
         left: 0;
@@ -723,22 +725,30 @@ footer .container {
 
     nav ul li a {
         padding: 15px 20px; /* Increase padding for touch targets */
-        display: block; /* Make the whole area clickable */
+        display: block;
+        /* MODIFIED: Changed link text color to dark for white background */
+        color: var(--text-color); /* Dark text for white background */
+        font-weight: bold; /* Make it bold for better visibility */
     }
 
-    /* Submenus for mobile */
+    nav ul li a:hover {
+        background-color: var(--light-bg-color); /* Lighter hover for white menu */
+        color: var(--primary-color);
+    }
+
+    /* Submenus for mobile - these styles already provide good contrast */
     .submenu {
-        position: static; /* Submenus should not be absolutely positioned on mobile */
-        display: none; /* Hidden by default */
-        background-color: var(--dark-bg-color); /* Different background for submenu */
+        position: static;
+        display: none;
+        background-color: var(--dark-bg-color); /* Dark background for submenus */
         width: 100%;
         padding: 0;
         margin: 0;
-        box-shadow: none; /* No shadow for submenus on mobile */
+        box-shadow: none;
     }
 
     .submenu li {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Lighter border for submenu items */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .submenu li:last-child {
@@ -746,7 +756,7 @@ footer .container {
     }
 
     .submenu li a {
-        padding-left: 40px; /* Indent submenu items */
+        padding-left: 40px;
         color: #fff; /* White text for dark submenu background */
     }
 
