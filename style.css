@@ -1338,4 +1338,102 @@ footer {
     .search-container-mobile #search-input-mobile {
         width: 60%;
     }
+    /* General styles for the nav-toggle button */
+.nav-toggle {
+    display: none; /* Hide by default for desktop */
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    color: var(--primary-color); /* Or any color you prefer */
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001; /* Ensure it's above other content */
+}
+
+/* Styles for mobile navigation within a media query */
+@media (max-width: 992px) { /* Adjust breakpoint as needed */
+    .nav-toggle {
+        display: block; /* Show hamburger icon on mobile/tablet */
+        position: absolute;
+        top: 25px; /* Adjust vertical position */
+        right: 20px; /* Adjust horizontal position */
+    }
+
+    header .container {
+        flex-wrap: wrap; /* Allow items to wrap */
+        justify-content: space-between; /* Space out logo and toggle */
+    }
+
+    header nav ul {
+        display: none; /* Hide the main menu by default on mobile */
+        flex-direction: column; /* Stack menu items vertically */
+        width: 100%; /* Take full width */
+        background-color: var(--light-bg-color); /* Background for mobile menu */
+        position: absolute;
+        top: 80px; /* Adjust based on your header's height */
+        left: 0;
+        padding: 10px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    header nav ul.active {
+        display: flex; /* Show the menu when 'active' class is present */
+    }
+
+    header nav ul li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #eee; /* Separator for menu items */
+    }
+
+    header nav ul li:last-child {
+        border-bottom: none;
+    }
+
+    header nav ul li a {
+        padding: 15px 20px; /* Increase padding for touch targets */
+        display: block; /* Make the whole area clickable */
+    }
+
+    /* Submenus for mobile */
+    header nav ul li.dropdown .submenu {
+        position: static; /* Submenus should not be absolutely positioned on mobile */
+        display: none; /* Hidden by default */
+        background-color: var(--dark-bg-color); /* Different background for submenu */
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        box-shadow: none; /* No shadow for submenus on mobile */
+    }
+
+    header nav ul li.dropdown .submenu li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Lighter border for submenu items */
+    }
+
+    header nav ul li.dropdown .submenu li:last-child {
+        border-bottom: none;
+    }
+
+    header nav ul li.dropdown .submenu a {
+        padding-left: 40px; /* Indent submenu items */
+        color: #fff; /* White text for dark submenu background */
+    }
+
+    /* Language selector and search container for mobile */
+    header .language-selector,
+    header .search-container {
+        width: 100%;
+        padding: 10px 20px;
+        margin-top: 10px;
+        box-sizing: border-box; /* Include padding in width */
+    }
+
+    header .search-container {
+        display: flex; /* Ensure search input and button are inline */
+    }
+    header .search-container input {
+        flex-grow: 1; /* Allow input to take available space */
+    }
+}
 }
