@@ -210,7 +210,7 @@ const translations = {
     'footer-services-title':   'Top Services',
     'footer-contact-title':    'Contact Us',
     'footer-address':          'Kindeya Kebele, In front of Ethio-Telecom, Behind Central Café, Axum, Tigray, Ethiopia',
-    'footer-text':             'Copyright © 2026 Geez Hospital | Developed By Aser Teklu Gebrekidan — 0911179955',
+    'footer-text':             'Copyright © 2026 Geez Hospital | Developed By Legesse Teklu Gebrekidan — 0911179955',
   },
 
   /* ════════════════════════════════════
@@ -350,7 +350,7 @@ const translations = {
     'articles-p':              'ካብቶም ብቑዓት ሰራሕተኛታትና ንዝመጹ ሓደሽቲ ጽሑፋት ጥዕና፣ ፍልጠትን ሕክምናዊ ሓበሬታን ተኸታተሉ።',
 
     /* J — Appointment form & testimonial */
-    'testimonial-p':           'ሓካይምን ሰራሕተኛታትን ናይ ግዕዝ ሆስፒታል ብሓቂ ዘደንቁ እዮም — ሓዘናዊ፣ ክኢሎ፣ ሓጋዚ። ዝተዋሃበኒ ክንክን ህይወተይ ቀይሩዋ። ብጣዕሚ ኣመስጋኒ።',
+    'testimonial-p':           'ሓካይምን ሰራሕተኛታትን ሆስፒታል ግዕዝ ብሓቂ ብሉጻት እዮም — ርህሩሃት፣ ክኢላታትን ሓለይትን። ዝተገብረለይ ክንክን ንህይወተይ ቀይሩዎ እዩ። ናይ ብሓቂ ክብሪን ምስጋናን ይግብኦም እዩ።',
     'testimonial-span':        '— ኣቶ ገብረሜድህን ካሕሳይ፣ ኣኽሱም',
 
     /* K — Map & CTA */
