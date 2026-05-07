@@ -171,7 +171,6 @@ const translations = {
     'menu-dermatologists':     'Dermatologists',
     'menu-psychiatrists':      'Psychiatrists',
     'menu-ophthalmologists':   'Ophthalmologists',
-      'menu-dentists':           'Dentists',
 
     /* H — Department menu items */
     'dept-surgery':            'Surgery',
@@ -210,7 +209,7 @@ const translations = {
     'footer-services-title':   'Top Services',
     'footer-contact-title':    'Contact Us',
     'footer-address':          'Kindeya Kebele, In front of Ethio-Telecom, Behind Central Café, Axum, Tigray, Ethiopia',
-    'footer-text':             'Copyright © 2026 Geez Hospital | Developed By Legesse Teklu Gebrekidan — 0911179955',
+    'footer-text':             'Copyright © 2026 Geez Hospital | Developed By Aser Teklu Gebrekidan — 0911179955',
   },
 
   /* ════════════════════════════════════
@@ -223,14 +222,14 @@ const translations = {
   tig: {
 
     /* A — Navigation & UI chrome */
-    'hero-main-title':         'ሆስፒታል ግዕዝ',
+    'hero-main-title':         'ሆስፒታል ገዓዝ',
     'home':                    'መእተዊ',
     'about-us':                'ብዛዕባና',
     'menu-about-us':           'ብዛዕባና',
     'menu-mission':            'ተልእኾና',
     'menu-vision':             'ራእይና',
-    'menu-services-about':     'ሓፈሻዊ ግልጋሎታት',
-    'services':                'ግልጋሎታት',
+    'menu-services-about':     'ሓፈሻዊ ኣገልግሎታት',
+    'services':                'ኣገልግሎታት',
     'doctors':                 'ሓኻይም',
     'departments':             'ክፍለታት',
     'facilities':              'ማሽናት',
@@ -246,31 +245,31 @@ const translations = {
     'announcement':            'ህጹጽ መስመር 24/7 ክፉት እዩ — ደውሉ +251 920 008 338',
 
     /* B — Hero */
-    'hero-badge':              'ብሓልዮትና ንምረጽ፡ብሞያዊ ብቕዓትና ንእመን',
-    'hero-title':              'ብሉጽን መሪሕ ደረጃ ዘለዎ ማእኸል ሕክምና!!።',
-    'hero-sub':                'ግዕዝ ሆስፒታል፡ ኣብ ከተማ ኣኽሱም ዓለም-ለኻዊ ደረጃ ዘለዎ ሕክምና   —  ዘመናዊ ቴክኖሎጂን  ምስ ህጹጽ ግልጋግሎት 24/7።',
+    'hero-badge':              'ዋና ሕክምናዊ ማዕከን ኣኽሱም',
+    'hero-title':              'ብናትና ክንክን ዝተመርጽና።\nብናትና ሞያ ዝተኣመነ።',
+    'hero-sub':                'ኣብ ልብሲ ኣኽሱም ዓለምለኻዊ ደረጃ ሕክምና — ዘመናዊ ቴክኖሎጂ፣ ሓዘናዊ ሓኻኑ፣ 24/7 ህጹጽ ኣገልግሎት።',
     'hero-btn-appointment':    'ቆፀሮ ሓዙ',
-    'hero-btn-services':       'ግልጋሎታት ርአ',
-    'stat-services':           'ክፍሊታት ሕክምና',
-    'stat-doctors':            'ስፔሻሊስት ሓካይም ',
-    'stat-emergency':          'ህጹጽ ረድኤት',
+    'hero-btn-services':       'ኣገልግሎታት ርአ',
+    'stat-services':           'ክፍሊታት',
+    'stat-doctors':            'ሓካይም ስፔሻሊስት',
+    'stat-emergency':          'ህጹጽ ክንክን',
 
     /* C — Quick-access cards */
     'qa-appt':                 'ቆፀሮ ሓዙ',
     'qa-appt-sub':             'ኦንላይን ወይ ምምጻእ',
     'qa-doctors':              'ሓኪም ረኽቡ',
     'qa-doctors-sub':          'ስፔሻሊስትን ሰብ-ስፔሻሊስትን',
-    'qa-services':             'ግልጋሎታትና',
-    'qa-services-sub':         '18+ ክፍሊታት ሕክምና',
-    'qa-emergency':            'ሃንደበታ ሕክምና',
+    'qa-services':             'ኣገልግሎታትና',
+    'qa-services-sub':         '18+ ክፍሊታት',
+    'qa-emergency':            'ህጹጽ',
     'qa-emergency-sub':        '+251 920 008 338',
 
     /* D — About / Mission / Vision
        Professional Tigrinya from Subscript_2.js */
-    'about-eyebrow':           'ብዛዕባና',
+    'about-eyebrow':           'ንሕና መን ኢና',
     'about-h2':                'ብዛዕባና',
     'about-badge':             'ዝተምስረተ 2011',
-    'about-p1':                'ሆስፒታል ግዕዝ ብ2011 ኣ.ግ ዝተመስረተ፣ ኣብ ማእኸላይ ዞባ ካብቶም ቀዳሞት ዝስርዑ፣ ዓለምለኻዊ ፅሬት ዘለዎ ዘመናዊን ስሉጥን ሕክምናዊ ግልጋሎት ዝህቡ ትካላት ሓደ እዩ። ኣብ መላእ እቲ ዞባን ጎረባብቲን ሓደ ካብቶም ዝዓበዩን ዝእመኑን ናይ ሕክምና ትካል ኮይኑ ዓለምለኻዊ ፅሬት ዘለዎ ሕክምና ንነፍሲ-ወከፍ ዜጋ ተበፃሒ ንምግባር ዝዓለመ እዩ። ብፍላይ ሓልዮት ዝተመልኦ ክንክን፣ ላዕለዋይ ሞያዊ ብቕዓትን ዘመናዊ መሳርሒታትን ብምቕራብ ዝተመስረተ ትካል እዩ። ንድሕንነት ሕሙማትን ንብሉፅ ግልጋሎትን ዓብዪ ቆላሕታ ይህብ።',
+    'about-p1':                'ሆስፒታል ግዕዝ ብ2011 ኣ.ግ ዝተመስረተ ሆስፒታል ግዕዝ፣ ኣብ ማእኸላይ ዞባ ካብቶም ቀዳሞት ዝስርዑ፣ ዓለምለኻዊ ፅሬት ዘለዎ ዘመናዊን ስሉጥን ሕክምናዊ ግልጋሎት ዝህቡ ትካላት ሓደ እዩ። ኣብ መላእ እቲ ዞባን ጎረባብቲን ሓደ ካብቶም ዝዓበዩን ዝእመኑን ናይ ሕክምና ትካል ኮይኑ ዓለምለኻዊ ፅሬት ዘለዎ ሕክምና ንነፍሲ-ወከፍ ዜጋ ተበፃሒ ንምግባር ዝዓለመ እዩ። ብፍላይ ሓልዮት ዝተመልኦ ክንክን፣ ላዕለዋይ ሞያዊ ብቕዓትን ዘመናዊ መሳርሒታትን ብምቕራብ ዝተመስረተ ትካል እዩ። ንድሕንነት ሕሙማትን ንብሉፅ ግልጋሎትን ዓብዪ ቆላሕታ ይህብ።',
     'mission-h3':              'ተልእኾና',
     'mission-p':               'ብሉፅ ፅሬት፣ ተመጣጣኒ፣ ተበፃሒን ተሓታትነት ዘለዎን ሕክምና ንኹሉ ዜጋ ብምቕራብ፤ ብሉፅ ሞያዊ ክእለትን ርህራሄ ዝመልኦ ሓልዮትን ዘወሃሃደ፣ ተበፃሒ፣ ፅሬቱ ዝሓለወን ተመጣጣኒ ዋጋ ዘለዎን ሕክምና ንማሕበረሰብ ብምቕራብ፤ ዓለምለኻዊ ደረጃኡ ዝሓለወ ናይ ሕክምና ኣሰራርሓ ምፍጣር ከምኡውን ዝለዓለ ናይ ሕክምና ስነ-ምግባር ምኽባርን እዩ።',
     'vision-h3':               'ራእይና',
@@ -310,8 +309,8 @@ const translations = {
     'view-all-doctors':        'ኩሎም ሓካይም ርአ',
     'dr-tesfay-name':          'ዶ/ር ተስፋይ ኣጽበሃ',
     'dr-tesfay-specialty':     'ኢንተርቨንሽናል ካርዲዮሎጂ',
-    'dr-higus-name':           'ዶ/ር ሕጉስ ተኽሉ',
-    'dr-higus-specialty':      'ውሽጣዊ ሕማማት ሕክምና',
+    'dr-higus-name':           'ዶ/ር ሒጉስ ተኽሉ',
+    'dr-higus-specialty':      'ውሽጣዊ ሕክምና',
     'appointment-btn':         'ቆፀሮ',
     'menu-surgeons':           'ሰርጀንስ',
     'menu-gynecologists':      'ጋይናኮሎጂስትስ',
@@ -325,7 +324,6 @@ const translations = {
     'menu-dermatologists':     'ደርማቶሎጂስትስ',
     'menu-psychiatrists':      'ሳይካትሪስትስ',
     'menu-ophthalmologists':   'ኦፍታልሞሎጂስትስ',
-    'menu-dentists':            'ክፍሊ ሕክምና ስኒ',
 
     /* H — Department menu items */
     'dept-surgery':            'ክፍሊ ሕክምና',
@@ -350,8 +348,8 @@ const translations = {
     'articles-p':              'ካብቶም ብቑዓት ሰራሕተኛታትና ንዝመጹ ሓደሽቲ ጽሑፋት ጥዕና፣ ፍልጠትን ሕክምናዊ ሓበሬታን ተኸታተሉ።',
 
     /* J — Appointment form & testimonial */
-    'testimonial-p':           'ሓካይምን ሰራሕተኛታትን ሆስፒታል ግዕዝ ብሓቂ ብሉጻት እዮም — ርህሩሃት፣ ክኢላታትን ሓለይትን እዮም። ዝተገብረለይ ክንክን ንህይወተይ ቀይሩዎ እዩ። ናይ ብሓቂ ክብሪን ምስጋናን ይግብኦም እዩ።',
-    'testimonial-span':        '— ኣቶ ገብረመድህን ካሕሳይ፣ ኣኽሱም',
+    'testimonial-p':           'ሓካይምን ሰራሕተኛታትን ናይ ግዕዝ ሆስፒታል ብሓቂ ዘደንቁ እዮም — ሓዘናዊ፣ ክኢሎ፣ ሓጋዚ። ዝተዋሃበኒ ክንክን ህይወተይ ቀይሩዋ። ብጣዕሚ ኣመስጋኒ።',
+    'testimonial-span':        '— ኣቶ ገብረሜድህን ካሕሳይ፣ ኣኽሱም',
 
     /* K — Map & CTA */
     'view-on-map':             'ኣብ ጉግል ካርታ ክፈቱ',
@@ -359,12 +357,12 @@ const translations = {
     'cta-sub':                 'ቆፀሮ ሓዙ ወይ ርኸቡና — ኩሉ ግዜ ኣለና።',
 
     /* L — Footer */
-    'footer-brand-desc':       'ዓለምለኻዊ ደረጃኡ ዝሓለወ ሕክምና። ንኹሉ ተገልጋሊ ብሓልዮትን ክንክን ግልጋሎት ንህብ።',
+    'footer-brand-desc':       'ኣብ ኣኽሱም ዓለምለኻዊ ሕክምና። ንኹሉ ሕሙም ሓዘናዊ ክንክን።',
     'footer-quick-links':      'ቅልጡፍ ሊንካት',
-    'footer-services-title':   'ዋና ግልጋሎታትና',
+    'footer-services-title':   'ዋና ኣገልግሎታት',
     'footer-contact-title':    'ርኸቡና',
-    'footer-address':          'ጣብያ ክንደያ፣ ፊትንፊት ኢትዮ-ቴሌኮም፣ ድሕሪ ሴንትራል ካፌ፣ ኣኽሱም፣ ትግራይ፣ ኢትዮጵያ',
-    'footer-text':             'Copy right © 2026 ሆስፒታል ግዕዝ | Developed By Legesse Teklu Gebrekidan — 0911179955',
+    'footer-address':          'ኪንደያ ከበሌ፣ ቅድሚ ኢትዮ-ቴሌኮም፣ ድሕሪ ሴንትራል ካፌ፣ ኣኽሱም፣ ትግራይ፣ ኢትዮጵያ',
+    'footer-text':             'Copy right © 2026 ሆስፒታል ግዕዝ | Developed By Aser Teklu Gebrekidan — 0911179955',
   },
 
   /* ════════════════════════════════════
@@ -400,9 +398,9 @@ const translations = {
     'announcement':            'የድንገተኛ ጊዜ መስመር 24/7 ክፍት ነው — ይደውሉ +251 920 008 338',
 
     /* B — Hero */
-    'hero-badge':              'ዓለም አቀፋዊ ደረጃውን የጠበቀ ህክምና። ለሁሉም ተገልጋዮች በርህራሄና በጥንቃቄ አገልግሎት እንሰጣለን።"',
-    'hero-title':              'እንክብካቤያችን ተመራጭ፤ በሙያ ብቃታችን ተመራጭ!',
-    'hero-sub':                'በአክሱም ከተማ ዓለም ኣቀፋዊ ደረጃ የጠበቀ የህክምና ግልጋሎት — ዘመናዊ ቴክኖሎጂ፣ ብቁ ሀኪሞች፣ 24/7 የድንገተኛ ጊዜ አገልግሎት።',
+    'hero-badge':              'የአክሱም ዋና የህክምና ማዕከል',
+    'hero-title':              'ለእንክብካቤያችን የተመረጥን።\nለሙያችን የተታመን።',
+    'hero-sub':                'በአክሱም ልብ ውስጥ ዓለም ደረጃ ልዩ ህክምና — ዘመናዊ ቴክኖሎጂ፣ ርህሩህ ሀኪሞች፣ 24/7 የድንገተኛ ጊዜ አገልግሎት።',
     'hero-btn-appointment':    'ቀጠሮ ያዙ',
     'hero-btn-services':       'አገልግሎቶችን ይመልከቱ',
     'stat-services':           'ክፍሎች',
