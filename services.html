@@ -1,350 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate="services">Services - Geez Hospital</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon"> <!-- Changed favicon path for consistency -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services | Geez Hospital — Axum, Tigray</title>
+  <meta name="description" content="Geez Hospital offers 18+ specialist medical services in Axum, Tigray: Cardiology, Surgery, Pediatrics, Gynecology, Neurosurgery, Radiology and more. Book an appointment today.">
+  <meta name="keywords" content="Geez Hospital services, medical services Axum, specialist care Tigray, cardiology Axum, surgery Axum">
+  <link rel="canonical" href="https://geezhospital.com/services.html">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Noto+Sans+Ethiopic:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="container">
-            <div class="contact-info">
-                <span><a href="tel:+251920008338"><i class="fas fa-phone"></i> +251 920008338</a> / <a href="tel:+251962333388">0962333388</a></span>
-                <span><a href="mailto:info@geezhospital.com"><i class="fas fa-envelope"></i> info@geezhospital.com</a></span>
-            </div>
-            <div class="right-section">
-                <div class="address-info">
-                    <span><a href="https://maps.app.goo.gl/yHuCuCgLMzUtyerU6" target="_blank"><i class="fas fa-map-marker-alt"></i> Axum, Infront of Ethiotelecom, Behind Central Cafe</a></span>
-                </div>
-                <div class="social-icons-top">
-                    <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://t.me/geezhospital_bot" target="_blank"><i class="fab fa-telegram-plane"></i></a>
-                </div>
-                <a href="contact.html" class="contact-button" data-translate="contact-us-btn">Contact Us</a>
-            </div>
-        </div>
+
+<div class="top-bar">
+  <div class="container top-bar-inner">
+    <div class="top-bar-left">
+      <a href="tel:+251920008338" class="top-bar-item"><i class="fas fa-phone-volume"></i> +251 920 008 338</a>
+      <span class="divider">|</span>
+      <a href="tel:+251962333388" class="top-bar-item"><i class="fas fa-phone"></i> +251 962 333 388</a>
+      <span class="divider">|</span>
+      <a href="mailto:geezhospital@gmail.com" class="top-bar-item"><i class="fas fa-envelope"></i> geezhospital@gmail.com</a>
+    </div>
+    <div class="top-bar-right">
+      <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://t.me/Geezhospital_bot" target="_blank" class="social-link" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+      <a href="https://linktr.ee/geezhospital" target="_blank" class="social-link" aria-label="Survey"><i class="fas fa-poll"></i></a>
+      <a href="contact.html" class="top-bar-cta" data-translate="contact-us-btn">Book Appointment</a>
+    </div>
+  </div>
+</div>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="index.html" class="logo-wrap" aria-label="Geez Hospital Home">
+      <img src="images/logo.png" alt="Geez Hospital Logo" class="logo-img" onerror="this.style.display='none'">
+      <div class="logo-text">
+        <span class="logo-en">GEEZ HOSPITAL</span>
+        <span class="logo-tig">ግዕዝ ሆስፒታል</span>
+      </div>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav" id="mainNav">
+      <ul class="nav-list">
+        <li><a href="index.html" class="nav-link" data-translate="home">Home</a></li>
+        <li><a href="services.html" class="nav-link active" data-translate="services">Services</a></li>
+        <li><a href="doctors.html" class="nav-link" data-translate="doctors">Doctors</a></li>
+        <li><a href="gallery.html" class="nav-link" data-translate="gallery">Gallery</a></li>
+        <li><a href="news.html" class="nav-link" data-translate="news">News</a></li>
+        <li><a href="contact.html" class="nav-link" data-translate="contact">Contact</a></li>
+        <li class="nav-lang">
+          <select id="language-switcher" aria-label="Select language">
+            <option value="eng">English</option>
+            <option value="tig">ትግርኛ</option>
+            <option value="amh">አማርኛ</option>
+          </select>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <h2 data-translate="our-services-h2">Our Medical Services</h2>
+    <p data-translate="services-intro">Specialist and sub-specialist care across 18+ departments, powered by modern technology and expert physicians.</p>
+  </div>
+</section>
+
+<section class="section-gap" style="background: var(--gray-50);">
+  <div class="container">
+    <div class="section-header" style="margin-bottom: 2.5rem;">
+      <p class="section-eyebrow" data-translate="services-eyebrow">What We Offer</p>
+      <h2 class="section-title" data-translate="our-services-h2">Explore Our Specialized Services</h2>
+      <p class="section-desc" data-translate="services-p-about">We offer a wide range of specialist and sub-specialist fields with modern technology and professional competence.</p>
     </div>
 
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <img src="images/logo.png" alt="Geez Hospital Logo">
-                <h1 data-translate="site-main-title"><span class="geez-color">Geez</span> <span class="hospital-color">Hospital</span></h1>
-            </div>
-            <button class="nav-toggle" id="nav-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
-            <nav>
-                <ul>
-                    <li><a href="index.html" data-translate="home">Home</a></li>
-                    <li class="dropdown">
-                        <a href="#" data-translate="about-us">About Us <i class="fas fa-caret-down"></i></a>
-                        <ul class="submenu">
-                            <li><a href="about.html#about-section" data-translate="menu-about-us">About Us</a></li>
-                            <li><a href="about.html#mission-section" data-translate="menu-mission">Mission</a></li>
-                            <li><a href="about.html#vision-section" data-translate="menu-vision">Vision</a></li>
-                            <li><a href="about.html#services-section" data-translate="menu-services-about">Services Overview</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="services.html" data-translate="services">Services <i class="fas fa-caret-down"></i></a>
-                        <ul class="submenu">
-                            <!-- UPDATED: Links now point to service-detail.html -->
-                            <li><a href="service-detail.html?service=internal-medicine" data-translate="service1-h3">Internal Medicine</a></li>
-                            <li><a href="service-detail.html?service=cardiology" data-translate="service2-h3">Cardiology</a></li>
-                            <li><a href="service-detail.html?service=general-surgery" data-translate="service3-h3">General Surgery</a></li>
-                            <li><a href="service-detail.html?service=pediatrics" data-translate="service4-h3">Pediatrics & Adolescents</a></li>
-                            <li><a href="service-detail.html?service=obsgyn" data-translate="service5-h3">Obstetrics & Gynecology</a></li>
-                            <li><a href="service-detail.html?service=ent" data-translate="service6-h3">ENT</a></li>
-                            <li><a href="service-detail.html?service=radiology" data-translate="service7-h3">Radiology</a></li>
-                            <li><a href="service-detail.html?service=dental" data-translate="service8-h3">Dental</a></li>
-                            <li><a href="service-detail.html?service=neurosurgery" data-translate="service9-h3">Neurosurgery</a></li>
-                            <li><a href="service-detail.html?service=orthopedics" data-translate="service10-h3">Orthopedics</a></li>
-                            <li><a href="service-detail.html?service=dermatology" data-translate="service11-h3">Dermatology & Cosmetology</a></li>
-                            <li><a href="service-detail.html?service=anesthesia" data-translate="service12-h3">Anesthesia & Pain Management</a></li>
-                            <li><a href="service-detail.html?service=laboratory" data-translate="service13-h3">Laboratory</a></li>
-                            <li><a href="service-detail.html?service=physiotherapy" data-translate="service14-h3">Physiotherapy</a></li>
-                            <li><a href="service-detail.html?service=psychiatry" data-translate="service15-h3">Psychiatry</a></li>
-                            <li><a href="service-detail.html?service=ophthalmology" data-translate="service16-h3">Ophthalmology</a></li>
-                            <li><a href="service-detail.html?service=maternity" data-translate="service17-h3">Maternity Services</a></li>
-                            <li><a href="service-detail.html?service=pharmacy-ambulance" data-translate="service18-h3">Pharmacy & Ambulance</a></li>
-                            <li><a href="service-detail.html?service=other" data-translate="service19-h3">Other Services</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="doctors.html" data-translate="doctors">Doctors <i class="fas fa-caret-down"></i></a>
-                        <ul class="submenu">
-                            <li><a href="doctors.html?specialty=surgeons" data-translate="menu-surgeons">Surgeons</a></li>
-                            <li><a href="doctors.html?specialty=gynecologists" data-translate="menu-gynecologists">Gynecologists</a></li>
-                            <li><a href="doctors.html?specialty=pediatricians" data-translate="menu-pediatricians">Pediatricians</a></li>
-                            <li><a href="doctors.html?specialty=internists" data-translate="menu-internists">Internists</a></li>
-                            <li><a href="doctors.html?specialty=orthopedicians" data-translate="menu-orthopedicians">Orthopedicians</a></li>
-                            <li><a href="doctors.html?specialty=radiologists" data-translate="menu-radiologists">Radiologists</a></li>
-                            <li><a href="doctors.html?specialty=oncologists" data-translate="menu-oncologists">Oncologists</a></li>
-                            <li><a href="doctors.html?specialty=maxillofacial" data-translate="menu-maxillofacial">Maxillofacial Surgeons</a></li>
-                            <li><a href="doctors.html?specialty=ent-plastic" data-translate="menu-ent-plastic">ENT, Head & Neck and Plastic Surgeons</a></li>
-                            <li><a href="doctors.html?specialty=dermatologists" data-translate="menu-dermatologists">Dermatologists</a></li>
-                            <li><a href="doctors.html?specialty=psychiatrists" data-translate="menu-psychiatrists">Psychiatrists</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" data-translate="departments">Departments <i class="fas fa-caret-down"></i></a>
-                        <ul class="submenu">
-                            <li><a href="departments.html?dept=surgery" data-translate="dept-surgery">Surgery</a></li>
-                            <li><a href="departments.html?dept=pediatrics" data-translate="dept-pediatrics">Pediatrics</a></li>
-                            <li><a href="departments.html?dept=obsgyn" data-translate="dept-obsgyn">Obstetrics and Gynecology</a></li>
-                            <li><a href="departments.html?dept=internal-medicine" data-translate="dept-internal-medicine">Internal Medicine</a></li>
-                            <li><a href="departments.html?dept=orthopedics" data-translate="dept-orthopedics">Orthopedics</a></li>
-                            <li><a href="departments.html?dept=radiology" data-translate="dept-radiology">Radiology</a></li>
-                            <li><a href="departments.html?dept=oncology" data-translate="dept-oncology">Oncology</a></li>
-                            <li><a href="departments.html?dept=dermatology" data-translate="dept-dermatology">Dermatology</a></li>
-                            <li><a href="departments.html?dept=psychiatry" data-translate="dept-psychiatry">Psychiatry</a></li>
-                            <li><a href="departments.html?dept=ophthalmology" data-translate="dept-ophthalmology">Ophthalmology</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="facilities.html" data-translate="facilities">Facilities</a></li>
-                    <li class="dropdown">
-                        <a href="#" data-translate="media">Media <i class="fas fa-caret-down"></i></a>
-                        <ul class="submenu">
-                            <li><a href="patient-info.html" data-translate="media-patient-info">Patient Information</a></li>
-                            <li><a href="articles.html" data-translate="media-articles">Articles</a></li>
-                            <li><a href="news.html" data-translate="news">News and Events</a></li>
-                            <li><a href="gallery.html" data-translate="gallery">Gallery</a></li>
-                            <li><a href="https://linktr.ee/geezhospital" target="_blank" data-translate="patient-satisfaction-survey">Patient Satisfaction Survey</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="contact.html" data-translate="contact">Contact Us</a></li>
-                </ul>
-                <div class="language-selector">
-                    <select id="language-switcher">
-                        <option value="tig">ትግርኛ</option>
-                        <option value="eng">English</option>
-                        <option value="amh">አማርኛ</option>
-                    </select>
-                </div>
-                <div class="search-container">
-                    <input type="text" id="search-input" placeholder="Search..." data-translate="search-placeholder">
-                    <button id="search-button"><i class="fas fa-search"></i></button>
-                </div>
-            </nav>
+    <div class="service-items-grid">
+
+      <div class="service-item reveal">
+        <i class="fas fa-stethoscope"></i>
+        <h3 data-translate="service1-h3">Internal Medicine</h3>
+        <p data-translate="service1-desc-short">Comprehensive diagnosis and treatment for adult diseases, focusing on non-surgical approaches and long-term health management.</p>
+        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
+      </div>
+
+      <div class="service-item reveal">
+        <i class="fas fa-heartbeat"></i>
+        <h3 data-translate="service2-h3">Cardiology</h3>
+        <p data-translate="service2-desc-short">Specialized care for heart and vascular conditions, including diagnostics, treatment, and preventive programs.</p>
+        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
+      </div>
+
+      <div class="service-item reveal">
+        <i class="fas fa-cut"></i>
+        <h3 data-translate="service3-h3">General Surgery</h3>
+        <p data-translate="service3-desc-short">Offering a wide range of surgical procedures, from routine to complex operations, performed by skilled surgeons.</p>
+        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
+      </div>
+
+      <div class="service-item reveal">
+        <i class="fas fa-baby"></i>
+        <h3 data-translate="service4-h3">Pediatrics &amp; Adolescents</h3>
+        <p data-translate="service4-desc-short">Dedicated medical care for infants, children, and teenagers, covering their growth, development, and specific health issues.</p>
+        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
+      </div>
+
+      <div class="service-item reveal">
+        <i class="fas fa-venus-mars"></i>
+        <h3 data-translate="service5-h3">Obstetrics &amp; Gynecology</h3>
+        <p data-translate="service5-desc-short">Comprehensive health services for women, including prenatal care, childbirth, postnatal care, and reproductive health.</p>
+        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
+      </div>
+
+      <div class="service-item reveal">
+        <i class="fas fa-ear-listen"></i>
+        <h3 data-translate="service6-h3">ENT</h3>
+        <p data-translate="service6-desc-short">Diagnosis and treatment of disorders related to the ear, nose, and throat, including head and neck conditions.</p>
+        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
+      </div>
+
+      <div class="service-item reveal">
+        <i class="fas fa-x-ray"></i>
+        <h3 data-translate="service7-h3">Radiology</h3>
+        <p data-translate="service7-desc-short">Advanced diagnostic imaging — X-rays, CT scans, MRI, and ultrasound — to aid accurate medical diagnosis.</p>
+        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
+      </div>
+
+      <div class="service-item reveal">
+        <i class="fas fa-tooth"></i>
+        <h3 data-translate="service8-h3">Dental</h3>
+        <p data-translate="service8-desc-short">Full range of dental services, from routine check-ups and cleanings to complex restorative and cosmetic dentistry.</p>
+        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
+      </div>
+
+      <div class="service-item reveal">
+        <i class="fas fa-brain"></i>
+        <h3 data-translate="service9-h3">Neurosurgery</h3>
+        <p data-translate="service9-desc-short">Surgical treatment for conditions affecting the brain, spinal cord, and peripheral nerves.</p>
+        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
+      </div>
+
+      <div class="service-item reveal">
+        <i class="fas fa-bone"></i>
+        <h3 data-translate="service10-h3">Orthopedics</h3>
+        <p data-translate="service10-desc-short">Care for musculoskeletal system disorders, including bones, joints, ligaments, tendons, and muscles.</p>
+        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
+      </div>
+
+      <div class="service-item reveal">
+        <i class="fas fa-hand-sparkles"></i>
+        <h3 data-translate="service11-h3">Dermatology &amp; Cosmetology</h3>
+        <p data-translate="service11-desc-short">Diagnosis and treatment of skin, hair, and nail conditions, along with aesthetic and cosmetic procedures.</p>
+        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
+      </div>
+
+      <div class="service-item reveal">
+        <i class="fas fa-syringe"></i>
+        <h3 data-translate="service12-h3">Anesthesia &amp; Pain Management</h3>
+        <p data-translate="service12-desc-short">Providing safe anesthesia for surgeries and effective management of acute and chronic pain conditions.</p>
+        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
+      </div>
+
+      <div class="service-item reveal">
+        <i class="fas fa-flask"></i>
+        <h3 data-translate="service13-h3">Laboratory</h3>
+        <p data-translate="service13-desc-short">Comprehensive laboratory testing services crucial for accurate diagnosis and effective patient management.</p>
+        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
+      </div>
+
+      <div class="service-item reveal">
+        <i class="fas fa-person-walking"></i>
+        <h3 data-translate="service14-h3">Physiotherapy</h3>
+        <p data-translate="service14-desc-short">Rehabilitation services to restore movement, strength, and function for patients recovering from injury or illness.</p>
+        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
+      </div>
+
+      <div class="service-item reveal">
+        <i class="fas fa-head-side-virus"></i>
+        <h3 data-translate="service15-h3">Psychiatry</h3>
+        <p data-translate="service15-desc-short">Mental health services focusing on the diagnosis, treatment, and prevention of mental, emotional, and behavioral disorders.</p>
+        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
+      </div>
+
+      <div class="service-item reveal">
+        <i class="fas fa-child"></i>
+        <h3 data-translate="service16-h3">Maternity Services</h3>
+        <p data-translate="service16-desc-short">Full range of maternity care, from prenatal to postpartum, ensuring the health and well-being of mother and baby.</p>
+        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
+      </div>
+
+      <div class="service-item reveal">
+        <i class="fas fa-pills"></i>
+        <h3 data-translate="service17-h3">Pharmacy &amp; Ambulance</h3>
+        <p data-translate="service17-desc-short">24/7 pharmacy services and emergency ambulance transportation for critical care and patient transfer.</p>
+        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
+      </div>
+
+      <div class="service-item reveal">
+        <i class="fas fa-plus-circle"></i>
+        <h3 data-translate="service18-h3">Other Services</h3>
+        <p data-translate="service18-desc-short">Beyond our core specialties, we offer additional medical and supportive services to ensure holistic patient care.</p>
+        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
+      </div>
+
+    </div>
+
+    <div class="section-cta" style="margin-top: 3rem;">
+      <a href="contact.html" class="btn btn-primary" data-translate="contact-us-btn">Book an Appointment</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo-wrap">
+        <img src="images/logo.png" alt="Geez Hospital" onerror="this.style.display='none'">
+        <div class="logo-text">
+          <span class="logo-en">GEEZ HOSPITAL</span>
+          <span class="logo-tig">ግዕዝ ሆስፒታል</span>
         </div>
-    </header>
+      </a>
+      <p data-translate="footer-brand-desc">World-class healthcare in Axum, Tigray. Compassionate care for every patient.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://t.me/Geezhospital_bot" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+        <a href="https://linktr.ee/geezhospital" target="_blank" aria-label="Survey"><i class="fas fa-poll"></i></a>
+        <a href="https://maps.app.goo.gl/yHuCuCgLMzUtyerU6" target="_blank" aria-label="Google Maps"><i class="fas fa-map-marker-alt"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4 data-translate="footer-quick-links">Quick Links</h4>
+      <ul>
+        <li><a href="index.html" data-translate="home">Home</a></li>
+        <li><a href="services.html" data-translate="services">Services</a></li>
+        <li><a href="doctors.html" data-translate="doctors">Doctors</a></li>
+        <li><a href="gallery.html" data-translate="gallery">Gallery</a></li>
+        <li><a href="news.html" data-translate="news">News</a></li>
+        <li><a href="contact.html" data-translate="contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-translate="footer-services-title">Top Services</h4>
+      <ul>
+        <li><a href="services.html">Cardiology</a></li>
+        <li><a href="services.html">General Surgery</a></li>
+        <li><a href="services.html">Pediatrics</a></li>
+        <li><a href="services.html">Obstetrics &amp; Gynecology</a></li>
+        <li><a href="services.html">Neurosurgery</a></li>
+        <li><a href="services.html">Emergency Care</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-translate="footer-contact-title">Contact Us</h4>
+      <ul class="footer-contact-list">
+        <li><i class="fas fa-map-marker-alt"></i><span data-translate="footer-address">Kindeya Kebele, In front of Ethio-Telecom, Behind Central Cafe, Axum, Tigray</span></li>
+        <li><i class="fas fa-phone"></i><a href="tel:+251920008338">+251 920 008 338</a></li>
+        <li><i class="fas fa-phone"></i><a href="tel:+251962333388">+251 962 333 388</a></li>
+        <li><i class="fas fa-envelope"></i><a href="mailto:geezhospital@gmail.com">geezhospital@gmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p id="footer-text">© 2026 Geez Hospital. All rights reserved.</p>
+      <p class="footer-dev">Developed by <a href="tel:+251911179955">Legesse Teklu Gebrekidan</a></p>
+    </div>
+  </div>
+</footer>
 
-    <!-- Hero Section -->
-    <section id="services-hero" class="hero-section inner-hero">
-        <div class="container text-center">
-            <h2 data-translate="services-page-title">Our Services</h2> <!-- Changed data-translate key for consistency -->
-            <p data-translate="services-page-description">Geez Hospital offers diverse and modern services provided by highly qualified specialists and sub-specialists.</p> <!-- Changed data-translate key for consistency -->
-        </div>
-    </section>
-
-    <!-- Services Grid Section -->
-    <section id="services-grid-section" class="content-section section-padding"> <!-- Renamed ID for clarity -->
-        <div class="container">
-            <h2 class="section-title" data-translate="our-services-heading">Explore Our Specialized Services</h2> <!-- Added data-translate key for consistency -->
-            <p class="text-center" data-translate="services-intro-text">At Geez Hospital, we are dedicated to providing a wide range of high-quality medical services to meet the diverse needs of our patients. Our specialized departments are staffed by experienced professionals committed to your health and well-being.</p> <!-- Added data-translate key for consistency -->
-
-            <div class="service-items-grid">
-                <!-- Service Item 1: Internal Medicine -->
-                <div class="service-item">
-                    <i class="fas fa-stethoscope"></i>
-                    <h3 data-translate="service1-h3">Internal Medicine</h3>
-                    <p data-translate="service1-desc-short">Comprehensive diagnosis and treatment for adult diseases, focusing on non-surgical approaches and long-term health management.</p>
-                    <!-- UPDATED: Link to service-detail.html -->
-                    <a href="service-detail.html?service=internal-medicine" class="button primary-button" data-translate="read-more">Read More</a>
-                </div>
-
-                <!-- Service Item 2: Cardiology -->
-                <div class="service-item">
-                    <i class="fas fa-heartbeat"></i>
-                    <h3 data-translate="service2-h3">Cardiology</h3>
-                    <p data-translate="service2-desc-short">Specialized care for heart and vascular conditions, including diagnostics, treatment, and preventive programs.</p>
-                    <!-- UPDATED: Link to service-detail.html -->
-                    <a href="service-detail.html?service=cardiology" class="button primary-button" data-translate="read-more">Read More</a>
-                </div>
-
-                <!-- Service Item 3: General Surgery -->
-                <div class="service-item">
-                    <i class="fas fa-cut"></i>
-                    <h3 data-translate="service3-h3">General Surgery</h3>
-                    <p data-translate="service3-desc-short">Offering a wide range of surgical procedures, from routine to complex operations, performed by skilled surgeons.</p>
-                    <!-- UPDATED: Link to service-detail.html -->
-                    <a href="service-detail.html?service=general-surgery" class="button primary-button" data-translate="read-more">Read More</a>
-                </div>
-
-                <!-- Service Item 4: Pediatrics & Adolescents -->
-                <div class="service-item">
-                    <i class="fas fa-child"></i>
-                    <h3 data-translate="service4-h3">Pediatrics & Adolescents</h3>
-                    <p data-translate="service4-desc-short">Dedicated medical care for infants, children, and teenagers, covering their growth, development, and specific health issues.</p>
-                    <!-- UPDATED: Link to service-detail.html -->
-                    <a href="service-detail.html?service=pediatrics" class="button primary-button" data-translate="read-more">Read More</a>
-                </div>
-
-                <!-- Service Item 5: Obstetrics & Gynecology -->
-                <div class="service-item">
-                    <i class="fas fa-venus-mars"></i>
-                    <h3 data-translate="service5-h3">Obstetrics & Gynecology</h3>
-                    <p data-translate="service5-desc-short">Comprehensive health services for women, including prenatal care, childbirth, postnatal care, and reproductive health.</p>
-                    <!-- UPDATED: Link to service-detail.html -->
-                    <a href="service-detail.html?service=obsgyn" class="button primary-button" data-translate="read-more">Read More</a>
-                </div>
-
-                <!-- Service Item 6: ENT (Ear, Nose, Throat) -->
-                <div class="service-item">
-                    <i class="fas fa-ear"></i>
-                    <h3 data-translate="service6-h3">ENT</h3>
-                    <p data-translate="service6-desc-short">Diagnosis and treatment of disorders related to the ear, nose, and throat, including head and neck conditions.</p>
-                    <!-- UPDATED: Link to service-detail.html -->
-                    <a href="service-detail.html?service=ent" class="button primary-button" data-translate="read-more">Read More</a>
-                </div>
-
-                <!-- Service Item 7: Radiology -->
-                <div class="service-item">
-                    <i class="fas fa-x-ray"></i>
-                    <h3 data-translate="service7-h3">Radiology</h3>
-                    <p data-translate="service7-desc-short">Advanced diagnostic imaging services such as X-rays, CT scans, MRI, and ultrasound to aid in accurate medical diagnosis.</p>
-                    <!-- UPDATED: Link to service-detail.html -->
-                    <a href="service-detail.html?service=radiology" class="button primary-button" data-translate="read-more">Read More</a>
-                </div>
-
-                <!-- Service Item 8: Dental -->
-                <div class="service-item">
-                    <i class="fas fa-tooth"></i>
-                    <h3 data-translate="service8-h3">Dental</h3>
-                    <p data-translate="service8-desc-short">Full range of dental services, from routine check-ups and cleanings to complex restorative and cosmetic dentistry.</p>
-                    <!-- UPDATED: Link to service-detail.html -->
-                    <a href="service-detail.html?service=dental" class="button primary-button" data-translate="read-more">Read More</a>
-                </div>
-
-                <!-- Service Item 9: Neurosurgery -->
-                <div class="service-item">
-                    <i class="fas fa-brain"></i>
-                    <h3 data-translate="service9-h3">Neurosurgery</h3>
-                    <p data-translate="service9-desc-short">Surgical treatment for conditions affecting the brain, spinal cord, and peripheral nerves.</p>
-                    <!-- UPDATED: Link to service-detail.html -->
-                    <a href="service-detail.html?service=neurosurgery" class="button primary-button" data-translate="read-more">Read More</a>
-                </div>
-
-                <!-- Service Item 10: Orthopedics -->
-                <div class="service-item">
-                    <i class="fas fa-bone"></i>
-                    <h3 data-translate="service10-h3">Orthopedics</h3>
-                    <p data-translate="service10-desc-short">Care for musculoskeletal system disorders, including bones, joints, ligaments, tendons, and muscles.</p>
-                    <!-- UPDATED: Link to service-detail.html -->
-                    <a href="service-detail.html?service=orthopedics" class="button primary-button" data-translate="read-more">Read More</a>
-                </div>
-
-                <!-- Service Item 11: Dermatology & Cosmetology -->
-                <div class="service-item">
-                    <i class="fas fa-hand-sparkles"></i>
-                    <h3 data-translate="service11-h3">Dermatology & Cosmetology</h3>
-                    <p data-translate="service11-desc-short">Diagnosis and treatment of skin, hair, and nail conditions, along with aesthetic and cosmetic procedures.</p>
-                    <!-- UPDATED: Link to service-detail.html -->
-                    <a href="service-detail.html?service=dermatology" class="button primary-button" data-translate="read-more">Read More</a>
-                </div>
-
-                <!-- Service Item 12: Anesthesia & Pain Management -->
-                <div class="service-item">
-                    <i class="fas fa-syringe"></i>
-                    <h3 data-translate="service12-h3">Anesthesia & Pain Management</h3>
-                    <p data-translate="service12-desc-short">Providing safe anesthesia for surgeries and effective management of acute and chronic pain conditions.</p>
-                    <!-- UPDATED: Link to service-detail.html -->
-                    <a href="service-detail.html?service=anesthesia" class="button primary-button" data-translate="read-more">Read More</a>
-                </div>
-
-                <!-- Service Item 13: Laboratory -->
-                <div class="service-item">
-                    <i class="fas fa-flask"></i>
-                    <h3 data-translate="service13-h3">Laboratory</h3>
-                    <p data-translate="service13-desc-short">Comprehensive laboratory testing services crucial for accurate diagnosis and effective patient management.</p>
-                    <!-- UPDATED: Link to service-detail.html -->
-                    <a href="service-detail.html?service=laboratory" class="button primary-button" data-translate="read-more">Read More</a>
-                </div>
-
-                <!-- Service Item 14: Physiotherapy -->
-                <div class="service-item">
-                    <i class="fas fa-running"></i>
-                    <h3 data-translate="service14-h3">Physiotherapy</h3>
-                    <p data-translate="service14-desc-short">Rehabilitation services to restore movement, strength, and function for patients recovering from injury or illness.</p>
-                    <!-- UPDATED: Link to service-detail.html -->
-                    <a href="service-detail.html?service=physiotherapy" class="button primary-button" data-translate="read-more">Read More</a>
-                </div>
-
-                <!-- Service Item 15: Psychiatry -->
-                <div class="service-item">
-                    <i class="fas fa-head-side-brain"></i>
-                    <h3 data-translate="service15-h3">Psychiatry</h3>
-                    <p data-translate="service15-desc-short">Mental health services focusing on the diagnosis, treatment, and prevention of mental, emotional, and behavioral disorders.</p>
-                    <!-- UPDATED: Link to service-detail.html -->
-                    <a href="service-detail.html?service=psychiatry" class="button primary-button" data-translate="read-more">Read More</a>
-                </div>
-                
-                 <!-- Service Item 16: Ophthalmology -->
-                <div class="service-item">
-                    <i class="fas fa-eye"></i>
-                    <h3 data-translate="service16-h3">Ophthalmology</h3>
-                    <p data-translate="service16-desc-short">Comprehensive eye care services, including diagnosis and treatment of eye diseases, vision correction, and surgical procedures.</p>
-                    <!-- UPDATED: Link to service-detail.html -->
-                    <a href="service-detail.html?service=ophthalmology" class="button primary-button" data-translate="read-more">Read More</a>
-                </div>
-
-                <!-- Service Item 17: Maternity Services -->
-                <div class="service-item">
-                    <i class="fas fa-baby"></i>
-                    <h3 data-translate="service17-h3">Maternity Services</h3>
-                    <p data-translate="service17-desc-short">Full range of maternity care, from prenatal to postpartum, ensuring the health and well-being of mother and baby.</p>
-                    <!-- UPDATED: Link to service-detail.html -->
-                    <a href="service-detail.html?service=maternity" class="button primary-button" data-translate="read-more">Read More</a>
-                </div>
-
-                <!-- Service Item 18: Pharmacy & Ambulance -->
-                <div class="service-item">
-                    <i class="fas fa-ambulance"></i>
-                    <h3 data-translate="service18-h3">Pharmacy & Ambulance</h3>
-                    <p data-translate="service18-desc-short">24/7 pharmacy services and emergency ambulance transportation for critical care and patient transfer.</p>
-                    <!-- UPDATED: Link to service-detail.html -->
-                    <a href="service-detail.html?service=pharmacy-ambulance" class="button primary-button" data-translate="read-more">Read More</a>
-                </div>
-
-                <!-- Service Item 19: Other Services -->
-                <div class="service-item">
-                    <i class="fas fa-hospital"></i>
-                    <h3 data-translate="service19-h3">Other Services</h3>
-                    <p data-translate="service19-desc-short">Beyond our core specialties, we offer a variety of additional medical and supportive services to ensure holistic patient care.</p>
-                    <!-- UPDATED: Link to service-detail.html -->
-                    <a href="service-detail.html?service=other" class="button primary-button" data-translate="read-more">Read More</a>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="images/logo.png" alt="Geez Hospital Logo">
-                </div>
-                <div class="footer-info">
-                    <p data-translate="footer-copyright-text">Copyright © 2026 Geez Hospital<br>Developed By Legesse Teklu Gebrekidan-0911179955</p> <!-- Renamed data-translate key -->
-                    <div class="social-icons-footer">
-                        <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://t.me/geezhospital_bot" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
-                        <a href="https://maps.app.goo.gl/yHuCuCgLMzUtyerU6" target="_blank" title="Geez Hospital on Google Maps" aria-label="Google Maps"><i class="fas fa-map-marked-alt"></i></a>
-                        <a href="https://linktr.ee/geezhospital" target="_blank" title="Patient Satisfaction Survey" aria-label="Patient Satisfaction Survey"><i class="fas fa-poll-h"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<script src="script.js"></script>
 </body>
 </html>
