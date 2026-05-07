@@ -2,7 +2,7 @@
 <html lang="ti">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>ብስራት ንተዓወትቲ — Geez Hospital Prediction Challenge</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=Noto+Sans+Ethiopic:wght@300;400;600;700;900&display=swap" rel="stylesheet">
@@ -10,30 +10,24 @@
 
   <style>
     /* ══════════════════════════════════════════
-       DESIGN TOKENS
+       DESIGN TOKENS & CORE STYLES
     ══════════════════════════════════════════ */
     :root {
       --red:        #c0132b;
       --red-dark:   #8c0e1f;
-      --red-glow:   rgba(192, 19, 43, 0.35);
       --blue:       #0a2d6e;
       --blue-mid:   #1245a8;
       --blue-light: #1e5fd4;
       --gold:       #f0c040;
       --gold-dark:  #c49a10;
-      --gold-light: #fff3b0;
       --white:      #ffffff;
       --ink:        #0d0d1a;
-      --radius:      16px;
-      --radius-lg:   28px;
       --font-display: 'Playfair Display', 'Noto Sans Ethiopic', Georgia, serif;
       --font-body:    'DM Sans', 'Noto Sans Ethiopic', system-ui, sans-serif;
       --font-ethiopic:'Noto Sans Ethiopic', serif;
+      --radius-lg:   28px;
     }
 
-    /* ══════════════════════════════════════════
-       RESET & BASE
-    ══════════════════════════════════════════ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: var(--font-body);
@@ -42,243 +36,296 @@
       line-height: 1.7;
       overflow-x: hidden;
     }
-    a { text-decoration: none; color: inherit; transition: 0.3s; }
 
-    /* Animated background */
+    /* Animated background grain/gradient from original */
     body::before {
       content: '';
       position: fixed;
       inset: 0;
-      background: radial-gradient(ellipse at 20% 0%, rgba(10,45,110,0.6) 0%, transparent 60%),
-                  radial-gradient(ellipse at 85% 10%, rgba(192,19,43,0.45) 0%, transparent 55%),
+      background: radial-gradient(ellipse 80% 60% at 20% 0%, rgba(10,45,110,0.6) 0%, transparent 60%),
+                  radial-gradient(ellipse 60% 50% at 85% 10%, rgba(192,19,43,0.45) 0%, transparent 55%),
                   var(--ink);
       z-index: -2;
     }
 
-    .page-wrap { max-width: 900px; margin: 0 auto; padding: 0 20px 80px; }
+    .page-wrap { max-width: 860px; margin: 0 auto; padding: 0 20px 60px; }
+    a { text-decoration: none; color: inherit; }
 
     /* ══════════════════════════════════════════
-       HEADER (WITH BACK BUTTON)
+       UPDATED HEADER (Rule 1 & 2)
     ══════════════════════════════════════════ */
     .site-header {
       background: linear-gradient(135deg, var(--blue) 0%, var(--blue-mid) 100%);
       border-bottom: 3px solid var(--red);
-      padding: 12px 20px;
+      padding: 14px 28px;
       display: flex;
       align-items: center;
       position: sticky;
       top: 0;
-      z-index: 100;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      z-index: 1000;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.4);
     }
 
-    /* Back Button Style */
-    .nav-back {
+    /* Back Button (Rule 2) */
+    .header-back-btn {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       background: rgba(255,255,255,0.1);
-      padding: 8px 15px;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--white);
-      margin-right: 15px;
       border: 1px solid rgba(255,255,255,0.2);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin-right: 20px;
+      transition: 0.3s;
     }
-    .nav-back:hover { background: var(--red); border-color: var(--red); }
+    .header-back-btn:hover { background: var(--red); border-color: var(--red); }
 
-    .logo-brand { display: flex; align-items: center; gap: 12px; }
-    .logo-placeholder {
-      width: 40px; height: 40px;
-      border-radius: 50%;
-      background: var(--red);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1rem;
+    /* Logo Link to Home (Rule 1) */
+    .header-logo-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
     }
-    .brand h1 { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 1px; line-height: 1; }
-    .brand p { font-size: 0.65rem; color: rgba(255,255,255,0.6); text-transform: uppercase; }
+    .logo-placeholder {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--red); display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; flex-shrink: 0;
+    }
+    .brand h1 { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 1px; color: var(--white); }
+    .brand p { font-size: 0.7rem; color: rgba(255,255,255,0.6); text-transform: uppercase; }
 
     /* ══════════════════════════════════════════
-       HERO & ANNOUNCEMENT
+       CONTENT STYLES (Original detailed design)
     ══════════════════════════════════════════ */
-    .hero-banner { text-align: center; margin: 40px 0; }
-    .hero-title { font-family: var(--font-ethiopic); font-size: clamp(1.5rem, 5vw, 2rem); color: var(--gold); margin: 15px 0; }
-    .match-result {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: rgba(255,255,255,0.06); padding: 10px 25px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.1);
-    }
-    .featured-image-wrap { margin: 30px 0; border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+    .hero-banner { margin-top: 48px; text-align: center; position: relative; }
+    .trophy-icon { font-size: 3.2rem; animation: trophyPulse 2.5s infinite; display: inline-block; }
+    @keyframes trophyPulse { 0%, 100% { transform: scale(1) rotate(-3deg); } 50% { transform: scale(1.1) rotate(3deg); } }
+    
+    .hero-title { font-family: var(--font-ethiopic); font-size: clamp(1.25rem, 4vw, 1.85rem); font-weight: 900; color: var(--gold); text-shadow: 0 2px 16px rgba(240,192,64,0.5); }
+    .match-result { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.06); padding: 8px 22px; border-radius: 999px; margin-top: 20px; }
+    .featured-image-wrap { margin: 40px 0; border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 8px 40px rgba(192,19,43,0.3); }
     .featured-image-wrap img { width: 100%; display: block; }
+
+    .article-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); border-radius: var(--radius-lg); padding: 40px; margin-top: 36px; position: relative; }
+    .article-card::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 4px; background: linear-gradient(180deg, var(--red) 0%, var(--blue-light) 100%); border-radius: 4px 0 0 4px; }
+    
+    .greeting { font-family: var(--font-ethiopic); font-size: 1.1rem; color: var(--gold); border-left: 3px solid var(--gold); padding-left: 15px; margin-bottom: 25px; }
+    .body-text { font-family: var(--font-ethiopic); font-size: 1rem; color: rgba(255,255,255,0.8); margin-bottom: 20px; }
 
     .winner-spotlight {
       background: linear-gradient(135deg, #1a1000 0%, #2a1a00 100%);
       border: 2px solid var(--gold); border-radius: var(--radius-lg);
-      padding: 40px; text-align: center; margin: 40px 0; box-shadow: 0 0 40px rgba(240,192,64,0.2);
+      padding: 40px; text-align: center; margin: 35px 0; position: relative; overflow: hidden;
+      box-shadow: 0 4px 24px rgba(240,192,64,0.3);
     }
-    .winner-name { font-family: var(--font-display); font-size: clamp(2rem, 8vw, 3.5rem); color: var(--gold); text-shadow: 0 0 20px rgba(240,192,64,0.5); }
+    .winner-name { font-family: var(--font-display); font-size: clamp(2rem, 6vw, 3rem); font-weight: 900; color: var(--gold); text-shadow: 0 0 30px rgba(240,192,64,0.8); }
+
+    .note-box { background: rgba(192,19,43,0.1); border-left: 4px solid var(--red); padding: 20px; margin: 25px 0; display: flex; gap: 15px; border-radius: 0 15px 15px 0; }
 
     /* ══════════════════════════════════════════
-       PREVIOUS NEWS GRID
+       RULE 3: PRESERVE NEWS (GRID)
     ══════════════════════════════════════════ */
-    .other-news-section { margin-top: 80px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); }
-    .section-label { font-size: 1.5rem; color: var(--white); margin-bottom: 30px; font-family: var(--font-ethiopic); display: flex; align-items: center; gap: 15px; }
-    .section-label::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.1); }
+    .news-integration-section { margin-top: 80px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); }
+    .news-section-title { font-family: var(--font-ethiopic); font-size: 1.5rem; margin-bottom: 30px; display: flex; align-items: center; gap: 15px; }
+    .news-section-title::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.1); }
     
-    .news-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 25px;
-    }
-    .news-card {
-      background: rgba(255,255,255,0.03);
-      border-radius: var(--radius);
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.08);
-      transition: 0.3s;
-    }
+    .news-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
+    .news-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 18px; overflow: hidden; transition: 0.3s; }
     .news-card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.06); }
-    .news-card img { width: 100%; height: 180px; object-fit: cover; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .news-card img { width: 100%; height: 180px; object-fit: cover; }
     .news-body { padding: 20px; }
-    .news-date { font-size: 0.75rem; color: var(--gold); margin-bottom: 10px; }
-    .news-body h3 { font-size: 1rem; margin-bottom: 12px; line-height: 1.4; color: var(--white); }
-    .news-body p { font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-bottom: 15px; line-height: 1.6; }
-    .read-more { font-size: 0.8rem; font-weight: 600; color: var(--blue-light); display: flex; align-items: center; gap: 5px; }
+    .news-date { font-size: 0.75rem; color: var(--gold); margin-bottom: 8px; }
+    .news-body h3 { font-size: 1.05rem; margin-bottom: 10px; line-height: 1.4; }
+    .news-body p { font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-bottom: 15px; }
+    .btn-news { font-size: 0.8rem; font-weight: 600; color: var(--blue-light); text-transform: uppercase; letter-spacing: 1px; }
 
-    /* ══════════════════════════════════════════
-       FOOTER
-    ══════════════════════════════════════════ */
-    .contact-footer { margin-top: 60px; background: rgba(255,255,255,0.03); border-radius: var(--radius-lg); padding: 40px; text-align: center; }
-    .social-links { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
-    .social-btn { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; }
+    /* Gallery & Lightbox */
+    .participants-img-wrap { border-radius: 20px; overflow: hidden; margin-top: 20px; cursor: pointer; border: 1px solid rgba(255,255,255,0.1); }
+    .participants-img-wrap img { width: 100%; display: block; transition: 0.4s; }
+    .participants-img-wrap:hover img { transform: scale(1.03); }
+    
+    .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 20px; }
+    .lightbox img { max-height: 90vh; max-width: 100%; border-radius: 10px; }
+    .lightbox-close { position: absolute; top: 20px; right: 30px; font-size: 2rem; cursor: pointer; }
 
-    /* Utilities */
-    .reveal { opacity: 0; transform: translateY(20px); transition: 0.6s all ease; }
+    .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s all ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
     @media (max-width: 600px) {
-        .site-header { padding: 10px; }
-        .nav-back span { display: none; }
-        .brand h1 { font-size: 0.9rem; }
+      .header-back-btn span { display: none; }
+      .site-header { padding: 10px 15px; }
+      .article-card { padding: 20px; }
     }
   </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <header class="site-header">
-  <!-- Back Button (No _blank) -->
-  <a href="news.html" class="nav-back">
+  <a href="news.html" class="header-back-btn">
     <i class="fas fa-arrow-left"></i> <span>ተመለስ</span>
   </a>
 
-  <!-- Logo Link to Home (No _blank) -->
-  <a href="index.html" class="logo-brand">
+  <a href="index.html" class="header-logo-link">
     <div class="logo-placeholder"><i class="fas fa-hospital-symbol"></i></div>
     <div class="brand">
       <h1>GEEZ HOSPITAL</h1>
-      <p>Health & Sports</p>
+      <p>Health & Sports Prediction</p>
     </div>
   </a>
 </header>
 
 <div class="page-wrap">
 
-  <!-- Main Announcement Content -->
+  <!-- HERO -->
   <div class="hero-banner reveal">
-    <div style="font-size: 3rem;">🏆</div>
-    <h1 class="hero-title">ብስራት ንተዓወትቲ ውድድር ግምት!</h1>
+    <div class="trophy-icon">🏆</div>
+    <h1 class="hero-title">ብስራት ንተዓወትቲ ውድድር ግምት<br>ውጽኢት ኩዕሶ እግሪ!</h1>
     <div class="match-result">
-      Arsenal <b style="color:var(--gold)">1 – 0</b> Atl. Madrid
+      Arsenal <span style="font-weight:900; color:var(--gold)">1 – 0</span> Atl. Madrid
     </div>
   </div>
 
   <div class="featured-image-wrap reveal">
-    <img src="geez_winner_poster.png" alt="Winner Announcement">
+    <img src="geez_winner_poster.png" alt="Winner Poster">
   </div>
 
-  <div class="winner-spotlight reveal">
-    <p style="text-transform:uppercase; letter-spacing:2px; font-size:0.8rem; color:rgba(255,255,255,0.5)">Official Winner</p>
-    <div class="winner-name">Kewani Assefa</div>
-    <p style="margin-top:15px; color:var(--gold-light); font-family:var(--font-ethiopic)">ብትኽክል ዝገመተን ኩሉ ሕጊ ዘማልአን ተዓዋቲ</p>
+  <!-- MAIN ARTICLE -->
+  <article class="article-card reveal">
+    <p class="greeting">ዝኸበርኩም ቤተሰብ ግዕዝ ሆስፒታል (Geez Hospital)፤</p>
+    
+    <p class="body-text">ቀዳምነት፡ ኣብቲ ብምኽንያት ግጥም ኣርሰናልን ኣትለቲኮ ማድሪድን ዘዳለናዮ "ውጽኢት ብትኽክል ንዝገመተ ሽልማት" ዝብል ውድድር፡ ተሳትፎኹም ንጡፍን ዘሐጉስን ስለዝነበረ ብልቢ ነመስግን።</p>
+
+    <p class="body-text">እቲ ጸወታ <strong style="color:var(--gold)">ኣርሰናል 1 – 0 ኣትለቲኮ ማድሪድ</strong> ብዝብል ውጽኢት ምዝዛሙ ይፍለጥ። ብመሰረት እቲ ዘውጻእናዮ መምርሒ ድማ፡ ትኽክለኛ ውጽኢት ብምግማት እቶም ዝቐደሙ ተዓወትቲ ተለልዮም ኣለዉ።</p>
+    
+    <p class="body-text">ሽልማት ንምርካብ እዞም ዝስዕቡ 3 ረቛሒታት ክማልኡ ነይርዎም፦ (1) Like/Follow ምግባር፣ (2) Publicly Share ምግባር፣ (3) ትኽክለኛ ውጽኢት ቀዲምካ ምግማት።</p>
+
+    <!-- Winner Section -->
+    <div class="winner-spotlight reveal">
+      <div style="font-size: 2.5rem; margin-bottom: 10px;">🥇</div>
+      <p style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.7rem; color: rgba(240,192,64,0.6);">Official Winner</p>
+      <div class="winner-name">Kewani Assefa</div>
+      <p style="margin-top: 15px; font-family: var(--font-ethiopic); color: var(--white);">ትኽክለኛ ግምት፡ Arsenal 1 – 0 Atletico Madrid</p>
+    </div>
+
+    <!-- NB Section -->
+    <div class="note-box reveal">
+      <div style="background: var(--red); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <i class="fas fa-info" style="font-size: 0.8rem;"></i>
+      </div>
+      <div>
+        <strong style="color: var(--red); text-transform: uppercase; font-size: 0.75rem;">N.B. — ኣገዳሲ ሓበሬታ</strong>
+        <p class="body-text" style="font-size: 0.9rem; margin-top: 5px;">
+          <span style="font-weight:700">Leul Zere</span> ብሰዓት ቀዳማይ እኳ እንተነበረ፡ ገጽና <strong>Like</strong> ስለዘይገበረ ብመሰረት ሕጊ ክሽለም ከም ዘይከኣለ ንሕብር።
+        </p>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; font-style: italic; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+      <p class="body-text">"ግዕዝ ሆስፒታል ብሓልዮትና ንምረጽ፡ ብሞያዊ ብቕዓትና ንእመን!"</p>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; justify-content: center;">
+      <span style="background:rgba(255,255,255,0.05); padding: 5px 12px; border-radius: 20px; font-size: 0.7rem; color: var(--blue-light);">#GeezHospital</span>
+      <span style="background:rgba(255,255,255,0.05); padding: 5px 12px; border-radius: 20px; font-size: 0.7rem; color: var(--blue-light);">#WinnerAnnouncement</span>
+      <span style="background:rgba(255,255,255,0.05); padding: 5px 12px; border-radius: 20px; font-size: 0.7rem; color: var(--blue-light);">#Tigray</span>
+    </div>
+  </article>
+
+  <!-- PARTICIPANTS LIST -->
+  <div class="reveal" style="margin-top: 50px;">
+    <h3 style="font-family: var(--font-ethiopic); font-size: 1.1rem; margin-bottom: 15px; color: rgba(255,255,255,0.5);">
+      <i class="fas fa-list-ol"></i> ዝርዝር ዝተሳተፉ ተዓወትቲ
+    </h3>
+    <div class="participants-img-wrap" onclick="openLightbox('geez_hospital_winners.png')">
+      <img src="geez_hospital_winners.png" alt="Full Participants List">
+    </div>
   </div>
 
-  <!-- Appended News Grid (Previous Stories) -->
-  <section class="other-news-section">
-    <h2 class="section-label">ተወሳኺ ዜናታት (Other News)</h2>
+  <!-- PREVIOUS NEWS GRID (Preserved from news.html) -->
+  <section class="news-integration-section reveal">
+    <h2 class="news-section-title">ዝሓለፉ ዜናታት (Previous News)</h2>
     
     <div class="news-grid">
-      <!-- Story 1 -->
-      <article class="news-card reveal">
-        <img src="images/news1.jpg" alt="Cardiology" onerror="this.style.background='#1245a8'">
+      <!-- Cardiology -->
+      <article class="news-card">
+        <img src="images/news1.jpg" alt="Cardiology" onerror="this.style.background='var(--blue-mid)'">
         <div class="news-body">
-          <p class="news-date">January 5, 2024</p>
-          <h3>New Sub-Specialist Cardiology Service Available</h3>
-          <p>Geez Hospital is proud to announce the launch of a dedicated interventional cardiology service.</p>
-          <a href="news.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+          <p class="news-date">Jan 5, 2024</p>
+          <h3>New Cardiology Specialist Service</h3>
+          <p>Advanced interventional cardiology care now available at Geez Hospital.</p>
+          <a href="news.html" class="btn-news">Read More <i class="fas fa-arrow-right"></i></a>
         </div>
       </article>
 
-      <!-- Story 2 -->
-      <article class="news-card reveal">
-        <img src="images/news2.jpg" alt="Health Day" onerror="this.style.background='#c0132b'">
+      <!-- World Health Day -->
+      <article class="news-card">
+        <img src="images/news2.jpg" alt="Health Day" onerror="this.style.background='var(--red-dark)'">
         <div class="news-body">
-          <p class="news-date">December 25, 2023</p>
-          <h3>World Health Day Commemorated at Geez Hospital</h3>
-          <p>Marking the day with community health awareness events and free screenings in Axum.</p>
-          <a href="news.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+          <p class="news-date">Dec 25, 2023</p>
+          <h3>World Health Day Commemorated</h3>
+          <p>Free health screenings and awareness event for the residents of Axum.</p>
+          <a href="news.html" class="btn-news">Read More <i class="fas fa-arrow-right"></i></a>
         </div>
       </article>
 
-      <!-- Story 3 -->
-      <article class="news-card reveal">
-        <img src="images/news3.jpg" alt="Lab Upgrade" onerror="this.style.background='#1245a8'">
+      <!-- Lab Upgrade -->
+      <article class="news-card">
+        <img src="images/news3.jpg" alt="Lab" onerror="this.style.background='var(--blue-mid)'">
         <div class="news-body">
-          <p class="news-date">November 10, 2023</p>
-          <h3>Hospital Upgrades Laboratory with Modern Equipment</h3>
-          <p>Advanced diagnostic technology now enables faster and more accurate test results for patients.</p>
-          <a href="news.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+          <p class="news-date">Nov 10, 2023</p>
+          <h3>Laboratory Equipment Upgrade</h3>
+          <p>New state-of-the-art diagnostic machines for faster and accurate results.</p>
+          <a href="news.html" class="btn-news">Read More <i class="fas fa-arrow-right"></i></a>
         </div>
       </article>
 
-      <!-- Story 4 -->
-      <article class="news-card reveal">
-        <img src="images/news4.jpg" alt="Screening" onerror="this.style.background='#c0132b'">
+      <!-- Screening -->
+      <article class="news-card">
+        <img src="images/news4.jpg" alt="Screening" onerror="this.style.background='var(--red-dark)'">
         <div class="news-body">
-          <p class="news-date">October 3, 2023</p>
-          <h3>Free Community Health Screening Campaign</h3>
-          <p>Provided blood pressure and sugar tests to over 500 residents in the Axum area.</p>
-          <a href="news.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+          <p class="news-date">Oct 3, 2023</p>
+          <h3>Community Health Campaign</h3>
+          <p>Screening blood pressure and sugar tests for over 500 local residents.</p>
+          <a href="news.html" class="btn-news">Read More <i class="fas fa-arrow-right"></i></a>
         </div>
       </article>
     </div>
   </section>
 
-  <!-- Footer Area -->
-  <footer class="contact-footer reveal">
-    <p style="font-family: var(--font-ethiopic); margin-bottom: 20px;">"ግዕዝ ሆስፒታል ብሓልዮትና ንምረጽ፡ ብሞያዊ ብቕዓትና ንእመን!"</p>
-    <div class="social-links">
-      <a href="https://www.facebook.com/profile.php?id=61572930304902" class="social-btn"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://t.me/Geezhospital_bot" class="social-btn"><i class="fab fa-telegram-plane"></i></a>
-    </div>
-    <p style="font-size: 0.7rem; color: rgba(255,255,255,0.4); margin-top: 30px;">© 2026 Geez Hospital · Axum, Tigray</p>
-  </footer>
+</div>
 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+  <img src="" id="lightboxImg">
 </div>
 
 <script>
-  /* Simple Scroll Reveal */
+  /* Reveal on Scroll */
   const reveal = () => {
     const reveals = document.querySelectorAll('.reveal');
     reveals.forEach(el => {
       const windowHeight = window.innerHeight;
       const elementTop = el.getBoundingClientRect().top;
-      if (elementTop < windowHeight - 50) {
-        el.classList.add('visible');
-      }
+      if (elementTop < windowHeight - 50) el.classList.add('visible');
     });
   };
   window.addEventListener('scroll', reveal);
   window.addEventListener('load', reveal);
+
+  /* Lightbox */
+  function openLightbox(src) {
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightbox').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+    document.body.style.overflow = '';
+  }
 </script>
 
 </body>
