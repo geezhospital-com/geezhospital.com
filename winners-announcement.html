@@ -368,4 +368,69 @@
           <p class="news-date">Oct 3, 2023</p>
           <h3>Free Community Health Screening Campaign</h3>
           <p>Provided blood pressure and sugar tests to over 500 residents in the Axum area.</p>
-          <a href="news.html" class="news-link">Rea
+          <a href="news.html" class="news-link">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer reveal">
+    <div class="footer-grid">
+      <div class="footer-item">
+        <div class="footer-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div class="footer-text">
+          <strong>ኣድራሻ (Address)</strong>
+          <p>ከተማ ኣክሱም፡ ፊት ንፊት ቴሌ፡ ድሕሪ ሰንትራል ካፌ</p>
+        </div>
+      </div>
+      <div class="footer-item">
+        <div class="footer-icon"><i class="fas fa-phone-alt"></i></div>
+        <div class="footer-text">
+          <strong>ስልኪ (Phone)</strong>
+          <p>+251 920 008 338 | +251 962 333 388</p>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px;">
+      <p style="font-size: 0.75rem; color: rgba(255,255,255,0.4);">© 2026 Geez Hospital · All rights reserved</p>
+    </div>
+  </footer>
+
+</div> <!-- end page wrap -->
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+  <img src="" id="lightboxImg">
+</div>
+
+<script>
+  /* ── Lightbox Logic ── */
+  function openLightbox(src) {
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightbox').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  /* ── Reveal on Scroll ── */
+  const reveal = () => {
+    const reveals = document.querySelectorAll('.reveal');
+    reveals.forEach(el => {
+      const windowHeight = window.innerHeight;
+      const elementTop = el.getBoundingClientRect().top;
+      if (elementTop < windowHeight - 50) {
+        el.classList.add('visible');
+      }
+    });
+  };
+  window.addEventListener('scroll', reveal);
+  window.addEventListener('load', reveal);
+</script>
+
+</body>
+</html>
