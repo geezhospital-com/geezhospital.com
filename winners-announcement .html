@@ -143,35 +143,44 @@
     .header-inner {
       display: flex;
       align-items: center;
-      justify-content: space-between;
       height: 68px;
-      gap: 16px;
+      gap: 12px;
+      position: relative;
+      /* back-btn | logo | spacer | nav */
+    }
+    /* Logo takes as much space as it needs, nav takes the rest */
+    .logo-wrap { flex-shrink: 0; margin-right: auto; }
+
+    /* ── BACK BUTTON — guaranteed visible at all times ── */
+    .back-btn {
+      display: inline-flex !important;
+      visibility: visible !important;
+      align-items: center;
+      gap: 8px;
+      color: var(--white);
+      font-size: .85rem;
+      font-weight: 700;
+      padding: 9px 18px;
+      border: 2px solid var(--teal-400);
+      border-radius: var(--radius-pill);
+      background: var(--teal-600);
+      white-space: nowrap;
+      flex-shrink: 0;
+      box-shadow: 0 2px 10px rgba(17,84,117,.3);
+      transition: background var(--dur), transform var(--dur), box-shadow var(--dur);
+      text-decoration: none;
+      line-height: 1;
+      cursor: pointer;
+      z-index: 10;
       position: relative;
     }
-
-    /* Back button — left of logo */
-    .back-btn {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      color: var(--teal-700);
-      font-size: .83rem;
-      font-weight: 600;
-      padding: 7px 14px;
-      border: 1.5px solid var(--teal-200);
-      border-radius: var(--radius-pill);
-      background: var(--teal-50);
-      white-space: nowrap;
-      transition: background var(--dur), border-color var(--dur), color var(--dur), transform var(--dur);
-      flex-shrink: 0;
-    }
     .back-btn:hover {
-      background: var(--teal-500);
-      border-color: var(--teal-500);
-      color: var(--white);
-      transform: translateX(-2px);
+      background: var(--teal-800);
+      border-color: var(--teal-900);
+      transform: translateX(-3px);
+      box-shadow: 0 4px 18px rgba(10,52,68,.4);
     }
-    .back-btn i { font-size: .8rem; }
+    .back-btn i { font-size: .82rem; }
 
     /* Logo */
     .logo-wrap { display: flex; align-items: center; gap: 12px; }
@@ -181,7 +190,7 @@
     .logo-tig  { font-size: .72rem; color: var(--teal-500); font-weight: 500; }
 
     /* Nav */
-    .main-nav { margin-left: auto; }
+    .main-nav { flex-shrink: 0; }
     .nav-list { display: flex; align-items: center; gap: 4px; }
     .nav-link {
       font-size: .88rem; font-weight: 500; color: var(--gray-700);
@@ -685,13 +694,16 @@
       .top-bar-left .divider { display: none; }
       .top-bar-left { gap: 6px; }
       .contact-grid { grid-template-columns: 1fr; }
-      .back-btn span { display: none; } /* show only arrow icon on tiny screens */
+      /* Back button: shrink padding on small screens but ALWAYS show */
+      .back-btn { padding: 8px 12px; font-size: .78rem; }
     }
     @media (max-width: 480px) {
       .top-bar-inner { flex-direction: column; gap: 6px; text-align: center; }
-      .back-btn span { display: inline; } /* restore text on wrap */
       .winner-name { font-size: 1.75rem; }
       .news-grid { grid-template-columns: 1fr; }
+      /* On very small screens: icon only to save space — but still visible */
+      .back-btn .back-label { display: none; }
+      .back-btn { padding: 8px 10px; }
     }
   </style>
 </head>
@@ -730,10 +742,10 @@
 <header class="site-header" id="siteHeader">
   <div class="container header-inner">
 
-    <!-- ← Back to news button -->
+    <!-- ← BACK BUTTON — always visible, leads to news.html -->
     <a href="news.html" class="back-btn" aria-label="ተመለስ ናብ ዜና">
       <i class="fas fa-arrow-left" aria-hidden="true"></i>
-      <span>ተመለስ</span>
+      <span class="back-label">ተመለስ</span>
     </a>
 
     <!-- Logo — links to homepage, same tab -->
