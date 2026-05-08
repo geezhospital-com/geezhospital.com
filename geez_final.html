@@ -575,7 +575,11 @@ ul{list-style:none}
 .fcard:hover .fcard__icon--te{background:var(--te-600);color:#fff}
 .fcard:hover .fcard__icon--go{background:var(--go-600);color:#fff}
 .fcard:hover .fcard__icon--nv{background:var(--nv-600);color:#fff}
-.fcard__body{}
+.fcard__body {
+    padding-left: 10px; /* ንጽሑፉ ካብቲ ኣይኮን ንየማን ንምርሓቕ */
+    display: flex;
+    flex-direction: column;
+}
 .fcard__title{font-size:14px;font-weight:700;color:var(--gr-900);margin-bottom:4px}
 .fcard__desc{font-size:11.5px;color:var(--gr-400);line-height:1.55}
 .fcard__chip{
@@ -1330,7 +1334,7 @@ ul{list-style:none}
           ሆስፒታል ግዕዝ ብ2011 ኣ.ግ ዝተመስረተ፣ ኣብ ማእኸላይ ዞባን ትግራይን ካብቶም ቀዳሞት ዝስርዑ ዘበናዊን ብዓለምለኻዊ ደረጃ ዝሰርሑ ሕክምናዊ ትካላት ሓደ'ዩ። ዕላማና ንዓለምለኻዊ ደረጃ ሕክምና ንነፍሲ ወከፍ ዜጋ ዝበቅዕን ዝምዕብልን ምግባር — ኣብ ዞባና ዝዓበየን ዝኣምን ሕክምናዊ ትካል ምዃን ኢና ዝደልዮ።
         </p>
         <p class="about__p">
-          ንሰብ ዘቐምጥ ክንክን፣ ልዑል ሞያዊ ብቕዓት፣ ዘበናዊ መሳርሒን ናብ ደሕንነት ሕሙም ዓቢ ቦታ ንህብ። We are committed to compassionate care, the highest professional competence, and modern equipment — placing patient safety above all else.
+          ንሕና፤ ርህራሄ ዝመልኦ ሓልዮት፣ ብልዑል ሞያዊ ብቕዓትናን ዘመናዊ መሳርሒታትን ብምጥቃም ብተወፋይነት ንውሕስነት ሕሙማት ካብ ኩሉ ንላዕሊ ቀዳምነት ንህብ። We are committed to compassionate care, the highest professional competence, and modern equipment — placing patient safety above all else.
         </p>
 
         <div class="about__checks">
@@ -1340,11 +1344,11 @@ ul{list-style:none}
           </div>
           <div class="check">
             <span class="check__dot"><i class="fas fa-check"></i></span>
-            ፍሉያት ሓካይምን ናይ ትሕቲ-ፍሉይ ሓካይምን — 20+ Specialist Physicians
+            ስፔሻሊስት ሓካይምን ናይ ሳብ ስፔሻሊስት-(ፍሉይ) ሓካይምን — 20+ Specialist Physicians
           </div>
           <div class="check">
             <span class="check__dot"><i class="fas fa-check"></i></span>
-            ዘበናዊ ምርመራ ቴክኖሎጂ — State-of-the-art Diagnostic Technology
+            ምሉእ ዘመናዊ ናይ መርመራ ቴክኖሎጂ — State-of-the-art Diagnostic Technology
           </div>
           <div class="check">
             <span class="check__dot"><i class="fas fa-check"></i></span>
@@ -1352,7 +1356,7 @@ ul{list-style:none}
           </div>
           <div class="check">
             <span class="check__dot"><i class="fas fa-check"></i></span>
-            ኩሉ ሰዓት ዝኸፍት ህጹጽ ሕክምና — 24/7 Emergency &amp; Critical Care
+            ኩሉ ሰዓት ክፉት ሃምደበታዊ ሕክምና — 24/7 Emergency &amp; Critical Care
           </div>
         </div>
 
@@ -1408,10 +1412,10 @@ ul{list-style:none}
           Vision
           <span style="font-size:.55em;opacity:.5;font-style:italic;font-weight:400;margin-left:6px">ራእይ</span>
         </h3>
-        <span class="vmcard__tig">ኣብ ኣፍሪካ ዝተኸበረ ሕክምናዊ ትካል ምዃን</span>
+        <span class="vmcard__tig">ብሉፅ ሞያዊ ብቕዓትን ንሕሙም ማእከል ዝገበረ ሓልዮቱን፣ ዓለምለኻዊ ደረጃ ዘለዎ ናይ ሕክምና ግልጋሎት ብምቕራብ ኣብ ኣፍሪካ ክብሪ ዝተጎናፀፈ ናይ ሕክምና ትካል ምዃን።</span>
         <div class="vmcard__rule"></div>
         <p class="vmcard__body">
-          ኣብ ኣፍሪካ ዓለምለኻዊ ሕክምናዊ ኣገልግሎት ብምሃብ ዝኽበር ሕክምናዊ ትካል ምዃን — ሞያዊ ብቕዓትናን ሰብ-ዘቐምጥ ክንክንናን ብምምራሕ።
+          ብሉፅ ፅሬት፣ ተመጣጣኒ፣ ተበፃሒን ተሓታትነት ዘለዎን ሕክምና ንኹሉ ዜጋ ብምቕራብ፤ ብሉፅ ሞያዊ ክእለትን ርህራሄ ዝመልኦ ሓልዮትን ዘወሃሃደ፣ተበፃሒ፣ ፅሬቱ ዝሓለወን ተመጣጣኒ ዋጋ ዘለዎን ሕክምና ንማሕበረሰብ ብምቕራብ፤ ዓለምለኻዊ ደረጃኡ ዝሓለወ ናይ ሕክምና ኣሰራርሓ ምፍጣር ከምኡውን ዝለዓለ ናይ ሕክምና ስነ-ምግባር ምኽባርን እዩ።
         </p>
         <p class="vmcard__body" style="margin-top:10px;font-style:italic;opacity:.65;font-family:'DM Sans',sans-serif;font-size:13px">
           To become a globally respected medical institution in Africa, driven by exceptional professional competence and patient-centered care.
@@ -1433,7 +1437,7 @@ ul{list-style:none}
         <span class="vmcard__tig">ዓቕሚ-ዘይብሎም ዘካተተ ምሉእ ሕክምናዊ ኣገልግሎት</span>
         <div class="vmcard__rule"></div>
         <p class="vmcard__body">
-          ንዅሎም ዜጋታት ዓቕሚ-ዘይብሎም ዘካተተ፣ ምሉእ፣ ልዑል-ብቕዓት፣ ርቡጽ ዋጋ ዘለዎ ሕክምናዊ ኣገልግሎት ምሃብ — ሞያዊ ልቀትን ሰናይ ፍቕርን ዘዋሃህድ።
+          ንዅሎም ዜጋታት ዓቕሚ-ዘይብሎም ዘካተተ፣ ምሉእ፣ ልዑል-ብቕዓት፣ ፍትሓዊ ዋጋ ዘለዎ ሕክምናዊ ግልጋሎት ምሃብ።
         </p>
         <p class="vmcard__body" style="margin-top:10px;font-style:italic;opacity:.65;font-family:'DM Sans',sans-serif;font-size:13px">
           To provide excellent, affordable, and accessible healthcare for all citizens — upholding the highest medical ethics with compassionate care.
