@@ -1219,25 +1219,54 @@ button[type="submit"]:hover {
   border-top: 3px solid var(--teal-500);
   border-bottom: 1px solid var(--gray-200);
   box-shadow: 0 20px 60px rgba(10,52,68,.15);
-  z-index: 900;
+  /* z-index above hero, announcement bar, and any stacking context */
+  z-index: 1100;
   /* Hidden by default */
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-8px);
-  transition:
-    opacity  var(--duration) var(--ease),
-    transform var(--duration) var(--ease),
-    visibility var(--duration);
+  transform: translateY(-6px);
   pointer-events: none;
+  /*
+   * ENTER transition: instant — menu appears immediately on hover.
+   * LEAVE transition: 100ms delay on opacity+visibility so the mouse
+   * has time to cross the gap between the trigger and the panel
+   * without the menu vanishing (fixes the "dead zone" drop issue).
+   */
+  transition:
+    opacity  180ms var(--ease) 100ms,
+    transform 180ms var(--ease) 100ms,
+    visibility 0ms linear 280ms; /* visibility waits until after fade-out */
 }
 
-/* Show on hover — both trigger and panel itself */
+/*
+ * INVISIBLE BRIDGE — ::before pseudo-element fills the visual gap
+ * between the nav link and the top of the mega-drop panel.
+ * Without this, moving the mouse diagonally toward menu items
+ * briefly leaves both the trigger and the panel, collapsing the menu.
+ */
+.mega-drop::before {
+  content: '';
+  position: absolute;
+  top: -12px;       /* reaches up 12px to overlap the nav trigger area */
+  left: 0;
+  right: 0;
+  height: 12px;     /* exactly covers the border-top gap */
+  background: transparent;
+  pointer-events: auto; /* captures mouse so hover chain stays unbroken */
+}
+
+/* Show on hover — ENTER: transitions fire with no delay */
 .nav-item-drop:hover .mega-drop,
 .mega-drop:hover {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
   pointer-events: all;
+  /* Remove all delays on enter so menu appears instantly */
+  transition:
+    opacity  180ms var(--ease) 0ms,
+    transform 180ms var(--ease) 0ms,
+    visibility 0ms linear 0ms;
 }
 
 /* Smaller variant for Media (fewer items) */
@@ -1362,32 +1391,67 @@ button[type="submit"]:hover {
 .nav-link-cta:hover { background: var(--teal-600) !important; }
 .nav-link-cta::after { display: none !important; }
 
-/* Mobile: collapse all mega drops into accordion-style links */
-@media (max-width: 768px) {
+/*
+ * MOBILE MEGA MENU — accordion model
+ * Breakpoint: 1024px (tablets + phones)
+ * Below this width the CSS :hover system is fully disabled and
+ * replaced by a JS-driven click-toggle (.mobile-open class).
+ */
+@media (max-width: 1024px) {
+  /* Step 1: neutralise all hover-based visibility rules */
+  .nav-item-drop:hover .mega-drop,
+  .mega-drop:hover {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-6px);
+    transition:
+      opacity  180ms var(--ease) 100ms,
+      transform 180ms var(--ease) 100ms,
+      visibility 0ms linear 280ms;
+  }
+
+  /* Step 2: reset .mega-drop to in-flow (static), no shadow/border */
   .mega-drop {
     position: static;
     border: none;
-    box-shadow: none;
     border-top: 1px solid var(--gray-100);
+    box-shadow: none;
+    /* override absolute-position values */
     opacity: 1;
     visibility: visible;
     transform: none;
     pointer-events: all;
-    /* Hidden by default on mobile via max-height */
+    /* accordion: closed by max-height clipping */
     max-height: 0;
     overflow: hidden;
-    transition: max-height .35s var(--ease);
     padding: 0;
+    /* only animate max-height; opacity/visibility/transform stay static */
+    transition: max-height .35s var(--ease);
   }
-  .nav-item-drop.mobile-open .mega-drop { max-height: 600px; }
+
+  /* Bridge pseudo-element not needed on mobile */
+  .mega-drop::before { display: none; }
+
+  /* Open state — JS adds this class */
+  .nav-item-drop.mobile-open .mega-drop {
+    max-height: 700px; /* tall enough for all items */
+  }
+
+  /* Grid collapses to single column */
   .mega-drop-inner {
     grid-template-columns: 1fr;
     padding: 8px 16px 16px;
     gap: 8px;
   }
+
+  /* Hide the CTA card — save space on mobile */
   .mega-cta-col { display: none; }
   .mega-col-label { margin-top: 10px; }
-  .mega-drop-sm { width: 100%; }
+  .mega-drop-sm { width: 100%; left: auto; }
+
+  /* Caret stays rotated while item is open */
+  .nav-item-drop.mobile-open .nav-caret { transform: rotate(180deg); }
 }
 
 /* ══════════════════════════════════════════════════════════════

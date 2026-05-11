@@ -664,7 +664,7 @@
   <div class="footer-bottom">
     <div class="container footer-bottom-inner">
       <p id="footer-text">© 2026 Geez Hospital. All rights reserved.</p>
-      <p class="footer-dev">Developed by <a href="tel:+251911179955">Legesse Teklu Gebrekidan</a></p>
+      <p class="footer-dev">Developed by <a href="tel:+251911179955">Aser Teklu Gebrekidan</a></p>
     </div>
   </div>
 </footer>
@@ -676,41 +676,90 @@
 
 <!-- Inline: dropdown nav behaviour (touch + keyboard) -->
 <script>
+/* ════════════════════════════════════════════════════════
+   MEGA MENU — interaction controller
+   Desktop (≥1025px): CSS :hover handles everything.
+   Mobile  (≤1024px): JS click-toggle accordion.
+   ════════════════════════════════════════════════════════ */
 (function () {
   'use strict';
 
-  /* ── Desktop: close any open drop when clicking outside ── */
-  document.addEventListener('click', function (e) {
-    if (!e.target.closest('.nav-item-drop')) {
-      document.querySelectorAll('.nav-item-drop.mobile-open')
-        .forEach(function (el) { el.classList.remove('mobile-open'); });
-    }
-  });
+  var MOBILE_BP = 1024; /* must match CSS @media (max-width: 1024px) */
 
-  /* ── Mobile: tap trigger toggles accordion ── */
+  /* ── Helpers ── */
+  function isMobile() { return window.innerWidth <= MOBILE_BP; }
+
+  function openDrop(li) {
+    li.classList.add('mobile-open');
+    var trigger = li.querySelector('.nav-drop-trigger');
+    if (trigger) trigger.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeDrop(li) {
+    li.classList.remove('mobile-open');
+    var trigger = li.querySelector('.nav-drop-trigger');
+    if (trigger) trigger.setAttribute('aria-expanded', 'false');
+  }
+
+  function closeAll() {
+    document.querySelectorAll('.nav-item-drop.mobile-open')
+      .forEach(function (li) { closeDrop(li); });
+  }
+
+  /* ── Trigger clicks ── */
   document.querySelectorAll('.nav-drop-trigger').forEach(function (trigger) {
     trigger.addEventListener('click', function (e) {
-      /* On mobile (hamburger visible) toggle accordion; on desktop let CSS :hover handle it */
-      if (window.innerWidth <= 768) {
-        e.preventDefault();
-        var li = trigger.closest('.nav-item-drop');
-        var isOpen = li.classList.contains('mobile-open');
-        /* Close all first */
-        document.querySelectorAll('.nav-item-drop.mobile-open')
-          .forEach(function (el) { el.classList.remove('mobile-open'); });
-        if (!isOpen) li.classList.add('mobile-open');
-        trigger.setAttribute('aria-expanded', String(!isOpen));
-      }
+      if (!isMobile()) return; /* desktop: CSS hover takes over — do nothing */
+      e.preventDefault();     /* stop navigation on the parent link */
+      e.stopPropagation();    /* don't bubble to document close-all handler */
+
+      var li = trigger.closest('.nav-item-drop');
+      var isOpen = li.classList.contains('mobile-open');
+
+      closeAll();             /* close any other open drop first */
+      if (!isOpen) openDrop(li); /* toggle: if it was closed, open it */
     });
   });
 
-  /* ── Keyboard: Escape closes any open mega drop ── */
+  /*
+   * Links INSIDE the mega-drop (actual destination links).
+   * On mobile, clicking a real link should:
+   *   1. Close the accordion (clean visual state).
+   *   2. Navigate normally (no preventDefault here).
+   */
+  document.querySelectorAll('.mega-drop a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      if (isMobile()) closeAll();
+    });
+  });
+
+  /* ── Click outside closes all open drops ── */
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.nav-item-drop')) closeAll();
+  });
+
+  /* ── Escape key closes any open drop ── */
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
-      document.querySelectorAll('.nav-item-drop.mobile-open')
-        .forEach(function (el) { el.classList.remove('mobile-open'); });
+      closeAll();
+      /* return focus to whichever trigger opened the drop */
+      var focused = document.querySelector('.nav-drop-trigger[aria-expanded="true"]');
+      if (focused) focused.focus();
     }
   });
+
+  /*
+   * On resize from mobile → desktop, clean up any open accordion
+   * state so the desktop hover system starts from a clean slate.
+   */
+  var resizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      if (!isMobile()) closeAll();
+    }, 150);
+  });
+
 }());
 </script>
 <script src="script.js" defer></script>
