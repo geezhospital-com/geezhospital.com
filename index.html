@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Geez Hospital | ግዕዝ ሆስፒታል — Best Hospital in Axum, Tigray</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geez Hospital — World-Class Healthcare in Axum</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- ── SEO ── -->
   <meta name="description" content="Geez Hospital is the leading modern medical facility in Axum, Tigray. Expert specialists in Cardiology, Surgery, Pediatrics, Gynecology & 18+ departments. Book an appointment today.">
@@ -87,6 +91,23 @@
 <body>
 
 <!-- ════════════════════════════════════════
+     SEARCH OVERLAY
+════════════════════════════════════════ -->
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <div class="search-input-wrap">
+      <i class="fas fa-search"></i>
+      <input type="text" id="overlaySearch" placeholder="Search services, doctors, departments…" autocomplete="off">
+      <button class="search-close" onclick="closeSearch()"><i class="fas fa-times"></i> Close</button>
+    </div>
+    <div class="search-results" id="overlayResults">
+      <div class="search-empty"><i class="fas fa-search" style="display:block;font-size:1.8rem;margin-bottom:10px;opacity:.2"></i>Start typing to search…</div>
+    </div>
+    <div class="search-footer"><kbd>Esc</kbd> to close &nbsp;·&nbsp; Press Enter to go to result</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
      ANNOUNCEMENT BAR
 ════════════════════════════════════════ -->
 <div class="announcement-bar" id="announcementBar">
@@ -100,20 +121,27 @@
 <!-- ════════════════════════════════════════
      TOP UTILITY BAR
 ════════════════════════════════════════ -->
-<div class="top-bar">
-  <div class="container top-bar-inner">
-    <div class="top-bar-left">
-      <a href="tel:+251920008338" class="top-bar-item"><i class="fas fa-phone-volume"></i> +251 920 008 338</a>
-      <span class="divider">|</span>
-      <a href="tel:+251962333388" class="top-bar-item"><i class="fas fa-phone"></i> +251 962 333 388</a>
-      <span class="divider">|</span>
-      <a href="mailto:geezhospital@gmail.com" class="top-bar-item"><i class="fas fa-envelope"></i> geezhospital@gmail.com</a>
+<div class="topbar">
+  <div class="inner">
+    <div class="topbar-left">
+      <a href="tel:+251920008338" class="topbar-item">
+        <i class="fas fa-phone-volume"></i> +251 920 008 338
+      </a>
+      <a href="tel:+251962333388" class="topbar-item">
+        <i class="fas fa-phone"></i> +251 962 333 388
+      </a>
+      <a href="mailto:geezhospital@gmail.com" class="topbar-item">
+        <i class="fas fa-envelope"></i> geezhospital@gmail.com
+      </a>
+      <span class="topbar-item">
+        <i class="fas fa-map-marker-alt"></i> Axum, In front of Ethio-Telecom
+      </span>
     </div>
-    <div class="top-bar-right">
-      <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://t.me/Geezhospital_bot" target="_blank" class="social-link" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
-      <a href="https://linktr.ee/geezhospital" target="_blank" class="social-link" aria-label="Survey"><i class="fas fa-poll"></i></a>
-      <a href="contact.html" class="top-bar-cta" data-translate="contact-us-btn">Book Appointment</a>
+    <div class="topbar-right">
+      <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://t.me/Geezhospital_bot" target="_blank" class="social-link"><i class="fab fa-telegram-plane"></i></a>
+      <a href="https://linktr.ee/geezhospital" target="_blank" class="social-link"><i class="fas fa-poll"></i></a>
+      <div class="emergency-pill"><div class="dot"></div> 24/7 Emergency</div>
     </div>
   </div>
 </div>
@@ -121,301 +149,224 @@
 <!-- ════════════════════════════════════════
      HEADER / NAV
 ════════════════════════════════════════ -->
-<header class="site-header" id="siteHeader">
-  <div class="container header-inner">
+<nav class="site-nav" id="siteNav">
+  <div class="nav-inner">
     <a href="index.html" class="logo-wrap">
-      <img src="images/logo.png" alt="Geez Hospital Logo" class="logo-img" onerror="this.style.display='none'">
-      <div class="logo-text">
+      <div class="logo-mark">G</div>
+      <div class="logo-text-wrap">
         <span class="logo-en">GEEZ HOSPITAL</span>
-        <span class="logo-tig">ግዕዝ ሆስፒታል</span>
+        <span class="logo-sub">ግዕዝ ሆስፒታል · Axum</span>
       </div>
     </a>
 
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <ul class="nav-list" id="mainNav">
+      <li class="nav-item"><a href="index.html" class="nav-link active" data-translate="home">Home</a></li>
 
-    <nav class="main-nav" id="mainNav" role="navigation" aria-label="Main navigation">
-      <ul class="nav-list">
-        <li><a href="index.html" class="nav-link active" data-translate="home">Home</a></li>
+      <!-- SERVICES dropdown -->
+      <li class="nav-item">
+        <a class="nav-link" href="services.html" data-translate="services">Services <i class="fas fa-chevron-down"></i></a>
+        <div class="mega-menu">
+          <div class="mega-header">Medical Services</div>
+          <a href="services.html?service=internal-medicine" class="mega-item"><i class="fas fa-user-md"></i>Internal Medicine</a>
+          <a href="services.html?service=cardiology" class="mega-item"><i class="fas fa-heart-pulse"></i>Cardiology</a>
+          <a href="services.html?service=general-surgery" class="mega-item"><i class="fas fa-scalpel"></i>General Surgery</a>
+          <a href="services.html?service=pediatrics" class="mega-item"><i class="fas fa-baby"></i>Pediatrics</a>
+          <a href="services.html?service=obsgyn" class="mega-item"><i class="fas fa-venus"></i>Obstetrics &amp; Gynecology</a>
+          <a href="services.html?service=neurosurgery" class="mega-item"><i class="fas fa-brain"></i>Neurosurgery</a>
+          <a href="services.html?service=orthopedics" class="mega-item"><i class="fas fa-bone"></i>Orthopedics</a>
+          <a href="services.html?service=dental" class="mega-item"><i class="fas fa-tooth"></i>Dental</a>
+          <a href="services.html?service=dermatology" class="mega-item"><i class="fas fa-spa"></i>Dermatology</a>
+          <a href="services.html?service=radiology" class="mega-item"><i class="fas fa-x-ray"></i>Radiology</a>
+          <a href="services.html?service=laboratory" class="mega-item"><i class="fas fa-flask"></i>Laboratory</a>
+          <a href="services.html?service=ent" class="mega-item"><i class="fas fa-ear"></i>ENT</a>
+          <a href="services.html" class="mega-item" style="color:var(--teal)"><i class="fas fa-plus"></i>All 18+ Services →</a>
+        </div>
+      </li>
 
-        <!-- SERVICES dropdown -->
-        <li class="nav-item-drop">
-          <a href="services.html" class="nav-link nav-drop-trigger" aria-haspopup="true" aria-expanded="false">
-            Services <i class="fas fa-chevron-down nav-caret" aria-hidden="true"></i>
-          </a>
-          <div class="mega-drop" role="region" aria-label="Services menu">
-            <div class="mega-drop-inner">
-              <div class="mega-col">
-                <p class="mega-col-label">Clinical Services</p>
-                <ul>
-                  <li><a href="services.html?service=internal-medicine"><i class="fas fa-user-md"></i> Internal Medicine</a></li>
-                  <li><a href="services.html?service=cardiology"><i class="fas fa-heartbeat"></i> Cardiology</a></li>
-                  <li><a href="services.html?service=general-surgery"><i class="fas fa-cut"></i> General Surgery</a></li>
-                  <li><a href="services.html?service=pediatrics"><i class="fas fa-baby"></i> Pediatrics</a></li>
-                  <li><a href="services.html?service=obsgyn"><i class="fas fa-venus"></i> Obstetrics & Gynecology</a></li>
-                  <li><a href="services.html?service=neurosurgery"><i class="fas fa-brain"></i> Neurosurgery</a></li>
-                </ul>
-              </div>
-              <div class="mega-col">
-                <p class="mega-col-label">Specialty Care</p>
-                <ul>
-                  <li><a href="services.html?service=orthopedics"><i class="fas fa-bone"></i> Orthopedics</a></li>
-                  <li><a href="services.html?service=dermatology"><i class="fas fa-spa"></i> Dermatology</a></li>
-                  <li><a href="services.html?service=ent"><i class="fas fa-ear"></i> ENT</a></li>
-                  <li><a href="services.html?service=dental"><i class="fas fa-tooth"></i> Dental</a></li>
-                  <li><a href="services.html?service=psychiatry"><i class="fas fa-head-side-virus"></i> Psychiatry</a></li>
-                  <li><a href="services.html?service=physiotherapy"><i class="fas fa-walking"></i> Physiotherapy</a></li>
-                </ul>
-              </div>
-              <div class="mega-col">
-                <p class="mega-col-label">Diagnostics & Support</p>
-                <ul>
-                  <li><a href="services.html?service=radiology"><i class="fas fa-x-ray"></i> Radiology</a></li>
-                  <li><a href="services.html?service=laboratory"><i class="fas fa-flask"></i> Laboratory</a></li>
-                  <li><a href="services.html?service=anesthesia"><i class="fas fa-procedures"></i> Anesthesia & Pain</a></li>
-                  <li><a href="services.html?service=maternity"><i class="fas fa-child"></i> Maternity</a></li>
-                  <li><a href="services.html?service=pharmacy-ambulance"><i class="fas fa-pills"></i> Pharmacy & Ambulance</a></li>
-                </ul>
-              </div>
-              <div class="mega-cta-col">
-                <div class="mega-cta-card">
-                  <i class="fas fa-hospital-symbol" aria-hidden="true"></i>
-                  <h4>18+ Departments</h4>
-                  <p>Specialist and sub-specialist care with world-class technology.</p>
-                  <a href="services.html" class="mega-cta-btn">All Services</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
+      <!-- DOCTORS dropdown -->
+      <li class="nav-item">
+        <a class="nav-link" href="doctors.html" data-translate="doctors">Doctors <i class="fas fa-chevron-down"></i></a>
+        <div class="mega-menu">
+          <div class="mega-header">Find a Specialist</div>
+          <a href="doctors.html?specialty=surgeons" class="mega-item"><i class="fas fa-cut"></i>Surgeons</a>
+          <a href="doctors.html?specialty=neurosurgeons" class="mega-item"><i class="fas fa-brain"></i>Neurosurgeons</a>
+          <a href="doctors.html?specialty=gynecologists" class="mega-item"><i class="fas fa-venus"></i>Gynecologists</a>
+          <a href="doctors.html?specialty=pediatricians" class="mega-item"><i class="fas fa-baby"></i>Pediatricians</a>
+          <a href="doctors.html?specialty=internists" class="mega-item"><i class="fas fa-user-md"></i>Internists</a>
+          <a href="doctors.html?specialty=radiologists" class="mega-item"><i class="fas fa-x-ray"></i>Radiologists</a>
+          <a href="doctors.html?specialty=orthopedicians" class="mega-item"><i class="fas fa-bone"></i>Orthopedicians</a>
+          <a href="doctors.html?specialty=dermatologists" class="mega-item"><i class="fas fa-spa"></i>Dermatologists</a>
+          <a href="doctors.html" class="mega-item" style="color:var(--teal)"><i class="fas fa-search"></i>Find by Language →</a>
+        </div>
+      </li>
 
-        <!-- DOCTORS dropdown -->
-        <li class="nav-item-drop">
-          <a href="doctors.html" class="nav-link nav-drop-trigger" aria-haspopup="true" aria-expanded="false">
-            Doctors <i class="fas fa-chevron-down nav-caret" aria-hidden="true"></i>
-          </a>
-          <div class="mega-drop" role="region" aria-label="Doctors menu">
-            <div class="mega-drop-inner">
-              <div class="mega-col">
-                <p class="mega-col-label">Surgical Specialists</p>
-                <ul>
-                  <li><a href="doctors.html?specialty=surgeons"><i class="fas fa-cut"></i> Surgeons</a></li>
-                  <li><a href="doctors.html?specialty=neurosurgeons"><i class="fas fa-brain"></i> Neurosurgeons</a></li>
-                  <li><a href="doctors.html?specialty=orthopedicians"><i class="fas fa-bone"></i> Orthopedicians</a></li>
-                  <li><a href="doctors.html?specialty=maxillofacial"><i class="fas fa-tooth"></i> Maxillofacial Surgeons</a></li>
-                </ul>
-              </div>
-              <div class="mega-col">
-                <p class="mega-col-label">Medical Specialists</p>
-                <ul>
-                  <li><a href="doctors.html?specialty=internists"><i class="fas fa-user-md"></i> Internists</a></li>
-                  <li><a href="doctors.html?specialty=gynecologists"><i class="fas fa-venus"></i> Gynecologists</a></li>
-                  <li><a href="doctors.html?specialty=pediatricians"><i class="fas fa-baby"></i> Pediatricians</a></li>
-                  <li><a href="doctors.html?specialty=psychiatrists"><i class="fas fa-head-side-virus"></i> Psychiatrists</a></li>
-                </ul>
-              </div>
-              <div class="mega-col">
-                <p class="mega-col-label">Diagnostics</p>
-                <ul>
-                  <li><a href="doctors.html?specialty=radiologists"><i class="fas fa-x-ray"></i> Radiologists</a></li>
-                  <li><a href="doctors.html?specialty=dermatologists"><i class="fas fa-spa"></i> Dermatologists</a></li>
-                  <li><a href="doctors.html?specialty=oncologists"><i class="fas fa-ribbon"></i> Oncologists</a></li>
-                  <li><a href="doctors.html?specialty=ent-plastic"><i class="fas fa-ear"></i> ENT & Plastic</a></li>
-                </ul>
-              </div>
-              <div class="mega-cta-col">
-                <div class="mega-cta-card">
-                  <i class="fas fa-stethoscope" aria-hidden="true"></i>
-                  <h4>15+ Specialists</h4>
-                  <p>Board-certified physicians with international training and experience.</p>
-                  <a href="doctors.html" class="mega-cta-btn">All Doctors</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
+      <!-- DEPARTMENTS dropdown -->
+      <li class="nav-item">
+        <a class="nav-link" href="departments.html" data-translate="departments">Departments <i class="fas fa-chevron-down"></i></a>
+        <div class="mega-menu">
+          <div class="mega-header">Departments</div>
+          <a href="departments.html?dept=surgery" class="mega-item"><i class="fas fa-cut"></i>Surgery</a>
+          <a href="departments.html?dept=internal-medicine" class="mega-item"><i class="fas fa-user-md"></i>Internal Medicine</a>
+          <a href="departments.html?dept=pediatrics" class="mega-item"><i class="fas fa-baby"></i>Pediatrics</a>
+          <a href="departments.html?dept=obsgyn" class="mega-item"><i class="fas fa-venus"></i>Obs &amp; Gynecology</a>
+          <a href="departments.html?dept=orthopedics" class="mega-item"><i class="fas fa-bone"></i>Orthopedics</a>
+          <a href="departments.html?dept=radiology" class="mega-item"><i class="fas fa-x-ray"></i>Radiology</a>
+          <a href="departments.html?dept=dermatology" class="mega-item"><i class="fas fa-spa"></i>Dermatology</a>
+          <a href="departments.html?dept=psychiatry" class="mega-item"><i class="fas fa-head-side-virus"></i>Psychiatry</a>
+          <a href="departments.html" class="mega-item" style="color:var(--teal)"><i class="fas fa-clinic-medical"></i>All Departments →</a>
+        </div>
+      </li>
 
-        <!-- DEPARTMENTS dropdown -->
-        <li class="nav-item-drop">
-          <a href="departments.html" class="nav-link nav-drop-trigger" aria-haspopup="true" aria-expanded="false">
-            Departments <i class="fas fa-chevron-down nav-caret" aria-hidden="true"></i>
-          </a>
-          <div class="mega-drop" role="region" aria-label="Departments menu">
-            <div class="mega-drop-inner">
-              <div class="mega-col">
-                <p class="mega-col-label">Clinical Departments</p>
-                <ul>
-                  <li><a href="departments.html?dept=surgery"><i class="fas fa-cut"></i> Surgery</a></li>
-                  <li><a href="departments.html?dept=internal-medicine"><i class="fas fa-user-md"></i> Internal Medicine</a></li>
-                  <li><a href="departments.html?dept=pediatrics"><i class="fas fa-baby"></i> Pediatrics</a></li>
-                  <li><a href="departments.html?dept=obsgyn"><i class="fas fa-venus"></i> Obstetrics & Gynecology</a></li>
-                  <li><a href="departments.html?dept=orthopedics"><i class="fas fa-bone"></i> Orthopedics</a></li>
-                </ul>
-              </div>
-              <div class="mega-col">
-                <p class="mega-col-label">Support Departments</p>
-                <ul>
-                  <li><a href="departments.html?dept=radiology"><i class="fas fa-x-ray"></i> Radiology</a></li>
-                  <li><a href="departments.html?dept=oncology"><i class="fas fa-ribbon"></i> Oncology</a></li>
-                  <li><a href="departments.html?dept=dermatology"><i class="fas fa-spa"></i> Dermatology</a></li>
-                  <li><a href="departments.html?dept=psychiatry"><i class="fas fa-head-side-virus"></i> Psychiatry</a></li>
-                  <li><a href="departments.html?dept=ophthalmology"><i class="fas fa-eye"></i> Ophthalmology</a></li>
-                </ul>
-              </div>
-              <div class="mega-cta-col" style="grid-column: span 2">
-                <div class="mega-cta-card">
-                  <i class="fas fa-clinic-medical" aria-hidden="true"></i>
-                  <h4>All Departments</h4>
-                  <p>Find the right department for your care needs.</p>
-                  <a href="departments.html" class="mega-cta-btn">View All</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
+      <!-- MEDIA dropdown -->
+      <li class="nav-item">
+        <a class="nav-link" href="news.html" data-translate="media">Media <i class="fas fa-chevron-down"></i></a>
+        <div class="mega-menu" style="min-width:340px;grid-template-columns:repeat(2,1fr)">
+          <div class="mega-header">News &amp; Media</div>
+          <a href="news.html" class="mega-item"><i class="fas fa-newspaper"></i>Latest News</a>
+          <a href="gallery.html" class="mega-item"><i class="fas fa-images"></i>Photo Gallery</a>
+          <a href="articles.html" class="mega-item"><i class="fas fa-book-medical"></i>Health Articles</a>
+          <a href="patient-info.html" class="mega-item"><i class="fas fa-info-circle"></i>Patient Information</a>
+          <a href="news.html#winners" class="mega-item"><i class="fas fa-trophy"></i>Contest Winners</a>
+          <a href="https://linktr.ee/geezhospital" class="mega-item"><i class="fas fa-poll"></i>Patient Survey</a>
+        </div>
+      </li>
 
-        <!-- MEDIA dropdown -->
-        <li class="nav-item-drop">
-          <a href="news.html" class="nav-link nav-drop-trigger" aria-haspopup="true" aria-expanded="false">
-            Media <i class="fas fa-chevron-down nav-caret" aria-hidden="true"></i>
-          </a>
-          <div class="mega-drop mega-drop-sm" role="region" aria-label="Media menu">
-            <div class="mega-drop-inner">
-              <div class="mega-col">
-                <p class="mega-col-label">News & Events</p>
-                <ul>
-                  <li><a href="news.html"><i class="fas fa-newspaper"></i> Latest News</a></li>
-                  <li><a href="news.html#winners"><i class="fas fa-trophy"></i> Contest Winners Archive</a></li>
-                  <li><a href="articles.html"><i class="fas fa-book-medical"></i> Health Articles</a></li>
-                  <li><a href="patient-info.html"><i class="fas fa-info-circle"></i> Patient Information</a></li>
-                </ul>
-              </div>
-              <div class="mega-col">
-                <p class="mega-col-label">Gallery & Testimonials</p>
-                <ul>
-                  <li><a href="gallery.html"><i class="fas fa-images"></i> Photo Gallery</a></li>
-                  <li><a href="news.html#testimonials"><i class="fas fa-comment-medical"></i> Patient Testimonials</a></li>
-                  <li><a href="https://linktr.ee/geezhospital"><i class="fas fa-poll"></i> Patient Survey</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </li>
+      <li class="nav-item"><a href="facilities.html" class="nav-link">Facilities</a></li>
+      <li class="nav-item"><a href="contact.html" class="nav-link" data-translate="contact">Contact</a></li>
 
-        <li><a href="facilities.html" class="nav-link">Facilities</a></li>
-        <li><a href="contact.html" class="nav-link nav-link-cta" data-translate="contact">Contact Us</a></li>
+      <!-- Language switcher kept in nav -->
+      <li class="nav-item nav-lang">
+        <select id="language-switcher" aria-label="Language">
+          <option value="eng">English</option>
+          <option value="tig">ትግርኛ</option>
+          <option value="amh">አማርኛ</option>
+        </select>
+      </li>
+    </ul>
 
-        <li class="nav-lang">
-          <select id="language-switcher" aria-label="Language">
-            <option value="eng">English</option>
-            <option value="tig">ትግርኛ</option>
-            <option value="amh">አማርኛ</option>
-          </select>
-        </li>
-      </ul>
-    </nav>
+    <div class="nav-actions">
+      <button class="btn-search" onclick="openSearch()" aria-label="Search">
+        <i class="fas fa-search"></i>
+      </button>
+      <a href="contact.html" class="btn-book" data-translate="hero-btn-appointment">Book Appointment</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
-</header>
+</nav>
 
 <!-- ════════════════════════════════════════
-     HERO — Professional Split Layout
+     HERO — World-Class Split Layout
 ════════════════════════════════════════ -->
 <section class="hero" id="hero" aria-labelledby="heroTitle">
 
-  <!-- Background image layer -->
-  <div class="hero-bg-overlay" aria-hidden="true"></div>
-
-  <!-- Right-side decorative image panel -->
-  <div class="hero-img-panel" aria-hidden="true">
-    <img src="images/hero-bg.jpg" alt="" loading="eager" onerror="this.style.opacity='0'">
-  </div>
-
-  <!-- Left-side text content -->
-  <div class="container hero-content">
-
-    <!-- Eyebrow -->
+  <!-- Left: dark authority panel -->
+  <div class="hero-left">
     <div class="hero-badge" data-translate="hero-badge">
-      <i class="fas fa-hospital-symbol" aria-hidden="true"></i>
-      Geez Hospital · Axum, Tigray · Est. 2011 E.C.
+      <i class="fas fa-shield-halved"></i>
+      International Standards · Est. 2011 E.C.
     </div>
 
-    <!-- Primary headline — Tigrinya brand statement -->
     <h1 class="hero-title" id="heroTitle">
-      <span class="hero-title-tig">ብሓልዮትና ንምረፅ፡<br>ብሞያዊ ብቕዓትና ንእመን.</span>
-      <em class="hero-title-en">Advancing Healthcare<br>with Excellence &amp; Compassion.</em>
+      <span>Advanced Care.</span>
+      <span>Trusted by</span>
+      <em>Thousands.</em>
     </h1>
 
-    <!-- Sub-headline -->
-    <p class="hero-sub" data-translate="hero-sub">
-      Providing modern medical services with international standards to every citizen —
-      specialist expertise, compassionate care, 24/7 emergency response.
+    <p class="hero-subtitle" data-translate="hero-sub">
+      Geez Hospital brings world-class medical expertise to Axum, Tigray —
+      with specialist physicians, modern diagnostics, and compassionate care
+      available every day of the year.
     </p>
 
-    <!-- CTA buttons -->
-    <div class="hero-actions">
-      <a href="contact.html" class="btn btn-primary" data-translate="hero-btn-appointment">
-        <i class="fas fa-calendar-check" aria-hidden="true"></i> Book Appointment
-      </a>
-      <a href="services.html" class="btn btn-ghost" data-translate="hero-btn-services">
-        <i class="fas fa-clinic-medical" aria-hidden="true"></i> Explore Services
-      </a>
+    <!-- Smart Search Bar -->
+    <div class="smart-search">
+      <i class="fas fa-search search-icon-left"></i>
+      <input
+        type="text"
+        class="smart-search-input"
+        id="heroSearch"
+        placeholder="Search services, doctors, symptoms…"
+        autocomplete="off"
+        data-translate="search-placeholder"
+      >
+      <button class="search-btn-inner">Search</button>
+      <div class="search-suggestions" id="heroSuggestions"></div>
     </div>
 
-    <!-- Service excellence floating cards -->
-    <div class="hero-cards" role="list" aria-label="Service commitments">
+    <!-- Quick action chips -->
+    <div class="quick-actions">
+      <a href="contact.html" class="quick-chip">
+        <i class="fas fa-calendar-check"></i> <span data-translate="hero-btn-appointment">Book Appointment</span>
+      </a>
+      <a href="doctors.html" class="quick-chip">
+        <i class="fas fa-user-doctor"></i> <span data-translate="qa-doctors">Find a Doctor</span>
+      </a>
+      <a href="services.html" class="quick-chip">
+        <i class="fas fa-grid-2"></i> <span data-translate="all-services-btn">All Services</span>
+      </a>
+      <a href="tel:+251920008338" class="quick-chip emergency">
+        <i class="fas fa-circle-exclamation"></i> <span data-translate="qa-emergency">Emergency</span>
+      </a>
+    </div>
+  </div>
 
-      <div class="hero-card hero-card-teal" role="listitem">
-        <div class="hero-card-icon" aria-hidden="true">
-          <i class="fas fa-user-md"></i>
-        </div>
-        <div class="hero-card-body">
-          <h3 class="hero-card-title">Specialist Excellence</h3>
-          <p class="hero-card-sub">18+ departments · 15+ sub-specialist physicians · precision diagnostics</p>
-        </div>
-      </div>
+  <!-- Right: action cards -->
+  <div class="hero-right">
 
-      <div class="hero-card hero-card-gold" role="listitem">
-        <div class="hero-card-icon" aria-hidden="true">
-          <i class="fas fa-microscope"></i>
-        </div>
-        <div class="hero-card-body">
-          <h3 class="hero-card-title">Advanced Technology</h3>
-          <p class="hero-card-sub">State-of-the-art lab · diagnostic imaging · international standards</p>
-        </div>
+    <a href="contact.html" class="action-card primary">
+      <div class="card-icon teal"><i class="fas fa-calendar-plus"></i></div>
+      <div class="card-body">
+        <div class="card-title" data-translate="hero-btn-appointment">Book an Appointment</div>
+        <div class="card-desc">Schedule with any specialist — same-day slots available</div>
       </div>
+      <i class="fas fa-arrow-right card-arrow"></i>
+    </a>
 
-      <div class="hero-card hero-card-green" role="listitem">
-        <div class="hero-card-icon" aria-hidden="true">
-          <i class="fas fa-heart-pulse"></i>
-        </div>
-        <div class="hero-card-body">
-          <h3 class="hero-card-title">Patient-Centered Care</h3>
-          <p class="hero-card-sub">ብሓልዮትን ተወፋይነትን · compassionate 24/7 emergency access</p>
-        </div>
+    <a href="doctors.html" class="action-card">
+      <div class="card-icon navy"><i class="fas fa-stethoscope"></i></div>
+      <div class="card-body">
+        <div class="card-title" data-translate="qa-doctors">Find a Doctor</div>
+        <div class="card-desc">Search by specialty, name, or language spoken</div>
       </div>
+      <i class="fas fa-arrow-right card-arrow"></i>
+    </a>
 
-    </div><!-- /.hero-cards -->
+    <a href="patient-info.html" class="action-card">
+      <div class="card-icon gold"><i class="fas fa-file-medical"></i></div>
+      <div class="card-body">
+        <div class="card-title">Patient Information</div>
+        <div class="card-desc">Guides, forms, and what to expect at your visit</div>
+      </div>
+      <i class="fas fa-arrow-right card-arrow"></i>
+    </a>
 
-    <!-- Stats strip -->
-    <div class="hero-stats">
-      <div class="stat-item">
-        <span class="stat-number">18<sup>+</sup></span>
-        <span class="stat-label" data-translate="stat-services">Departments</span>
+    <a href="tel:+251920008338" class="action-card">
+      <div class="card-icon red"><i class="fas fa-truck-medical"></i></div>
+      <div class="card-body">
+        <div class="card-title" data-translate="qa-emergency">Emergency &amp; Ambulance</div>
+        <div class="card-desc">24 / 7 — Call +251 920 008 338 immediately</div>
       </div>
-      <div class="stat-divider" aria-hidden="true"></div>
-      <div class="stat-item">
-        <span class="stat-number">15<sup>+</sup></span>
-        <span class="stat-label" data-translate="stat-doctors">Specialist Doctors</span>
-      </div>
-      <div class="stat-divider" aria-hidden="true"></div>
-      <div class="stat-item">
-        <span class="stat-number">24/7</span>
-        <span class="stat-label" data-translate="stat-emergency">Emergency Care</span>
+      <i class="fas fa-arrow-right card-arrow"></i>
+    </a>
+
+    <div class="hours-card">
+      <i class="fas fa-clock hours-icon"></i>
+      <div class="hours-body">
+        <div class="hours-title">Opening Hours</div>
+        <div class="hours-row">
+          <span>OPD (Mon – Sat)</span>
+          <span>8:00 AM – 8:00 PM</span>
+        </div>
+        <div class="hours-row" style="margin-top:3px">
+          <span>Emergency</span>
+          <span class="hours-open">Open 24 / 7</span>
+        </div>
       </div>
     </div>
 
-  </div><!-- /.hero-content -->
+  </div>
 
   <!-- Scroll cue -->
   <div class="hero-scroll-hint" aria-hidden="true"><span></span></div>
@@ -423,42 +374,45 @@
 </section>
 
 <!-- ════════════════════════════════════════
-     QUICK ACCESS CARDS
+     STATS STRIP
 ════════════════════════════════════════ -->
-<section class="quick-access">
-  <div class="container">
-    <div class="quick-grid">
-      <a href="contact.html" class="quick-card">
-        <div class="quick-icon"><i class="fas fa-calendar-check"></i></div>
-        <div>
-          <h3 data-translate="qa-appt">Book Appointment</h3>
-          <p data-translate="qa-appt-sub">Online & Walk-in</p>
-        </div>
-      </a>
-      <a href="doctors.html" class="quick-card">
-        <div class="quick-icon"><i class="fas fa-user-md"></i></div>
-        <div>
-          <h3 data-translate="qa-doctors">Find a Doctor</h3>
-          <p data-translate="qa-doctors-sub">Specialists & Sub-specialists</p>
-        </div>
-      </a>
-      <a href="services.html" class="quick-card">
-        <div class="quick-icon"><i class="fas fa-clinic-medical"></i></div>
-        <div>
-          <h3 data-translate="qa-services">Our Services</h3>
-          <p data-translate="qa-services-sub">18+ departments</p>
-        </div>
-      </a>
-      <a href="tel:+251920008338" class="quick-card quick-card-emergency">
-        <div class="quick-icon"><i class="fas fa-ambulance"></i></div>
-        <div>
-          <h3 data-translate="qa-emergency">Emergency</h3>
-          <p data-translate="qa-emergency-sub">+251 920 008 338</p>
-        </div>
-      </a>
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-number" data-target="15000">0<span>+</span></div>
+      <div class="stat-label" data-translate="stat-patients">Patients Served<br>Every Year</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" data-target="18">0<span>+</span></div>
+      <div class="stat-label" data-translate="stat-services">Medical<br>Specialties</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" data-target="30">0<span>+</span></div>
+      <div class="stat-label" data-translate="stat-doctors">Specialist<br>Physicians</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">24<span>/7</span></div>
+      <div class="stat-label" data-translate="stat-emergency">Emergency<br>Services</div>
     </div>
   </div>
-</section>
+</div>
+
+<!-- ════════════════════════════════════════
+     TRUST BAR
+════════════════════════════════════════ -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><i class="fas fa-award"></i> International Medical Standards</div>
+    <div class="trust-divider"></div>
+    <div class="trust-item"><i class="fas fa-shield-check"></i> Accredited Specialists</div>
+    <div class="trust-divider"></div>
+    <div class="trust-item"><i class="fas fa-microscope"></i> Advanced Diagnostics</div>
+    <div class="trust-divider"></div>
+    <div class="trust-item"><i class="fas fa-hand-holding-medical"></i> Compassionate Patient Care</div>
+    <div class="trust-divider"></div>
+    <div class="trust-item"><i class="fas fa-location-dot"></i> Axum, Tigray, Ethiopia</div>
+  </div>
+</div>
 
 <!-- ════════════════════════════════════════
      ABOUT
@@ -669,98 +623,155 @@
   </div>
 </footer>
 
-<!-- Back to top -->
-<button class="back-to-top" id="backToTop" aria-label="Back to top">
-  <i class="fas fa-chevron-up"></i>
+<!-- Mobile floating emergency button -->
+<button class="mobile-emergency" onclick="window.location='tel:+251920008338'">
+  <i class="fas fa-circle-exclamation"></i> Emergency Call
 </button>
 
 <!-- Inline: dropdown nav behaviour (touch + keyboard) -->
 <script>
 /* ════════════════════════════════════════════════════════
-   MEGA MENU — interaction controller
-   Desktop (≥1025px): CSS :hover handles everything.
-   Mobile  (≤1024px): JS click-toggle accordion.
+   MEGA MENU — hover on desktop, hamburger on mobile
    ════════════════════════════════════════════════════════ */
 (function () {
   'use strict';
 
-  var MOBILE_BP = 1024; /* must match CSS @media (max-width: 1024px) */
-
-  /* ── Helpers ── */
-  function isMobile() { return window.innerWidth <= MOBILE_BP; }
-
-  function openDrop(li) {
-    li.classList.add('mobile-open');
-    var trigger = li.querySelector('.nav-drop-trigger');
-    if (trigger) trigger.setAttribute('aria-expanded', 'true');
-  }
-
-  function closeDrop(li) {
-    li.classList.remove('mobile-open');
-    var trigger = li.querySelector('.nav-drop-trigger');
-    if (trigger) trigger.setAttribute('aria-expanded', 'false');
-  }
-
-  function closeAll() {
-    document.querySelectorAll('.nav-item-drop.mobile-open')
-      .forEach(function (li) { closeDrop(li); });
-  }
-
-  /* ── Trigger clicks ── */
-  document.querySelectorAll('.nav-drop-trigger').forEach(function (trigger) {
-    trigger.addEventListener('click', function (e) {
-      if (!isMobile()) return; /* desktop: CSS hover takes over — do nothing */
-      e.preventDefault();     /* stop navigation on the parent link */
-      e.stopPropagation();    /* don't bubble to document close-all handler */
-
-      var li = trigger.closest('.nav-item-drop');
-      var isOpen = li.classList.contains('mobile-open');
-
-      closeAll();             /* close any other open drop first */
-      if (!isOpen) openDrop(li); /* toggle: if it was closed, open it */
+  /* Hamburger toggle */
+  var hamburger = document.getElementById('hamburger');
+  var mainNav   = document.getElementById('mainNav');
+  if (hamburger && mainNav) {
+    hamburger.addEventListener('click', function () {
+      mainNav.classList.toggle('open');
+      hamburger.classList.toggle('open');
     });
-  });
+  }
 
-  /*
-   * Links INSIDE the mega-drop (actual destination links).
-   * On mobile, clicking a real link should:
-   *   1. Close the accordion (clean visual state).
-   *   2. Navigate normally (no preventDefault here).
-   */
-  document.querySelectorAll('.mega-drop a').forEach(function (link) {
-    link.addEventListener('click', function () {
-      if (isMobile()) closeAll();
-    });
+  /* Sticky nav shadow */
+  var siteNav = document.getElementById('siteNav');
+  window.addEventListener('scroll', function () {
+    if (siteNav) siteNav.classList.toggle('scrolled', window.scrollY > 10);
   });
+}());
+</script>
 
-  /* ── Click outside closes all open drops ── */
-  document.addEventListener('click', function (e) {
-    if (!e.target.closest('.nav-item-drop')) closeAll();
+<script>
+/* ══════ SEARCH DATA ══════ */
+const searchData = [
+  { label:'Cardiology', type:'Service', icon:'fa-heart-pulse', url:'services.html?service=cardiology' },
+  { label:'General Surgery', type:'Service', icon:'fa-scalpel', url:'services.html?service=general-surgery' },
+  { label:'Pediatrics', type:'Service', icon:'fa-baby', url:'services.html?service=pediatrics' },
+  { label:'Obstetrics & Gynecology', type:'Service', icon:'fa-venus', url:'services.html?service=obsgyn' },
+  { label:'Radiology', type:'Service', icon:'fa-x-ray', url:'services.html?service=radiology' },
+  { label:'Neurosurgery', type:'Service', icon:'fa-brain', url:'services.html?service=neurosurgery' },
+  { label:'Orthopedics', type:'Service', icon:'fa-bone', url:'services.html?service=orthopedics' },
+  { label:'Dental', type:'Service', icon:'fa-tooth', url:'services.html?service=dental' },
+  { label:'Dermatology', type:'Service', icon:'fa-spa', url:'services.html?service=dermatology' },
+  { label:'Laboratory', type:'Service', icon:'fa-flask', url:'services.html?service=laboratory' },
+  { label:'Internal Medicine', type:'Service', icon:'fa-user-md', url:'services.html?service=internal-medicine' },
+  { label:'ENT', type:'Service', icon:'fa-ear', url:'services.html?service=ent' },
+  { label:'Physiotherapy', type:'Service', icon:'fa-walking', url:'services.html?service=physiotherapy' },
+  { label:'Dr. Tesfay Atsbeha', type:'Doctor', icon:'fa-user-doctor', url:'doctors.html' },
+  { label:'Dr. Higus Teklu', type:'Doctor', icon:'fa-user-doctor', url:'doctors.html' },
+  { label:'Dr. Gebreab Nega', type:'Doctor', icon:'fa-user-doctor', url:'doctors.html' },
+  { label:'Book Appointment', type:'Action', icon:'fa-calendar-check', url:'contact.html' },
+  { label:'Emergency Line', type:'Action', icon:'fa-truck-medical', url:'tel:+251920008338' },
+  { label:'Patient Information', type:'Action', icon:'fa-file-medical', url:'patient-info.html' },
+  { label:'Gallery', type:'Action', icon:'fa-images', url:'gallery.html' },
+  { label:'News & Events', type:'Action', icon:'fa-newspaper', url:'news.html' },
+];
+
+/* ══════ HERO INLINE SEARCH ══════ */
+const heroInput = document.getElementById('heroSearch');
+const heroSugg  = document.getElementById('heroSuggestions');
+
+if (heroInput && heroSugg) {
+  heroInput.addEventListener('input', () => {
+    const q = heroInput.value.toLowerCase().trim();
+    if (q.length < 2) { heroSugg.classList.remove('visible'); return; }
+    const hits = searchData.filter(d => d.label.toLowerCase().includes(q)).slice(0, 6);
+    if (!hits.length) { heroSugg.classList.remove('visible'); return; }
+    heroSugg.innerHTML = hits.map(h => `
+      <a href="${h.url}" class="suggestion-item">
+        <i class="fas ${h.icon} s-icon"></i>
+        ${h.label}
+        <span class="s-type">${h.type}</span>
+      </a>`).join('');
+    heroSugg.classList.add('visible');
   });
+  document.addEventListener('click', e => {
+    if (!heroInput.contains(e.target) && !heroSugg.contains(e.target))
+      heroSugg.classList.remove('visible');
+  });
+}
 
-  /* ── Escape key closes any open drop ── */
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') {
-      closeAll();
-      /* return focus to whichever trigger opened the drop */
-      var focused = document.querySelector('.nav-drop-trigger[aria-expanded="true"]');
-      if (focused) focused.focus();
+/* ══════ OVERLAY SEARCH ══════ */
+function openSearch() {
+  document.getElementById('searchOverlay').classList.add('open');
+  setTimeout(() => document.getElementById('overlaySearch').focus(), 50);
+}
+function closeSearch() {
+  document.getElementById('searchOverlay').classList.remove('open');
+}
+const overlaySearchEl = document.getElementById('overlaySearch');
+if (overlaySearchEl) {
+  overlaySearchEl.addEventListener('input', function() {
+    const q = this.value.toLowerCase().trim();
+    const el = document.getElementById('overlayResults');
+    if (q.length < 2) {
+      el.innerHTML = '<div class="search-empty"><i class="fas fa-search" style="display:block;font-size:1.8rem;margin-bottom:10px;opacity:.2"></i>Start typing to search…</div>';
+      return;
+    }
+    const hits = searchData.filter(d => d.label.toLowerCase().includes(q));
+    if (!hits.length) {
+      el.innerHTML = `<div class="search-empty">No results for "<strong>${this.value}</strong>"</div>`;
+      return;
+    }
+    el.innerHTML = hits.map(h => `
+      <a href="${h.url}" class="search-result">
+        <div class="result-icon ${h.type==='Doctor'?'doctor':h.type==='Action'?'action':''}">
+          <i class="fas ${h.icon}"></i>
+        </div>
+        <div class="result-text">
+          <div class="result-label">${h.label}</div>
+          <div class="result-type">${h.type}</div>
+        </div>
+        <i class="fas fa-arrow-right result-arrow"></i>
+      </a>`).join('');
+  });
+}
+const overlayEl = document.getElementById('searchOverlay');
+if (overlayEl) {
+  overlayEl.addEventListener('click', e => {
+    if (e.target === overlayEl) closeSearch();
+  });
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSearch(); });
+
+/* ══════ COUNTER ANIMATION ══════ */
+function animateCounter(el, target) {
+  let start = 0;
+  const duration = 1800;
+  const step = timestamp => {
+    if (!start) start = timestamp;
+    const progress = Math.min((timestamp - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const span = el.querySelector('span');
+    const suffix = span ? span.outerHTML : '';
+    el.innerHTML = Math.floor(eased * target).toLocaleString() + suffix;
+    if (progress < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+const counterObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const target = +entry.target.dataset.target;
+      if (target) animateCounter(entry.target, target);
+      counterObserver.unobserve(entry.target);
     }
   });
-
-  /*
-   * On resize from mobile → desktop, clean up any open accordion
-   * state so the desktop hover system starts from a clean slate.
-   */
-  var resizeTimer;
-  window.addEventListener('resize', function () {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function () {
-      if (!isMobile()) closeAll();
-    }, 150);
-  });
-
-}());
+}, { threshold: 0.5 });
+document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
 </script>
 <script src="script.js" defer></script>
 </body>
