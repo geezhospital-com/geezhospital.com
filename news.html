@@ -4,17 +4,375 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>News & Events | Geez Hospital — Axum, Tigray</title>
-  <meta name="description" content="Latest news, health tips, and announcements from Geez Hospital in Axum, Tigray. Stay updated on new services, events, and medical insights.">
-  <meta name="keywords" content="Geez Hospital news, hospital announcements Axum, health tips Tigray, new medical services">
-  <link rel="canonical" href="https://geezhospital-com.github.io/geezhospital.com/">
+  <meta name="description" content="Latest news, health tips, and announcements from Geez Hospital in Axum, Tigray.">
+  <link rel="canonical" href="https://geezhospital-com.github.io/geezhospital.com/news.html">
   <link rel="icon" href="images/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Noto+Sans+Ethiopic:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ── News Page Specific Styles ── */
+    :root {
+      --news-teal: #0d7c7c;
+      --news-teal-light: #e6f4f4;
+      --news-gold: #c8860a;
+      --news-dark: #0f1f2e;
+      --news-gray: #64748b;
+      --news-border: #e2e8f0;
+      --news-radius: 14px;
+    }
+
+    /* ── Filter Bar ── */
+    .filter-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .filter-bar span {
+      font-size: .8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--news-gray);
+      margin-right: 4px;
+    }
+    .filter-btn {
+      padding: 7px 18px;
+      border-radius: 999px;
+      border: 1.5px solid var(--news-border);
+      background: #fff;
+      color: var(--news-gray);
+      font-size: .85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--news-teal);
+      border-color: var(--news-teal);
+      color: #fff;
+    }
+
+    /* ── News Grid ── */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      gap: 28px;
+    }
+
+    /* ── News Card ── */
+    .news-card {
+      background: #fff;
+      border-radius: var(--news-radius);
+      overflow: hidden;
+      border: 1px solid var(--news-border);
+      box-shadow: 0 2px 12px rgba(0,0,0,.05);
+      display: flex;
+      flex-direction: column;
+      transition: transform .25s ease, box-shadow .25s ease;
+      opacity: 0;
+      transform: translateY(22px);
+      animation: fadeUp .5s ease forwards;
+    }
+    .news-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 36px rgba(13,124,124,.13);
+    }
+    @keyframes fadeUp {
+      to { opacity:1; transform:translateY(0); }
+    }
+
+    /* ── Card Image Slider ── */
+    .card-slider {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--news-teal-light);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .card-slider .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity .5s ease;
+    }
+    .card-slider .slide.active { opacity: 1; }
+    .card-slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .card-slider .img-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #e6f4f4, #b2dede);
+    }
+    .card-slider .img-placeholder i {
+      font-size: 2.5rem;
+      color: var(--news-teal);
+      opacity: .4;
+    }
+    /* Slider dots */
+    .slider-dots {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 5px;
+    }
+    .slider-dots span {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.55);
+      cursor: pointer;
+      transition: background .2s, transform .2s;
+    }
+    .slider-dots span.active {
+      background: #fff;
+      transform: scale(1.3);
+    }
+    /* Slider arrows */
+    .slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,.8);
+      border: none;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .7rem;
+      color: var(--news-dark);
+      z-index: 2;
+      transition: background .2s;
+      opacity: 0;
+    }
+    .card-slider:hover .slider-arrow { opacity: 1; }
+    .slider-arrow:hover { background: #fff; }
+    .slider-arrow.prev { left: 8px; }
+    .slider-arrow.next { right: 8px; }
+
+    /* ── Card Body ── */
+    .news-body {
+      padding: 20px 22px 22px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .news-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+    .news-category {
+      font-size: .72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      background: var(--news-teal-light);
+      color: var(--news-teal);
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+    .news-category.gold {
+      background: #fff8e6;
+      color: var(--news-gold);
+    }
+    .news-date {
+      font-size: .8rem;
+      color: var(--news-gray);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .news-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      color: var(--news-dark);
+      margin: 0 0 10px;
+      line-height: 1.4;
+    }
+    .news-card p.excerpt {
+      font-size: .88rem;
+      color: var(--news-gray);
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 18px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .news-read-more {
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .83rem;
+      font-weight: 600;
+      color: var(--news-teal);
+      text-decoration: none;
+      border: 1.5px solid var(--news-teal);
+      padding: 6px 16px;
+      border-radius: 999px;
+      transition: all .2s;
+    }
+    .news-read-more:hover {
+      background: var(--news-teal);
+      color: #fff;
+    }
+
+    /* ── Featured (first card spans 2 cols) ── */
+    .news-card.featured {
+      grid-column: 1 / -1;
+      flex-direction: row;
+      max-height: 340px;
+    }
+    .news-card.featured .card-slider {
+      width: 45%;
+      aspect-ratio: unset;
+      flex-shrink: 0;
+    }
+    .news-card.featured h3 {
+      font-size: 1.4rem;
+    }
+    .news-card.featured p.excerpt {
+      -webkit-line-clamp: 4;
+    }
+    @media (max-width: 700px) {
+      .news-card.featured {
+        flex-direction: column;
+        max-height: none;
+        grid-column: unset;
+      }
+      .news-card.featured .card-slider {
+        width: 100%;
+        aspect-ratio: 16/9;
+      }
+    }
+
+    /* ── Modal ── */
+    .news-modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10,24,40,.7);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .news-modal-overlay.open { display: flex; }
+    .news-modal {
+      background: #fff;
+      border-radius: 18px;
+      max-width: 720px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 24px 80px rgba(0,0,0,.3);
+      animation: modalIn .3s ease;
+    }
+    @keyframes modalIn {
+      from { opacity:0; transform:scale(.94) translateY(20px); }
+      to { opacity:1; transform:scale(1) translateY(0); }
+    }
+    .modal-slider {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--news-teal-light);
+      overflow: hidden;
+      border-radius: 18px 18px 0 0;
+    }
+    .modal-slider .slide {
+      position: absolute; inset: 0;
+      opacity: 0; transition: opacity .5s;
+    }
+    .modal-slider .slide.active { opacity: 1; }
+    .modal-slider img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .modal-slider .img-placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, #e6f4f4, #b2dede);
+    }
+    .modal-slider .img-placeholder i { font-size: 4rem; color: var(--news-teal); opacity: .3; }
+    .modal-dots {
+      position: absolute; bottom: 12px; left: 50%;
+      transform: translateX(-50%); display: flex; gap: 7px;
+    }
+    .modal-dots span {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(255,255,255,.5); cursor: pointer; transition: .2s;
+    }
+    .modal-dots span.active { background: #fff; transform: scale(1.3); }
+    .modal-arrow {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(255,255,255,.85); border: none; border-radius: 50%;
+      width: 36px; height: 36px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .8rem; color: var(--news-dark); z-index: 2;
+      transition: background .2s;
+    }
+    .modal-arrow:hover { background: #fff; }
+    .modal-arrow.prev { left: 12px; }
+    .modal-arrow.next { right: 12px; }
+    .modal-body { padding: 28px 32px 32px; }
+    .modal-meta { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 14px; }
+    .modal-body h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.55rem; color: var(--news-dark); margin: 0 0 16px;
+    }
+    .modal-body .body-text {
+      font-size: .95rem; color: #374151; line-height: 1.75;
+    }
+    .modal-close {
+      position: absolute; top: 14px; right: 14px;
+      background: rgba(255,255,255,.9); border: none; border-radius: 50%;
+      width: 36px; height: 36px; cursor: pointer; font-size: 1rem;
+      color: var(--news-dark); display: flex; align-items: center; justify-content: center;
+      z-index: 10; transition: background .2s;
+    }
+    .modal-close:hover { background: #fff; }
+    .modal-slider { position: relative; }
+
+    /* ── Empty / Loading States ── */
+    .news-state {
+      grid-column: 1/-1; text-align: center;
+      padding: 60px 20px; color: var(--news-gray);
+    }
+    .news-state i { font-size: 2.5rem; margin-bottom: 14px; display: block; opacity: .4; }
+
+    /* ── Skeleton ── */
+    .skeleton { background: #e2e8f0; border-radius: 6px; animation: shimmer 1.4s infinite; }
+    @keyframes shimmer {
+      0%,100% { opacity:1; } 50% { opacity:.5; }
+    }
+  </style>
 </head>
 <body>
 
+<!-- Top Bar -->
 <div class="top-bar">
   <div class="container top-bar-inner">
     <div class="top-bar-left">
@@ -28,11 +386,12 @@
       <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
       <a href="https://t.me/Geezhospital_bot" target="_blank" class="social-link" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
       <a href="https://linktr.ee/geezhospital" target="_blank" class="social-link" aria-label="Survey"><i class="fas fa-poll"></i></a>
-      <a href="contact.html" class="top-bar-cta" data-translate="contact-us-btn">Book Appointment</a>
+      <a href="contact.html" class="top-bar-cta">Book Appointment</a>
     </div>
   </div>
 </div>
 
+<!-- Header -->
 <header class="site-header" id="siteHeader">
   <div class="container header-inner">
     <a href="index.html" class="logo-wrap">
@@ -44,12 +403,12 @@
     </button>
     <nav class="main-nav" id="mainNav">
       <ul class="nav-list">
-        <li><a href="index.html" class="nav-link" data-translate="home">Home</a></li>
-        <li><a href="services.html" class="nav-link" data-translate="services">Services</a></li>
-        <li><a href="doctors.html" class="nav-link" data-translate="doctors">Doctors</a></li>
-        <li><a href="gallery.html" class="nav-link" data-translate="gallery">Gallery</a></li>
-        <li><a href="news.html" class="nav-link active" data-translate="news">News</a></li>
-        <li><a href="contact.html" class="nav-link" data-translate="contact">Contact</a></li>
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="doctors.html" class="nav-link">Doctors</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="news.html" class="nav-link active">News</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
         <li class="nav-lang">
           <select id="language-switcher" aria-label="Language">
             <option value="eng">English</option>
@@ -65,81 +424,53 @@
 <!-- Page Hero -->
 <section class="page-hero">
   <div class="container">
-    <h2 data-translate="news">News & Events</h2>
+    <h2>News &amp; Events</h2>
     <p>Stay updated with the latest announcements, health tips, and events from Geez Hospital.</p>
   </div>
 </section>
 
-<!-- News Grid -->
-<section class="section-gap" style="background: var(--gray-50);">
+<!-- News Section -->
+<section class="section-gap" style="background: var(--gray-50, #f8fafc);">
   <div class="container">
-    <div class="news-grid">
 
-      <article class="news-card reveal">
-        <img src="images/news1.jpg" alt="New Cardiology Specialist Service" loading="lazy"
-             onerror="this.style.background='var(--teal-100)';this.style.height='200px';this.removeAttribute('src')">
-        <div class="news-body">
-          <p class="news-date"><i class="fas fa-calendar-alt"></i> January 5, 2024</p>
-          <h3>New Sub-Specialist Cardiology Service Now Available</h3>
-          <p>Geez Hospital is proud to announce the launch of a dedicated interventional cardiology service, offering advanced cardiac care to patients across Tigray and beyond.</p>
-          <a href="#" class="btn btn-sm btn-outline">Read More <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </article>
-    <!-- ★ NEW — Football Prediction Challenge Winner Announcement ★ -->
-<article class="news-card reveal" style="border:2px solid #f0c040;box-shadow:0 6px 28px rgba(240,192,64,.25)">
-  <img src="geez_winner_poster.png"
-       alt="Prediction Challenge Winner — Kewani Assefa"
-       loading="lazy"
-       onerror="this.style.background='var(--teal-100)';this.style.height='200px';this.removeAttribute('src')">
-  <div class="news-body">
-    <p class="news-date">
-      <i class="fas fa-trophy" style="color:#f0c040"></i>
-      &nbsp;ውድድር ኩዕሶ እግሪ — May 2026
-    </p>
-    <h3>🏆 ብስራት ንተዓወትቲ! — ተዓዋቲ: Kewani Assefa</h3>
-    <p>Arsenal 1–0 Atlético Madrid · Champions League · ዝርዝር ተዓወትቲ ኣብዚ ዓወት ርአ።</p>
-    <a href="winners-announcement.html" class="btn btn-sm btn-outline">
-      ዝርዝር ርአ &nbsp;<i class="fas fa-arrow-right"></i>
-    </a>
-  </div>
-</article>
-
-      <article class="news-card reveal">
-        <img src="images/news2.jpg" alt="World Health Day" loading="lazy"
-             onerror="this.style.background='var(--teal-100)';this.style.height='200px';this.removeAttribute('src')">
-        <div class="news-body">
-          <p class="news-date"><i class="fas fa-calendar-alt"></i> December 25, 2023</p>
-          <h3>World Health Day Commemorated at Geez Hospital</h3>
-          <p>Geez Hospital marked World Health Day with a community health awareness event, offering free screenings and public health education to residents of Axum.</p>
-          <a href="#" class="btn btn-sm btn-outline">Read More <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </article>
-
-      <article class="news-card reveal">
-        <img src="images/news3.jpg" alt="Modern Laboratory Equipment" loading="lazy"
-             onerror="this.style.background='var(--teal-100)';this.style.height='200px';this.removeAttribute('src')">
-        <div class="news-body">
-          <p class="news-date"><i class="fas fa-calendar-alt"></i> November 10, 2023</p>
-          <h3>Geez Hospital Upgrades Laboratory with State-of-the-Art Equipment</h3>
-          <p>Our laboratory has been upgraded with advanced diagnostic technology, enabling faster, more accurate test results to improve patient outcomes.</p>
-          <a href="#" class="btn btn-sm btn-outline">Read More <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </article>
-
-      <article class="news-card reveal">
-        <img src="images/news4.jpg" alt="Free Health Screening" loading="lazy"
-             onerror="this.style.background='var(--teal-100)';this.style.height='200px';this.removeAttribute('src')">
-        <div class="news-body">
-          <p class="news-date"><i class="fas fa-calendar-alt"></i> October 3, 2023</p>
-          <h3>Free Community Health Screening Campaign</h3>
-          <p>Geez Hospital conducted a free community health screening campaign, providing blood pressure, blood sugar, and vision tests to over 500 residents in the Axum area.</p>
-          <a href="#" class="btn btn-sm btn-outline">Read More <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </article>
-
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+      <span>Filter:</span>
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="Announcement">Announcements</button>
+      <button class="filter-btn" data-filter="Event">Events</button>
+      <button class="filter-btn" data-filter="Health Tip">Health Tips</button>
     </div>
+
+    <!-- Grid -->
+    <div class="news-grid" id="newsGrid">
+      <!-- Skeleton placeholders while loading -->
+      <div class="news-card" style="animation-delay:.05s">
+        <div class="card-slider"><div class="img-placeholder skeleton" style="width:100%;height:100%"></div></div>
+        <div class="news-body">
+          <div class="skeleton" style="height:14px;width:60%;margin-bottom:12px;border-radius:4px"></div>
+          <div class="skeleton" style="height:20px;width:90%;margin-bottom:8px;border-radius:4px"></div>
+          <div class="skeleton" style="height:14px;width:100%;margin-bottom:6px;border-radius:4px"></div>
+          <div class="skeleton" style="height:14px;width:80%;border-radius:4px"></div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
+
+<!-- Article Modal -->
+<div class="news-modal-overlay" id="newsModal" role="dialog" aria-modal="true" aria-label="Article">
+  <div class="news-modal" id="modalContent">
+    <div class="modal-slider" id="modalSlider">
+      <button class="modal-arrow prev" id="modalPrev"><i class="fas fa-chevron-left"></i></button>
+      <button class="modal-arrow next" id="modalNext"><i class="fas fa-chevron-right"></i></button>
+      <div class="modal-dots" id="modalDots"></div>
+      <button class="modal-close" id="modalClose" aria-label="Close"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
 
 <!-- Footer -->
 <footer class="site-footer">
@@ -149,54 +480,262 @@
         <img src="images/logo.png" alt="Geez Hospital" onerror="this.style.display='none'">
         <div class="logo-text"><span class="logo-en">GEEZ HOSPITAL</span><span class="logo-tig">ግዕዝ ሆስፒታል</span></div>
       </a>
-      <p data-translate="footer-brand-desc">World-class healthcare in Axum, Tigray. Compassionate care for every patient.</p>
+      <p>World-class healthcare in Axum, Tigray. Compassionate care for every patient.</p>
       <div class="footer-social">
         <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
         <a href="https://t.me/Geezhospital_bot" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
-        <a href="https://linktr.ee/geezhospital" target="_blank" aria-label="Survey"><i class="fas fa-poll"></i></a>
-        <a href="https://maps.app.goo.gl/yHuCuCgLMzUtyerU6" target="_blank" aria-label="Google Maps"><i class="fas fa-map-marker-alt"></i></a>
+        <a href="https://maps.app.goo.gl/yHuCuCgLMzUtyerU6" target="_blank" aria-label="Maps"><i class="fas fa-map-marker-alt"></i></a>
       </div>
     </div>
     <div class="footer-col">
-      <h4 data-translate="footer-quick-links">Quick Links</h4>
-      <ul>
-        <li><a href="index.html" data-translate="home">Home</a></li>
-        <li><a href="services.html" data-translate="services">Services</a></li>
-        <li><a href="doctors.html" data-translate="doctors">Doctors</a></li>
-        <li><a href="gallery.html" data-translate="gallery">Gallery</a></li>
-        <li><a href="news.html" data-translate="news">News</a></li>
-        <li><a href="contact.html" data-translate="contact">Contact</a></li>
-      </ul>
+      <h4>Quick Links</h4>
+      <ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="doctors.html">Doctors</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact</a></li></ul>
     </div>
     <div class="footer-col">
-      <h4 data-translate="footer-services-title">Top Services</h4>
-      <ul>
-        <li><a href="services.html">Cardiology</a></li>
-        <li><a href="services.html">General Surgery</a></li>
-        <li><a href="services.html">Pediatrics</a></li>
-        <li><a href="services.html">Obstetrics & Gynecology</a></li>
-        <li><a href="services.html">Emergency Care</a></li>
-      </ul>
+      <h4>Top Services</h4>
+      <ul><li><a href="services.html">Cardiology</a></li><li><a href="services.html">General Surgery</a></li><li><a href="services.html">Pediatrics</a></li><li><a href="services.html">Emergency Care</a></li></ul>
     </div>
     <div class="footer-col">
-      <h4 data-translate="footer-contact-title">Contact Us</h4>
+      <h4>Contact Us</h4>
       <ul class="footer-contact-list">
-        <li><i class="fas fa-map-marker-alt"></i><span data-translate="footer-address">Kindeya Kebele, In front of Ethio-Telecom, Axum, Tigray</span></li>
+        <li><i class="fas fa-map-marker-alt"></i><span>Kindeya Kebele, In front of Ethio-Telecom, Axum, Tigray</span></li>
         <li><i class="fas fa-phone"></i><a href="tel:+251920008338">+251 920 008 338</a></li>
-        <li><i class="fas fa-phone"></i><a href="tel:+251962333388">+251 962 333 388</a></li>
         <li><i class="fas fa-envelope"></i><a href="mailto:geezhospital@gmail.com">geezhospital@gmail.com</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <div class="container footer-bottom-inner">
-      <p id="footer-text">© 2026 Geez Hospital. All rights reserved.</p>
+      <p>© 2026 Geez Hospital. All rights reserved.</p>
       <p class="footer-dev">Developed by <a href="tel:+251911179955">Legesse Teklu Gebrekidan</a></p>
     </div>
   </div>
 </footer>
 
 <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
 <script src="script.js"></script>
+<script>
+/* ================================================================
+   NEWS PAGE — loads from data/news.json, renders cards with
+   image sliders (multiple photos per article) and a read-more modal
+   ================================================================ */
+
+let allArticles = [];
+let activeFilter = 'all';
+
+// ── Format date nicely ──
+function fmtDate(iso) {
+  const d = new Date(iso);
+  return d.toLocaleDateString('en-GB', { day:'numeric', month:'long', year:'numeric' });
+}
+
+// ── Build a slider inside a given container element ──
+function buildSlider(container, images, prefix) {
+  container.innerHTML = '';
+  if (!images || images.length === 0) {
+    container.innerHTML = `<div class="img-placeholder"><i class="fas fa-newspaper"></i></div>`;
+    return;
+  }
+  // Slides
+  images.forEach((src, i) => {
+    const slide = document.createElement('div');
+    slide.className = 'slide' + (i === 0 ? ' active' : '');
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = 'News image ' + (i+1);
+    img.loading = 'lazy';
+    img.onerror = function() {
+      this.parentElement.innerHTML = `<div class="img-placeholder"><i class="fas fa-image"></i></div>`;
+    };
+    slide.appendChild(img);
+    container.appendChild(slide);
+  });
+  if (images.length < 2) return; // no controls needed
+  // Dots
+  const dotsEl = document.createElement('div');
+  dotsEl.className = (prefix === 'modal') ? 'modal-dots' : 'slider-dots';
+  images.forEach((_, i) => {
+    const dot = document.createElement('span');
+    if (i === 0) dot.className = 'active';
+    dot.addEventListener('click', () => goSlide(container, dotsEl, i));
+    dotsEl.appendChild(dot);
+  });
+  container.appendChild(dotsEl);
+  // Arrows (cards only — modal has its own)
+  if (prefix !== 'modal') {
+    const prev = document.createElement('button');
+    prev.className = 'slider-arrow prev';
+    prev.innerHTML = '<i class="fas fa-chevron-left"></i>';
+    prev.addEventListener('click', e => { e.stopPropagation(); stepSlide(container, dotsEl, -1); });
+    const next = document.createElement('button');
+    next.className = 'slider-arrow next';
+    next.innerHTML = '<i class="fas fa-chevron-right"></i>';
+    next.addEventListener('click', e => { e.stopPropagation(); stepSlide(container, dotsEl, 1); });
+    container.appendChild(prev);
+    container.appendChild(next);
+  }
+  // Auto-advance
+  setInterval(() => stepSlide(container, dotsEl, 1), 4000);
+}
+
+function goSlide(container, dotsEl, idx) {
+  const slides = container.querySelectorAll('.slide');
+  const dots = dotsEl ? dotsEl.querySelectorAll('span') : [];
+  slides.forEach((s, i) => s.classList.toggle('active', i === idx));
+  dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+}
+
+function stepSlide(container, dotsEl, dir) {
+  const slides = container.querySelectorAll('.slide');
+  if (!slides.length) return;
+  let cur = [...slides].findIndex(s => s.classList.contains('active'));
+  cur = (cur + dir + slides.length) % slides.length;
+  goSlide(container, dotsEl, cur);
+}
+
+// ── Render all article cards ──
+function renderCards(articles) {
+  const grid = document.getElementById('newsGrid');
+  grid.innerHTML = '';
+  if (articles.length === 0) {
+    grid.innerHTML = `<div class="news-state"><i class="fas fa-newspaper"></i><p>No articles found.</p></div>`;
+    return;
+  }
+  articles.forEach((art, idx) => {
+    const card = document.createElement('article');
+    card.className = 'news-card reveal' + (idx === 0 ? ' featured' : '');
+    card.style.animationDelay = (idx * 0.07) + 's';
+    // Slider
+    const sliderDiv = document.createElement('div');
+    sliderDiv.className = 'card-slider';
+    buildSlider(sliderDiv, art.images, 'card');
+    // Body
+    const catClass = (art.category === 'Announcement') ? 'gold' : '';
+    const bodyDiv = document.createElement('div');
+    bodyDiv.className = 'news-body';
+    bodyDiv.innerHTML = `
+      <div class="news-meta">
+        <span class="news-category ${catClass}">${art.category || 'News'}</span>
+        <span class="news-date"><i class="fas fa-calendar-alt"></i> ${fmtDate(art.date)}</span>
+      </div>
+      <h3>${art.title}</h3>
+      <p class="excerpt">${art.excerpt}</p>
+    `;
+    // Read more
+    const readBtn = document.createElement('a');
+    readBtn.className = 'news-read-more';
+    readBtn.href = '#';
+    if (art.link) {
+      readBtn.href = art.link;
+    } else {
+      readBtn.addEventListener('click', e => { e.preventDefault(); openModal(art); });
+    }
+    readBtn.innerHTML = `Read More <i class="fas fa-arrow-right"></i>`;
+    bodyDiv.appendChild(readBtn);
+    card.appendChild(sliderDiv);
+    card.appendChild(bodyDiv);
+    grid.appendChild(card);
+  });
+}
+
+// ── Modal ──
+const modalOverlay = document.getElementById('newsModal');
+const modalSlider  = document.getElementById('modalSlider');
+const modalDots    = document.getElementById('modalDots');
+const modalBody    = document.getElementById('modalBody');
+let modalImages = [];
+
+function openModal(art) {
+  modalImages = art.images || [];
+  // Re-build slider area
+  // Remove old slides / dots (keep arrows & close btn)
+  modalSlider.querySelectorAll('.slide').forEach(s => s.remove());
+  modalDots.innerHTML = '';
+  if (modalImages.length === 0) {
+    const ph = document.createElement('div');
+    ph.className = 'img-placeholder';
+    ph.innerHTML = '<i class="fas fa-newspaper"></i>';
+    modalSlider.prepend(ph);
+  } else {
+    modalImages.forEach((src, i) => {
+      const slide = document.createElement('div');
+      slide.className = 'slide' + (i === 0 ? ' active' : '');
+      const img = document.createElement('img');
+      img.src = src; img.alt = 'Photo '+(i+1);
+      img.onerror = function(){ this.parentElement.innerHTML = '<div class="img-placeholder"><i class="fas fa-image"></i></div>'; };
+      slide.appendChild(img);
+      modalSlider.prepend(slide); // insert before arrows
+    });
+    if (modalImages.length > 1) {
+      modalImages.forEach((_, i) => {
+        const dot = document.createElement('span');
+        if (i === 0) dot.className = 'active';
+        dot.addEventListener('click', () => goSlide(modalSlider, modalDots, i));
+        modalDots.appendChild(dot);
+      });
+      // show/hide arrows
+      document.getElementById('modalPrev').style.display = '';
+      document.getElementById('modalNext').style.display = '';
+    } else {
+      document.getElementById('modalPrev').style.display = 'none';
+      document.getElementById('modalNext').style.display = 'none';
+    }
+  }
+  const catClass = (art.category === 'Announcement') ? 'gold' : '';
+  modalBody.innerHTML = `
+    <div class="modal-meta">
+      <span class="news-category ${catClass}">${art.category || 'News'}</span>
+      <span class="news-date"><i class="fas fa-calendar-alt"></i> ${fmtDate(art.date)}</span>
+    </div>
+    <h2>${art.title}</h2>
+    <div class="body-text">${(art.body || art.excerpt).replace(/\n/g,'<br>')}</div>
+  `;
+  modalOverlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  modalOverlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('modalClose').addEventListener('click', closeModal);
+modalOverlay.addEventListener('click', e => { if (e.target === modalOverlay) closeModal(); });
+document.getElementById('modalPrev').addEventListener('click', () => stepSlide(modalSlider, modalDots, -1));
+document.getElementById('modalNext').addEventListener('click', () => stepSlide(modalSlider, modalDots, 1));
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// ── Filter buttons ──
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeFilter = btn.dataset.filter;
+    const filtered = activeFilter === 'all'
+      ? allArticles
+      : allArticles.filter(a => a.category === activeFilter);
+    renderCards(filtered);
+  });
+});
+
+// ── Load data/news.json ──
+async function loadNews() {
+  try {
+    const res = await fetch('data/news.json?_=' + Date.now());
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const json = await res.json();
+    // Sort newest first
+    allArticles = (json.articles || []).sort((a,b) => new Date(b.date) - new Date(a.date));
+    renderCards(allArticles);
+  } catch(err) {
+    console.error('Could not load news.json:', err);
+    document.getElementById('newsGrid').innerHTML =
+      `<div class="news-state"><i class="fas fa-exclamation-circle"></i><p>Could not load articles. Please try again later.</p></div>`;
+  }
+}
+
+loadNews();
+</script>
 </body>
 </html>
