@@ -1,0 +1,50 @@
+{
+  "articles": [
+    {
+      "id": "news-winner-2026",
+      "title": "🏆 ብስራት ንተዓወትቲ! — ተዓዋቲ: Kewani Assefa",
+      "date": "2026-05-01",
+      "category": "Announcement",
+      "excerpt": "Arsenal 1–0 Atlético Madrid · Champions League · ዝርዝር ተዓወትቲ ኣብዚ ዓወት ርአ።",
+      "body": "Arsenal 1–0 Atlético Madrid · Champions League · ዝርዝር ተዓወትቲ ኣብዚ ዓወት ርአ። ንዝያዳ ሓበሬታ ናብ winners-announcement.html ኪዱ።",
+      "images": ["geez_winner_poster.png"],
+      "link": "winners-announcement.html"
+    },
+    {
+      "id": "news-001",
+      "title": "New Sub-Specialist Cardiology Service Now Available",
+      "date": "2024-01-05",
+      "category": "Announcement",
+      "excerpt": "Geez Hospital is proud to announce the launch of a dedicated interventional cardiology service, offering advanced cardiac care to patients across Tigray and beyond.",
+      "body": "Geez Hospital is proud to announce the launch of a dedicated interventional cardiology service, offering advanced cardiac care to patients across Tigray and beyond. Our team of highly trained interventional cardiologists brings cutting-edge procedures including angioplasty, stenting, and cardiac catheterization to the people of Axum and the wider Tigray region. This milestone represents our unwavering commitment to providing world-class healthcare close to home.",
+      "images": ["images/news1.jpg"]
+    },
+    {
+      "id": "news-002",
+      "title": "World Health Day Commemorated at Geez Hospital",
+      "date": "2023-12-25",
+      "category": "Event",
+      "excerpt": "Geez Hospital marked World Health Day with a community health awareness event, offering free screenings and public health education to residents of Axum.",
+      "body": "Geez Hospital marked World Health Day with a community health awareness event, offering free screenings and public health education to residents of Axum. The event brought together our medical staff, community leaders, and hundreds of residents who benefited from free consultations and educational workshops on preventive healthcare.",
+      "images": ["images/news2.jpg"]
+    },
+    {
+      "id": "news-003",
+      "title": "Geez Hospital Upgrades Laboratory with State-of-the-Art Equipment",
+      "date": "2023-11-10",
+      "category": "Announcement",
+      "excerpt": "Our laboratory has been upgraded with advanced diagnostic technology, enabling faster, more accurate test results to improve patient outcomes.",
+      "body": "Our laboratory has been upgraded with advanced diagnostic technology, enabling faster, more accurate test results to improve patient outcomes. The new equipment includes automated blood analyzers, digital imaging systems, and molecular diagnostic tools. These upgrades significantly reduce turnaround time for critical test results, helping our doctors make quicker and more informed treatment decisions.",
+      "images": ["images/news3.jpg"]
+    },
+    {
+      "id": "news-004",
+      "title": "Free Community Health Screening Campaign",
+      "date": "2023-10-03",
+      "category": "Event",
+      "excerpt": "Geez Hospital conducted a free community health screening campaign, providing blood pressure, blood sugar, and vision tests to over 500 residents in the Axum area.",
+      "body": "Geez Hospital conducted a free community health screening campaign, providing blood pressure, blood sugar, and vision tests to over 500 residents in the Axum area. This initiative underscores our commitment to accessible and preventive healthcare for all members of the community, regardless of economic background. We plan to continue these outreach programs throughout the year.",
+      "images": ["images/news4.jpg"]
+    }
+  ]
+}
