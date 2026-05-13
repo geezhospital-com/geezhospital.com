@@ -748,24 +748,24 @@ function initAppointmentForm() {
    handle the localised display at runtime.
 ───────────────────────────────────────── */
 const SERVICES = [
-  { icon: 'fa-user-md',         name: 'Internal Medicine',          key: 'service1-h3'  },
-  { icon: 'fa-heartbeat',       name: 'Cardiology',                 key: 'service2-h3'  },
-  { icon: 'fa-cut',             name: 'General Surgery',            key: 'service3-h3'  },
-  { icon: 'fa-baby',            name: 'Pediatrics & Adolescents',   key: 'service4-h3'  },
-  { icon: 'fa-venus',           name: 'Obstetrics & Gynecology',    key: 'service5-h3'  },
-  { icon: 'fa-ear',             name: 'ENT',                        key: 'service6-h3'  },
-  { icon: 'fa-x-ray',          name: 'Radiology',                  key: 'service7-h3'  },
-  { icon: 'fa-tooth',           name: 'Dental',                     key: 'service8-h3'  },
-  { icon: 'fa-brain',           name: 'Neurosurgery',               key: 'service9-h3'  },
-  { icon: 'fa-bone',            name: 'Orthopedics',                key: 'service10-h3' },
-  { icon: 'fa-spa',             name: 'Dermatology & Cosmetology',  key: 'service11-h3' },
-  { icon: 'fa-procedures',      name: 'Anesthesia & Pain Mgmt',     key: 'service12-h3' },
-  { icon: 'fa-flask',           name: 'Laboratory',                 key: 'service13-h3' },
-  { icon: 'fa-walking',         name: 'Physiotherapy',              key: 'service14-h3' },
-  { icon: 'fa-head-side-virus', name: 'Psychiatry',                 key: 'service15-h3' },
-  { icon: 'fa-child',           name: 'Maternity Services',         key: 'service16-h3' },
-  { icon: 'fa-pills',           name: 'Pharmacy & Ambulance',       key: 'service17-h3' },
-  { icon: 'fa-plus-circle',     name: 'Other Services',             key: 'service18-h3' },
+  { icon: 'fa-user-md',         key: 'service1-h3',  name: 'Internal Medicine',         desc: 'Comprehensive diagnosis and treatment of complex adult conditions by expert physicians.' },
+  { icon: 'fa-heartbeat',       key: 'service2-h3',  name: 'Cardiology',                desc: 'Advanced cardiac care including diagnostics, intervention, and heart disease management.' },
+  { icon: 'fa-cut',             key: 'service3-h3',  name: 'General Surgery',           desc: 'Safe and precise surgical procedures performed by highly trained specialist surgeons.' },
+  { icon: 'fa-baby',            key: 'service4-h3',  name: 'Pediatrics & Adolescents',  desc: 'Dedicated child and adolescent healthcare from infancy through the teenage years.' },
+  { icon: 'fa-venus',           key: 'service5-h3',  name: 'Obstetrics & Gynecology',   desc: 'Complete women\'s health services from routine gynecology to safe, supported childbirth.' },
+  { icon: 'fa-ear',             key: 'service6-h3',  name: 'ENT',                       desc: 'Expert diagnosis and treatment of ear, nose, throat, and head & neck conditions.' },
+  { icon: 'fa-x-ray',          key: 'service7-h3',  name: 'Radiology',                 desc: 'Modern imaging diagnostics including X-ray, ultrasound, and CT for accurate results.' },
+  { icon: 'fa-tooth',           key: 'service8-h3',  name: 'Dental',                    desc: 'Full dental care including preventive, restorative, and cosmetic dental treatments.' },
+  { icon: 'fa-brain',           key: 'service9-h3',  name: 'Neurosurgery',              desc: 'Specialized surgical treatment of brain, spine, and nervous system disorders.' },
+  { icon: 'fa-bone',            key: 'service10-h3', name: 'Orthopedics',               desc: 'Treatment of bone, joint, and musculoskeletal injuries and conditions for full recovery.' },
+  { icon: 'fa-spa',             key: 'service11-h3', name: 'Dermatology & Cosmetology', desc: 'Expert care for skin diseases alongside modern cosmetic and aesthetic treatments.' },
+  { icon: 'fa-procedures',      key: 'service12-h3', name: 'Anesthesia & Pain Mgmt',    desc: 'Safe anesthesia administration and personalized pain management for every patient.' },
+  { icon: 'fa-flask',           key: 'service13-h3', name: 'Laboratory',                desc: 'Fast, accurate diagnostic lab tests supporting reliable clinical decision-making.' },
+  { icon: 'fa-walking',         key: 'service14-h3', name: 'Physiotherapy',             desc: 'Targeted rehabilitation programs to restore movement, strength, and quality of life.' },
+  { icon: 'fa-head-side-virus', key: 'service15-h3', name: 'Psychiatry',                desc: 'Compassionate mental health evaluation, counseling, and psychiatric treatment.' },
+  { icon: 'fa-child',           key: 'service16-h3', name: 'Maternity Services',        desc: 'Supportive prenatal, delivery, and postnatal care for mothers and newborns.' },
+  { icon: 'fa-pills',           key: 'service17-h3', name: 'Pharmacy & Ambulance',      desc: '24/7 in-house pharmacy and rapid ambulance response for emergencies.' },
+  { icon: 'fa-plus-circle',     key: 'service18-h3', name: 'Other Services',            desc: 'Additional specialist services tailored to meet the diverse needs of our patients.' },
 ];
 
 function renderServices() {
@@ -783,6 +783,7 @@ function renderServices() {
          <i class="fas ${s.icon}"></i>
        </div>
        <h3 data-translate="${s.key}">${s.name}</h3>
+       <p class="service-card-desc">${s.desc}</p>
      </a>`
   ).join('');
 
