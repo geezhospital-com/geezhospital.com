@@ -141,6 +141,25 @@ const translations = {
     'service16-h3':            'Maternity Services',
     'service17-h3':            'Pharmacy & Ambulance',
     'service18-h3':            'Other Services',
+    /* E2 — Service descriptions (eng) */
+    'service1-desc':  'Comprehensive diagnosis and treatment of complex adult conditions by expert physicians.',
+    'service2-desc':  'Advanced cardiac care including diagnostics, intervention, and heart disease management.',
+    'service3-desc':  'Safe and precise surgical procedures performed by highly trained specialist surgeons.',
+    'service4-desc':  'Dedicated child and adolescent healthcare from infancy through the teenage years.',
+    'service5-desc':  'Complete women\'s health services from routine gynecology to safe, supported childbirth.',
+    'service6-desc':  'Expert diagnosis and treatment of ear, nose, throat, and head & neck conditions.',
+    'service7-desc':  'Modern imaging diagnostics including X-ray, ultrasound, and CT for accurate results.',
+    'service8-desc':  'Full dental care including preventive, restorative, and cosmetic dental treatments.',
+    'service9-desc':  'Specialized surgical treatment of brain, spine, and nervous system disorders.',
+    'service10-desc': 'Treatment of bone, joint, and musculoskeletal injuries and conditions for full recovery.',
+    'service11-desc': 'Expert care for skin diseases alongside modern cosmetic and aesthetic treatments.',
+    'service12-desc': 'Safe anesthesia administration and personalized pain management for every patient.',
+    'service13-desc': 'Fast, accurate diagnostic lab tests supporting reliable clinical decision-making.',
+    'service14-desc': 'Targeted rehabilitation programs to restore movement, strength, and quality of life.',
+    'service15-desc': 'Compassionate mental health evaluation, counseling, and psychiatric treatment.',
+    'service16-desc': 'Supportive prenatal, delivery, and postnatal care for mothers and newborns.',
+    'service17-desc': '24/7 in-house pharmacy and rapid ambulance response for emergencies.',
+    'service18-desc': 'Additional specialist services tailored to meet the diverse needs of our patients.',
 
     /* F — Services section headings */
     'services-eyebrow':        'What We Offer',
@@ -294,6 +313,25 @@ const translations = {
     'service16-h3':            'ኣገልግሎታት ማትርኒቲ',
     'service17-h3':            'ፋርማሲን ኣምቡላንስን',
     'service18-h3':            'ካልኦት ኣገልግሎታት',
+    /* E2 — Service descriptions (tig) */
+    'service1-desc':  'ምሉእ ናይ ውሽጣዊ ሕማማት መርመራን ሕክምናን ብልዑል ተመኩሮን ሞያን ዘለዎም ስፔሻሊስት ሓኻይም ይወሃብ።',
+    'service2-desc':  'ብዛዕባ ልብን ናይ ልቢ ሕማማትን ዘትኮረ ምዕቡል መርመራን ሕክምናን ብኢስፔሻሊስት ሓኻይም ይቐርብ።',
+    'service3-desc':  'ብልዑል ብቕዓት ዘለዎም ሰርጀን ዝካየድ ውሑስን ብቑዕን ናይ ቀዶ ሕክምና ኣገልግሎት ይወሃብ።',
+    'service4-desc':  'ካብ ናይ ሕጻናት ዕድመ ክሳዕ ናይ ጉርዝዋይ ዕድመ ንዘሎ ህጻናትን መንእሰያትን ምሉእ ናይ ጥዕና ክንክን ይወሃብ።',
+    'service5-desc':  'ካብ ናይ ሕርሲ ድሕሪ ሕርሲ ዝርዝር ዘጠቓልል ምሉእ ናይ ደቀንስትዮ ሕክምናዊ ኣገልግሎት ብሞያ ይቐርብ።',
+    'service6-desc':  'ናይ እዝኒ፡ ኣፍንጫን ጒሮሮን ምስ ርእሲን ክሳድን ዝተኣሳሰሩ ሕማማት ዝምርምርን ዝፍውስን ሓኻይም ኣለዉ።',
+    'service7-desc':  'ብኤክስ-ሬይ፡ ኣልትራሳውንድን ሲቲ-ስካንን ዘጠቓልል ዘመናዊ ናይ ምስሊ ምርመራ ኣገልግሎት ይቐርብ።',
+    'service8-desc':  'ናይ ምክልኻልን ምሕዳስን ምስ ናይ ውበ ናይ ጥርሲ ሕክምና ዘጠቓልል ምሉእ ናይ ጥርሲ ኣገልግሎት ይወሃብ።',
+    'service9-desc':  'ናይ ሓንጎልን ምስርን ናይ ነርቭ ስርዓት ሕማማት ዝምልከት ስፔሻሊስት ቀዶ ሕክምናዊ ኣገልግሎት ይወሃብ።',
+    'service10-desc': 'ናይ ዓጽምን ምትእስሳሩን ምስ ናይ ኣካል ምቕዋምን ዝተኣሳሰሩ ሕማማትን ማህሰይቲን ዝፍውስ ሕክምና ይወሃብ።',
+    'service11-desc': 'ናይ ቆርበት ሕማማት ሕክምና ምስ ዘመናዊ ናይ ውበን ጽባቐን ኣገልግሎት ብስፔሻሊስት ሓኻይም ይቐርብ።',
+    'service12-desc': 'ቅድሚ ቀዶ ሕክምናን ድሕሪኡን ውሑስ ናይ ዕቃብ ሕክምናን ናይ ቃንዛ ምሕደራን ብሞያ ይወሃብ።',
+    'service13-desc': 'ቅልጡፍን ትኽክለኛን ናይ ላቦራቶሪ ምርመራ ንስሩዕ ናይ ሕክምና ውሳኔ ዘኽእል ኣገልግሎት ይቐርብ።',
+    'service14-desc': 'ምንቅስቓስን ሓይልን ናብ ንቡር ንምምላስ ዝዓለመ ናይ ሊቓዊ ምሕዳስ ፕሮግራም ብሓኻይም ይወሃብ።',
+    'service15-desc': 'ናይ ኣእምሮ ጥዕና መርመራ፡ ምኽርን ሕክምናን ብሓልዮትን ሞያዊ ብቕዓትን ዘለዎ ስፔሻሊስት ይወሃብ።',
+    'service16-desc': 'ቅድሚ ሕርስን ግዜ ሕርስን ድሕሪ ሕርስን ናይ ኣደን ሕጻንን ዝምልከት ሓጋዚ ናይ ሕርሲ ኣገልግሎት ይቐርብ።',
+    'service17-desc': 'ሃሩር ናይ ሕክምና ኩነታት ንምምላስ 24 ሰዓት ዝሰርሕ ናይ ቤት ፋርማሲን ቅልጡፍ ኣምቡላንስን ኣሎ።',
+    'service18-desc': 'ንዝተፈላለዩ ናይ ሕክምና ድሕርያት ዘማልእ ተወሳኺ ስፔሻሊስት ኣገልግሎታት ብሞያ ይወሃቡ።',
 
     /* F — Services section headings */
     'services-eyebrow':        'እንህቦ',
@@ -748,24 +786,24 @@ function initAppointmentForm() {
    handle the localised display at runtime.
 ───────────────────────────────────────── */
 const SERVICES = [
-  { icon: 'fa-user-md',         key: 'service1-h3',  name: 'Internal Medicine',         desc: 'Comprehensive diagnosis and treatment of complex adult conditions by expert physicians.' },
-  { icon: 'fa-heartbeat',       key: 'service2-h3',  name: 'Cardiology',                desc: 'Advanced cardiac care including diagnostics, intervention, and heart disease management.' },
-  { icon: 'fa-cut',             key: 'service3-h3',  name: 'General Surgery',           desc: 'Safe and precise surgical procedures performed by highly trained specialist surgeons.' },
-  { icon: 'fa-baby',            key: 'service4-h3',  name: 'Pediatrics & Adolescents',  desc: 'Dedicated child and adolescent healthcare from infancy through the teenage years.' },
-  { icon: 'fa-venus',           key: 'service5-h3',  name: 'Obstetrics & Gynecology',   desc: 'Complete women\'s health services from routine gynecology to safe, supported childbirth.' },
-  { icon: 'fa-ear',             key: 'service6-h3',  name: 'ENT',                       desc: 'Expert diagnosis and treatment of ear, nose, throat, and head & neck conditions.' },
-  { icon: 'fa-x-ray',          key: 'service7-h3',  name: 'Radiology',                 desc: 'Modern imaging diagnostics including X-ray, ultrasound, and CT for accurate results.' },
-  { icon: 'fa-tooth',           key: 'service8-h3',  name: 'Dental',                    desc: 'Full dental care including preventive, restorative, and cosmetic dental treatments.' },
-  { icon: 'fa-brain',           key: 'service9-h3',  name: 'Neurosurgery',              desc: 'Specialized surgical treatment of brain, spine, and nervous system disorders.' },
-  { icon: 'fa-bone',            key: 'service10-h3', name: 'Orthopedics',               desc: 'Treatment of bone, joint, and musculoskeletal injuries and conditions for full recovery.' },
-  { icon: 'fa-spa',             key: 'service11-h3', name: 'Dermatology & Cosmetology', desc: 'Expert care for skin diseases alongside modern cosmetic and aesthetic treatments.' },
-  { icon: 'fa-procedures',      key: 'service12-h3', name: 'Anesthesia & Pain Mgmt',    desc: 'Safe anesthesia administration and personalized pain management for every patient.' },
-  { icon: 'fa-flask',           key: 'service13-h3', name: 'Laboratory',                desc: 'Fast, accurate diagnostic lab tests supporting reliable clinical decision-making.' },
-  { icon: 'fa-walking',         key: 'service14-h3', name: 'Physiotherapy',             desc: 'Targeted rehabilitation programs to restore movement, strength, and quality of life.' },
-  { icon: 'fa-head-side-virus', key: 'service15-h3', name: 'Psychiatry',                desc: 'Compassionate mental health evaluation, counseling, and psychiatric treatment.' },
-  { icon: 'fa-child',           key: 'service16-h3', name: 'Maternity Services',        desc: 'Supportive prenatal, delivery, and postnatal care for mothers and newborns.' },
-  { icon: 'fa-pills',           key: 'service17-h3', name: 'Pharmacy & Ambulance',      desc: '24/7 in-house pharmacy and rapid ambulance response for emergencies.' },
-  { icon: 'fa-plus-circle',     key: 'service18-h3', name: 'Other Services',            desc: 'Additional specialist services tailored to meet the diverse needs of our patients.' },
+  { icon: 'fa-user-md',         key: 'service1-h3',  descKey: 'service1-desc',  name: 'Internal Medicine'         },
+  { icon: 'fa-heartbeat',       key: 'service2-h3',  descKey: 'service2-desc',  name: 'Cardiology'                },
+  { icon: 'fa-cut',             key: 'service3-h3',  descKey: 'service3-desc',  name: 'General Surgery'           },
+  { icon: 'fa-baby',            key: 'service4-h3',  descKey: 'service4-desc',  name: 'Pediatrics & Adolescents'  },
+  { icon: 'fa-venus',           key: 'service5-h3',  descKey: 'service5-desc',  name: 'Obstetrics & Gynecology'   },
+  { icon: 'fa-ear',             key: 'service6-h3',  descKey: 'service6-desc',  name: 'ENT'                       },
+  { icon: 'fa-x-ray',          key: 'service7-h3',  descKey: 'service7-desc',  name: 'Radiology'                 },
+  { icon: 'fa-tooth',           key: 'service8-h3',  descKey: 'service8-desc',  name: 'Dental'                    },
+  { icon: 'fa-brain',           key: 'service9-h3',  descKey: 'service9-desc',  name: 'Neurosurgery'              },
+  { icon: 'fa-bone',            key: 'service10-h3', descKey: 'service10-desc', name: 'Orthopedics'               },
+  { icon: 'fa-spa',             key: 'service11-h3', descKey: 'service11-desc', name: 'Dermatology & Cosmetology' },
+  { icon: 'fa-procedures',      key: 'service12-h3', descKey: 'service12-desc', name: 'Anesthesia & Pain Mgmt'    },
+  { icon: 'fa-flask',           key: 'service13-h3', descKey: 'service13-desc', name: 'Laboratory'                },
+  { icon: 'fa-walking',         key: 'service14-h3', descKey: 'service14-desc', name: 'Physiotherapy'             },
+  { icon: 'fa-head-side-virus', key: 'service15-h3', descKey: 'service15-desc', name: 'Psychiatry'                },
+  { icon: 'fa-child',           key: 'service16-h3', descKey: 'service16-desc', name: 'Maternity Services'        },
+  { icon: 'fa-pills',           key: 'service17-h3', descKey: 'service17-desc', name: 'Pharmacy & Ambulance'      },
+  { icon: 'fa-plus-circle',     key: 'service18-h3', descKey: 'service18-desc', name: 'Other Services'            },
 ];
 
 function renderServices() {
@@ -783,7 +821,7 @@ function renderServices() {
          <i class="fas ${s.icon}"></i>
        </div>
        <h3 data-translate="${s.key}">${s.name}</h3>
-       <p class="service-card-desc">${s.desc}</p>
+       <p class="service-card-desc" data-translate="${s.descKey}"></p>
      </a>`
   ).join('');
 
