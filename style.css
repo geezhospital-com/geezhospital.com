@@ -1110,3 +1110,70 @@ button[type="submit"]:hover { background: var(--teal-600); box-shadow: 0 6px 20p
 .bg-light    { background: var(--gray-50); }
 .bg-dark     { background: var(--teal-900); color: var(--white); }
 .text-center { text-align: center; }
+/* ══════════════════════════════════════
+   VISITOR COUNTER
+══════════════════════════════════════ */
+.gh-visitor-counter {
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 8px;
+}
+
+.gh-vc-display {
+  text-align: center;
+  margin-bottom: 14px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid rgba(200,169,110,0.3);
+}
+
+.gh-vc-digits {
+  font-family: 'Courier New', monospace;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--clr-primary, #c8a96e);
+  letter-spacing: 4px;
+  text-shadow: 0 0 10px rgba(200,169,110,0.4);
+}
+
+.gh-vc-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gh-vc-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.75);
+  padding: 5px 8px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.04);
+  transition: background 0.2s;
+}
+
+.gh-vc-row:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+.gh-vc-row i {
+  color: var(--clr-primary, #c8a96e);
+  width: 16px;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.gh-vc-row span {
+  flex: 1;
+}
+
+.gh-vc-row strong {
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.88rem;
+}
