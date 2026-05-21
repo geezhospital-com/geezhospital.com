@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate="departments">Departments - Geez Hospital</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="canonical" href="https://geezhospital.com/departments.html">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Departments | Geez Hospital — Specialized Medical Departments, Axum</title>
+  <meta name="description" content="Explore Geez Hospital's 18+ specialized medical departments in Axum, Tigray. Surgery, Cardiology, Pediatrics, Oncology, and more — staffed by expert physicians.">
+  <link rel="canonical" href="https://geezhospital.com/departments.html">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Noto+Sans+Ethiopic:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9QH360M4V1"></script>
   <script>
@@ -18,8 +21,8 @@
   </script>
 </head>
 <body>
-    <!-- Top Bar - Corrected single instance -->
-    <div class="gh-topbar">
+
+<div class="gh-topbar">
   <div class="gh-tb-inner">
     <div class="gh-tb-left">
       <a href="tel:+251920008338" class="gh-tb-item"><i class="fas fa-phone-volume"></i> +251 920 008 338</a>
@@ -161,182 +164,188 @@
   </div>
 </nav>
 
-    <!-- Main Content for Departments Page -->
-    <main>
-        <section id="departments-hero" class="hero-section inner-hero">
-            <div class="container">
-                <h2 data-translate="departments">Our Departments</h2>
-                <p data-translate="departments-p">Explore the specialized departments at Geez Hospital, where expert care meets advanced technology.</p>
-            </div>
-        </section>
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <h2>Our Departments</h2>
+    <p>18+ specialized medical departments staffed by expert physicians delivering world-class care in Axum, Tigray.</p>
+  </div>
+</section>
 
-        <section id="department-list" class="content-section light-bg">
-            <div class="container">
-                <div class="departments-grid">
-                    <!-- Department Item: Surgery -->
-                    <div class="department-item" id="dept-surgery-item">
-                        <i class="fas fa-cut"></i>
-                        <h3 data-translate="dept-surgery">Surgery</h3>
-                        <p>Our surgery department offers a wide range of surgical procedures, from general to highly specialized operations, performed by experienced surgeons using state-of-the-art equipment.</p>
-                        <a href="doctors.html?specialty=surgeons" class="button secondary-button">View Our Surgeons</a>
-                    </div>
-                    
-                    <!-- Department Item: Pediatrics -->
-                    <div class="department-item" id="dept-pediatrics-item">
-                        <i class="fas fa-child"></i>
-                        <h3 data-translate="dept-pediatrics">Pediatrics</h3>
-                        <p>Dedicated care for infants, children, and adolescents, focusing on their unique health needs with compassion and expertise.</p>
-                        <a href="doctors.html?specialty=pediatricians" class="button secondary-button">View Our Pediatricians</a>
-                    </div>
+<!-- Departments Grid -->
+<section class="section-gap" style="background:var(--gray-50)">
+  <div class="container">
+    <div class="all-doctors-grid">
 
-                    <!-- Department Item: Obstetrics and Gynecology -->
-                    <div class="department-item" id="dept-obsgyn-item">
-                        <i class="fas fa-venus-mars"></i>
-                        <h3 data-translate="dept-obsgyn">Obstetrics and Gynecology</h3>
-                        <p>Comprehensive healthcare for women, including pregnancy, childbirth, and reproductive health services.</p>
-                        <a href="doctors.html?specialty=gynecologists" class="button secondary-button">View Our Gynecologists</a>
-                    </div>
-
-                    <!-- Department Item: Internal Medicine -->
-                    <div class="department-item" id="dept-internal-medicine-item">
-                        <i class="fas fa-stethoscope"></i>
-                        <h3 data-translate="dept-internal-medicine">Internal Medicine</h3>
-                        <p>Diagnosis and treatment of adult diseases, providing primary care and managing complex health conditions.</p>
-                        <a href="doctors.html?specialty=internists" class="button secondary-button">View Our Internists</a>
-                    </div>
-
-                    <!-- Department Item: Orthopedics -->
-                    <div class="department-item" id="dept-orthopedics-item">
-                        <i class="fas fa-bone"></i>
-                        <h3 data-translate="dept-orthopedics">Orthopedics</h3>
-                        <p>Specialized care for musculoskeletal system, including bone, joint, ligament, and muscle injuries and diseases.</p>
-                        <a href="doctors.html?specialty=orthopedicians" class="button secondary-button">View Our Orthopedicians</a>
-                    </div>
-
-                    <!-- Department Item: Radiology -->
-                    <div class="department-item" id="dept-radiology-item">
-                        <i class="fas fa-x-ray"></i>
-                        <h3 data-translate="dept-radiology">Radiology</h3>
-                        <p>Advanced diagnostic imaging services including X-rays, CT scans, MRIs, and ultrasounds to aid in accurate diagnosis.</p>
-                        <a href="doctors.html?specialty=radiologists" class="button secondary-button">View Our Radiologists</a>
-                    </div>
-
-                    <!-- Department Item: Oncology -->
-                    <div class="department-item" id="dept-oncology-item">
-                        <i class="fas fa-cancer"></i>
-                        <h3 data-translate="dept-oncology">Oncology</h3>
-                        <p>Comprehensive cancer care, from diagnosis and treatment to supportive care and survivorship programs.</p>
-                        <a href="doctors.html?specialty=oncologists" class="button secondary-button">View Our Oncologists</a>
-                    </div>
-
-                    <!-- Department Item: Oral, Dental, Maxillofacial Surgery -->
-                    <div class="department-item" id="dept-oral-dental-maxillofacial-item">
-                        <i class="fas fa-tooth"></i>
-                        <h3 data-translate="dept-oral-dental-maxillofacial">Oral, Dental, Maxillofacial Surgery</h3>
-                        <p>Specialized surgical procedures for conditions affecting the mouth, teeth, jaws, and facial regions.</p>
-                        <a href="doctors.html?specialty=maxillofacial" class="button secondary-button">View Our Maxillofacial Surgeons</a>
-                    </div>
-
-                    <!-- Department Item: Dermatology -->
-                    <div class="department-item" id="dept-dermatology-item">
-                        <i class="fas fa-hand-sparkles"></i>
-                        <h3 data-translate="dept-dermatology">Dermatology</h3>
-                        <p>Diagnosis and treatment of skin, hair, and nail conditions, including cosmetic and aesthetic services.</p>
-                        <a href="doctors.html?specialty=dermatologists" class="button secondary-button">View Our Dermatologists</a>
-                    </div>
-
-                    <!-- Department Item: ENT and Plastic Surgery -->
-                    <div class="department-item" id="dept-ent-plastic-surgery-item">
-                        <i class="fas fa-ear"></i>
-                        <h3 data-translate="dept-ent-plastic-surgery">ENT and Plastic Surgery</h3>
-                        <p>Care for conditions of the ear, nose, throat, and head and neck, including reconstructive and cosmetic plastic surgery.</p>
-                        <a href="doctors.html?specialty=ent-plastic" class="button secondary-button">View Our ENT & Plastic Surgeons</a>
-                    </div>
-                    
-                     <!-- Department Item: Ophthalmology -->
-                    <div class="department-item" id="dept-ophthalmology-item">
-                        <i class="fas fa-eye"></i>
-                        <h3 data-translate="dept-ophthalmology">Ophthalmology</h3>
-                        <p>Comprehensive eye care services, including diagnosis and treatment of eye diseases, vision correction, and surgical procedures.</p>
-                        <!-- For now, this links to all doctors. You might create a specific doctors.html?specialty=ophthalmologists later -->
-                        <a href="doctors.html" class="button secondary-button">View Our Doctors</a> 
-                    </div>
-
-                    <!-- Department Item: Psychiatry -->
-                    <div class="department-item" id="dept-psychiatry-item">
-                        <i class="fas fa-head-side-brain"></i>
-                        <h3 data-translate="dept-psychiatry">Psychiatry</h3>
-                        <p>Mental health services for various psychiatric conditions, offering diagnosis, therapy, and medication management.</p>
-                        <!-- For now, this links to all doctors. You might create a specific doctors.html?specialty=psychiatrists later -->
-                        <a href="doctors.html" class="button secondary-button">View Our Doctors</a>
-                    </div>
-                    <!-- Add more department items as needed -->
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer - Corrected single instance -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="images/logo.png" alt="Geez Hospital Logo">
-                </div>
-                <div class="footer-info">
-                    <p data-translate="footer-text">Copyright © 2026 Geez Hospital<br>Developed By Aser Tech (Legesse Teklu Gebrekidan)-0911179955</p>
-                    <div class="social-icons-footer">
-                        <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://t.me/geezhospital_bot" target="_blank"><i class="fab fa-telegram-plane"></i></a>
-                        <!-- New Google Map link in footer -->
-                        <a href="https://maps.app.goo.gl/yHuCuCgLMzUtyerU6" target="_blank" title="Geez Hospital on Google Maps"><i class="fas fa-map-marked-alt"></i></a>
-                        <!-- New Patient Satisfaction Survey link in footer -->
-                        <a href="https://linktr.ee/geezhospital" target="_blank" title="Patient Satisfaction Survey"><i class="fas fa-poll-h"></i></a>
-                    </div>
-                </div>
-            </div>
+      <div class="doctor-full-card reveal">
+        <img src="images/dept-surgery.jpg" alt="Surgery Department" loading="lazy" onerror="this.src='';this.alt='Surgery'">
+        <div class="info">
+          <div class="doctor-badge"><i class="fas fa-cut"></i> Surgical</div>
+          <h3>Surgery</h3>
+          <p class="experience">Our surgery department offers a wide range of surgical procedures — from general to highly specialized operations — performed by experienced surgeons using state-of-the-art equipment and modern anaesthesia techniques.</p>
+          <a href="doctors.html?specialty=surgeons" class="btn btn-sm btn-primary" style="margin-top:12px">View Our Surgeons</a>
         </div>
-    </footer>
-
-    <script src="script.js"></script>
-    <!-- Add this script for department filtering if needed -->
-    <script>
-        // This small script is just a fallback/example. The main filtering is now in script.js
-        document.addEventListener('DOMContentLoaded', () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const selectedDept = urlParams.get('dept');
-
-            if (selectedDept) {
-                // The main filtering logic is now in script.js's applyPageFilter.
-                // This block can be removed if applyPageFilter covers all cases.
-                // However, for direct URL access without the script.js always loaded/executed at the right time,
-                // a simple direct filter here might still be useful as a quick fix,
-                // but it's better to rely solely on applyPageFilter in script.js.
-                // For now, I'll leave it as a comment to indicate where the action happens.
-
-                /*
-                document.querySelectorAll('.department-item').forEach(item => {
-                    item.style.display = 'none';
-                });
-                const targetDept = document.getElementById('dept-' + selectedDept + '-item');
-                if (targetDept) {
-                    targetDept.style.display = 'block';
-                }
-                */
-            }
-        });
-    </script>
-<!-- Floating Contact Button -->
-<div class="fab-container" id="fabContainer">
-  <!-- Options -->
-  <div class="fab-options" id="fabOptions">
-
-    <!-- Contact Form -->
-    <div class="fab-form-card" id="fabFormCard" style="display:none">
-      <div class="fab-form-header">
-        <span>Contact Form</span>
-        <button onclick="document.getElementById('fabFormCard').style.display='none'">✕</button>
       </div>
+
+      <div class="doctor-full-card reveal">
+        <img src="images/dept-pediatrics.jpg" alt="Pediatrics Department" loading="lazy" onerror="this.src='';this.alt='Pediatrics'">
+        <div class="info">
+          <div class="doctor-badge"><i class="fas fa-baby"></i> Pediatrics</div>
+          <h3>Pediatrics &amp; Adolescents</h3>
+          <p class="experience">Dedicated care for infants, children, and adolescents, focusing on their unique health needs with compassion and expertise. Our pediatric team provides both routine and complex care for young patients.</p>
+          <a href="doctors.html?specialty=pediatricians" class="btn btn-sm btn-primary" style="margin-top:12px">View Our Pediatricians</a>
+        </div>
+      </div>
+
+      <div class="doctor-full-card reveal">
+        <img src="images/dept-obsgyn.jpg" alt="Obstetrics & Gynecology" loading="lazy" onerror="this.src='';this.alt='OB/GYN'">
+        <div class="info">
+          <div class="doctor-badge"><i class="fas fa-venus"></i> Women's Health</div>
+          <h3>Obstetrics &amp; Gynecology</h3>
+          <p class="experience">Comprehensive healthcare for women including pregnancy, childbirth, and reproductive health services. Our OB/GYN team provides expert prenatal care, delivery support, and gynecological treatments.</p>
+          <a href="doctors.html?specialty=gynecologists" class="btn btn-sm btn-primary" style="margin-top:12px">View Our Gynecologists</a>
+        </div>
+      </div>
+
+      <div class="doctor-full-card reveal">
+        <img src="images/dept-internal.jpg" alt="Internal Medicine" loading="lazy" onerror="this.src='';this.alt='Internal Medicine'">
+        <div class="info">
+          <div class="doctor-badge"><i class="fas fa-user-md"></i> Internal Medicine</div>
+          <h3>Internal Medicine</h3>
+          <p class="experience">Diagnosis and treatment of adult diseases, providing primary care and managing complex health conditions. Our internists specialize in comprehensive evaluation and evidence-based treatment of systemic illnesses.</p>
+          <a href="doctors.html?specialty=internists" class="btn btn-sm btn-primary" style="margin-top:12px">View Our Internists</a>
+        </div>
+      </div>
+
+      <div class="doctor-full-card reveal">
+        <img src="images/dept-orthopedics.jpg" alt="Orthopedics" loading="lazy" onerror="this.src='';this.alt='Orthopedics'">
+        <div class="info">
+          <div class="doctor-badge"><i class="fas fa-bone"></i> Orthopedics</div>
+          <h3>Orthopedics</h3>
+          <p class="experience">Specialized care for the musculoskeletal system including bone, joint, ligament, and muscle injuries and diseases. We offer surgical and non-surgical treatments for orthopedic conditions.</p>
+          <a href="doctors.html?specialty=orthopedicians" class="btn btn-sm btn-primary" style="margin-top:12px">View Our Orthopedicians</a>
+        </div>
+      </div>
+
+      <div class="doctor-full-card reveal">
+        <img src="images/dept-radiology.jpg" alt="Radiology" loading="lazy" onerror="this.src='';this.alt='Radiology'">
+        <div class="info">
+          <div class="doctor-badge"><i class="fas fa-x-ray"></i> Imaging</div>
+          <h3>Radiology</h3>
+          <p class="experience">Advanced diagnostic imaging services including X-rays, CT scans, MRIs, and ultrasounds to aid in accurate diagnosis. Our radiologists provide rapid, detailed reports to support clinical decision-making.</p>
+          <a href="doctors.html?specialty=radiologists" class="btn btn-sm btn-primary" style="margin-top:12px">View Our Radiologists</a>
+        </div>
+      </div>
+
+      <div class="doctor-full-card reveal">
+        <img src="images/dept-oncology.jpg" alt="Oncology" loading="lazy" onerror="this.src='';this.alt='Oncology'">
+        <div class="info">
+          <div class="doctor-badge"><i class="fas fa-ribbon"></i> Oncology</div>
+          <h3>Oncology</h3>
+          <p class="experience">Comprehensive cancer care from diagnosis and treatment to supportive care and survivorship programs. Our oncology team provides personalized treatment plans using the latest evidence-based protocols.</p>
+          <a href="doctors.html?specialty=oncologists" class="btn btn-sm btn-primary" style="margin-top:12px">View Our Oncologists</a>
+        </div>
+      </div>
+
+      <div class="doctor-full-card reveal">
+        <img src="images/dept-dental.jpg" alt="Oral & Dental Surgery" loading="lazy" onerror="this.src='';this.alt='Dental'">
+        <div class="info">
+          <div class="doctor-badge"><i class="fas fa-tooth"></i> Dental</div>
+          <h3>Oral, Dental &amp; Maxillofacial Surgery</h3>
+          <p class="experience">Specialized surgical procedures for conditions affecting the mouth, teeth, jaws, and facial regions. Our dental and maxillofacial surgeons provide both routine dental care and complex reconstructive procedures.</p>
+          <a href="doctors.html?specialty=maxillofacial" class="btn btn-sm btn-primary" style="margin-top:12px">View Our Surgeons</a>
+        </div>
+      </div>
+
+      <div class="doctor-full-card reveal">
+        <img src="images/dept-dermatology.jpg" alt="Dermatology" loading="lazy" onerror="this.src='';this.alt='Dermatology'">
+        <div class="info">
+          <div class="doctor-badge"><i class="fas fa-spa"></i> Dermatology</div>
+          <h3>Dermatology &amp; Cosmetology</h3>
+          <p class="experience">Diagnosis and treatment of skin, hair, and nail conditions including cosmetic and aesthetic services. Our dermatologists offer medical and surgical treatments for a wide range of skin disorders.</p>
+          <a href="doctors.html?specialty=dermatologists" class="btn btn-sm btn-primary" style="margin-top:12px">View Our Dermatologists</a>
+        </div>
+      </div>
+
+      <div class="doctor-full-card reveal">
+        <img src="images/dept-ent.jpg" alt="ENT & Plastic Surgery" loading="lazy" onerror="this.src='';this.alt='ENT'">
+        <div class="info">
+          <div class="doctor-badge"><i class="fas fa-ear"></i> ENT</div>
+          <h3>ENT &amp; Plastic Surgery</h3>
+          <p class="experience">Care for conditions of the ear, nose, throat, head and neck, including reconstructive and cosmetic plastic surgery. Our ENT surgeons provide both functional and aesthetic surgical solutions.</p>
+          <a href="doctors.html?specialty=ent-plastic" class="btn btn-sm btn-primary" style="margin-top:12px">View Our ENT Surgeons</a>
+        </div>
+      </div>
+
+      <div class="doctor-full-card reveal">
+        <img src="images/dept-ophthalmology.jpg" alt="Ophthalmology" loading="lazy" onerror="this.src='';this.alt='Ophthalmology'">
+        <div class="info">
+          <div class="doctor-badge"><i class="fas fa-eye"></i> Eye Care</div>
+          <h3>Ophthalmology</h3>
+          <p class="experience">Comprehensive eye care services including diagnosis and treatment of eye diseases, vision correction, and surgical procedures. Our ophthalmologists use advanced technology for precise eye care.</p>
+          <a href="doctors.html" class="btn btn-sm btn-primary" style="margin-top:12px">View Our Doctors</a>
+        </div>
+      </div>
+
+      <div class="doctor-full-card reveal">
+        <img src="images/dept-psychiatry.jpg" alt="Psychiatry" loading="lazy" onerror="this.src='';this.alt='Psychiatry'">
+        <div class="info">
+          <div class="doctor-badge"><i class="fas fa-head-side-virus"></i> Mental Health</div>
+          <h3>Psychiatry</h3>
+          <p class="experience">Mental health services for various psychiatric conditions offering diagnosis, therapy, and medication management. Our psychiatrists provide compassionate, evidence-based care in a confidential environment.</p>
+          <a href="doctors.html?specialty=psychiatrists" class="btn btn-sm btn-primary" style="margin-top:12px">View Our Psychiatrists</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-gap" style="background:var(--teal-800);color:#fff;text-align:center">
+  <div class="container">
+    <h2 style="color:#fff;margin-bottom:12px">Find the Right Department</h2>
+    <p style="color:rgba(255,255,255,0.85);margin-bottom:28px">Our specialists are ready to provide expert care — book your appointment today.</p>
+    <a href="contact.html" class="btn btn-primary">Book Appointment</a>
+    &nbsp;&nbsp;
+    <a href="tel:+251920008338" class="btn" style="background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.3)"><i class="fas fa-phone"></i> Call Now</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo-wrap"><img src="images/logo.png" alt="Geez Hospital" onerror="this.style.display='none'"><div class="logo-text"><span class="logo-en">GEEZ HOSPITAL</span><span class="logo-tig">ግዕዝ ሆስፒታል</span></div></a>
+      <p>World-class healthcare in Axum, Tigray.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://t.me/Geezhospital_bot" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+        <a href="https://maps.app.goo.gl/yHuCuCgLMzUtyerU6" target="_blank" aria-label="Maps"><i class="fas fa-map-marker-alt"></i></a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="doctors.html">Doctors</a></li><li><a href="departments.html">Departments</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Top Departments</h4><ul><li><a href="departments.html?dept=surgery">Surgery</a></li><li><a href="departments.html?dept=pediatrics">Pediatrics</a></li><li><a href="departments.html?dept=internal-medicine">Internal Medicine</a></li><li><a href="departments.html?dept=oncology">Oncology</a></li></ul></div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <ul class="footer-contact-list">
+        <li><i class="fas fa-map-marker-alt"></i> Kindeya Kebele, In front of Ethio-Telecom, Axum, Tigray</li>
+        <li><i class="fas fa-phone"></i> <a href="tel:+251920008338">+251 920 008 338</a></li>
+        <li><i class="fas fa-phone"></i> <a href="tel:+251962333388">+251 962 333 388</a></li>
+        <li><i class="fas fa-envelope"></i> <a href="mailto:geezhospital@gmail.com">geezhospital@gmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom"><div class="container footer-bottom-inner"><p>© 2026 Geez Hospital. All rights reserved.</p><p class="footer-dev">Developed by <a href="tel:+251911179955">Aser Tech (Legesse Teklu Gebrekidan)</a></p></div></div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<script src="script.js"></script>
+
+<div class="fab-container" id="fabContainer">
+  <div class="fab-options" id="fabOptions">
+    <div class="fab-form-card" id="fabFormCard" style="display:none">
+      <div class="fab-form-header"><span>Contact Form</span><button onclick="document.getElementById('fabFormCard').style.display='none'">✕</button></div>
       <form action="https://formspree.io/f/xwvpgllq" method="POST">
         <input type="text" name="name" placeholder="Name *" required>
         <input type="email" name="email" placeholder="Email *" required>
@@ -345,199 +354,36 @@
         <button type="submit">SUBMIT</button>
       </form>
     </div>
-
-    <!-- Option Buttons -->
-    <div class="fab-item-wrap">
-      <span class="fab-label">Contact Form</span>
-      <button class="fab-item fab-form-btn" onclick="toggleFabForm()">
-        <i class="fas fa-address-book"></i>
-      </button>
-    </div>
-
-    <div class="fab-item-wrap">
-      <span class="fab-label">Facebook</span>
-      <a class="fab-item fab-facebook" href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank">
-        <i class="fab fa-facebook-messenger"></i>
-      </a>
-    </div>
-
-    <div class="fab-item-wrap">
-      <span class="fab-label">Telegram</span>
-      <a class="fab-item fab-telegram" href="https://t.me/geezhospital_bot" target="_blank">
-        <i class="fab fa-telegram-plane"></i>
-      </a>
-    </div>
-
-    <div class="fab-item-wrap">
-      <span class="fab-label">Call Us</span>
-      <a class="fab-item fab-phone" href="tel:+251920008338">
-        <i class="fas fa-phone"></i>
-      </a>
-    </div>
-
+    <div class="fab-item-wrap"><span class="fab-label">Contact Form</span><button class="fab-item fab-form-btn" onclick="toggleFabForm()"><i class="fas fa-address-book"></i></button></div>
+    <div class="fab-item-wrap"><span class="fab-label">Facebook</span><a class="fab-item fab-facebook" href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank"><i class="fab fa-facebook-messenger"></i></a></div>
+    <div class="fab-item-wrap"><span class="fab-label">Telegram</span><a class="fab-item fab-telegram" href="https://t.me/geezhospital_bot" target="_blank"><i class="fab fa-telegram-plane"></i></a></div>
+    <div class="fab-item-wrap"><span class="fab-label">Call Us</span><a class="fab-item fab-phone" href="tel:+251920008338"><i class="fas fa-phone"></i></a></div>
   </div>
-
-  <!-- Main Button -->
-  <button class="fab-main" id="fabMain" onclick="toggleFab()">
-    <i class="fas fa-comments" id="fabIcon"></i>
-    <span id="fabLabel">Talk to Us</span>
-  </button>
+  <button class="fab-main" id="fabMain" onclick="toggleFab()"><i class="fas fa-comments" id="fabIcon"></i><span id="fabLabel">Talk to Us</span></button>
 </div>
-
 <style>
-.fab-container {
-  position: fixed;
-  bottom: 28px;
-  right: 24px;
-  z-index: 9999;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 10px;
-}
-.fab-main {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: #0B7B7B;
-  color: #fff;
-  border: none;
-  border-radius: 999px;
-  padding: 14px 20px;
-  font-size: .9rem;
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: 0 6px 24px rgba(11,123,123,.4);
-  transition: all .3s;
-}
-.fab-main:hover { background: #096767; transform: scale(1.05); }
-.fab-options {
-  display: none;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 10px;
-}
-.fab-options.open { display: flex; }
-.fab-item-wrap {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-direction: row-reverse;
-}
-.fab-label {
-  background: #0f1f2e;
-  color: #fff;
-  font-size: .78rem;
-  padding: 5px 12px;
-  border-radius: 999px;
-  white-space: nowrap;
-  box-shadow: 0 2px 8px rgba(0,0,0,.2);
-}
-.fab-item {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 4px 16px rgba(0,0,0,.2);
-  transition: transform .2s;
-  text-decoration: none;
-}
-.fab-item:hover { transform: scale(1.12); }
-.fab-phone    { background: #0B7B7B; }
-.fab-telegram { background: #0088cc; }
-.fab-facebook { background: #1877F2; }
-.fab-form-btn { background: #7c3aed; }
-
-/* Form Card */
-.fab-form-card {
-  background: #fff;
-  border-radius: 14px;
-  width: 280px;
-  box-shadow: 0 8px 32px rgba(0,0,0,.18);
-  overflow: hidden;
-  margin-bottom: 6px;
-}
-.fab-form-header {
-  background: #7c3aed;
-  color: #fff;
-  padding: 12px 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: 700;
-  font-size: .9rem;
-}
-.fab-form-header button {
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 1rem;
-  cursor: pointer;
-}
-.fab-form-card form {
-  padding: 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.fab-form-card input,
-.fab-form-card textarea {
-  width: 100%;
-  padding: 9px 12px;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 7px;
-  font-size: .84rem;
-  outline: none;
-  font-family: inherit;
-}
-.fab-form-card input:focus,
-.fab-form-card textarea:focus { border-color: #7c3aed; }
-.fab-form-card textarea { min-height: 70px; resize: none; }
-.fab-form-card button[type="submit"] {
-  background: #7c3aed;
-  color: #fff;
-  border: none;
-  border-radius: 7px;
-  padding: 10px;
-  font-size: .88rem;
-  font-weight: 700;
-  cursor: pointer;
-  letter-spacing: .05em;
-  transition: background .2s;
-}
-.fab-form-card button[type="submit"]:hover { background: #6d28d9; }
-
-@media (max-width: 768px) {
-  .fab-container { bottom: 80px; right: 16px; }
-}
+.fab-container{position:fixed;bottom:28px;right:24px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.fab-main{display:flex;align-items:center;gap:8px;background:#0B7B7B;color:#fff;border:none;border-radius:999px;padding:14px 20px;font-size:.9rem;font-weight:700;cursor:pointer;box-shadow:0 6px 24px rgba(11,123,123,.4);transition:all .3s}
+.fab-main:hover{background:#096767;transform:scale(1.05)}
+.fab-options{display:none;flex-direction:column;align-items:flex-end;gap:10px}
+.fab-options.open{display:flex}
+.fab-item-wrap{display:flex;align-items:center;gap:10px;flex-direction:row-reverse}
+.fab-label{background:#0f1f2e;color:#fff;font-size:.78rem;padding:5px 12px;border-radius:999px;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.fab-item{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:#fff;border:none;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.2);transition:transform .2s;text-decoration:none}
+.fab-item:hover{transform:scale(1.12)}
+.fab-phone{background:#0B7B7B}.fab-telegram{background:#0088cc}.fab-facebook{background:#1877F2}.fab-form-btn{background:#7c3aed}
+.fab-form-card{background:#fff;border-radius:14px;width:280px;box-shadow:0 8px 32px rgba(0,0,0,.18);overflow:hidden;margin-bottom:6px}
+.fab-form-header{background:#7c3aed;color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:.9rem}
+.fab-form-header button{background:none;border:none;color:#fff;font-size:1rem;cursor:pointer}
+.fab-form-card form{padding:14px;display:flex;flex-direction:column;gap:8px}
+.fab-form-card input,.fab-form-card textarea{width:100%;padding:9px 12px;border:1.5px solid #e2e8f0;border-radius:7px;font-size:.84rem;outline:none;font-family:inherit}
+.fab-form-card textarea{min-height:70px;resize:none}
+.fab-form-card button[type="submit"]{background:#7c3aed;color:#fff;border:none;border-radius:7px;padding:10px;font-size:.88rem;font-weight:700;cursor:pointer;transition:background .2s}
+@media(max-width:768px){.fab-container{bottom:80px;right:16px}}
 </style>
-
 <script>
-function toggleFab() {
-  const options = document.getElementById('fabOptions');
-  const icon    = document.getElementById('fabIcon');
-  const label   = document.getElementById('fabLabel');
-  const isOpen  = options.classList.contains('open');
-  options.classList.toggle('open');
-  if (isOpen) {
-    icon.className  = 'fas fa-comments';
-    label.textContent = 'Talk to Us';
-    document.getElementById('fabFormCard').style.display = 'none';
-  } else {
-    icon.className  = 'fas fa-times';
-    label.textContent = 'Close';
-  }
-}
-function toggleFabForm() {
-  const form = document.getElementById('fabFormCard');
-  form.style.display = form.style.display === 'none' ? 'block' : 'none';
-}
+function toggleFab(){const o=document.getElementById('fabOptions');const i=document.getElementById('fabIcon');const l=document.getElementById('fabLabel');const isOpen=o.classList.contains('open');o.classList.toggle('open');if(isOpen){i.className='fas fa-comments';l.textContent='Talk to Us';document.getElementById('fabFormCard').style.display='none';}else{i.className='fas fa-times';l.textContent='Close';}}
+function toggleFabForm(){const f=document.getElementById('fabFormCard');f.style.display=f.style.display==='none'?'block':'none';}
 </script>
 </body>
 </html>
