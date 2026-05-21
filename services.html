@@ -3,18 +3,181 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Services | Geez Hospital — Axum, Tigray</title>
-  <meta name="description" content="Geez Hospital offers 18+ specialist medical services in Axum, Tigray: Cardiology, Surgery, Pediatrics, Gynecology, Neurosurgery, Radiology and more. Book an appointment today.">
-  <meta name="keywords" content="Geez Hospital services, medical services Axum, specialist care Tigray, cardiology Axum, surgery Axum">
-  <link rel="canonical" href="https://geezhospital.com/services.html">
+  <title>Facilities | Geez Hospital — Axum, Tigray</title>
+  <meta name="description" content="Explore Geez Hospital's world-class facilities including Operating Theatres, ICU, MRI & CT Scan, Modern Laboratory, and more in Axum, Tigray.">
+  <link rel="canonical" href="https://geezhospital.com/facilities.html">
   <link rel="icon" href="images/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Noto+Sans+Ethiopic:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400&family=Figtree:wght@300;400;500;600;700&family=Noto+Sans+Ethiopic:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+
+  <style>
+  /* ── Facilities Page Styles ── */
+  .facilities-hero {
+    background: linear-gradient(135deg, var(--navy, #0A1F3D) 0%, var(--teal-brand, #0B7B7B) 100%);
+    padding: 80px 0 60px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .facilities-hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url('images/hero-bg.jpg') center/cover no-repeat;
+    opacity: .08; pointer-events: none;
+  }
+  .facilities-hero .container { position: relative; z-index: 1; }
+  .facilities-hero .eyebrow {
+    font-size: .78rem; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: #5FD3D3; margin-bottom: 12px;
+  }
+  .facilities-hero h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600; margin-bottom: 14px;
+  }
+  .facilities-hero p {
+    font-size: 1rem; color: rgba(255,255,255,.72);
+    max-width: 560px; margin: 0 auto; line-height: 1.7;
+  }
+
+  /* ── Facilities Grid ── */
+  .facilities-section {
+    background: var(--gray-50, #F8FAFB);
+    padding: 72px 0;
+  }
+  .facilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 28px;
+  }
+  .facility-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #EEF2F6;
+    box-shadow: 0 2px 12px rgba(10,31,61,.07);
+    transition: transform .25s ease, box-shadow .25s ease;
+    opacity: 0;
+    transform: translateY(22px);
+    animation: facFadeUp .5s ease forwards;
+  }
+  .facility-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 36px rgba(11,123,123,.13);
+  }
+  @keyframes facFadeUp {
+    to { opacity:1; transform:translateY(0); }
+  }
+  .facility-card:nth-child(1) { animation-delay: .05s; }
+  .facility-card:nth-child(2) { animation-delay: .10s; }
+  .facility-card:nth-child(3) { animation-delay: .15s; }
+  .facility-card:nth-child(4) { animation-delay: .20s; }
+  .facility-card:nth-child(5) { animation-delay: .25s; }
+  .facility-card:nth-child(6) { animation-delay: .30s; }
+  .facility-card:nth-child(7) { animation-delay: .35s; }
+  .facility-card:nth-child(8) { animation-delay: .40s; }
+
+  .facility-img-wrap {
+    width: 100%; aspect-ratio: 16/9;
+    background: linear-gradient(135deg, #e6f4f4, #b2dede);
+    overflow: hidden; position: relative;
+  }
+  .facility-img-wrap img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform .4s ease;
+  }
+  .facility-card:hover .facility-img-wrap img { transform: scale(1.05); }
+  .facility-img-placeholder {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .facility-img-placeholder i {
+    font-size: 2.8rem; color: #0B7B7B; opacity: .35;
+  }
+
+  .facility-body { padding: 22px 22px 24px; }
+  .facility-icon-row {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 10px;
+  }
+  .facility-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: #E8F4F4; color: #0B7B7B;
+    display: flex; align-items: center; justify-content: center;
+    font-size: .95rem; flex-shrink: 0;
+  }
+  .facility-body h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem; font-weight: 600;
+    color: #0A1F3D; margin: 0;
+  }
+  .facility-body p {
+    font-size: .86rem; color: #64748B;
+    line-height: 1.65; margin: 0;
+  }
+
+  /* ── Stats Bar ── */
+  .fac-stats {
+    background: #0A1F3D; padding: 36px 0;
+  }
+  .fac-stats-inner {
+    max-width: 1240px; margin: 0 auto; padding: 0 24px;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+  .fac-stat {
+    text-align: center; padding: 0 20px;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .fac-stat + .fac-stat { border-left: 1px solid rgba(255,255,255,.1); }
+  .fac-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem; font-weight: 700;
+    color: #5FD3D3; line-height: 1; margin-bottom: 6px;
+  }
+  .fac-stat-lbl { font-size: .78rem; color: rgba(255,255,255,.6); line-height: 1.4; }
+
+  /* ── CTA ── */
+  .fac-cta {
+    background: linear-gradient(135deg, #0B7B7B 0%, #0A1F3D 100%);
+    padding: 64px 0; text-align: center; color: #fff;
+  }
+  .fac-cta h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 12px;
+  }
+  .fac-cta p { color: rgba(255,255,255,.72); margin-bottom: 28px; font-size: .97rem; }
+  .fac-cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn-fac-primary {
+    background: #fff; color: #0B7B7B;
+    padding: 13px 28px; border-radius: 999px;
+    font-weight: 700; font-size: .9rem; text-decoration: none;
+    transition: all .2s;
+  }
+  .btn-fac-primary:hover { background: #e6f4f4; }
+  .btn-fac-ghost {
+    border: 2px solid rgba(255,255,255,.5); color: #fff;
+    padding: 13px 28px; border-radius: 999px;
+    font-weight: 600; font-size: .9rem; text-decoration: none;
+    transition: all .2s;
+  }
+  .btn-fac-ghost:hover { background: rgba(255,255,255,.1); border-color: #fff; }
+
+  @media (max-width: 768px) {
+    .fac-stats-inner { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .fac-stat + .fac-stat:nth-child(odd) { border-left: none; }
+    .fac-stat:nth-child(3) { border-left: none; }
+  }
+  @media (max-width: 480px) {
+    .facilities-grid { grid-template-columns: 1fr; }
+  }
+  </style>
 </head>
 <body>
 
+<!-- Top Bar -->
 <div class="top-bar">
   <div class="container top-bar-inner">
     <div class="top-bar-left">
@@ -28,19 +191,17 @@
       <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
       <a href="https://t.me/Geezhospital_bot" target="_blank" class="social-link" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
       <a href="https://linktr.ee/geezhospital" target="_blank" class="social-link" aria-label="Survey"><i class="fas fa-poll"></i></a>
-      <a href="contact.html" class="top-bar-cta" data-translate="contact-us-btn">Book Appointment</a>
+      <a href="contact.html" class="top-bar-cta">Book Appointment</a>
     </div>
   </div>
 </div>
 
+<!-- Header -->
 <header class="site-header" id="siteHeader">
   <div class="container header-inner">
-    <a href="index.html" class="logo-wrap" aria-label="Geez Hospital Home">
+    <a href="index.html" class="logo-wrap">
       <img src="images/logo.png" alt="Geez Hospital Logo" class="logo-img" onerror="this.style.display='none'">
-      <div class="logo-text">
-        <span class="logo-en">GEEZ HOSPITAL</span>
-        <span class="logo-tig">ግዕዝ ሆስፒታል</span>
-      </div>
+      <div class="logo-text"><span class="logo-en">GEEZ HOSPITAL</span><span class="logo-tig">ግዕዝ ሆስፒታል</span></div>
     </a>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -48,13 +209,14 @@
     <nav class="main-nav" id="mainNav">
       <ul class="nav-list">
         <li><a href="index.html" class="nav-link" data-translate="home">Home</a></li>
-        <li><a href="services.html" class="nav-link active" data-translate="services">Services</a></li>
+        <li><a href="services.html" class="nav-link" data-translate="services">Services</a></li>
         <li><a href="doctors.html" class="nav-link" data-translate="doctors">Doctors</a></li>
         <li><a href="gallery.html" class="nav-link" data-translate="gallery">Gallery</a></li>
         <li><a href="news.html" class="nav-link" data-translate="news">News</a></li>
+        <li><a href="facilities.html" class="nav-link active" data-translate="facilities">Facilities</a></li>
         <li><a href="contact.html" class="nav-link" data-translate="contact">Contact</a></li>
         <li class="nav-lang">
-          <select id="language-switcher" aria-label="Select language">
+          <select id="language-switcher" aria-label="Language">
             <option value="eng">English</option>
             <option value="tig">ትግርኛ</option>
             <option value="amh">አማርኛ</option>
@@ -65,173 +227,183 @@
   </div>
 </header>
 
-<section class="page-hero">
+<!-- Hero -->
+<section class="facilities-hero">
   <div class="container">
-    <h2 data-translate="our-services-h2">Our Medical Services</h2>
-    <p data-translate="services-intro">Specialist and sub-specialist care across 18+ departments, powered by modern technology and expert physicians.</p>
+    <p class="eyebrow">World-Class Infrastructure</p>
+    <h2 data-translate="facilities">Our Facilities</h2>
+    <p>Geez Hospital is equipped with state-of-the-art medical technology and modern facilities to provide you with the best possible care.</p>
   </div>
 </section>
 
-<section class="section-gap" style="background: var(--gray-50);">
+<!-- Stats Bar -->
+<div class="fac-stats">
+  <div class="fac-stats-inner">
+    <div class="fac-stat">
+      <div class="fac-stat-num">8+</div>
+      <div class="fac-stat-lbl">Modern<br>Facilities</div>
+    </div>
+    <div class="fac-stat">
+      <div class="fac-stat-num">24/7</div>
+      <div class="fac-stat-lbl">Emergency<br>Services</div>
+    </div>
+    <div class="fac-stat">
+      <div class="fac-stat-num">18+</div>
+      <div class="fac-stat-lbl">Medical<br>Departments</div>
+    </div>
+    <div class="fac-stat">
+      <div class="fac-stat-num">100%</div>
+      <div class="fac-stat-lbl">Patient<br>Safety Focus</div>
+    </div>
+  </div>
+</div>
+
+<!-- Facilities Grid -->
+<section class="facilities-section">
   <div class="container">
-    <div class="section-header" style="margin-bottom: 2.5rem;">
-      <p class="section-eyebrow" data-translate="services-eyebrow">What We Offer</p>
-      <h2 class="section-title" data-translate="our-services-h2">Explore Our Specialized Services</h2>
-      <p class="section-desc" data-translate="services-p-about">We offer a wide range of specialist and sub-specialist fields with modern technology and professional competence.</p>
-    </div>
+    <div class="facilities-grid">
 
-    <div class="service-items-grid">
-
-      <div class="service-item reveal">
-        <i class="fas fa-stethoscope"></i>
-        <h3 data-translate="service1-h3">Internal Medicine</h3>
-        <p data-translate="service1-desc-short">Comprehensive diagnosis and treatment for adult diseases, focusing on non-surgical approaches and long-term health management.</p>
-        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
+      <div class="facility-card">
+        <div class="facility-img-wrap">
+          <img src="images/facility1.jpg" alt="Operating Theatres" loading="lazy"
+               onerror="this.parentElement.innerHTML='<div class=\'facility-img-placeholder\'><i class=\'fas fa-procedures\'></i></div>'">
+        </div>
+        <div class="facility-body">
+          <div class="facility-icon-row">
+            <div class="facility-icon"><i class="fas fa-procedures"></i></div>
+            <h3>Operating Theatres</h3>
+          </div>
+          <p>Our advanced operating theatres are equipped with the latest surgical technology for a wide range of procedures, ensuring patient safety and optimal outcomes.</p>
+        </div>
       </div>
 
-      <div class="service-item reveal">
-        <i class="fas fa-heartbeat"></i>
-        <h3 data-translate="service2-h3">Cardiology</h3>
-        <p data-translate="service2-desc-short">Specialized care for heart and vascular conditions, including diagnostics, treatment, and preventive programs.</p>
-        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
+      <div class="facility-card">
+        <div class="facility-img-wrap">
+          <img src="images/facility2.jpg" alt="MRI & CT Scan" loading="lazy"
+               onerror="this.parentElement.innerHTML='<div class=\'facility-img-placeholder\'><i class=\'fas fa-magnet\'></i></div>'">
+        </div>
+        <div class="facility-body">
+          <div class="facility-icon-row">
+            <div class="facility-icon"><i class="fas fa-magnet"></i></div>
+            <h3>MRI &amp; CT Scan</h3>
+          </div>
+          <p>High-resolution MRI and CT scan machines for accurate and detailed diagnostic imaging, crucial for precise medical assessments.</p>
+        </div>
       </div>
 
-      <div class="service-item reveal">
-        <i class="fas fa-cut"></i>
-        <h3 data-translate="service3-h3">General Surgery</h3>
-        <p data-translate="service3-desc-short">Offering a wide range of surgical procedures, from routine to complex operations, performed by skilled surgeons.</p>
-        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
+      <div class="facility-card">
+        <div class="facility-img-wrap">
+          <img src="images/facility3.jpg" alt="Modern Laboratory" loading="lazy"
+               onerror="this.parentElement.innerHTML='<div class=\'facility-img-placeholder\'><i class=\'fas fa-flask\'></i></div>'">
+        </div>
+        <div class="facility-body">
+          <div class="facility-icon-row">
+            <div class="facility-icon"><i class="fas fa-flask"></i></div>
+            <h3>Modern Laboratory</h3>
+          </div>
+          <p>A fully equipped laboratory offering a comprehensive range of diagnostic tests, from routine blood work to specialized pathology, with rapid and reliable results.</p>
+        </div>
       </div>
 
-      <div class="service-item reveal">
-        <i class="fas fa-baby"></i>
-        <h3 data-translate="service4-h3">Pediatrics &amp; Adolescents</h3>
-        <p data-translate="service4-desc-short">Dedicated medical care for infants, children, and teenagers, covering their growth, development, and specific health issues.</p>
-        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
+      <div class="facility-card">
+        <div class="facility-img-wrap">
+          <img src="images/facility4.jpg" alt="Intensive Care Unit" loading="lazy"
+               onerror="this.parentElement.innerHTML='<div class=\'facility-img-placeholder\'><i class=\'fas fa-heartbeat\'></i></div>'">
+        </div>
+        <div class="facility-body">
+          <div class="facility-icon-row">
+            <div class="facility-icon"><i class="fas fa-heartbeat"></i></div>
+            <h3>Intensive Care Unit (ICU)</h3>
+          </div>
+          <p>Our ICU provides critical care services for severely ill patients, staffed by highly skilled professionals and supported by advanced monitoring systems.</p>
+        </div>
       </div>
 
-      <div class="service-item reveal">
-        <i class="fas fa-venus-mars"></i>
-        <h3 data-translate="service5-h3">Obstetrics &amp; Gynecology</h3>
-        <p data-translate="service5-desc-short">Comprehensive health services for women, including prenatal care, childbirth, postnatal care, and reproductive health.</p>
-        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
+      <div class="facility-card">
+        <div class="facility-img-wrap">
+          <img src="images/facility5.jpg" alt="Emergency Department" loading="lazy"
+               onerror="this.parentElement.innerHTML='<div class=\'facility-img-placeholder\'><i class=\'fas fa-truck-medical\'></i></div>'">
+        </div>
+        <div class="facility-body">
+          <div class="facility-icon-row">
+            <div class="facility-icon"><i class="fas fa-truck-medical"></i></div>
+            <h3>Emergency Department</h3>
+          </div>
+          <p>24/7 emergency services with a dedicated team prepared to handle all types of medical emergencies efficiently and effectively.</p>
+        </div>
       </div>
 
-      <div class="service-item reveal">
-        <i class="fas fa-ear-listen"></i>
-        <h3 data-translate="service6-h3">ENT</h3>
-        <p data-translate="service6-desc-short">Diagnosis and treatment of disorders related to the ear, nose, and throat, including head and neck conditions.</p>
-        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
+      <div class="facility-card">
+        <div class="facility-img-wrap">
+          <img src="images/facility6.jpg" alt="Hospital Pharmacy" loading="lazy"
+               onerror="this.parentElement.innerHTML='<div class=\'facility-img-placeholder\'><i class=\'fas fa-pills\'></i></div>'">
+        </div>
+        <div class="facility-body">
+          <div class="facility-icon-row">
+            <div class="facility-icon"><i class="fas fa-pills"></i></div>
+            <h3>Hospital Pharmacy</h3>
+          </div>
+          <p>A well-stocked pharmacy providing a wide range of medications, managed by qualified pharmacists to ensure safe and appropriate drug dispensation.</p>
+        </div>
       </div>
 
-      <div class="service-item reveal">
-        <i class="fas fa-x-ray"></i>
-        <h3 data-translate="service7-h3">Radiology</h3>
-        <p data-translate="service7-desc-short">Advanced diagnostic imaging — X-rays, CT scans, MRI, and ultrasound — to aid accurate medical diagnosis.</p>
-        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
+      <div class="facility-card">
+        <div class="facility-img-wrap">
+          <img src="images/facility7.jpg" alt="Patient Rooms" loading="lazy"
+               onerror="this.parentElement.innerHTML='<div class=\'facility-img-placeholder\'><i class=\'fas fa-bed\'></i></div>'">
+        </div>
+        <div class="facility-body">
+          <div class="facility-icon-row">
+            <div class="facility-icon"><i class="fas fa-bed"></i></div>
+            <h3>Comfortable Patient Rooms</h3>
+          </div>
+          <p>Spacious and comfortable patient rooms designed to provide a restful and healing environment, equipped with modern amenities for patient well-being.</p>
+        </div>
       </div>
 
-      <div class="service-item reveal">
-        <i class="fas fa-tooth"></i>
-        <h3 data-translate="service8-h3">Dental</h3>
-        <p data-translate="service8-desc-short">Full range of dental services, from routine check-ups and cleanings to complex restorative and cosmetic dentistry.</p>
-        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
+      <div class="facility-card">
+        <div class="facility-img-wrap">
+          <img src="images/facility8.jpg" alt="Ultrasound and X-ray" loading="lazy"
+               onerror="this.parentElement.innerHTML='<div class=\'facility-img-placeholder\'><i class=\'fas fa-x-ray\'></i></div>'">
+        </div>
+        <div class="facility-body">
+          <div class="facility-icon-row">
+            <div class="facility-icon"><i class="fas fa-x-ray"></i></div>
+            <h3>Ultrasound &amp; X-ray</h3>
+          </div>
+          <p>Advanced ultrasound and X-ray facilities for non-invasive diagnostic imaging, essential for various medical assessments.</p>
+        </div>
       </div>
 
-      <div class="service-item reveal">
-        <i class="fas fa-brain"></i>
-        <h3 data-translate="service9-h3">Neurosurgery</h3>
-        <p data-translate="service9-desc-short">Surgical treatment for conditions affecting the brain, spinal cord, and peripheral nerves.</p>
-        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
-      </div>
-
-      <div class="service-item reveal">
-        <i class="fas fa-bone"></i>
-        <h3 data-translate="service10-h3">Orthopedics</h3>
-        <p data-translate="service10-desc-short">Care for musculoskeletal system disorders, including bones, joints, ligaments, tendons, and muscles.</p>
-        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
-      </div>
-
-      <div class="service-item reveal">
-        <i class="fas fa-hand-sparkles"></i>
-        <h3 data-translate="service11-h3">Dermatology &amp; Cosmetology</h3>
-        <p data-translate="service11-desc-short">Diagnosis and treatment of skin, hair, and nail conditions, along with aesthetic and cosmetic procedures.</p>
-        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
-      </div>
-
-      <div class="service-item reveal">
-        <i class="fas fa-syringe"></i>
-        <h3 data-translate="service12-h3">Anesthesia &amp; Pain Management</h3>
-        <p data-translate="service12-desc-short">Providing safe anesthesia for surgeries and effective management of acute and chronic pain conditions.</p>
-        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
-      </div>
-
-      <div class="service-item reveal">
-        <i class="fas fa-flask"></i>
-        <h3 data-translate="service13-h3">Laboratory</h3>
-        <p data-translate="service13-desc-short">Comprehensive laboratory testing services crucial for accurate diagnosis and effective patient management.</p>
-        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
-      </div>
-
-      <div class="service-item reveal">
-        <i class="fas fa-person-walking"></i>
-        <h3 data-translate="service14-h3">Physiotherapy</h3>
-        <p data-translate="service14-desc-short">Rehabilitation services to restore movement, strength, and function for patients recovering from injury or illness.</p>
-        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
-      </div>
-
-      <div class="service-item reveal">
-        <i class="fas fa-head-side-virus"></i>
-        <h3 data-translate="service15-h3">Psychiatry</h3>
-        <p data-translate="service15-desc-short">Mental health services focusing on the diagnosis, treatment, and prevention of mental, emotional, and behavioral disorders.</p>
-        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
-      </div>
-
-      <div class="service-item reveal">
-        <i class="fas fa-child"></i>
-        <h3 data-translate="service16-h3">Maternity Services</h3>
-        <p data-translate="service16-desc-short">Full range of maternity care, from prenatal to postpartum, ensuring the health and well-being of mother and baby.</p>
-        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
-      </div>
-
-      <div class="service-item reveal">
-        <i class="fas fa-pills"></i>
-        <h3 data-translate="service17-h3">Pharmacy &amp; Ambulance</h3>
-        <p data-translate="service17-desc-short">24/7 pharmacy services and emergency ambulance transportation for critical care and patient transfer.</p>
-        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
-      </div>
-
-      <div class="service-item reveal">
-        <i class="fas fa-plus-circle"></i>
-        <h3 data-translate="service18-h3">Other Services</h3>
-        <p data-translate="service18-desc-short">Beyond our core specialties, we offer additional medical and supportive services to ensure holistic patient care.</p>
-        <a href="contact.html" class="btn btn-sm btn-outline" data-translate="contact-us-btn">Book</a>
-      </div>
-
-    </div>
-
-    <div class="section-cta" style="margin-top: 3rem;">
-      <a href="contact.html" class="btn btn-primary" data-translate="contact-us-btn">Book an Appointment</a>
     </div>
   </div>
 </section>
 
+<!-- CTA -->
+<section class="fac-cta">
+  <div class="container">
+    <h2>Ready to Experience World-Class Care?</h2>
+    <p>Book an appointment or contact us — our team is available 24/7.</p>
+    <div class="fac-cta-btns">
+      <a href="contact.html" class="btn-fac-primary"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+      <a href="tel:+251920008338" class="btn-fac-ghost"><i class="fas fa-phone"></i> Call Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
       <a href="index.html" class="logo-wrap">
         <img src="images/logo.png" alt="Geez Hospital" onerror="this.style.display='none'">
-        <div class="logo-text">
-          <span class="logo-en">GEEZ HOSPITAL</span>
-          <span class="logo-tig">ግዕዝ ሆስፒታል</span>
-        </div>
+        <div class="logo-text"><span class="logo-en">GEEZ HOSPITAL</span><span class="logo-tig">ግዕዝ ሆስፒታል</span></div>
       </a>
-      <p data-translate="footer-brand-desc">World-class healthcare in Axum, Tigray. Compassionate care for every patient.</p>
+      <p data-translate="footer-brand-desc">World-class healthcare in Axum, Tigray.</p>
       <div class="footer-social">
         <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
         <a href="https://t.me/Geezhospital_bot" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
-        <a href="https://linktr.ee/geezhospital" target="_blank" aria-label="Survey"><i class="fas fa-poll"></i></a>
-        <a href="https://maps.app.goo.gl/yHuCuCgLMzUtyerU6" target="_blank" aria-label="Google Maps"><i class="fas fa-map-marker-alt"></i></a>
+        <a href="https://maps.app.goo.gl/yHuCuCgLMzUtyerU6" target="_blank" aria-label="Maps"><i class="fas fa-map-marker-alt"></i></a>
       </div>
     </div>
     <div class="footer-col">
@@ -251,15 +423,13 @@
         <li><a href="services.html">Cardiology</a></li>
         <li><a href="services.html">General Surgery</a></li>
         <li><a href="services.html">Pediatrics</a></li>
-        <li><a href="services.html">Obstetrics &amp; Gynecology</a></li>
-        <li><a href="services.html">Neurosurgery</a></li>
         <li><a href="services.html">Emergency Care</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4 data-translate="footer-contact-title">Contact Us</h4>
       <ul class="footer-contact-list">
-        <li><i class="fas fa-map-marker-alt"></i><span data-translate="footer-address">Kindeya Kebele, In front of Ethio-Telecom, Behind Central Cafe, Axum, Tigray</span></li>
+        <li><i class="fas fa-map-marker-alt"></i><span>Kindeya Kebele, In front of Ethio-Telecom, Axum, Tigray</span></li>
         <li><i class="fas fa-phone"></i><a href="tel:+251920008338">+251 920 008 338</a></li>
         <li><i class="fas fa-phone"></i><a href="tel:+251962333388">+251 962 333 388</a></li>
         <li><i class="fas fa-envelope"></i><a href="mailto:geezhospital@gmail.com">geezhospital@gmail.com</a></li>
@@ -268,20 +438,17 @@
   </div>
   <div class="footer-bottom">
     <div class="container footer-bottom-inner">
-      <p id="footer-text">© 2026 Geez Hospital. All rights reserved.</p>
-      <p class="footer-dev">Developed by <a href="tel:+251911179955">Aser Tech (Legesse Teklu Gebrekidan)</a></p>
+      <p>© 2026 Geez Hospital. All rights reserved.</p>
+      <p class="footer-dev">Developed by <a href="tel:+251911179955">Legesse Teklu Gebrekidan</a></p>
     </div>
   </div>
 </footer>
 
 <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
-<script src="script.js"></script>
+
 <!-- Floating Contact Button -->
 <div class="fab-container" id="fabContainer">
-  <!-- Options -->
   <div class="fab-options" id="fabOptions">
-
-    <!-- Contact Form -->
     <div class="fab-form-card" id="fabFormCard" style="display:none">
       <div class="fab-form-header">
         <span>Contact Form</span>
@@ -295,39 +462,23 @@
         <button type="submit">SUBMIT</button>
       </form>
     </div>
-
-    <!-- Option Buttons -->
     <div class="fab-item-wrap">
       <span class="fab-label">Contact Form</span>
-      <button class="fab-item fab-form-btn" onclick="toggleFabForm()">
-        <i class="fas fa-address-book"></i>
-      </button>
+      <button class="fab-item fab-form-btn" onclick="toggleFabForm()"><i class="fas fa-address-book"></i></button>
     </div>
-
     <div class="fab-item-wrap">
       <span class="fab-label">Facebook</span>
-      <a class="fab-item fab-facebook" href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank">
-        <i class="fab fa-facebook-messenger"></i>
-      </a>
+      <a class="fab-item fab-facebook" href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
     </div>
-
     <div class="fab-item-wrap">
       <span class="fab-label">Telegram</span>
-      <a class="fab-item fab-telegram" href="https://t.me/geezhospital_bot" target="_blank">
-        <i class="fab fa-telegram-plane"></i>
-      </a>
+      <a class="fab-item fab-telegram" href="https://t.me/geezhospital_bot" target="_blank"><i class="fab fa-telegram-plane"></i></a>
     </div>
-
     <div class="fab-item-wrap">
       <span class="fab-label">Call Us</span>
-      <a class="fab-item fab-phone" href="tel:+251920008338">
-        <i class="fas fa-phone"></i>
-      </a>
+      <a class="fab-item fab-phone" href="tel:+251920008338"><i class="fas fa-phone"></i></a>
     </div>
-
   </div>
-
-  <!-- Main Button -->
   <button class="fab-main" id="fabMain" onclick="toggleFab()">
     <i class="fas fa-comments" id="fabIcon"></i>
     <span id="fabLabel">Talk to Us</span>
@@ -335,158 +486,42 @@
 </div>
 
 <style>
-.fab-container {
-  position: fixed;
-  bottom: 28px;
-  right: 24px;
-  z-index: 9999;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 10px;
-}
-.fab-main {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: #0B7B7B;
-  color: #fff;
-  border: none;
-  border-radius: 999px;
-  padding: 14px 20px;
-  font-size: .9rem;
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: 0 6px 24px rgba(11,123,123,.4);
-  transition: all .3s;
-}
-.fab-main:hover { background: #096767; transform: scale(1.05); }
-.fab-options {
-  display: none;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 10px;
-}
-.fab-options.open { display: flex; }
-.fab-item-wrap {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-direction: row-reverse;
-}
-.fab-label {
-  background: #0f1f2e;
-  color: #fff;
-  font-size: .78rem;
-  padding: 5px 12px;
-  border-radius: 999px;
-  white-space: nowrap;
-  box-shadow: 0 2px 8px rgba(0,0,0,.2);
-}
-.fab-item {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 4px 16px rgba(0,0,0,.2);
-  transition: transform .2s;
-  text-decoration: none;
-}
-.fab-item:hover { transform: scale(1.12); }
-.fab-phone    { background: #0B7B7B; }
-.fab-telegram { background: #0088cc; }
-.fab-facebook { background: #1877F2; }
-.fab-form-btn { background: #7c3aed; }
-
-/* Form Card */
-.fab-form-card {
-  background: #fff;
-  border-radius: 14px;
-  width: 280px;
-  box-shadow: 0 8px 32px rgba(0,0,0,.18);
-  overflow: hidden;
-  margin-bottom: 6px;
-}
-.fab-form-header {
-  background: #7c3aed;
-  color: #fff;
-  padding: 12px 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: 700;
-  font-size: .9rem;
-}
-.fab-form-header button {
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 1rem;
-  cursor: pointer;
-}
-.fab-form-card form {
-  padding: 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.fab-form-card input,
-.fab-form-card textarea {
-  width: 100%;
-  padding: 9px 12px;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 7px;
-  font-size: .84rem;
-  outline: none;
-  font-family: inherit;
-}
-.fab-form-card input:focus,
-.fab-form-card textarea:focus { border-color: #7c3aed; }
-.fab-form-card textarea { min-height: 70px; resize: none; }
-.fab-form-card button[type="submit"] {
-  background: #7c3aed;
-  color: #fff;
-  border: none;
-  border-radius: 7px;
-  padding: 10px;
-  font-size: .88rem;
-  font-weight: 700;
-  cursor: pointer;
-  letter-spacing: .05em;
-  transition: background .2s;
-}
-.fab-form-card button[type="submit"]:hover { background: #6d28d9; }
-
-@media (max-width: 768px) {
-  .fab-container { bottom: 80px; right: 16px; }
-}
+.fab-container{position:fixed;bottom:28px;right:24px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.fab-main{display:flex;align-items:center;gap:8px;background:#0B7B7B;color:#fff;border:none;border-radius:999px;padding:14px 20px;font-size:.9rem;font-weight:700;cursor:pointer;box-shadow:0 6px 24px rgba(11,123,123,.4);transition:all .3s}
+.fab-main:hover{background:#096767;transform:scale(1.05)}
+.fab-options{display:none;flex-direction:column;align-items:flex-end;gap:10px}
+.fab-options.open{display:flex}
+.fab-item-wrap{display:flex;align-items:center;gap:10px;flex-direction:row-reverse}
+.fab-label{background:#0f1f2e;color:#fff;font-size:.78rem;padding:5px 12px;border-radius:999px;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.fab-item{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:#fff;border:none;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.2);transition:transform .2s;text-decoration:none}
+.fab-item:hover{transform:scale(1.12)}
+.fab-phone{background:#0B7B7B}.fab-telegram{background:#0088cc}.fab-facebook{background:#1877F2}.fab-form-btn{background:#7c3aed}
+.fab-form-card{background:#fff;border-radius:14px;width:280px;box-shadow:0 8px 32px rgba(0,0,0,.18);overflow:hidden;margin-bottom:6px}
+.fab-form-header{background:#7c3aed;color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:.9rem}
+.fab-form-header button{background:none;border:none;color:#fff;font-size:1rem;cursor:pointer}
+.fab-form-card form{padding:14px;display:flex;flex-direction:column;gap:8px}
+.fab-form-card input,.fab-form-card textarea{width:100%;padding:9px 12px;border:1.5px solid #e2e8f0;border-radius:7px;font-size:.84rem;outline:none;font-family:inherit}
+.fab-form-card input:focus,.fab-form-card textarea:focus{border-color:#7c3aed}
+.fab-form-card textarea{min-height:70px;resize:none}
+.fab-form-card button[type="submit"]{background:#7c3aed;color:#fff;border:none;border-radius:7px;padding:10px;font-size:.88rem;font-weight:700;cursor:pointer;letter-spacing:.05em;transition:background .2s;width:100%}
+.fab-form-card button[type="submit"]:hover{background:#6d28d9}
+@media(max-width:768px){.fab-container{bottom:80px;right:16px}}
 </style>
 
+<script src="script.js"></script>
 <script>
-function toggleFab() {
-  const options = document.getElementById('fabOptions');
-  const icon    = document.getElementById('fabIcon');
-  const label   = document.getElementById('fabLabel');
-  const isOpen  = options.classList.contains('open');
+function toggleFab(){
+  const options=document.getElementById('fabOptions');
+  const icon=document.getElementById('fabIcon');
+  const label=document.getElementById('fabLabel');
+  const isOpen=options.classList.contains('open');
   options.classList.toggle('open');
-  if (isOpen) {
-    icon.className  = 'fas fa-comments';
-    label.textContent = 'Talk to Us';
-    document.getElementById('fabFormCard').style.display = 'none';
-  } else {
-    icon.className  = 'fas fa-times';
-    label.textContent = 'Close';
-  }
+  if(isOpen){icon.className='fas fa-comments';label.textContent='Talk to Us';document.getElementById('fabFormCard').style.display='none';}
+  else{icon.className='fas fa-times';label.textContent='Close';}
 }
-function toggleFabForm() {
-  const form = document.getElementById('fabFormCard');
-  form.style.display = form.style.display === 'none' ? 'block' : 'none';
+function toggleFabForm(){
+  const form=document.getElementById('fabFormCard');
+  form.style.display=form.style.display==='none'?'block':'none';
 }
 </script>
 </body>
