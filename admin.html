@@ -76,7 +76,9 @@
       const title       = document.getElementById('post-title').value.trim();
       const category    = document.getElementById('post-category').value;
       const description = document.getElementById('post-desc').value.trim();
-      const imageFile   = document.getElementById('post-image').files[0];
+      
+      // ካብታ ሳንዱቕ ናይ PostImages ሊንክ ቀጥታ ንምውሳድ
+      const imageUrl    = document.getElementById('post-image-url').value.trim();
       const webhookUrl  = localStorage.getItem('geez_webhook') || '';
       const btn         = document.getElementById('publish-btn');
 
@@ -86,40 +88,19 @@
       btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Publishing…';
 
       try {
-        let imageUrl = '';
+        setProgress(50, 'Saving to database…');
 
-        // Upload image if provided
-        if (imageFile) {
-          setProgress(10, 'Uploading image…');
-          const storageRef  = ref(storage, `posts/${Date.now()}_${imageFile.name}`);
-          const uploadTask  = uploadBytesResumable(storageRef, imageFile);
-
-          imageUrl = await new Promise((resolve, reject) => {
-            uploadTask.on('state_changed',
-              snap => {
-                const pct = Math.round((snap.bytesTransferred / snap.totalBytes) * 60) + 10;
-                setProgress(pct, 'Uploading image…');
-              },
-              reject,
-              async () => { resolve(await getDownloadURL(uploadTask.snapshot.ref)); }
-            );
-          });
-        }
-
-        setProgress(75, 'Saving to database…');
-
-        // Save to Firestore
+        // ናብ Firestore ምስቲ ናይ PostImages ሊንክ ቀጥታ ምእታው
         const docRef = await addDoc(collection(db, 'posts'), {
           title,
           category,
           description,
-          imageUrl,
+          imageUrl, // ናይ PostImages URL ኣብዚ ይኣቱ
           createdAt: serverTimestamp()
         });
 
         setProgress(90, 'Triggering webhook…');
 
-        // Trigger webhook (Facebook automation)
         if (webhookUrl) {
           try {
             await fetch(webhookUrl, {
@@ -135,7 +116,7 @@
                 postUrl: `https://geezhospital.com/news.html#${docRef.id}`
               })
             });
-          } catch (_) { /* webhook errors are non-fatal */ }
+          } catch (_) {}
         }
 
         setProgress(100, 'Done!');
