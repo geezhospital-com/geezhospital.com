@@ -699,15 +699,14 @@
           </div>
 
           <div class="form-field">
-            <label>Featured Image (optional)</label>
-            <div class="upload-zone" onclick="document.getElementById('post-image').click()">
-              <i class="fas fa-cloud-upload-alt"></i>
-              <span>Click to upload an image (JPG, PNG, WebP)</span>
-              <input type="url" id="post-image-url" class="form-control" placeholder="ናይ ስእሊ ሊንክ (https://...) ኣብዚ ኣእቱ">
-              <small class="text-muted">ስእልኻ ኣብ <a href="https://postimages.org/" target="_blank">PostImages.org</a> ሰቒልካ "Direct Link" ኣምጽእ።</small>
-            </div>
-            <img id="img-preview" class="hidden" alt="Preview">
-          </div>
+  <label>Featured Image (optional)</label>
+  <div class="upload-zone" onclick="document.getElementById('post-image').click()">
+    <i class="fas fa-cloud-upload-alt"></i>
+    <span>Click to upload an image (JPG, PNG, WebP)</span>
+    <input type="file" id="post-image" accept="image/*" style="display:none">
+  </div>
+  <img id="img-preview" class="hidden" alt="Preview">
+</div>
 
           <!-- Progress bar -->
           <div class="progress-wrap" id="progress-wrap">
