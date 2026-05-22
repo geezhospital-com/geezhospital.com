@@ -76,9 +76,7 @@
       const title       = document.getElementById('post-title').value.trim();
       const category    = document.getElementById('post-category').value;
       const description = document.getElementById('post-desc').value.trim();
-      
-      // ካብታ ሳንዱቕ ናይ PostImages ሊንክ ቀጥታ ንምውሳድ
-      const imageUrl    = document.getElementById('post-image-url').value.trim();
+      const imageFile   = document.getElementById('post-image').files[0];
       const webhookUrl  = localStorage.getItem('geez_webhook') || '';
       const btn         = document.getElementById('publish-btn');
 
@@ -88,19 +86,40 @@
       btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Publishing…';
 
       try {
-        setProgress(50, 'Saving to database…');
+        let imageUrl = '';
 
-        // ናብ Firestore ምስቲ ናይ PostImages ሊንክ ቀጥታ ምእታው
+        // Upload image if provided
+        if (imageFile) {
+          setProgress(10, 'Uploading image…');
+          const storageRef  = ref(storage, `posts/${Date.now()}_${imageFile.name}`);
+          const uploadTask  = uploadBytesResumable(storageRef, imageFile);
+
+          imageUrl = await new Promise((resolve, reject) => {
+            uploadTask.on('state_changed',
+              snap => {
+                const pct = Math.round((snap.bytesTransferred / snap.totalBytes) * 60) + 10;
+                setProgress(pct, 'Uploading image…');
+              },
+              reject,
+              async () => { resolve(await getDownloadURL(uploadTask.snapshot.ref)); }
+            );
+          });
+        }
+
+        setProgress(75, 'Saving to database…');
+
+        // Save to Firestore
         const docRef = await addDoc(collection(db, 'posts'), {
           title,
           category,
           description,
-          imageUrl, // ናይ PostImages URL ኣብዚ ይኣቱ
+          imageUrl,
           createdAt: serverTimestamp()
         });
 
         setProgress(90, 'Triggering webhook…');
 
+        // Trigger webhook (Facebook automation)
         if (webhookUrl) {
           try {
             await fetch(webhookUrl, {
@@ -116,7 +135,7 @@
                 postUrl: `https://geezhospital.com/news.html#${docRef.id}`
               })
             });
-          } catch (_) {}
+          } catch (_) { /* webhook errors are non-fatal */ }
         }
 
         setProgress(100, 'Done!');
@@ -680,14 +699,15 @@
           </div>
 
           <div class="form-field">
-  <label>Featured Image (optional)</label>
-  <div class="upload-zone" onclick="document.getElementById('post-image').click()">
-    <i class="fas fa-cloud-upload-alt"></i>
-    <span>Click to upload an image (JPG, PNG, WebP)</span>
-    <input type="file" id="post-image" accept="image/*" style="display:none">
-  </div>
-  <img id="img-preview" class="hidden" alt="Preview">
-</div>
+            <label>Featured Image (optional)</label>
+            <div class="upload-zone" onclick="document.getElementById('post-image').click()">
+              <i class="fas fa-cloud-upload-alt"></i>
+              <span>Click to upload an image (JPG, PNG, WebP)</span>
+              <input type="url" id="post-image-url" class="form-control" placeholder="ናይ ስእሊ ሊንክ (https://...) ኣብዚ ኣእቱ">
+              <small class="text-muted">ስእልኻ ኣብ <a href="https://postimages.org/" target="_blank">PostImages.org</a> ሰቒልካ "Direct Link" ኣምጽእ።</small>
+            </div>
+            <img id="img-preview" class="hidden" alt="Preview">
+          </div>
 
           <!-- Progress bar -->
           <div class="progress-wrap" id="progress-wrap">
