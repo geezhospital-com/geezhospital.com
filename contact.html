@@ -225,6 +225,73 @@
             <input type="text" id="address" name="address" autocomplete="address-line1">
           </div>
         </div>
+        <!-- Appointment Fields -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="department">Department</label>
+            <select id="department" name="department">
+              <option value="">Select Department</option>
+              <option value="Internal Medicine">Internal Medicine</option>
+              <option value="Cardiology">Cardiology</option>
+              <option value="General Surgery">General Surgery</option>
+              <option value="Pediatrics">Pediatrics &amp; Adolescents</option>
+              <option value="Obstetrics & Gynecology">Obstetrics &amp; Gynecology</option>
+              <option value="ENT">ENT</option>
+              <option value="Radiology">Radiology</option>
+              <option value="Dental">Dental</option>
+              <option value="Neurosurgery">Neurosurgery</option>
+              <option value="Orthopedics">Orthopedics</option>
+              <option value="Dermatology">Dermatology &amp; Cosmetology</option>
+              <option value="Anesthesia">Anesthesia &amp; Pain Management</option>
+              <option value="Laboratory">Laboratory</option>
+              <option value="Physiotherapy">Physiotherapy</option>
+              <option value="Psychiatry">Psychiatry</option>
+              <option value="Maternity">Maternity Services</option>
+              <option value="Pharmacy">Pharmacy &amp; Ambulance</option>
+              <option value="Other">Other Services</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="doctor">Preferred Doctor</label>
+            <select id="doctor" name="doctor">
+              <option value="">Select Doctor (Optional)</option>
+              <option value="Dr. Tesfay Atsbeha">Dr. Tesfay Atsbeha — Cardiology</option>
+              <option value="Dr. Higus Teklu">Dr. Higus Teklu — Internal Medicine</option>
+              <option value="Dr. Gebreab Nega">Dr. Gebreab Nega — Pediatrics</option>
+              <option value="Dr. Henok G/her">Dr. Henok G/her — Obstetrics &amp; Gynecology</option>
+              <option value="Dr. Natnael Kidanu">Dr. Natnael Kidanu — Radiology</option>
+              <option value="Dr. Teklay Hagos">Dr. Teklay Hagos — Pediatrics</option>
+              <option value="Dr. Fiseha Tikue">Dr. Fiseha Tikue — Dental</option>
+              <option value="Dr. Yisak G/her">Dr. Yisak G/her — General Surgery</option>
+              <option value="Dr. Goytom">Dr. Goytom — Orthopedics</option>
+              <option value="Dr. Ashenafi Gidey">Dr. Ashenafi Gidey — Dermatology</option>
+              <option value="Dr. Berhe Amare">Dr. Berhe Amare — Neurosurgery</option>
+              <option value="Dr. Wendmu">Dr. Wendmu — ENT</option>
+              <option value="Dr. Biruk Mulugeta">Dr. Biruk Mulugeta — Internal Medicine</option>
+              <option value="Any Available">Any Available Doctor</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="appt-date">Preferred Date</label>
+            <input type="date" id="appt-date" name="appointment-date" min="">
+          </div>
+          <div class="form-group">
+            <label for="appt-time">Preferred Time</label>
+            <select id="appt-time" name="appointment-time">
+              <option value="">Select Time</option>
+              <option value="08:00 - 09:00">08:00 — 09:00 AM</option>
+              <option value="09:00 - 10:00">09:00 — 10:00 AM</option>
+              <option value="10:00 - 11:00">10:00 — 11:00 AM</option>
+              <option value="11:00 - 12:00">11:00 — 12:00 PM</option>
+              <option value="14:00 - 15:00">02:00 — 03:00 PM</option>
+              <option value="15:00 - 16:00">03:00 — 04:00 PM</option>
+              <option value="16:00 - 17:00">04:00 — 05:00 PM</option>
+            </select>
+          </div>
+        </div>
+
         <div class="form-group">
           <label for="message" data-translate="form-message">Message</label>
           <textarea id="message" name="message" rows="5" required></textarea>
@@ -562,6 +629,13 @@ function toggleFabForm() {
 })();
 </script>
 
+
+<script>
+// Set min date to today for appointment
+var today = new Date().toISOString().split('T')[0];
+var dateInput = document.getElementById('appt-date');
+if (dateInput) dateInput.setAttribute('min', today);
+</script>
 <!-- Tawk.to Live Chat -->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
