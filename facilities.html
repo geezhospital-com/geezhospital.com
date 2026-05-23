@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Facilities | Geez Hospital — Modern Medical Equipment, Axum</title>
-  <meta name="description" content="Explore Geez Hospital's world-class facilities including operating theatres, CT scan, modern laboratory, and emergency department in Axum, Tigray.">
+  <meta name="description" content="Explore Geez Hospital's world-class facilities including operating theatres, ICU, MRI & CT scan, modern laboratory, and emergency department in Axum, Tigray.">
   <link rel="canonical" href="https://geezhospital.com/facilities.html">
   <link rel="icon" href="images/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -187,11 +187,11 @@
       </div>
 
       <div class="doctor-full-card reveal">
-        <img src="images/facility2.jpg" alt="CT Scan" loading="lazy" onerror="this.src='';this.alt='CT Scan'">
+        <img src="images/facility2.jpg" alt="MRI & CT Scan" loading="lazy" onerror="this.src='';this.alt='MRI & CT Scan'">
         <div class="info">
           <div class="doctor-badge"><i class="fas fa-x-ray"></i> Imaging</div>
-          <h3>CT Scan</h3>
-          <p class="experience">High-resolution CT scan machines for accurate and detailed diagnostic imaging. Our radiology team provides rapid results crucial for precise medical assessments and treatment planning.</p>
+          <h3>MRI & CT Scan</h3>
+          <p class="experience">High-resolution MRI and CT scan machines for accurate and detailed diagnostic imaging. Our radiology team provides rapid results crucial for precise medical assessments and treatment planning.</p>
         </div>
       </div>
 
@@ -288,7 +288,7 @@
       </ul>
     </div>
   </div>
-  <div class="footer-bottom"><div class="container footer-bottom-inner"><p>© 2026 Geez Hospital. All rights reserved.</p><p class="footer-dev">Developed by <a href="tel:+251911179955">Aser Tech (Legesse Teklu Gebrekidan)</a></p></div></div>
+  <div class="footer-bottom"><div class="container footer-bottom-inner"><p>© 2026 Geez Hospital. All rights reserved.</p><p class="footer-dev">Developed by <a href="tel:+251911179955">Aser Tech | Legesse Teklu Gebrekidan — +251 911 179 955</a></p></div></div>
 </footer>
 
 <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
@@ -352,6 +352,33 @@ function toggleFabForm(){
   const form=document.getElementById('fabFormCard');
   form.style.display=form.style.display==='none'?'block':'none';
 }
+</script>
+
+<!-- Hamburger / mobile nav -->
+<script>
+(function() {
+  var btn = document.getElementById('ghHamburger');
+  var nav = document.getElementById('ghMainNav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var open = nav.classList.toggle('gh-open');
+    btn.setAttribute('aria-expanded', open);
+  });
+  // Close when nav link clicked
+  nav.querySelectorAll('.gh-nav-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+      nav.classList.remove('gh-open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+  // Sticky nav
+  var siteNav = document.getElementById('ghSiteNav');
+  if (siteNav) {
+    window.addEventListener('scroll', function() {
+      siteNav.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+  }
+})();
 </script>
 </body>
 </html>

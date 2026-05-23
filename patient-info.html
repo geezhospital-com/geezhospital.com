@@ -222,7 +222,7 @@
                     <img src="images/logo.png" alt="Geez Hospital Logo">
                 </div>
                 <div class="footer-info">
-                    <p data-translate="footer-text">Copyright © 2026 Geez Hospital<br>Developed By: Aser Tech (Legesse Teklu Gebrekidan)-0911179955</p>
+                    <p data-translate="footer-text">Copyright © 2026 Geez Hospital | <a href="tel:+251911179955" style="color:inherit">Aser Tech | Legesse Teklu Gebrekidan — +251 911 179 955</a><br>Developed By Aser Tech (Legesse Teklu Gebrekidan)-0911179955</p>
                     <div class="social-icons-footer">
                         <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://t.me/geezhospital_bot" target="_blank"><i class="fab fa-telegram-plane"></i></a>
@@ -449,6 +449,33 @@ function toggleFabForm() {
   const form = document.getElementById('fabFormCard');
   form.style.display = form.style.display === 'none' ? 'block' : 'none';
 }
+</script>
+
+<!-- Hamburger / mobile nav -->
+<script>
+(function() {
+  var btn = document.getElementById('ghHamburger');
+  var nav = document.getElementById('ghMainNav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var open = nav.classList.toggle('gh-open');
+    btn.setAttribute('aria-expanded', open);
+  });
+  // Close when nav link clicked
+  nav.querySelectorAll('.gh-nav-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+      nav.classList.remove('gh-open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+  // Sticky nav
+  var siteNav = document.getElementById('ghSiteNav');
+  if (siteNav) {
+    window.addEventListener('scroll', function() {
+      siteNav.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+  }
+})();
 </script>
 </body>
 </html>
