@@ -644,6 +644,76 @@ var today = new Date().toISOString().split('T')[0];
 var dateInput = document.getElementById('appt-date');
 if (dateInput) dateInput.setAttribute('min', today);
 </script>
+
+<script>
+// Department -> Doctors mapping
+const deptDoctors = {
+  'Internal Medicine':        ['Dr. Higus Teklu', 'Dr. Biruk Mulugeta'],
+  'Cardiology':               ['Dr. Tesfay Atsbeha'],
+  'General Surgery':          ['Dr. Yisak G/her'],
+  'Pediatrics':               ['Dr. Gebreab Nega', 'Dr. Teklay Hagos'],
+  'Obstetrics & Gynecology':  ['Dr. Henok G/her'],
+  'ENT':                      ['Dr. Wendmu'],
+  'Radiology':                ['Dr. Natnael Kidanu'],
+  'Dental':                   ['Dr. Fiseha Tikue'],
+  'Neurosurgery':             ['Dr. Berhe Amare'],
+  'Orthopedics':              ['Dr. Goytom'],
+  'Dermatology':              ['Dr. Ashenafi Gidey'],
+  'Anesthesia':               ['Any Available'],
+  'Laboratory':               ['Any Available'],
+  'Physiotherapy':            ['Any Available'],
+  'Psychiatry':               ['Any Available'],
+  'Maternity':                ['Dr. Henok G/her'],
+  'Pharmacy':                 ['Any Available'],
+  'Other':                    ['Any Available'],
+};
+
+const deptSelect  = document.getElementById('department');
+const doctorSelect = document.getElementById('doctor');
+
+// All doctor options with their specialties
+const allDoctors = [
+  { value: 'Dr. Tesfay Atsbeha',  label: 'Dr. Tesfay Atsbeha — Cardiology' },
+  { value: 'Dr. Higus Teklu',     label: 'Dr. Higus Teklu — Internal Medicine' },
+  { value: 'Dr. Gebreab Nega',    label: 'Dr. Gebreab Nega — Pediatrics' },
+  { value: 'Dr. Henok G/her',     label: 'Dr. Henok G/her — Obstetrics & Gynecology' },
+  { value: 'Dr. Natnael Kidanu',  label: 'Dr. Natnael Kidanu — Radiology' },
+  { value: 'Dr. Teklay Hagos',    label: 'Dr. Teklay Hagos — Pediatrics' },
+  { value: 'Dr. Fiseha Tikue',    label: 'Dr. Fiseha Tikue — Dental' },
+  { value: 'Dr. Yisak G/her',     label: 'Dr. Yisak G/her — General Surgery' },
+  { value: 'Dr. Goytom',          label: 'Dr. Goytom — Orthopedics' },
+  { value: 'Dr. Ashenafi Gidey',  label: 'Dr. Ashenafi Gidey — Dermatology' },
+  { value: 'Dr. Berhe Amare',     label: 'Dr. Berhe Amare — Neurosurgery' },
+  { value: 'Dr. Wendmu',          label: 'Dr. Wendmu — ENT' },
+  { value: 'Dr. Biruk Mulugeta',  label: 'Dr. Biruk Mulugeta — Internal Medicine' },
+  { value: 'Any Available',       label: 'Any Available Doctor' },
+];
+
+function updateDoctors() {
+  const dept = deptSelect.value;
+  const allowed = deptDoctors[dept] || null;
+
+  // Clear current options
+  doctorSelect.innerHTML = '<option value="">Select Doctor</option>';
+
+  const doctors = allowed
+    ? allDoctors.filter(d => allowed.includes(d.value))
+    : allDoctors;
+
+  doctors.forEach(d => {
+    const opt = document.createElement('option');
+    opt.value = d.value;
+    opt.textContent = d.label;
+    doctorSelect.appendChild(opt);
+  });
+}
+
+if (deptSelect) {
+  deptSelect.addEventListener('change', updateDoctors);
+  // Init on load
+  updateDoctors();
+}
+</script>
 <!-- Tawk.to Live Chat -->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();

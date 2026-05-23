@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting — Geez Hospital</title>
+  <meta name="robots" content="noindex, nofollow">
+  <script>
+    // Redirect from github.io to geezhospital.com
+    (function() {
+      var path = window.location.pathname;
+      // Remove the /geezhospital.com prefix if present
+      path = path.replace('/geezhospital.com', '');
+      var search = window.location.search;
+      var newUrl = 'https://geezhospital.com' + path + search;
+      window.location.replace(newUrl);
+    })();
+  </script>
+  <link rel="canonical" href="https://geezhospital.com/">
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      background: #f0f4f8;
+      color: #333;
+      text-align: center;
+    }
+    .box {
+      padding: 40px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    a { color: #0B7B7B; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <p>Redirecting to <a href="https://geezhospital.com">geezhospital.com</a>...</p>
+    <p>If not redirected automatically, <a href="https://geezhospital.com">click here</a>.</p>
+  </div>
+</body>
+</html>
