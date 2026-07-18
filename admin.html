@@ -199,6 +199,8 @@
       document.getElementById('post-image').addEventListener('change', e => {
         const file = e.target.files[0];
         if (!file) return;
+        const label = document.getElementById('upload-zone-label');
+        if (label) label.textContent = file.name;
         const reader = new FileReader();
         reader.onload = ev => {
           const preview = document.getElementById('img-preview');
@@ -702,9 +704,8 @@
             <label>Featured Image (optional)</label>
             <div class="upload-zone" onclick="document.getElementById('post-image').click()">
               <i class="fas fa-cloud-upload-alt"></i>
-              <span>Click to upload an image (JPG, PNG, WebP)</span>
-              <input type="url" id="post-image-url" class="form-control" placeholder="ናይ ስእሊ ሊንክ (https://...) ኣብዚ ኣእቱ">
-              <small class="text-muted">ስእልኻ ኣብ <a href="https://postimages.org/" target="_blank">PostImages.org</a> ሰቒልካ "Direct Link" ኣምጽእ።</small>
+              <span id="upload-zone-label">Click to upload an image (JPG, PNG, WebP)</span>
+              <input type="file" id="post-image" accept="image/jpeg,image/png,image/webp" class="hidden">
             </div>
             <img id="img-preview" class="hidden" alt="Preview">
           </div>
