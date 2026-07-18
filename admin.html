@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geez Hospital — Admin Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- ══════════════════════════════════════════
+       FIREBASE CONFIG — REPLACE WITH YOUR OWN
+       Go to: Firebase Console → Project Settings → Your Apps → SDK setup
+  ═══════════════════════════════════════════════ -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut }
+      from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+    import { getFirestore, collection, addDoc, getDocs, orderBy, query, serverTimestamp }
+      from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+    import { getStorage, ref, uploadBytesResumable, getDownloadURL }
+      from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
+
+    // ▼▼▼ PASTE YOUR FIREBASE CONFIG OBJECT HERE ▼▼▼
+    const firebaseConfig = {
+      apiKey:            "AIzaSyDDNSkV2dYG4dBQuCuFouEm2qDID-HLwA0",
+      authDomain:        "geez-hospital-web.firebaseapp.com",
+      projectId:          "geez-hospital-web",
+      storageBucket:     "geez-hospital-web.firebasestorage.app",
+      messagingSenderId: "144263646763",
+      appId:            "1:144263646763:web:d2bc59bd5a96e1637c646e",
+      measurementId:     "G-9QH360M4V1"
+    };
+    // ▲▲▲ END OF CONFIG ▲▲▲
+
+    const app     = initializeApp(firebaseConfig);
+    const auth    = getAuth(app);
+    const db      = getFirestore(app);
+    const storage = getStorage(app);
+
+    // ─── Auth State ───────────────────────────────────────────────
+    onAuthStateChanged(auth, user => {
+      if (user) {
+        document.getElementById('login-screen').classList.add('hidden');
+        document.getElementById('dashboard').classList.remove('hidden');
+        document.getElementById('admin-email').textContent = user.email;
+        loadPosts();
+      } else {
+        document.getElementById('login-screen').classList.remove('hidden');
+        document.getElementById('dashboard').classList.add('hidden');
+      }
+    });
+
+    // ─── Login ────────────────────────────────────────────────────
+    window.handleLogin = async () => {
+      const email    = document.getElementById('login-email').value.trim();
+      const password = document.getElementById('login-password').value;
+      const btn      = document.getElementById('login-btn');
+      const err      = document.getElementById('login-error');
+      err.textContent = '';
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Signing in…';
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
+      } catch (e) {
+        err.textContent = 'Invalid email or password.';
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Sign In';
+      }
+    };
+
+    // ─── Logout ───────────────────────────────────────────────────
+    window.handleLogout = () => signOut(auth);
+
+    // ─── Publish Post ─────────────────────────────────────────────
+    window.publishPost = async () => {
+      const title       = document.getElementById('post-title').value.trim();
+      const category    = document.getElementById('post-category').value;
+      const description = document.getElementById('post-desc').value.trim();
+      const imageFile   = document.getElementById('post-image').files[0];
+      const webhookUrl  = localStorage.getItem('geez_webhook') || '';
+      const btn         = document.getElementById('publish-btn');
+
+      if (!title || !description) { showToast('Please fill in title and description.', 'error'); return; }
+
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Publishing…';
+
+      try {
+        let imageUrl = '';
+
+        // Upload image if provided
+        if (imageFile) {
+          setProgress(10, 'Uploading image…');
+          const storageRef  = ref(storage, `posts/${Date.now()}_${imageFile.name}`);
+          const uploadTask  = uploadBytesResumable(storageRef, imageFile);
+
+          imageUrl = await new Promise((resolve, reject) => {
+            uploadTask.on('state_changed',
+              snap => {
+                const pct = Math.round((snap.bytesTransferred / snap.totalBytes) * 60) + 10;
+                setProgress(pct, 'Uploading image…');
+              },
+              reject,
+              async () => { resolve(await getDownloadURL(uploadTask.snapshot.ref)); }
+            );
+          });
+        }
+
+        setProgress(75, 'Saving to database…');
+
+        // Save to Firestore
+        const docRef = await addDoc(collection(db, 'posts'), {
+          title,
+          category,
+          description,
+          imageUrl,
+          createdAt: serverTimestamp()
+        });
+
+        setProgress(90, 'Triggering webhook…');
+
+        // Trigger webhook (Facebook automation)
+        if (webhookUrl) {
+          try {
+            await fetch(webhookUrl, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              mode: 'no-cors',
+              body: JSON.stringify({
+                title,
+                category,
+                description,
+                imageUrl,
+                postId:  docRef.id,
+                postUrl: `https://geezhospital.com/news.html#${docRef.id}`
+              })
+            });
+          } catch (_) { /* webhook errors are non-fatal */ }
+        }
+
+        setProgress(100, 'Done!');
+        showToast('✅ Post published successfully!', 'success');
+        resetForm();
+        loadPosts();
+
+      } catch (e) {
+        console.error(e);
+        showToast('❌ Failed to publish. Check console.', 'error');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Publish Post';
+        setTimeout(() => setProgress(0, ''), 2000);
+      }
+    };
+
+    // ─── Load posts into the Recent Posts table ───────────────────
+    window.loadPosts = async () => {
+      const tbody = document.getElementById('posts-tbody');
+      tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;padding:24px;color:#8892a4"><i class="fas fa-spinner fa-spin"></i> Loading…</td></tr>';
+      try {
+        const q    = query(collection(db, 'posts'), orderBy('createdAt', 'desc'));
+        const snap = await getDocs(q);
+        if (snap.empty) {
+          tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;padding:24px;color:#8892a4">No posts yet.</td></tr>';
+          return;
+        }
+        tbody.innerHTML = '';
+        snap.forEach(doc => {
+          const d  = doc.data();
+          const dt = d.createdAt ? new Date(d.createdAt.seconds * 1000).toLocaleDateString() : '—';
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td><strong>${escHtml(d.title)}</strong></td>
+            <td><span class="badge badge-${d.category.toLowerCase()}">${escHtml(d.category)}</span></td>
+            <td>${dt}</td>
+            <td>${d.imageUrl ? '<i class="fas fa-image" style="color:#22c55e"></i>' : '<i class="fas fa-minus" style="color:#64748b"></i>'}</td>`;
+          tbody.appendChild(tr);
+        });
+        document.getElementById('post-count').textContent = snap.size;
+      } catch (e) {
+        tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;color:#ef4444;padding:24px;">Error loading posts.</td></tr>';
+      }
+    };
+
+    // ─── Webhook settings ─────────────────────────────────────────
+    window.saveWebhook = () => {
+      const url = document.getElementById('webhook-url').value.trim();
+      localStorage.setItem('geez_webhook', url);
+      showToast('Webhook URL saved locally.', 'success');
+    };
+
+    // Load saved webhook on boot
+    window.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('geez_webhook') || '';
+      const el    = document.getElementById('webhook-url');
+      if (el) el.value = saved;
+
+      // Image preview
+      document.getElementById('post-image').addEventListener('change', e => {
+        const file = e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = ev => {
+          const preview = document.getElementById('img-preview');
+          preview.src   = ev.target.result;
+          preview.classList.remove('hidden');
+        };
+        reader.readAsDataURL(file);
+      });
+
+      // Login on Enter
+      document.getElementById('login-password').addEventListener('keydown', e => {
+        if (e.key === 'Enter') handleLogin();
+      });
+    });
+
+    // ─── Helpers ──────────────────────────────────────────────────
+    function resetForm() {
+      ['post-title','post-desc'].forEach(id => document.getElementById(id).value = '');
+      document.getElementById('post-category').value = 'News';
+      document.getElementById('post-image').value    = '';
+      const preview = document.getElementById('img-preview');
+      preview.src   = '';
+      preview.classList.add('hidden');
+    }
+
+    function setProgress(pct, label) {
+      const bar  = document.getElementById('progress-bar');
+      const text = document.getElementById('progress-label');
+      if (pct === 0) { bar.parentElement.style.opacity = '0'; return; }
+      bar.parentElement.style.opacity = '1';
+      bar.style.width = pct + '%';
+      text.textContent = label;
+    }
+
+    function showToast(msg, type = 'success') {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.className   = `toast toast-${type} show`;
+      setTimeout(() => t.classList.remove('show'), 4000);
+    }
+
+    function escHtml(str) {
+      return str.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0b0f1a;
+      --surface:   #131929;
+      --surface2:  #1a2236;
+      --border:    #243047;
+      --teal:      #0ea5e9;
+      --teal-dim:  #0284c7;
+      --gold:      #f0c040;
+      --text:      #e2e8f0;
+      --muted:     #8892a4;
+      --danger:    #ef4444;
+      --success:   #22c55e;
+      --radius:    10px;
+      --font-mono: 'IBM Plex Mono', monospace;
+      --font-sans: 'IBM Plex Sans', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .hidden { display: none !important; }
+
+    /* ── TOAST ──────────────────────────────── */
+    .toast {
+      position: fixed; bottom: 28px; right: 28px; z-index: 9999;
+      padding: 14px 22px; border-radius: var(--radius);
+      font-size: .9rem; font-weight: 500;
+      transform: translateY(80px); opacity: 0;
+      transition: all .35s cubic-bezier(.34,1.56,.64,1);
+      pointer-events: none;
+    }
+    .toast.show { transform: translateY(0); opacity: 1; }
+    .toast-success { background: #14532d; border: 1px solid var(--success); color: #bbf7d0; }
+    .toast-error   { background: #450a0a; border: 1px solid var(--danger);  color: #fecaca; }
+
+    /* ── LOGIN SCREEN ───────────────────────── */
+    #login-screen {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      background: radial-gradient(ellipse at 30% 20%, #0c2340 0%, #0b0f1a 60%);
+    }
+    .login-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 48px 40px;
+      width: 100%; max-width: 420px;
+      box-shadow: 0 32px 80px rgba(0,0,0,.6);
+    }
+    .login-logo {
+      text-align: center; margin-bottom: 32px;
+    }
+    .login-logo .icon {
+      width: 60px; height: 60px;
+      background: linear-gradient(135deg, var(--teal), #0e7490);
+      border-radius: 50%; display: inline-flex;
+      align-items: center; justify-content: center;
+      font-size: 1.6rem; margin-bottom: 12px;
+    }
+    .login-logo h1 { font-size: 1.4rem; color: var(--text); font-weight: 600; }
+    .login-logo p  { font-size: .8rem; color: var(--muted); font-family: var(--font-mono); margin-top: 4px; }
+
+    .form-field { margin-bottom: 18px; }
+    .form-field label { display: block; font-size: .8rem; color: var(--muted);
+      text-transform: uppercase; letter-spacing: .08em; margin-bottom: 6px; }
+    .form-field input, .form-field textarea, .form-field select {
+      width: 100%; padding: 11px 14px;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius); color: var(--text);
+      font-family: var(--font-sans); font-size: .95rem;
+      transition: border-color .2s;
+    }
+    .form-field input:focus, .form-field textarea:focus, .form-field select:focus {
+      outline: none; border-color: var(--teal);
+    }
+    .form-field select option { background: var(--surface); }
+
+    #login-error { color: var(--danger); font-size: .85rem; margin-top: 8px; min-height: 20px; }
+
+    /* ── DASHBOARD LAYOUT ───────────────────── */
+    #dashboard { display: flex; min-height: 100vh; }
+
+    /* Sidebar */
+    .sidebar {
+      width: 240px; background: var(--surface);
+      border-right: 1px solid var(--border);
+      padding: 28px 0; display: flex; flex-direction: column;
+      position: fixed; top: 0; bottom: 0; left: 0; z-index: 100;
+    }
+    .sidebar-logo {
+      padding: 0 24px 28px;
+      border-bottom: 1px solid var(--border);
+    }
+    .sidebar-logo span {
+      font-family: var(--font-mono); font-size: .75rem;
+      color: var(--teal); letter-spacing: .1em;
+    }
+    .sidebar-logo h2 { font-size: 1.05rem; color: var(--text); margin-top: 2px; }
+
+    .nav-items { padding: 20px 12px; flex: 1; }
+    .nav-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 14px; border-radius: 8px; cursor: pointer;
+      font-size: .9rem; color: var(--muted);
+      transition: all .2s; user-select: none; border: none;
+      background: none; width: 100%; text-align: left;
+    }
+    .nav-item:hover, .nav-item.active {
+      background: var(--surface2); color: var(--text);
+    }
+    .nav-item.active { border-left: 3px solid var(--teal); }
+    .nav-item i { width: 18px; text-align: center; }
+
+    .sidebar-footer {
+      padding: 20px 24px;
+      border-top: 1px solid var(--border);
+      font-size: .8rem; color: var(--muted);
+    }
+    .sidebar-footer strong { color: var(--text); display: block; margin-bottom: 8px; font-size: .85rem; }
+    .logout-btn {
+      background: none; border: 1px solid var(--border);
+      color: var(--muted); border-radius: 6px; padding: 7px 14px;
+      cursor: pointer; font-size: .82rem; transition: all .2s;
+    }
+    .logout-btn:hover { border-color: var(--danger); color: var(--danger); }
+
+    /* Main content */
+    .main-content {
+      margin-left: 240px; flex: 1;
+      padding: 36px 40px;
+      max-width: calc(100vw - 240px);
+    }
+
+    .topbar {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 36px;
+    }
+    .topbar h2 { font-size: 1.5rem; font-weight: 600; }
+    .topbar p  { color: var(--muted); font-size: .85rem; margin-top: 2px; }
+
+    /* Stats */
+    .stats-row {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+      margin-bottom: 36px;
+    }
+    .stat-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 20px 24px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .stat-icon {
+      width: 46px; height: 46px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+    }
+    .stat-icon.teal   { background: rgba(14,165,233,.15); color: var(--teal); }
+    .stat-icon.gold   { background: rgba(240,192,64,.15);  color: var(--gold); }
+    .stat-icon.green  { background: rgba(34,197,94,.15);   color: var(--success); }
+    .stat-label { font-size: .8rem; color: var(--muted); }
+    .stat-value { font-size: 1.6rem; font-weight: 700; font-family: var(--font-mono); }
+
+    /* Panels */
+    .panel {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); margin-bottom: 24px;
+    }
+    .panel-header {
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .panel-header h3 { font-size: 1rem; font-weight: 600; }
+    .panel-header p  { font-size: .8rem; color: var(--muted); }
+    .panel-body { padding: 24px; }
+
+    /* File upload */
+    .upload-zone {
+      border: 2px dashed var(--border); border-radius: 10px;
+      padding: 24px; text-align: center; cursor: pointer;
+      transition: border-color .2s;
+    }
+    .upload-zone:hover { border-color: var(--teal); }
+    .upload-zone input { display: none; }
+    .upload-zone i { font-size: 1.8rem; color: var(--muted); margin-bottom: 8px; display: block; }
+    .upload-zone span { font-size: .85rem; color: var(--muted); }
+    #img-preview {
+      max-width: 100%; max-height: 180px; border-radius: 8px;
+      margin-top: 12px; object-fit: cover; border: 1px solid var(--border);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 22px; border-radius: 8px; font-size: .9rem;
+      font-weight: 500; cursor: pointer; transition: all .2s;
+      border: none; font-family: var(--font-sans);
+    }
+    .btn-primary {
+      background: var(--teal); color: #fff;
+    }
+    .btn-primary:hover { background: var(--teal-dim); }
+    .btn-primary:disabled { opacity: .55; cursor: not-allowed; }
+    .btn-outline {
+      background: none; border: 1px solid var(--border); color: var(--text);
+    }
+    .btn-outline:hover { border-color: var(--teal); color: var(--teal); }
+    .btn-sm { padding: 7px 14px; font-size: .82rem; }
+
+    /* Progress bar */
+    .progress-wrap {
+      margin-top: 16px; opacity: 0; transition: opacity .3s;
+    }
+    .progress-track {
+      background: var(--bg); border-radius: 99px; height: 6px; overflow: hidden;
+      margin-bottom: 6px;
+    }
+    #progress-bar {
+      height: 100%; width: 0; background: linear-gradient(90deg, var(--teal), var(--gold));
+      border-radius: 99px; transition: width .4s ease;
+    }
+    #progress-label { font-size: .78rem; color: var(--muted); font-family: var(--font-mono); }
+
+    /* Posts table */
+    .posts-table { width: 100%; border-collapse: collapse; }
+    .posts-table th {
+      text-align: left; padding: 10px 14px;
+      font-size: .75rem; text-transform: uppercase;
+      letter-spacing: .08em; color: var(--muted);
+      border-bottom: 1px solid var(--border);
+    }
+    .posts-table td {
+      padding: 13px 14px; font-size: .88rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .posts-table tr:last-child td { border-bottom: none; }
+    .posts-table tr:hover td { background: var(--surface2); }
+
+    .badge {
+      display: inline-block; padding: 3px 10px;
+      border-radius: 99px; font-size: .72rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: .05em;
+    }
+    .badge-news        { background: rgba(14,165,233,.15); color: var(--teal); }
+    .badge-testimony   { background: rgba(240,192,64,.15);  color: var(--gold); }
+    .badge-article     { background: rgba(34,197,94,.15);   color: var(--success); }
+
+    /* Webhook panel */
+    .webhook-info {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 8px; padding: 14px 16px; margin-bottom: 18px;
+      font-size: .83rem; color: var(--muted); line-height: 1.7;
+    }
+    .webhook-info strong { color: var(--gold); }
+    .webhook-info code {
+      background: var(--surface2); padding: 1px 6px;
+      border-radius: 4px; font-family: var(--font-mono);
+      color: var(--teal); font-size: .8rem;
+    }
+
+    /* Section tabs */
+    .section { display: none; }
+    .section.active { display: block; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .sidebar { width: 64px; }
+      .sidebar-logo, .sidebar-footer, .nav-item span { display: none; }
+      .nav-item { justify-content: center; }
+      .main-content { margin-left: 64px; max-width: calc(100vw - 64px); padding: 24px 20px; }
+      .stats-row { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .stats-row { grid-template-columns: 1fr; }
+      .main-content { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="toast" class="toast"></div>
+
+<!-- ══════════════════════════════════════════
+     LOGIN SCREEN
+═══════════════════════════════════════════════ -->
+<div id="login-screen">
+  <div class="login-card">
+    <div class="login-logo">
+      <div class="icon"><i class="fas fa-hospital" style="color:#fff"></i></div>
+      <h1>Geez Hospital</h1>
+      <p>ADMIN DASHBOARD</p>
+    </div>
+
+    <div class="form-field">
+      <label>Email</label>
+      <input type="email" id="login-email" placeholder="admin@geezhospital.com" autocomplete="username">
+    </div>
+    <div class="form-field">
+      <label>Password</label>
+      <input type="password" id="login-password" placeholder="••••••••" autocomplete="current-password">
+    </div>
+    <p id="login-error"></p>
+    <button class="btn btn-primary" id="login-btn" onclick="handleLogin()" style="width:100%;justify-content:center;margin-top:8px">
+      <i class="fas fa-sign-in-alt"></i> Sign In
+    </button>
+
+    <p style="font-size:.75rem;color:#4b5563;text-align:center;margin-top:20px">
+      Secured by Firebase Authentication
+    </p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     DASHBOARD
+═══════════════════════════════════════════════ -->
+<div id="dashboard" class="hidden">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <span>GEEZ HOSPITAL</span>
+      <h2>Admin Panel</h2>
+    </div>
+    <nav class="nav-items">
+      <button class="nav-item active" onclick="switchSection('overview')">
+        <i class="fas fa-chart-pie"></i><span>Overview</span>
+      </button>
+      <button class="nav-item" onclick="switchSection('new-post')">
+        <i class="fas fa-plus-circle"></i><span>New Post</span>
+      </button>
+      <button class="nav-item" onclick="switchSection('all-posts')">
+        <i class="fas fa-newspaper"></i><span>All Posts</span>
+      </button>
+      <button class="nav-item" onclick="switchSection('settings')">
+        <i class="fas fa-cog"></i><span>Settings</span>
+      </button>
+    </nav>
+    <div class="sidebar-footer">
+      <strong id="admin-email">admin</strong>
+      <button class="logout-btn" onclick="handleLogout()">
+        <i class="fas fa-sign-out-alt"></i> Logout
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="main-content">
+
+    <!-- OVERVIEW -->
+    <div id="section-overview" class="section active">
+      <div class="topbar">
+        <div>
+          <h2>Dashboard Overview</h2>
+          <p>Welcome back. Here's what's happening.</p>
+        </div>
+        <button class="btn btn-outline btn-sm" onclick="loadPosts()">
+          <i class="fas fa-sync-alt"></i> Refresh
+        </button>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-icon teal"><i class="fas fa-newspaper"></i></div>
+          <div>
+            <div class="stat-label">Total Posts</div>
+            <div class="stat-value" id="post-count">—</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon gold"><i class="fas fa-hospital"></i></div>
+          <div>
+            <div class="stat-label">Hospital</div>
+            <div class="stat-value" style="font-size:1rem;margin-top:4px">Geez</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon green"><i class="fas fa-check-circle"></i></div>
+          <div>
+            <div class="stat-label">Status</div>
+            <div class="stat-value" style="font-size:.9rem;color:var(--success);margin-top:4px">Live</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <h3>Recent Posts</h3>
+            <p>Last published content from Firestore</p>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="switchSection('new-post')">
+            <i class="fas fa-plus"></i> New Post
+          </button>
+        </div>
+        <div class="panel-body" style="padding:0;overflow-x:auto">
+          <table class="posts-table">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th>Image</th>
+              </tr>
+            </thead>
+            <tbody id="posts-tbody">
+              <tr><td colspan="4" style="text-align:center;padding:24px;color:var(--muted)">Loading…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEW POST -->
+    <div id="section-new-post" class="section">
+      <div class="topbar">
+        <div>
+          <h2>Create New Post</h2>
+          <p>Publish to Firestore and trigger Facebook automation.</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header"><h3>Post Details</h3></div>
+        <div class="panel-body">
+
+          <div class="form-field">
+            <label>Post Title *</label>
+            <input type="text" id="post-title" placeholder="e.g. New Cardiology Service Launched">
+          </div>
+
+          <div class="form-field">
+            <label>Category *</label>
+            <select id="post-category">
+              <option value="News">News</option>
+              <option value="Testimony">Testimony</option>
+              <option value="Article">Article</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label>Description *</label>
+            <textarea id="post-desc" rows="5"
+              placeholder="Write the full post content here…"
+              style="resize:vertical;line-height:1.7"></textarea>
+          </div>
+
+          <div class="form-field">
+            <label>Featured Image (optional)</label>
+            <div class="upload-zone" onclick="document.getElementById('post-image').click()">
+              <i class="fas fa-cloud-upload-alt"></i>
+              <span>Click to upload an image (JPG, PNG, WebP)</span>
+              <input type="url" id="post-image-url" class="form-control" placeholder="ናይ ስእሊ ሊንክ (https://...) ኣብዚ ኣእቱ">
+              <small class="text-muted">ስእልኻ ኣብ <a href="https://postimages.org/" target="_blank">PostImages.org</a> ሰቒልካ "Direct Link" ኣምጽእ።</small>
+            </div>
+            <img id="img-preview" class="hidden" alt="Preview">
+          </div>
+
+          <!-- Progress bar -->
+          <div class="progress-wrap" id="progress-wrap">
+            <div class="progress-track"><div id="progress-bar"></div></div>
+            <span id="progress-label"></span>
+          </div>
+
+          <div style="display:flex;gap:12px;margin-top:8px">
+            <button class="btn btn-primary" id="publish-btn" onclick="publishPost()">
+              <i class="fas fa-paper-plane"></i> Publish Post
+            </button>
+            <button class="btn btn-outline" onclick="resetFormPublic()">
+              <i class="fas fa-times"></i> Clear
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ALL POSTS -->
+    <div id="section-all-posts" class="section">
+      <div class="topbar">
+        <div>
+          <h2>All Posts</h2>
+          <p>Everything published to your news feed.</p>
+        </div>
+        <button class="btn btn-outline btn-sm" onclick="loadPosts()">
+          <i class="fas fa-sync-alt"></i> Refresh
+        </button>
+      </div>
+
+      <div class="panel">
+        <div class="panel-body" style="padding:0;overflow-x:auto">
+          <table class="posts-table">
+            <thead>
+              <tr>
+                <th>Title</th><th>Category</th><th>Date</th><th>Image</th>
+              </tr>
+            </thead>
+            <tbody id="posts-tbody"><!-- Shared with overview --></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- SETTINGS -->
+    <div id="section-settings" class="section">
+      <div class="topbar">
+        <div>
+          <h2>Settings</h2>
+          <p>Configure automation and integrations.</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <h3><i class="fas fa-robot" style="color:var(--gold);margin-right:8px"></i>Facebook Automation Webhook</h3>
+            <p>Automatically post to Facebook via Make.com or Zapier when you publish.</p>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="webhook-info">
+            <strong>How to set this up:</strong><br>
+            1. Go to <strong>Make.com</strong> (or Zapier) and create a new scenario.<br>
+            2. Add a <strong>Webhooks → Custom Webhook</strong> trigger — copy its URL.<br>
+            3. Add a <strong>Facebook Pages → Create a Post</strong> action, mapping <code>{{title}}</code> and <code>{{postUrl}}</code> from the webhook payload.<br>
+            4. Paste the webhook URL below and click Save. Every "Publish" will fire it automatically.
+          </div>
+
+          <div class="form-field">
+            <label>Make.com / Zapier Webhook URL</label>
+            <input type="url" id="webhook-url"
+              placeholder="https://hook.eu1.make.com/your-webhook-id">
+          </div>
+
+          <button class="btn btn-primary" onclick="saveWebhook()">
+            <i class="fas fa-save"></i> Save Webhook URL
+          </button>
+
+          <p style="font-size:.78rem;color:var(--muted);margin-top:12px">
+            <i class="fas fa-lock" style="margin-right:4px"></i>
+            Stored locally in this browser. Paste it again if you use a different device.
+          </p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header"><h3>Payload Preview</h3></div>
+        <div class="panel-body">
+          <p style="font-size:.82rem;color:var(--muted);margin-bottom:12px">When you click Publish, this JSON is sent to your webhook:</p>
+          <pre style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px;font-family:var(--font-mono);font-size:.78rem;color:var(--teal);overflow-x:auto">{
+  "title":       "Your post title",
+  "category":    "News | Testimony | Article",
+  "description": "Post body text…",
+  "imageUrl":    "https://storage.googleapis.com/…",
+  "postId":      "Firestore document ID",
+  "postUrl":     "https://geezhospital.com/news.html#postId"
+}</pre>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+  // Section switching
+  function switchSection(name) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
+    document.getElementById('section-' + name).classList.add('active');
+    const navMap = { overview: 0, 'new-post': 1, 'all-posts': 2, settings: 3 };
+    document.querySelectorAll('.nav-item')[navMap[name]].classList.add('active');
+    if (name === 'all-posts') loadPosts();
+  }
+
+  // Expose resetForm publicly (module fn is private)
+  window.resetFormPublic = () => {
+    ['post-title','post-desc'].forEach(id => document.getElementById(id).value = '');
+    document.getElementById('post-category').value = 'News';
+    document.getElementById('post-image').value    = '';
+    const p = document.getElementById('img-preview');
+    p.src = ''; p.classList.add('hidden');
+  };
+</script>
+
+</body>
+</html>
