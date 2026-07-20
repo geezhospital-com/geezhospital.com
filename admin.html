@@ -172,6 +172,7 @@ a{text-decoration:none;color:inherit}
   <div class="admin-tabs">
     <button class="tab-btn active" data-tab="publish" onclick="switchTab('publish')"><i class="fas fa-plus-circle"></i> Publish Article</button>
     <button class="tab-btn" data-tab="manage" onclick="switchTab('manage')"><i class="fas fa-list"></i> Manage Articles</button>
+    <button class="tab-btn" data-tab="vacancy" onclick="switchTab('vacancy')"><i class="fas fa-briefcase"></i> Post Vacancy</button>
     <button class="tab-btn" data-tab="config" onclick="switchTab('config')"><i class="fas fa-cog"></i> Settings</button>
   </div>
 
@@ -244,6 +245,128 @@ a{text-decoration:none;color:inherit}
       <div id="manageStatus" class="status-banner"></div>
       <div class="card" id="articleListCard">
         <div id="articleList"><p style="color:var(--gray-400);text-align:center;padding:24px 0"><i class="fas fa-spinner spin"></i> Loading...</p></div>
+      </div>
+    </div>
+
+    <!-- VACANCY TAB -->
+    <div id="tab-vacancy" style="display:none">
+      <div class="section-head">
+        <h2>Post a Vacancy</h2>
+        <p>ናይ ስራሕ ዕድል ምልጣፍ — ምስ post ትገብር ቀጥታ ናብ vacancy.html ይርኤ።</p>
+      </div>
+      <div id="vacPostStatus" class="status-banner"></div>
+
+      <div class="card">
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div class="form-group">
+            <label for="vacTitle">Job Title (English) *</label>
+            <input type="text" id="vacTitle" placeholder="e.g. Internal Medicine Specialist">
+          </div>
+          <div class="form-group">
+            <label for="vacTitleTig">ስም ስራሕ (ትግርኛ)</label>
+            <input type="text" id="vacTitleTig" placeholder="ናይ ውሽጣዊ ሕማም ስፔሻሊስት">
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div class="form-group">
+            <label for="vacDept">Department / ኣሃዱ *</label>
+            <select id="vacDept">
+              <option value="Medical">Medical</option>
+              <option value="Nursing">Nursing</option>
+              <option value="Laboratory">Laboratory</option>
+              <option value="Pharmacy">Pharmacy</option>
+              <option value="Administrative">Administrative</option>
+              <option value="Radiology">Radiology</option>
+              <option value="Emergency">Emergency</option>
+              <option value="Surgery">Surgery</option>
+              <option value="Pediatrics">Pediatrics</option>
+              <option value="Gynecology">Gynecology</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="vacPositions">ቁጽሪ ሰብ / Positions *</label>
+            <input type="number" id="vacPositions" min="1" value="1">
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px">
+          <div class="form-group">
+            <label for="vacType">Type / ዓይነት</label>
+            <select id="vacType">
+              <option value="Full Time">Full Time</option>
+              <option value="Part Time">Part Time</option>
+              <option value="Contract">Contract</option>
+              <option value="Internship">Internship</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="vacStart">Start Date / መጀምርታ</label>
+            <input type="date" id="vacStart">
+          </div>
+          <div class="form-group">
+            <label for="vacDeadline">Deadline / መወዳእታ *</label>
+            <input type="date" id="vacDeadline">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="vacReqs">Requirements / ረቛሒ (ሓደ ሓደ ሸቀጥ ምፍላይ) *</label>
+          <textarea id="vacReqs" rows="5" placeholder="MD degree with specialization in Internal Medicine&#10;Minimum 2 years experience&#10;Valid medical license&#10;Good communication skills"></textarea>
+          <p style="font-size:.75rem;color:var(--gray-400);margin-top:4px"><i class="fas fa-info-circle"></i> ነፍሲ ወከፍ requirement ሓደ ሸቀጥ (Enter)</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div class="form-group">
+            <label for="vacSalary">Salary / ደሞዝ</label>
+            <select id="vacSalary">
+              <option value="negotiable">Negotiable / ብምርድዳእ</option>
+              <option value="scale">As per hospital scale</option>
+              <option value="custom">Custom amount</option>
+            </select>
+          </div>
+          <div class="form-group" id="vacSalaryCustomDiv" style="display:none">
+            <label for="vacSalaryAmt">Amount (ETB)</label>
+            <input type="text" id="vacSalaryAmt" placeholder="e.g. 15,000 - 25,000">
+          </div>
+        </div>
+
+        <!-- How to Apply -->
+        <div style="background:var(--gray-50);border-radius:8px;padding:18px;margin-bottom:20px">
+          <p style="font-size:.82rem;font-weight:700;color:var(--gray-500);text-transform:uppercase;letter-spacing:.05em;margin-bottom:14px">
+            <i class="fas fa-paper-plane"></i> How to Apply / ኣቐራርባ ሰነዳት
+          </p>
+          <div class="form-group">
+            <label for="vacEmail">Apply by Email</label>
+            <input type="email" id="vacEmail" value="geezhospital@gmail.com" placeholder="geezhospital@gmail.com">
+          </div>
+          <div class="form-group">
+            <label for="vacWhatsApp">Apply by WhatsApp</label>
+            <input type="text" id="vacWhatsApp" placeholder="+251 920 008 338">
+          </div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <input type="checkbox" id="vacDirect" checked style="width:auto">
+            <label for="vacDirect" style="font-size:.85rem;font-weight:500;color:var(--gray-900);text-transform:none;letter-spacing:0">
+              Accept in-person applications / ቀጥታ ሆስፒታል ምምጻእ
+            </label>
+          </div>
+        </div>
+
+        <button class="btn-primary" id="vacPostBtn" onclick="postVacancy()">
+          <i class="fas fa-paper-plane"></i> Post Vacancy / ዕድል ልጠፍ
+        </button>
+      </div>
+
+      <!-- Manage vacancies -->
+      <div class="section-head" style="margin-top:32px">
+        <h2>Active Vacancies</h2>
+        <p>ሕጂ ዘለዉ ናይ ስራሕ ዕድላት</p>
+      </div>
+      <div id="vacManageStatus" class="status-banner"></div>
+      <div class="card">
+        <div id="vacList"><p style="color:var(--gray-400);text-align:center;padding:24px 0"><i class="fas fa-spinner spin"></i> Loading...</p></div>
       </div>
     </div>
 
@@ -343,11 +466,12 @@ function enterAdmin(){
 
 // ── Tab Switching ──
 function switchTab(name){
-  ['publish','manage','config'].forEach(t=>{
+  ['publish','manage','vacancy','config'].forEach(t=>{
     document.getElementById('tab-'+t).style.display=(t===name)?'':'none';
     document.querySelector(`[data-tab="${t}"]`).classList.toggle('active',t===name);
   });
   if(name==='manage')loadArticleList();
+  if(name==='vacancy')loadVacancyList();
 }
 
 // ── Image Upload ──
@@ -506,6 +630,144 @@ async function deleteArticle(id){
     showStatus('manageStatus','success','Article deleted.');
     loadArticleList();
   }catch(e){showStatus('manageStatus','error','Failed: '+e.message)}
+}
+
+// ── Salary custom toggle ──
+document.getElementById('vacSalary').addEventListener('change', function() {
+  document.getElementById('vacSalaryCustomDiv').style.display = this.value === 'custom' ? '' : 'none';
+});
+
+// ── Post Vacancy ──
+async function postVacancy() {
+  const title     = document.getElementById('vacTitle').value.trim();
+  const titleTig  = document.getElementById('vacTitleTig').value.trim();
+  const dept      = document.getElementById('vacDept').value;
+  const positions = parseInt(document.getElementById('vacPositions').value) || 1;
+  const type      = document.getElementById('vacType').value;
+  const startDate = document.getElementById('vacStart').value;
+  const deadline  = document.getElementById('vacDeadline').value;
+  const reqsRaw   = document.getElementById('vacReqs').value.trim();
+  const salType   = document.getElementById('vacSalary').value;
+  const salAmt    = document.getElementById('vacSalaryAmt').value.trim();
+  const email     = document.getElementById('vacEmail').value.trim();
+  const whatsapp  = document.getElementById('vacWhatsApp').value.trim();
+  const direct    = document.getElementById('vacDirect').checked;
+
+  if (!title || !deadline || !reqsRaw) {
+    showStatus('vacPostStatus','error','Title, Deadline, Requirements ምልእ።');
+    return;
+  }
+
+  const requirements = reqsRaw.split('\n').map(r=>r.trim()).filter(Boolean);
+  let salary = salType;
+  if (salType === 'custom' && salAmt) salary = salAmt;
+
+  const btn = document.getElementById('vacPostBtn');
+  btn.disabled = true;
+  showStatus('vacPostStatus','loading','Posting vacancy...');
+
+  try {
+    // Load existing vacancies.json
+    let sha = null, vacancies = [];
+    try {
+      const existing = await ghGet('data/vacancies.json');
+      sha = existing.sha;
+      const decoded = decodeURIComponent(escape(atob(existing.content.replace(/\n/g,''))));
+      vacancies = JSON.parse(decoded).vacancies || [];
+    } catch(e) {}
+
+    const newVac = {
+      id: 'vac-' + Date.now(),
+      title, titleTig, department: dept, positions, type,
+      startDate: startDate || null,
+      deadline,
+      requirements,
+      salary,
+      category: dept,
+      postedDate: new Date().toISOString().split('T')[0],
+      applyEmail:    email    || null,
+      applyWhatsApp: whatsapp || null,
+      applyDirect:   direct
+    };
+
+    vacancies.unshift(newVac);
+    const newJson    = JSON.stringify({vacancies}, null, 2);
+    const newContent = btoa(unescape(encodeURIComponent(newJson)));
+    await ghPut('data/vacancies.json', newContent, sha, `Post vacancy: ${title}`);
+
+    showStatus('vacPostStatus','success','✅ Vacancy posted! ድሕሪ 1 ደቒቓ ኣብ vacancy.html ይርኤ።');
+
+    // Reset form
+    document.getElementById('vacTitle').value = '';
+    document.getElementById('vacTitleTig').value = '';
+    document.getElementById('vacReqs').value = '';
+    document.getElementById('vacStart').value = '';
+    document.getElementById('vacDeadline').value = '';
+    document.getElementById('vacWhatsApp').value = '';
+    document.getElementById('vacPositions').value = '1';
+
+    loadVacancyList();
+  } catch(err) {
+    showStatus('vacPostStatus','error','Error: ' + err.message);
+  }
+  btn.disabled = false;
+}
+
+// ── Load Vacancy List ──
+async function loadVacancyList() {
+  const listEl = document.getElementById('vacList');
+  if (!listEl) return;
+  listEl.innerHTML = '<p style="color:var(--gray-400);text-align:center;padding:16px"><i class="fas fa-spinner spin"></i></p>';
+  try {
+    const existing = await ghGet('data/vacancies.json');
+    const decoded  = decodeURIComponent(escape(atob(existing.content.replace(/\n/g,''))));
+    const vacs     = JSON.parse(decoded).vacancies || [];
+    if (!vacs.length) {
+      listEl.innerHTML = '<p style="color:var(--gray-400);text-align:center;padding:16px">No vacancies yet.</p>';
+      return;
+    }
+    listEl.innerHTML = vacs.map(v => {
+      const closed = v.deadline && new Date(v.deadline) < new Date();
+      return `
+      <div class="article-list-item">
+        <div class="article-thumb-ph"><i class="fas fa-briefcase"></i></div>
+        <div class="article-info">
+          <h4>${v.title}</h4>
+          <div class="meta">
+            <span class="badge badge-teal">${v.department}</span>
+            &nbsp;${v.positions} position(s)
+            &nbsp;·&nbsp; Deadline: ${v.deadline}
+            &nbsp;·&nbsp; <span style="color:${closed?'var(--red)':'var(--green)'}">
+              ${closed ? '🔒 Closed' : '✅ Open'}
+            </span>
+          </div>
+        </div>
+        <div class="article-actions">
+          <button class="btn-danger" onclick="deleteVacancy('${v.id}')"><i class="fas fa-trash-alt"></i> ሰርዝ</button>
+        </div>
+      </div>`;
+    }).join('');
+  } catch(e) {
+    listEl.innerHTML = `<p style="color:var(--red);text-align:center;padding:16px">Failed: ${e.message}</p>`;
+  }
+}
+
+// ── Delete Vacancy ──
+async function deleteVacancy(id) {
+  if (!confirm('እዚ vacancy ክሰረዝ ዲዩ?')) return;
+  showStatus('vacManageStatus','loading','Deleting...');
+  try {
+    const existing = await ghGet('data/vacancies.json');
+    const decoded  = decodeURIComponent(escape(atob(existing.content.replace(/\n/g,''))));
+    const data     = JSON.parse(decoded);
+    data.vacancies = data.vacancies.filter(v => v.id !== id);
+    const newContent = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
+    await ghPut('data/vacancies.json', newContent, existing.sha, `Delete vacancy: ${id}`);
+    showStatus('vacManageStatus','success','Vacancy deleted.');
+    loadVacancyList();
+  } catch(e) {
+    showStatus('vacManageStatus','error','Failed: ' + e.message);
+  }
 }
 
 // ── Save Config ──
