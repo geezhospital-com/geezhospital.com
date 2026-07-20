@@ -433,7 +433,7 @@ function buildCard(v, idx) {
   applyLinks.push(`<a href="${GOOGLE_FORM}" target="_blank"><i class="fas fa-file-alt"></i> Online Application Form (CV Upload) — ዝሓሸ !</a>`);
   if (v.applyEmail) applyLinks.push(`<a href="mailto:${v.applyEmail}?subject=Application for ${v.title} — Geez Hospital"><i class="fas fa-envelope"></i> Email: ${v.applyEmail}</a>`);
   if (v.applyWhatsApp) applyLinks.push(`<a href="https://wa.me/${v.applyWhatsApp.replace(/\D/g,'')}?text=Application for ${v.title}" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp: ${v.applyWhatsApp}</a>`);
-  if (v.applyDirect) applyLinks.push(`<a href="contact.html"><i class="fas fa-hospital"></i> ቀጥታ ሆስፒታል — In person</a>`);
+  if (v.applyDirect) applyLinks.push(`<a href="contact.html"><i class="fas fa-hospital"></i> ቐጥታ ብኣካል ብምምፃእ — In person</a>`);
 
   return `
   <div class="vac-card reveal" style="animation-delay:${idx*0.07}s">
