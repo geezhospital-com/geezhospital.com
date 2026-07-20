@@ -501,7 +501,7 @@ function renderVacancies(list) {
   document.getElementById('openCount').textContent = open.length;
 
   if (!list.length) {
-    grid.innerHTML = `<div class="vac-empty"><i class="fas fa-briefcase"></i><p>No vacancies at the moment.<br><span style="font-family:'Noto Sans Ethiopic',sans-serif;font-size:.9rem">ሕጂ ዝርከብ ናይ ስራሕ ዕድል የለን።</span></p></div>`;
+    grid.innerHTML = `<div class="vac-empty"><i class="fas fa-briefcase"></i><p>No vacancies at the moment.<br><span style="font-family:'Noto Sans Ethiopic',sans-serif;font-size:.9rem">ይቕሬታ ብዛዕባ እዚ መደብ ስራሕ ዝወፀ ናይ ስራሕ ዕድል የለን።</span></p></div>`;
     return;
   }
   grid.innerHTML = list.map((v,i) => buildCard(v,i)).join('');
