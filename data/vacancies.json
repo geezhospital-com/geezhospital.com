@@ -1,3 +1,24 @@
 {
-  "vacancies": []
+  "vacancies": [
+    {
+      "id": "vac-1784541191743",
+      "title": "Pharmacy technician/Pharmacist",
+      "titleTig": "ፋርማሲ ቴክኒሻን/ፋርማሲስት",
+      "department": "Pharmacy",
+      "positions": 2,
+      "type": "Full Time",
+      "startDate": "2026-07-19",
+      "deadline": "2026-07-24",
+      "requirements": [
+        "-ብፋርማሲ ቴክኒሻን ዲፕሎማ",
+        "-ብፋርማሲስት ዲግሪ"
+      ],
+      "salary": "scale",
+      "category": "Pharmacy",
+      "postedDate": "2026-07-20",
+      "applyEmail": "geezhospital@gmail.com",
+      "applyWhatsApp": null,
+      "applyDirect": true
+    }
+  ]
 }
