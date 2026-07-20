@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vacancy | Job Opportunities — Geez Hospital Axum, Tigray | ስራሕ ዕድላት ግዕዝ ሆስፒታል</title>
+  <meta name="description" content="Job vacancies and career opportunities at Geez Hospital in Axum, Tigray. Apply for medical, nursing, laboratory, pharmacy and administrative positions. ናይ ስራሕ ዕድላት ግዕዝ ሆስፒታል ኣክሱም።">
+  <meta name="keywords" content="Geez Hospital vacancy, Hospital job Axum, Medical job Tigray, Nurse vacancy Axum, Doctor vacancy Tigray, Lab job Axum, Pharmacy job Axum, ናይ ስራሕ ዕድላት ሆስፒታል ኣክሱም, ሆስፒታል ኣሰሪሕ, Job Ethiopia hospital">
+  <link rel="canonical" href="https://geezhospital.com/vacancy.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Vacancy | Geez Hospital Axum — ናይ ስራሕ ዕድላት">
+  <meta property="og:description" content="Career opportunities at Geez Hospital, Axum, Tigray. Join our world-class medical team.">
+  <meta property="og:image" content="https://geezhospital.com/images/og-cover.jpg">
+  <meta property="og:url" content="https://geezhospital.com/vacancy.html">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400&family=Figtree:wght@300;400;500;600;700&family=Noto+Sans+Ethiopic:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+  /* ── Vacancy Page Styles ── */
+  :root {
+    --vac-navy:   #0A1F3D;
+    --vac-teal:   #0B7B7B;
+    --vac-teal-l: #E8F4F4;
+    --vac-gold:   #B8860B;
+    --vac-gold-l: #FDF6E3;
+    --vac-red:    #C0392B;
+    --vac-green:  #15803d;
+    --vac-green-l:#f0fdf4;
+    --vac-gray:   #64748B;
+    --vac-border: #E2E8F0;
+    --vac-radius: 14px;
+  }
+
+  /* Hero */
+  .vac-hero {
+    background: linear-gradient(135deg, var(--vac-navy) 0%, var(--vac-teal) 100%);
+    padding: 72px 0 56px; text-align: center; color: #fff;
+    position: relative; overflow: hidden;
+  }
+  .vac-hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: url('images/hero-bg.jpg') center/cover no-repeat;
+    opacity: .07; pointer-events: none;
+  }
+  .vac-hero .container { position: relative; z-index: 1; }
+  .vac-hero .eyebrow {
+    font-size: .78rem; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: #5FD3D3; margin-bottom: 10px;
+  }
+  .vac-hero h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600; margin-bottom: 8px;
+  }
+  .vac-hero .tig {
+    font-family: 'Noto Sans Ethiopic', sans-serif;
+    font-size: clamp(1rem, 2vw, 1.3rem); color: rgba(255,255,255,.65);
+    margin-bottom: 14px; display: block;
+  }
+  .vac-hero p { color: rgba(255,255,255,.72); font-size: .97rem; max-width: 520px; margin: 0 auto; line-height: 1.7; }
+
+  /* Filter bar */
+  .vac-filter-bar {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    margin-bottom: 36px;
+  }
+  .vac-filter-bar span { font-size: .78rem; font-weight: 600; color: var(--vac-gray); text-transform: uppercase; letter-spacing: .06em; }
+  .vac-filter-btn {
+    padding: 7px 18px; border-radius: 999px; border: 1.5px solid var(--vac-border);
+    background: #fff; color: var(--vac-gray); font-size: .83rem; font-weight: 500;
+    cursor: pointer; transition: all .2s;
+  }
+  .vac-filter-btn:hover, .vac-filter-btn.active {
+    background: var(--vac-teal); border-color: var(--vac-teal); color: #fff;
+  }
+
+  /* Stats */
+  .vac-stats {
+    background: var(--vac-navy); padding: 20px 0;
+  }
+  .vac-stats-inner {
+    max-width: 1240px; margin: 0 auto; padding: 0 24px;
+    display: flex; align-items: center; justify-content: center; gap: 48px; flex-wrap: wrap;
+  }
+  .vac-stat { text-align: center; }
+  .vac-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: #5FD3D3; line-height: 1; }
+  .vac-stat-lbl { font-size: .76rem; color: rgba(255,255,255,.55); margin-top: 3px; }
+
+  /* Section */
+  .vac-section { background: #F8FAFB; padding: 64px 0; }
+
+  /* Grid */
+  .vac-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; }
+
+  /* Card */
+  .vac-card {
+    background: #fff; border-radius: var(--vac-radius);
+    border: 1px solid var(--vac-border);
+    box-shadow: 0 2px 12px rgba(10,31,61,.06);
+    overflow: hidden; display: flex; flex-direction: column;
+    transition: transform .25s, box-shadow .25s;
+    opacity: 0; transform: translateY(20px);
+    animation: vacFadeUp .5s ease forwards;
+  }
+  .vac-card:hover { transform: translateY(-5px); box-shadow: 0 12px 36px rgba(11,123,123,.12); }
+  @keyframes vacFadeUp { to { opacity:1; transform:translateY(0); } }
+
+  .vac-card-header {
+    background: linear-gradient(135deg, var(--vac-navy), var(--vac-teal));
+    padding: 20px 22px; position: relative;
+  }
+  .vac-card-header .dept-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(255,255,255,.15); color: #fff;
+    font-size: .72rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 999px; margin-bottom: 10px;
+  }
+  .vac-card-header h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; font-weight: 600; color: #fff; margin-bottom: 4px;
+  }
+  .vac-card-header .tig-title {
+    font-family: 'Noto Sans Ethiopic', sans-serif;
+    font-size: .88rem; color: rgba(255,255,255,.7); display: block;
+  }
+  .vac-deadline-badge {
+    position: absolute; top: 16px; right: 16px;
+    background: rgba(255,255,255,.2); color: #fff;
+    font-size: .72rem; font-weight: 600; padding: 4px 10px;
+    border-radius: 999px; display: flex; align-items: center; gap: 4px;
+  }
+  .vac-deadline-badge.urgent { background: var(--vac-red); }
+
+  .vac-card-body { padding: 20px 22px; flex: 1; }
+
+  /* Info rows */
+  .vac-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+  .vac-info-item { }
+  .vac-info-label {
+    font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+    color: var(--vac-gray); margin-bottom: 3px;
+  }
+  .vac-info-value { font-size: .86rem; font-weight: 500; color: var(--vac-navy); }
+  .vac-info-value.teal { color: var(--vac-teal); }
+  .vac-info-value.gold { color: var(--vac-gold); }
+
+  /* Requirements */
+  .vac-req { margin-bottom: 16px; }
+  .vac-req-title { font-size: .78rem; font-weight: 700; color: var(--vac-gray); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 8px; }
+  .vac-req ul { display: flex; flex-direction: column; gap: 5px; }
+  .vac-req ul li {
+    font-size: .83rem; color: #374151; display: flex; align-items: flex-start; gap: 7px; line-height: 1.5;
+  }
+  .vac-req ul li i { color: var(--vac-teal); margin-top: 3px; font-size: .7rem; flex-shrink: 0; }
+
+  /* Salary */
+  .vac-salary {
+    display: flex; align-items: center; gap: 8px;
+    background: var(--vac-gold-l); border: 1px solid rgba(184,134,11,.2);
+    border-radius: 8px; padding: 9px 14px; margin-bottom: 16px;
+    font-size: .83rem; color: var(--vac-gold); font-weight: 600;
+  }
+  .vac-salary i { font-size: .85rem; }
+
+  /* How to apply */
+  .vac-apply-section {
+    background: var(--vac-teal-l); border-radius: 8px;
+    padding: 12px 14px; margin-bottom: 18px;
+  }
+  .vac-apply-title { font-size: .72rem; font-weight: 700; color: var(--vac-teal); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px; }
+  .vac-apply-list { display: flex; flex-direction: column; gap: 4px; }
+  .vac-apply-list a {
+    font-size: .82rem; color: var(--vac-navy); display: flex; align-items: center; gap: 7px;
+    font-weight: 500; transition: color .2s;
+  }
+  .vac-apply-list a:hover { color: var(--vac-teal); }
+  .vac-apply-list a i { color: var(--vac-teal); width: 14px; flex-shrink: 0; }
+
+  /* Apply button */
+  .vac-apply-btn {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    background: var(--vac-teal); color: #fff; border: none;
+    padding: 12px 20px; border-radius: 8px; font-size: .88rem; font-weight: 600;
+    cursor: pointer; text-decoration: none; width: 100%; transition: background .2s;
+    font-family: 'Figtree', sans-serif; margin-top: auto;
+  }
+  .vac-apply-btn:hover { background: #096767; }
+
+  /* Closed badge */
+  .vac-closed { background: #f1f5f9; color: #94a3b8; pointer-events: none; }
+
+  /* Empty state */
+  .vac-empty {
+    grid-column: 1/-1; text-align: center; padding: 64px 20px;
+    color: var(--vac-gray);
+  }
+  .vac-empty i { font-size: 3rem; opacity: .3; display: block; margin-bottom: 16px; }
+
+  /* Skeleton */
+  .vac-skeleton { background: #e2e8f0; border-radius: 6px; animation: shimmer 1.4s infinite; }
+  @keyframes shimmer { 0%,100%{opacity:1}50%{opacity:.5} }
+
+  /* CTA */
+  .vac-cta {
+    background: linear-gradient(135deg, var(--vac-teal) 0%, var(--vac-navy) 100%);
+    padding: 56px 0; text-align: center; color: #fff;
+  }
+  .vac-cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 3vw, 2.1rem); margin-bottom: 8px; }
+  .vac-cta .tig { font-family: 'Noto Sans Ethiopic', sans-serif; font-size: .95rem; color: rgba(255,255,255,.65); margin-bottom: 20px; display: block; }
+  .vac-cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn-vac-w { background:#fff;color:var(--vac-teal);padding:11px 26px;border-radius:999px;font-weight:700;font-size:.88rem;text-decoration:none;transition:all .2s; }
+  .btn-vac-w:hover { background: #e8f4f4; }
+  .btn-vac-o { border:2px solid rgba(255,255,255,.5);color:#fff;padding:11px 26px;border-radius:999px;font-weight:600;font-size:.88rem;text-decoration:none;transition:all .2s; }
+  .btn-vac-o:hover { background:rgba(255,255,255,.1);border-color:#fff; }
+
+  /* Responsive */
+  @media(max-width:768px) {
+    .vac-grid { grid-template-columns: 1fr; }
+    .vac-info-grid { grid-template-columns: 1fr; }
+    .vac-stats-inner { gap: 28px; }
+  }
+  </style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+  <div class="container top-bar-inner">
+    <div class="top-bar-left">
+      <a href="tel:+251920008338" class="top-bar-item"><i class="fas fa-phone-volume"></i> +251 920 008 338</a>
+      <span class="divider">|</span>
+      <a href="tel:+251962333388" class="top-bar-item"><i class="fas fa-phone"></i> +251 962 333 388</a>
+      <span class="divider">|</span>
+      <a href="mailto:geezhospital@gmail.com" class="top-bar-item"><i class="fas fa-envelope"></i> geezhospital@gmail.com</a>
+    </div>
+    <div class="top-bar-right">
+      <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://t.me/Geezhospital_bot" target="_blank" class="social-link"><i class="fab fa-telegram-plane"></i></a>
+      <a href="contact.html" class="top-bar-cta">Book Appointment</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="index.html" class="logo-wrap">
+      <img src="images/logo.png" alt="Geez Hospital Logo" class="logo-img" onerror="this.style.display='none'">
+      <div class="logo-text">
+        <span class="logo-en">GEEZ HOSPITAL</span>
+        <span class="logo-tig">ግዕዝ ሆስፒታል · Axum</span>
+      </div>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <nav class="main-nav" id="mainNav">
+      <ul class="nav-list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="doctors.html" class="nav-link">Doctors</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="news.html" class="nav-link">News</a></li>
+        <li><a href="vacancy.html" class="nav-link active">Vacancy</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li class="nav-lang">
+          <select id="language-switcher" aria-label="Language">
+            <option value="eng">English</option>
+            <option value="tig">ትግርኛ</option>
+            <option value="amh">አማርኛ</option>
+          </select>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="vac-hero">
+  <div class="container">
+    <p class="eyebrow"><i class="fas fa-briefcase"></i> &nbsp;Career Opportunities</p>
+    <h2>Join Our Medical Team</h2>
+    <span class="tig">ናብ ሕክምናዊ ጋንታና ተጸምበር</span>
+    <p>Build your career at Geez Hospital — where expertise meets compassion in Axum, Tigray. We are looking for dedicated professionals to serve our community.</p>
+  </div>
+</section>
+
+<!-- Stats -->
+<div class="vac-stats">
+  <div class="vac-stats-inner">
+    <div class="vac-stat">
+      <div class="vac-stat-num" id="openCount">—</div>
+      <div class="vac-stat-lbl">Open Positions</div>
+    </div>
+    <div class="vac-stat">
+      <div class="vac-stat-num">18+</div>
+      <div class="vac-stat-lbl">Departments</div>
+    </div>
+    <div class="vac-stat">
+      <div class="vac-stat-num">30+</div>
+      <div class="vac-stat-lbl">Team Members</div>
+    </div>
+    <div class="vac-stat">
+      <div class="vac-stat-num">24/7</div>
+      <div class="vac-stat-lbl">Operations</div>
+    </div>
+  </div>
+</div>
+
+<!-- Vacancies Section -->
+<section class="vac-section">
+  <div class="container">
+
+    <!-- Filter bar -->
+    <div class="vac-filter-bar">
+      <span>Filter:</span>
+      <button class="vac-filter-btn active" data-filter="all">All</button>
+      <button class="vac-filter-btn" data-filter="Medical">Medical</button>
+      <button class="vac-filter-btn" data-filter="Nursing">Nursing</button>
+      <button class="vac-filter-btn" data-filter="Laboratory">Laboratory</button>
+      <button class="vac-filter-btn" data-filter="Pharmacy">Pharmacy</button>
+      <button class="vac-filter-btn" data-filter="Administrative">Administrative</button>
+    </div>
+
+    <!-- Grid -->
+    <div class="vac-grid" id="vacGrid">
+      <!-- Skeleton loading -->
+      <div class="vac-card">
+        <div class="vac-card-header" style="background:#e2e8f0;height:100px"></div>
+        <div class="vac-card-body">
+          <div class="vac-skeleton" style="height:14px;width:60%;margin-bottom:10px;border-radius:4px"></div>
+          <div class="vac-skeleton" style="height:14px;width:90%;margin-bottom:6px;border-radius:4px"></div>
+          <div class="vac-skeleton" style="height:14px;width:75%;border-radius:4px"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="vac-cta">
+  <div class="container">
+    <h2>Don't See Your Role?</h2>
+    <span class="tig">ዝደለኻዮ ስራሕ ኣይረኸብካን?</span>
+    <div class="vac-cta-btns">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeUOEucMk-riUg_x61Eu5y5hCGNIfbGeSIFsTmMUJA4V6DVjQ/viewform?usp=sf_link" target="_blank" class="btn-vac-w"><i class="fas fa-file-alt"></i> Submit Your CV / CV ልኣኽ</a>
+      <a href="tel:+251920008338" class="btn-vac-o"><i class="fas fa-phone"></i> Call Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo-wrap">
+        <img src="images/logo.png" alt="Geez Hospital" onerror="this.style.display='none'">
+        <div class="logo-text"><span class="logo-en">GEEZ HOSPITAL</span><span class="logo-tig">ግዕዝ ሆስፒታል</span></div>
+      </a>
+      <p>World-class healthcare in Axum, Tigray.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://t.me/Geezhospital_bot" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+        <a href="https://maps.app.goo.gl/yHuCuCgLMzUtyerU6" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="doctors.html">Doctors</a></li>
+        <li><a href="vacancy.html">Vacancy</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <ul class="footer-contact-list">
+        <li><i class="fas fa-map-marker-alt"></i><span>Kindeya Kebele, In front of Ethio-Telecom, Axum, Tigray</span></li>
+        <li><i class="fas fa-phone"></i><a href="tel:+251920008338">+251 920 008 338</a></li>
+        <li><i class="fas fa-envelope"></i><a href="mailto:geezhospital@gmail.com">geezhospital@gmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p>© 2026 Geez Hospital. All rights reserved.</p>
+      <p class="footer-dev">Developed by <a href="tel:+251911179955">Legesse Teklu Gebrekidan</a></p>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+
+<script src="script.js"></script>
+<script>
+/* ================================================================
+   VACANCY PAGE — loads from data/vacancies.json
+   ================================================================ */
+
+let allVacancies = [];
+let activeFilter = 'all';
+
+function fmtDate(iso) {
+  if (!iso) return 'Open';
+  return new Date(iso).toLocaleDateString('en-GB', {day:'numeric',month:'long',year:'numeric'});
+}
+
+function isUrgent(deadline) {
+  if (!deadline) return false;
+  const days = (new Date(deadline) - new Date()) / (1000*60*60*24);
+  return days <= 7 && days >= 0;
+}
+
+function isClosed(deadline) {
+  if (!deadline) return false;
+  return new Date(deadline) < new Date();
+}
+
+function buildCard(v, idx) {
+  const closed  = isClosed(v.deadline);
+  const urgent  = isUrgent(v.deadline);
+  const deadlineBadgeClass = urgent ? 'vac-deadline-badge urgent' : 'vac-deadline-badge';
+  const deadlineLabel = closed ? '🔒 Closed' : urgent ? '⚡ Closing Soon' : v.deadline ? `📅 ${fmtDate(v.deadline)}` : 'Open';
+
+  const reqItems = (v.requirements || []).map(r => `<li><i class="fas fa-check-circle"></i>${r}</li>`).join('');
+
+  const GOOGLE_FORM = 'https://docs.google.com/forms/d/e/1FAIpQLSeUOEucMk-riUg_x61Eu5y5hCGNIfbGeSIFsTmMUJA4V6DVjQ/viewform?usp=sf_link';
+  const applyLinks = [];
+  applyLinks.push(`<a href="${GOOGLE_FORM}" target="_blank"><i class="fas fa-file-alt"></i> Online Application Form (CV Upload) — ዝሓሸ !</a>`);
+  if (v.applyEmail) applyLinks.push(`<a href="mailto:${v.applyEmail}?subject=Application for ${v.title} — Geez Hospital"><i class="fas fa-envelope"></i> Email: ${v.applyEmail}</a>`);
+  if (v.applyWhatsApp) applyLinks.push(`<a href="https://wa.me/${v.applyWhatsApp.replace(/\D/g,'')}?text=Application for ${v.title}" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp: ${v.applyWhatsApp}</a>`);
+  if (v.applyDirect) applyLinks.push(`<a href="contact.html"><i class="fas fa-hospital"></i> ቀጥታ ሆስፒታል — In person</a>`);
+
+  return `
+  <div class="vac-card reveal" style="animation-delay:${idx*0.07}s">
+    <div class="vac-card-header">
+      <div class="dept-badge"><i class="fas fa-briefcase-medical"></i> ${v.department || 'Geez Hospital'}</div>
+      <span class="${deadlineBadgeClass}">${deadlineLabel}</span>
+      <h3>${v.title}</h3>
+      ${v.titleTig ? `<span class="tig-title">${v.titleTig}</span>` : ''}
+    </div>
+    <div class="vac-card-body">
+      <div class="vac-info-grid">
+        <div class="vac-info-item">
+          <div class="vac-info-label">Positions / ቦታ</div>
+          <div class="vac-info-value teal"><i class="fas fa-users"></i> ${v.positions || 1} ${v.positions>1?'Positions':'Position'}</div>
+        </div>
+        <div class="vac-info-item">
+          <div class="vac-info-label">Type / ዓይነት</div>
+          <div class="vac-info-value">${v.type || 'Full Time'}</div>
+        </div>
+        ${v.startDate ? `
+        <div class="vac-info-item">
+          <div class="vac-info-label">Start / መጀምርታ</div>
+          <div class="vac-info-value">${fmtDate(v.startDate)}</div>
+        </div>` : ''}
+        ${v.deadline ? `
+        <div class="vac-info-item">
+          <div class="vac-info-label">Deadline / መወዳእታ</div>
+          <div class="vac-info-value ${urgent?'gold':''}">${fmtDate(v.deadline)}</div>
+        </div>` : ''}
+      </div>
+
+      ${reqItems ? `
+      <div class="vac-req">
+        <div class="vac-req-title">Requirements / ረቛሒ</div>
+        <ul>${reqItems}</ul>
+      </div>` : ''}
+
+      <div class="vac-salary">
+        <i class="fas fa-money-bill-wave"></i>
+        ${v.salary === 'negotiable'
+          ? 'Salary: Negotiable / ደሞዝ: ብምርድዳእ'
+          : v.salary
+          ? `Salary: ${v.salary} ETB`
+          : 'Salary: As per hospital scale / ብሕጊ ሆስፒታል'}
+      </div>
+
+      ${applyLinks.length ? `
+      <div class="vac-apply-section">
+        <div class="vac-apply-title">How to Apply / ኣቐራርባ ሰነዳት</div>
+        <div class="vac-apply-list">${applyLinks.join('')}</div>
+      </div>` : ''}
+
+    </div>
+    ${closed
+      ? `<div class="vac-apply-btn vac-closed" style="padding:12px 20px;text-align:center;border-radius:0"><i class="fas fa-lock"></i> Position Closed / ዝተዓጽወ</div>`
+      : `<a href="https://docs.google.com/forms/d/e/1FAIpQLSeUOEucMk-riUg_x61Eu5y5hCGNIfbGeSIFsTmMUJA4V6DVjQ/viewform?usp=sf_link" target="_blank" class="vac-apply-btn"><i class="fas fa-file-alt"></i> Apply Now — CV Upload / ሕጂ ምልክት ግበር</a>`
+    }
+  </div>`;
+}
+
+function renderVacancies(list) {
+  const grid = document.getElementById('vacGrid');
+  grid.innerHTML = '';
+  const open = list.filter(v => !isClosed(v.deadline));
+  document.getElementById('openCount').textContent = open.length;
+
+  if (!list.length) {
+    grid.innerHTML = `<div class="vac-empty"><i class="fas fa-briefcase"></i><p>No vacancies at the moment.<br><span style="font-family:'Noto Sans Ethiopic',sans-serif;font-size:.9rem">ሕጂ ዝርከብ ናይ ስራሕ ዕድል የለን።</span></p></div>`;
+    return;
+  }
+  grid.innerHTML = list.map((v,i) => buildCard(v,i)).join('');
+}
+
+// Filter
+document.querySelectorAll('.vac-filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.vac-filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeFilter = btn.dataset.filter;
+    const filtered = activeFilter === 'all'
+      ? allVacancies
+      : allVacancies.filter(v => v.category === activeFilter);
+    renderVacancies(filtered);
+  });
+});
+
+// Load
+async function loadVacancies() {
+  try {
+    const res = await fetch('data/vacancies.json?_=' + Date.now());
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const json = await res.json();
+    allVacancies = (json.vacancies || []).sort((a,b) => new Date(b.postedDate||0) - new Date(a.postedDate||0));
+    renderVacancies(allVacancies);
+  } catch(e) {
+    document.getElementById('vacGrid').innerHTML =
+      `<div class="vac-empty"><i class="fas fa-briefcase"></i><p>No vacancies at the moment.<br><span style="font-family:'Noto Sans Ethiopic',sans-serif">ሕጂ ዝርከብ ናይ ስራሕ ዕድል የለን።</span></p></div>`;
+    document.getElementById('openCount').textContent = '0';
+  }
+}
+
+loadVacancies();
+</script>
+</body>
+</html>
