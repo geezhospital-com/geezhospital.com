@@ -608,6 +608,7 @@ async function loadArticleList(){
           <div class="meta"><span class="badge ${cat}">${art.category||'News'}</span> &nbsp;${art.date} &nbsp;·&nbsp; ${art.images?art.images.length:0} ስእሊ</div>
         </div>
         <div class="article-actions">
+          <button class="btn-secondary" style="background:#e8f4f4;color:#0B7B7B;border:1.5px solid #0B7B7B;padding:7px 14px;border-radius:6px;cursor:pointer;font-size:.82rem;font-weight:600;font-family:inherit" onclick="editArticle('${art.id}')"><i class="fas fa-edit"></i> ምምሕያሽ</button>
           <button class="btn-danger" onclick="deleteArticle('${art.id}')"><i class="fas fa-trash-alt"></i> ሰርዝ</button>
         </div>`;
       listEl.appendChild(item);
@@ -783,6 +784,200 @@ function saveConfig(){
 window.addEventListener('DOMContentLoaded',()=>{
   cfg=loadConfig();
   if(cfg.owner&&cfg.repo&&cfg.token)enterAdmin();
+});
+</script>
+<!-- EDIT MODAL -->
+<div id="editModal" style="display:none;position:fixed;inset:0;background:rgba(10,31,61,.65);backdrop-filter:blur(4px);z-index:9999;align-items:flex-start;justify-content:center;padding:40px 20px;overflow-y:auto">
+  <div style="background:#fff;border-radius:16px;max-width:780px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.25);padding:32px">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px">
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#0A1F3D"><i class="fas fa-edit" style="color:#0B7B7B;margin-right:8px"></i> Article ምምሕያሽ</h2>
+      <button onclick="closeEditModal()" style="background:none;border:none;font-size:1.3rem;cursor:pointer;color:#64748B;padding:4px 8px">✕</button>
+    </div>
+
+    <div id="editStatus" class="status-banner"></div>
+
+    <input type="hidden" id="editId">
+    <input type="hidden" id="editOldImages">
+
+    <div class="form-group">
+      <label>Title *</label>
+      <input type="text" id="editTitle">
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div class="form-group">
+        <label>Date *</label>
+        <input type="date" id="editDate">
+      </div>
+      <div class="form-group">
+        <label>Category *</label>
+        <select id="editCategory">
+          <option value="Announcement">Announcement</option>
+          <option value="Event">Event</option>
+          <option value="Health Tip">Health Tip</option>
+          <option value="News">News</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Short Summary *</label>
+      <textarea id="editExcerpt" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+      <label>Full Article Body</label>
+      <textarea id="editBody" rows="6"></textarea>
+    </div>
+    <div class="form-group">
+      <label>External Link (optional)</label>
+      <input type="text" id="editLink">
+    </div>
+
+    <!-- Current images -->
+    <div class="form-group">
+      <label>ሕጂ ዘሎ ስእሊ</label>
+      <div id="editCurrentImages" style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:10px"></div>
+    </div>
+
+    <!-- New images -->
+    <div class="form-group">
+      <label>ሓዲሽ ስእሊ ምስቃል (optional)</label>
+      <div class="upload-zone" onclick="document.getElementById('editPhotoInput').click()" style="padding:18px">
+        <input type="file" id="editPhotoInput" accept="image/*" multiple onchange="handleEditFiles(this.files)">
+        <i class="fas fa-cloud-upload-alt" style="font-size:1.5rem;color:#0B7B7B;opacity:.5;display:block;margin-bottom:8px"></i>
+        <p style="font-size:.83rem;color:#64748B">ሓዲሽ ስእሊ ምስ ዕቕምካ — ዘሎ ስእሊ ይቕጽል</p>
+      </div>
+      <div class="img-preview-list" id="editImgPreview"></div>
+    </div>
+
+    <div style="display:flex;gap:12px;margin-top:8px">
+      <button class="btn-primary" id="editSaveBtn" onclick="saveEdit()"><i class="fas fa-save"></i> Save Changes</button>
+      <button onclick="closeEditModal()" style="background:#f1f5f9;color:#475569;border:1.5px solid #e2e8f0;padding:12px 24px;border-radius:8px;cursor:pointer;font-size:.93rem;font-weight:600;font-family:inherit">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ── EDIT FUNCTIONALITY ── */
+let editPendingFiles = [];
+let allArticlesCache = [];
+
+async function editArticle(id) {
+  // Load articles
+  try {
+    const existing = await ghGet('data/news.json');
+    const decoded  = decodeURIComponent(escape(atob(existing.content.replace(/\n/g,''))));
+    allArticlesCache = JSON.parse(decoded).articles || [];
+  } catch(e) { showStatus('manageStatus','error','Failed to load: '+e.message); return; }
+
+  const art = allArticlesCache.find(a => a.id === id);
+  if (!art) { alert('Article not found.'); return; }
+
+  // Fill form
+  document.getElementById('editId').value       = art.id;
+  document.getElementById('editTitle').value     = art.title || '';
+  document.getElementById('editDate').value      = art.date  || '';
+  document.getElementById('editCategory').value  = art.category || 'Announcement';
+  document.getElementById('editExcerpt').value   = art.excerpt || '';
+  document.getElementById('editBody').value      = art.body    || '';
+  document.getElementById('editLink').value      = art.link    || '';
+  document.getElementById('editOldImages').value = JSON.stringify(art.images || []);
+
+  // Show current images
+  const imgDiv = document.getElementById('editCurrentImages');
+  imgDiv.innerHTML = (art.images||[]).map((src,i) =>
+    `<div style="position:relative;width:80px;height:64px;border-radius:8px;overflow:hidden;border:2px solid #e2e8f0">
+       <img src="${src}" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'">
+       <span style="position:absolute;bottom:2px;left:2px;background:rgba(0,0,0,.5);color:#fff;font-size:.6rem;padding:1px 4px;border-radius:3px">${i+1}</span>
+     </div>`
+  ).join('') || '<p style="color:#94a3b8;font-size:.82rem">ስእሊ የለን</p>';
+
+  editPendingFiles = [];
+  document.getElementById('editImgPreview').innerHTML = '';
+  document.getElementById('editStatus').className = 'status-banner';
+
+  // Show modal
+  const modal = document.getElementById('editModal');
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeEditModal() {
+  document.getElementById('editModal').style.display = 'none';
+  document.body.style.overflow = '';
+  editPendingFiles = [];
+}
+
+function handleEditFiles(files) {
+  [...files].forEach(file => {
+    if (!file.type.startsWith('image/')) return;
+    if (file.size > 5*1024*1024) { alert(file.name+' too large (max 5MB).'); return; }
+    const reader = new FileReader();
+    reader.onload = e => {
+      const base64 = e.target.result.split(',')[1];
+      const ext    = file.name.split('.').pop().toLowerCase() || 'jpg';
+      const name   = 'news_'+Date.now()+'_'+Math.random().toString(36).slice(2,7)+'.'+ext;
+      editPendingFiles.push({dataUrl:e.target.result, base64, name});
+      // preview
+      const prev = document.getElementById('editImgPreview');
+      prev.innerHTML = editPendingFiles.map((pf,i) =>
+        `<div class="img-thumb"><img src="${pf.dataUrl}"><button class="remove-img" onclick="editPendingFiles.splice(${i},1);handleEditFiles(new DataTransfer().files)"><i class="fas fa-times"></i></button></div>`
+      ).join('');
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+async function saveEdit() {
+  const id       = document.getElementById('editId').value;
+  const title    = document.getElementById('editTitle').value.trim();
+  const date     = document.getElementById('editDate').value;
+  const category = document.getElementById('editCategory').value;
+  const excerpt  = document.getElementById('editExcerpt').value.trim();
+  const body     = document.getElementById('editBody').value.trim();
+  const link     = document.getElementById('editLink').value.trim();
+  const oldImages= JSON.parse(document.getElementById('editOldImages').value || '[]');
+
+  if (!title||!date||!excerpt) { showStatus('editStatus','error','Title, Date, Summary ምልእ።'); return; }
+
+  const btn = document.getElementById('editSaveBtn');
+  btn.disabled = true;
+  showStatus('editStatus','loading','Saving changes...');
+
+  try {
+    // Upload any new images
+    let imagePaths = [...oldImages];
+    for (let i=0; i<editPendingFiles.length; i++) {
+      const pf = editPendingFiles[i];
+      await ghPut(`images/news/${pf.name}`, pf.base64, null, `Add image: ${pf.name}`);
+      imagePaths.push(`images/news/${pf.name}`);
+    }
+
+    // Load news.json
+    const existing = await ghGet('data/news.json');
+    const decoded  = decodeURIComponent(escape(atob(existing.content.replace(/\n/g,''))));
+    const data     = JSON.parse(decoded);
+
+    // Update the article
+    data.articles = data.articles.map(a => {
+      if (a.id !== id) return a;
+      const updated = {...a, title, date, category, excerpt, body: body||excerpt, images: imagePaths};
+      if (link) updated.link = link; else delete updated.link;
+      return updated;
+    });
+
+    const newContent = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
+    await ghPut('data/news.json', newContent, existing.sha, `Edit article: ${title}`);
+
+    showStatus('editStatus','success','✅ Article updated successfully!');
+    setTimeout(() => { closeEditModal(); loadArticleList(); }, 1500);
+  } catch(err) {
+    showStatus('editStatus','error','Error: '+err.message);
+  }
+  btn.disabled = false;
+}
+
+// Close modal on outside click
+document.getElementById('editModal').addEventListener('click', function(e) {
+  if (e.target === this) closeEditModal();
 });
 </script>
 </body>
