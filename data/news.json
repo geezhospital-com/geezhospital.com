@@ -1,18 +1,6 @@
 {
   "articles": [
     {
-      "id": "article-1786614537981",
-      "title": "ግዕዝ",
-      "date": "2026-08-13",
-      "category": "Announcement",
-      "excerpt": "ግዕዝ",
-      "body": "ግዕዝ",
-      "images": [
-        "images/news/news_1786614524909_5yu5y.jpg"
-      ],
-      "slug": ""
-    },
-    {
       "id": "article-1786613662065",
       "title": "ናይ ፀቕጢ ደም (Hypertension) መበገሲን ምክልኻልን ምኽርታት ካብ ስፔሻሊስት ሓኻይም ግዕዝ ሆስፒታል",
       "date": "2026-08-13",
