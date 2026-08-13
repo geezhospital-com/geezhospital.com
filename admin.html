@@ -567,7 +567,8 @@ async function publishArticle(){
     // 4. Write news.json
     const newJson=JSON.stringify({articles},null,2);
     const newContent=btoa(unescape(encodeURIComponent(newJson)));
-    await ghPut('data/news.json',newContent,sha,`Publish article: ${title}`);
+    const putResult=await ghPut('data/news.json',newContent,sha,`Publish article: ${title}`);
+    let latestSha=putResult&&putResult.content?putResult.content.sha:null;
     setProgress(85);
     // 5. Create individual SEO article page
     showStatus('publishStatus','loading','Creating SEO article page...');
@@ -581,10 +582,14 @@ async function publishArticle(){
       const articlePageHtml = generateArticlePage(newArticle, coverImg);
       const articleContent  = btoa(unescape(encodeURIComponent(articlePageHtml)));
       await ghPut(`news/${slug}.html`, articleContent, null, `Create article page: ${slug}`);
-      // Update news.json with slug
+      // Update news.json with slug (must use the LATEST sha from step 4's write, not null)
+      if(!latestSha){
+        const refetch=await ghGet('data/news.json');
+        latestSha=refetch.sha;
+      }
       const updatedJson = JSON.stringify({articles: articles.map(a => a.id===newArticle.id ? {...a,slug} : a)},null,2);
       const updatedContent = btoa(unescape(encodeURIComponent(updatedJson)));
-      await ghPut('data/news.json', updatedContent, null, `Add slug to article: ${title}`);
+      await ghPut('data/news.json', updatedContent, latestSha, `Add slug to article: ${title}`);
     } catch(e) { console.warn('Article page creation failed:',e.message); }
     setProgress(100);
     showStatus('publishStatus','success','✅ Article published! ድሕሪ 1 ደቒቓ ኣብ news page ይርኤ።');
