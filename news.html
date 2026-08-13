@@ -5,24 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>News & Events | Geez Hospital — Axum, Tigray</title>
   <meta name="description" content="Latest news, health tips, and announcements from Geez Hospital in Axum, Tigray.">
-  <meta name="keywords" content="Geez Hospital news, hospital news Axum, health news Tigray, Geez Hospital announcements, ዜና ግዕዝ ሆስፒታል">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="News &amp; Events | Geez Hospital — Axum, Tigray">
-  <meta property="og:description" content="Latest news, health tips, and announcements from Geez Hospital in Axum, Tigray.">
-  <meta property="og:url" content="https://geezhospital.com/news.html">
-  <meta property="og:image" content="https://geezhospital.com/images/og-cover.jpg">
   <link rel="canonical" href="https://geezhospital.com/news.html">
   <link rel="icon" href="images/favicon.png" type="image/png">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://geezhospital.com/" },
-      { "@type": "ListItem", "position": 2, "name": "News & Events", "item": "https://geezhospital.com/news.html" }
-    ]
-  }
-  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Noto+Sans+Ethiopic:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -385,18 +369,57 @@
       0%,100% { opacity:1; } 50% { opacity:.5; }
     }
   </style>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9QH360M4V1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-9QH360M4V1');
-  </script>
+<style>
+/* ── DROPDOWN & NAV FIX ── */
+.gh-nav-item { position: relative; }
+.gh-mega {
+  display: none;
+  position: absolute; top: 100%; left: 0;
+  background: #fff;
+  border: 1px solid #EEF2F6;
+  border-top: 3px solid #0B7B7B;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 12px 48px rgba(10,31,61,.18);
+  padding: 20px 22px;
+  min-width: 520px;
+  grid-template-columns: repeat(3,1fr);
+  gap: 4px;
+  z-index: 1000;
+  animation: ghDropIn .18s ease;
+}
+@keyframes ghDropIn { from{opacity:0;transform:translateY(-8px)} to{opacity:1;transform:translateY(0)} }
+.gh-nav-item:hover > .gh-mega { display: grid; }
+.gh-mega-header {
+  font-size:.67rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:#94A3B8;padding:2px 8px 10px;grid-column:1/-1;
+  border-bottom:1px solid #EEF2F6;margin-bottom:4px;
+}
+.gh-mega-item {
+  display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:6px;
+  font-size:.82rem;color:#64748B;text-decoration:none;transition:all .15s;
+}
+.gh-mega-item:hover{background:#E8F4F4;color:#0B7B7B;}
+.gh-mega-item i{width:15px;color:#0B7B7B;font-size:.73rem;flex-shrink:0;}
+.gh-mega-all{color:#0B7B7B!important;font-weight:600;}
+@media(max-width:1024px){.gh-mega{display:none!important;}}
+</style>
 </head>
 <body>
-
-<!-- Top Bar -->
+<!-- SEARCH OVERLAY -->
+<div class="gh-search-overlay" id="ghSearchOverlay" role="dialog" aria-modal="true">
+  <div class="gh-search-box">
+    <div class="gh-search-input-wrap">
+      <i class="fas fa-search"></i>
+      <input type="text" id="ghOverlayInput" placeholder="Search services, doctors, departments…" autocomplete="off">
+      <button class="gh-search-close" onclick="document.getElementById('ghSearchOverlay').classList.remove('open');document.body.style.overflow=''"><i class="fas fa-times"></i> Close</button>
+    </div>
+    <div class="gh-search-results" id="ghOverlayResults">
+      <div class="gh-search-empty"><i class="fas fa-search"></i>Start typing to search…</div>
+    </div>
+    <div class="gh-search-footer"><kbd>Esc</kbd> to close</div>
+  </div>
+</div>
+<!-- TOP UTILITY BAR -->
 <div class="gh-topbar">
   <div class="gh-tb-inner">
     <div class="gh-tb-left">
@@ -409,66 +432,50 @@
       <span class="gh-tb-item"><i class="fas fa-map-marker-alt"></i> Axum, In front of Ethio-Telecom</span>
     </div>
     <div class="gh-tb-right">
-      <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank" class="gh-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://t.me/Geezhospital_bot" target="_blank" class="gh-social-link" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
-      <a href="https://linktr.ee/geezhospital" target="_blank" class="gh-social-link" aria-label="Patient Survey"><i class="fas fa-poll"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank" class="gh-social-link"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://t.me/Geezhospital_bot" target="_blank" class="gh-social-link"><i class="fab fa-telegram-plane"></i></a>
+      <a href="https://linktr.ee/geezhospital" target="_blank" class="gh-social-link"><i class="fas fa-poll"></i></a>
       <div class="gh-emergency-pill"><div class="gh-pulse-dot"></div> 24/7 Emergency</div>
     </div>
   </div>
 </div>
-
-<!-- ════════════════════════════════════════
-     STEP 3: PREMIUM STICKY NAVIGATION
-     (replaces old site-header)
-════════════════════════════════════════ -->
+<!-- PREMIUM STICKY NAV -->
 <nav class="gh-sitenav" id="ghSiteNav" role="navigation" aria-label="Main navigation">
   <div class="gh-nav-inner">
-
-    <!-- Logo -->
     <a href="index.html" class="gh-logo-wrap">
       <img src="images/logo.png" alt="Geez Hospital Logo" class="gh-logo-img"
-     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-<div class="gh-logo-mark" style="display:none">G</div>
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="gh-logo-mark" style="display:none">G</div>
       <div class="gh-logo-text">
         <span class="gh-logo-en">GEEZ HOSPITAL</span>
         <span class="gh-logo-sub">ግዕዝ ሆስፒታል · Axum</span>
       </div>
     </a>
-
-    <!-- Nav list — all original mega-menu content preserved -->
     <ul class="gh-nav-list" id="ghMainNav">
-
-      <li class="gh-nav-item">
-        <a href="index.html" class="gh-nav-link" data-translate="home">Home</a>
-      </li>
-
-      <!-- SERVICES -->
+      <li class="gh-nav-item"><a href="index.html" class="gh-nav-link">Home</a></li>
       <li class="gh-nav-item">
         <a href="services.html" class="gh-nav-link">Services <i class="fas fa-chevron-down"></i></a>
         <div class="gh-mega" style="grid-template-columns:repeat(3,1fr)">
           <div class="gh-mega-header">Medical Services</div>
           <a href="services.html?service=internal-medicine" class="gh-mega-item"><i class="fas fa-user-md"></i> Internal Medicine</a>
-          <a href="services.html?service=cardiology"        class="gh-mega-item"><i class="fas fa-heartbeat"></i> Cardiology</a>
-          <a href="services.html?service=general-surgery"   class="gh-mega-item"><i class="fas fa-cut"></i> General Surgery</a>
-          <a href="services.html?service=pediatrics"        class="gh-mega-item"><i class="fas fa-baby"></i> Pediatrics</a>
-          <a href="services.html?service=obsgyn"            class="gh-mega-item"><i class="fas fa-venus"></i> Obstetrics &amp; Gynecology</a>
-          <a href="services.html?service=neurosurgery"      class="gh-mega-item"><i class="fas fa-brain"></i> Neurosurgery</a>
-          <a href="services.html?service=orthopedics"       class="gh-mega-item"><i class="fas fa-bone"></i> Orthopedics</a>
-          <a href="services.html?service=dermatology"       class="gh-mega-item"><i class="fas fa-spa"></i> Dermatology</a>
-          <a href="services.html?service=ent"               class="gh-mega-item"><i class="fas fa-ear"></i> ENT</a>
-          <a href="services.html?service=dental"            class="gh-mega-item"><i class="fas fa-tooth"></i> Dental</a>
-          <a href="services.html?service=radiology"         class="gh-mega-item"><i class="fas fa-x-ray"></i> Radiology</a>
-          <a href="services.html?service=laboratory"        class="gh-mega-item"><i class="fas fa-flask"></i> Laboratory</a>
-          <a href="services.html?service=psychiatry"        class="gh-mega-item"><i class="fas fa-head-side-virus"></i> Psychiatry</a>
-          <a href="services.html?service=physiotherapy"     class="gh-mega-item"><i class="fas fa-walking"></i> Physiotherapy</a>
-          <a href="services.html?service=anesthesia"        class="gh-mega-item"><i class="fas fa-procedures"></i> Anesthesia &amp; Pain</a>
-          <a href="services.html?service=maternity"         class="gh-mega-item"><i class="fas fa-child"></i> Maternity</a>
-          <a href="services.html?service=pharmacy-ambulance"class="gh-mega-item"><i class="fas fa-pills"></i> Pharmacy &amp; Ambulance</a>
+          <a href="services.html?service=cardiology" class="gh-mega-item"><i class="fas fa-heartbeat"></i> Cardiology</a>
+          <a href="services.html?service=general-surgery" class="gh-mega-item"><i class="fas fa-cut"></i> General Surgery</a>
+          <a href="services.html?service=pediatrics" class="gh-mega-item"><i class="fas fa-baby"></i> Pediatrics</a>
+          <a href="services.html?service=obsgyn" class="gh-mega-item"><i class="fas fa-venus"></i> Obstetrics &amp; Gynecology</a>
+          <a href="services.html?service=neurosurgery" class="gh-mega-item"><i class="fas fa-brain"></i> Neurosurgery</a>
+          <a href="services.html?service=orthopedics" class="gh-mega-item"><i class="fas fa-bone"></i> Orthopedics</a>
+          <a href="services.html?service=dermatology" class="gh-mega-item"><i class="fas fa-spa"></i> Dermatology</a>
+          <a href="services.html?service=ent" class="gh-mega-item"><i class="fas fa-ear"></i> ENT</a>
+          <a href="services.html?service=dental" class="gh-mega-item"><i class="fas fa-tooth"></i> Dental</a>
+          <a href="services.html?service=radiology" class="gh-mega-item"><i class="fas fa-x-ray"></i> Radiology</a>
+          <a href="services.html?service=laboratory" class="gh-mega-item"><i class="fas fa-flask"></i> Laboratory</a>
+          <a href="services.html?service=psychiatry" class="gh-mega-item"><i class="fas fa-head-side-virus"></i> Psychiatry</a>
+          <a href="services.html?service=physiotherapy" class="gh-mega-item"><i class="fas fa-walking"></i> Physiotherapy</a>
+          <a href="services.html?service=maternity" class="gh-mega-item"><i class="fas fa-child"></i> Maternity</a>
+          <a href="services.html?service=pharmacy-ambulance" class="gh-mega-item"><i class="fas fa-pills"></i> Pharmacy &amp; Ambulance</a>
           <a href="services.html" class="gh-mega-item gh-mega-all"><i class="fas fa-plus"></i> All 18+ Services →</a>
         </div>
       </li>
-
-      <!-- DOCTORS -->
       <li class="gh-nav-item">
         <a href="doctors.html" class="gh-nav-link">Doctors <i class="fas fa-chevron-down"></i></a>
         <div class="gh-mega" style="grid-template-columns:repeat(3,1fr)">
@@ -478,19 +485,13 @@
           <a href="doctors.html" class="gh-mega-item"><i class="fas fa-baby"></i> Dr. Gebreab — Pediatrics</a>
           <a href="doctors.html" class="gh-mega-item"><i class="fas fa-venus"></i> Dr. Henok — OB/GYN</a>
           <a href="doctors.html" class="gh-mega-item"><i class="fas fa-x-ray"></i> Dr. Natnael — Radiology</a>
-          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-baby"></i> Dr. Teklay — Pediatrics</a>
           <a href="doctors.html" class="gh-mega-item"><i class="fas fa-tooth"></i> Dr. Fiseha — Dental</a>
           <a href="doctors.html" class="gh-mega-item"><i class="fas fa-cut"></i> Dr. Yisak — Surgery</a>
           <a href="doctors.html" class="gh-mega-item"><i class="fas fa-bone"></i> Dr. Goytom — Orthopedics</a>
-          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-spa"></i> Dr. Ashenafi — Dermatology</a>
           <a href="doctors.html" class="gh-mega-item"><i class="fas fa-brain"></i> Dr. Berhe — Neurosurgery</a>
-          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-ear"></i> Dr. Wendmu — ENT</a>
-          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-user-md"></i> Dr. Biruk — Internal Med.</a>
           <a href="doctors.html" class="gh-mega-item gh-mega-all"><i class="fas fa-search"></i> All Doctors →</a>
         </div>
       </li>
-
-      <!-- DEPARTMENTS -->
       <li class="gh-nav-item">
         <a href="departments.html" class="gh-nav-link">Departments <i class="fas fa-chevron-down"></i></a>
         <div class="gh-mega" style="grid-template-columns:repeat(3,1fr)">
@@ -506,29 +507,24 @@
           <a href="departments.html" class="gh-mega-item"><i class="fas fa-ear"></i> ENT</a>
           <a href="departments.html" class="gh-mega-item"><i class="fas fa-tooth"></i> Dental</a>
           <a href="departments.html" class="gh-mega-item"><i class="fas fa-brain"></i> Neurosurgery</a>
-          <a href="departments.html" class="gh-mega-item"><i class="fas fa-ribbon"></i> Oncology</a>
           <a href="departments.html" class="gh-mega-item"><i class="fas fa-head-side-virus"></i> Psychiatry</a>
           <a href="departments.html" class="gh-mega-item gh-mega-all"><i class="fas fa-th"></i> All Departments →</a>
         </div>
       </li>
-
-      <!-- MEDIA -->
       <li class="gh-nav-item">
         <a href="news.html" class="gh-nav-link active">Media <i class="fas fa-chevron-down"></i></a>
-        <div class="gh-mega" style="grid-template-columns:repeat(2,1fr);min-width:360px">
+        <div class="gh-mega" style="grid-template-columns:repeat(2,1fr);min-width:340px">
           <div class="gh-mega-header">News &amp; Gallery</div>
-          <a href="news.html"        class="gh-mega-item"><i class="fas fa-newspaper"></i> Latest News</a>
-          <a href="articles.html"    class="gh-mega-item"><i class="fas fa-book-medical"></i> Health Articles</a>
-          <a href="patient-info.html"class="gh-mega-item"><i class="fas fa-info-circle"></i> Patient Information</a>
-          <a href="gallery.html"     class="gh-mega-item"><i class="fas fa-images"></i> Photo Gallery</a>
+          <a href="news.html" class="gh-mega-item"><i class="fas fa-newspaper"></i> Latest News</a>
+          <a href="articles.html" class="gh-mega-item"><i class="fas fa-book-medical"></i> Health Articles</a>
+          <a href="patient-info.html" class="gh-mega-item"><i class="fas fa-info-circle"></i> Patient Information</a>
+          <a href="gallery.html" class="gh-mega-item"><i class="fas fa-images"></i> Photo Gallery</a>
           <a href="https://linktr.ee/geezhospital" target="_blank" class="gh-mega-item"><i class="fas fa-poll"></i> Patient Survey</a>
         </div>
       </li>
-
-      <li class="gh-nav-item"><a href="vacancy.html" class="gh-nav-link">Vacancy</a></li>
       <li class="gh-nav-item"><a href="facilities.html" class="gh-nav-link">Facilities</a></li>
-      <li class="gh-nav-item"><a href="contact.html" class="gh-nav-link" data-translate="contact">Contact Us</a></li>
-
+      <li class="gh-nav-item"><a href="vacancy.html" class="gh-nav-link"><i class="fas fa-briefcase" style="font-size:.75rem;margin-right:3px"></i>Vacancy</a></li>
+      <li class="gh-nav-item"><a href="contact.html" class="gh-nav-link">Contact Us</a></li>
       <li class="gh-nav-item">
         <select id="language-switcher" class="gh-lang-select" aria-label="Language">
           <option value="eng">English</option>
@@ -537,9 +533,8 @@
         </select>
       </li>
     </ul>
-
     <div class="gh-nav-actions">
-      <button class="gh-btn-search" id="ghSearchBtn" aria-label="Open search"><i class="fas fa-search"></i></button>
+      <button class="gh-btn-search" id="ghSearchBtn" aria-label="Search"><i class="fas fa-search"></i></button>
       <a href="contact.html" class="gh-btn-book">Book Appointment</a>
       <button class="gh-hamburger" id="ghHamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -548,10 +543,21 @@
   </div>
 </nav>
 
+
+<div class="top-bar-right">
+      <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://t.me/Geezhospital_bot" target="_blank" class="social-link" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+      <a href="https://linktr.ee/geezhospital" target="_blank" class="social-link" aria-label="Survey"><i class="fas fa-poll"></i></a>
+      <a href="contact.html" class="top-bar-cta">Book Appointment</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
 <!-- Page Hero -->
 <section class="page-hero">
   <div class="container">
-    <h1>News &amp; Events — Geez Hospital, Axum</h1>
+    <h2>News &amp; Events</h2>
     <p>Stay updated with the latest announcements, health tips, and events from Geez Hospital.</p>
   </div>
 </section>
@@ -616,7 +622,8 @@
     </div>
     <div class="footer-col">
       <h4>Quick Links</h4>
-      <ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="doctors.html">Doctors</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact</a></li></ul>
+      <ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="doctors.html">Doctors</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="news.html">News</a></li><li><a href="vacancy.html">Vacancy</a></li>
+        <li><a href="contact.html">Contact</a></li></ul>
     </div>
     <div class="footer-col">
       <h4>Top Services</h4>
@@ -634,7 +641,7 @@
   <div class="footer-bottom">
     <div class="container footer-bottom-inner">
       <p>© 2026 Geez Hospital. All rights reserved.</p>
-      <p class="footer-dev">Developed by <a href="tel:+251911179955">Aser Tech | Legesse Teklu Gebrekidan — +251 911 179 955</a></p>
+      <p class="footer-dev">Developed by <a href="tel:+251911179955">Legesse Teklu Gebrekidan</a></p>
     </div>
   </div>
 </footer>
@@ -753,7 +760,9 @@ function renderCards(articles) {
     const readBtn = document.createElement('a');
     readBtn.className = 'news-read-more';
     readBtn.href = '#';
-    if (art.link) {
+    if (art.slug) {
+      readBtn.href = `news/${art.slug}.html`;
+    } else if (art.link) {
       readBtn.href = art.link;
     } else {
       readBtn.addEventListener('click', e => { e.preventDefault(); openModal(art); });
@@ -960,7 +969,6 @@ loadNews();
   display: flex;
   align-items: center;
   gap: 10px;
-  flex-direction: row-reverse;
 }
 .fab-label {
   background: #0f1f2e;
@@ -1077,46 +1085,76 @@ function toggleFabForm() {
   form.style.display = form.style.display === 'none' ? 'block' : 'none';
 }
 </script>
-
-<!-- Hamburger / mobile nav -->
 <script>
-(function() {
+/* Nav hamburger */
+(function(){
   var btn = document.getElementById('ghHamburger');
   var nav = document.getElementById('ghMainNav');
-  if (!btn || !nav) return;
-  btn.addEventListener('click', function() {
-    var open = nav.classList.toggle('gh-open');
-    btn.setAttribute('aria-expanded', open);
-  });
-  // Close when nav link clicked
-  nav.querySelectorAll('.gh-nav-link').forEach(function(link) {
-    link.addEventListener('click', function() {
-      nav.classList.remove('gh-open');
-      btn.setAttribute('aria-expanded', 'false');
+  if(btn && nav){
+    btn.addEventListener('click', function(){
+      var open = nav.classList.toggle('gh-open');
+      btn.setAttribute('aria-expanded', open);
     });
-  });
-  // Sticky nav
+    nav.querySelectorAll('.gh-nav-link').forEach(function(l){
+      l.addEventListener('click', function(){
+        nav.classList.remove('gh-open');
+        btn.setAttribute('aria-expanded','false');
+      });
+    });
+  }
+  /* Sticky shadow */
   var siteNav = document.getElementById('ghSiteNav');
-  if (siteNav) {
-    window.addEventListener('scroll', function() {
+  if(siteNav){
+    window.addEventListener('scroll', function(){
       siteNav.classList.toggle('scrolled', window.scrollY > 8);
-    }, { passive: true });
+    }, {passive:true});
+  }
+  /* Search btn */
+  var searchBtn = document.getElementById('ghSearchBtn');
+  if(searchBtn){
+    searchBtn.addEventListener('click', function(){
+      var overlay = document.getElementById('ghSearchOverlay');
+      if(overlay){ overlay.classList.add('open'); document.body.style.overflow='hidden'; }
+      setTimeout(function(){ var inp=document.getElementById('ghOverlayInput'); if(inp) inp.focus(); },60);
+    });
+  }
+  var overlay = document.getElementById('ghSearchOverlay');
+  if(overlay){
+    overlay.addEventListener('click', function(e){ if(e.target===overlay){ overlay.classList.remove('open'); document.body.style.overflow=''; } });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ overlay.classList.remove('open'); document.body.style.overflow=''; } });
+    var inp = document.getElementById('ghOverlayInput');
+    if(inp){
+      inp.addEventListener('input', function(){
+        var q=this.value.toLowerCase().trim();
+        var el=document.getElementById('ghOverlayResults');
+        if(!el) return;
+        if(q.length<2){el.innerHTML='<div class="gh-search-empty"><i class="fas fa-search"></i>Start typing to search…</div>';return;}
+        var GH_S=[
+          {label:'Cardiology',icon:'fa-heartbeat',url:'services.html?service=cardiology'},
+          {label:'General Surgery',icon:'fa-cut',url:'services.html?service=general-surgery'},
+          {label:'Pediatrics',icon:'fa-baby',url:'services.html?service=pediatrics'},
+          {label:'Internal Medicine',icon:'fa-user-md',url:'services.html?service=internal-medicine'},
+          {label:'Obstetrics & Gynecology',icon:'fa-venus',url:'services.html?service=obsgyn'},
+          {label:'Radiology & CT Scan',icon:'fa-x-ray',url:'services.html?service=radiology'},
+          {label:'Laboratory',icon:'fa-flask',url:'services.html?service=laboratory'},
+          {label:'Emergency 24/7',icon:'fa-truck-medical',url:'tel:+251920008338'},
+          {label:'Book Appointment',icon:'fa-calendar-check',url:'contact.html'},
+          {label:'Vacancy',icon:'fa-briefcase',url:'vacancy.html'},
+          {label:'Doctors',icon:'fa-user-doctor',url:'doctors.html'},
+          {label:'Departments',icon:'fa-th',url:'departments.html'},
+          {label:'Gallery',icon:'fa-images',url:'gallery.html'},
+          {label:'News',icon:'fa-newspaper',url:'news.html'},
+          {label:'Facilities',icon:'fa-hospital',url:'facilities.html'},
+          {label:'Contact Us',icon:'fa-phone',url:'contact.html'},
+        ];
+        var hits=GH_S.filter(function(d){return d.label.toLowerCase().includes(q);});
+        el.innerHTML=hits.length
+          ?hits.map(function(h){return '<a href="'+h.url+'" class="gh-search-result"><div class="gh-result-icon"><i class="fas '+h.icon+'"></i></div><div class="gh-result-label">'+h.label+'</div><i class="fas fa-arrow-right gh-result-arrow"></i></a>';}).join('')
+          :'<div class="gh-search-empty"><i class="fas fa-search"></i>No results for <strong>'+this.value+'</strong></div>';
+      });
+    }
   }
 })();
 </script>
-
-<!-- Tawk.to Live Chat -->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6a1156823deb151c33b6ccc9/1jp9rjs6e';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!-- End Tawk.to -->
 </body>
 </html>
