@@ -239,6 +239,44 @@
       color: #fff;
     }
 
+    /* ── Quick Share Row (card footer) ── */
+    .news-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: auto;
+    }
+    .card-share-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .card-share-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid var(--news-border);
+      background: #fff;
+      color: var(--news-gray);
+      font-size: .78rem;
+      cursor: pointer;
+      transition: all .2s;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .card-share-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,.12);
+    }
+    .card-share-btn.share-fb:hover { background: #1877F2; color: #fff; border-color: #1877F2; }
+    .card-share-btn.share-tg:hover { background: #0088cc; color: #fff; border-color: #0088cc; }
+    .card-share-btn.share-wa:hover { background: #25D366; color: #fff; border-color: #25D366; }
+    .card-share-btn.share-copy.copied { background: var(--news-teal); color: #fff; border-color: var(--news-teal); }
+
     /* ── Featured (first card spans 2 cols) ── */
     .news-card.featured {
       grid-column: 1 / -1;
@@ -768,7 +806,36 @@ function renderCards(articles) {
       readBtn.addEventListener('click', e => { e.preventDefault(); openModal(art); });
     }
     readBtn.innerHTML = `Read More <i class="fas fa-arrow-right"></i>`;
-    bodyDiv.appendChild(readBtn);
+
+    // Footer row: Read More + quick Share/Copy (only when a real article URL exists)
+    const footer = document.createElement('div');
+    footer.className = 'news-card-footer';
+    footer.appendChild(readBtn);
+    if (art.slug) {
+      const artUrl = `https://geezhospital.com/news/${art.slug}.html`;
+      const shareRow = document.createElement('div');
+      shareRow.className = 'card-share-row';
+      shareRow.innerHTML = `
+        <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(artUrl)}" target="_blank" rel="noopener" class="card-share-btn share-fb" title="Share on Facebook" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://t.me/share/url?url=${encodeURIComponent(artUrl)}&text=${encodeURIComponent(art.title)}" target="_blank" rel="noopener" class="card-share-btn share-tg" title="Share on Telegram" aria-label="Share on Telegram"><i class="fab fa-telegram-plane"></i></a>
+        <a href="https://wa.me/?text=${encodeURIComponent(art.title + ' — ' + artUrl)}" target="_blank" rel="noopener" class="card-share-btn share-wa" title="Share on WhatsApp" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <button type="button" class="card-share-btn share-copy" title="Copy Link" aria-label="Copy Link"><i class="fas fa-link"></i></button>
+      `;
+      const copyBtn = shareRow.querySelector('.share-copy');
+      copyBtn.addEventListener('click', e => {
+        e.preventDefault(); e.stopPropagation();
+        navigator.clipboard.writeText(artUrl).then(() => {
+          const icon = copyBtn.querySelector('i');
+          icon.className = 'fas fa-check';
+          copyBtn.classList.add('copied');
+          setTimeout(() => { icon.className = 'fas fa-link'; copyBtn.classList.remove('copied'); }, 1800);
+        });
+      });
+      shareRow.querySelectorAll('a').forEach(a => a.addEventListener('click', e => e.stopPropagation()));
+      footer.appendChild(shareRow);
+    }
+
+    bodyDiv.appendChild(footer);
     card.appendChild(sliderDiv);
     card.appendChild(bodyDiv);
     grid.appendChild(card);
