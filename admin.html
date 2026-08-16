@@ -182,7 +182,7 @@ a{text-decoration:none;color:inherit}
     <div id="tab-publish">
       <div class="section-head">
         <h2>Publish a New Article</h2>
-        <p>ዜና ፀሓፍ — ስእሊ ካብ ኮምፕዩተርካ ቀጥታ upload ግበር — Publish ጠውቕ።</p>
+        <p>ዜና ጸሓፍ — ስእሊ ካብ ኮምፕዩተርካ ቀጥታ upload ግበር — Publish ጠውቕ።</p>
       </div>
       <div id="publishStatus" class="status-banner"></div>
       <div class="progress-bar-wrap" id="publishProgress"><div class="progress-bar" id="progressBar" style="width:0%"></div></div>
@@ -190,7 +190,7 @@ a{text-decoration:none;color:inherit}
       <div class="card">
         <div class="form-group">
           <label for="artTitle">Article Title *</label>
-          <input type="text" id="artTitle" placeholder="ዝደለኻዮ ኣርእስቲ ኣብዚ ፀሓፍ፣ e.g. ግዕዝ ሆስፒታል ዘመናዊ P25 Elite SonoScape  ultrasound ኣታኣታትዩ">
+          <input type="text" id="artTitle" placeholder="ዝደለኻዮ ኣርእስቲ ኣብዚ ፀሓፍ፤ e.g. ግዕዝ ሆስፒታል ዘመናዊ P25 Elite SonoScape ultrasound ኣታኣታቲዩ">
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
           <div class="form-group">
@@ -240,7 +240,7 @@ a{text-decoration:none;color:inherit}
     <div id="tab-manage" style="display:none">
       <div class="section-head">
         <h2>Manage Articles</h2>
-        <p>ዝሓለፉ ዜናታት ምርኣይን ምድምሳስን።</p>
+        <p>ዝሓለፉ ዜናታት ምርኣይን ምሰራዝን።</p>
       </div>
       <div id="manageStatus" class="status-banner"></div>
       <div class="card" id="articleListCard">
@@ -264,7 +264,7 @@ a{text-decoration:none;color:inherit}
             <input type="text" id="vacTitle" placeholder="e.g. Internal Medicine Specialist">
           </div>
           <div class="form-group">
-            <label for="vacTitleTig">ስም ስራሕ (ትግርኛ)</label>
+            <label for="vacTitleTig">ሽም ስራሕ (ትግርኛ)</label>
             <input type="text" id="vacTitleTig" placeholder="ናይ ውሽጣዊ ሕማም ስፔሻሊስት">
           </div>
         </div>
@@ -313,16 +313,16 @@ a{text-decoration:none;color:inherit}
         </div>
 
         <div class="form-group">
-          <label for="vacReqs">Requirements / ረቛሒ (ሓደ ሓደ ሸቀጥ ምፍላይ) *</label>
+          <label for="vacReqs">Requirements / ረቛሒ (ረቛሒታት ምፍላይ) *</label>
           <textarea id="vacReqs" rows="5" placeholder="MD degree with specialization in Internal Medicine&#10;Minimum 2 years experience&#10;Valid medical license&#10;Good communication skills"></textarea>
-          <p style="font-size:.75rem;color:var(--gray-400);margin-top:4px"><i class="fas fa-info-circle"></i> ነፍሲ ወከፍ requirement ሓደ ሸቀጥ (Enter)</p>
+          <p style="font-size:.75rem;color:var(--gray-400);margin-top:4px"><i class="fas fa-info-circle"></i> ነፍሲ ወከፍ requirement ረቛሒ (Enter)</p>
         </div>
 
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
           <div class="form-group">
-            <label for="vacSalary">Salary / ደሞዝ</label>
+            <label for="vacSalary">Salary / መሃያ</label>
             <select id="vacSalary">
-              <option value="negotiable">Negotiable / ብምርድዳእ</option>
+              <option value="negotiable">Negotiable / ብስምምዕ</option>
               <option value="scale">As per hospital scale</option>
               <option value="custom">Custom amount</option>
             </select>
@@ -336,7 +336,7 @@ a{text-decoration:none;color:inherit}
         <!-- How to Apply -->
         <div style="background:var(--gray-50);border-radius:8px;padding:18px;margin-bottom:20px">
           <p style="font-size:.82rem;font-weight:700;color:var(--gray-500);text-transform:uppercase;letter-spacing:.05em;margin-bottom:14px">
-            <i class="fas fa-paper-plane"></i> How to Apply / ኣቐራርባ ሰነዳት
+            <i class="fas fa-paper-plane"></i> How to Apply / መረዳእታ ከመይ ተመልክት?
           </p>
           <div class="form-group">
             <label for="vacEmail">Apply by Email</label>
@@ -349,20 +349,20 @@ a{text-decoration:none;color:inherit}
           <div style="display:flex;align-items:center;gap:10px">
             <input type="checkbox" id="vacDirect" checked style="width:auto">
             <label for="vacDirect" style="font-size:.85rem;font-weight:500;color:var(--gray-900);text-transform:none;letter-spacing:0">
-              Accept in-person applications / ቀጥታ ሆስፒታል ምምጻእ
+              Accept in-person applications / ብቐጥታ ሆስፒታል ብምምጻእ
             </label>
           </div>
         </div>
 
         <button class="btn-primary" id="vacPostBtn" onclick="postVacancy()">
-          <i class="fas fa-paper-plane"></i> Post Vacancy / ዕድል ልጠፍ
+          <i class="fas fa-paper-plane"></i> Post Vacancy / ስራሕ ዕድል ሊስታ ለጢፍ
         </button>
       </div>
 
       <!-- Manage vacancies -->
       <div class="section-head" style="margin-top:32px">
         <h2>Active Vacancies</h2>
-        <p>ሕጂ ዘለዉ ናይ ስራሕ ዕድላት</p>
+        <p>ሕዚ ዘለዉ ናይ ክፍቲ ናይ ስራሕ ዕድላት</p>
       </div>
       <div id="vacManageStatus" class="status-banner"></div>
       <div class="card">
@@ -567,8 +567,7 @@ async function publishArticle(){
     // 4. Write news.json
     const newJson=JSON.stringify({articles},null,2);
     const newContent=btoa(unescape(encodeURIComponent(newJson)));
-    const putResult=await ghPut('data/news.json',newContent,sha,`Publish article: ${title}`);
-    let latestSha=putResult&&putResult.content?putResult.content.sha:null;
+    await ghPut('data/news.json',newContent,sha,`Publish article: ${title}`);
     setProgress(85);
     // 5. Create individual SEO article page
     showStatus('publishStatus','loading','Creating SEO article page...');
@@ -582,14 +581,10 @@ async function publishArticle(){
       const articlePageHtml = generateArticlePage(newArticle, coverImg);
       const articleContent  = btoa(unescape(encodeURIComponent(articlePageHtml)));
       await ghPut(`news/${slug}.html`, articleContent, null, `Create article page: ${slug}`);
-      // Update news.json with slug (must use the LATEST sha from step 4's write, not null)
-      if(!latestSha){
-        const refetch=await ghGet('data/news.json');
-        latestSha=refetch.sha;
-      }
+      // Update news.json with slug
       const updatedJson = JSON.stringify({articles: articles.map(a => a.id===newArticle.id ? {...a,slug} : a)},null,2);
       const updatedContent = btoa(unescape(encodeURIComponent(updatedJson)));
-      await ghPut('data/news.json', updatedContent, latestSha, `Add slug to article: ${title}`);
+      await ghPut('data/news.json', updatedContent, null, `Add slug to article: ${title}`);
     } catch(e) { console.warn('Article page creation failed:',e.message); }
     setProgress(100);
     showStatus('publishStatus','success','✅ Article published! ድሕሪ 1 ደቒቓ ኣብ news page ይርኤ።');
@@ -796,226 +791,177 @@ async function deleteVacancy(id) {
 
 // ── Generate individual SEO article page ──
 function generateArticlePage(art, coverImg) {
-  const safeTitle   = (art.title||'').replace(/"/g,'&quot;').replace(/</g,'&lt;');
-  const safeExcerpt = (art.excerpt||'').replace(/"/g,'&quot;').replace(/</g,'&lt;');
-  const safeBody    = (art.body||art.excerpt||'').replace(/\n/g,'<br>');
-  const fmtDate     = art.date ? new Date(art.date).toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'}) : '';
-  const images      = art.images || [];
-  const siteBase    = `https://${cfg.owner}.github.io/${cfg.repo}`;
-  const canonical   = `https://geezhospital.com/news/${art.slug||art.id}.html`;
+  var safeTitle   = (art.title||'').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+  var safeExcerpt = (art.excerpt||'').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+  var safeBody    = (art.body||art.excerpt||'').replace(/\n/g,'<br>');
+  var fmtDate     = art.date ? new Date(art.date).toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'}) : '';
+  var images      = art.images || [];
+  var canonical   = 'https://geezhospital.com/news/' + (art.slug||art.id) + '.html';
+  var catClass    = art.category === 'Announcement' ? ' gold' : '';
+  var catIcon     = art.category === 'Event' ? 'calendar-alt' : art.category === 'Health Tip' ? 'heart-pulse' : 'newspaper';
 
-  const imgSlider = images.length > 0
-    ? images.map((src,i) => `
-      <div class="slide${i===0?' active':''}">
-        <img src="https://raw.githubusercontent.com/${cfg.owner}/${cfg.repo}/main/${src}"
-             alt="${safeTitle} — photo ${i+1}" loading="${i===0?'eager':'lazy'}">
-      </div>`).join('')
-    : `<div class="slide active"><div class="no-img"><i class="fas fa-newspaper"></i></div></div>`;
+  // Build image slider HTML
+  var imgSlider = '';
+  if (images.length > 0) {
+    images.forEach(function(src, i) {
+      var raw = 'https://raw.githubusercontent.com/' + cfg.owner + '/' + cfg.repo + '/main/' + src;
+      imgSlider += '<div class="slide' + (i===0?' active':'') + '">';
+      imgSlider += '<img src="' + raw + '" alt="' + safeTitle + ' photo ' + (i+1) + '" loading="' + (i===0?'eager':'lazy') + '">';
+      imgSlider += '</div>';
+    });
+  } else {
+    imgSlider = '<div class="slide active"><div class="no-img"><i class="fas fa-newspaper"></i></div></div>';
+  }
 
-  const schemaSameAs = images.length > 0
-    ? `"image":"https://raw.githubusercontent.com/${cfg.owner}/${cfg.repo}/main/${images[0]}",` : '';
+  // Slider controls
+  var sliderControls = '';
+  if (images.length > 1) {
+    var dots = '';
+    images.forEach(function(_, i) {
+      dots += '<span class="' + (i===0?'active':'') + '" onclick="artGoSlide(' + i + ')"></span>';
+    });
+    sliderControls =
+      '<button class="slider-arrow prev" onclick="artSlide(-1)"><i class="fas fa-chevron-left"></i></button>' +
+      '<button class="slider-arrow next" onclick="artSlide(1)"><i class="fas fa-chevron-right"></i></button>' +
+      '<div class="slider-dots" id="artDots">' + dots + '</div>';
+  }
 
-  return `<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>${safeTitle} | Geez Hospital — Axum, Tigray</title>
-<meta name="description" content="${safeExcerpt}">
-<meta name="keywords" content="${safeTitle}, Geez Hospital, Hospital Axum, ${art.category||'News'} Axum, ሆስፒታል ዜና ኣክሱም, Tigray Health News">
-<link rel="canonical" href="${canonical}">
-<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-<meta name="author" content="Geez Hospital — Axum, Tigray">
-<meta property="og:type" content="article">
-<meta property="og:url" content="${canonical}">
-<meta property="og:title" content="${safeTitle} | Geez Hospital">
-<meta property="og:description" content="${safeExcerpt}">
-<meta property="og:image" content="${coverImg}">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:site_name" content="Geez Hospital">
-<meta property="article:published_time" content="${art.date}">
-<meta property="article:section" content="${art.category||'News'}">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="${safeTitle} | Geez Hospital">
-<meta name="twitter:description" content="${safeExcerpt}">
-<meta name="twitter:image" content="${coverImg}">
-<link rel="icon" href="../images/favicon.png" type="image/png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400&family=Figtree:wght@300;400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="../style.css">
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"NewsArticle",
-  "headline":"${safeTitle}",
-  "description":"${safeExcerpt}",
-  ${schemaSameAs}
-  "datePublished":"${art.date}",
-  "dateModified":"${art.date}",
-  "author":{"@type":"Organization","name":"Geez Hospital"},
-  "publisher":{
-    "@type":"Organization",
-    "name":"Geez Hospital",
-    "logo":{"@type":"ImageObject","url":"https://geezhospital.com/images/logo.png"}
-  },
-  "mainEntityOfPage":{"@type":"WebPage","@id":"${canonical}"},
-  "articleSection":"${art.category||'News'}",
-  "keywords":"${safeTitle}, Geez Hospital Axum, Tigray Health"
-}
-<\/script>
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Figtree',system-ui,sans-serif;color:#0F172A;background:#F8FAFB;line-height:1.7}
-a{text-decoration:none;color:inherit}
-/* Top bar */
-.art-topbar{background:#0A1F3D;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
-.art-topbar a{color:rgba(255,255,255,.75);font-size:.78rem;display:flex;align-items:center;gap:6px;transition:color .2s}
-.art-topbar a:hover{color:#fff}
-.art-topbar .logo{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:700;color:#fff}
-.art-topbar .logo span{color:#5FD3D3}
-/* Breadcrumb */
-.breadcrumb{background:#fff;border-bottom:1px solid #EEF2F6;padding:12px 24px}
-.breadcrumb .inner{max-width:860px;margin:0 auto;font-size:.8rem;color:#64748B;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.breadcrumb a{color:#0B7B7B}
-.breadcrumb a:hover{text-decoration:underline}
-/* Article layout */
-.art-wrap{max-width:860px;margin:0 auto;padding:40px 24px 80px}
-/* Category badge */
-.art-badge{display:inline-flex;align-items:center;gap:6px;background:#E8F4F4;color:#0B7B7B;font-size:.72rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:5px 14px;border-radius:999px;margin-bottom:16px}
-.art-badge.gold{background:#FDF6E3;color:#B8860B}
-/* Title */
-.art-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:600;color:#0A1F3D;line-height:1.2;margin-bottom:14px}
-/* Meta */
-.art-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-size:.83rem;color:#64748B;margin-bottom:32px;padding-bottom:20px;border-bottom:1px solid #EEF2F6}
-.art-meta i{color:#0B7B7B}
-/* Image slider */
-.art-slider{position:relative;border-radius:16px;overflow:hidden;margin-bottom:36px;background:#E8F4F4;aspect-ratio:16/9}
-.art-slider .slide{position:absolute;inset:0;opacity:0;transition:opacity .5s}
-.art-slider .slide.active{opacity:1}
-.art-slider img{width:100%;height:100%;object-fit:cover}
-.art-slider .no-img{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;color:#0B7B7B;opacity:.3}
-.slider-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:7px}
-.slider-dots span{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer;transition:.2s}
-.slider-dots span.active{background:#fff;transform:scale(1.3)}
-.slider-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.85);border:none;border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.85rem;color:#0A1F3D;z-index:2;transition:.2s}
-.slider-arrow:hover{background:#fff}
-.slider-arrow.prev{left:12px}
-.slider-arrow.next{right:12px}
-/* Body */
-.art-body{font-size:1rem;color:#1E293B;line-height:1.85;margin-bottom:40px}
-.art-body p{margin-bottom:16px}
-/* Share */
-.art-share{background:#fff;border:1px solid #EEF2F6;border-radius:12px;padding:20px 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:40px}
-.art-share strong{font-size:.85rem;font-weight:600;color:#0A1F3D;margin-right:4px}
-.share-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 18px;border-radius:999px;font-size:.82rem;font-weight:600;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
-.share-fb{background:#1877F2;color:#fff}
-.share-tg{background:#0088cc;color:#fff}
-.share-wa{background:#25D366;color:#fff}
-.share-copy{background:#f1f5f9;color:#475569}
-.share-btn:hover{opacity:.88;transform:translateY(-1px)}
-/* Back btn */
-.art-back{display:inline-flex;align-items:center;gap:8px;background:#0B7B7B;color:#fff;padding:12px 24px;border-radius:999px;font-size:.88rem;font-weight:600;transition:background .2s}
-.art-back:hover{background:#096767}
-/* CTA */
-.art-cta{background:linear-gradient(135deg,#0A1F3D,#0B7B7B);border-radius:16px;padding:32px;text-align:center;color:#fff;margin-bottom:40px}
-.art-cta h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;margin-bottom:8px}
-.art-cta p{font-size:.88rem;color:rgba(255,255,255,.72);margin-bottom:18px}
-.art-cta a{background:#fff;color:#0B7B7B;padding:11px 26px;border-radius:999px;font-weight:700;font-size:.88rem;display:inline-flex;align-items:center;gap:8px}
-</style>
-</head>
-<body>
+  // Schema image
+  var schemaImg = images.length > 0
+    ? '"image":"https://raw.githubusercontent.com/' + cfg.owner + '/' + cfg.repo + '/main/' + images[0] + '",'
+    : '';
 
-<!-- Top bar -->
-<div class="art-topbar">
-  <a href="../index.html" class="logo"><span>Geez</span> Hospital — Axum, Tigray</a>
-  <div style="display:flex;gap:16px">
-    <a href="tel:+251920008338"><i class="fas fa-phone"></i> +251 920 008 338</a>
-    <a href="../contact.html"><i class="fas fa-calendar-check"></i> Book Appointment</a>
-  </div>
-</div>
+  // Share URLs
+  var shareUrl = encodeURIComponent(canonical);
+  var shareText = encodeURIComponent(safeTitle);
 
-<!-- Breadcrumb -->
-<div class="breadcrumb">
-  <div class="inner">
-    <a href="../index.html"><i class="fas fa-home"></i> Home</a>
-    <i class="fas fa-chevron-right" style="font-size:.65rem"></i>
-    <a href="../news.html">News &amp; Events</a>
-    <i class="fas fa-chevron-right" style="font-size:.65rem"></i>
-    <span>${safeTitle.substring(0,50)}${safeTitle.length>50?'…':''}</span>
-  </div>
-</div>
+  var html = '<!DOCTYPE html>\n<html lang="en">\n<head>\n' +
+    '<meta charset="UTF-8">\n' +
+    '<meta name="viewport" content="width=device-width, initial-scale=1.0">\n' +
+    '<title>' + safeTitle + ' | Geez Hospital \u2014 Axum, Tigray</title>\n' +
+    '<meta name="description" content="' + safeExcerpt + '">\n' +
+    '<meta name="keywords" content="' + safeTitle + ', Geez Hospital, Hospital Axum, ' + (art.category||'News') + ' Axum, Tigray Health">\n' +
+    '<link rel="canonical" href="' + canonical + '">\n' +
+    '<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">\n' +
+    '<meta name="author" content="Geez Hospital \u2014 Axum, Tigray">\n' +
+    '<meta property="og:type" content="article">\n' +
+    '<meta property="og:url" content="' + canonical + '">\n' +
+    '<meta property="og:title" content="' + safeTitle + ' | Geez Hospital">\n' +
+    '<meta property="og:description" content="' + safeExcerpt + '">\n' +
+    '<meta property="og:image" content="' + coverImg + '">\n' +
+    '<meta property="og:image:width" content="1200">\n' +
+    '<meta property="og:image:height" content="630">\n' +
+    '<meta property="og:site_name" content="Geez Hospital">\n' +
+    '<meta property="article:published_time" content="' + (art.date||'') + '">\n' +
+    '<meta name="twitter:card" content="summary_large_image">\n' +
+    '<meta name="twitter:title" content="' + safeTitle + ' | Geez Hospital">\n' +
+    '<meta name="twitter:description" content="' + safeExcerpt + '">\n' +
+    '<meta name="twitter:image" content="' + coverImg + '">\n' +
+    '<link rel="icon" href="../images/favicon.png" type="image/png">\n' +
+    '<link rel="preconnect" href="https://fonts.googleapis.com">\n' +
+    '<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">\n' +
+    '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">\n' +
+    '<link rel="stylesheet" href="../style.css">\n' +
+    '<script type="application/ld+json">\n' +
+    '{"@context":"https://schema.org","@type":"NewsArticle",' +
+    '"headline":"' + safeTitle + '",' +
+    '"description":"' + safeExcerpt + '",' +
+    schemaImg +
+    '"datePublished":"' + (art.date||'') + '",' +
+    '"dateModified":"' + (art.date||'') + '",' +
+    '"author":{"@type":"Organization","name":"Geez Hospital"},' +
+    '"publisher":{"@type":"Organization","name":"Geez Hospital","logo":{"@type":"ImageObject","url":"https://geezhospital.com/images/logo.png"}},' +
+    '"mainEntityOfPage":{"@type":"WebPage","@id":"' + canonical + '"},' +
+    '"articleSection":"' + (art.category||'News') + '"}\n' +
+    '<\/script>\n' +
+    '<style>\n' +
+    '*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}\n' +
+    'body{font-family:\'Figtree\',system-ui,sans-serif;color:#0F172A;background:#F8FAFB;line-height:1.7}\n' +
+    'a{text-decoration:none;color:inherit}\n' +
+    '.art-topbar{background:#0A1F3D;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}\n' +
+    '.art-topbar a{color:rgba(255,255,255,.75);font-size:.78rem;display:flex;align-items:center;gap:6px;transition:color .2s}\n' +
+    '.art-topbar a:hover{color:#fff}\n' +
+    '.art-topbar .logo{font-family:\'Cormorant Garamond\',serif;font-size:1.05rem;font-weight:700;color:#fff}\n' +
+    '.art-topbar .logo span{color:#5FD3D3}\n' +
+    '.breadcrumb{background:#fff;border-bottom:1px solid #EEF2F6;padding:12px 24px}\n' +
+    '.breadcrumb .inner{max-width:860px;margin:0 auto;font-size:.8rem;color:#64748B;display:flex;align-items:center;gap:8px;flex-wrap:wrap}\n' +
+    '.breadcrumb a{color:#0B7B7B}\n' +
+    '.art-wrap{max-width:860px;margin:0 auto;padding:40px 24px 80px}\n' +
+    '.art-badge{display:inline-flex;align-items:center;gap:6px;background:#E8F4F4;color:#0B7B7B;font-size:.72rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:5px 14px;border-radius:999px;margin-bottom:16px}\n' +
+    '.art-badge.gold{background:#FDF6E3;color:#B8860B}\n' +
+    '.art-title{font-family:\'Cormorant Garamond\',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:600;color:#0A1F3D;line-height:1.2;margin-bottom:14px}\n' +
+    '.art-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-size:.83rem;color:#64748B;margin-bottom:32px;padding-bottom:20px;border-bottom:1px solid #EEF2F6}\n' +
+    '.art-meta i{color:#0B7B7B}\n' +
+    '.art-slider{position:relative;border-radius:16px;overflow:hidden;margin-bottom:36px;background:#E8F4F4;aspect-ratio:16/9}\n' +
+    '.art-slider .slide{position:absolute;inset:0;opacity:0;transition:opacity .5s}\n' +
+    '.art-slider .slide.active{opacity:1}\n' +
+    '.art-slider img{width:100%;height:100%;object-fit:cover}\n' +
+    '.art-slider .no-img{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;color:#0B7B7B;opacity:.3}\n' +
+    '.slider-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:7px}\n' +
+    '.slider-dots span{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer;transition:.2s}\n' +
+    '.slider-dots span.active{background:#fff;transform:scale(1.3)}\n' +
+    '.slider-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.85);border:none;border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.85rem;color:#0A1F3D;z-index:2;transition:.2s}\n' +
+    '.slider-arrow.prev{left:12px}.slider-arrow.next{right:12px}\n' +
+    '.art-body{font-size:1rem;color:#1E293B;line-height:1.85;margin-bottom:40px}\n' +
+    '.art-share{background:#fff;border:1px solid #EEF2F6;border-radius:12px;padding:20px 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:40px}\n' +
+    '.share-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 18px;border-radius:999px;font-size:.82rem;font-weight:600;cursor:pointer;border:none;transition:all .2s;text-decoration:none}\n' +
+    '.share-fb{background:#1877F2;color:#fff}.share-tg{background:#0088cc;color:#fff}.share-wa{background:#25D366;color:#fff}.share-copy{background:#f1f5f9;color:#475569}\n' +
+    '.share-btn:hover{opacity:.88;transform:translateY(-1px)}\n' +
+    '.art-back{display:inline-flex;align-items:center;gap:8px;background:#0B7B7B;color:#fff;padding:12px 24px;border-radius:999px;font-size:.88rem;font-weight:600;transition:background .2s}\n' +
+    '.art-back:hover{background:#096767}\n' +
+    '.art-cta{background:linear-gradient(135deg,#0A1F3D,#0B7B7B);border-radius:16px;padding:32px;text-align:center;color:#fff;margin-bottom:40px}\n' +
+    '.art-cta h3{font-family:\'Cormorant Garamond\',serif;font-size:1.5rem;margin-bottom:8px}\n' +
+    '.art-cta p{font-size:.88rem;color:rgba(255,255,255,.72);margin-bottom:18px}\n' +
+    '.art-cta a{background:#fff;color:#0B7B7B;padding:11px 26px;border-radius:999px;font-weight:700;font-size:.88rem;display:inline-flex;align-items:center;gap:8px}\n' +
+    '<\/style>\n' +
+    '<\/head>\n<body>\n' +
+    '<div class="art-topbar">\n' +
+    '  <a href="../index.html" class="logo"><span>Geez<\/span> Hospital &mdash; Axum, Tigray<\/a>\n' +
+    '  <div style="display:flex;gap:16px">\n' +
+    '    <a href="tel:+251920008338"><i class="fas fa-phone"><\/i> +251 920 008 338<\/a>\n' +
+    '    <a href="../contact.html"><i class="fas fa-calendar-check"><\/i> Book Appointment<\/a>\n' +
+    '  <\/div>\n<\/div>\n' +
+    '<div class="breadcrumb"><div class="inner">\n' +
+    '  <a href="../index.html"><i class="fas fa-home"><\/i> Home<\/a>\n' +
+    '  <i class="fas fa-chevron-right" style="font-size:.65rem"><\/i>\n' +
+    '  <a href="../news.html">News &amp; Events<\/a>\n' +
+    '  <i class="fas fa-chevron-right" style="font-size:.65rem"><\/i>\n' +
+    '  <span>' + safeTitle.substring(0,50) + (safeTitle.length>50?'&hellip;':'') + '<\/span>\n' +
+    '<\/div><\/div>\n' +
+    '<div class="art-wrap">\n' +
+    '  <div class="art-badge' + catClass + '"><i class="fas fa-' + catIcon + '"><\/i> ' + (art.category||'News') + '<\/div>\n' +
+    '  <h1 class="art-title">' + safeTitle + '<\/h1>\n' +
+    '  <div class="art-meta">\n' +
+    '    <span><i class="fas fa-calendar-alt"><\/i> ' + fmtDate + '<\/span>\n' +
+    '    <span><i class="fas fa-hospital"><\/i> Geez Hospital, Axum<\/span>\n' +
+    '    <span><i class="fas fa-tag"><\/i> ' + (art.category||'News') + '<\/span>\n' +
+    '  <\/div>\n' +
+    '  <div class="art-slider" id="artSlider">' + imgSlider + sliderControls + '<\/div>\n' +
+    '  <div class="art-body"><p>' + safeBody + '<\/p><\/div>\n' +
+    '  <div class="art-share">\n' +
+    '    <strong><i class="fas fa-share-alt" style="color:#0B7B7B"><\/i> Share:<\/strong>\n' +
+    '    <a href="https://www.facebook.com/sharer/sharer.php?u=' + shareUrl + '" target="_blank" class="share-btn share-fb"><i class="fab fa-facebook-f"><\/i> Facebook<\/a>\n' +
+    '    <a href="https://t.me/share/url?url=' + shareUrl + '&text=' + shareText + '" target="_blank" class="share-btn share-tg"><i class="fab fa-telegram-plane"><\/i> Telegram<\/a>\n' +
+    '    <a href="https://wa.me/?text=' + encodeURIComponent(art.title + ' \u2014 ') + shareUrl + '" target="_blank" class="share-btn share-wa"><i class="fab fa-whatsapp"><\/i> WhatsApp<\/a>\n' +
+    '    <button class="share-btn share-copy" onclick="navigator.clipboard.writeText(\'' + canonical + '\');this.textContent=\'Copied!\';"><i class="fas fa-link"><\/i> Copy Link<\/button>\n' +
+    '  <\/div>\n' +
+    '  <div class="art-cta">\n' +
+    '    <h3>Need Medical Help?<\/h3>\n' +
+    '    <p>Our specialist doctors are available 24\/7 in Axum, Tigray.<\/p>\n' +
+    '    <a href="../contact.html"><i class="fas fa-calendar-check"><\/i> Book an Appointment<\/a>\n' +
+    '  <\/div>\n' +
+    '  <a href="../news.html" class="art-back"><i class="fas fa-arrow-left"><\/i> Back to News<\/a>\n' +
+    '<\/div>\n' +
+    '<script>\n' +
+    'var slides=document.querySelectorAll(\'#artSlider .slide\');\n' +
+    'var dots=document.querySelectorAll(\'#artDots span\');\n' +
+    'var cur=0;\n' +
+    'function artGoSlide(n){slides[cur].classList.remove(\'active\');if(dots[cur])dots[cur].classList.remove(\'active\');cur=(n+slides.length)%slides.length;slides[cur].classList.add(\'active\');if(dots[cur])dots[cur].classList.add(\'active\');}\n' +
+    'function artSlide(d){artGoSlide(cur+d);}\n' +
+    'if(slides.length>1){setInterval(function(){artSlide(1);},5000);}\n' +
+    '<\/script>\n<\/body>\n<\/html>';
 
-<!-- Article -->
-<div class="art-wrap">
-
-  <div class="art-badge${art.category==='Announcement'?' gold':''}">
-    <i class="fas fa-${art.category==='Event'?'calendar-alt':art.category==='Health Tip'?'heart-pulse':'newspaper'}"></i>
-    ${art.category||'News'}
-  </div>
-
-  <h1 class="art-title">${safeTitle}</h1>
-
-  <div class="art-meta">
-    <span><i class="fas fa-calendar-alt"></i> ${fmtDate}</span>
-    <span><i class="fas fa-hospital"></i> Geez Hospital, Axum</span>
-    <span><i class="fas fa-tag"></i> ${art.category||'News'}</span>
-  </div>
-
-  <!-- Image slider -->
-  <div class="art-slider" id="artSlider">
-    ${imgSlider}
-    ${images.length>1?`
-    <button class="slider-arrow prev" onclick="artSlide(-1)"><i class="fas fa-chevron-left"></i></button>
-    <button class="slider-arrow next" onclick="artSlide(1)"><i class="fas fa-chevron-right"></i></button>
-    <div class="slider-dots" id="artDots">
-      ${images.map((_,i)=>`<span class="${i===0?'active':''}" onclick="artGoSlide(${i})"></span>`).join('')}
-    </div>`:''}
-  </div>
-
-  <!-- Body -->
-  <div class="art-body">
-    <p>${safeBody}</p>
-  </div>
-
-  <!-- Share -->
-  <div class="art-share">
-    <strong><i class="fas fa-share-alt" style="color:#0B7B7B"></i> Share:</strong>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(canonical)}" target="_blank" class="share-btn share-fb"><i class="fab fa-facebook-f"></i> Facebook</a>
-    <a href="https://t.me/share/url?url=${encodeURIComponent(canonical)}&text=${encodeURIComponent(safeTitle)}" target="_blank" class="share-btn share-tg"><i class="fab fa-telegram-plane"></i> Telegram</a>
-    <a href="https://wa.me/?text=${encodeURIComponent(safeTitle+' — '+canonical)}" target="_blank" class="share-btn share-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-    <button class="share-btn share-copy" onclick="navigator.clipboard.writeText('${canonical}');this.innerHTML='<i class=\\'fas fa-check\\'></i> Copied!'"><i class="fas fa-link"></i> Copy Link</button>
-  </div>
-
-  <!-- CTA -->
-  <div class="art-cta">
-    <h3>Need Medical Help?</h3>
-    <p>Our specialist doctors are available 24/7 in Axum, Tigray.</p>
-    <a href="../contact.html"><i class="fas fa-calendar-check"></i> Book an Appointment</a>
-  </div>
-
-  <a href="../news.html" class="art-back"><i class="fas fa-arrow-left"></i> Back to News</a>
-
-</div>
-
-<script>
-// Slider
-var slides=document.querySelectorAll('#artSlider .slide');
-var dots=document.querySelectorAll('#artDots span');
-var cur=0;
-function artGoSlide(n){
-  slides[cur].classList.remove('active');
-  if(dots[cur])dots[cur].classList.remove('active');
-  cur=(n+slides.length)%slides.length;
-  slides[cur].classList.add('active');
-  if(dots[cur])dots[cur].classList.add('active');
-}
-function artSlide(d){artGoSlide(cur+d);}
-if(slides.length>1){setInterval(function(){artSlide(1);},5000);}
-<\/script>
-</body>
-</html>`;
+  return html;
 }
 
 // ── Save Config ──
