@@ -1,6 +1,17 @@
 {
   "articles": [
     {
+      "id": "article-1786873981324",
+      "title": "Geez Hospital",
+      "date": "2026-08-16",
+      "category": "Announcement",
+      "excerpt": "geez",
+      "body": "g",
+      "images": [
+        "images/news/news_1786873969520_jhg1z.png"
+      ]
+    },
+    {
       "id": "article-1786613662065",
       "title": "ናይ ፀቕጢ ደም (Hypertension) መበገሲን ምክልኻልን ምኽርታት ካብ ስፔሻሊስት ሓኻይም ግዕዝ ሆስፒታል",
       "date": "2026-08-13",
