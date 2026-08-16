@@ -1,6 +1,17 @@
 {
   "articles": [
     {
+      "id": "article-1786891388388",
+      "title": "CT scan",
+      "date": "2026-08-16",
+      "category": "Announcement",
+      "excerpt": "Ct sca",
+      "body": "Ct sca",
+      "images": [
+        "images/news/news_1786891379518_ug04p.png"
+      ]
+    },
+    {
       "id": "article-1786613662065",
       "title": "ናይ ፀቕጢ ደም (Hypertension) መበገሲን ምክልኻልን ምኽርታት ካብ ስፔሻሊስት ሓኻይም ግዕዝ ሆስፒታል",
       "date": "2026-08-13",
