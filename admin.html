@@ -117,6 +117,7 @@ a{text-decoration:none;color:inherit}
 .badge-teal{background:var(--teal-l);color:var(--teal)}
 .badge-gold{background:#fff8e6;color:var(--gold)}
 .badge-gray{background:var(--gray-100);color:var(--gray-500)}
+.badge-purple{background:#f3f0ff;color:#7c3aed}
 
 /* SETTINGS */
 .config-field{margin-bottom:20px}
@@ -219,6 +220,7 @@ a{text-decoration:none;color:inherit}
               <option value="Event">Event</option>
               <option value="Health Tip">Health Tip</option>
               <option value="News">News</option>
+              <option value="Testimony">Testimony</option>
             </select>
           </div>
         </div>
@@ -741,7 +743,7 @@ async function loadArticleList(){
       const thumb=art.images&&art.images.length
         ?`<img class="article-thumb" src="${art.images[0]}" alt="" onerror="this.style.display='none'">`
         :`<div class="article-thumb-ph"><i class="fas fa-newspaper"></i></div>`;
-      const cat=art.category==='Announcement'?'badge-gold':art.category==='Event'?'badge-teal':'badge-gray';
+      const cat=art.category==='Announcement'?'badge-gold':art.category==='Event'?'badge-teal':art.category==='Testimony'?'badge-purple':'badge-gray';
       item.innerHTML=`
         ${thumb}
         <div class="article-info">
@@ -919,7 +921,7 @@ function generateArticlePage(art, coverImg) {
   var images      = art.images || [];
   var canonical   = 'https://geezhospital.com/news/' + (art.slug||art.id) + '.html';
   var catClass    = art.category === 'Announcement' ? ' gold' : '';
-  var catIcon     = art.category === 'Event' ? 'calendar-alt' : art.category === 'Health Tip' ? 'heart-pulse' : 'newspaper';
+  var catIcon     = art.category === 'Event' ? 'calendar-alt' : art.category === 'Health Tip' ? 'heart-pulse' : art.category === 'Testimony' ? 'quote-left' : 'newspaper';
 
   var imgSlider = '';
   if (images.length > 0) {
@@ -1125,6 +1127,7 @@ window.addEventListener('DOMContentLoaded',()=>{
           <option value="Event">Event</option>
           <option value="Health Tip">Health Tip</option>
           <option value="News">News</option>
+          <option value="Testimony">Testimony</option>
         </select>
       </div>
     </div>
