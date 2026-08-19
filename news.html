@@ -195,6 +195,10 @@
       background: #fff8e6;
       color: var(--news-gold);
     }
+    .news-category.purple {
+      background: #f3f0ff;
+      color: #7c3aed;
+    }
     .news-date {
       font-size: .8rem;
       color: var(--news-gray);
@@ -573,6 +577,7 @@
       <button class="filter-btn" data-filter="Announcement">Announcements</button>
       <button class="filter-btn" data-filter="Event">Events</button>
       <button class="filter-btn" data-filter="Health Tip">Health Tips</button>
+      <button class="filter-btn" data-filter="Testimony">Testimonials</button>
     </div>
 
     <!-- Grid -->
@@ -745,7 +750,7 @@ function renderCards(articles) {
     sliderDiv.className = 'card-slider';
     buildSlider(sliderDiv, art.images, 'card');
     // Body
-    const catClass = (art.category === 'Announcement') ? 'gold' : '';
+    const catClass = (art.category === 'Announcement') ? 'gold' : (art.category === 'Testimony') ? 'purple' : '';
     const bodyDiv = document.createElement('div');
     bodyDiv.className = 'news-body';
     bodyDiv.innerHTML = `
@@ -840,7 +845,7 @@ function openModal(art) {
       document.getElementById('modalNext').style.display = 'none';
     }
   }
-  const catClass = (art.category === 'Announcement') ? 'gold' : '';
+  const catClass = (art.category === 'Announcement') ? 'gold' : (art.category === 'Testimony') ? 'purple' : '';
   modalBody.innerHTML = `
     <div class="modal-meta">
       <span class="news-category ${catClass}">${art.category || 'News'}</span>
