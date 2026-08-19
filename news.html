@@ -641,7 +641,7 @@
   <div class="footer-bottom">
     <div class="container footer-bottom-inner">
       <p>© 2026 Geez Hospital. All rights reserved.</p>
-      <p class="footer-dev">Developed by <a href="tel:+251911179955">Aser Tech | Legesse Teklu Gebrekidan — +251 911 179 955</a></p>
+      <p class="footer-dev">Developed by <a href="tel:+251911179955">Legesse Teklu Gebrekidan</a></p>
     </div>
   </div>
 </footer>
@@ -787,7 +787,7 @@ function renderCards(articles) {
       <a href="https://wa.me/?text=${artText}%20${artEnc}" target="_blank"
          style="display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:999px;background:#25D366;color:#fff;font-size:.75rem;font-weight:600;text-decoration:none">
          <i class="fab fa-whatsapp"></i> WhatsApp</a>
-      <button onclick="navigator.clipboard.writeText('${artUrl}');this.textContent='Copied!';setTimeout(()=>this.innerHTML='<i class=\'fas fa-link\'></i> Copy',2000)"
+      <button onclick="(function(btn,url){navigator.clipboard.writeText(url).then(function(){btn.textContent='Copied!';setTimeout(function(){btn.innerHTML='<i class=\'fas fa-link\'></i> Copy';},2000);});})(this,'${artUrl}')"
          style="display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:999px;background:#f1f5f9;color:#475569;font-size:.75rem;font-weight:600;border:none;cursor:pointer">
          <i class="fas fa-link"></i> Copy</button>`;
     bodyDiv.appendChild(shareDiv);
