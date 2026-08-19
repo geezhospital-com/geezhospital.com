@@ -33,9 +33,53 @@
     gtag('js', new Date());
     gtag('config', 'G-9QH360M4V1');
   </script>
+
+  <!-- ── Self-contained styling for this page (doesn't depend on missing style.css classes) ── -->
+  <style>
+    :root{
+      --pi-navy:#0A1F3D; --pi-teal:#0B7B7B; --pi-teal-l:#E8F4F4; --pi-teal-h:#096767;
+      --pi-gray-50:#F8FAFB; --pi-gray-200:#DDE4EE; --pi-gray-400:#94A3B8; --pi-gray-500:#64748B; --pi-gray-900:#0F172A;
+    }
+    .pi-section{padding:56px 0 80px;background:var(--pi-gray-50)}
+    .pi-intro{max-width:680px;margin:0 auto 40px;text-align:center}
+    .pi-intro p{color:var(--pi-gray-500);font-size:1rem;margin-top:8px}
+    .pi-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+      gap:24px;
+    }
+    .pi-card{
+      background:#fff;border:1px solid var(--pi-gray-200);border-radius:14px;
+      padding:28px 26px;display:flex;flex-direction:column;
+      box-shadow:0 2px 12px rgba(10,31,61,.05);
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+    .pi-card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(11,123,123,.12)}
+    .pi-icon{
+      width:52px;height:52px;border-radius:12px;background:var(--pi-teal-l);
+      display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+    }
+    .pi-icon i{font-size:1.3rem;color:var(--pi-teal)}
+    .pi-card h3{font-size:1.08rem;font-weight:700;color:var(--pi-gray-900);margin-bottom:10px;line-height:1.3}
+    .pi-card p{font-size:.9rem;color:var(--pi-gray-500);line-height:1.65;margin-bottom:14px;flex:1}
+    .pi-card ul{margin:0 0 16px;padding-left:18px}
+    .pi-card ul li{font-size:.87rem;color:var(--pi-gray-500);line-height:1.7}
+    .pi-btn{
+      align-self:flex-start;display:inline-flex;align-items:center;gap:7px;
+      font-size:.85rem;font-weight:600;color:var(--pi-teal);
+      border:1.5px solid var(--pi-teal);padding:8px 18px;border-radius:999px;
+      text-decoration:none;transition:all .2s;
+    }
+    .pi-btn:hover{background:var(--pi-teal);color:#fff}
+    .pi-btn.solid{background:var(--pi-teal);color:#fff}
+    .pi-btn.solid:hover{background:var(--pi-teal-h)}
+    .pi-card.wide{grid-column:1/-1}
+    .pi-card.wide ul{columns:2;column-gap:40px}
+    @media(max-width:600px){.pi-card.wide ul{columns:1}}
+  </style>
 </head>
 <body>
-    <!-- Top Bar - Corrected single instance -->
+    <!-- Top Bar -->
     <div class="gh-topbar">
   <div class="gh-tb-inner">
     <div class="gh-tb-left">
@@ -56,10 +100,7 @@
   </div>
 </div>
 
-<!-- ════════════════════════════════════════
-     STEP 3: PREMIUM STICKY NAVIGATION
-     (replaces old site-header)
-════════════════════════════════════════ -->
+<!-- PREMIUM STICKY NAVIGATION -->
 <nav class="gh-sitenav" id="ghSiteNav" role="navigation" aria-label="Main navigation">
   <div class="gh-nav-inner">
 
@@ -74,7 +115,6 @@
       </div>
     </a>
 
-    <!-- Nav list — all original mega-menu content preserved -->
     <ul class="gh-nav-list" id="ghMainNav">
 
       <li class="gh-nav-item">
@@ -158,7 +198,7 @@
           <div class="gh-mega-header">News &amp; Gallery</div>
           <a href="news.html"        class="gh-mega-item"><i class="fas fa-newspaper"></i> Latest News</a>
           <a href="articles.html"    class="gh-mega-item"><i class="fas fa-book-medical"></i> Health Articles</a>
-          <a href="patient-info.html"class="gh-mega-item"><i class="fas fa-info-circle"></i> Patient Information</a>
+          <a href="patient-info.html"class="gh-mega-item active"><i class="fas fa-info-circle"></i> Patient Information</a>
           <a href="gallery.html"     class="gh-mega-item"><i class="fas fa-images"></i> Photo Gallery</a>
           <a href="https://linktr.ee/geezhospital" target="_blank" class="gh-mega-item"><i class="fas fa-poll"></i> Patient Survey</a>
         </div>
@@ -187,80 +227,114 @@
   </div>
 </nav>
 
-    <!-- Main Content for Patient Information Page -->
+    <!-- Main Content -->
     <main>
-        <section id="patient-info-hero" class="hero-section inner-hero">
+        <section class="page-hero">
             <div class="container">
                 <h1 data-translate="media-patient-info">Patient Information — Geez Hospital</h1>
                 <p>Find essential information for your visit, including admission, discharge, rights, and responsibilities.</p>
             </div>
         </section>
 
-        <section id="info-sections" class="content-section light-bg">
+        <section class="pi-section">
             <div class="container">
-                <div class="info-grid">
-                    <div class="info-item">
-                        <h3><i class="fas fa-hospital-user"></i> Patient Rights & Responsibilities</h3>
-                        <p>Learn about your rights as a patient at Geez Hospital and your responsibilities in ensuring a smooth healthcare experience.</p>
-                        <a href="#" class="button secondary-button">Read More</a>
+                <div class="pi-grid">
+
+                    <div class="pi-card wide">
+                        <div class="pi-icon"><i class="fas fa-hospital-user"></i></div>
+                        <h3>Patient Rights &amp; Responsibilities</h3>
+                        <p>At Geez Hospital, every patient is treated with dignity, respect, and compassion. We are committed to protecting your rights while asking for your partnership in your own care.</p>
+                        <ul>
+                            <li>Receive respectful, non-discriminatory care regardless of background</li>
+                            <li>Be informed about your diagnosis, treatment options, and costs</li>
+                            <li>Give informed consent before any procedure</li>
+                            <li>Privacy and confidentiality of your medical information</li>
+                            <li>Provide accurate and complete health information to your care team</li>
+                            <li>Follow the treatment plan agreed upon with your doctor</li>
+                            <li>Treat hospital staff and other patients with respect</li>
+                            <li>Settle hospital bills in a timely manner</li>
+                        </ul>
                     </div>
-                    <div class="info-item">
-                        <h3><i class="fas fa-clipboard-list"></i> Admission & Discharge Process</h3>
-                        <p>Detailed guide on what to expect during your admission to and discharge from our hospital.</p>
-                        <a href="#" class="button secondary-button">Read More</a>
+
+                    <div class="pi-card">
+                        <div class="pi-icon"><i class="fas fa-clipboard-list"></i></div>
+                        <h3>Admission &amp; Discharge Process</h3>
+                        <p><strong>Admission:</strong> Register at reception with a valid ID, complete an initial assessment with a nurse or doctor, and you will be assigned a bed or ward based on your condition.</p>
+                        <p><strong>Discharge:</strong> Once your doctor confirms you are ready, our team prepares your discharge summary, medication list, and follow-up instructions. Please settle your bill at the finance desk before leaving.</p>
+                        <a href="contact.html" class="pi-btn">Ask a Question <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <div class="info-item">
-                        <h3><i class="fas fa-file-medical"></i> Medical Records Request</h3>
-                        <p>Information on how to request copies of your medical records and privacy policies.</p>
-                        <a href="#" class="button secondary-button">Read More</a>
+
+                    <div class="pi-card">
+                        <div class="pi-icon"><i class="fas fa-file-medical"></i></div>
+                        <h3>Medical Records Request</h3>
+                        <p>You or your authorized representative may request copies of your medical records for referrals, insurance, or personal use. Please visit our records office or contact us with your full name, date of visit, and a valid ID.</p>
+                        <p>Requests are typically processed within a few working days. All records are handled confidentially.</p>
+                        <a href="contact.html" class="pi-btn">Request Records <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <div class="info-item">
-                        <h3><i class="fas fa-hand-holding-usd"></i> Billing & Insurance</h3>
-                        <p>Understand our billing procedures and accepted insurance plans to help manage your healthcare costs.</p>
-                        <a href="#" class="button secondary-button">Read More</a>
+
+                    <div class="pi-card">
+                        <div class="pi-icon"><i class="fas fa-hand-holding-medical"></i></div>
+                        <h3>Billing &amp; Insurance</h3>
+                        <p>We accept cash, mobile money, and bank transfer payments at our finance office. If you are covered by CBHI or a private insurance provider, please bring your insurance card or ID at registration so our billing team can verify coverage.</p>
+                        <p>For questions about a specific bill or insurance plan, our billing office is happy to assist.</p>
+                        <a href="tel:+251920008338" class="pi-btn"><i class="fas fa-phone"></i> Call Billing Office</a>
                     </div>
-                    <div class="info-item">
-                        <h3><i class="fas fa-utensils"></i> Food & Nutrition Services</h3>
-                        <p>Details about meal services and dietary options available during your stay.</p>
-                        <a href="#" class="button secondary-button">Read More</a>
+
+                    <div class="pi-card">
+                        <div class="pi-icon"><i class="fas fa-utensils"></i></div>
+                        <h3>Food &amp; Nutrition Services</h3>
+                        <p>Admitted patients receive balanced meals as part of their care. Special diets (diabetic, low-salt, soft food, etc.) can be arranged — please inform the nursing staff of any dietary needs or allergies.</p>
+                        <p>Family members may also bring home-cooked food during visiting hours, subject to the treating doctor's advice.</p>
                     </div>
-                    <div class="info-item">
-                        <h3><i class="fas fa-users-medical"></i> Visitor Information</h3>
-                        <p>Guidelines for visitors, including visiting hours and policies to ensure a comfortable environment for all patients.</p>
-                        <a href="#" class="button secondary-button">Read More</a>
+
+                    <div class="pi-card">
+                        <div class="pi-icon"><i class="fas fa-people-group"></i></div>
+                        <h3>Visitor Information</h3>
+                        <p>To protect patient rest and recovery, we kindly ask visitors to observe hospital visiting hours and keep noise to a minimum. A limited number of visitors is allowed per patient at a time.</p>
+                        <p>For patients in intensive or isolation care, visits may be restricted — please check with the nursing station on the ward.</p>
                     </div>
-                    <div class="info-item">
-                        <h3><i class="fas fa-poll"></i> Patient Satisfaction Survey</h3>
-                        <p>Your feedback is vital! Take our survey to help us improve our services.</p>
-                        <!-- Patient Satisfaction Survey link updated here for the info item -->
-                        <a href="https://linktr.ee/geezhospital" target="_blank" class="button primary-button">Take Survey</a>
+
+                    <div class="pi-card">
+                        <div class="pi-icon"><i class="fas fa-poll"></i></div>
+                        <h3>Patient Satisfaction Survey</h3>
+                        <p>Your feedback helps us improve. Take a few minutes to share your experience at Geez Hospital — every response helps us serve you and the community better.</p>
+                        <a href="https://linktr.ee/geezhospital" target="_blank" class="pi-btn solid"><i class="fas fa-poll"></i> Take Survey</a>
                     </div>
+
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer - Corrected single instance -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="images/logo.png" alt="Geez Hospital Logo">
-                </div>
-                <div class="footer-info">
-                    <p data-translate="footer-text">Copyright © 2026 Geez Hospital | <a href="tel:+251911179955" style="color:inherit">Aser Tech | Legesse Teklu Gebrekidan — +251 911 179 955</a><br>Developed By Aser Tech (Legesse Teklu Gebrekidan)-0911179955</p>
-                    <div class="social-icons-footer">
-                        <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://t.me/geezhospital_bot" target="_blank"><i class="fab fa-telegram-plane"></i></a>
-                        <!-- New Google Map link in footer -->
-                        <a href="https://maps.app.goo.gl/yHuCuCgLMzUtyerU6" target="_blank" title="Geez Hospital on Google Maps"><i class="fas fa-map-marked-alt"></i></a>
-                        <!-- New Patient Satisfaction Survey link in footer -->
-                        <a href="https://linktr.ee/geezhospital" target="_blank" title="Patient Satisfaction Survey"><i class="fas fa-poll-h"></i></a>
-                    </div>
-                </div>
-            </div>
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo-wrap"><img src="images/logo.png" alt="Geez Hospital" onerror="this.style.display='none'"><div class="logo-text"><span class="logo-en">GEEZ HOSPITAL</span><span class="logo-tig">ግዕዝ ሆስፒታል</span></div></a>
+          <p>World-class healthcare in Axum, Tigray.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://t.me/Geezhospital_bot" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://maps.app.goo.gl/yHuCuCgLMzUtyerU6" target="_blank" aria-label="Maps"><i class="fas fa-map-marker-alt"></i></a>
+            <a href="https://linktr.ee/geezhospital" target="_blank" aria-label="Patient Survey"><i class="fas fa-poll-h"></i></a>
+          </div>
         </div>
+        <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="doctors.html">Doctors</a></li><li><a href="departments.html">Departments</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Patient Resources</h4><ul><li><a href="patient-info.html">Patient Information</a></li><li><a href="news.html">News</a></li><li><a href="facilities.html">Facilities</a></li><li><a href="vacancy.html">Vacancy</a></li></ul></div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul class="footer-contact-list">
+            <li><i class="fas fa-map-marker-alt"></i> Kindeya Kebele, In front of Ethio-Telecom, Axum, Tigray</li>
+            <li><i class="fas fa-phone"></i> <a href="tel:+251920008338">+251 920 008 338</a></li>
+            <li><i class="fas fa-phone"></i> <a href="tel:+251962333388">+251 962 333 388</a></li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:geezhospital@gmail.com">geezhospital@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom"><div class="container footer-bottom-inner"><p data-translate="footer-text">© 2026 Geez Hospital. All rights reserved.</p><p class="footer-dev">Developed by <a href="tel:+251911179955">Aser Tech | Legesse Teklu Gebrekidan — +251 911 179 955</a></p></div></div>
     </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
 
     <script src="script.js"></script>
 <!-- Floating Contact Button -->
