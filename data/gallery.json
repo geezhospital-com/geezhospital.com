@@ -1,10 +1,46 @@
 {
   "items": [
-    { "id": "gal-seed-1", "type": "image", "src": "images/gallery1.jpg", "caption": "Hospital Entrance" },
-    { "id": "gal-seed-2", "type": "image", "src": "images/gallery2.jpg", "caption": "Reception Area" },
-    { "id": "gal-seed-3", "type": "image", "src": "images/gallery3.jpg", "caption": "Operating Room" },
-    { "id": "gal-seed-4", "type": "image", "src": "images/gallery4.jpg", "caption": "Patient Ward" },
-    { "id": "gal-seed-5", "type": "image", "src": "images/gallery5.jpg", "caption": "Laboratory" },
-    { "id": "gal-seed-6", "type": "image", "src": "images/gallery6.jpg", "caption": "Modern Equipment" }
+    {
+      "id": "gal-1787220667542",
+      "type": "image",
+      "src": "images/gallery/gallery_1787220633538_iwuka.jpg",
+      "caption": "Main entrance"
+    },
+    {
+      "id": "gal-seed-1",
+      "type": "image",
+      "src": "images/gallery1.jpg",
+      "caption": "Hospital Entrance"
+    },
+    {
+      "id": "gal-seed-2",
+      "type": "image",
+      "src": "images/gallery2.jpg",
+      "caption": "Reception Area"
+    },
+    {
+      "id": "gal-seed-3",
+      "type": "image",
+      "src": "images/gallery3.jpg",
+      "caption": "Operating Room"
+    },
+    {
+      "id": "gal-seed-4",
+      "type": "image",
+      "src": "images/gallery4.jpg",
+      "caption": "Patient Ward"
+    },
+    {
+      "id": "gal-seed-5",
+      "type": "image",
+      "src": "images/gallery5.jpg",
+      "caption": "Laboratory"
+    },
+    {
+      "id": "gal-seed-6",
+      "type": "image",
+      "src": "images/gallery6.jpg",
+      "caption": "Modern Equipment"
+    }
   ]
 }
