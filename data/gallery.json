@@ -1,6 +1,12 @@
 {
   "items": [
     {
+      "id": "gal-1787220695557",
+      "type": "image",
+      "src": "images/gallery/gallery_1787220683885_h86yp.jpg",
+      "caption": "Ambulance"
+    },
+    {
       "id": "gal-1787220667542",
       "type": "image",
       "src": "images/gallery/gallery_1787220633538_iwuka.jpg",
