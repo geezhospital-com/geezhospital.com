@@ -1,6 +1,12 @@
 {
   "items": [
     {
+      "id": "gal-1787220982412",
+      "type": "image",
+      "src": "images/gallery/gallery_1787220974307_bxxkp.jpg",
+      "caption": "Ct scan"
+    },
+    {
       "id": "gal-1787220963410",
       "type": "image",
       "src": "images/gallery/gallery_1787220930917_loqf1.jpg",
