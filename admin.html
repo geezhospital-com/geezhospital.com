@@ -189,6 +189,7 @@ a{text-decoration:none;color:inherit}
     <button class="tab-btn" data-tab="vacancy" onclick="switchTab('vacancy')"><i class="fas fa-briefcase"></i> Post Vacancy</button>
     <button class="tab-btn" data-tab="departments" onclick="switchTab('departments')"><i class="fas fa-hospital-alt"></i> Departments</button>
     <button class="tab-btn" data-tab="doctors" onclick="switchTab('doctors')"><i class="fas fa-user-md"></i> Doctors</button>
+    <button class="tab-btn" data-tab="gallery" onclick="switchTab('gallery')"><i class="fas fa-images"></i> Gallery</button>
     <button class="tab-btn" data-tab="config" onclick="switchTab('config')"><i class="fas fa-cog"></i> Settings</button>
   </div>
 
@@ -413,6 +414,67 @@ a{text-decoration:none;color:inherit}
       </div>
     </div>
 
+    <!-- GALLERY TAB -->
+    <div id="tab-gallery" style="display:none">
+      <div class="section-head">
+        <h2>Gallery — Photos &amp; Videos</h2>
+        <p>ስእልታትን ቪድዮታትን ናብ Gallery ገጽ ወስኽ ወይ ኣልግስ — ዘየገድብ ቁጽሪ ክትውስኽ ትኽእል ኢኻ።</p>
+      </div>
+
+      <div id="galleryAddStatus" class="status-banner"></div>
+
+      <div class="card">
+        <div style="display:flex;gap:10px;margin-bottom:20px;border-bottom:1px solid var(--gray-200);padding-bottom:16px">
+          <button class="tab-btn active" id="galAddPhotoTabBtn" style="padding:8px 16px;border-radius:8px;background:var(--teal-l);color:var(--teal);border-bottom:none" onclick="switchGalAddMode('photo')"><i class="fas fa-image"></i> Add Photo</button>
+          <button class="tab-btn" id="galAddVideoTabBtn" style="padding:8px 16px;border-radius:8px;border-bottom:none" onclick="switchGalAddMode('video')"><i class="fas fa-video"></i> Add Video</button>
+        </div>
+
+        <!-- Add Photo -->
+        <div id="galAddPhoto">
+          <div class="form-group">
+            <label for="galPhotoCaption">Caption / ገለጻ *</label>
+            <input type="text" id="galPhotoCaption" placeholder="e.g. Operating Room">
+          </div>
+          <div class="form-group">
+            <label>Photo — ካብ ኮምፕዩተርካ ቀጥታ upload</label>
+            <div class="upload-zone" id="galUploadZone" onclick="document.getElementById('galPhotoInput').click()">
+              <input type="file" id="galPhotoInput" accept="image/*" onchange="handleGalPhoto(this.files[0])">
+              <i class="fas fa-cloud-upload-alt"></i>
+              <p>ናብዚ ስእሊ drag & drop ግበር — ወይ <span>click ብምግባር ካብ ፋይል upload ግበር</span></p>
+              <p style="font-size:.76rem;color:var(--gray-400);margin-top:4px">JPG, PNG, WebP — max 5MB</p>
+            </div>
+            <div class="img-preview-list" id="galPhotoPreview"></div>
+          </div>
+          <button class="btn-primary" id="galAddPhotoBtn" onclick="addGalleryPhoto()"><i class="fas fa-plus"></i> Add Photo to Gallery</button>
+        </div>
+
+        <!-- Add Video -->
+        <div id="galAddVideo" style="display:none">
+          <div class="form-group">
+            <label for="galVideoCaption">Caption / ገለጻ *</label>
+            <input type="text" id="galVideoCaption" placeholder="e.g. Hospital Tour">
+          </div>
+          <div class="form-group">
+            <label for="galVideoUrl">YouTube Video Link *</label>
+            <input type="text" id="galVideoUrl" placeholder="e.g. https://www.youtube.com/watch?v=XXXXXXXXXXX">
+            <p style="font-size:.75rem;color:var(--gray-400);margin-top:5px"><i class="fas fa-info-circle"></i> ካብ YouTube ናይ ቪድዮ link ቅዳሕ ጌርካ ኣብዚ ለጥፎ።</p>
+          </div>
+          <button class="btn-primary" id="galAddVideoBtn" onclick="addGalleryVideo()"><i class="fas fa-plus"></i> Add Video to Gallery</button>
+        </div>
+      </div>
+
+      <div class="section-head" style="margin-top:32px">
+        <h2>Current Gallery Items</h2>
+        <p>ዘለዉ ስእልታትን ቪድዮታትን — ንምስራዝ ኣብቲ ቀይሕ button ጠውቕ።</p>
+      </div>
+      <div id="galleryListStatus" class="status-banner"></div>
+      <div class="card">
+        <div class="photo-manage-grid" id="galleryItemsGrid">
+          <p style="color:var(--gray-400);grid-column:1/-1;text-align:center;padding:24px 0"><i class="fas fa-spinner spin"></i> Loading...</p>
+        </div>
+      </div>
+    </div>
+
     <!-- SETTINGS TAB -->
     <div id="tab-config" style="display:none">
       <div class="section-head">
@@ -545,7 +607,7 @@ function enterAdmin(){
 
 // ── Tab Switching ──
 function switchTab(name){
-  ['publish','manage','vacancy','departments','doctors','config'].forEach(t=>{
+  ['publish','manage','vacancy','departments','doctors','gallery','config'].forEach(t=>{
     document.getElementById('tab-'+t).style.display=(t===name)?'':'none';
     document.querySelector(`[data-tab="${t}"]`).classList.toggle('active',t===name);
   });
@@ -553,6 +615,7 @@ function switchTab(name){
   if(name==='vacancy')loadVacancyList();
   if(name==='departments')renderPhotoGrid('deptGrid',DEPARTMENTS);
   if(name==='doctors')renderPhotoGrid('doctorGrid',DOCTORS);
+  if(name==='gallery')loadGalleryList();
 }
 
 // ── Departments / Doctors photo management ──
@@ -606,11 +669,163 @@ async function uploadEntityPhoto(gridId,itemId,filePath,file){
   }
 }
 
+// ── Gallery Management ──
+let galPendingPhoto = null;
+
+function switchGalAddMode(mode){
+  document.getElementById('galAddPhoto').style.display = mode==='photo' ? '' : 'none';
+  document.getElementById('galAddVideo').style.display = mode==='video' ? '' : 'none';
+  const pBtn = document.getElementById('galAddPhotoTabBtn');
+  const vBtn = document.getElementById('galAddVideoTabBtn');
+  pBtn.style.background = mode==='photo' ? 'var(--teal-l)' : 'transparent';
+  pBtn.style.color = mode==='photo' ? 'var(--teal)' : 'var(--gray-500)';
+  vBtn.style.background = mode==='video' ? 'var(--teal-l)' : 'transparent';
+  vBtn.style.color = mode==='video' ? 'var(--teal)' : 'var(--gray-500)';
+}
+
+function handleGalPhoto(file){
+  if(!file) return;
+  if(!file.type.startsWith('image/')){alert('ስእሊ ጥራይ upload ግበር።');return}
+  if(file.size>5*1024*1024){alert('ስእሊ ካብ 5MB ንላዕሊ ክኸውን የብሉን።');return}
+  const reader=new FileReader();
+  reader.onload=e=>{
+    const dataUrl=e.target.result;
+    const base64=dataUrl.split(',')[1];
+    const ext=file.name.split('.').pop().toLowerCase()||'jpg';
+    const safeName='gallery_'+Date.now()+'_'+Math.random().toString(36).slice(2,7)+'.'+ext;
+    galPendingPhoto={dataUrl,base64,name:safeName};
+    document.getElementById('galPhotoPreview').innerHTML=
+      `<div class="img-thumb"><img src="${dataUrl}" alt="preview"><button class="remove-img" onclick="galPendingPhoto=null;document.getElementById('galPhotoPreview').innerHTML=''"><i class="fas fa-times"></i></button></div>`;
+  };
+  reader.readAsDataURL(file);
+}
+
+// GitHub JSON helpers (generic — used for gallery.json)
+async function ghGetJson(path){
+  try{
+    const existing = await ghGet(path);
+    const decoded = decodeURIComponent(escape(atob(existing.content.replace(/\n/g,''))));
+    return {data: JSON.parse(decoded), sha: existing.sha};
+  }catch(e){
+    return {data: null, sha: null};
+  }
+}
+async function ghPutJson(path, obj, sha, message){
+  const content = btoa(unescape(encodeURIComponent(JSON.stringify(obj, null, 2))));
+  return ghPut(path, content, sha, message);
+}
+
+async function addGalleryPhoto(){
+  const caption = document.getElementById('galPhotoCaption').value.trim();
+  if(!caption){showStatus('galleryAddStatus','error','Caption ምልእ።');return}
+  if(!galPendingPhoto){showStatus('galleryAddStatus','error','ስእሊ ምረጽ።');return}
+  const btn=document.getElementById('galAddPhotoBtn');
+  btn.disabled=true;
+  showStatus('galleryAddStatus','loading','ስእሊ እናተስቀለ...');
+  try{
+    const repoPath = `images/gallery/${galPendingPhoto.name}`;
+    await ghPut(repoPath, galPendingPhoto.base64, null, `Add gallery photo: ${galPendingPhoto.name}`);
+    const {data, sha} = await ghGetJson('data/gallery.json');
+    const items = (data && data.items) || [];
+    items.unshift({id:'gal-'+Date.now(), type:'image', src:repoPath, caption});
+    await ghPutJson('data/gallery.json', {items}, sha, `Add gallery photo: ${caption}`);
+    showStatus('galleryAddStatus','success','✅ ስእሊ ተወሲኹ! ድሒሩ ኣብ gallery.html ይርኤ።');
+    document.getElementById('galPhotoCaption').value='';
+    galPendingPhoto=null;
+    document.getElementById('galPhotoPreview').innerHTML='';
+    loadGalleryList();
+  }catch(err){
+    showStatus('galleryAddStatus','error','Error: '+err.message);
+  }
+  btn.disabled=false;
+}
+
+function extractYouTubeId(url){
+  const m = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/);
+  return m ? m[1] : null;
+}
+
+async function addGalleryVideo(){
+  const caption = document.getElementById('galVideoCaption').value.trim();
+  const url = document.getElementById('galVideoUrl').value.trim();
+  if(!caption){showStatus('galleryAddStatus','error','Caption ምልእ።');return}
+  const videoId = extractYouTubeId(url);
+  if(!videoId){showStatus('galleryAddStatus','error','ትኽክለኛ YouTube link ኣይኮነን። ደጊምካ ፈትን።');return}
+  const btn=document.getElementById('galAddVideoBtn');
+  btn.disabled=true;
+  showStatus('galleryAddStatus','loading','ቪድዮ እናተወሰኸ...');
+  try{
+    const {data, sha} = await ghGetJson('data/gallery.json');
+    const items = (data && data.items) || [];
+    items.unshift({id:'gal-'+Date.now(), type:'video', videoId, caption});
+    await ghPutJson('data/gallery.json', {items}, sha, `Add gallery video: ${caption}`);
+    showStatus('galleryAddStatus','success','✅ ቪድዮ ተወሲኹ! ድሒሩ ኣብ gallery.html ይርኤ።');
+    document.getElementById('galVideoCaption').value='';
+    document.getElementById('galVideoUrl').value='';
+    loadGalleryList();
+  }catch(err){
+    showStatus('galleryAddStatus','error','Error: '+err.message);
+  }
+  btn.disabled=false;
+}
+
+async function loadGalleryList(){
+  const grid=document.getElementById('galleryItemsGrid');
+  grid.innerHTML='<p style="color:var(--gray-400);grid-column:1/-1;text-align:center;padding:24px 0"><i class="fas fa-spinner spin"></i> Loading...</p>';
+  try{
+    const {data} = await ghGetJson('data/gallery.json');
+    const items = (data && data.items) || [];
+    if(items.length===0){
+      grid.innerHTML='<p style="color:var(--gray-400);grid-column:1/-1;text-align:center;padding:24px 0">ገና ዝኾነ ስእሊ ወይ ቪድዮ የለን።</p>';
+      return;
+    }
+    grid.innerHTML = items.map(it=>{
+      const thumb = it.type==='video'
+        ? `<img src="https://img.youtube.com/vi/${it.videoId}/hqdefault.jpg" alt="${it.caption}"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.25)"><i class="fas fa-play-circle" style="font-size:1.8rem;color:#fff"></i></div>`
+        : `<img src="https://raw.githubusercontent.com/${cfg.owner}/${cfg.repo}/main/${it.src}?t=${Date.now()}" alt="${it.caption}" onerror="this.style.display='none'">`;
+      return `
+      <div class="photo-manage-card">
+        <div class="pm-img-wrap" style="position:relative">${thumb}</div>
+        <div class="pm-body">
+          <h4>${it.caption} ${it.type==='video'?'<span style=\"color:var(--teal);font-size:.7rem\">(Video)</span>':''}</h4>
+          <button class="btn-danger" style="width:100%;justify-content:center;display:flex" onclick="deleteGalleryItem('${it.id}')"><i class="fas fa-trash-alt"></i> ሰርዝ</button>
+        </div>
+      </div>`;
+    }).join('');
+  }catch(e){
+    grid.innerHTML=`<p style="color:var(--red);grid-column:1/-1;text-align:center;padding:20px">Failed: ${e.message}</p>`;
+  }
+}
+
+async function deleteGalleryItem(id){
+  if(!confirm('እዚ ስእሊ/ቪድዮ ክስረዝ ዲዩ?'))return;
+  showStatus('galleryListStatus','loading','Deleting...');
+  try{
+    const {data, sha} = await ghGetJson('data/gallery.json');
+    const items = ((data && data.items) || []).filter(it=>it.id!==id);
+    await ghPutJson('data/gallery.json', {items}, sha, `Delete gallery item: ${id}`);
+    showStatus('galleryListStatus','success','ተሰሪዙ።');
+    loadGalleryList();
+  }catch(e){
+    showStatus('galleryListStatus','error','Failed: '+e.message);
+  }
+}
+
 // ── Image Upload (Articles) ──
 const uploadZone=document.getElementById('uploadZone');
 uploadZone.addEventListener('dragover',e=>{e.preventDefault();uploadZone.classList.add('drag-over')});
 uploadZone.addEventListener('dragleave',()=>uploadZone.classList.remove('drag-over'));
 uploadZone.addEventListener('drop',e=>{e.preventDefault();uploadZone.classList.remove('drag-over');handleFiles(e.dataTransfer.files)});
+
+// Gallery upload zone drag & drop
+document.addEventListener('DOMContentLoaded', () => {
+  const galZone = document.getElementById('galUploadZone');
+  if (galZone) {
+    galZone.addEventListener('dragover', e => { e.preventDefault(); galZone.classList.add('drag-over'); });
+    galZone.addEventListener('dragleave', () => galZone.classList.remove('drag-over'));
+    galZone.addEventListener('drop', e => { e.preventDefault(); galZone.classList.remove('drag-over'); if (e.dataTransfer.files[0]) handleGalPhoto(e.dataTransfer.files[0]); });
+  }
+});
 
 function handleFiles(files){
   [...files].forEach(file=>{
