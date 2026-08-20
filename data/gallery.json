@@ -109,12 +109,6 @@
       "caption": "Operating Room"
     },
     {
-      "id": "gal-seed-4",
-      "type": "image",
-      "src": "images/gallery4.jpg",
-      "caption": "Patient Ward"
-    },
-    {
       "id": "gal-seed-5",
       "type": "image",
       "src": "images/gallery5.jpg",
