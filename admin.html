@@ -788,7 +788,7 @@ async function loadGalleryList(){
         <div class="pm-img-wrap" style="position:relative">${thumb}</div>
         <div class="pm-body">
           <h4>${it.caption} ${it.type==='video'?'<span style=\"color:var(--teal);font-size:.7rem\">(Video)</span>':''}</h4>
-          <button class="btn-danger" style="width:100%;justify-content:center;display:flex" onclick="deleteGalleryItem('${it.id}')"><i class="fas fa-trash-alt"></i> ሰርዝ</button>
+          <button class="btn-danger" style="width:100%;justify-content:center;display:flex" onclick="deleteGalleryItem('${it.id}')"><i class="fas fa-trash-alt"></i> ደምሲስ</button>
         </div>
       </div>`;
     }).join('');
@@ -967,7 +967,7 @@ async function loadArticleList(){
         </div>
         <div class="article-actions">
           <button class="btn-secondary" style="background:#e8f4f4;color:#0B7B7B;border:1.5px solid #0B7B7B;padding:7px 14px;border-radius:6px;cursor:pointer;font-size:.82rem;font-weight:600;font-family:inherit" onclick="editArticle('${art.id}')"><i class="fas fa-edit"></i> ምምሕያሽ</button>
-          <button class="btn-danger" onclick="deleteArticle('${art.id}')"><i class="fas fa-trash-alt"></i> ሰርዝ</button>
+          <button class="btn-danger" onclick="deleteArticle('${art.id}')"><i class="fas fa-trash-alt"></i> ደምሲስ</button>
         </div>`;
       listEl.appendChild(item);
     });
@@ -1100,7 +1100,7 @@ async function loadVacancyList() {
           </div>
         </div>
         <div class="article-actions">
-          <button class="btn-danger" onclick="deleteVacancy('${v.id}')"><i class="fas fa-trash-alt"></i> ሰርዝ</button>
+          <button class="btn-danger" onclick="deleteVacancy('${v.id}')"><i class="fas fa-trash-alt"></i> ደምሲስ</button>
         </div>
       </div>`;
     }).join('');
