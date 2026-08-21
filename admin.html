@@ -418,7 +418,7 @@ a{text-decoration:none;color:inherit}
     <div id="tab-gallery" style="display:none">
       <div class="section-head">
         <h2>Gallery — Photos &amp; Videos</h2>
-        <p>ስእሊታትን ቪድዮታን ናብዚ upload ግበር( Unlimited)</p>
+        <p>ስእልታትን ቪድዮታትን ናብ Gallery ገጽ ወስኽ ወይ ኣልግስ — ዘየገድብ ቁጽሪ ክትውስኽ ትኽእል ኢኻ።</p>
       </div>
 
       <div id="galleryAddStatus" class="status-banner"></div>
@@ -432,7 +432,7 @@ a{text-decoration:none;color:inherit}
         <!-- Add Photo -->
         <div id="galAddPhoto">
           <div class="form-group">
-            <label for="galPhotoCaption">ኣርእስቲ/መግለፂ*</label>
+            <label for="galPhotoCaption">Caption / ገለጻ *</label>
             <input type="text" id="galPhotoCaption" placeholder="e.g. Operating Room">
           </div>
           <div class="form-group">
@@ -451,7 +451,7 @@ a{text-decoration:none;color:inherit}
         <!-- Add Video -->
         <div id="galAddVideo" style="display:none">
           <div class="form-group">
-            <label for="galVideoCaption">ኣርእስቲ/መግለፂ*</label>
+            <label for="galVideoCaption">Caption / ገለጻ *</label>
             <input type="text" id="galVideoCaption" placeholder="e.g. Hospital Tour">
           </div>
           <div class="form-group">
@@ -465,7 +465,7 @@ a{text-decoration:none;color:inherit}
 
       <div class="section-head" style="margin-top:32px">
         <h2>Current Gallery Items</h2>
-        <p>ዘለዉ ስእልታትን ቪድዮታትን — ንምድምሳስ ኣብቲ ቀይሕ button ጠውቕ።</p>
+        <p>ዘለዉ ስእልታትን ቪድዮታትን — ንምስራዝ ኣብቲ ቀይሕ button ጠውቕ።</p>
       </div>
       <div id="galleryListStatus" class="status-banner"></div>
       <div class="card">
@@ -619,6 +619,37 @@ function switchTab(name){
 }
 
 // ── Departments / Doctors photo management ──
+
+// Shared image compression helper — resizes large photos down to a max
+// dimension and re-encodes at reasonable quality before upload, so a photo
+// taken on a phone (often 3-5MB) becomes a much smaller, faster-loading file.
+function compressImage(file, maxDim=1600, quality=0.82){
+  return new Promise((resolve, reject)=>{
+    const reader = new FileReader();
+    reader.onload = e => {
+      const img = new Image();
+      img.onload = () => {
+        let {width, height} = img;
+        if (width > maxDim || height > maxDim){
+          if (width > height){ height = Math.round(height * maxDim / width); width = maxDim; }
+          else { width = Math.round(width * maxDim / height); height = maxDim; }
+        }
+        const canvas = document.createElement('canvas');
+        canvas.width = width; canvas.height = height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, width, height);
+        const mime = file.type === 'image/png' ? 'image/png' : 'image/jpeg';
+        const dataUrl = canvas.toDataURL(mime, quality);
+        resolve({dataUrl, base64: dataUrl.split(',')[1]});
+      };
+      img.onerror = () => reject(new Error('Could not read image.'));
+      img.src = e.target.result;
+    };
+    reader.onerror = () => reject(new Error('File read failed.'));
+    reader.readAsDataURL(file);
+  });
+}
+
 function renderPhotoGrid(gridId, items){
   const grid=document.getElementById(gridId);
   grid.innerHTML=items.map(it=>`
@@ -644,15 +675,9 @@ async function uploadEntityPhoto(gridId,itemId,filePath,file){
   if(!file.type.startsWith('image/')){alert('ስእሊ ጥራይ upload ግበር።');return}
   if(file.size>5*1024*1024){alert('ስእሊ ካብ 5MB ንላዕሊ ክኸውን የብሉን።');return}
   const statusEl=document.getElementById(`pm-status-${gridId}-${itemId}`);
-  statusEl.innerHTML='<span style="color:var(--teal)"><i class="fas fa-spinner spin"></i> እናተስቀለ...</span>';
+  statusEl.innerHTML='<span style="color:var(--teal)"><i class="fas fa-spinner spin"></i> ስእሊ እናተመሓየሸ (compress) ኣሎ...</span>';
   try{
-    const dataUrl=await new Promise((res,rej)=>{
-      const r=new FileReader();
-      r.onload=()=>res(r.result);
-      r.onerror=()=>rej(new Error('File read failed'));
-      r.readAsDataURL(file);
-    });
-    const base64=dataUrl.split(',')[1];
+    const {dataUrl, base64} = await compressImage(file);
     let sha=null;
     try{
       const existing=await ghGet(filePath);
@@ -683,21 +708,20 @@ function switchGalAddMode(mode){
   vBtn.style.color = mode==='video' ? 'var(--teal)' : 'var(--gray-500)';
 }
 
-function handleGalPhoto(file){
+async function handleGalPhoto(file){
   if(!file) return;
   if(!file.type.startsWith('image/')){alert('ስእሊ ጥራይ upload ግበር።');return}
   if(file.size>5*1024*1024){alert('ስእሊ ካብ 5MB ንላዕሊ ክኸውን የብሉን።');return}
-  const reader=new FileReader();
-  reader.onload=e=>{
-    const dataUrl=e.target.result;
-    const base64=dataUrl.split(',')[1];
-    const ext=file.name.split('.').pop().toLowerCase()||'jpg';
-    const safeName='gallery_'+Date.now()+'_'+Math.random().toString(36).slice(2,7)+'.'+ext;
+  const ext=file.name.split('.').pop().toLowerCase()||'jpg';
+  const safeName='gallery_'+Date.now()+'_'+Math.random().toString(36).slice(2,7)+'.'+ext;
+  try{
+    const {dataUrl, base64} = await compressImage(file);
     galPendingPhoto={dataUrl,base64,name:safeName};
     document.getElementById('galPhotoPreview').innerHTML=
       `<div class="img-thumb"><img src="${dataUrl}" alt="preview"><button class="remove-img" onclick="galPendingPhoto=null;document.getElementById('galPhotoPreview').innerHTML=''"><i class="fas fa-times"></i></button></div>`;
-  };
-  reader.readAsDataURL(file);
+  }catch(err){
+    alert('ስእሊ ምሕዋስ ኣይተኻእለን: '+err.message);
+  }
 }
 
 // GitHub JSON helpers (generic — used for gallery.json)
@@ -788,7 +812,7 @@ async function loadGalleryList(){
         <div class="pm-img-wrap" style="position:relative">${thumb}</div>
         <div class="pm-body">
           <h4>${it.caption} ${it.type==='video'?'<span style=\"color:var(--teal);font-size:.7rem\">(Video)</span>':''}</h4>
-          <button class="btn-danger" style="width:100%;justify-content:center;display:flex" onclick="deleteGalleryItem('${it.id}')"><i class="fas fa-trash-alt"></i> ደምሲስ</button>
+          <button class="btn-danger" style="width:100%;justify-content:center;display:flex" onclick="deleteGalleryItem('${it.id}')"><i class="fas fa-trash-alt"></i> ሰርዝ</button>
         </div>
       </div>`;
     }).join('');
@@ -828,19 +852,18 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function handleFiles(files){
-  [...files].forEach(file=>{
+  [...files].forEach(async file=>{
     if(!file.type.startsWith('image/')){return}
     if(file.size>5*1024*1024){alert(file.name+' is too large (max 5MB).');return}
-    const reader=new FileReader();
-    reader.onload=e=>{
-      const dataUrl=e.target.result;
-      const base64=dataUrl.split(',')[1];
-      const ext=file.name.split('.').pop().toLowerCase()||'jpg';
-      const safeName='news_'+Date.now()+'_'+Math.random().toString(36).slice(2,7)+'.'+ext;
+    const ext=file.name.split('.').pop().toLowerCase()||'jpg';
+    const safeName='news_'+Date.now()+'_'+Math.random().toString(36).slice(2,7)+'.'+ext;
+    try{
+      const {dataUrl, base64} = await compressImage(file);
       pendingFiles.push({file,dataUrl,base64,name:safeName});
       renderPreviews();
-    };
-    reader.readAsDataURL(file);
+    }catch(err){
+      alert(file.name+' ምሕዋስ ኣይተኻእለን: '+err.message);
+    }
   });
 }
 function renderPreviews(){
@@ -967,7 +990,7 @@ async function loadArticleList(){
         </div>
         <div class="article-actions">
           <button class="btn-secondary" style="background:#e8f4f4;color:#0B7B7B;border:1.5px solid #0B7B7B;padding:7px 14px;border-radius:6px;cursor:pointer;font-size:.82rem;font-weight:600;font-family:inherit" onclick="editArticle('${art.id}')"><i class="fas fa-edit"></i> ምምሕያሽ</button>
-          <button class="btn-danger" onclick="deleteArticle('${art.id}')"><i class="fas fa-trash-alt"></i> ደምሲስ</button>
+          <button class="btn-danger" onclick="deleteArticle('${art.id}')"><i class="fas fa-trash-alt"></i> ሰርዝ</button>
         </div>`;
       listEl.appendChild(item);
     });
@@ -1100,7 +1123,7 @@ async function loadVacancyList() {
           </div>
         </div>
         <div class="article-actions">
-          <button class="btn-danger" onclick="deleteVacancy('${v.id}')"><i class="fas fa-trash-alt"></i> ደምሲስ</button>
+          <button class="btn-danger" onclick="deleteVacancy('${v.id}')"><i class="fas fa-trash-alt"></i> ሰርዝ</button>
         </div>
       </div>`;
     }).join('');
@@ -1431,21 +1454,21 @@ function closeEditModal() {
 }
 
 function handleEditFiles(files) {
-  [...files].forEach(file => {
+  [...files].forEach(async file => {
     if (!file.type.startsWith('image/')) return;
     if (file.size > 5*1024*1024) { alert(file.name+' too large (max 5MB).'); return; }
-    const reader = new FileReader();
-    reader.onload = e => {
-      const base64 = e.target.result.split(',')[1];
-      const ext    = file.name.split('.').pop().toLowerCase() || 'jpg';
-      const name   = 'news_'+Date.now()+'_'+Math.random().toString(36).slice(2,7)+'.'+ext;
-      editPendingFiles.push({dataUrl:e.target.result, base64, name});
+    const ext  = file.name.split('.').pop().toLowerCase() || 'jpg';
+    const name = 'news_'+Date.now()+'_'+Math.random().toString(36).slice(2,7)+'.'+ext;
+    try{
+      const {dataUrl, base64} = await compressImage(file);
+      editPendingFiles.push({dataUrl, base64, name});
       const prev = document.getElementById('editImgPreview');
       prev.innerHTML = editPendingFiles.map((pf,i) =>
         `<div class="img-thumb"><img src="${pf.dataUrl}"><button class="remove-img" onclick="editPendingFiles.splice(${i},1);handleEditFiles(new DataTransfer().files)"><i class="fas fa-times"></i></button></div>`
       ).join('');
-    };
-    reader.readAsDataURL(file);
+    }catch(err){
+      alert(file.name+' ምሕዋስ ኣይተኻእለን: '+err.message);
+    }
   });
 }
 
