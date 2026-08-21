@@ -4,8 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>News & Events | Geez Hospital — Axum, Tigray</title>
-  <meta name="description" content="Latest news, health tips, and announcements from Geez Hospital in Axum, Tigray.">
+  <meta name="description" content="Latest news, health tips, announcements, and patient stories from Geez Hospital in Axum, Tigray. Stay informed on hospital updates and community health events.">
+  <meta name="keywords" content="Geez Hospital news, hospital news Axum, health tips Axum, Geez Hospital announcements, Geez Hospital events, ዜና ግዕዝ ሆስፒታል, ኣክሱም ጥዕና ዜና">
   <link rel="canonical" href="https://geezhospital.com/news.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="News & Events | Geez Hospital — Axum, Tigray">
+  <meta property="og:description" content="Latest news, health tips, announcements, and patient stories from Geez Hospital in Axum, Tigray.">
+  <meta property="og:url" content="https://geezhospital.com/news.html">
+  <meta property="og:image" content="https://geezhospital.com/images/og-cover.jpg">
+  <meta property="og:site_name" content="Geez Hospital">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="News & Events | Geez Hospital — Axum, Tigray">
+  <meta name="twitter:description" content="Latest news, health tips, announcements, and patient stories from Geez Hospital in Axum, Tigray.">
+  <meta name="twitter:image" content="https://geezhospital.com/images/og-cover.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://geezhospital.com/" },
+      { "@type": "ListItem", "position": 2, "name": "News & Events", "item": "https://geezhospital.com/news.html" }
+    ]
+  }
+  </script>
   <link rel="icon" href="images/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Noto+Sans+Ethiopic:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -561,14 +582,18 @@
 <!-- Page Hero -->
 <section class="page-hero">
   <div class="container">
-    <h2>News &amp; Events</h2>
-    <p>Stay updated with the latest announcements, health tips, and events from Geez Hospital.</p>
+    <h1>News &amp; Events — Geez Hospital, Axum</h1>
+    <p>Stay updated with the latest announcements, health tips, and events from Geez Hospital in Axum, Tigray.</p>
   </div>
 </section>
 
 <!-- News Section -->
 <section class="section-gap" style="background: var(--gray-50, #f8fafc);">
   <div class="container">
+
+    <p style="max-width:760px;margin:0 auto 32px;color:var(--news-gray, #64748b);font-size:.95rem;line-height:1.75;text-align:center">
+      Follow the latest updates from Geez Hospital, a leading healthcare provider in Axum, Tigray. Here you'll find hospital announcements, upcoming health events, practical health tips from our specialists, and stories from our patients — all in one place.
+    </p>
 
     <!-- Filter Bar -->
     <div class="filter-bar">
@@ -792,9 +817,17 @@ function renderCards(articles) {
       <a href="https://wa.me/?text=${artText}%20${artEnc}" target="_blank"
          style="display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:999px;background:#25D366;color:#fff;font-size:.75rem;font-weight:600;text-decoration:none">
          <i class="fab fa-whatsapp"></i> WhatsApp</a>
-      <button onclick="navigator.clipboard.writeText('${artUrl}');this.textContent='Copied!';setTimeout(()=>this.innerHTML='<i class=\'fas fa-link\'></i> Copy',2000)"
-         style="display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:999px;background:#f1f5f9;color:#475569;font-size:.75rem;font-weight:600;border:none;cursor:pointer">
-         <i class="fas fa-link"></i> Copy</button>`;
+    `;
+    const copyBtn = document.createElement('button');
+    copyBtn.style.cssText = 'display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:999px;background:#f1f5f9;color:#475569;font-size:.75rem;font-weight:600;border:none;cursor:pointer';
+    copyBtn.innerHTML = '<i class="fas fa-link"></i> Copy';
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(artUrl).then(() => {
+        copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        setTimeout(() => { copyBtn.innerHTML = '<i class="fas fa-link"></i> Copy'; }, 2000);
+      });
+    });
+    shareDiv.appendChild(copyBtn);
     bodyDiv.appendChild(shareDiv);
     card.appendChild(sliderDiv);
     card.appendChild(bodyDiv);
