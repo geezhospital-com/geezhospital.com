@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════════════
-   GEEZ HOSPITAL — script.js  (Merged & Final)
+   GEEZ HOSPITAL — script.js
    ──────────────────────────────────────────────────────────────
    Merge notes:
    • Translation dictionary expanded with ALL keys from
@@ -23,6 +23,7 @@
      3.  Sticky header shadow on scroll
      4.  Scroll progress bar
      5.  Mobile navigation
+     5b. GH mega-menu mobile accordion  ← NEW (fix)
      6.  Scroll reveal (IntersectionObserver)
      7.  Back to top button
      8.  Floating Telegram button toggle
@@ -649,6 +650,8 @@ function initScrollProgress() {
    5. MOBILE NAVIGATION
    Hamburger toggles the nav drawer open/closed.
    Closes on link tap or outside click.
+   (This controls the OLD inner-page header:
+   #hamburger / #mainNav / .nav-link)
 ───────────────────────────────────────── */
 function initMobileNav() {
   const hamburger = document.getElementById('hamburger');
@@ -666,6 +669,56 @@ function initMobileNav() {
   document.addEventListener('click', e => {
     const header = document.getElementById('siteHeader');
     if (header && !header.contains(e.target)) toggleNav(false);
+  });
+}
+
+
+/* ─────────────────────────────────────────
+   5b. GH MEGA-MENU MOBILE ACCORDION  ← NEW FIX
+   ─────────────────────────────────────────
+   The homepage nav (.gh-sitenav / .gh-nav-list / .gh-nav-item)
+   is a SEPARATE component from the old #mainNav above, and it
+   was never wired up in JS — CSS alone cannot toggle classes.
+
+   Bug fixed: on mobile, tapping a parent item with a submenu
+   (e.g. "Media" → Gallery, Testimonials, Patient Info, Articles,
+   Patient Satisfaction Survey) did nothing, because nothing
+   ever added the `.gh-mobile-open` class the CSS depends on.
+
+   Behaviour:
+   • Only intervenes at mobile widths (≤768px) — desktop keeps
+     its existing hover-driven mega-menu untouched.
+   • Tapping a nav-item that HAS a `.gh-mega` submenu toggles
+     `.gh-mobile-open` on that item (expands/collapses it) and
+     prevents the default link navigation for that tap.
+   • Tapping a nav-item WITHOUT a submenu is left completely
+     alone — it navigates normally.
+   • Opening one item closes any other open item (single-open
+     accordion), matching typical mobile-menu UX.
+───────────────────────────────────────── */
+function initGhMobileAccordion() {
+  const navList = document.querySelector('.gh-nav-list');
+  if (!navList) return;
+
+  navList.querySelectorAll('.gh-nav-item').forEach(item => {
+    const link = item.querySelector('.gh-nav-link');
+    const mega = item.querySelector('.gh-mega');
+    if (!link || !mega) return; /* no submenu on this item — leave it as a normal link */
+
+    link.addEventListener('click', e => {
+      /* Only hijack the tap on mobile; desktop keeps hover behaviour */
+      if (window.innerWidth > 768) return;
+      e.preventDefault();
+
+      const isOpen = item.classList.contains('gh-mobile-open');
+
+      /* Close any other open item first (single-open accordion) */
+      navList.querySelectorAll('.gh-nav-item.gh-mobile-open').forEach(el => {
+        if (el !== item) el.classList.remove('gh-mobile-open');
+      });
+
+      item.classList.toggle('gh-mobile-open', !isOpen);
+    });
   });
 }
 
@@ -907,6 +960,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initStickyHeader();
   initScrollProgress();
   initMobileNav();
+  initGhMobileAccordion();   /* ← NEW: fixes the "Media" chevron / submenu bug */
   initScrollReveal();
   initBackToTop();
   initFabToggle();
