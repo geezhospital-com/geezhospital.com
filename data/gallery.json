@@ -101,12 +101,6 @@
       "type": "image",
       "src": "images/gallery/gallery_1787220633538_iwuka.jpg",
       "caption": "Main entrance"
-    },
-    {
-      "id": "gal-seed-1",
-      "type": "image",
-      "src": "images/gallery1.jpg",
-      "caption": "Hospital Entrance"
     }
   ]
 }
