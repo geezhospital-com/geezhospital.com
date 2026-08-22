@@ -119,12 +119,6 @@
       "type": "image",
       "src": "images/gallery5.jpg",
       "caption": "Laboratory"
-    },
-    {
-      "id": "gal-seed-6",
-      "type": "image",
-      "src": "images/gallery6.jpg",
-      "caption": "Modern Equipment"
     }
   ]
 }
