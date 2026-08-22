@@ -1073,7 +1073,20 @@ button[type="submit"]:hover { background: var(--teal-600); box-shadow: 0 6px 20p
   .header-inner  { position: relative; }
 
   /* New nav mobile */
-  .gh-topbar     { display: none; }
+  /* ── Condensed topbar ──
+     Full desktop topbar (2 phones, email, address, socials,
+     emergency pill) is too much for a small screen, so on mobile
+     we keep just the essentials — one phone number + the
+     emergency pill — in the same navy strip, so the header still
+     reads as branded/eye-catching instead of plain white. */
+  .gh-topbar      { height: 34px; }
+  .gh-tb-inner    { padding: 0 14px; }
+  .gh-tb-left .gh-tb-item:not(:first-child) { display: none; }
+  .gh-tb-left .gh-tb-divider,
+  .gh-tb-right .gh-tb-divider { display: none; }
+  .gh-tb-item     { font-size: .72rem; gap: 5px; }
+  .gh-tb-right .gh-social-link { display: none; }
+  .gh-emergency-pill { padding: 3px 9px; font-size: .66rem; gap: 4px; }
   .gh-nav-list   { display: none; }
   .gh-hamburger  { display: block; }
   .gh-btn-book   { display: none; }
@@ -1132,6 +1145,12 @@ button[type="submit"]:hover { background: var(--teal-600); box-shadow: 0 6px 20p
   .top-bar-inner{ flex-direction: column; gap: 6px; text-align: center; }
   .announcement-bar { display: none; }
   .gh-hero-chips { gap: 7px; }
+
+  /* Extra-narrow phones: shrink the condensed topbar a touch more
+     so the phone number + emergency pill never wrap onto 2 lines. */
+  .gh-tb-inner    { padding: 0 10px; }
+  .gh-tb-item     { font-size: .68rem; }
+  .gh-emergency-pill { padding: 3px 7px; font-size: .62rem; }
 }
 
 /* ── Utility ── */
