@@ -115,12 +115,6 @@
       "caption": "Reception Area"
     },
     {
-      "id": "gal-seed-3",
-      "type": "image",
-      "src": "images/gallery3.jpg",
-      "caption": "Operating Room"
-    },
-    {
       "id": "gal-seed-5",
       "type": "image",
       "src": "images/gallery5.jpg",
