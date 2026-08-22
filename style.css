@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════════════
-   GEEZ HOSPITAL — style.css 
+   GEEZ HOSPITAL — style.css  v2.0
    Design: World-Class Medical | Navy Authority + Teal Precision
    ══════════════════════════════════════════════════════════════ */
 
@@ -807,9 +807,8 @@ button[type="submit"]:hover { background: var(--teal-600); box-shadow: 0 6px 20p
 .gh-nav-list  { display: flex; align-items: center; list-style: none; height: 64px; flex: 1; gap: 0; padding: 0; margin: 0; }
 .gh-nav-item  { position: relative; height: 100%; display: flex; align-items: center; }
 .gh-nav-link  { display: flex; align-items: center; gap: 4px; padding: 0 13px; height: 100%; font-size: .83rem; font-weight: 500; color: var(--gray-500); border-bottom: 2px solid transparent; text-decoration: none; transition: color .2s, border-color .2s; white-space: nowrap; }
-.gh-nav-link:hover, .gh-nav-link.active { color: var(--navy); border-bottom-color: var(--teal-brand); }
+.gh-nav-link.active { color: var(--navy); border-bottom-color: var(--teal-brand); }
 .gh-nav-link i { font-size: .58rem; transition: transform .2s; }
-.gh-nav-item:hover > .gh-nav-link i { transform: rotate(180deg); }
 
 /* Mega menu */
 .gh-mega {
@@ -825,12 +824,26 @@ button[type="submit"]:hover { background: var(--teal-600); box-shadow: 0 6px 20p
   from { opacity:0; transform:translateY(-8px); }
   to   { opacity:1; transform:translateY(0); }
 }
-.gh-nav-item:hover > .gh-mega { display: grid; }
 .gh-mega-header { font-size: .67rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gray-400); padding: 2px 10px 10px; grid-column: 1 / -1; border-bottom: 1px solid var(--gray-100); margin-bottom: 4px; }
 .gh-mega-item   { display: flex; align-items: center; gap: 8px; padding: 9px 10px; border-radius: var(--radius-sm); font-size: .82rem; color: var(--gray-500); text-decoration: none; transition: all .15s; }
-.gh-mega-item:hover { background: var(--teal-brand-l); color: var(--teal-brand); }
 .gh-mega-item i     { width: 15px; color: var(--teal-brand); font-size: .73rem; flex-shrink: 0; }
 .gh-mega-all        { color: var(--teal-brand) !important; font-weight: 600; }
+
+/* ── Desktop-only hover behaviour ──
+   Scoped to (hover: hover) so touchscreens never receive these
+   rules. Without this scoping, WebKit/Chrome on mobile require
+   TWO taps on any link that has a :hover style on itself or an
+   ancestor — the first tap only "simulates" the hover state, the
+   second tap actually fires the click. That was the cause of the
+   "tap the chevron once, nothing happens, tap Media again and it
+   opens" bug. Desktop mouse users still get instant hover-to-open
+   mega menus exactly as before. */
+@media (hover: hover) and (pointer: fine) {
+  .gh-nav-link:hover { color: var(--navy); border-bottom-color: var(--teal-brand); }
+  .gh-nav-item:hover > .gh-nav-link i { transform: rotate(180deg); }
+  .gh-nav-item:hover > .gh-mega { display: grid; }
+  .gh-mega-item:hover { background: var(--teal-brand-l); color: var(--teal-brand); }
+}
 
 /* Nav actions */
 .gh-nav-actions { display: flex; align-items: center; gap: 10px; margin-left: auto; }
@@ -1451,4 +1464,124 @@ button[type="submit"]:hover { background: var(--teal-600); box-shadow: 0 6px 20p
   .gh-intl-stats {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   TRUST & ACCREDITATION BADGES  ← NEW
+   ──────────────────────────────────────────────────────────────
+   Purely additive — a row of logos/credentials (ISO certification,
+   Ministry of Health licensing, partner institutions, etc.) meant
+   to sit between sections to build international credibility.
+   Nothing existing is affected; these classes only render once
+   matching markup is added to the page.
+   ══════════════════════════════════════════════════════════════ */
+.gh-trust-badges {
+  background: var(--gray-50);
+  padding: 40px 0;
+  border-top: 1px solid var(--gray-200);
+  border-bottom: 1px solid var(--gray-200);
+}
+.gh-trust-badges-inner {
+  display: flex; align-items: center; justify-content: center;
+  flex-wrap: wrap; gap: 40px;
+}
+.gh-trust-badge {
+  display: flex; align-items: center; gap: 10px;
+  opacity: .8; filter: grayscale(15%);
+  transition: opacity .2s var(--ease), transform .2s var(--ease), filter .2s var(--ease);
+}
+.gh-trust-badge:hover { opacity: 1; transform: translateY(-2px); filter: grayscale(0); }
+.gh-trust-badge img { height: 44px; width: auto; object-fit: contain; display: block; }
+.gh-trust-badge-text  { display: flex; flex-direction: column; }
+.gh-trust-badge-name  { font-size: .82rem; font-weight: 700; color: var(--navy); }
+.gh-trust-badge-sub   { font-size: .7rem; color: var(--gray-500); }
+
+@media (max-width: 768px) {
+  .gh-trust-badges       { padding: 26px 0; }
+  .gh-trust-badges-inner { gap: 24px; }
+  .gh-trust-badge img    { height: 32px; }
+  .gh-trust-badge-name   { font-size: .76rem; }
+  .gh-trust-badge-sub    { font-size: .65rem; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   TESTIMONIAL CAROUSEL  ← NEW
+   ──────────────────────────────────────────────────────────────
+   Purely additive — a rotating multi-patient testimonial section
+   on a navy background (matches the .gh-intl-section treatment).
+   Paired with initTestimonialCarousel() in script.js.
+   Expected markup (paste wherever the old single testimonial was,
+   or as its own new section):
+
+     <section class="gh-testimonials">
+       <div class="container gh-testi-track-wrap">
+         <button class="gh-testi-arrow prev" aria-label="Previous">‹</button>
+         <div class="gh-testi-track">
+           <div class="gh-testi-slide active">
+             <i class="fas fa-quote-left gh-testi-quote-icon"></i>
+             <p class="gh-testi-text">"…testimonial text…"</p>
+             <p class="gh-testi-author">— Patient Name, Axum</p>
+           </div>
+           <div class="gh-testi-slide">
+             <i class="fas fa-quote-left gh-testi-quote-icon"></i>
+             <p class="gh-testi-text">"…second testimonial…"</p>
+             <p class="gh-testi-author">— Another Patient</p>
+           </div>
+           <!-- add as many .gh-testi-slide as needed -->
+         </div>
+         <button class="gh-testi-arrow next" aria-label="Next">›</button>
+         <div class="gh-testi-dots"></div>  <!-- dots are auto-generated by JS -->
+       </div>
+     </section>
+   ══════════════════════════════════════════════════════════════ */
+.gh-testimonials {
+  background: var(--navy);
+  position: relative; overflow: hidden;
+  padding: var(--section-gap) 0;
+  color: #fff;
+}
+.gh-testimonials::before {
+  content: ''; position: absolute; top: -100px; left: -100px;
+  width: 320px; height: 320px;
+  background: radial-gradient(circle, rgba(11,123,123,.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.gh-testi-track-wrap { max-width: 760px; margin: 0 auto; position: relative; padding: 0 60px; }
+.gh-testi-track       { position: relative; min-height: 200px; }
+.gh-testi-slide {
+  position: absolute; inset: 0;
+  opacity: 0; visibility: hidden; transform: translateY(12px);
+  transition: opacity .4s ease, transform .4s ease, visibility .4s;
+  text-align: center;
+}
+.gh-testi-slide.active { opacity: 1; visibility: visible; transform: translateY(0); position: relative; }
+.gh-testi-quote-icon { font-size: 1.6rem; color: var(--teal-brand); margin-bottom: 16px; opacity: .75; display: block; }
+.gh-testi-text {
+  font-family: var(--font-serif); font-size: 1.35rem; font-style: italic;
+  line-height: 1.6; color: #fff; margin-bottom: 20px;
+}
+.gh-testi-author { font-size: .85rem; font-weight: 600; color: var(--teal-300); }
+.gh-testi-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18);
+  color: #fff; font-size: 1.1rem; line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: background .2s var(--ease), border-color .2s var(--ease);
+}
+.gh-testi-arrow:hover { background: var(--teal-brand); border-color: var(--teal-brand); }
+.gh-testi-arrow.prev { left: 0; }
+.gh-testi-arrow.next { right: 0; }
+.gh-testi-dots  { display: flex; justify-content: center; gap: 8px; margin-top: 28px; }
+.gh-testi-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(255,255,255,.25); border: none; padding: 0; cursor: pointer;
+  transition: background .2s var(--ease), transform .2s var(--ease);
+}
+.gh-testi-dot.active { background: var(--teal-brand); transform: scale(1.3); }
+
+@media (max-width: 600px) {
+  .gh-testi-track-wrap { padding: 0 44px; }
+  .gh-testi-text       { font-size: 1.05rem; }
+  .gh-testi-arrow      { width: 34px; height: 34px; font-size: 1rem; }
 }
