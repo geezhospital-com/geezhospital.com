@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════════════
-   GEEZ HOSPITAL — script.js
+   GEEZ HOSPITAL — script.js  (Merged & Final)
    ──────────────────────────────────────────────────────────────
    Merge notes:
    • Translation dictionary expanded with ALL keys from
@@ -33,6 +33,8 @@
     12.  Smooth scroll for anchor links
     13.  Footer copyright year
     14.  Init
+    15.  Testimonial carousel  ← NEW
+    16.  PWA — service worker registration  ← NEW
    ══════════════════════════════════════════════════════════════ */
 
 'use strict';
@@ -935,6 +937,86 @@ function initFooterYear() {
 
 
 /* ─────────────────────────────────────────
+   15. TESTIMONIAL CAROUSEL  ← NEW
+   ─────────────────────────────────────────
+   Rotates through multiple .gh-testi-slide elements inside
+   .gh-testi-track-wrap (see style.css for the expected markup).
+   • Auto-advances every 6s.
+   • Pauses on hover / keyboard focus (accessibility-friendly).
+   • Arrow buttons + auto-generated dots for manual navigation.
+   • Safe no-op if the markup isn't on the page yet.
+───────────────────────────────────────── */
+function initTestimonialCarousel() {
+  const wrap = document.querySelector('.gh-testi-track-wrap');
+  if (!wrap) return;
+
+  const slides   = Array.from(wrap.querySelectorAll('.gh-testi-slide'));
+  const dotsWrap = wrap.querySelector('.gh-testi-dots');
+  const prevBtn  = wrap.querySelector('.gh-testi-arrow.prev');
+  const nextBtn  = wrap.querySelector('.gh-testi-arrow.next');
+  if (!slides.length) return;
+
+  let index = slides.findIndex(s => s.classList.contains('active'));
+  if (index < 0) index = 0;
+  let timer = null;
+
+  /* Build the dots to match however many slides exist in the HTML */
+  if (dotsWrap) {
+    dotsWrap.innerHTML = slides
+      .map((_, i) => `<button class="gh-testi-dot${i === index ? ' active' : ''}" aria-label="Testimonial ${i + 1}"></button>`)
+      .join('');
+  }
+  const dots = dotsWrap ? Array.from(dotsWrap.querySelectorAll('.gh-testi-dot')) : [];
+
+  function show(newIndex) {
+    slides[index].classList.remove('active');
+    if (dots[index]) dots[index].classList.remove('active');
+    index = (newIndex + slides.length) % slides.length;
+    slides[index].classList.add('active');
+    if (dots[index]) dots[index].classList.add('active');
+  }
+
+  function next() { show(index + 1); }
+  function prev() { show(index - 1); }
+
+  function startAuto() { stopAuto(); timer = setInterval(next, 6000); }
+  function stopAuto()  { if (timer) clearInterval(timer); }
+
+  if (nextBtn) nextBtn.addEventListener('click', () => { next(); startAuto(); });
+  if (prevBtn) prevBtn.addEventListener('click', () => { prev(); startAuto(); });
+  dots.forEach((dot, i) => dot.addEventListener('click', () => { show(i); startAuto(); }));
+
+  /* Pause on hover and on keyboard focus so readers aren't rushed */
+  wrap.addEventListener('mouseenter', stopAuto);
+  wrap.addEventListener('mouseleave', startAuto);
+  wrap.addEventListener('focusin', stopAuto);
+  wrap.addEventListener('focusout', startAuto);
+
+  startAuto();
+}
+
+
+/* ─────────────────────────────────────────
+   16. PWA — SERVICE WORKER REGISTRATION  ← NEW
+   ─────────────────────────────────────────
+   Registers /sw.js so the site can be added to a phone's home
+   screen and load instantly on repeat visits / flaky connections.
+   Safe no-op in browsers without support, and safe no-op (fails
+   silently, logged as a warning) until sw.js is actually uploaded
+   to the site's root — it does not affect normal page behaviour
+   either way.
+───────────────────────────────────────── */
+function initServiceWorker() {
+  if (!('serviceWorker' in navigator)) return;
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(err => {
+      console.warn('[PWA] Service worker registration failed:', err);
+    });
+  });
+}
+
+
+/* ─────────────────────────────────────────
    14. INIT — runs once DOM is fully parsed
 ───────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
@@ -972,4 +1054,6 @@ document.addEventListener('DOMContentLoaded', () => {
   /* — Misc — */
   initSmoothScroll();
   initFooterYear();
+  initTestimonialCarousel();  /* ← NEW */
+  initServiceWorker();        /* ← NEW */
 });
