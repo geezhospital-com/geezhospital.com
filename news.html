@@ -426,7 +426,9 @@
 .gh-mega-item:hover{background:#E8F4F4;color:#0B7B7B;}
 .gh-mega-item i{width:15px;color:#0B7B7B;font-size:.73rem;flex-shrink:0;}
 .gh-mega-all{color:#0B7B7B!important;font-weight:600;}
-@media(max-width:1024px){.gh-mega{display:none!important;}}
+/* Mega menu on mobile is now handled as an accordion via style.css
+   (.gh-nav-list.gh-open .gh-mega + .gh-mobile-open) and the JS toggle
+   below — no longer force-hidden here. */
 </style>
 </head>
 <body>
@@ -1160,6 +1162,23 @@ function toggleFabForm() {
       l.addEventListener('click', function(){
         nav.classList.remove('gh-open');
         btn.setAttribute('aria-expanded','false');
+      });
+    });
+    /* Mobile submenu accordion: tapping the chevron on an item that has
+       a .gh-mega (Media > Gallery, Testimonials, Patient Info, Articles...)
+       expands it inline instead of navigating away. */
+    nav.querySelectorAll('.gh-nav-item > .gh-nav-link > i.fa-chevron-down').forEach(function(icon){
+      icon.addEventListener('click', function(e){
+        if (window.innerWidth > 768) return;
+        var item = icon.closest('.gh-nav-item');
+        if (!item || !item.querySelector('.gh-mega')) return;
+        e.preventDefault();
+        e.stopPropagation();
+        var isOpen = item.classList.contains('gh-mobile-open');
+        nav.querySelectorAll('.gh-nav-item.gh-mobile-open').forEach(function(el){
+          if (el !== item) el.classList.remove('gh-mobile-open');
+        });
+        item.classList.toggle('gh-mobile-open', !isOpen);
       });
     });
   }
