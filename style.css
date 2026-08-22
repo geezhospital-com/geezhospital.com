@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════════════
-   GEEZ HOSPITAL — style.css  v2.0
+   GEEZ HOSPITAL — style.css 
    Design: World-Class Medical | Navy Authority + Teal Precision
    ══════════════════════════════════════════════════════════════ */
 
@@ -1087,16 +1087,36 @@ button[type="submit"]:hover { background: var(--teal-600); box-shadow: 0 6px 20p
   .gh-trust-div  { display: none; }
   .gh-mobile-emergency { display: flex; }
 
+  /* ── Mobile nav panel ──
+     Previously the mega-dropdowns (Media > Gallery, Testimonials,
+     Patient Info, Articles...) were force-hidden here with
+     `display:none !important`, making everything inside them
+     unreachable on mobile. Fixed: submenus now expand inline as an
+     accordion when the person taps the chevron on a parent item. */
   .gh-nav-list.gh-open {
     display: flex; flex-direction: column; position: fixed;
     top: 64px; left: 0; right: 0; background: #fff;
     padding: 12px 0; border-bottom: 1px solid var(--gray-100);
     box-shadow: var(--shadow-md); z-index: 499;
     height: auto; align-items: flex-start;
+    max-height: calc(100vh - 64px); overflow-y: auto;
   }
-  .gh-nav-list.gh-open .gh-nav-item  { width: 100%; height: auto; }
-  .gh-nav-list.gh-open .gh-nav-link  { padding: 12px 22px; height: auto; width: 100%; border-bottom: 1px solid var(--gray-100); }
-  .gh-nav-list.gh-open .gh-mega      { display: none !important; }
+  .gh-nav-list.gh-open .gh-nav-item  { width: 100%; height: auto; flex-direction: column; align-items: stretch; }
+  .gh-nav-list.gh-open .gh-nav-link  { padding: 12px 22px; height: auto; width: 100%; border-bottom: 1px solid var(--gray-100); position: relative; }
+  .gh-nav-list.gh-open .gh-nav-link i.fa-chevron-down {
+    position: absolute; right: 12px; top: 0; bottom: 0; margin: auto 0;
+    padding: 14px; margin-right: -14px; transition: transform .2s;
+  }
+  .gh-nav-list.gh-open .gh-nav-item.gh-mobile-open > .gh-nav-link i.fa-chevron-down { transform: rotate(180deg); }
+  .gh-nav-list.gh-open .gh-mega {
+    display: none;
+    position: static; box-shadow: none; border: none; border-radius: 0;
+    background: var(--gray-50); padding: 4px 0 4px 12px; min-width: 0;
+    width: 100%; grid-template-columns: 1fr; gap: 0; animation: none;
+  }
+  .gh-nav-list.gh-open .gh-nav-item.gh-mobile-open > .gh-mega { display: grid; }
+  .gh-nav-list.gh-open .gh-mega-header { display: none; }
+  .gh-nav-list.gh-open .gh-mega-item   { padding: 10px 22px; border-radius: 0; border-bottom: 1px solid var(--gray-100); }
 }
 
 @media (max-width: 480px) {
