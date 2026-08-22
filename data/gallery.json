@@ -113,12 +113,6 @@
       "type": "image",
       "src": "images/gallery2.jpg",
       "caption": "Reception Area"
-    },
-    {
-      "id": "gal-seed-5",
-      "type": "image",
-      "src": "images/gallery5.jpg",
-      "caption": "Laboratory"
     }
   ]
 }
