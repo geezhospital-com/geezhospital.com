@@ -107,12 +107,6 @@
       "type": "image",
       "src": "images/gallery1.jpg",
       "caption": "Hospital Entrance"
-    },
-    {
-      "id": "gal-seed-2",
-      "type": "image",
-      "src": "images/gallery2.jpg",
-      "caption": "Reception Area"
     }
   ]
 }
