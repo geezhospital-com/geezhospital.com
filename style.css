@@ -1102,11 +1102,19 @@ button[type="submit"]:hover { background: var(--teal-600); box-shadow: 0 6px 20p
     max-height: calc(100vh - 64px); overflow-y: auto;
   }
   .gh-nav-list.gh-open .gh-nav-item  { width: 100%; height: auto; flex-direction: column; align-items: stretch; }
-  .gh-nav-list.gh-open .gh-nav-link  { padding: 12px 22px; height: auto; width: 100%; border-bottom: 1px solid var(--gray-100); position: relative; }
-  .gh-nav-list.gh-open .gh-nav-link i.fa-chevron-down {
-    position: absolute; right: 12px; top: 0; bottom: 0; margin: auto 0;
-    padding: 14px; margin-right: -14px; transition: transform .2s;
+  .gh-nav-list.gh-open .gh-nav-link  {
+    padding: 14px 22px; height: auto; width: 100%;
+    border-bottom: 1px solid var(--gray-100);
+    justify-content: flex-start; gap: 8px;
   }
+  /* Chevron sits right next to the label (normal flex flow, not
+     pushed to the far edge) and is bold/coloured so it reads as
+     a tappable "expand" affordance rather than disappearing. */
+  .gh-nav-list.gh-open .gh-nav-link i.fa-chevron-down {
+    font-size: .7rem; color: var(--teal-brand); font-weight: 900;
+    transition: transform .2s;
+  }
+  .gh-nav-list.gh-open .gh-nav-item.gh-mobile-open > .gh-nav-link { color: var(--teal-brand); font-weight: 600; }
   .gh-nav-list.gh-open .gh-nav-item.gh-mobile-open > .gh-nav-link i.fa-chevron-down { transform: rotate(180deg); }
   .gh-nav-list.gh-open .gh-mega {
     display: none;
