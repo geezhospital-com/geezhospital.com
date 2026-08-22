@@ -8,6 +8,11 @@
   <meta name="keywords" content="Geez Hospital doctors, specialist doctors Axum, cardiologist Axum, Cardiologist in Tigray, pediatrician Tigray, surgeon Axum, ሓካይም ኣክሱም">
   <link rel="canonical" href="https://geezhospital.com/doctors.html">
   <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon-180.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0A1F3D">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Our Doctors | Geez Hospital — Specialist Physicians Axum">
   <meta property="og:description" content="Meet Geez Hospital's expert specialist doctors in Axum, Tigray — cardiologists, surgeons, pediatricians, and more.">
@@ -35,19 +40,6 @@
     gtag('js', new Date());
     gtag('config', 'G-9QH360M4V1');
   </script>
-  <style>
-    /* Make sure anchored doctor cards aren't hidden behind the sticky nav
-       when jumped to from the Doctors mega-menu, and give a brief highlight
-       so the user can see which card they landed on. */
-    .doctor-full-card { scroll-margin-top: 120px; }
-    .doctor-full-card:target {
-      animation: gh-doctor-highlight 1.8s ease-out 1;
-    }
-    @keyframes gh-doctor-highlight {
-      0%   { box-shadow: 0 0 0 3px rgba(11,123,123,.55); }
-      100% { box-shadow: 0 0 0 0 rgba(11,123,123,0); }
-    }
-  </style>
 </head>
 <body>
 
@@ -127,19 +119,19 @@
         <a href="doctors.html" class="gh-nav-link active">Doctors <i class="fas fa-chevron-down"></i></a>
         <div class="gh-mega" style="grid-template-columns:repeat(3,1fr)">
           <div class="gh-mega-header">Find a Specialist</div>
-          <a href="doctors.html#dr-tesfay" class="gh-mega-item"><i class="fas fa-heartbeat"></i> Dr. Tesfay — Cardiology</a>
-          <a href="doctors.html#dr-higus" class="gh-mega-item"><i class="fas fa-user-md"></i> Dr. Higus — Internal Med.</a>
-          <a href="doctors.html#dr-gebreab" class="gh-mega-item"><i class="fas fa-baby"></i> Dr. Gebreab — Pediatrics</a>
-          <a href="doctors.html#dr-henok" class="gh-mega-item"><i class="fas fa-venus"></i> Dr. Henok — OB/GYN</a>
-          <a href="doctors.html#dr-natnael" class="gh-mega-item"><i class="fas fa-x-ray"></i> Dr. Natnael — Radiology</a>
-          <a href="doctors.html#dr-teklay" class="gh-mega-item"><i class="fas fa-baby"></i> Dr. Teklay — Pediatrics</a>
-          <a href="doctors.html#dr-fiseha" class="gh-mega-item"><i class="fas fa-tooth"></i> Dr. Fiseha — Dental</a>
-          <a href="doctors.html#dr-yisak" class="gh-mega-item"><i class="fas fa-cut"></i> Dr. Yisak — Surgery</a>
-          <a href="doctors.html#dr-goytom" class="gh-mega-item"><i class="fas fa-bone"></i> Dr. Goytom — Orthopedics</a>
-          <a href="doctors.html#dr-ashenafi" class="gh-mega-item"><i class="fas fa-spa"></i> Dr. Ashenafi — Dermatology</a>
-          <a href="doctors.html#dr-berhe" class="gh-mega-item"><i class="fas fa-brain"></i> Dr. Berhe — Neurosurgery</a>
-          <a href="doctors.html#dr-wendmu" class="gh-mega-item"><i class="fas fa-ear"></i> Dr. Wendmu — ENT</a>
-          <a href="doctors.html#dr-biruk" class="gh-mega-item"><i class="fas fa-user-md"></i> Dr. Biruk — Internal Med.</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-heartbeat"></i> Dr. Tesfay — Cardiology</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-user-md"></i> Dr. Higus — Internal Med.</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-baby"></i> Dr. Gebreab — Pediatrics</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-venus"></i> Dr. Henok — OB/GYN</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-x-ray"></i> Dr. Natnael — Radiology</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-baby"></i> Dr. Teklay — Pediatrics</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-tooth"></i> Dr. Fiseha — Dental</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-cut"></i> Dr. Yisak — Surgery</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-bone"></i> Dr. Goytom — Orthopedics</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-spa"></i> Dr. Ashenafi — Dermatology</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-brain"></i> Dr. Berhe — Neurosurgery</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-ear"></i> Dr. Wendmu — ENT</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-user-md"></i> Dr. Biruk — Internal Med.</a>
           <a href="doctors.html" class="gh-mega-item gh-mega-all"><i class="fas fa-search"></i> All Doctors →</a>
         </div>
       </li>
@@ -214,8 +206,8 @@
   <div class="container">
     <div class="all-doctors-grid">
 
-      <div class="doctor-full-card reveal" id="dr-tesfay">
-        <img src="images/doctor1.jpg" alt="Dr. Tesfay Atsbeha — Cardiologist" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.alt='Doctor'">
+      <div class="doctor-full-card reveal">
+        <img src="images/doctor1.jpg" alt="Dr. Tesfay Atsbeha — Cardiologist" loading="lazy" onerror="this.src='';this.alt='Doctor'">
         <div class="info">
           <div class="doctor-badge">Sub-Specialist</div>
           <h3 data-translate="dr-tesfay-name">Dr. Tesfay Atsbeha</h3>
@@ -225,8 +217,8 @@
         </div>
       </div>
 
-      <div class="doctor-full-card reveal" id="dr-higus">
-        <img src="images/doctor2.jpg" alt="Dr. Higus Teklu — Internal Medicine" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.alt='Doctor'">
+      <div class="doctor-full-card reveal">
+        <img src="images/doctor2.jpg" alt="Dr. Higus Teklu — Internal Medicine" loading="lazy" onerror="this.src='';this.alt='Doctor'">
         <div class="info">
           <div class="doctor-badge">Specialist</div>
           <h3 data-translate="dr-higus-name">Dr. Higus Teklu</h3>
@@ -236,8 +228,8 @@
         </div>
       </div>
 
-      <div class="doctor-full-card reveal" id="dr-gebreab">
-        <img src="images/doctor3.jpg" alt="Dr. Gebreab Nega — Pediatrics" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.alt='Doctor'">
+      <div class="doctor-full-card reveal">
+        <img src="images/doctor3.jpg" alt="Dr. Gebreab Nega — Pediatrics" loading="lazy" onerror="this.src='';this.alt='Doctor'">
         <div class="info">
           <div class="doctor-badge">Specialist</div>
           <h3>Dr. Gebreab Nega</h3>
@@ -250,8 +242,8 @@
     </div>
 
 
-      <div class="doctor-full-card reveal" id="dr-henok">
-        <img src="images/doctor-henok.jpg" alt="Dr. Henok G/her — OB/GYN" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.alt='Doctor'">
+      <div class="doctor-full-card reveal">
+        <img src="images/doctor-henok.jpg" alt="Dr. Henok G/her — OB/GYN" loading="lazy" onerror="this.src='';this.alt='Doctor'">
         <div class="info">
           <div class="doctor-badge">Specialist</div>
           <h3>Dr. Henok G/her</h3>
@@ -261,8 +253,8 @@
         </div>
       </div>
 
-      <div class="doctor-full-card reveal" id="dr-natnael">
-        <img src="images/doctor-natnael.jpg" alt="Dr. Natnael Kidanu — Radiologist" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.alt='Doctor'">
+      <div class="doctor-full-card reveal">
+        <img src="images/doctor-natnael.jpg" alt="Dr. Natnael Kidanu — Radiologist" loading="lazy" onerror="this.src='';this.alt='Doctor'">
         <div class="info">
           <div class="doctor-badge">Specialist</div>
           <h3>Dr. Natnael Kidanu</h3>
@@ -272,8 +264,8 @@
         </div>
       </div>
 
-      <div class="doctor-full-card reveal" id="dr-teklay">
-        <img src="images/doctor-teklay.jpg" alt="Dr. Teklay Hagos — Pediatrician" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.alt='Doctor'">
+      <div class="doctor-full-card reveal">
+        <img src="images/doctor-teklay.jpg" alt="Dr. Teklay Hagos — Pediatrician" loading="lazy" onerror="this.src='';this.alt='Doctor'">
         <div class="info">
           <div class="doctor-badge">Specialist</div>
           <h3>Dr. Teklay Hagos</h3>
@@ -283,8 +275,8 @@
         </div>
       </div>
 
-      <div class="doctor-full-card reveal" id="dr-fiseha">
-        <img src="images/doctor-fiseha.jpg" alt="Dr. Fiseha Tikue — Dentist" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.alt='Doctor'">
+      <div class="doctor-full-card reveal">
+        <img src="images/doctor-fiseha.jpg" alt="Dr. Fiseha Tikue — Dentist" loading="lazy" onerror="this.src='';this.alt='Doctor'">
         <div class="info">
           <div class="doctor-badge">Specialist</div>
           <h3>Dr. Fiseha Tikue</h3>
@@ -294,8 +286,8 @@
         </div>
       </div>
 
-      <div class="doctor-full-card reveal" id="dr-yisak">
-        <img src="images/doctor-yisak.jpg" alt="Dr. Yisak G/her — Surgeon" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.alt='Doctor'">
+      <div class="doctor-full-card reveal">
+        <img src="images/doctor-yisak.jpg" alt="Dr. Yisak G/her — Surgeon" loading="lazy" onerror="this.src='';this.alt='Doctor'">
         <div class="info">
           <div class="doctor-badge">Specialist</div>
           <h3>Dr. Yisak G/her</h3>
@@ -305,8 +297,8 @@
         </div>
       </div>
 
-      <div class="doctor-full-card reveal" id="dr-goytom">
-        <img src="images/doctor-goytom.jpg" alt="Dr. Goytom — Orthopedics" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.alt='Doctor'">
+      <div class="doctor-full-card reveal">
+        <img src="images/doctor-goytom.jpg" alt="Dr. Goytom — Orthopedics" loading="lazy" onerror="this.src='';this.alt='Doctor'">
         <div class="info">
           <div class="doctor-badge">Specialist</div>
           <h3>Dr. Goytom</h3>
@@ -316,8 +308,8 @@
         </div>
       </div>
 
-      <div class="doctor-full-card reveal" id="dr-ashenafi">
-        <img src="images/doctor-ashenafi.jpg" alt="Dr. Ashenafi Gidey — Dermatologist" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.alt='Doctor'">
+      <div class="doctor-full-card reveal">
+        <img src="images/doctor-ashenafi.jpg" alt="Dr. Ashenafi Gidey — Dermatologist" loading="lazy" onerror="this.src='';this.alt='Doctor'">
         <div class="info">
           <div class="doctor-badge">Specialist</div>
           <h3>Dr. Ashenafi Gidey</h3>
@@ -327,8 +319,8 @@
         </div>
       </div>
 
-      <div class="doctor-full-card reveal" id="dr-berhe">
-        <img src="images/doctor-berhe.jpg" alt="Dr. Berhe Amare — Neurosurgeon" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.alt='Doctor'">
+      <div class="doctor-full-card reveal">
+        <img src="images/doctor-berhe.jpg" alt="Dr. Berhe Amare — Neurosurgeon" loading="lazy" onerror="this.src='';this.alt='Doctor'">
         <div class="info">
           <div class="doctor-badge">Sub-Specialist</div>
           <h3>Dr. Berhe Amare</h3>
@@ -338,8 +330,8 @@
         </div>
       </div>
 
-      <div class="doctor-full-card reveal" id="dr-wendmu">
-        <img src="images/doctor-wendmu.jpg" alt="Dr. Wendmu — ENT" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.alt='Doctor'">
+      <div class="doctor-full-card reveal">
+        <img src="images/doctor-wendmu.jpg" alt="Dr. Wendmu — ENT" loading="lazy" onerror="this.src='';this.alt='Doctor'">
         <div class="info">
           <div class="doctor-badge">Specialist</div>
           <h3>Dr. Wendmu</h3>
@@ -349,8 +341,8 @@
         </div>
       </div>
 
-      <div class="doctor-full-card reveal" id="dr-biruk">
-        <img src="images/doctor-biruk.jpg" alt="Dr. Biruk Mulugeta — Internist" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.alt='Doctor'">
+      <div class="doctor-full-card reveal">
+        <img src="images/doctor-biruk.jpg" alt="Dr. Biruk Mulugeta — Internist" loading="lazy" onerror="this.src='';this.alt='Doctor'">
         <div class="info">
           <div class="doctor-badge">Specialist</div>
           <h3>Dr. Biruk Mulugeta</h3>
@@ -360,8 +352,8 @@
         </div>
       </div>
 
-      <div class="doctor-full-card reveal" id="dr-gebremariam">
-        <img src="images/doctor-gebremariam.jpg" alt="Dr. Gebremariam Godefay — Pathologist" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.alt='Doctor'">
+      <div class="doctor-full-card reveal">
+        <img src="images/doctor-gebremariam.jpg" alt="Dr. Gebremariam Godefay — Pathologist" loading="lazy" onerror="this.src='';this.alt='Doctor'">
         <div class="info">
           <div class="doctor-badge">Specialist</div>
           <h3>Dr. Gebremariam Godefay</h3>
@@ -371,8 +363,8 @@
         </div>
       </div>
 
-      <div class="doctor-full-card reveal" id="staff-laboratory">
-        <img src="images/staff-laboratory.jpg" alt="Laboratory Team — Hintsa Desalegn & Mulualem Niguse" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.alt='Laboratory Team'">
+      <div class="doctor-full-card reveal">
+        <img src="images/staff-laboratory.jpg" alt="Laboratory Team — Hintsa Desalegn & Mulualem Niguse" loading="lazy" onerror="this.src='';this.alt='Laboratory Team'">
         <div class="info">
           <div class="doctor-badge">Laboratory Team</div>
           <h3>Hintsa Desalegn &amp; Mulualem Niguse</h3>
@@ -382,8 +374,8 @@
         </div>
       </div>
 
-      <div class="doctor-full-card reveal" id="staff-pharmacy">
-        <img src="images/staff-pharmacy.jpg" alt="Pharmacy Team — Geez Hospital" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.alt='Pharmacy Team'">
+      <div class="doctor-full-card reveal">
+        <img src="images/staff-pharmacy.jpg" alt="Pharmacy Team — Geez Hospital" loading="lazy" onerror="this.src='';this.alt='Pharmacy Team'">
         <div class="info">
           <div class="doctor-badge">Pharmacy Team</div>
           <h3>Mahlet W/Jewergis, Genet Beyene, Shewit G/Hiwet &amp; Tesfay Kiros</h3>
@@ -644,29 +636,31 @@ function toggleFabForm() {
     var open = nav.classList.toggle('gh-open');
     btn.setAttribute('aria-expanded', open);
   });
-  // Close when a PLAIN nav link is clicked (no submenu) — e.g. Home, Vacancy,
-  // Facilities, Contact Us. Items that have a .gh-mega submenu (Services,
-  // Doctors, Departments, Media) are skipped here on purpose: those are
-  // handled below by the mobile accordion, and script.js's own
-  // initGhMobileAccordion() also binds a click handler to these same links.
-  // Closing the whole menu unconditionally on every nav-link click was
-  // fighting with that accordion logic and collapsing the "Doctors" dropdown
-  // before a specific doctor link could be tapped on mobile.
+  // Close when a plain nav link is clicked (no submenu)
   nav.querySelectorAll('.gh-nav-link').forEach(function(link) {
-    var item = link.closest('.gh-nav-item');
-    if (item && item.querySelector('.gh-mega')) return; // has a submenu — leave to the accordion
     link.addEventListener('click', function() {
       nav.classList.remove('gh-open');
       btn.setAttribute('aria-expanded', 'false');
     });
   });
-  // NOTE: the mobile accordion for items with a .gh-mega submenu (tapping
-  // "Doctors", "Services", etc. to expand the list) is handled by
-  // initGhMobileAccordion() in script.js, which binds to the whole
-  // .gh-nav-link (not just the chevron icon) so a tap anywhere on the label
-  // opens the submenu. A duplicate chevron-only handler used to live here;
-  // it's been removed because it conflicted with script.js's handler and
-  // caused the submenu to close before a doctor link could be tapped.
+  // Mobile submenu accordion: tapping the chevron on an item that has a
+  // .gh-mega (Media > Gallery, Testimonials, Patient Info, Articles...)
+  // expands it inline instead of navigating away. Fixes items that were
+  // previously unreachable on mobile because the dropdown was force-hidden.
+  nav.querySelectorAll('.gh-nav-item > .gh-nav-link > i.fa-chevron-down').forEach(function(icon) {
+    icon.addEventListener('click', function(e) {
+      if (window.innerWidth > 768) return; // desktop: hover already handles it
+      var item = icon.closest('.gh-nav-item');
+      if (!item || !item.querySelector('.gh-mega')) return;
+      e.preventDefault();
+      e.stopPropagation();
+      var isOpen = item.classList.contains('gh-mobile-open');
+      nav.querySelectorAll('.gh-nav-item.gh-mobile-open').forEach(function(el) {
+        if (el !== item) el.classList.remove('gh-mobile-open');
+      });
+      item.classList.toggle('gh-mobile-open', !isOpen);
+    });
+  });
   // Sticky nav
   var siteNav = document.getElementById('ghSiteNav');
   if (siteNav) {
