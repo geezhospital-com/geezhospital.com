@@ -332,6 +332,23 @@ function toggleFabForm(){const f=document.getElementById('fabFormCard');f.style.
       btn.setAttribute('aria-expanded', 'false');
     });
   });
+  // Mobile submenu accordion: tapping the chevron on an item that has a
+  // .gh-mega (Media > Gallery, Testimonials, Patient Info, Articles...)
+  // expands it inline instead of navigating away.
+  nav.querySelectorAll('.gh-nav-item > .gh-nav-link > i.fa-chevron-down').forEach(function(icon) {
+    icon.addEventListener('click', function(e) {
+      if (window.innerWidth > 768) return;
+      var item = icon.closest('.gh-nav-item');
+      if (!item || !item.querySelector('.gh-mega')) return;
+      e.preventDefault();
+      e.stopPropagation();
+      var isOpen = item.classList.contains('gh-mobile-open');
+      nav.querySelectorAll('.gh-nav-item.gh-mobile-open').forEach(function(el) {
+        if (el !== item) el.classList.remove('gh-mobile-open');
+      });
+      item.classList.toggle('gh-mobile-open', !isOpen);
+    });
+  });
   var siteNav = document.getElementById('ghSiteNav');
   if (siteNav) {
     window.addEventListener('scroll', function() {
