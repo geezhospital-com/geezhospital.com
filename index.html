@@ -16,7 +16,7 @@
   </script>
 
   <!-- ── SEO ── -->
-  <meta name="description" content="Geez Hospital is the leading modern medical facility in Axum, Tigray. Expert specialists in Cardiology, Surgery, Pediatrics, Gynecology & 18+ departments. Book an appointment today.">
+  <meta name="description" content="Geez Hospital, Axum, Tigray — CT Scan, Digital X-Ray & Ultrasound, Eye & Dental Clinic, 18+ specialties, 24/7 emergency care. Book today.">
   <meta name="keywords" content="Best Hospital in Axum, Hospital in Axum, Emergency Hospital Axum, CT Scan Axum, Cardiologist in Tigray, Geez Hospital services, Modern medical care Tigray, Geez Hospital Axum, ሆስፒታል ግዕዝ, hospital Tigray, specialist doctors Axum, emergency care Axum">
   <link rel="canonical" href="https://geezhospital.com/">
   <meta name="robots" content="index, follow">
@@ -872,46 +872,59 @@ document.querySelectorAll('.gh-stat-num[data-target]').forEach(el => ghCountObs.
 
 <script src="script.js" defer></script>
 
-<!-- ── VISITOR COUNTER SCRIPT ── -->
+<!-- ── VISITOR COUNTER SCRIPT ──
+     Uses Firebase Realtime Database — a Google-backed, actively
+     maintained service (unlike the previous CountAPI.xyz, which shut
+     down and caused "Failed to fetch" errors). Every visitor, on every
+     browser/device, reads and writes the same shared counters, so the
+     numbers shown are real and consistent everywhere.
+
+     ✅ Configured for: https://geez-hospital-web-default-rtdb.firebaseio.com/
+     (Realtime Database must have security rules allowing read/write
+     on the "counters" path — see the rules provided separately.)
+
+     To avoid one person's page refreshes inflating the count, this
+     only increments the counters ONCE per browser tab session
+     (sessionStorage flag) — reloading the same tab just re-reads the
+     current values instead of counting again.
+── -->
 <script>
 (function() {
-  const KEY_TOTAL  = 'gh_total_views';
-  const KEY_TODAY  = 'gh_today_views';
-  const KEY_MONTH  = 'gh_month_views';
-  const KEY_DATE   = 'gh_last_date';
-  const KEY_MDATE  = 'gh_last_month';
+  const FIREBASE_DB_URL = 'https://geez-hospital-web-default-rtdb.firebaseio.com';
 
-  const now       = new Date();
-  const todayStr  = now.toISOString().slice(0, 10);       // YYYY-MM-DD
-  const monthStr  = now.toISOString().slice(0, 7);        // YYYY-MM
+  const now         = new Date();
+  const todayKey    = 'day-'   + now.toISOString().slice(0, 10); // e.g. day-2026-08-23
+  const monthKey    = 'month-' + now.toISOString().slice(0, 7);  // e.g. month-2026-08
+  const totalKey    = 'total-visits';
+  const SESSION_KEY = 'gh_counted_this_session';
 
-  // Reset daily counter
-  let lastDate = localStorage.getItem(KEY_DATE);
-  if (lastDate !== todayStr) {
-    localStorage.setItem(KEY_TODAY, '0');
-    localStorage.setItem(KEY_DATE, todayStr);
+  const alreadyCountedThisTab = sessionStorage.getItem(SESSION_KEY) === '1';
+
+  async function readCount(key) {
+    const res = await fetch(`${FIREBASE_DB_URL}/counters/${key}.json`);
+    const val = await res.json();
+    return val || 0;
   }
 
-  // Reset monthly counter
-  let lastMonth = localStorage.getItem(KEY_MDATE);
-  if (lastMonth !== monthStr) {
-    localStorage.setItem(KEY_MONTH, '0');
-    localStorage.setItem(KEY_MDATE, monthStr);
+  async function incrementCount(key) {
+    const current = await readCount(key);
+    const next = current + 1;
+    await fetch(`${FIREBASE_DB_URL}/counters/${key}.json`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(next),
+    });
+    return next;
   }
 
-  // Increment
-  let total = parseInt(localStorage.getItem(KEY_TOTAL)  || '0') + 1;
-  let today = parseInt(localStorage.getItem(KEY_TODAY)  || '0') + 1;
-  let month = parseInt(localStorage.getItem(KEY_MONTH)  || '0') + 1;
+  async function getOrIncrement(key) {
+    return alreadyCountedThisTab ? readCount(key) : incrementCount(key);
+  }
 
-  localStorage.setItem(KEY_TOTAL, total);
-  localStorage.setItem(KEY_TODAY, today);
-  localStorage.setItem(KEY_MONTH, month);
-
-  // Animate digits
+  // Smooth count-up animation, e.g. for "Today" / "This Month" / "Total Views"
   function animateCount(el, target, duration) {
     if (!el) return;
-    let start = 0, startTime = null;
+    let startTime = null;
     function step(ts) {
       if (!startTime) startTime = ts;
       const p = Math.min((ts - startTime) / duration, 1);
@@ -922,26 +935,43 @@ document.querySelectorAll('.gh-stat-num[data-target]').forEach(el => ghCountObs.
     requestAnimationFrame(step);
   }
 
-  // Display digits (odometer style — padded 6 digits)
-  const digitsEl = document.getElementById('ghVcDigits');
-  if (digitsEl) {
-    let cur = 0;
-    const dur = 1600;
+  // Same animation but zero-padded to 6 digits, for the big odometer-style display
+  function animateDigits(el, target, duration) {
+    if (!el) return;
     let startTime = null;
-    function stepDigits(ts) {
+    function step(ts) {
       if (!startTime) startTime = ts;
-      const p = Math.min((ts - startTime) / dur, 1);
+      const p = Math.min((ts - startTime) / duration, 1);
       const ease = 1 - Math.pow(1 - p, 3);
-      const val = Math.floor(ease * total);
-      digitsEl.textContent = String(val).padStart(6, '0');
-      if (p < 1) requestAnimationFrame(stepDigits);
+      const val = Math.floor(ease * target);
+      el.textContent = String(val).padStart(6, '0');
+      if (p < 1) requestAnimationFrame(step);
     }
-    requestAnimationFrame(stepDigits);
+    requestAnimationFrame(step);
   }
 
-  animateCount(document.getElementById('ghVcToday'),  today, 1000);
-  animateCount(document.getElementById('ghVcMonth'),  month, 1200);
-  animateCount(document.getElementById('ghVcViews'),  total, 1600);
+  async function loadVisitorCounts() {
+    try {
+      const [total, today, month] = await Promise.all([
+        getOrIncrement(totalKey),
+        getOrIncrement(todayKey),
+        getOrIncrement(monthKey),
+      ]);
+
+      if (!alreadyCountedThisTab) sessionStorage.setItem(SESSION_KEY, '1');
+
+      animateDigits(document.getElementById('ghVcDigits'), total, 1600);
+      animateCount(document.getElementById('ghVcToday'), today, 1000);
+      animateCount(document.getElementById('ghVcMonth'), month, 1200);
+      animateCount(document.getElementById('ghVcViews'), total, 1600);
+    } catch (err) {
+      // If the database is briefly unreachable, leave the
+      // placeholders ("—") rather than showing a wrong number.
+      console.warn('[Visitor Counter] Could not reach counting service:', err);
+    }
+  }
+
+  loadVisitorCounts();
 })();
 </script>
 <!-- Floating Contact Button -->
