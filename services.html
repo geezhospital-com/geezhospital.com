@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical Services | Geez Hospital — Axum, Tigray</title>
+  <meta name="description" content="Geez Hospital offers 18+ medical services in Axum, Tigray including Cardiology, General Surgery, Pediatrics, Obstetrics & Gynecology, Neurosurgery, and more.">
+  <meta name="keywords" content="Geez Hospital services, medical services Axum, Cardiologist in Tigray, hospital services Tigray, ናይ ሆስፒታል ኣገልግሎት ኣክሱም">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Medical Services | Geez Hospital — Axum, Tigray">
+  <meta property="og:description" content="18+ medical services at Geez Hospital: Cardiology, Surgery, Pediatrics, and more in Axum, Tigray.">
+  <meta property="og:url" content="https://geezhospital.com/services.html">
+  <meta property="og:image" content="https://geezhospital.com/images/og-cover.jpg">
+  <link rel="canonical" href="https://geezhospital.com/services.html">
+  <!-- Favicon & PWA -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon-180.png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0A1F3D">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://geezhospital.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://geezhospital.com/services.html" }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400&family=Figtree:wght@300;400;500;600;700&family=Noto+Sans+Ethiopic:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+  /* ── Facilities Page Styles ── */
+  .facilities-hero {
+    background: linear-gradient(135deg, var(--navy, #0A1F3D) 0%, var(--teal-brand, #0B7B7B) 100%);
+    padding: 80px 0 60px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .facilities-hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url('images/hero-bg.jpg') center/cover no-repeat;
+    opacity: .08; pointer-events: none;
+  }
+  .facilities-hero .container { position: relative; z-index: 1; }
+  .facilities-hero .eyebrow {
+    font-size: .78rem; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: #5FD3D3; margin-bottom: 12px;
+  }
+  .facilities-hero h1, .facilities-hero h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600; margin-bottom: 14px;
+  }
+  .facilities-hero p {
+    font-size: 1rem; color: rgba(255,255,255,.72);
+    max-width: 560px; margin: 0 auto; line-height: 1.7;
+  }
+
+  /* ── Facilities Grid ── */
+  .facilities-section {
+    background: var(--gray-50, #F8FAFB);
+    padding: 72px 0;
+  }
+  .facilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 28px;
+  }
+  .facility-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #EEF2F6;
+    box-shadow: 0 2px 12px rgba(10,31,61,.07);
+    transition: transform .25s ease, box-shadow .25s ease;
+    opacity: 0;
+    transform: translateY(22px);
+    animation: facFadeUp .5s ease forwards;
+  }
+  .facility-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 36px rgba(11,123,123,.13);
+  }
+  @keyframes facFadeUp {
+    to { opacity:1; transform:translateY(0); }
+  }
+  .facility-card:nth-child(1) { animation-delay: .05s; }
+  .facility-card:nth-child(2) { animation-delay: .10s; }
+  .facility-card:nth-child(3) { animation-delay: .15s; }
+  .facility-card:nth-child(4) { animation-delay: .20s; }
+  .facility-card:nth-child(5) { animation-delay: .25s; }
+  .facility-card:nth-child(6) { animation-delay: .30s; }
+  .facility-card:nth-child(7) { animation-delay: .35s; }
+  .facility-card:nth-child(8) { animation-delay: .40s; }
+
+  .facility-img-wrap {
+    width: 100%; aspect-ratio: 16/9;
+    background: linear-gradient(135deg, #e6f4f4, #b2dede);
+    overflow: hidden; position: relative;
+  }
+  .facility-img-wrap img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform .4s ease;
+  }
+  .facility-card:hover .facility-img-wrap img { transform: scale(1.05); }
+  .facility-img-placeholder {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .facility-img-placeholder i {
+    font-size: 2.8rem; color: #0B7B7B; opacity: .35;
+  }
+
+  .facility-body { padding: 22px 22px 24px; }
+  .facility-icon-row {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 10px;
+  }
+  .facility-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: #E8F4F4; color: #0B7B7B;
+    display: flex; align-items: center; justify-content: center;
+    font-size: .95rem; flex-shrink: 0;
+  }
+  .facility-body h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem; font-weight: 600;
+    color: #0A1F3D; margin: 0;
+  }
+  .facility-body p {
+    font-size: .86rem; color: #64748B;
+    line-height: 1.65; margin: 0;
+  }
+
+  /* ── Stats Bar ── */
+  .fac-stats {
+    background: #0A1F3D; padding: 36px 0;
+  }
+  .fac-stats-inner {
+    max-width: 1240px; margin: 0 auto; padding: 0 24px;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+  .fac-stat {
+    text-align: center; padding: 0 20px;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .fac-stat + .fac-stat { border-left: 1px solid rgba(255,255,255,.1); }
+  .fac-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem; font-weight: 700;
+    color: #5FD3D3; line-height: 1; margin-bottom: 6px;
+  }
+  .fac-stat-lbl { font-size: .78rem; color: rgba(255,255,255,.6); line-height: 1.4; }
+
+  /* ── CTA ── */
+  .fac-cta {
+    background: linear-gradient(135deg, #0B7B7B 0%, #0A1F3D 100%);
+    padding: 64px 0; text-align: center; color: #fff;
+  }
+  .fac-cta h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 12px;
+  }
+  .fac-cta p { color: rgba(255,255,255,.72); margin-bottom: 28px; font-size: .97rem; }
+  .fac-cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn-fac-primary {
+    background: #fff; color: #0B7B7B;
+    padding: 13px 28px; border-radius: 999px;
+    font-weight: 700; font-size: .9rem; text-decoration: none;
+    transition: all .2s;
+  }
+  .btn-fac-primary:hover { background: #e6f4f4; }
+  .btn-fac-ghost {
+    border: 2px solid rgba(255,255,255,.5); color: #fff;
+    padding: 13px 28px; border-radius: 999px;
+    font-weight: 600; font-size: .9rem; text-decoration: none;
+    transition: all .2s;
+  }
+  .btn-fac-ghost:hover { background: rgba(255,255,255,.1); border-color: #fff; }
+
+  @media (max-width: 768px) {
+    .fac-stats-inner { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .fac-stat + .fac-stat:nth-child(odd) { border-left: none; }
+    .fac-stat:nth-child(3) { border-left: none; }
+  }
+  @media (max-width: 480px) {
+    .facilities-grid { grid-template-columns: 1fr; }
+  }
+  </style>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9QH360M4V1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9QH360M4V1');
+  </script>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="gh-topbar">
+  <div class="gh-tb-inner">
+    <div class="gh-tb-left">
+      <a href="tel:+251920008338" class="gh-tb-item"><i class="fas fa-phone-volume"></i> +251 920 008 338</a>
+      <div class="gh-tb-divider"></div>
+      <a href="tel:+251962333388" class="gh-tb-item"><i class="fas fa-phone"></i> +251 962 333 388</a>
+      <div class="gh-tb-divider"></div>
+      <a href="mailto:geezhospital@gmail.com" class="gh-tb-item"><i class="fas fa-envelope"></i> geezhospital@gmail.com</a>
+      <div class="gh-tb-divider"></div>
+      <span class="gh-tb-item"><i class="fas fa-map-marker-alt"></i> Axum, In front of Ethio-Telecom</span>
+    </div>
+    <div class="gh-tb-right">
+      <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank" class="gh-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://t.me/Geezhospital_bot" target="_blank" class="gh-social-link" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+      <a href="https://linktr.ee/geezhospital" target="_blank" class="gh-social-link" aria-label="Patient Survey"><i class="fas fa-poll"></i></a>
+      <div class="gh-emergency-pill"><div class="gh-pulse-dot"></div> 24/7 Emergency</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     STEP 3: PREMIUM STICKY NAVIGATION
+     (replaces old site-header)
+════════════════════════════════════════ -->
+<nav class="gh-sitenav" id="ghSiteNav" role="navigation" aria-label="Main navigation">
+  <div class="gh-nav-inner">
+
+    <!-- Logo -->
+    <a href="index.html" class="gh-logo-wrap">
+      <img src="images/logo.png" alt="Geez Hospital Logo" class="gh-logo-img"
+     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+<div class="gh-logo-mark" style="display:none">G</div>
+      <div class="gh-logo-text">
+        <span class="gh-logo-en">GEEZ HOSPITAL</span>
+        <span class="gh-logo-sub">ግዕዝ ሆስፒታል · Axum</span>
+      </div>
+    </a>
+
+    <!-- Nav list — all original mega-menu content preserved -->
+    <ul class="gh-nav-list" id="ghMainNav">
+
+      <li class="gh-nav-item">
+        <a href="index.html" class="gh-nav-link" data-translate="home">Home</a>
+      </li>
+
+      <!-- SERVICES -->
+      <li class="gh-nav-item">
+        <a href="services.html" class="gh-nav-link active">Services <i class="fas fa-chevron-down"></i></a>
+        <div class="gh-mega" style="grid-template-columns:repeat(3,1fr)">
+          <div class="gh-mega-header">Medical Services</div>
+          <a href="services.html?service=internal-medicine" class="gh-mega-item"><i class="fas fa-user-md"></i> Internal Medicine</a>
+          <a href="services.html?service=cardiology"        class="gh-mega-item"><i class="fas fa-heartbeat"></i> Cardiology</a>
+          <a href="services.html?service=general-surgery"   class="gh-mega-item"><i class="fas fa-cut"></i> General Surgery</a>
+          <a href="services.html?service=pediatrics"        class="gh-mega-item"><i class="fas fa-baby"></i> Pediatrics</a>
+          <a href="services.html?service=obsgyn"            class="gh-mega-item"><i class="fas fa-venus"></i> Obstetrics &amp; Gynecology</a>
+          <a href="services.html?service=neurosurgery"      class="gh-mega-item"><i class="fas fa-brain"></i> Neurosurgery</a>
+          <a href="services.html?service=orthopedics"       class="gh-mega-item"><i class="fas fa-bone"></i> Orthopedics</a>
+          <a href="services.html?service=dermatology"       class="gh-mega-item"><i class="fas fa-spa"></i> Dermatology</a>
+          <a href="services.html?service=ent"               class="gh-mega-item"><i class="fas fa-ear"></i> ENT</a>
+          <a href="services.html?service=dental"            class="gh-mega-item"><i class="fas fa-tooth"></i> Dental</a>
+          <a href="services.html?service=radiology"         class="gh-mega-item"><i class="fas fa-x-ray"></i> Radiology</a>
+          <a href="services.html?service=laboratory"        class="gh-mega-item"><i class="fas fa-flask"></i> Laboratory</a>
+          <a href="services.html?service=psychiatry"        class="gh-mega-item"><i class="fas fa-head-side-virus"></i> Psychiatry</a>
+          <a href="services.html?service=physiotherapy"     class="gh-mega-item"><i class="fas fa-walking"></i> Physiotherapy</a>
+          <a href="services.html?service=anesthesia"        class="gh-mega-item"><i class="fas fa-procedures"></i> Anesthesia &amp; Pain</a>
+          <a href="services.html?service=maternity"         class="gh-mega-item"><i class="fas fa-child"></i> Maternity</a>
+          <a href="services.html?service=pharmacy-ambulance"class="gh-mega-item"><i class="fas fa-pills"></i> Pharmacy &amp; Ambulance</a>
+          <a href="services.html" class="gh-mega-item gh-mega-all"><i class="fas fa-plus"></i> All 18+ Services →</a>
+        </div>
+      </li>
+
+      <!-- DOCTORS -->
+      <li class="gh-nav-item">
+        <a href="doctors.html" class="gh-nav-link">Doctors <i class="fas fa-chevron-down"></i></a>
+        <div class="gh-mega" style="grid-template-columns:repeat(3,1fr)">
+          <div class="gh-mega-header">Find a Specialist</div>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-heartbeat"></i> Dr. Tesfay — Cardiology</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-user-md"></i> Dr. Higus — Internal Med.</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-baby"></i> Dr. Gebreab — Pediatrics</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-venus"></i> Dr. Henok — OB/GYN</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-x-ray"></i> Dr. Natnael — Radiology</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-baby"></i> Dr. Teklay — Pediatrics</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-tooth"></i> Dr. Fiseha — Dental</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-cut"></i> Dr. Yisak — Surgery</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-bone"></i> Dr. Goytom — Orthopedics</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-spa"></i> Dr. Ashenafi — Dermatology</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-brain"></i> Dr. Berhe — Neurosurgery</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-ear"></i> Dr. Wendmu — ENT</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-user-md"></i> Dr. Biruk — Internal Med.</a>
+          <a href="doctors.html" class="gh-mega-item gh-mega-all"><i class="fas fa-search"></i> All Doctors →</a>
+        </div>
+      </li>
+
+      <!-- DEPARTMENTS -->
+      <li class="gh-nav-item">
+        <a href="departments.html" class="gh-nav-link">Departments <i class="fas fa-chevron-down"></i></a>
+        <div class="gh-mega" style="grid-template-columns:repeat(3,1fr)">
+          <div class="gh-mega-header">Departments</div>
+          <a href="departments.html" class="gh-mega-item"><i class="fas fa-cut"></i> Surgery</a>
+          <a href="departments.html" class="gh-mega-item"><i class="fas fa-user-md"></i> Internal Medicine</a>
+          <a href="departments.html" class="gh-mega-item"><i class="fas fa-baby"></i> Pediatrics</a>
+          <a href="departments.html" class="gh-mega-item"><i class="fas fa-venus"></i> Obs &amp; Gynecology</a>
+          <a href="departments.html" class="gh-mega-item"><i class="fas fa-bone"></i> Orthopedics</a>
+          <a href="departments.html" class="gh-mega-item"><i class="fas fa-x-ray"></i> Radiology</a>
+          <a href="departments.html" class="gh-mega-item"><i class="fas fa-heartbeat"></i> Cardiology</a>
+          <a href="departments.html" class="gh-mega-item"><i class="fas fa-spa"></i> Dermatology</a>
+          <a href="departments.html" class="gh-mega-item"><i class="fas fa-ear"></i> ENT</a>
+          <a href="departments.html" class="gh-mega-item"><i class="fas fa-tooth"></i> Dental</a>
+          <a href="departments.html" class="gh-mega-item"><i class="fas fa-brain"></i> Neurosurgery</a>
+          <a href="departments.html" class="gh-mega-item"><i class="fas fa-ribbon"></i> Oncology</a>
+          <a href="departments.html" class="gh-mega-item"><i class="fas fa-head-side-virus"></i> Psychiatry</a>
+          <a href="departments.html" class="gh-mega-item gh-mega-all"><i class="fas fa-th"></i> All Departments →</a>
+        </div>
+      </li>
+
+      <!-- MEDIA -->
+      <li class="gh-nav-item">
+        <a href="news.html" class="gh-nav-link">Media <i class="fas fa-chevron-down"></i></a>
+        <div class="gh-mega" style="grid-template-columns:repeat(2,1fr);min-width:360px">
+          <div class="gh-mega-header">News &amp; Gallery</div>
+          <a href="news.html"        class="gh-mega-item"><i class="fas fa-newspaper"></i> Latest News</a>
+          <a href="articles.html"    class="gh-mega-item"><i class="fas fa-book-medical"></i> Health Articles</a>
+          <a href="patient-info.html"class="gh-mega-item"><i class="fas fa-info-circle"></i> Patient Information</a>
+          <a href="gallery.html"     class="gh-mega-item"><i class="fas fa-images"></i> Photo Gallery</a>
+          <a href="https://linktr.ee/geezhospital" target="_blank" class="gh-mega-item"><i class="fas fa-poll"></i> Patient Survey</a>
+        </div>
+      </li>
+
+      <li class="gh-nav-item"><a href="vacancy.html" class="gh-nav-link">Vacancy</a></li>
+      <li class="gh-nav-item"><a href="facilities.html" class="gh-nav-link">Facilities</a></li>
+      <li class="gh-nav-item"><a href="contact.html" class="gh-nav-link" data-translate="contact">Contact Us</a></li>
+
+      <li class="gh-nav-item">
+        <select id="language-switcher" class="gh-lang-select" aria-label="Language">
+          <option value="eng">English</option>
+          <option value="tig">ትግርኛ</option>
+          <option value="amh">አማርኛ</option>
+        </select>
+      </li>
+    </ul>
+
+    <div class="gh-nav-actions">
+      <button class="gh-btn-search" id="ghSearchBtn" aria-label="Open search"><i class="fas fa-search"></i></button>
+      <a href="contact.html" class="gh-btn-book">Book Appointment</a>
+      <button class="gh-hamburger" id="ghHamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="facilities-hero">
+  <div class="container">
+    <p class="eyebrow">Comprehensive Care, 18+ Specialties</p>
+    <h1 data-translate="facilities">Our Medical Services</h1>
+    <p>Geez Hospital offers a full range of medical services in Axum, Tigray — from routine care to specialist treatment across 18+ departments.</p>
+  </div>
+</section>
+
+<!-- Stats Bar -->
+<div class="fac-stats">
+  <div class="fac-stats-inner">
+    <div class="fac-stat">
+      <div class="fac-stat-num">8+</div>
+      <div class="fac-stat-lbl">Modern<br>Facilities</div>
+    </div>
+    <div class="fac-stat">
+      <div class="fac-stat-num">24/7</div>
+      <div class="fac-stat-lbl">Emergency<br>Services</div>
+    </div>
+    <div class="fac-stat">
+      <div class="fac-stat-num">18+</div>
+      <div class="fac-stat-lbl">Medical<br>Departments</div>
+    </div>
+    <div class="fac-stat">
+      <div class="fac-stat-num">100%</div>
+      <div class="fac-stat-lbl">Patient<br>Safety Focus</div>
+    </div>
+  </div>
+</div>
+
+<!-- Facilities Grid -->
+<section class="facilities-section">
+  <div class="container">
+    <div class="facilities-grid">
+
+      <div class="facility-card">
+        <div class="facility-img-wrap">
+          <img src="images/facility1.jpg" alt="Operating Theatres" loading="lazy"
+               onerror="this.parentElement.innerHTML='<div class=\'facility-img-placeholder\'><i class=\'fas fa-procedures\'></i></div>'">
+        </div>
+        <div class="facility-body">
+          <div class="facility-icon-row">
+            <div class="facility-icon"><i class="fas fa-procedures"></i></div>
+            <h3>Operating Theatres</h3>
+          </div>
+          <p>Our advanced operating theatres are equipped with the latest surgical technology for a wide range of procedures, ensuring patient safety and optimal outcomes.</p>
+        </div>
+      </div>
+
+      <div class="facility-card">
+        <div class="facility-img-wrap">
+          <img src="images/facility2.jpg" alt="MRI & CT Scan" loading="lazy"
+               onerror="this.parentElement.innerHTML='<div class=\'facility-img-placeholder\'><i class=\'fas fa-magnet\'></i></div>'">
+        </div>
+        <div class="facility-body">
+          <div class="facility-icon-row">
+            <div class="facility-icon"><i class="fas fa-magnet"></i></div>
+            <h3>MRI &amp; CT Scan</h3>
+          </div>
+          <p>High-resolution MRI and CT scan machines for accurate and detailed diagnostic imaging, crucial for precise medical assessments.</p>
+        </div>
+      </div>
+
+      <div class="facility-card">
+        <div class="facility-img-wrap">
+          <img src="images/facility3.jpg" alt="Modern Laboratory" loading="lazy"
+               onerror="this.parentElement.innerHTML='<div class=\'facility-img-placeholder\'><i class=\'fas fa-flask\'></i></div>'">
+        </div>
+        <div class="facility-body">
+          <div class="facility-icon-row">
+            <div class="facility-icon"><i class="fas fa-flask"></i></div>
+            <h3>Modern Laboratory</h3>
+          </div>
+          <p>A fully equipped laboratory offering a comprehensive range of diagnostic tests, from routine blood work to specialized pathology, with rapid and reliable results.</p>
+        </div>
+      </div>
+
+      <div class="facility-card">
+        <div class="facility-img-wrap">
+          <img src="images/facility4.jpg" alt="Intensive Care Unit" loading="lazy"
+               onerror="this.parentElement.innerHTML='<div class=\'facility-img-placeholder\'><i class=\'fas fa-heartbeat\'></i></div>'">
+        </div>
+        <div class="facility-body">
+          <div class="facility-icon-row">
+            <div class="facility-icon"><i class="fas fa-heartbeat"></i></div>
+            <h3>Intensive Care Unit (ICU)</h3>
+          </div>
+          <p>Our ICU provides critical care services for severely ill patients, staffed by highly skilled professionals and supported by advanced monitoring systems.</p>
+        </div>
+      </div>
+
+      <div class="facility-card">
+        <div class="facility-img-wrap">
+          <img src="images/facility5.jpg" alt="Emergency Department" loading="lazy"
+               onerror="this.parentElement.innerHTML='<div class=\'facility-img-placeholder\'><i class=\'fas fa-truck-medical\'></i></div>'">
+        </div>
+        <div class="facility-body">
+          <div class="facility-icon-row">
+            <div class="facility-icon"><i class="fas fa-truck-medical"></i></div>
+            <h3>Emergency Department</h3>
+          </div>
+          <p>24/7 emergency services with a dedicated team prepared to handle all types of medical emergencies efficiently and effectively.</p>
+        </div>
+      </div>
+
+      <div class="facility-card">
+        <div class="facility-img-wrap">
+          <img src="images/facility6.jpg" alt="Hospital Pharmacy" loading="lazy"
+               onerror="this.parentElement.innerHTML='<div class=\'facility-img-placeholder\'><i class=\'fas fa-pills\'></i></div>'">
+        </div>
+        <div class="facility-body">
+          <div class="facility-icon-row">
+            <div class="facility-icon"><i class="fas fa-pills"></i></div>
+            <h3>Hospital Pharmacy</h3>
+          </div>
+          <p>A well-stocked pharmacy providing a wide range of medications, managed by qualified pharmacists to ensure safe and appropriate drug dispensation.</p>
+        </div>
+      </div>
+
+      <div class="facility-card">
+        <div class="facility-img-wrap">
+          <img src="images/facility7.jpg" alt="Patient Rooms" loading="lazy"
+               onerror="this.parentElement.innerHTML='<div class=\'facility-img-placeholder\'><i class=\'fas fa-bed\'></i></div>'">
+        </div>
+        <div class="facility-body">
+          <div class="facility-icon-row">
+            <div class="facility-icon"><i class="fas fa-bed"></i></div>
+            <h3>Comfortable Patient Rooms</h3>
+          </div>
+          <p>Spacious and comfortable patient rooms designed to provide a restful and healing environment, equipped with modern amenities for patient well-being.</p>
+        </div>
+      </div>
+
+      <div class="facility-card">
+        <div class="facility-img-wrap">
+          <img src="images/facility8.jpg" alt="Ultrasound and X-ray" loading="lazy"
+               onerror="this.parentElement.innerHTML='<div class=\'facility-img-placeholder\'><i class=\'fas fa-x-ray\'></i></div>'">
+        </div>
+        <div class="facility-body">
+          <div class="facility-icon-row">
+            <div class="facility-icon"><i class="fas fa-x-ray"></i></div>
+            <h3>Ultrasound &amp; X-ray</h3>
+          </div>
+          <p>Advanced ultrasound and X-ray facilities for non-invasive diagnostic imaging, essential for various medical assessments.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="fac-cta">
+  <div class="container">
+    <h2>Ready to Experience World-Class Care?</h2>
+    <p>Book an appointment or contact us — our team is available 24/7.</p>
+    <div class="fac-cta-btns">
+      <a href="contact.html" class="btn-fac-primary"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+      <a href="tel:+251920008338" class="btn-fac-ghost"><i class="fas fa-phone"></i> Call Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo-wrap">
+        <img src="images/logo.png" alt="Geez Hospital" onerror="this.style.display='none'">
+        <div class="logo-text"><span class="logo-en">GEEZ HOSPITAL</span><span class="logo-tig">ግዕዝ ሆስፒታል</span></div>
+      </a>
+      <p data-translate="footer-brand-desc">World-class healthcare in Axum, Tigray.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://t.me/Geezhospital_bot" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+        <a href="https://maps.app.goo.gl/yHuCuCgLMzUtyerU6" target="_blank" aria-label="Maps"><i class="fas fa-map-marker-alt"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4 data-translate="footer-quick-links">Quick Links</h4>
+      <ul>
+        <li><a href="index.html" data-translate="home">Home</a></li>
+        <li><a href="services.html" data-translate="services">Services</a></li>
+        <li><a href="doctors.html" data-translate="doctors">Doctors</a></li>
+        <li><a href="gallery.html" data-translate="gallery">Gallery</a></li>
+        <li><a href="news.html" data-translate="news">News</a></li>
+        <li><a href="contact.html" data-translate="contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-translate="footer-services-title">Top Services</h4>
+      <ul>
+        <li><a href="services.html">Cardiology</a></li>
+        <li><a href="services.html">General Surgery</a></li>
+        <li><a href="services.html">Pediatrics</a></li>
+        <li><a href="services.html">Emergency Care</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-translate="footer-contact-title">Contact Us</h4>
+      <ul class="footer-contact-list">
+        <li><i class="fas fa-map-marker-alt"></i><span>Kindeya Kebele, In front of Ethio-Telecom, Axum, Tigray</span></li>
+        <li><i class="fas fa-phone"></i><a href="tel:+251920008338">+251 920 008 338</a></li>
+        <li><i class="fas fa-phone"></i><a href="tel:+251962333388">+251 962 333 388</a></li>
+        <li><i class="fas fa-envelope"></i><a href="mailto:geezhospital@gmail.com">geezhospital@gmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p>© 2026 Geez Hospital. All rights reserved.</p>
+      <p class="footer-dev">Developed by <a href="tel:+251911179955">Aser Tech | Legesse Teklu Gebrekidan — +251 911 179 955</a></p>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+<!-- Floating Contact Button -->
+<div class="fab-container" id="fabContainer">
+  <div class="fab-options" id="fabOptions">
+    <div class="fab-form-card" id="fabFormCard" style="display:none">
+      <div class="fab-form-header">
+        <span>Contact Form</span>
+        <button onclick="document.getElementById('fabFormCard').style.display='none'">✕</button>
+      </div>
+      <form action="https://formspree.io/f/xwvpgllq" method="POST">
+        <input type="text" name="name" placeholder="Name *" required>
+        <input type="email" name="email" placeholder="Email *" required>
+        <input type="tel" name="mobile" placeholder="Mobile number *" required>
+        <textarea name="message" placeholder="Message *" required></textarea>
+        <button type="submit">SUBMIT</button>
+      </form>
+    </div>
+    <div class="fab-item-wrap">
+      <span class="fab-label">Contact Form</span>
+      <button class="fab-item fab-form-btn" onclick="toggleFabForm()"><i class="fas fa-address-book"></i></button>
+    </div>
+    <div class="fab-item-wrap">
+      <span class="fab-label">Facebook</span>
+      <a class="fab-item fab-facebook" href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
+    </div>
+    <div class="fab-item-wrap">
+      <span class="fab-label">Telegram</span>
+      <a class="fab-item fab-telegram" href="https://t.me/geezhospital_bot" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+    </div>
+    <div class="fab-item-wrap">
+      <span class="fab-label">Call Us</span>
+      <a class="fab-item fab-phone" href="tel:+251920008338"><i class="fas fa-phone"></i></a>
+    </div>
+  </div>
+  <button class="fab-main" id="fabMain" onclick="toggleFab()">
+    <i class="fas fa-comments" id="fabIcon"></i>
+    <span id="fabLabel">Talk to Us</span>
+  </button>
+</div>
+
+<style>
+.fab-container{position:fixed;bottom:28px;right:24px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.fab-main{display:flex;align-items:center;gap:8px;background:#0B7B7B;color:#fff;border:none;border-radius:999px;padding:14px 20px;font-size:.9rem;font-weight:700;cursor:pointer;box-shadow:0 6px 24px rgba(11,123,123,.4);transition:all .3s}
+.fab-main:hover{background:#096767;transform:scale(1.05)}
+.fab-options{display:none;flex-direction:column;align-items:flex-end;gap:10px}
+.fab-options.open{display:flex}
+.fab-item-wrap{display:flex;align-items:center;gap:10px;flex-direction:row-reverse}
+.fab-label{background:#0f1f2e;color:#fff;font-size:.78rem;padding:5px 12px;border-radius:999px;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.fab-item{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:#fff;border:none;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.2);transition:transform .2s;text-decoration:none}
+.fab-item:hover{transform:scale(1.12)}
+.fab-phone{background:#0B7B7B}.fab-telegram{background:#0088cc}.fab-facebook{background:#1877F2}.fab-form-btn{background:#7c3aed}
+.fab-form-card{background:#fff;border-radius:14px;width:280px;box-shadow:0 8px 32px rgba(0,0,0,.18);overflow:hidden;margin-bottom:6px}
+.fab-form-header{background:#7c3aed;color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:.9rem}
+.fab-form-header button{background:none;border:none;color:#fff;font-size:1rem;cursor:pointer}
+.fab-form-card form{padding:14px;display:flex;flex-direction:column;gap:8px}
+.fab-form-card input,.fab-form-card textarea{width:100%;padding:9px 12px;border:1.5px solid #e2e8f0;border-radius:7px;font-size:.84rem;outline:none;font-family:inherit}
+.fab-form-card input:focus,.fab-form-card textarea:focus{border-color:#7c3aed}
+.fab-form-card textarea{min-height:70px;resize:none}
+.fab-form-card button[type="submit"]{background:#7c3aed;color:#fff;border:none;border-radius:7px;padding:10px;font-size:.88rem;font-weight:700;cursor:pointer;letter-spacing:.05em;transition:background .2s;width:100%}
+.fab-form-card button[type="submit"]:hover{background:#6d28d9}
+@media(max-width:768px){.fab-container{bottom:80px;right:16px}}
+</style>
+
+<script src="script.js"></script>
+<script>
+function toggleFab(){
+  const options=document.getElementById('fabOptions');
+  const icon=document.getElementById('fabIcon');
+  const label=document.getElementById('fabLabel');
+  const isOpen=options.classList.contains('open');
+  options.classList.toggle('open');
+  if(isOpen){icon.className='fas fa-comments';label.textContent='Talk to Us';document.getElementById('fabFormCard').style.display='none';}
+  else{icon.className='fas fa-times';label.textContent='Close';}
+}
+function toggleFabForm(){
+  const form=document.getElementById('fabFormCard');
+  form.style.display=form.style.display==='none'?'block':'none';
+}
+</script>
+
+<!-- Hamburger / mobile nav -->
+<script>
+(function() {
+  var btn = document.getElementById('ghHamburger');
+  var nav = document.getElementById('ghMainNav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var open = nav.classList.toggle('gh-open');
+    btn.setAttribute('aria-expanded', open);
+  });
+  // Close when nav link clicked
+  nav.querySelectorAll('.gh-nav-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+      nav.classList.remove('gh-open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+  // Sticky nav
+  var siteNav = document.getElementById('ghSiteNav');
+  if (siteNav) {
+    window.addEventListener('scroll', function() {
+      siteNav.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+  }
+})();
+</script>
+
+<!-- Tawk.to Live Chat -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a1156823deb151c33b6ccc9/1jp9rjs6e';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!-- End Tawk.to -->
+</body>
+</html>
