@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate="media-articles">Health Articles & Tips | Geez Hospital — Axum, Tigray</title>
+    <title>Health Articles &amp; Tips | Geez Hospital — Axum, Tigray</title>
     <meta name="description" content="Read expert health articles and medical tips from Geez Hospital's specialist doctors in Axum, Tigray — covering prevention, treatment, and wellness.">
     <meta name="keywords" content="Geez Hospital articles, health articles Tigray, health tips Axum, medical advice Axum, ናይ ጥዕና ዓንቀጻት">
     <meta property="og:type" content="website">
@@ -11,15 +11,22 @@
     <meta property="og:description" content="Expert health articles and medical tips from Geez Hospital's specialists in Axum, Tigray.">
     <meta property="og:url" content="https://geezhospital.com/articles.html">
     <meta property="og:image" content="https://geezhospital.com/images/og-cover.jpg">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Health Articles & Tips — Geez Hospital Axum">
+    <meta name="twitter:description" content="Expert health articles and medical tips from Geez Hospital's specialists in Axum, Tigray.">
+    <meta name="twitter:image" content="https://geezhospital.com/images/og-cover.jpg">
     <link rel="canonical" href="https://geezhospital.com/articles.html">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
-  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon-180.png">
-  <link rel="manifest" href="/manifest.json">
+  <!-- Favicon & PWA -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon-180.png">
+  <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#0A1F3D">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Figtree:wght@300;400;500;600;700&family=Noto+Sans+Ethiopic:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -58,6 +65,11 @@
     }
     .article-item:hover{ transform:translateY(-4px); box-shadow:0 14px 32px rgba(11,123,123,.12); }
     .article-item img{ width:100%; aspect-ratio:16/9; object-fit:cover; background:var(--art-teal-l); }
+    .article-img-placeholder{
+      width:100%; aspect-ratio:16/9; background:var(--art-teal-l);
+      display:flex; align-items:center; justify-content:center;
+    }
+    .article-img-placeholder i{ font-size:2.4rem; color:var(--art-teal); opacity:.4; }
     .article-item h3{ font-size:1.05rem; font-weight:700; color:var(--art-navy); margin:16px 18px 6px; line-height:1.35; }
     .article-item .article-meta{ font-size:.76rem; color:var(--art-teal); font-weight:600; margin:0 18px 10px; }
     .article-item > p:not(.article-meta){ font-size:.88rem; color:var(--art-gray-500); line-height:1.65; margin:0 18px 16px; flex:1; }
@@ -228,8 +240,8 @@
     <main>
         <section class="page-hero">
             <div class="container">
-                <h1 data-translate="media-articles">Health Articles &amp; Tips — Geez Hospital</h1>
-                <p>Stay informed with our latest health articles, tips, and medical insights from our expert team.</p>
+                <h1 data-translate="articles-h2">Health Articles</h1>
+                <p data-translate="articles-p">Stay informed with our latest health articles, tips, and medical insights from our expert team.</p>
             </div>
         </section>
 
@@ -238,36 +250,40 @@
                 <div class="articles-grid">
                     <!-- Example Article Item 1 -->
                     <div class="article-item">
-                        <img src="images/article1.jpg" alt="Heart Health">
+                        <img src="images/article1.jpg" alt="Heart Health" loading="lazy"
+                             onerror="this.outerHTML='<div class=\'article-img-placeholder\'><i class=\'fas fa-heartbeat\'></i></div>'">
                         <h3>Understanding Heart Disease Prevention</h3>
-                        <p class="article-meta">By Dr. Tesfay Atsbeha | Cardiology Sub-Specialist | January 10, 2026</p>
+                        <p class="article-meta">By Dr. Tesfay Atsbeha | Cardiology Specialist | January 10, 2024</p>
                         <p>Learn about crucial steps to maintain a healthy heart, including diet, exercise, and regular check-ups.</p>
                         <a href="#" class="button secondary-button">Read Article</a>
                     </div>
 
                     <!-- Example Article Item 2 - Liver Disease -->
                     <div class="article-item">
-                        <img src="images/article2.jpg" alt="Liver Health">
+                        <img src="images/article2.jpg" alt="Liver Health" loading="lazy"
+                             onerror="this.outerHTML='<div class=\'article-img-placeholder\'><i class=\'fas fa-lungs\'></i></div>'">
                         <h3>Recognizing and Preventing Liver Disease (ሕማም ጸላም ከብዲ)</h3>
-                        <p class="article-meta">By Dr. Higus Teklu| Internal Medicine Specialist | January 05, 2026</p>
+                        <p class="article-meta">By Dr. Higus Weldu | Internal Medicine Specialist | January 05, 2024</p>
                         <p>Learn the early warning signs of hepatitis and other liver conditions, common causes in our community, and practical steps for prevention and timely treatment.</p>
                         <a href="#" class="button secondary-button">Read Article</a>
                     </div>
 
                     <!-- Example Article Item 3 - Completed -->
                     <div class="article-item">
-                        <img src="images/article3.jpg" alt="Mental Health">
+                        <img src="images/article3.jpg" alt="Mental Health" loading="lazy"
+                             onerror="this.outerHTML='<div class=\'article-img-placeholder\'><i class=\'fas fa-head-side-virus\'></i></div>'">
                         <h3>Managing Stress and Anxiety in Modern Life</h3>
-                        <p class="article-meta">By Dr. Teklit H | Psychiatry Specialist | December 28, 2026</p>
+                        <p class="article-meta">By Dr. Sara Adane | Psychiatry Specialist | December 28, 2023</p>
                         <p>Explore practical strategies to manage stress and anxiety effectively for a healthier mental state.</p>
                         <a href="#" class="button secondary-button">Read Article</a>
                     </div>
 
                     <!-- Example Article Item 4 - OB&GYN -->
                     <div class="article-item">
-                        <img src="images/article4.jpg" alt="Women's Health">
+                        <img src="images/article4.jpg" alt="Women's Health" loading="lazy"
+                             onerror="this.outerHTML='<div class=\'article-img-placeholder\'><i class=\'fas fa-venus\'></i></div>'">
                         <h3>Prenatal Care: What Every Expecting Mother Should Know</h3>
-                        <p class="article-meta">By Dr. Henok G/her | OB/GYN Specialist | October 15, 2026</p>
+                        <p class="article-meta">By Dr. Henok Girmay | OB/GYN Specialist | October 15, 2023</p>
                         <p>A guide to essential antenatal checkups, nutrition, and warning signs during pregnancy to help ensure a safe delivery for mother and baby.</p>
                         <a href="#" class="button secondary-button">Read Article</a>
                     </div>
@@ -277,27 +293,60 @@
         </section>
     </main>
 
-    <!-- Footer - Corrected single instance -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="images/logo.png" alt="Geez Hospital Logo">
-                </div>
-                <div class="footer-info">
-                    <p data-translate="footer-text">© 2026 Geez Hospital. All rights reserved.<br>Developed By፡ Aser Tech (Legesse Teklu Gebrekidan)-0911179955</p>
-                    <div class="social-icons-footer">
-                        <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://t.me/geezhospital_bot" target="_blank"><i class="fab fa-telegram-plane"></i></a>
-                        <!-- New Google Map link in footer -->
-                        <a href="https://maps.app.goo.gl/yHuCuCgLMzUtyerU6" target="_blank" title="Geez Hospital on Google Maps"><i class="fas fa-map-marked-alt"></i></a>
-                        <!-- New Patient Satisfaction Survey link in footer -->
-                        <a href="https://linktr.ee/geezhospital" target="_blank" title="Patient Satisfaction Survey"><i class="fas fa-poll-h"></i></a>
-                    </div>
-                </div>
-            </div>
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo-wrap">
+            <img src="images/logo.png" alt="Geez Hospital" onerror="this.style.display='none'">
+            <div class="logo-text"><span class="logo-en">GEEZ HOSPITAL</span><span class="logo-tig">ግዕዝ ሆስፒታል</span></div>
+          </a>
+          <p data-translate="footer-brand-desc">World-class healthcare in Axum, Tigray.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://t.me/Geezhospital_bot" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://maps.app.goo.gl/yHuCuCgLMzUtyerU6" target="_blank" aria-label="Maps"><i class="fas fa-map-marker-alt"></i></a>
+          </div>
         </div>
+        <div class="footer-col">
+          <h4 data-translate="footer-quick-links">Quick Links</h4>
+          <ul>
+            <li><a href="index.html" data-translate="home">Home</a></li>
+            <li><a href="services.html" data-translate="services">Services</a></li>
+            <li><a href="doctors.html" data-translate="doctors">Doctors</a></li>
+            <li><a href="gallery.html" data-translate="gallery">Gallery</a></li>
+            <li><a href="news.html" data-translate="news">News</a></li>
+            <li><a href="contact.html" data-translate="contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-translate="footer-services-title">Top Services</h4>
+          <ul>
+            <li><a href="services.html">Cardiology</a></li>
+            <li><a href="services.html">General Surgery</a></li>
+            <li><a href="services.html">Pediatrics</a></li>
+            <li><a href="services.html">Emergency Care</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-translate="footer-contact-title">Contact Us</h4>
+          <ul class="footer-contact-list">
+            <li><i class="fas fa-map-marker-alt"></i><span data-translate="footer-address">Kindeya Kebele, In front of Ethio-Telecom, Axum, Tigray</span></li>
+            <li><i class="fas fa-phone"></i><a href="tel:+251920008338">+251 920 008 338</a></li>
+            <li><i class="fas fa-phone"></i><a href="tel:+251962333388">+251 962 333 388</a></li>
+            <li><i class="fas fa-envelope"></i><a href="mailto:geezhospital@gmail.com">geezhospital@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p id="footer-text">© 2026 Geez Hospital. All rights reserved.</p>
+          <p class="footer-dev">Developed by <a href="tel:+251911179955">Aser Tech | Legesse Teklu Gebrekidan — +251 911 179 955</a></p>
+        </div>
+      </div>
     </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
 
     <script src="script.js"></script>
 <!-- Floating Contact Button -->
