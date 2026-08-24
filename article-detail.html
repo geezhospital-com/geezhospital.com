@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="articleTitleTag">Health Article | Geez Hospital — Axum, Tigray</title>
+    <meta name="description" id="articleMetaDesc" content="Expert health articles and medical tips from Geez Hospital's specialist doctors in Axum, Tigray.">
+    <link rel="canonical" href="https://geezhospital.com/article-detail.html">
+  <!-- Favicon & PWA -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon-180.png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0A1F3D">
+  <meta property="og:type" content="article">
+  <meta property="og:title" id="articleOgTitle" content="Health Article | Geez Hospital">
+  <meta property="og:description" id="articleOgDesc" content="Expert health articles and medical tips from Geez Hospital's specialists in Axum, Tigray.">
+  <meta property="og:url" content="https://geezhospital.com/article-detail.html">
+  <meta property="og:image" content="https://geezhospital.com/images/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Figtree:wght@300;400;500;600;700&family=Noto+Sans+Ethiopic:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9QH360M4V1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9QH360M4V1');
+  </script>
+  <!-- ── Self-contained styling for the article detail page ── -->
+  <style>
+    :root{
+      --art-navy:#0A1F3D; --art-teal:#0B7B7B; --art-teal-l:#E8F4F4;
+      --art-gray-50:#F8FAFB; --art-gray-200:#DDE4EE; --art-gray-500:#64748B; --art-gray-900:#0F172A;
+    }
+    .article-detail-hero{
+      background:linear-gradient(135deg, var(--art-navy) 0%, var(--art-teal) 100%);
+      padding:64px 0 48px; color:#fff;
+    }
+    .article-detail-hero .container{ max-width:820px; }
+    .article-detail-breadcrumb{ font-size:.8rem; opacity:.75; margin-bottom:14px; }
+    .article-detail-breadcrumb a{ color:#fff; text-decoration:none; opacity:.85; }
+    .article-detail-breadcrumb a:hover{ text-decoration:underline; }
+    .article-detail-hero h1{
+      font-family:'Cormorant Garamond', serif; font-size:clamp(1.7rem,4vw,2.5rem);
+      font-weight:600; line-height:1.3; margin-bottom:14px;
+    }
+    .article-detail-meta{ font-size:.85rem; opacity:.85; }
+    .article-detail-body-section{ background:var(--art-gray-50); padding:48px 0 80px; }
+    .article-detail-body-wrap{
+      max-width:820px; margin:0 auto; background:#fff; border-radius:16px;
+      box-shadow:0 4px 24px rgba(10,31,61,.06); padding:40px;
+    }
+    .article-detail-img{
+      width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:12px; margin-bottom:28px;
+      background:var(--art-teal-l);
+    }
+    .article-detail-img-placeholder{
+      width:100%; aspect-ratio:16/9; border-radius:12px; margin-bottom:28px;
+      background:var(--art-teal-l); display:flex; align-items:center; justify-content:center;
+    }
+    .article-detail-img-placeholder i{ font-size:3rem; color:var(--art-teal); opacity:.4; }
+    .article-detail-content h2{
+      font-family:'Cormorant Garamond', serif; font-size:1.4rem; font-weight:600;
+      color:var(--art-navy); margin:28px 0 12px;
+    }
+    .article-detail-content p{ font-size:.98rem; color:var(--art-gray-900); line-height:1.8; margin-bottom:16px; }
+    .article-detail-content ul{ margin:0 0 16px 22px; }
+    .article-detail-content li{ font-size:.98rem; color:var(--art-gray-900); line-height:1.75; margin-bottom:8px; }
+    .article-detail-cta{
+      margin-top:32px; padding:24px; border-radius:12px; background:var(--art-teal-l);
+      display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+    }
+    .article-detail-cta p{ margin:0; font-weight:600; color:var(--art-navy); font-size:.95rem; }
+    .article-detail-cta .btn{
+      background:var(--art-teal); color:#fff; padding:11px 24px; border-radius:999px;
+      text-decoration:none; font-weight:600; font-size:.88rem; white-space:nowrap;
+      transition:background .2s;
+    }
+    .article-detail-cta .btn:hover{ background:#096767; }
+    .article-detail-back{
+      display:inline-flex; align-items:center; gap:8px; margin-bottom:20px;
+      color:var(--art-teal); text-decoration:none; font-size:.88rem; font-weight:600;
+    }
+    .article-detail-back:hover{ text-decoration:underline; }
+    .article-not-found{ text-align:center; padding:40px 20px; }
+    .article-not-found i{ font-size:2.4rem; color:var(--art-teal); opacity:.4; margin-bottom:16px; }
+  </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="gh-topbar">
+  <div class="gh-tb-inner">
+    <div class="gh-tb-left">
+      <a href="tel:+251920008338" class="gh-tb-item"><i class="fas fa-phone-volume"></i> +251 920 008 338</a>
+      <div class="gh-tb-divider"></div>
+      <a href="tel:+251962333388" class="gh-tb-item"><i class="fas fa-phone"></i> +251 962 333 388</a>
+      <div class="gh-tb-divider"></div>
+      <a href="mailto:geezhospital@gmail.com" class="gh-tb-item"><i class="fas fa-envelope"></i> geezhospital@gmail.com</a>
+      <div class="gh-tb-divider"></div>
+      <span class="gh-tb-item"><i class="fas fa-map-marker-alt"></i> Axum, In front of Ethio-Telecom</span>
+    </div>
+    <div class="gh-tb-right">
+      <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank" class="gh-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://t.me/Geezhospital_bot" target="_blank" class="gh-social-link" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+      <a href="https://linktr.ee/geezhospital" target="_blank" class="gh-social-link" aria-label="Patient Survey"><i class="fas fa-poll"></i></a>
+      <div class="gh-emergency-pill"><div class="gh-pulse-dot"></div> 24/7 Emergency</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     PREMIUM STICKY NAVIGATION
+════════════════════════════════════════ -->
+<nav class="gh-sitenav" id="ghSiteNav" role="navigation" aria-label="Main navigation">
+  <div class="gh-nav-inner">
+
+    <!-- Logo -->
+    <a href="index.html" class="gh-logo-wrap">
+      <img src="images/logo.png" alt="Geez Hospital Logo" class="gh-logo-img"
+     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+<div class="gh-logo-mark" style="display:none">G</div>
+      <div class="gh-logo-text">
+        <span class="gh-logo-en">GEEZ HOSPITAL</span>
+        <span class="gh-logo-sub">ግዕዝ ሆስፒታል · Axum</span>
+      </div>
+    </a>
+
+    <!-- Nav list -->
+    <ul class="gh-nav-list" id="ghMainNav">
+
+      <li class="gh-nav-item">
+        <a href="index.html" class="gh-nav-link" data-translate="home">Home</a>
+      </li>
+
+      <!-- SERVICES -->
+      <li class="gh-nav-item">
+        <a href="services.html" class="gh-nav-link">Services <i class="fas fa-chevron-down"></i></a>
+        <div class="gh-mega" style="grid-template-columns:repeat(3,1fr)">
+          <div class="gh-mega-header">Medical Services</div>
+          <a href="services.html?service=internal-medicine" class="gh-mega-item"><i class="fas fa-user-md"></i> Internal Medicine</a>
+          <a href="services.html?service=cardiology"        class="gh-mega-item"><i class="fas fa-heartbeat"></i> Cardiology</a>
+          <a href="services.html?service=general-surgery"   class="gh-mega-item"><i class="fas fa-cut"></i> General Surgery</a>
+          <a href="services.html?service=pediatrics"        class="gh-mega-item"><i class="fas fa-baby"></i> Pediatrics</a>
+          <a href="services.html?service=obsgyn"            class="gh-mega-item"><i class="fas fa-venus"></i> Obstetrics &amp; Gynecology</a>
+          <a href="services.html?service=neurosurgery"      class="gh-mega-item"><i class="fas fa-brain"></i> Neurosurgery</a>
+          <a href="services.html?service=orthopedics"       class="gh-mega-item"><i class="fas fa-bone"></i> Orthopedics</a>
+          <a href="services.html?service=dermatology"       class="gh-mega-item"><i class="fas fa-spa"></i> Dermatology</a>
+          <a href="services.html?service=ent"               class="gh-mega-item"><i class="fas fa-ear"></i> ENT</a>
+          <a href="services.html?service=dental"            class="gh-mega-item"><i class="fas fa-tooth"></i> Dental</a>
+          <a href="services.html?service=radiology"         class="gh-mega-item"><i class="fas fa-x-ray"></i> Radiology</a>
+          <a href="services.html?service=laboratory"        class="gh-mega-item"><i class="fas fa-flask"></i> Laboratory</a>
+          <a href="services.html?service=psychiatry"        class="gh-mega-item"><i class="fas fa-head-side-virus"></i> Psychiatry</a>
+          <a href="services.html?service=physiotherapy"     class="gh-mega-item"><i class="fas fa-walking"></i> Physiotherapy</a>
+          <a href="services.html?service=anesthesia"        class="gh-mega-item"><i class="fas fa-procedures"></i> Anesthesia &amp; Pain</a>
+          <a href="services.html?service=maternity"         class="gh-mega-item"><i class="fas fa-child"></i> Maternity</a>
+          <a href="services.html?service=pharmacy-ambulance"class="gh-mega-item"><i class="fas fa-pills"></i> Pharmacy &amp; Ambulance</a>
+          <a href="services.html" class="gh-mega-item gh-mega-all"><i class="fas fa-plus"></i> All 18+ Services →</a>
+        </div>
+      </li>
+
+      <!-- DOCTORS -->
+      <li class="gh-nav-item">
+        <a href="doctors.html" class="gh-nav-link">Doctors <i class="fas fa-chevron-down"></i></a>
+        <div class="gh-mega" style="grid-template-columns:repeat(3,1fr)">
+          <div class="gh-mega-header">Find a Specialist</div>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-heartbeat"></i> Dr. Tesfay — Cardiology</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-user-md"></i> Dr. Higus — Internal Med.</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-baby"></i> Dr. Gebreab — Pediatrics</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-venus"></i> Dr. Henok — OB/GYN</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-x-ray"></i> Dr. Natnael — Radiology</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-baby"></i> Dr. Teklay — Pediatrics</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-tooth"></i> Dr. Fiseha — Dental</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-cut"></i> Dr. Yisak — Surgery</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-bone"></i> Dr. Goytom — Orthopedics</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-spa"></i> Dr. Ashenafi — Dermatology</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-brain"></i> Dr. Berhe — Neurosurgery</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-ear"></i> Dr. Wendmu — ENT</a>
+          <a href="doctors.html" class="gh-mega-item"><i class="fas fa-user-md"></i> Dr. Biruk — Internal Med.</a>
+          <a href="doctors.html" class="gh-mega-item gh-mega-all"><i class="fas fa-search"></i> All Doctors →</a>
+        </div>
+      </li>
+
+      <!-- DEPARTMENTS -->
+      <li class="gh-nav-item">
+        <a href="departments.html" class="gh-nav-link">Departments <i class="fas fa-chevron-down"></i></a>
+        <div class="gh-mega" style="grid-template-columns:repeat(3,1fr)">
+          <div class="gh-mega-header">Departments</div>
+          <a href="departments.html" class="gh-mega-item"><i class="fas fa-cut"></i> Surgery</a>
+          <a href="departments.html" class="gh-mega-item"><i class="fas fa-user-md"></i> Internal Medicine</a>
+          <a href="departments.html" class="gh-mega-item"><i class="fas fa-baby"></i> Pediatrics</a>
+          <a href="departments.html" class="gh-mega-item"><i class="fas fa-venus"></i> Obs &amp; Gynecology</a>
+          <a href="departments.html" class="gh-mega-item"><i class="fas fa-bone"></i> Orthopedics</a>
+          <a href="departments.html" class="gh-mega-item"><i class="fas fa-x-ray"></i> Radiology</a>
+          <a href="departments.html" class="gh-mega-item"><i class="fas fa-heartbeat"></i> Cardiology</a>
+          <a href="departments.html" class="gh-mega-item"><i class="fas fa-spa"></i> Dermatology</a>
+          <a href="departments.html" class="gh-mega-item"><i class="fas fa-ear"></i> ENT</a>
+          <a href="departments.html" class="gh-mega-item"><i class="fas fa-tooth"></i> Dental</a>
+          <a href="departments.html" class="gh-mega-item"><i class="fas fa-brain"></i> Neurosurgery</a>
+          <a href="departments.html" class="gh-mega-item"><i class="fas fa-ribbon"></i> Oncology</a>
+          <a href="departments.html" class="gh-mega-item"><i class="fas fa-head-side-virus"></i> Psychiatry</a>
+          <a href="departments.html" class="gh-mega-item gh-mega-all"><i class="fas fa-th"></i> All Departments →</a>
+        </div>
+      </li>
+
+      <!-- MEDIA -->
+      <li class="gh-nav-item">
+        <a href="news.html" class="gh-nav-link">Media <i class="fas fa-chevron-down"></i></a>
+        <div class="gh-mega" style="grid-template-columns:repeat(2,1fr);min-width:360px">
+          <div class="gh-mega-header">News &amp; Gallery</div>
+          <a href="news.html"        class="gh-mega-item"><i class="fas fa-newspaper"></i> Latest News</a>
+          <a href="articles.html"    class="gh-mega-item active"><i class="fas fa-book-medical"></i> Health Articles</a>
+          <a href="patient-info.html"class="gh-mega-item"><i class="fas fa-info-circle"></i> Patient Information</a>
+          <a href="testimonials.html" class="gh-mega-item"><i class="fas fa-quote-left"></i> Testimonials</a>
+          <a href="gallery.html"     class="gh-mega-item"><i class="fas fa-images"></i> Photo Gallery</a>
+          <a href="https://linktr.ee/geezhospital" target="_blank" class="gh-mega-item"><i class="fas fa-poll"></i> Patient Survey</a>
+        </div>
+      </li>
+
+      <li class="gh-nav-item"><a href="vacancy.html" class="gh-nav-link">Vacancy</a></li>
+      <li class="gh-nav-item"><a href="facilities.html" class="gh-nav-link">Facilities</a></li>
+      <li class="gh-nav-item"><a href="contact.html" class="gh-nav-link" data-translate="contact">Contact Us</a></li>
+
+      <li class="gh-nav-item">
+        <select id="language-switcher" class="gh-lang-select" aria-label="Language">
+          <option value="eng">English</option>
+          <option value="tig">ትግርኛ</option>
+          <option value="amh">አማርኛ</option>
+        </select>
+      </li>
+    </ul>
+
+    <div class="gh-nav-actions">
+      <button class="gh-btn-search" id="ghSearchBtn" aria-label="Open search"><i class="fas fa-search"></i></button>
+      <a href="contact.html" class="gh-btn-book">Book Appointment</a>
+      <button class="gh-hamburger" id="ghHamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+    <main>
+      <!-- Hero: populated by JS based on ?article= -->
+      <section class="article-detail-hero">
+        <div class="container">
+          <div class="article-detail-breadcrumb">
+            <a href="index.html">Home</a> &nbsp;/&nbsp; <a href="articles.html">Health Articles</a> &nbsp;/&nbsp; <span id="articleBreadcrumbTitle">Article</span>
+          </div>
+          <h1 id="articleTitle">Loading article…</h1>
+          <p class="article-detail-meta" id="articleMeta"></p>
+        </div>
+      </section>
+
+      <section class="article-detail-body-section">
+        <div class="container">
+          <div class="article-detail-body-wrap">
+            <a href="articles.html" class="article-detail-back"><i class="fas fa-arrow-left"></i> Back to all articles</a>
+            <div id="articleImageWrap"></div>
+            <div class="article-detail-content" id="articleContent">
+              <p>Loading…</p>
+            </div>
+            <div class="article-detail-cta">
+              <p>Have a health concern? Our specialists are here to help.</p>
+              <a href="contact.html" class="btn">Book an Appointment</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo-wrap">
+            <img src="images/logo.png" alt="Geez Hospital" onerror="this.style.display='none'">
+            <div class="logo-text"><span class="logo-en">GEEZ HOSPITAL</span><span class="logo-tig">ግዕዝ ሆስፒታል</span></div>
+          </a>
+          <p data-translate="footer-brand-desc">World-class healthcare in Axum, Tigray.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://t.me/Geezhospital_bot" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://maps.app.goo.gl/yHuCuCgLMzUtyerU6" target="_blank" aria-label="Maps"><i class="fas fa-map-marker-alt"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 data-translate="footer-quick-links">Quick Links</h4>
+          <ul>
+            <li><a href="index.html" data-translate="home">Home</a></li>
+            <li><a href="services.html" data-translate="services">Services</a></li>
+            <li><a href="doctors.html" data-translate="doctors">Doctors</a></li>
+            <li><a href="gallery.html" data-translate="gallery">Gallery</a></li>
+            <li><a href="news.html" data-translate="news">News</a></li>
+            <li><a href="contact.html" data-translate="contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-translate="footer-services-title">Top Services</h4>
+          <ul>
+            <li><a href="services.html">Cardiology</a></li>
+            <li><a href="services.html">General Surgery</a></li>
+            <li><a href="services.html">Pediatrics</a></li>
+            <li><a href="services.html">Emergency Care</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-translate="footer-contact-title">Contact Us</h4>
+          <ul class="footer-contact-list">
+            <li><i class="fas fa-map-marker-alt"></i><span data-translate="footer-address">Kindeya Kebele, In front of Ethio-Telecom, Axum, Tigray</span></li>
+            <li><i class="fas fa-phone"></i><a href="tel:+251920008338">+251 920 008 338</a></li>
+            <li><i class="fas fa-phone"></i><a href="tel:+251962333388">+251 962 333 388</a></li>
+            <li><i class="fas fa-envelope"></i><a href="mailto:geezhospital@gmail.com">geezhospital@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p id="footer-text">© 2026 Geez Hospital. All rights reserved.</p>
+          <p class="footer-dev">Developed by <a href="tel:+251911179955">Aser Tech | Legesse Teklu Gebrekidan — +251 911 179 955</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+    <script src="script.js"></script>
+
+    <!-- ═════════════════════════════════════════════════════
+         ARTICLE DATA + RENDER LOGIC
+         Reads ?article=<slug> from the URL and populates the
+         page. Self-contained on this page only — doesn't touch
+         script.js, so it can't affect any other page.
+    ═════════════════════════════════════════════════════ -->
+    <script>
+    const ARTICLES = {
+      'heart-disease-prevention': {
+        title: 'Understanding Heart Disease Prevention',
+        author: 'Dr. Tesfay Atsbeha', role: 'Cardiology Specialist', date: 'August 5, 2026',
+        icon: 'fa-heartbeat',
+        excerpt: 'Heart disease remains one of the leading health concerns worldwide. Learn the everyday habits that protect your heart — and the warning signs you should never ignore.',
+        body: `
+          <p>Heart disease is one of the most common — and most preventable — health conditions we see at Geez Hospital. The good news is that most heart disease risk factors can be managed through simple, consistent lifestyle habits, and regular checkups can catch problems long before they become serious.</p>
+
+          <h2>Know Your Risk Factors</h2>
+          <p>Some risk factors, like age and family history, cannot be changed. But many of the biggest contributors to heart disease are within your control:</p>
+          <ul>
+            <li>High blood pressure and high cholesterol</li>
+            <li>Diabetes or elevated blood sugar</li>
+            <li>Smoking or tobacco use</li>
+            <li>Excess body weight and a sedentary lifestyle</li>
+            <li>Chronic, unmanaged stress</li>
+          </ul>
+
+          <h2>Everyday Habits That Protect Your Heart</h2>
+          <p>Small, consistent changes make a real difference over time:</p>
+          <ul>
+            <li><strong>Move daily.</strong> Aim for at least 30 minutes of walking or light activity most days of the week.</li>
+            <li><strong>Eat heart-smart.</strong> Favor vegetables, whole grains, and lean proteins; limit salt, fried foods, and added sugar.</li>
+            <li><strong>Avoid tobacco</strong> in all forms, and limit alcohol intake.</li>
+            <li><strong>Get regular checkups.</strong> Blood pressure and cholesterol can be high with no symptoms at all — screening is the only way to know.</li>
+            <li><strong>Manage stress</strong> through rest, sleep, and time with family and community.</li>
+          </ul>
+
+          <h2>Warning Signs That Need Immediate Attention</h2>
+          <p>Seek emergency care right away if you or a loved one experiences chest pain or pressure, shortness of breath, pain spreading to the arm or jaw, sudden dizziness, or an irregular heartbeat. Acting quickly saves lives.</p>
+
+          <h2>When to Get Screened</h2>
+          <p>We recommend adults have their blood pressure checked at least once a year, and more often if you have diabetes, a family history of heart disease, or are over 40. Our Cardiology department offers ECG, blood pressure monitoring, and specialist consultations to help you stay ahead of heart disease.</p>
+        `
+      },
+      'liver-disease': {
+        title: 'Recognizing and Preventing Liver Disease (ሕማም ጸላም ከብዲ)',
+        author: 'Dr. Higus Weldu', role: 'Internal Medicine Specialist', date: 'July 22, 2026',
+        icon: 'fa-lungs',
+        excerpt: 'Jaundice and other liver conditions are common in our community but are often preventable and treatable when caught early. Here is what to watch for.',
+        body: `
+          <p>The liver plays a vital role in digestion, filtering toxins from the blood, and storing energy. In our community, liver conditions — including viral hepatitis and jaundice (locally known as ሕማም ጸላም ከብዲ) — are common but often preventable with the right knowledge and timely care.</p>
+
+          <h2>Common Causes in Our Region</h2>
+          <ul>
+            <li>Viral hepatitis (Hepatitis A, B, and C)</li>
+            <li>Unsafe drinking water or contaminated food</li>
+            <li>Heavy or long-term alcohol use</li>
+            <li>Overuse of certain medications, including some herbal remedies</li>
+          </ul>
+
+          <h2>Early Warning Signs</h2>
+          <p>Liver disease can develop quietly at first. Watch for:</p>
+          <ul>
+            <li>Yellowing of the skin or eyes (jaundice)</li>
+            <li>Dark-colored urine or pale stools</li>
+            <li>Persistent fatigue or weakness</li>
+            <li>Loss of appetite or unexplained weight loss</li>
+            <li>Pain or swelling in the upper right abdomen</li>
+          </ul>
+
+          <h2>Prevention Steps That Work</h2>
+          <ul>
+            <li><strong>Get vaccinated</strong> against Hepatitis B — this is one of the most effective protections available, especially for infants and healthcare workers.</li>
+            <li><strong>Drink safe, treated water</strong> and ensure food is properly cooked and stored.</li>
+            <li><strong>Limit alcohol</strong> consumption, or avoid it altogether if you have any liver concerns.</li>
+            <li><strong>Use medications carefully</strong> — never exceed recommended doses, and consult a doctor before combining medicines.</li>
+          </ul>
+
+          <h2>When to See a Doctor</h2>
+          <p>If you notice yellowing of the eyes or skin, persistent abdominal pain, or unexplained fatigue, don't wait — early diagnosis dramatically improves outcomes. Our Internal Medicine and Laboratory departments offer liver function testing and specialist evaluation at Geez Hospital.</p>
+        `
+      },
+      'stress-anxiety': {
+        title: 'Managing Stress and Anxiety in Modern Life',
+        author: 'Dr. Sara Adane', role: 'Psychiatry Specialist', date: 'July 10, 2026',
+        icon: 'fa-head-side-virus',
+        excerpt: 'Stress and anxiety affect people of all ages. Simple, evidence-based strategies can help you regain balance and peace of mind.',
+        body: `
+          <p>Everyone experiences stress from time to time — deadlines, family responsibilities, financial pressure, or health worries. But when stress or anxiety becomes constant, it can affect both your mental and physical health. The encouraging news is that there are proven, practical ways to manage it.</p>
+
+          <h2>Understanding Stress vs. Anxiety</h2>
+          <p>Stress is typically a response to an external pressure or demand, while anxiety often continues even after the stressful situation has passed — showing up as persistent worry, restlessness, or a sense of unease.</p>
+
+          <h2>Practical Coping Strategies</h2>
+          <ul>
+            <li><strong>Prioritize sleep.</strong> Aim for 7–8 hours a night; poor sleep makes stress harder to manage.</li>
+            <li><strong>Stay physically active.</strong> Even a daily 20-minute walk can meaningfully reduce stress hormones.</li>
+            <li><strong>Practice slow breathing.</strong> A few minutes of slow, deep breathing can calm the nervous system in the moment.</li>
+            <li><strong>Stay connected.</strong> Talking with family, friends, or community members provides real emotional support.</li>
+            <li><strong>Limit stimulants.</strong> Excess caffeine can worsen feelings of anxiety.</li>
+          </ul>
+
+          <h2>When Stress Becomes a Concern</h2>
+          <p>Consider seeking professional support if you notice persistent worry that doesn't go away, disrupted sleep, difficulty concentrating, or physical symptoms like headaches or a racing heart that have no other medical cause.</p>
+
+          <h2>How Professional Support Can Help</h2>
+          <p>Speaking with a mental health professional is a sign of strength, not weakness. Our Psychiatry department offers confidential consultations to help you understand what you're experiencing and build a plan that works for your life.</p>
+        `
+      },
+      'prenatal-care': {
+        title: 'Prenatal Care: What Every Expecting Mother Should Know',
+        author: 'Dr. Henok Girmay', role: 'OB/GYN Specialist', date: 'June 28, 2026',
+        icon: 'fa-baby',
+        excerpt: 'Regular prenatal checkups are one of the most important steps you can take for a healthy pregnancy and a safe delivery.',
+        body: `
+          <p>Prenatal care is one of the most important investments you can make in your health and your baby's health. Regular checkups allow your doctor to monitor your pregnancy, catch potential complications early, and guide you through a safe and healthy delivery.</p>
+
+          <h2>Why Prenatal Care Matters</h2>
+          <p>Consistent antenatal visits allow early detection of conditions such as high blood pressure, anemia, and gestational diabetes — all of which are far easier to manage when caught early.</p>
+
+          <h2>Recommended Checkup Schedule</h2>
+          <ul>
+            <li>Monthly visits up to 28 weeks</li>
+            <li>Every two weeks from 28–36 weeks</li>
+            <li>Weekly visits from 36 weeks until delivery</li>
+          </ul>
+          <p>Your doctor may adjust this schedule based on your individual health needs.</p>
+
+          <h2>Nutrition During Pregnancy</h2>
+          <ul>
+            <li>Eat a varied diet rich in iron, folic acid, calcium, and protein</li>
+            <li>Take prenatal supplements as recommended by your doctor</li>
+            <li>Stay well-hydrated and avoid alcohol and tobacco completely</li>
+          </ul>
+
+          <h2>Warning Signs You Should Never Ignore</h2>
+          <p>Contact your doctor or come to the hospital immediately if you experience vaginal bleeding, severe or persistent headaches, blurred vision, reduced fetal movement, or significant swelling of the hands and face.</p>
+
+          <h2>What to Expect at Each Visit</h2>
+          <p>Typical checkups include blood pressure monitoring, weight tracking, urine tests, fetal heartbeat checks, and ultrasound scans at key stages. Our Obstetrics &amp; Gynecology department is equipped to support you through every stage of pregnancy, delivery, and postnatal recovery.</p>
+        `
+      }
+    };
+
+    (function renderArticle() {
+      const params = new URLSearchParams(window.location.search);
+      const slug = params.get('article');
+      const article = ARTICLES[slug];
+
+      const titleEl       = document.getElementById('articleTitle');
+      const breadcrumbEl  = document.getElementById('articleBreadcrumbTitle');
+      const metaEl        = document.getElementById('articleMeta');
+      const imgWrapEl     = document.getElementById('articleImageWrap');
+      const contentEl     = document.getElementById('articleContent');
+      const titleTagEl    = document.getElementById('articleTitleTag');
+      const metaDescEl    = document.getElementById('articleMetaDesc');
+      const ogTitleEl     = document.getElementById('articleOgTitle');
+      const ogDescEl      = document.getElementById('articleOgDesc');
+
+      if (!article) {
+        titleEl.textContent = 'Article Not Found';
+        breadcrumbEl.textContent = 'Not Found';
+        contentEl.innerHTML = `
+          <div class="article-not-found">
+            <i class="fas fa-file-circle-question"></i>
+            <p>Sorry, we couldn't find that article. It may have been moved or the link is incorrect.</p>
+          </div>`;
+        return;
+      }
+
+      document.title = article.title + ' | Geez Hospital';
+      titleTagEl.textContent = article.title + ' | Geez Hospital';
+      metaDescEl.setAttribute('content', article.excerpt);
+      ogTitleEl.setAttribute('content', article.title + ' — Geez Hospital');
+      ogDescEl.setAttribute('content', article.excerpt);
+
+      titleEl.textContent = article.title;
+      breadcrumbEl.textContent = article.title;
+      metaEl.textContent = `By ${article.author} | ${article.role} | ${article.date}`;
+      imgWrapEl.innerHTML = `<div class="article-detail-img-placeholder"><i class="fas ${article.icon}"></i></div>`;
+      contentEl.innerHTML = article.body;
+    })();
+    </script>
+
+<!-- Floating Contact Button -->
+<div class="fab-container" id="fabContainer">
+  <div class="fab-options" id="fabOptions">
+    <div class="fab-form-card" id="fabFormCard" style="display:none">
+      <div class="fab-form-header">
+        <span>Contact Form</span>
+        <button onclick="document.getElementById('fabFormCard').style.display='none'">✕</button>
+      </div>
+      <form action="https://formspree.io/f/xwvpgllq" method="POST">
+        <input type="text" name="name" placeholder="Name *" required>
+        <input type="email" name="email" placeholder="Email *" required>
+        <input type="tel" name="mobile" placeholder="Mobile number *" required>
+        <textarea name="message" placeholder="Message *" required></textarea>
+        <button type="submit">SUBMIT</button>
+      </form>
+    </div>
+    <div class="fab-item-wrap">
+      <span class="fab-label">Contact Form</span>
+      <button class="fab-item fab-form-btn" onclick="toggleFabForm()"><i class="fas fa-address-book"></i></button>
+    </div>
+    <div class="fab-item-wrap">
+      <span class="fab-label">Facebook</span>
+      <a class="fab-item fab-facebook" href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
+    </div>
+    <div class="fab-item-wrap">
+      <span class="fab-label">Telegram</span>
+      <a class="fab-item fab-telegram" href="https://t.me/geezhospital_bot" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+    </div>
+    <div class="fab-item-wrap">
+      <span class="fab-label">Call Us</span>
+      <a class="fab-item fab-phone" href="tel:+251920008338"><i class="fas fa-phone"></i></a>
+    </div>
+  </div>
+  <button class="fab-main" id="fabMain" onclick="toggleFab()">
+    <i class="fas fa-comments" id="fabIcon"></i>
+    <span id="fabLabel">Talk to Us</span>
+  </button>
+</div>
+
+<style>
+.fab-container{position:fixed;bottom:28px;right:24px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.fab-main{display:flex;align-items:center;gap:8px;background:#0B7B7B;color:#fff;border:none;border-radius:999px;padding:14px 20px;font-size:.9rem;font-weight:700;cursor:pointer;box-shadow:0 6px 24px rgba(11,123,123,.4);transition:all .3s}
+.fab-main:hover{background:#096767;transform:scale(1.05)}
+.fab-options{display:none;flex-direction:column;align-items:flex-end;gap:10px}
+.fab-options.open{display:flex}
+.fab-item-wrap{display:flex;align-items:center;gap:10px;flex-direction:row-reverse}
+.fab-label{background:#0f1f2e;color:#fff;font-size:.78rem;padding:5px 12px;border-radius:999px;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.fab-item{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:#fff;border:none;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.2);transition:transform .2s;text-decoration:none}
+.fab-item:hover{transform:scale(1.12)}
+.fab-phone{background:#0B7B7B}.fab-telegram{background:#0088cc}.fab-facebook{background:#1877F2}.fab-form-btn{background:#7c3aed}
+.fab-form-card{background:#fff;border-radius:14px;width:280px;box-shadow:0 8px 32px rgba(0,0,0,.18);overflow:hidden;margin-bottom:6px}
+.fab-form-header{background:#7c3aed;color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:.9rem}
+.fab-form-header button{background:none;border:none;color:#fff;font-size:1rem;cursor:pointer}
+.fab-form-card form{padding:14px;display:flex;flex-direction:column;gap:8px}
+.fab-form-card input,.fab-form-card textarea{width:100%;padding:9px 12px;border:1.5px solid #e2e8f0;border-radius:7px;font-size:.84rem;outline:none;font-family:inherit}
+.fab-form-card input:focus,.fab-form-card textarea:focus{border-color:#7c3aed}
+.fab-form-card textarea{min-height:70px;resize:none}
+.fab-form-card button[type="submit"]{background:#7c3aed;color:#fff;border:none;border-radius:7px;padding:10px;font-size:.88rem;font-weight:700;cursor:pointer;letter-spacing:.05em;transition:background .2s;width:100%}
+.fab-form-card button[type="submit"]:hover{background:#6d28d9}
+@media(max-width:768px){.fab-container{bottom:80px;right:16px}}
+</style>
+
+<script>
+function toggleFab(){
+  const options=document.getElementById('fabOptions');
+  const icon=document.getElementById('fabIcon');
+  const label=document.getElementById('fabLabel');
+  const isOpen=options.classList.contains('open');
+  options.classList.toggle('open');
+  if(isOpen){icon.className='fas fa-comments';label.textContent='Talk to Us';document.getElementById('fabFormCard').style.display='none';}
+  else{icon.className='fas fa-times';label.textContent='Close';}
+}
+function toggleFabForm(){
+  const form=document.getElementById('fabFormCard');
+  form.style.display=form.style.display==='none'?'block':'none';
+}
+</script>
+
+<!-- Hamburger / mobile nav -->
+<script>
+(function() {
+  var btn = document.getElementById('ghHamburger');
+  var nav = document.getElementById('ghMainNav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var open = nav.classList.toggle('gh-open');
+    btn.setAttribute('aria-expanded', open);
+  });
+  nav.querySelectorAll('.gh-nav-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+      nav.classList.remove('gh-open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+  nav.querySelectorAll('.gh-nav-item > .gh-nav-link > i.fa-chevron-down').forEach(function(icon) {
+    icon.addEventListener('click', function(e) {
+      if (window.innerWidth > 768) return;
+      var item = icon.closest('.gh-nav-item');
+      if (!item || !item.querySelector('.gh-mega')) return;
+      e.preventDefault();
+      e.stopPropagation();
+      var isOpen = item.classList.contains('gh-mobile-open');
+      nav.querySelectorAll('.gh-nav-item.gh-mobile-open').forEach(function(el) {
+        if (el !== item) el.classList.remove('gh-mobile-open');
+      });
+      item.classList.toggle('gh-mobile-open', !isOpen);
+    });
+  });
+  var siteNav = document.getElementById('ghSiteNav');
+  if (siteNav) {
+    window.addEventListener('scroll', function() {
+      siteNav.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+  }
+})();
+</script>
+
+<!-- Tawk.to Live Chat -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a1156823deb151c33b6ccc9/1jp9rjs6e';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!-- End Tawk.to -->
+</body>
+</html>
