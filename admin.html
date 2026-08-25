@@ -739,6 +739,32 @@ async function ghPutJson(path, obj, sha, message){
   return ghPut(path, content, sha, message);
 }
 
+// ── Retry-safe JSON update ──
+// GitHub's Contents API can occasionally return a SHA that's already
+// stale by the time the PUT arrives (a known API caching/race quirk),
+// causing "409: sha does not match" even when the code is correct.
+// This wrapper re-fetches a FRESH sha + data and retries automatically
+// instead of forcing the person to manually refresh and redo the form.
+async function ghUpdateJsonWithRetry(path, mutatorFn, message, maxRetries = 3) {
+  let lastErr;
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    const { data, sha } = await ghGetJson(path);
+    const newData = mutatorFn(data);
+    try {
+      return await ghPutJson(path, newData, sha, message);
+    } catch (err) {
+      lastErr = err;
+      const isShaConflict = /409/.test(err.message);
+      if (isShaConflict && attempt < maxRetries) {
+        await new Promise(r => setTimeout(r, 400 * attempt)); // brief backoff, then retry with a fresh sha
+        continue;
+      }
+      throw err;
+    }
+  }
+  throw lastErr;
+}
+
 async function addGalleryPhoto(){
   const caption = document.getElementById('galPhotoCaption').value.trim();
   if(!caption){showStatus('galleryAddStatus','error','Caption ምልእ።');return}
@@ -749,10 +775,11 @@ async function addGalleryPhoto(){
   try{
     const repoPath = `images/gallery/${galPendingPhoto.name}`;
     await ghPut(repoPath, galPendingPhoto.base64, null, `Add gallery photo: ${galPendingPhoto.name}`);
-    const {data, sha} = await ghGetJson('data/gallery.json');
-    const items = (data && data.items) || [];
-    items.unshift({id:'gal-'+Date.now(), type:'image', src:repoPath, caption});
-    await ghPutJson('data/gallery.json', {items}, sha, `Add gallery photo: ${caption}`);
+    await ghUpdateJsonWithRetry('data/gallery.json', (data) => {
+      const items = (data && data.items) || [];
+      items.unshift({id:'gal-'+Date.now(), type:'image', src:repoPath, caption});
+      return {items};
+    }, `Add gallery photo: ${caption}`);
     showStatus('galleryAddStatus','success','✅ ስእሊ ተወሲኹ! ድሒሩ ኣብ gallery.html ይርኤ።');
     document.getElementById('galPhotoCaption').value='';
     galPendingPhoto=null;
@@ -779,10 +806,11 @@ async function addGalleryVideo(){
   btn.disabled=true;
   showStatus('galleryAddStatus','loading','ቪድዮ እናተወሰኸ...');
   try{
-    const {data, sha} = await ghGetJson('data/gallery.json');
-    const items = (data && data.items) || [];
-    items.unshift({id:'gal-'+Date.now(), type:'video', videoId, caption});
-    await ghPutJson('data/gallery.json', {items}, sha, `Add gallery video: ${caption}`);
+    await ghUpdateJsonWithRetry('data/gallery.json', (data) => {
+      const items = (data && data.items) || [];
+      items.unshift({id:'gal-'+Date.now(), type:'video', videoId, caption});
+      return {items};
+    }, `Add gallery video: ${caption}`);
     showStatus('galleryAddStatus','success','✅ ቪድዮ ተወሲኹ! ድሒሩ ኣብ gallery.html ይርኤ።');
     document.getElementById('galVideoCaption').value='';
     document.getElementById('galVideoUrl').value='';
@@ -825,9 +853,10 @@ async function deleteGalleryItem(id){
   if(!confirm('እዚ ስእሊ/ቪድዮ ክስረዝ ዲዩ?'))return;
   showStatus('galleryListStatus','loading','Deleting...');
   try{
-    const {data, sha} = await ghGetJson('data/gallery.json');
-    const items = ((data && data.items) || []).filter(it=>it.id!==id);
-    await ghPutJson('data/gallery.json', {items}, sha, `Delete gallery item: ${id}`);
+    await ghUpdateJsonWithRetry('data/gallery.json', (data) => {
+      const items = ((data && data.items) || []).filter(it=>it.id!==id);
+      return {items};
+    }, `Delete gallery item: ${id}`);
     showStatus('galleryListStatus','success','ተሰሪዙ።');
     loadGalleryList();
   }catch(e){
@@ -916,13 +945,6 @@ async function publishArticle(){
     }
     setProgress(65);
     showStatus('publishStatus','loading','news.json እናሕደስናዮ ኣለና...');
-    let sha=null,articles=[];
-    try{
-      const existing=await ghGet('data/news.json');
-      sha=existing.sha;
-      const decoded=decodeURIComponent(escape(atob(existing.content.replace(/\n/g,''))));
-      articles=JSON.parse(decoded).articles||[];
-    }catch(e){}
     const newArticle={
       id:'article-'+Date.now(),
       title,date,category,excerpt,
@@ -930,10 +952,11 @@ async function publishArticle(){
       images:imagePaths
     };
     if(link)newArticle.link=link;
-    articles.unshift(newArticle);
-    const newJson=JSON.stringify({articles},null,2);
-    const newContent=btoa(unescape(encodeURIComponent(newJson)));
-    await ghPut('data/news.json',newContent,sha,`Publish article: ${title}`);
+    await ghUpdateJsonWithRetry('data/news.json', (data) => {
+      const articles = (data && data.articles) || [];
+      articles.unshift(newArticle);
+      return {articles};
+    }, `Publish article: ${title}`);
     setProgress(85);
     showStatus('publishStatus','loading','Creating SEO article page...');
     try {
@@ -946,9 +969,13 @@ async function publishArticle(){
       const articlePageHtml = generateArticlePage(newArticle, coverImg);
       const articleContent  = btoa(unescape(encodeURIComponent(articlePageHtml)));
       await ghPut(`news/${slug}.html`, articleContent, null, `Create article page: ${slug}`);
-      const updatedJson = JSON.stringify({articles: articles.map(a => a.id===newArticle.id ? {...a,slug} : a)},null,2);
-      const updatedContent = btoa(unescape(encodeURIComponent(updatedJson)));
-      await ghPut('data/news.json', updatedContent, null, `Add slug to article: ${title}`);
+      // Second update to the SAME file (data/news.json) — this MUST fetch
+      // a fresh sha (the file was just modified above), never hardcode
+      // sha to null on a file that already exists.
+      await ghUpdateJsonWithRetry('data/news.json', (data) => {
+        data.articles = (data.articles||[]).map(a => a.id===newArticle.id ? {...a,slug} : a);
+        return data;
+      }, `Add slug to article: ${title}`);
     } catch(e) { console.warn('Article page creation failed:',e.message); }
     setProgress(100);
     showStatus('publishStatus','success','✅ Article published! ድሕሪ 1 ደቒቓ ኣብ news page ይርኤ።');
@@ -1003,12 +1030,10 @@ async function deleteArticle(id){
   if(!confirm('እዚ article ክሰረዝ ዲዩ?'))return;
   showStatus('manageStatus','loading','Deleting...');
   try{
-    const existing=await ghGet('data/news.json');
-    const decoded=decodeURIComponent(escape(atob(existing.content.replace(/\n/g,''))));
-    const data=JSON.parse(decoded);
-    data.articles=data.articles.filter(a=>a.id!==id);
-    const newContent=btoa(unescape(encodeURIComponent(JSON.stringify(data,null,2))));
-    await ghPut('data/news.json',newContent,existing.sha,`Delete article: ${id}`);
+    await ghUpdateJsonWithRetry('data/news.json', (data) => {
+      data.articles = (data.articles||[]).filter(a=>a.id!==id);
+      return data;
+    }, `Delete article: ${id}`);
     showStatus('manageStatus','success','Article deleted.');
     loadArticleList();
   }catch(e){showStatus('manageStatus','error','Failed: '+e.message)}
@@ -1049,14 +1074,6 @@ async function postVacancy() {
   showStatus('vacPostStatus','loading','Posting vacancy...');
 
   try {
-    let sha = null, vacancies = [];
-    try {
-      const existing = await ghGet('data/vacancies.json');
-      sha = existing.sha;
-      const decoded = decodeURIComponent(escape(atob(existing.content.replace(/\n/g,''))));
-      vacancies = JSON.parse(decoded).vacancies || [];
-    } catch(e) {}
-
     const newVac = {
       id: 'vac-' + Date.now(),
       title, titleTig, department: dept, positions, type,
@@ -1071,10 +1088,11 @@ async function postVacancy() {
       applyDirect:   direct
     };
 
-    vacancies.unshift(newVac);
-    const newJson    = JSON.stringify({vacancies}, null, 2);
-    const newContent = btoa(unescape(encodeURIComponent(newJson)));
-    await ghPut('data/vacancies.json', newContent, sha, `Post vacancy: ${title}`);
+    await ghUpdateJsonWithRetry('data/vacancies.json', (data) => {
+      const vacancies = (data && data.vacancies) || [];
+      vacancies.unshift(newVac);
+      return {vacancies};
+    }, `Post vacancy: ${title}`);
 
     showStatus('vacPostStatus','success','✅ Vacancy posted! ድሕሪ 1 ደቒቓ ኣብ vacancy.html ይርኤ።');
 
@@ -1137,12 +1155,10 @@ async function deleteVacancy(id) {
   if (!confirm('እዚ vacancy ክሰረዝ ዲዩ?')) return;
   showStatus('vacManageStatus','loading','Deleting...');
   try {
-    const existing = await ghGet('data/vacancies.json');
-    const decoded  = decodeURIComponent(escape(atob(existing.content.replace(/\n/g,''))));
-    const data     = JSON.parse(decoded);
-    data.vacancies = data.vacancies.filter(v => v.id !== id);
-    const newContent = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
-    await ghPut('data/vacancies.json', newContent, existing.sha, `Delete vacancy: ${id}`);
+    await ghUpdateJsonWithRetry('data/vacancies.json', (data) => {
+      data.vacancies = (data.vacancies||[]).filter(v => v.id !== id);
+      return data;
+    }, `Delete vacancy: ${id}`);
     showStatus('vacManageStatus','success','Vacancy deleted.');
     loadVacancyList();
   } catch(e) {
@@ -1496,19 +1512,15 @@ async function saveEdit() {
       imagePaths.push(`images/news/${pf.name}`);
     }
 
-    const existing = await ghGet('data/news.json');
-    const decoded  = decodeURIComponent(escape(atob(existing.content.replace(/\n/g,''))));
-    const data     = JSON.parse(decoded);
-
-    data.articles = data.articles.map(a => {
-      if (a.id !== id) return a;
-      const updated = {...a, title, date, category, excerpt, body: body||excerpt, images: imagePaths};
-      if (link) updated.link = link; else delete updated.link;
-      return updated;
-    });
-
-    const newContent = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
-    await ghPut('data/news.json', newContent, existing.sha, `Edit article: ${title}`);
+    await ghUpdateJsonWithRetry('data/news.json', (data) => {
+      data.articles = data.articles.map(a => {
+        if (a.id !== id) return a;
+        const updated = {...a, title, date, category, excerpt, body: body||excerpt, images: imagePaths};
+        if (link) updated.link = link; else delete updated.link;
+        return updated;
+      });
+      return data;
+    }, `Edit article: ${title}`);
 
     showStatus('editStatus','success','✅ Article updated successfully!');
     setTimeout(() => { closeEditModal(); loadArticleList(); }, 1500);
