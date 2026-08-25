@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Geez Hospital — Admin Panel</title>
+<link rel="manifest" href="admin-manifest.json">
+<meta name="theme-color" content="#0A1F3D">
+<link rel="apple-touch-icon" href="images/apple-touch-icon-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
@@ -1533,6 +1537,19 @@ async function saveEdit() {
 document.getElementById('editModal').addEventListener('click', function(e) {
   if (e.target === this) closeEditModal();
 });
+
+// ── PWA — Service Worker registration ──
+// Reuses the same sw.js as the main site. It does NOT precache
+// admin.html and always tries the network first for HTML pages, so
+// this never risks showing you a stale/cached version of the admin
+// panel after an update — it just makes "Add to Home Screen" available.
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(err => {
+      console.warn('[Admin PWA] Service worker registration failed:', err);
+    });
+  });
+}
 </script>
 </body>
 </html>
