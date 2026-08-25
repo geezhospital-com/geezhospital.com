@@ -1,6 +1,12 @@
 {
   "items": [
     {
+      "id": "gal-1787631572373",
+      "type": "image",
+      "src": "images/gallery/gallery_1787631551764_20uds.jpg",
+      "caption": "Ct scan and Ultrasound"
+    },
+    {
       "id": "gal-1787631535298",
       "type": "image",
       "src": "images/gallery/gallery_1787631478620_5qk7i.jpg",
