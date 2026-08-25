@@ -1,6 +1,12 @@
 {
   "items": [
     {
+      "id": "gal-1787631674306",
+      "type": "image",
+      "src": "images/gallery/gallery_1787631634912_q5r2g.jpg",
+      "caption": "Operating Room"
+    },
+    {
       "id": "gal-1787631599569",
       "type": "image",
       "src": "images/gallery/gallery_1787631586579_6vl8u.jpg",
