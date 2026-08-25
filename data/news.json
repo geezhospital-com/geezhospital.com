@@ -1,6 +1,17 @@
 {
   "articles": [
     {
+      "id": "article-1787631237362",
+      "title": "s",
+      "date": "2026-08-25",
+      "category": "Announcement",
+      "excerpt": "ss",
+      "body": "ss",
+      "images": [
+        "images/news/news_1787631232238_6nx1v.jpg"
+      ]
+    },
+    {
       "id": "article-1787631216757",
       "title": "s",
       "date": "2026-08-25",
