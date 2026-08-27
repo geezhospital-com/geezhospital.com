@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | Geez Hospital — Axum, Tigray</title>
+<meta name="description" content="View photos and videos of Geez Hospital facilities, modern equipment, wards, and medical teams in Axum, Tigray.">
+<meta name="keywords" content="Geez Hospital gallery, hospital photos Axum, Geez Hospital Axum images, ስእልታት ግዕዝ ሆስፒታል">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Photo Gallery | Geez Hospital — Axum, Tigray">
+<meta property="og:description" content="Photos and videos of Geez Hospital's facilities, equipment, and medical teams in Axum, Tigray.">
+<meta property="og:url" content="https://geezhospital.com/gallery.html">
+<meta property="og:image" content="https://geezhospital.com/images/og-cover.jpg">
+<link rel="canonical" href="https://geezhospital.com/gallery.html">
+<!-- Favicon & PWA -->
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon-180.png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0A1F3D">
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://geezhospital.com/" },
+{ "@type": "ListItem", "position": 2, "name": "Gallery", "item": "https://geezhospital.com/gallery.html" }
+]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Noto+Sans+Ethiopic:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9QH360M4V1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-9QH360M4V1');
+</script>
+
+<!-- ── Self-contained styles for the dynamic gallery grid + lightbox ── -->
+<style>
+  :root{
+    --gl-teal:#0B7B7B; --gl-teal-l:#E8F4F4; --gl-dark:#0A1F3D; --gl-gray:#64748B; --gl-border:#DDE4EE;
+  }
+  .gl-filter-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:32px}
+  .gl-filter-btn{padding:7px 18px;border-radius:999px;border:1.5px solid var(--gl-border);background:#fff;color:var(--gl-gray);font-size:.85rem;font-weight:500;cursor:pointer;transition:all .2s}
+  .gl-filter-btn:hover,.gl-filter-btn.active{background:var(--gl-teal);border-color:var(--gl-teal);color:#fff}
+  .gl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+  .gl-item{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:var(--gl-teal-l);cursor:pointer;box-shadow:0 2px 12px rgba(10,31,61,.06);transition:transform .25s,box-shadow .25s}
+  .gl-item:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(11,123,123,.16)}
+  .gl-item img{width:100%;height:100%;object-fit:cover;display:block}
+  .gl-item .gl-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,31,61,.75) 0%,rgba(10,31,61,0) 55%);display:flex;align-items:flex-end;padding:14px 16px;opacity:0;transition:opacity .25s}
+  .gl-item:hover .gl-overlay{opacity:1}
+  .gl-overlay p{color:#fff;font-size:.9rem;font-weight:600;margin:0}
+  .gl-item .gl-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(10,31,61,.28)}
+  .gl-item .gl-play i{font-size:2.6rem;color:#fff;filter:drop-shadow(0 2px 6px rgba(0,0,0,.4))}
+  .gl-item .gl-badge{position:absolute;top:10px;right:10px;background:rgba(10,31,61,.7);color:#fff;font-size:.68rem;font-weight:700;padding:3px 9px;border-radius:999px;text-transform:uppercase;letter-spacing:.05em}
+  .gl-state{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--gl-gray)}
+  .gl-state i{font-size:2.5rem;margin-bottom:14px;display:block;opacity:.4}
+  .gl-skeleton{background:#e2e8f0;border-radius:14px;aspect-ratio:4/3;animation:glShimmer 1.4s infinite}
+  @keyframes glShimmer{0%,100%{opacity:1}50%{opacity:.5}}
+
+  /* Lightbox */
+  .gl-lightbox{display:none;position:fixed;inset:0;background:rgba(8,16,28,.92);z-index:9999;align-items:center;justify-content:center;padding:24px}
+  .gl-lightbox.open{display:flex}
+  .gl-lightbox-inner{max-width:900px;width:100%;max-height:88vh}
+  .gl-lightbox-inner img{width:100%;max-height:76vh;object-fit:contain;border-radius:10px;display:block;margin:0 auto}
+  .gl-lightbox-inner .gl-video-frame{position:relative;width:100%;aspect-ratio:16/9;border-radius:10px;overflow:hidden}
+  .gl-lightbox-inner .gl-video-frame iframe{width:100%;height:100%;border:none}
+  .gl-lightbox-caption{color:#fff;text-align:center;margin-top:16px;font-size:1rem;font-weight:600}
+  .gl-lightbox-close{position:absolute;top:20px;right:26px;background:rgba(255,255,255,.12);border:none;border-radius:50%;width:42px;height:42px;color:#fff;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+  .gl-lightbox-close:hover{background:rgba(255,255,255,.25)}
+</style>
+</head>
+<body>
+
+<div class="gh-topbar">
+<div class="gh-tb-inner">
+<div class="gh-tb-left">
+<a href="tel:+251920008338" class="gh-tb-item"><i class="fas fa-phone-volume"></i> +251 920 008 338</a>
+<div class="gh-tb-divider"></div>
+<a href="tel:+251962333388" class="gh-tb-item"><i class="fas fa-phone"></i> +251 962 333 388</a>
+<div class="gh-tb-divider"></div>
+<a href="mailto:geezhospital@gmail.com" class="gh-tb-item"><i class="fas fa-envelope"></i> geezhospital@gmail.com</a>
+<div class="gh-tb-divider"></div>
+<span class="gh-tb-item"><i class="fas fa-map-marker-alt"></i> Axum, In front of Ethio-Telecom</span>
+</div>
+<div class="gh-tb-right">
+<a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank" class="gh-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+<a href="https://t.me/Geezhospital_bot" target="_blank" class="gh-social-link" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+<a href="https://linktr.ee/geezhospital" target="_blank" class="gh-social-link" aria-label="Patient Survey"><i class="fas fa-poll"></i></a>
+<div class="gh-emergency-pill"><div class="gh-pulse-dot"></div> 24/7 Emergency</div>
+</div>
+</div>
+</div>
+
+<!-- ════════════════════════════════════════
+STEP 3: PREMIUM STICKY NAVIGATION
+(replaces old site-header)
+════════════════════════════════════════ -->
+<nav class="gh-sitenav" id="ghSiteNav" role="navigation" aria-label="Main navigation">
+<div class="gh-nav-inner">
+
+<!-- Logo -->
+<a href="index.html" class="gh-logo-wrap">
+<img src="images/logo.png" alt="Geez Hospital Logo" class="gh-logo-img"
+onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+<div class="gh-logo-mark" style="display:none">G</div>
+<div class="gh-logo-text">
+<span class="gh-logo-en">GEEZ HOSPITAL</span>
+<span class="gh-logo-sub">ግዕዝ ሆስፒታል · Axum</span>
+</div>
+</a>
+
+<!-- Nav list — all original mega-menu content preserved -->
+<ul class="gh-nav-list" id="ghMainNav">
+
+<li class="gh-nav-item">
+<a href="index.html" class="gh-nav-link" data-translate="home">Home</a>
+</li>
+
+<!-- SERVICES -->
+<li class="gh-nav-item">
+<a href="services.html" class="gh-nav-link">Services <i class="fas fa-chevron-down"></i></a>
+<div class="gh-mega" style="grid-template-columns:repeat(3,1fr)">
+<div class="gh-mega-header">Medical Services</div>
+<a href="services.html?service=internal-medicine" class="gh-mega-item"><i class="fas fa-user-md"></i> Internal Medicine</a>
+<a href="services.html?service=cardiology" class="gh-mega-item"><i class="fas fa-heartbeat"></i> Cardiology</a>
+<a href="services.html?service=general-surgery" class="gh-mega-item"><i class="fas fa-cut"></i> General Surgery</a>
+<a href="services.html?service=pediatrics" class="gh-mega-item"><i class="fas fa-baby"></i> Pediatrics</a>
+<a href="services.html?service=obsgyn" class="gh-mega-item"><i class="fas fa-venus"></i> Obstetrics &amp; Gynecology</a>
+<a href="services.html?service=neurosurgery" class="gh-mega-item"><i class="fas fa-brain"></i> Neurosurgery</a>
+<a href="services.html?service=orthopedics" class="gh-mega-item"><i class="fas fa-bone"></i> Orthopedics</a>
+<a href="services.html?service=dermatology" class="gh-mega-item"><i class="fas fa-spa"></i> Dermatology</a>
+<a href="services.html?service=ent" class="gh-mega-item"><i class="fas fa-ear"></i> ENT</a>
+<a href="services.html?service=dental" class="gh-mega-item"><i class="fas fa-tooth"></i> Dental</a>
+<a href="services.html?service=radiology" class="gh-mega-item"><i class="fas fa-x-ray"></i> Radiology</a>
+<a href="services.html?service=laboratory" class="gh-mega-item"><i class="fas fa-flask"></i> Laboratory</a>
+<a href="services.html?service=psychiatry" class="gh-mega-item"><i class="fas fa-head-side-virus"></i> Psychiatry</a>
+<a href="services.html?service=physiotherapy" class="gh-mega-item"><i class="fas fa-walking"></i> Physiotherapy</a>
+<a href="services.html?service=anesthesia" class="gh-mega-item"><i class="fas fa-procedures"></i> Anesthesia &amp; Pain</a>
+<a href="services.html?service=maternity" class="gh-mega-item"><i class="fas fa-child"></i> Maternity</a>
+<a href="services.html?service=pharmacy-ambulance"class="gh-mega-item"><i class="fas fa-pills"></i> Pharmacy &amp; Ambulance</a>
+<a href="services.html" class="gh-mega-item gh-mega-all"><i class="fas fa-plus"></i> All 18+ Services →</a>
+</div>
+</li>
+
+<!-- DOCTORS -->
+<li class="gh-nav-item">
+<a href="doctors.html" class="gh-nav-link">Doctors <i class="fas fa-chevron-down"></i></a>
+<div class="gh-mega" style="grid-template-columns:repeat(3,1fr)">
+<div class="gh-mega-header">Find a Specialist</div>
+<a href="doctors.html" class="gh-mega-item"><i class="fas fa-heartbeat"></i> Dr. Tesfay — Cardiology</a>
+<a href="doctors.html" class="gh-mega-item"><i class="fas fa-user-md"></i> Dr. Higus — Internal Med.</a>
+<a href="doctors.html" class="gh-mega-item"><i class="fas fa-baby"></i> Dr. Gebreab — Pediatrics</a>
+<a href="doctors.html" class="gh-mega-item"><i class="fas fa-venus"></i> Dr. Henok — OB/GYN</a>
+<a href="doctors.html" class="gh-mega-item"><i class="fas fa-x-ray"></i> Dr. Natnael — Radiology</a>
+<a href="doctors.html" class="gh-mega-item"><i class="fas fa-baby"></i> Dr. Teklay — Pediatrics</a>
+<a href="doctors.html" class="gh-mega-item"><i class="fas fa-tooth"></i> Dr. Fiseha — Dental</a>
+<a href="doctors.html" class="gh-mega-item"><i class="fas fa-cut"></i> Dr. Yisak — Surgery</a>
+<a href="doctors.html" class="gh-mega-item"><i class="fas fa-bone"></i> Dr. Goytom — Orthopedics</a>
+<a href="doctors.html" class="gh-mega-item"><i class="fas fa-spa"></i> Dr. Ashenafi — Dermatology</a>
+<a href="doctors.html" class="gh-mega-item"><i class="fas fa-brain"></i> Dr. Berhe — Neurosurgery</a>
+<a href="doctors.html" class="gh-mega-item"><i class="fas fa-ear"></i> Dr. Wendmu — ENT</a>
+<a href="doctors.html" class="gh-mega-item"><i class="fas fa-user-md"></i> Dr. Biruk — Internal Med.</a>
+<a href="doctors.html" class="gh-mega-item gh-mega-all"><i class="fas fa-search"></i> All Doctors →</a>
+</div>
+</li>
+
+<!-- DEPARTMENTS -->
+<li class="gh-nav-item">
+<a href="departments.html" class="gh-nav-link">Departments <i class="fas fa-chevron-down"></i></a>
+<div class="gh-mega" style="grid-template-columns:repeat(3,1fr)">
+<div class="gh-mega-header">Departments</div>
+<a href="departments.html" class="gh-mega-item"><i class="fas fa-cut"></i> Surgery</a>
+<a href="departments.html" class="gh-mega-item"><i class="fas fa-user-md"></i> Internal Medicine</a>
+<a href="departments.html" class="gh-mega-item"><i class="fas fa-baby"></i> Pediatrics</a>
+<a href="departments.html" class="gh-mega-item"><i class="fas fa-venus"></i> Obs &amp; Gynecology</a>
+<a href="departments.html" class="gh-mega-item"><i class="fas fa-bone"></i> Orthopedics</a>
+<a href="departments.html" class="gh-mega-item"><i class="fas fa-x-ray"></i> Radiology</a>
+<a href="departments.html" class="gh-mega-item"><i class="fas fa-heartbeat"></i> Cardiology</a>
+<a href="departments.html" class="gh-mega-item"><i class="fas fa-spa"></i> Dermatology</a>
+<a href="departments.html" class="gh-mega-item"><i class="fas fa-ear"></i> ENT</a>
+<a href="departments.html" class="gh-mega-item"><i class="fas fa-tooth"></i> Dental</a>
+<a href="departments.html" class="gh-mega-item"><i class="fas fa-brain"></i> Neurosurgery</a>
+<a href="departments.html" class="gh-mega-item"><i class="fas fa-ribbon"></i> Oncology</a>
+<a href="departments.html" class="gh-mega-item"><i class="fas fa-head-side-virus"></i> Psychiatry</a>
+<a href="departments.html" class="gh-mega-item gh-mega-all"><i class="fas fa-th"></i> All Departments →</a>
+</div>
+</li>
+
+<!-- MEDIA -->
+<li class="gh-nav-item">
+<a href="news.html" class="gh-nav-link">Media <i class="fas fa-chevron-down"></i></a>
+<div class="gh-mega" style="grid-template-columns:repeat(2,1fr);min-width:360px">
+<div class="gh-mega-header">News &amp; Gallery</div>
+<a href="news.html" class="gh-mega-item"><i class="fas fa-newspaper"></i> Latest News</a>
+<a href="articles.html" class="gh-mega-item"><i class="fas fa-book-medical"></i> Health Articles</a>
+<a href="patient-info.html"class="gh-mega-item"><i class="fas fa-info-circle"></i> Patient Information</a>
+<a href="testimonials.html" class="gh-mega-item"><i class="fas fa-quote-left"></i> Testimonials</a>
+<a href="gallery.html" class="gh-mega-item active"><i class="fas fa-images"></i> Photo Gallery</a>
+<a href="https://linktr.ee/geezhospital" target="_blank" class="gh-mega-item"><i class="fas fa-poll"></i> Patient Survey</a>
+</div>
+</li>
+
+<li class="gh-nav-item"><a href="vacancy.html" class="gh-nav-link">Vacancy</a></li>
+<li class="gh-nav-item"><a href="facilities.html" class="gh-nav-link">Facilities</a></li>
+<li class="gh-nav-item"><a href="contact.html" class="gh-nav-link" data-translate="contact">Contact Us</a></li>
+
+<li class="gh-nav-item">
+<select id="language-switcher" class="gh-lang-select" aria-label="Language">
+<option value="eng">English</option>
+<option value="tig">ትግርኛ</option>
+<option value="amh">አማርኛ</option>
+</select>
+</li>
+</ul>
+
+<div class="gh-nav-actions">
+<button class="gh-btn-search" id="ghSearchBtn" aria-label="Open search"><i class="fas fa-search"></i></button>
+<a href="contact.html" class="gh-btn-book">Book Appointment</a>
+<button class="gh-hamburger" id="ghHamburger" aria-label="Toggle menu" aria-expanded="false">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+</nav>
+
+<section class="page-hero">
+<div class="container">
+<h1 data-translate="gallery">Photo &amp; Video Gallery — Geez Hospital, Axum</h1>
+<p>Explore our modern facilities, equipment, and dedicated medical teams.</p>
+</div>
+</section>
+
+<section class="section-gap">
+<div class="container">
+
+  <div class="gl-filter-bar">
+    <span style="font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--gl-gray);margin-right:4px">Filter:</span>
+    <button class="gl-filter-btn active" data-filter="all">All</button>
+    <button class="gl-filter-btn" data-filter="image">Photos</button>
+    <button class="gl-filter-btn" data-filter="video">Videos</button>
+  </div>
+
+  <div class="gl-grid" id="galleryGrid">
+    <div class="gl-skeleton"></div>
+    <div class="gl-skeleton"></div>
+    <div class="gl-skeleton"></div>
+  </div>
+
+</div>
+</section>
+
+<!-- Lightbox -->
+<div class="gl-lightbox" id="glLightbox">
+  <button class="gl-lightbox-close" id="glLightboxClose"><i class="fas fa-times"></i></button>
+  <div class="gl-lightbox-inner">
+    <div id="glLightboxContent"></div>
+    <p class="gl-lightbox-caption" id="glLightboxCaption"></p>
+  </div>
+</div>
+
+<footer class="site-footer"><div class="container footer-grid"><div class="footer-brand"><a href="index.html" class="logo-wrap"><img src="images/logo.png" alt="Geez Hospital" onerror="this.style.display='none'"><div class="logo-text"><span class="logo-en">GEEZ HOSPITAL</span><span class="logo-tig">ግዕዝ ሆስፒታል</span></div></a><p data-translate="footer-brand-desc">World-class healthcare in Axum, Tigray.</p><div class="footer-social"><a href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="https://t.me/Geezhospital_bot" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a><a href="https://maps.app.goo.gl/yHuCuCgLMzUtyerU6" target="_blank" aria-label="Maps"><i class="fas fa-map-marker-alt"></i></a></div></div><div class="footer-col"><h4 data-translate="footer-quick-links">Quick Links</h4><ul><li><a href="index.html" data-translate="home">Home</a></li><li><a href="services.html" data-translate="services">Services</a></li><li><a href="doctors.html" data-translate="doctors">Doctors</a></li><li><a href="contact.html" data-translate="contact">Contact</a></li></ul></div><div class="footer-col"><h4 data-translate="footer-contact-title">Contact</h4><ul class="footer-contact-list"><li><i class="fas fa-phone"></i><a href="tel:+251920008338">+251 920 008 338</a></li><li><i class="fas fa-envelope"></i><a href="mailto:geezhospital@gmail.com">geezhospital@gmail.com</a></li></ul></div></div><div class="footer-bottom"><div class="container footer-bottom-inner"><p id="footer-text">© 2026 Geez Hospital. All rights reserved.</p><p class="footer-dev">Developed by <a href="tel:+251911179955">Aser Tech | Legesse Teklu Gebrekidan — +251 911 179 955</a></p></div></div></footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+<script src="script.js"></script>
+
+<script>
+/* ================================================================
+   GALLERY PAGE — loads photos & videos from data/gallery.json
+   ================================================================ */
+let glAllItems = [];
+let glActiveFilter = 'all';
+
+function glRender(items){
+  const grid = document.getElementById('galleryGrid');
+  grid.innerHTML = '';
+  if (items.length === 0){
+    grid.innerHTML = `<div class="gl-state"><i class="fas fa-images"></i><p>No items found.</p></div>`;
+    return;
+  }
+  items.forEach(it => {
+    const card = document.createElement('div');
+    card.className = 'gl-item';
+
+    if (it.type === 'video'){
+      card.innerHTML = `
+        <img src="https://img.youtube.com/vi/${it.videoId}/hqdefault.jpg" alt="${it.caption}" loading="lazy">
+        <div class="gl-badge"><i class="fas fa-video"></i> Video</div>
+        <div class="gl-play"><i class="fas fa-play-circle"></i></div>
+        <div class="gl-overlay"><p>${it.caption}</p></div>`;
+      card.addEventListener('click', () => glOpenVideo(it.videoId, it.caption));
+
+    } else if (it.type === 'tiktok'){
+      const idMatch = (it.tiktokUrl || '').match(/video\/(\d+)/);
+      const tikId = idMatch ? idMatch[1] : '';
+      card.innerHTML = `
+        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#0f0f0f">
+          <i class="fab fa-tiktok" style="font-size:2.4rem;color:#fff"></i>
+        </div>
+        <div class="gl-badge"><i class="fab fa-tiktok"></i> TikTok</div>
+        <div class="gl-play"><i class="fas fa-play-circle"></i></div>
+        <div class="gl-overlay"><p>${it.caption}</p></div>`;
+      card.addEventListener('click', () => glOpenTikTok(it.tiktokUrl, it.caption, tikId));
+
+    } else if (it.type === 'video-file'){
+      card.innerHTML = `
+        <video src="${it.src}" muted preload="metadata" style="width:100%;height:100%;object-fit:cover"></video>
+        <div class="gl-badge"><i class="fas fa-video"></i> Video</div>
+        <div class="gl-play"><i class="fas fa-play-circle"></i></div>
+        <div class="gl-overlay"><p>${it.caption}</p></div>`;
+      card.addEventListener('click', () => glOpenVideoFile(it.src, it.caption));
+
+    } else {
+      card.innerHTML = `
+        <img src="${it.src}" alt="${it.caption}" loading="lazy" onerror="this.closest('.gl-item').remove()">
+        <div class="gl-overlay"><p>${it.caption}</p></div>`;
+      card.addEventListener('click', () => glOpenImage(it.src, it.caption));
+    }
+    grid.appendChild(card);
+  });
+}
+
+function glOpenImage(src, caption){
+  document.getElementById('glLightboxContent').innerHTML = `<img src="${src}" alt="${caption}">`;
+  document.getElementById('glLightboxCaption').textContent = caption || '';
+  document.getElementById('glLightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function glOpenVideo(videoId, caption){
+  document.getElementById('glLightboxContent').innerHTML =
+    `<div class="gl-video-frame"><iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1" title="${caption}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
+  document.getElementById('glLightboxCaption').textContent = caption || '';
+  document.getElementById('glLightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function glOpenTikTok(url, caption, videoId){
+  document.getElementById('glLightboxContent').innerHTML =
+    `<blockquote class="tiktok-embed" cite="${url}" data-video-id="${videoId||''}" style="max-width:325px;min-width:325px;margin:0 auto">
+       <section></section>
+     </blockquote>`;
+  document.getElementById('glLightboxCaption').textContent = caption || '';
+  document.getElementById('glLightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  // TikTok's embed script scans the page for unprocessed .tiktok-embed
+  // blockquotes on load. Since this blockquote is injected dynamically,
+  // a fresh copy of the script must be (re-)injected each time so it
+  // notices and renders it.
+  const old = document.getElementById('tiktokEmbedScript');
+  if (old) old.remove();
+  const s = document.createElement('script');
+  s.id = 'tiktokEmbedScript';
+  s.async = true;
+  s.src = 'https://www.tiktok.com/embed.js';
+  document.body.appendChild(s);
+}
+function glOpenVideoFile(src, caption){
+  document.getElementById('glLightboxContent').innerHTML =
+    `<video src="${src}" controls autoplay style="width:100%;max-height:76vh;border-radius:10px;display:block;margin:0 auto"></video>`;
+  document.getElementById('glLightboxCaption').textContent = caption || '';
+  document.getElementById('glLightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function glCloseLightbox(){
+  document.getElementById('glLightbox').classList.remove('open');
+  const content = document.getElementById('glLightboxContent');
+  // Stop any playing <video> before clearing, so audio doesn't keep running in the background
+  content.querySelectorAll('video').forEach(v => v.pause());
+  content.innerHTML = '';
+  document.body.style.overflow = '';
+}
+document.getElementById('glLightboxClose').addEventListener('click', glCloseLightbox);
+document.getElementById('glLightbox').addEventListener('click', e => { if (e.target.id === 'glLightbox') glCloseLightbox(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') glCloseLightbox(); });
+
+const GL_VIDEO_TYPES = ['video', 'tiktok', 'video-file'];
+document.querySelectorAll('.gl-filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.gl-filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    glActiveFilter = btn.dataset.filter;
+    const filtered = glActiveFilter === 'all'
+      ? glAllItems
+      : glActiveFilter === 'video'
+        ? glAllItems.filter(i => GL_VIDEO_TYPES.includes(i.type))
+        : glAllItems.filter(i => i.type === glActiveFilter);
+    glRender(filtered);
+  });
+});
+
+async function glLoad(){
+  try{
+    const res = await fetch('data/gallery.json?_=' + Date.now());
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const json = await res.json();
+    glAllItems = json.items || [];
+    glRender(glAllItems);
+  }catch(err){
+    console.error('Could not load gallery.json:', err);
+    document.getElementById('galleryGrid').innerHTML =
+      `<div class="gl-state"><i class="fas fa-exclamation-circle"></i><p>Could not load the gallery. Please try again later.</p></div>`;
+  }
+}
+glLoad();
+</script>
+
+<!-- Floating Contact Button -->
+<div class="fab-container" id="fabContainer">
+  <!-- Options -->
+  <div class="fab-options" id="fabOptions">
+
+    <!-- Contact Form -->
+    <div class="fab-form-card" id="fabFormCard" style="display:none">
+      <div class="fab-form-header">
+        <span>Contact Form</span>
+        <button onclick="document.getElementById('fabFormCard').style.display='none'">✕</button>
+      </div>
+      <form action="https://formspree.io/f/xwvpgllq" method="POST">
+        <input type="text" name="name" placeholder="Name *" required>
+        <input type="email" name="email" placeholder="Email *" required>
+        <input type="tel" name="mobile" placeholder="Mobile number *" required>
+        <textarea name="message" placeholder="Message *" required></textarea>
+        <button type="submit">SUBMIT</button>
+      </form>
+    </div>
+
+    <!-- Option Buttons -->
+    <div class="fab-item-wrap">
+      <span class="fab-label">Contact Form</span>
+      <button class="fab-item fab-form-btn" onclick="toggleFabForm()">
+        <i class="fas fa-address-book"></i>
+      </button>
+    </div>
+
+    <div class="fab-item-wrap">
+      <span class="fab-label">Facebook</span>
+      <a class="fab-item fab-facebook" href="https://www.facebook.com/profile.php?id=61572930304902" target="_blank">
+        <i class="fab fa-facebook-messenger"></i>
+      </a>
+    </div>
+
+    <div class="fab-item-wrap">
+      <span class="fab-label">Telegram</span>
+      <a class="fab-item fab-telegram" href="https://t.me/geezhospital_bot" target="_blank">
+        <i class="fab fa-telegram-plane"></i>
+      </a>
+    </div>
+
+    <div class="fab-item-wrap">
+      <span class="fab-label">Call Us</span>
+      <a class="fab-item fab-phone" href="tel:+251920008338">
+        <i class="fas fa-phone"></i>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Main Button -->
+  <button class="fab-main" id="fabMain" onclick="toggleFab()">
+    <i class="fas fa-comments" id="fabIcon"></i>
+    <span id="fabLabel">Talk to Us</span>
+  </button>
+</div>
+
+<style>
+.fab-container {
+  position: fixed;
+  bottom: 28px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+.fab-main {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #0B7B7B;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 14px 20px;
+  font-size: .9rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 24px rgba(11,123,123,.4);
+  transition: all .3s;
+}
+.fab-main:hover { background: #096767; transform: scale(1.05); }
+.fab-options {
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+.fab-options.open { display: flex; }
+.fab-item-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: row-reverse;
+}
+.fab-label {
+  background: #0f1f2e;
+  color: #fff;
+  font-size: .78rem;
+  padding: 5px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0,0,0,.2);
+}
+.fab-item {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,.2);
+  transition: transform .2s;
+  text-decoration: none;
+}
+.fab-item:hover { transform: scale(1.12); }
+.fab-phone    { background: #0B7B7B; }
+.fab-telegram { background: #0088cc; }
+.fab-facebook { background: #1877F2; }
+.fab-form-btn { background: #7c3aed; }
+
+/* Form Card */
+.fab-form-card {
+  background: #fff;
+  border-radius: 14px;
+  width: 280px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.18);
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+.fab-form-header {
+  background: #7c3aed;
+  color: #fff;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: .9rem;
+}
+.fab-form-header button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.fab-form-card form {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.fab-form-card input,
+.fab-form-card textarea {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 7px;
+  font-size: .84rem;
+  outline: none;
+  font-family: inherit;
+}
+.fab-form-card input:focus,
+.fab-form-card textarea:focus { border-color: #7c3aed; }
+.fab-form-card textarea { min-height: 70px; resize: none; }
+.fab-form-card button[type="submit"] {
+  background: #7c3aed;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 10px;
+  font-size: .88rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: .05em;
+  transition: background .2s;
+}
+.fab-form-card button[type="submit"]:hover { background: #6d28d9; }
+
+@media (max-width: 768px) {
+  .fab-container { bottom: 80px; right: 16px; }
+}
+</style>
+
+<script>
+function toggleFab() {
+  const options = document.getElementById('fabOptions');
+  const icon    = document.getElementById('fabIcon');
+  const label   = document.getElementById('fabLabel');
+  const isOpen  = options.classList.contains('open');
+  options.classList.toggle('open');
+  if (isOpen) {
+    icon.className  = 'fas fa-comments';
+    label.textContent = 'Talk to Us';
+    document.getElementById('fabFormCard').style.display = 'none';
+  } else {
+    icon.className  = 'fas fa-times';
+    label.textContent = 'Close';
+  }
+}
+function toggleFabForm() {
+  const form = document.getElementById('fabFormCard');
+  form.style.display = form.style.display === 'none' ? 'block' : 'none';
+}
+</script>
+
+<!-- Hamburger / mobile nav -->
+<script>
+(function() {
+  var btn = document.getElementById('ghHamburger');
+  var nav = document.getElementById('ghMainNav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function() {
+    var open = nav.classList.toggle('gh-open');
+    btn.setAttribute('aria-expanded', open);
+  });
+  // Close when a plain nav link is clicked (no submenu)
+  nav.querySelectorAll('.gh-nav-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+      nav.classList.remove('gh-open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+  // Mobile submenu accordion: tapping the chevron on an item that has a
+  // .gh-mega (Media > Gallery, Testimonials, Patient Info, Articles...)
+  // expands it inline instead of navigating away. Fixes items that were
+  // previously unreachable on mobile because the dropdown was force-hidden.
+  nav.querySelectorAll('.gh-nav-item > .gh-nav-link > i.fa-chevron-down').forEach(function(icon) {
+    icon.addEventListener('click', function(e) {
+      if (window.innerWidth > 768) return; // desktop: hover already handles it
+      var item = icon.closest('.gh-nav-item');
+      if (!item || !item.querySelector('.gh-mega')) return;
+      e.preventDefault();
+      e.stopPropagation();
+      var isOpen = item.classList.contains('gh-mobile-open');
+      nav.querySelectorAll('.gh-nav-item.gh-mobile-open').forEach(function(el) {
+        if (el !== item) el.classList.remove('gh-mobile-open');
+      });
+      item.classList.toggle('gh-mobile-open', !isOpen);
+    });
+  });
+  // Sticky nav
+  var siteNav = document.getElementById('ghSiteNav');
+  if (siteNav) {
+    window.addEventListener('scroll', function() {
+      siteNav.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+  }
+})();
+</script>
+
+<!-- Tawk.to Live Chat -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a1156823deb151c33b6ccc9/1jp9rjs6e';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!-- End Tawk.to -->
+</body>
+</html>
