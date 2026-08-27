@@ -458,12 +458,39 @@ a{text-decoration:none;color:inherit}
             <label for="galVideoCaption">Caption / ገለጻ *</label>
             <input type="text" id="galVideoCaption" placeholder="e.g. Hospital Tour">
           </div>
-          <div class="form-group">
-            <label for="galVideoUrl">YouTube Video Link *</label>
-            <input type="text" id="galVideoUrl" placeholder="e.g. https://www.youtube.com/watch?v=XXXXXXXXXXX">
-            <p style="font-size:.75rem;color:var(--gray-400);margin-top:5px"><i class="fas fa-info-circle"></i> ካብ YouTube ናይ ቪድዮ link ቅዳሕ ጌርካ ኣብዚ ለጥፎ።</p>
+
+          <!-- Sub-toggle: Link vs Direct Upload -->
+          <div style="display:flex;gap:8px;margin-bottom:16px">
+            <button type="button" class="tab-btn gal-video-mode-btn active" id="galVideoModeLinkBtn"
+                    style="flex:1;padding:8px;border-radius:8px" onclick="switchGalVideoMode('link')">
+              <i class="fas fa-link"></i> YouTube / TikTok Link
+            </button>
+            <button type="button" class="tab-btn gal-video-mode-btn" id="galVideoModeFileBtn"
+                    style="flex:1;padding:8px;border-radius:8px" onclick="switchGalVideoMode('file')">
+              <i class="fas fa-upload"></i> Upload Video File
+            </button>
           </div>
-          <button class="btn-primary" id="galAddVideoBtn" onclick="addGalleryVideo()"><i class="fas fa-plus"></i> Add Video to Gallery</button>
+
+          <!-- Link mode -->
+          <div id="galVideoLinkMode">
+            <div class="form-group">
+              <label for="galVideoUrl">YouTube or TikTok Video Link *</label>
+              <input type="text" id="galVideoUrl" placeholder="e.g. https://www.youtube.com/watch?v=XXXXXXXXXXX or https://www.tiktok.com/@user/video/123...">
+              <p style="font-size:.75rem;color:var(--gray-400);margin-top:5px"><i class="fas fa-info-circle"></i> ካብ YouTube ወይ ካብ TikTok ናይ ቪድዮ link ቅዳሕ ጌርካ ኣብዚ ለጥፎ።</p>
+            </div>
+            <button class="btn-primary" id="galAddVideoBtn" onclick="addGalleryVideo()"><i class="fas fa-plus"></i> Add Video to Gallery</button>
+          </div>
+
+          <!-- Direct file upload mode -->
+          <div id="galVideoFileMode" style="display:none">
+            <div class="form-group">
+              <label for="galVideoFileInput">Video File * (max 30MB)</label>
+              <input type="file" id="galVideoFileInput" accept="video/*" onchange="handleGalVideoFileSelect(event)">
+              <p style="font-size:.75rem;color:var(--gray-400);margin-top:5px"><i class="fas fa-info-circle"></i> ናይ ቪድዮ ፋይል ካብ 30MB ንላዕሊ ኣይፍቀድን። ንዓበይቲ ቪድዮታት YouTube ወይ TikTok ተጠቐም።</p>
+              <p id="galVideoFileName" style="font-size:.8rem;color:var(--teal-brand);margin-top:6px;display:none"></p>
+            </div>
+            <button class="btn-primary" id="galAddVideoFileBtn" onclick="addGalleryVideoFile()" disabled><i class="fas fa-upload"></i> Upload Video to Gallery</button>
+          </div>
         </div>
       </div>
 
@@ -728,6 +755,96 @@ async function handleGalPhoto(file){
   }
 }
 
+// ── Add Video: Link vs Direct File Upload ──
+let galPendingVideoFile = null;
+const GAL_VIDEO_MAX_BYTES = 30 * 1024 * 1024; // 30MB
+
+function switchGalVideoMode(mode){
+  document.getElementById('galVideoLinkMode').style.display = mode==='link' ? '' : 'none';
+  document.getElementById('galVideoFileMode').style.display = mode==='file' ? '' : 'none';
+  const lBtn = document.getElementById('galVideoModeLinkBtn');
+  const fBtn = document.getElementById('galVideoModeFileBtn');
+  lBtn.classList.toggle('active', mode==='link');
+  fBtn.classList.toggle('active', mode==='file');
+  lBtn.style.background = mode==='link' ? 'var(--teal-l)' : 'transparent';
+  lBtn.style.color = mode==='link' ? 'var(--teal)' : 'var(--gray-500)';
+  fBtn.style.background = mode==='file' ? 'var(--teal-l)' : 'transparent';
+  fBtn.style.color = mode==='file' ? 'var(--teal)' : 'var(--gray-500)';
+}
+
+function readFileAsBase64(file){
+  return new Promise((resolve,reject)=>{
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = reader.result; // "data:<mime>;base64,<data>"
+      resolve({dataUrl: result, base64: result.split(',')[1]});
+    };
+    reader.onerror = () => reject(new Error('File could not be read.'));
+    reader.readAsDataURL(file);
+  });
+}
+
+async function handleGalVideoFileSelect(event){
+  const file = event.target.files[0];
+  const nameEl = document.getElementById('galVideoFileName');
+  const btn = document.getElementById('galAddVideoFileBtn');
+  galPendingVideoFile = null;
+  btn.disabled = true;
+  nameEl.style.display = 'none';
+
+  if(!file) return;
+  if(!file.type.startsWith('video/')){
+    alert('ናይ ቪድዮ ፋይል ጥራይ upload ግበር።');
+    event.target.value = '';
+    return;
+  }
+  if(file.size > GAL_VIDEO_MAX_BYTES){
+    alert(`ቪድዮ ካብ 30MB ንላዕሊ ኣይፍቀድን። ናትካ ፋይል ${(file.size/1024/1024).toFixed(1)}MB እዩ። ንዓበይቲ ቪድዮታት YouTube ወይ TikTok ተጠቐም።`);
+    event.target.value = '';
+    return;
+  }
+
+  try{
+    const {base64} = await readFileAsBase64(file);
+    const ext = file.name.split('.').pop().toLowerCase() || 'mp4';
+    const safeName = 'gallery_video_' + Date.now() + '_' + Math.random().toString(36).slice(2,7) + '.' + ext;
+    galPendingVideoFile = {base64, name: safeName, sizeMB: (file.size/1024/1024).toFixed(1)};
+    nameEl.textContent = `✅ ${file.name} (${galPendingVideoFile.sizeMB}MB) — ንUpload ድሉው`;
+    nameEl.style.display = 'block';
+    btn.disabled = false;
+  }catch(err){
+    alert('ቪድዮ ምንባብ ኣይተኻእለን: ' + err.message);
+  }
+}
+
+async function addGalleryVideoFile(){
+  const caption = document.getElementById('galVideoCaption').value.trim();
+  if(!caption){showStatus('galleryAddStatus','error','Caption ምልእ።');return}
+  if(!galPendingVideoFile){showStatus('galleryAddStatus','error','ናይ ቪድዮ ፋይል ምረጽ።');return}
+
+  const btn = document.getElementById('galAddVideoFileBtn');
+  btn.disabled = true;
+  showStatus('galleryAddStatus','loading','ቪድዮ እናተጻዓነ ኣሎ (ቁሩብ ግዜ ክወስድ ይኽእል)...');
+  try{
+    const repoPath = `videos/gallery/${galPendingVideoFile.name}`;
+    await ghPut(repoPath, galPendingVideoFile.base64, null, `Add gallery video file: ${galPendingVideoFile.name}`);
+    await ghUpdateJsonWithRetry('data/gallery.json', (data) => {
+      const items = (data && data.items) || [];
+      items.unshift({id:'gal-'+Date.now(), type:'video-file', src:repoPath, caption});
+      return {items};
+    }, `Add gallery video file: ${caption}`);
+    showStatus('galleryAddStatus','success','✅ ቪድዮ ተወሲኹ! ድሒሩ ኣብ gallery.html ይርኤ።');
+    document.getElementById('galVideoCaption').value='';
+    document.getElementById('galVideoFileInput').value='';
+    document.getElementById('galVideoFileName').style.display='none';
+    galPendingVideoFile = null;
+    loadGalleryList();
+  }catch(err){
+    showStatus('galleryAddStatus','error','Error: '+err.message);
+  }
+  btn.disabled = false;
+}
+
 // GitHub JSON helpers (generic — used for gallery.json)
 async function ghGetJson(path){
   try{
@@ -799,20 +916,32 @@ function extractYouTubeId(url){
   const m = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/);
   return m ? m[1] : null;
 }
+function isTikTokUrl(url){
+  return /tiktok\.com\/(@[\w.-]+\/video\/\d+|v\/\d+)/i.test(url);
+}
 
 async function addGalleryVideo(){
   const caption = document.getElementById('galVideoCaption').value.trim();
   const url = document.getElementById('galVideoUrl').value.trim();
   if(!caption){showStatus('galleryAddStatus','error','Caption ምልእ።');return}
+
   const videoId = extractYouTubeId(url);
-  if(!videoId){showStatus('galleryAddStatus','error','ትኽክለኛ YouTube link ኣይኮነን። ደጊምካ ፈትን።');return}
+  const isTikTok = !videoId && isTikTokUrl(url);
+
+  if(!videoId && !isTikTok){
+    showStatus('galleryAddStatus','error','ትኽክለኛ YouTube ወይ TikTok link ኣይኮነን። ደጊምካ ፈትን።');
+    return;
+  }
   const btn=document.getElementById('galAddVideoBtn');
   btn.disabled=true;
   showStatus('galleryAddStatus','loading','ቪድዮ እናተወሰኸ...');
   try{
+    const newItem = isTikTok
+      ? {id:'gal-'+Date.now(), type:'tiktok', tiktokUrl:url, caption}
+      : {id:'gal-'+Date.now(), type:'video', videoId, caption};
     await ghUpdateJsonWithRetry('data/gallery.json', (data) => {
       const items = (data && data.items) || [];
-      items.unshift({id:'gal-'+Date.now(), type:'video', videoId, caption});
+      items.unshift(newItem);
       return {items};
     }, `Add gallery video: ${caption}`);
     showStatus('galleryAddStatus','success','✅ ቪድዮ ተወሲኹ! ድሒሩ ኣብ gallery.html ይርኤ።');
@@ -836,14 +965,24 @@ async function loadGalleryList(){
       return;
     }
     grid.innerHTML = items.map(it=>{
-      const thumb = it.type==='video'
-        ? `<img src="https://img.youtube.com/vi/${it.videoId}/hqdefault.jpg" alt="${it.caption}"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.25)"><i class="fas fa-play-circle" style="font-size:1.8rem;color:#fff"></i></div>`
-        : `<img src="https://raw.githubusercontent.com/${cfg.owner}/${cfg.repo}/main/${it.src}?t=${Date.now()}" alt="${it.caption}" onerror="this.style.display='none'">`;
+      let thumb, typeLabel = '';
+      if (it.type === 'video') {
+        thumb = `<img src="https://img.youtube.com/vi/${it.videoId}/hqdefault.jpg" alt="${it.caption}"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.25)"><i class="fas fa-play-circle" style="font-size:1.8rem;color:#fff"></i></div>`;
+        typeLabel = '<span style="color:var(--teal);font-size:.7rem">(YouTube)</span>';
+      } else if (it.type === 'tiktok') {
+        thumb = `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#0f0f0f"><i class="fab fa-tiktok" style="font-size:2rem;color:#fff"></i></div>`;
+        typeLabel = '<span style="color:var(--teal);font-size:.7rem">(TikTok)</span>';
+      } else if (it.type === 'video-file') {
+        thumb = `<video src="https://raw.githubusercontent.com/${cfg.owner}/${cfg.repo}/main/${it.src}?t=${Date.now()}" controls preload="metadata" style="width:100%;height:100%;object-fit:cover"></video>`;
+        typeLabel = '<span style="color:var(--teal);font-size:.7rem">(Uploaded Video)</span>';
+      } else {
+        thumb = `<img src="https://raw.githubusercontent.com/${cfg.owner}/${cfg.repo}/main/${it.src}?t=${Date.now()}" alt="${it.caption}" onerror="this.style.display='none'">`;
+      }
       return `
       <div class="photo-manage-card">
         <div class="pm-img-wrap" style="position:relative">${thumb}</div>
         <div class="pm-body">
-          <h4>${it.caption} ${it.type==='video'?'<span style=\"color:var(--teal);font-size:.7rem\">(Video)</span>':''}</h4>
+          <h4>${it.caption} ${typeLabel}</h4>
           <button class="btn-danger" style="width:100%;justify-content:center;display:flex" onclick="deleteGalleryItem('${it.id}')"><i class="fas fa-trash-alt"></i> ሰርዝ</button>
         </div>
       </div>`;
