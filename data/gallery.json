@@ -1,6 +1,12 @@
 {
   "items": [
     {
+      "id": "gal-1787897280179",
+      "type": "video-file",
+      "src": "videos/gallery/gallery_video_1787897238565_prhuh.mp4",
+      "caption": "Geez"
+    },
+    {
       "id": "gal-1787664683528",
       "type": "image",
       "src": "images/gallery/gallery_1787664641752_z9n7v.png",
