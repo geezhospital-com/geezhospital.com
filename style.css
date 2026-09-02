@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════════════
-   GEEZ HOSPITAL — style.css 
+   GEEZ HOSPITAL — style.css  
    Design: World-Class Medical | Navy Authority + Teal Precision
    ══════════════════════════════════════════════════════════════ */
 
@@ -524,11 +524,6 @@ ul  { list-style: none; }
   background: linear-gradient(135deg, var(--teal-900) 0%, var(--teal-700) 100%);
   padding: 72px 0; color: var(--white); text-align: center;
   position: relative; overflow: hidden;
-}
-.page-hero::after {
-  content: ''; position: absolute; inset: 0;
-  background: url('images/hero-bg.jpg') center/cover no-repeat;
-  opacity: .12;
 }
 .page-hero .container { position: relative; z-index: 1; }
 .page-hero h1, .page-hero h2 { font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 3rem); margin-bottom: 12px; }
