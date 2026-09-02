@@ -1,6 +1,12 @@
 {
   "items": [
     {
+      "id": "gal-1788327644081",
+      "type": "image",
+      "src": "images/gallery/gallery_1788327595375_0hyh7.jpg",
+      "caption": "facility1"
+    },
+    {
       "id": "gal-1787897280179",
       "type": "video-file",
       "src": "videos/gallery/gallery_video_1787897238565_prhuh.mp4",
