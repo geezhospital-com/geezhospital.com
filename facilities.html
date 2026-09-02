@@ -27,6 +27,14 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Noto+Sans+Ethiopic:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .facility-img-placeholder{
+      width:100%; aspect-ratio:16/10; border-radius:inherit;
+      background:linear-gradient(135deg,#E8F4F4,#CDE9E9);
+      display:flex; align-items:center; justify-content:center;
+    }
+    .facility-img-placeholder i{ font-size:2.6rem; color:#0B7B7B; opacity:.45; }
+  </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9QH360M4V1"></script>
   <script>
@@ -203,7 +211,7 @@
     <div class="all-doctors-grid">
 
       <div class="doctor-full-card reveal">
-        <img src="images/facility1.jpg" alt="Operating Theatre" loading="lazy" onerror="this.src='';this.alt='Operating Theatre'">
+        <img src="images/facility1.jpg" alt="Operating Theatre" loading="lazy" onerror="this.onerror=null;this.outerHTML='<div class=&quot;facility-img-placeholder&quot;><i class=&quot;fas fa-procedures&quot;></i></div>'">
         <div class="info">
           <div class="doctor-badge"><i class="fas fa-procedures"></i> Surgery</div>
           <h3>Operating Theatres</h3>
@@ -212,7 +220,7 @@
       </div>
 
       <div class="doctor-full-card reveal">
-        <img src="images/facility2.jpg" alt="Advanced CT scan" loading="lazy" onerror="this.src='';this.alt='Advanced CT scan'">
+        <img src="images/facility2.jpg" alt="Advanced CT scan" loading="lazy" onerror="this.onerror=null;this.outerHTML='<div class=&quot;facility-img-placeholder&quot;><i class=&quot;fas fa-x-ray&quot;></i></div>'">
         <div class="info">
           <div class="doctor-badge"><i class="fas fa-x-ray"></i> Imaging</div>
           <h3>Advanced CT scan</h3>
@@ -221,7 +229,7 @@
       </div>
 
       <div class="doctor-full-card reveal">
-        <img src="images/facility3.jpg" alt="Modern Laboratory" loading="lazy" onerror="this.src='';this.alt='Laboratory'">
+        <img src="images/facility3.jpg" alt="Modern Laboratory" loading="lazy" onerror="this.onerror=null;this.outerHTML='<div class=&quot;facility-img-placeholder&quot;><i class=&quot;fas fa-flask&quot;></i></div>'">
         <div class="info">
           <div class="doctor-badge"><i class="fas fa-flask"></i> Diagnostics</div>
           <h3>Modern Laboratory</h3>
@@ -230,7 +238,7 @@
       </div>
 
       <div class="doctor-full-card reveal">
-        <img src="images/facility4.jpg" alt="Intensive Care Unit" loading="lazy" onerror="this.src='';this.alt='ICU'">
+        <img src="images/facility4.jpg" alt="Intensive Care Unit" loading="lazy" onerror="this.onerror=null;this.outerHTML='<div class=&quot;facility-img-placeholder&quot;><i class=&quot;fas fa-heartbeat&quot;></i></div>'">
         <div class="info">
           <div class="doctor-badge"><i class="fas fa-heartbeat"></i> Critical Care</div>
           <h3>Intensive Care Unit (ICU)</h3>
@@ -239,7 +247,7 @@
       </div>
 
       <div class="doctor-full-card reveal">
-        <img src="images/facility5.jpg" alt="Emergency Department" loading="lazy" onerror="this.src='';this.alt='Emergency'">
+        <img src="images/facility5.jpg" alt="Emergency Department" loading="lazy" onerror="this.onerror=null;this.outerHTML='<div class=&quot;facility-img-placeholder&quot;><i class=&quot;fas fa-ambulance&quot;></i></div>'">
         <div class="info">
           <div class="doctor-badge"><i class="fas fa-ambulance"></i> Emergency</div>
           <h3>Emergency Department</h3>
@@ -248,7 +256,7 @@
       </div>
 
       <div class="doctor-full-card reveal">
-        <img src="images/facility6.jpg" alt="Hospital Pharmacy" loading="lazy" onerror="this.src='';this.alt='Pharmacy'">
+        <img src="images/facility6.jpg" alt="Hospital Pharmacy" loading="lazy" onerror="this.onerror=null;this.outerHTML='<div class=&quot;facility-img-placeholder&quot;><i class=&quot;fas fa-pills&quot;></i></div>'">
         <div class="info">
           <div class="doctor-badge"><i class="fas fa-pills"></i> Pharmacy</div>
           <h3>Hospital Pharmacy</h3>
@@ -257,7 +265,7 @@
       </div>
 
       <div class="doctor-full-card reveal">
-        <img src="images/facility7.jpg" alt="Waiting Area" loading="lazy" onerror="this.src='';this.alt='Waiting Area'">
+        <img src="images/facility7.jpg" alt="Waiting Area" loading="lazy" onerror="this.onerror=null;this.outerHTML='<div class=&quot;facility-img-placeholder&quot;><i class=&quot;fas fa-chair&quot;></i></div>'">
         <div class="info">
           <div class="doctor-badge"><i class="fas fa-chair"></i> Reception</div>
           <h3>Comfortable Waiting Area</h3>
@@ -266,7 +274,7 @@
       </div>
 
       <div class="doctor-full-card reveal">
-        <img src="images/facility8.jpg" alt="Ultrasound & X-ray" loading="lazy" onerror="this.src='';this.alt='Ultrasound'">
+        <img src="images/facility8.jpg" alt="Ultrasound & X-ray" loading="lazy" onerror="this.onerror=null;this.outerHTML='<div class=&quot;facility-img-placeholder&quot;><i class=&quot;fas fa-wave-square&quot;></i></div>'">
         <div class="info">
           <div class="doctor-badge"><i class="fas fa-wave-square"></i> Imaging</div>
           <h3>Ultrasound & X-ray</h3>
@@ -275,7 +283,7 @@
       </div>
 
       <div class="doctor-full-card reveal">
-        <img src="images/facility9.jpg" alt="Eye Care Unit" loading="lazy" onerror="this.src='';this.alt='Eye Care Unit'">
+        <img src="images/facility9.jpg" alt="Eye Care Unit" loading="lazy" onerror="this.onerror=null;this.outerHTML='<div class=&quot;facility-img-placeholder&quot;><i class=&quot;fas fa-eye&quot;></i></div>'">
         <div class="info">
           <div class="doctor-badge"><i class="fas fa-eye"></i> Ophthalmology</div>
           <h3>Eye Care Unit</h3>
@@ -284,7 +292,7 @@
       </div>
 
       <div class="doctor-full-card reveal">
-        <img src="images/facility10.jpg" alt="Dental Unit" loading="lazy" onerror="this.src='';this.alt='Dental Unit'">
+        <img src="images/facility10.jpg" alt="Dental Unit" loading="lazy" onerror="this.onerror=null;this.outerHTML='<div class=&quot;facility-img-placeholder&quot;><i class=&quot;fas fa-tooth&quot;></i></div>'">
         <div class="info">
           <div class="doctor-badge"><i class="fas fa-tooth"></i> Dental</div>
           <h3>Dental Unit</h3>
