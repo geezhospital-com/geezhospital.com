@@ -1,0 +1,1613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geez Hospital — Admin Panel</title>
+<link rel="manifest" href="admin-manifest.json">
+<meta name="theme-color" content="#0A1F3D">
+<link rel="apple-touch-icon" href="images/apple-touch-icon-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0A1F3D;--teal:#0B7B7B;--teal-h:#096767;--teal-l:#E8F4F4;
+  --gold:#B8860B;--red:#C0392B;--white:#fff;
+  --gray-50:#F8FAFB;--gray-100:#EEF2F6;--gray-200:#DDE4EE;
+  --gray-400:#94A3B8;--gray-500:#64748B;--gray-900:#0F172A;
+  --green:#16a34a;--font:'Figtree',system-ui,sans-serif;
+  --shadow:0 4px 20px rgba(10,31,61,.12);
+}
+html{font-family:var(--font);font-size:15px;background:var(--gray-50);color:var(--gray-900)}
+body{min-height:100vh}
+a{text-decoration:none;color:inherit}
+#loginScreen{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#0f2a3f 0%,#0B7B7B 100%);padding:20px;
+}
+.login-card{
+  background:#fff;border-radius:20px;padding:44px 40px;
+  max-width:440px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+.login-logo{text-align:center;margin-bottom:28px}
+.login-logo h1{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:var(--gray-900)}
+.login-logo h1 span{color:var(--teal)}
+.login-logo p{color:var(--gray-500);font-size:.88rem;margin-top:4px}
+.login-card label{display:block;font-size:.8rem;font-weight:600;color:var(--gray-500);margin-bottom:6px;letter-spacing:.04em;text-transform:uppercase}
+.login-card input{width:100%;padding:12px 14px;border:1.5px solid var(--gray-200);border-radius:8px;font-size:.93rem;margin-bottom:16px;outline:none;transition:border-color .2s;font-family:var(--font)}
+.login-card input:focus{border-color:var(--teal)}
+.btn-login{width:100%;padding:13px;background:var(--teal);color:#fff;border:none;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;transition:background .2s;font-family:var(--font)}
+.btn-login:hover{background:var(--teal-h)}
+.login-help{margin-top:14px;font-size:.78rem;color:var(--gray-400);text-align:center;line-height:1.6}
+.login-help a{color:var(--teal)}
+#loginError{color:var(--red);font-size:.82rem;margin-bottom:12px;display:none;padding:8px 12px;background:#fef2f2;border-radius:6px}
+#adminApp{display:none;min-height:100vh}
+.admin-topbar{background:var(--navy);color:#fff;padding:0 28px;height:58px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.2)}
+.admin-topbar .brand{font-family:'Cormorant Garamond',serif;font-size:1.1rem}
+.admin-topbar .brand span{color:#4dd9d9}
+.topbar-right{display:flex;align-items:center;gap:14px}
+.topbar-right a{color:rgba(255,255,255,.7);font-size:.82rem}
+.topbar-right a:hover{color:#fff}
+.btn-logout{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:.82rem;transition:background .2s;font-family:var(--font)}
+.btn-logout:hover{background:rgba(255,255,255,.2)}
+.admin-tabs{background:#fff;border-bottom:1px solid var(--gray-200);display:flex;gap:0;padding:0 28px;overflow-x:auto}
+.tab-btn{padding:14px 20px;background:none;border:none;border-bottom:2.5px solid transparent;font-size:.88rem;font-weight:500;color:var(--gray-500);cursor:pointer;transition:all .2s;font-family:var(--font);white-space:nowrap}
+.tab-btn.active{color:var(--teal);border-bottom-color:var(--teal)}
+.tab-btn i{margin-right:6px}
+.admin-main{max-width:980px;margin:0 auto;padding:36px 24px 60px}
+.section-head{margin-bottom:24px}
+.section-head h2{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--gray-900)}
+.section-head p{color:var(--gray-500);font-size:.87rem;margin-top:4px}
+.card{background:#fff;border-radius:12px;border:1px solid var(--gray-200);box-shadow:var(--shadow);padding:28px;margin-bottom:24px}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-size:.8rem;font-weight:600;color:var(--gray-500);margin-bottom:7px;letter-spacing:.04em;text-transform:uppercase}
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group select,
+.form-group textarea{width:100%;padding:11px 14px;border:1.5px solid var(--gray-200);border-radius:8px;font-size:.92rem;outline:none;transition:border-color .2s;font-family:var(--font)}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--teal)}
+.form-group textarea{min-height:120px;resize:vertical}
+.upload-zone{border:2px dashed var(--gray-200);border-radius:10px;padding:28px 20px;text-align:center;cursor:pointer;transition:all .2s;background:var(--gray-50)}
+.upload-zone:hover,.upload-zone.drag-over{border-color:var(--teal);background:var(--teal-l)}
+.upload-zone i{font-size:2rem;color:var(--teal);opacity:.5;margin-bottom:10px;display:block}
+.upload-zone p{color:var(--gray-500);font-size:.87rem}
+.upload-zone p span{color:var(--teal);font-weight:600}
+.upload-zone input{display:none}
+.img-preview-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.img-thumb{position:relative;width:88px;height:88px;border-radius:8px;overflow:hidden;border:2px solid var(--gray-200)}
+.img-thumb img{width:100%;height:100%;object-fit:cover}
+.img-thumb .remove-img{position:absolute;top:3px;right:3px;background:rgba(220,38,38,.85);color:#fff;border:none;border-radius:50%;width:20px;height:20px;cursor:pointer;font-size:.65rem;display:flex;align-items:center;justify-content:center}
+.img-order-hint{font-size:.77rem;color:var(--gray-400);margin-top:6px}
+.btn-primary{background:var(--teal);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:.93rem;font-weight:600;cursor:pointer;transition:background .2s;display:inline-flex;align-items:center;gap:8px;font-family:var(--font)}
+.btn-primary:hover{background:var(--teal-h)}
+.btn-primary:disabled{opacity:.5;cursor:not-allowed}
+.btn-danger{background:#fef2f2;color:var(--red);border:1.5px solid #fecaca;padding:7px 14px;border-radius:6px;cursor:pointer;font-size:.82rem;font-weight:600;transition:background .2s;font-family:var(--font)}
+.btn-danger:hover{background:#fee2e2}
+.status-banner{padding:12px 18px;border-radius:8px;margin-bottom:20px;font-size:.87rem;font-weight:500;display:none;align-items:center;gap:10px}
+.status-banner.success{background:#f0fdf4;color:var(--green);border:1px solid #bbf7d0;display:flex}
+.status-banner.error{background:#fef2f2;color:var(--red);border:1px solid #fecaca;display:flex}
+.status-banner.loading{background:var(--teal-l);color:var(--teal);border:1px solid #99d6d6;display:flex}
+.progress-bar-wrap{background:var(--gray-200);border-radius:999px;height:6px;margin-top:10px;overflow:hidden;display:none}
+.progress-bar{height:100%;background:var(--teal);border-radius:999px;transition:width .3s}
+.article-list-item{display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid var(--gray-200)}
+.article-list-item:last-child{border-bottom:none}
+.article-thumb{width:72px;height:56px;border-radius:6px;object-fit:cover;background:var(--gray-100);flex-shrink:0}
+.article-thumb-ph{width:72px;height:56px;border-radius:6px;background:var(--teal-l);flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.article-thumb-ph i{color:var(--teal);opacity:.4}
+.article-info{flex:1;min-width:0}
+.article-info h4{font-size:.92rem;font-weight:600;color:var(--gray-900);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.article-info .meta{font-size:.77rem;color:var(--gray-400);margin-top:3px}
+.article-actions{display:flex;gap:8px;align-items:center;flex-shrink:0}
+.badge{font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:999px;text-transform:uppercase;letter-spacing:.05em}
+.badge-teal{background:var(--teal-l);color:var(--teal)}
+.badge-gold{background:#fff8e6;color:var(--gold)}
+.badge-gray{background:var(--gray-100);color:var(--gray-500)}
+.badge-purple{background:#f3f0ff;color:#7c3aed}
+.config-field{margin-bottom:20px}
+.config-field label{display:block;font-size:.8rem;font-weight:600;color:var(--gray-500);margin-bottom:7px;text-transform:uppercase;letter-spacing:.04em}
+.config-field input{width:100%;padding:11px 14px;border:1.5px solid var(--gray-200);border-radius:8px;font-size:.92rem;outline:none;font-family:monospace;transition:border-color .2s}
+.config-field input:focus{border-color:var(--teal)}
+.config-field .hint{font-size:.77rem;color:var(--gray-400);margin-top:5px;line-height:1.5}
+.config-field .hint a{color:var(--teal)}
+.spin{animation:spin .7s linear infinite;display:inline-block}
+@keyframes spin{to{transform:rotate(360deg)}}
+.photo-manage-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:16px}
+.photo-manage-card{background:#fff;border:1px solid var(--gray-200);border-radius:10px;overflow:hidden;transition:box-shadow .2s}
+.photo-manage-card:hover{box-shadow:var(--shadow)}
+.photo-manage-card .pm-img-wrap{width:100%;aspect-ratio:4/3;background:var(--gray-100);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.photo-manage-card .pm-img-wrap img{width:100%;height:100%;object-fit:cover}
+.photo-manage-card .pm-img-wrap i{color:var(--gray-400);font-size:1.6rem}
+.photo-manage-card .pm-body{padding:12px}
+.photo-manage-card h4{font-size:.83rem;font-weight:600;margin-bottom:8px;color:var(--gray-900);line-height:1.3;min-height:2.2em}
+.pm-upload-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:6px;background:var(--teal-l);color:var(--teal);border:1.5px dashed var(--teal);padding:8px;border-radius:6px;font-size:.78rem;font-weight:600;cursor:pointer;text-align:center;transition:background .2s}
+.pm-upload-btn:hover{background:#dbeeee}
+.pm-status{font-size:.72rem;margin-top:6px;min-height:14px}
+</style>
+</head>
+<body>
+
+<div id="loginScreen">
+  <div class="login-card">
+    <div class="login-logo">
+      <h1><span>Geez</span> Hospital</h1>
+      <p>Admin Panel — GitHub Login</p>
+    </div>
+    <div id="loginError"></div>
+    <label for="cfgOwner">GitHub Username</label>
+    <input type="text" id="cfgOwner" placeholder="geezhospital-com" autocomplete="username">
+    <label for="cfgRepo">Repository Name</label>
+    <input type="text" id="cfgRepo" placeholder="geezhospital.com" autocomplete="off">
+    <label for="cfgToken">Personal Access Token</label>
+    <input type="password" id="cfgToken" placeholder="ghp_xxxxxxxxxxxxxxxxxx" autocomplete="current-password">
+    <button class="btn-login" id="loginBtn" onclick="doLogin()">
+      <i class="fas fa-sign-in-alt"></i> &nbsp;Sign In
+    </button>
+    <p class="login-help">
+      ናይ token ንምምፋር:
+      <a href="https://github.com/settings/tokens/new?scopes=repo&description=Geez+Hospital+Admin" target="_blank">
+        Click here → repo scope ምረጽ
+      </a>
+    </p>
+  </div>
+</div>
+
+<div id="adminApp">
+
+  <div class="admin-topbar">
+    <div class="brand"><span>Geez</span> Hospital — Admin</div>
+    <div class="topbar-right">
+      <a href="news.html" target="_blank"><i class="fas fa-external-link-alt"></i> View News</a>
+      <button class="btn-logout" onclick="doLogout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+    </div>
+  </div>
+
+  <div class="admin-tabs">
+    <button class="tab-btn active" data-tab="publish" onclick="switchTab('publish')"><i class="fas fa-plus-circle"></i> Publish Article</button>
+    <button class="tab-btn" data-tab="manage" onclick="switchTab('manage')"><i class="fas fa-list"></i> Manage Articles</button>
+    <button class="tab-btn" data-tab="vacancy" onclick="switchTab('vacancy')"><i class="fas fa-briefcase"></i> Post Vacancy</button>
+    <button class="tab-btn" data-tab="departments" onclick="switchTab('departments')"><i class="fas fa-hospital-alt"></i> Departments</button>
+    <button class="tab-btn" data-tab="doctors" onclick="switchTab('doctors')"><i class="fas fa-user-md"></i> Doctors</button>
+    <button class="tab-btn" data-tab="gallery" onclick="switchTab('gallery')"><i class="fas fa-images"></i> Gallery</button>
+    <button class="tab-btn" data-tab="config" onclick="switchTab('config')"><i class="fas fa-cog"></i> Settings</button>
+  </div>
+
+  <div class="admin-main">
+
+    <div id="tab-publish">
+      <div class="section-head">
+        <h2>Publish a New Article</h2>
+        <p>ዜና ጸሓፍ — ስእሊ ካብ ኮምፕዩተርካ ቀጥታ upload ግበር — Publish ጠውቕ።</p>
+      </div>
+      <div id="publishStatus" class="status-banner"></div>
+      <div class="progress-bar-wrap" id="publishProgress"><div class="progress-bar" id="progressBar" style="width:0%"></div></div>
+
+      <div class="card">
+        <div class="form-group">
+          <label for="artTitle">Article Title *</label>
+          <input type="text" id="artTitle" placeholder="ዝደለኻዮ ኣርእስቲ ኣብዚ ፀሓፍ፤ e.g. ግዕዝ ሆስፒታል ዘመናዊ P25 Elite SonoScape ultrasound ኣታኣታቲዩ">
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div class="form-group">
+            <label for="artDate">Date *</label>
+            <input type="date" id="artDate">
+          </div>
+          <div class="form-group">
+            <label for="artCategory">Category *</label>
+            <select id="artCategory">
+              <option value="Announcement">Announcement</option>
+              <option value="Event">Event</option>
+              <option value="Health Tip">Health Tip</option>
+              <option value="News">News</option>
+              <option value="Testimony">Testimony</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="artExcerpt">Short Summary (ካርድ ላዕሊ ዝርኤ) *</label>
+          <textarea id="artExcerpt" rows="3" placeholder="ሓፂር ፅሑፍ — 1-2 ዓረፍተ ነገር..."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="artBody">Full Article Body</label>
+          <textarea id="artBody" rows="6" placeholder="ምሉእ ዜና (optional)..."></textarea>
+        </div>
+        <div class="form-group">
+          <label>Photos — ካብ ኮምፕዩተርካ ቀጥታ upload ✅</label>
+          <div class="upload-zone" id="uploadZone" onclick="document.getElementById('photoInput').click()">
+            <input type="file" id="photoInput" accept="image/*" multiple onchange="handleFiles(this.files)">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>ናብዚ ስእሊ drag & drop ግበር — ወይ <span>click ብምግባር ካብ ፋይል upload ግበር</span></p>
+            <p style="font-size:.76rem;color:var(--gray-400);margin-top:4px">JPG, PNG, WebP — max 5MB each</p>
+          </div>
+          <div class="img-preview-list" id="imgPreviewList"></div>
+          <p class="img-order-hint" id="orderHint" style="display:none"><i class="fas fa-info-circle"></i> ቀዳማይ ስእሊ cover image ይኸውን።</p>
+        </div>
+        <div class="form-group">
+          <label for="artLink">External Link (optional)</label>
+          <input type="text" id="artLink" placeholder="e.g. winners-announcement.html">
+        </div>
+        <button class="btn-primary" id="publishBtn" onclick="publishArticle()">
+          <i class="fas fa-paper-plane"></i> Publish Article
+        </button>
+      </div>
+    </div>
+
+    <div id="tab-manage" style="display:none">
+      <div class="section-head">
+        <h2>Manage Articles</h2>
+        <p>ዝሓለፉ ዜናታት ምርኣይን ምሰራዝን።</p>
+      </div>
+      <div id="manageStatus" class="status-banner"></div>
+      <div class="card" id="articleListCard">
+        <div id="articleList"><p style="color:var(--gray-400);text-align:center;padding:24px 0"><i class="fas fa-spinner spin"></i> Loading...</p></div>
+      </div>
+    </div>
+
+    <div id="tab-vacancy" style="display:none">
+      <div class="section-head">
+        <h2>Post a Vacancy</h2>
+        <p>ናይ ስራሕ ዕድል ምልጣፍ — ምስ post ትገብር ቀጥታ ናብ vacancy.html ይርኤ።</p>
+      </div>
+      <div id="vacPostStatus" class="status-banner"></div>
+
+      <div class="card">
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div class="form-group">
+            <label for="vacTitle">Job Title (English) *</label>
+            <input type="text" id="vacTitle" placeholder="e.g. Internal Medicine Specialist">
+          </div>
+          <div class="form-group">
+            <label for="vacTitleTig">ሽም ስራሕ (ትግርኛ)</label>
+            <input type="text" id="vacTitleTig" placeholder="ናይ ውሽጣዊ ሕማም ስፔሻሊስት">
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div class="form-group">
+            <label for="vacDept">Department / ኣሃዱ *</label>
+            <select id="vacDept">
+              <option value="Medical">Medical</option>
+              <option value="Nursing">Nursing</option>
+              <option value="Laboratory">Laboratory</option>
+              <option value="Pharmacy">Pharmacy</option>
+              <option value="Administrative">Administrative</option>
+              <option value="Radiology">Radiology</option>
+              <option value="Emergency">Emergency</option>
+              <option value="Surgery">Surgery</option>
+              <option value="Pediatrics">Pediatrics</option>
+              <option value="Gynecology">Gynecology</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="vacPositions">ቁጽሪ ሰብ / Positions *</label>
+            <input type="number" id="vacPositions" min="1" value="1">
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px">
+          <div class="form-group">
+            <label for="vacType">Type / ዓይነት</label>
+            <select id="vacType">
+              <option value="Full Time">Full Time</option>
+              <option value="Part Time">Part Time</option>
+              <option value="Contract">Contract</option>
+              <option value="Internship">Internship</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="vacStart">Start Date / መጀምርታ</label>
+            <input type="date" id="vacStart">
+          </div>
+          <div class="form-group">
+            <label for="vacDeadline">Deadline / መወዳእታ *</label>
+            <input type="date" id="vacDeadline">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="vacReqs">Requirements / ረቛሒ (ረቛሒታት ምፍላይ) *</label>
+          <textarea id="vacReqs" rows="5" placeholder="MD degree with specialization in Internal Medicine&#10;Minimum 2 years experience&#10;Valid medical license&#10;Good communication skills"></textarea>
+          <p style="font-size:.75rem;color:var(--gray-400);margin-top:4px"><i class="fas fa-info-circle"></i> ነፍሲ ወከፍ requirement ረቛሒ (Enter)</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div class="form-group">
+            <label for="vacSalary">Salary / መሃያ</label>
+            <select id="vacSalary">
+              <option value="negotiable">Negotiable / ብስምምዕ</option>
+              <option value="scale">As per hospital scale</option>
+              <option value="custom">Custom amount</option>
+            </select>
+          </div>
+          <div class="form-group" id="vacSalaryCustomDiv" style="display:none">
+            <label for="vacSalaryAmt">Amount (ETB)</label>
+            <input type="text" id="vacSalaryAmt" placeholder="e.g. 15,000 - 25,000">
+          </div>
+        </div>
+
+        <div style="background:var(--gray-50);border-radius:8px;padding:18px;margin-bottom:20px">
+          <p style="font-size:.82rem;font-weight:700;color:var(--gray-500);text-transform:uppercase;letter-spacing:.05em;margin-bottom:14px">
+            <i class="fas fa-paper-plane"></i> How to Apply / መረዳእታ ከመይ ተመልክት?
+          </p>
+          <div class="form-group">
+            <label for="vacEmail">Apply by Email</label>
+            <input type="email" id="vacEmail" value="geezhospital@gmail.com" placeholder="geezhospital@gmail.com">
+          </div>
+          <div class="form-group">
+            <label for="vacWhatsApp">Apply by WhatsApp</label>
+            <input type="text" id="vacWhatsApp" placeholder="+251 920 008 338">
+          </div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <input type="checkbox" id="vacDirect" checked style="width:auto">
+            <label for="vacDirect" style="font-size:.85rem;font-weight:500;color:var(--gray-900);text-transform:none;letter-spacing:0">
+              Accept in-person applications / ብቐጥታ ሆስፒታል ብምምጻእ
+            </label>
+          </div>
+        </div>
+
+        <button class="btn-primary" id="vacPostBtn" onclick="postVacancy()">
+          <i class="fas fa-paper-plane"></i> Post Vacancy / ስራሕ ዕድል ሊስታ ለጢፍ
+        </button>
+      </div>
+
+      <div class="section-head" style="margin-top:32px">
+        <h2>Active Vacancies</h2>
+        <p>ሕዚ ዘለዉ ናይ ክፍቲ ናይ ስራሕ ዕድላት</p>
+      </div>
+      <div id="vacManageStatus" class="status-banner"></div>
+      <div class="card">
+        <div id="vacList"><p style="color:var(--gray-400);text-align:center;padding:24px 0"><i class="fas fa-spinner spin"></i> Loading...</p></div>
+      </div>
+    </div>
+
+    <div id="tab-departments" style="display:none">
+      <div class="section-head">
+        <h2>Departments — Photos</h2>
+        <p>ኣብ ትሕቲ ነፍስወከፍ ክፍሊ (Department) ዘሎ ስእሊ ቀይር — ስእሊ ምስ መረጽካ ብቐጥታ ናብ GitHub ተስቀል፣ ኣብ ዌብሳይት እውን ብኣውቶማቲክ ትቕይር (ገለ ደቓይቕ ክወስድ ይኽእል ናይ GitHub cache ንምሕዳስ)።</p>
+      </div>
+      <div class="card">
+        <div class="photo-manage-grid" id="deptGrid">
+          <p style="color:var(--gray-400);grid-column:1/-1;text-align:center;padding:24px 0"><i class="fas fa-spinner spin"></i> Loading...</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-doctors" style="display:none">
+      <div class="section-head">
+        <h2>Doctors — Photos</h2>
+        <p>ናይ ነፍስወከፍ ሓኪም ስእሊ ቀይር — ስእሊ ምስ መረጽካ ብቐጥታ ናብ GitHub ተስቀል፣ ኣብ ዌብሳይት እውን ብኣውቶማቲክ ትቕይር።</p>
+      </div>
+      <div class="card">
+        <div class="photo-manage-grid" id="doctorGrid">
+          <p style="color:var(--gray-400);grid-column:1/-1;text-align:center;padding:24px 0"><i class="fas fa-spinner spin"></i> Loading...</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-gallery" style="display:none">
+      <div class="section-head">
+        <h2>Gallery — Photos &amp; Videos</h2>
+        <p>ስእልታትን ቪድዮታትን ናብ Gallery ገጽ ወስኽ ወይ ኣልግስ — ዘየገድብ ቁጽሪ ክትውስኽ ትኽእል ኢኻ።</p>
+      </div>
+
+      <div id="galleryAddStatus" class="status-banner"></div>
+
+      <div class="card">
+        <div style="display:flex;gap:10px;margin-bottom:20px;border-bottom:1px solid var(--gray-200);padding-bottom:16px">
+          <button class="tab-btn active" id="galAddPhotoTabBtn" style="padding:8px 16px;border-radius:8px;background:var(--teal-l);color:var(--teal);border-bottom:none" onclick="switchGalAddMode('photo')"><i class="fas fa-image"></i> Add Photo</button>
+          <button class="tab-btn" id="galAddVideoTabBtn" style="padding:8px 16px;border-radius:8px;border-bottom:none" onclick="switchGalAddMode('video')"><i class="fas fa-video"></i> Add Video</button>
+        </div>
+
+        <div id="galAddPhoto">
+          <div class="form-group">
+            <label for="galPhotoCaption">Caption / ገለጻ *</label>
+            <input type="text" id="galPhotoCaption" placeholder="e.g. Operating Room">
+          </div>
+          <div class="form-group">
+            <label>Photo — ካብ ኮምፕዩተርካ ቀጥታ upload</label>
+            <div class="upload-zone" id="galUploadZone" onclick="document.getElementById('galPhotoInput').click()">
+              <input type="file" id="galPhotoInput" accept="image/*" onchange="handleGalPhoto(this.files[0])">
+              <i class="fas fa-cloud-upload-alt"></i>
+              <p>ናብዚ ስእሊ drag & drop ግበር — ወይ <span>click ብምግባር ካብ ፋይል upload ግበር</span></p>
+              <p style="font-size:.76rem;color:var(--gray-400);margin-top:4px">JPG, PNG, WebP — max 5MB</p>
+            </div>
+            <div class="img-preview-list" id="galPhotoPreview"></div>
+          </div>
+          <button class="btn-primary" id="galAddPhotoBtn" onclick="addGalleryPhoto()"><i class="fas fa-plus"></i> Add Photo to Gallery</button>
+        </div>
+
+        <div id="galAddVideo" style="display:none">
+          <div class="form-group">
+            <label for="galVideoCaption">Caption / ገለጻ *</label>
+            <input type="text" id="galVideoCaption" placeholder="e.g. Hospital Tour">
+          </div>
+
+          <div style="display:flex;gap:8px;margin-bottom:16px">
+            <button type="button" class="tab-btn gal-video-mode-btn active" id="galVideoModeLinkBtn"
+                    style="flex:1;padding:8px;border-radius:8px" onclick="switchGalVideoMode('link')">
+              <i class="fas fa-link"></i> YouTube / TikTok Link
+            </button>
+            <button type="button" class="tab-btn gal-video-mode-btn" id="galVideoModeFileBtn"
+                    style="flex:1;padding:8px;border-radius:8px" onclick="switchGalVideoMode('file')">
+              <i class="fas fa-upload"></i> Upload Video File
+            </button>
+          </div>
+
+          <div id="galVideoLinkMode">
+            <div class="form-group">
+              <label for="galVideoUrl">YouTube or TikTok Video Link *</label>
+              <input type="text" id="galVideoUrl" placeholder="e.g. https://www.youtube.com/watch?v=XXXXXXXXXXX or https://www.tiktok.com/@user/video/123...">
+              <p style="font-size:.75rem;color:var(--gray-400);margin-top:5px"><i class="fas fa-info-circle"></i> ካብ YouTube ወይ ካብ TikTok ናይ ቪድዮ link ቅዳሕ ጌርካ ኣብዚ ለጥፎ።</p>
+            </div>
+            <button class="btn-primary" id="galAddVideoBtn" onclick="addGalleryVideo()"><i class="fas fa-plus"></i> Add Video to Gallery</button>
+          </div>
+
+          <div id="galVideoFileMode" style="display:none">
+            <div class="form-group">
+              <label for="galVideoFileInput">Video File * (max 30MB)</label>
+              <input type="file" id="galVideoFileInput" accept="video/*" onchange="handleGalVideoFileSelect(event)">
+              <p style="font-size:.75rem;color:var(--gray-400);margin-top:5px"><i class="fas fa-info-circle"></i> ናይ ቪድዮ ፋይል ካብ 30MB ንላዕሊ ኣይፍቀድን። ንዓበይቲ ቪድዮታት YouTube ወይ TikTok ተጠቐም።</p>
+              <p id="galVideoFileName" style="font-size:.8rem;color:var(--teal-brand);margin-top:6px;display:none"></p>
+            </div>
+            <button class="btn-primary" id="galAddVideoFileBtn" onclick="addGalleryVideoFile()" disabled><i class="fas fa-upload"></i> Upload Video to Gallery</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-head" style="margin-top:32px">
+        <h2>Current Gallery Items</h2>
+        <p>ዘለዉ ስእልታትን ቪድዮታትን — ንምስራዝ ኣብቲ ቀይሕ button ጠውቕ።</p>
+      </div>
+      <div id="galleryListStatus" class="status-banner"></div>
+      <div class="card">
+        <div class="photo-manage-grid" id="galleryItemsGrid">
+          <p style="color:var(--gray-400);grid-column:1/-1;text-align:center;padding:24px 0"><i class="fas fa-spinner spin"></i> Loading...</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-config" style="display:none">
+      <div class="section-head">
+        <h2>Settings</h2>
+        <p>GitHub connection settings.</p>
+      </div>
+      <div class="card">
+        <div class="config-field">
+          <label>GitHub Username</label>
+          <input type="text" id="cfgOwner2">
+        </div>
+        <div class="config-field">
+          <label>Repository Name</label>
+          <input type="text" id="cfgRepo2">
+        </div>
+        <div class="config-field">
+          <label>Personal Access Token</label>
+          <input type="password" id="cfgToken2">
+          <p class="hint">
+            repo scope ዘሎዎ token።
+            <a href="https://github.com/settings/tokens/new?scopes=repo" target="_blank">ሓዲሽ token ምፍጣር →</a>
+          </p>
+        </div>
+        <button class="btn-primary" onclick="saveConfig()"><i class="fas fa-save"></i> Save Settings</button>
+        <div id="configStatus" class="status-banner" style="margin-top:16px"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script>
+const STORAGE_KEY = 'gh_admin_geez_v2';
+let cfg = {};
+let pendingFiles = [];
+
+const DEPARTMENTS = [
+  {id:'surgery',       label:'Surgery',                              file:'images/dept-surgery.jpg'},
+  {id:'pediatrics',    label:'Pediatrics & Adolescents',              file:'images/dept-pediatrics.jpg'},
+  {id:'obsgyn',        label:'Obstetrics & Gynecology',               file:'images/dept-obsgyn.jpg'},
+  {id:'internal',      label:'Internal Medicine',                     file:'images/dept-internal.jpg'},
+  {id:'orthopedics',   label:'Orthopedics',                           file:'images/dept-orthopedics.jpg'},
+  {id:'radiology',     label:'Radiology',                             file:'images/dept-radiology.jpg'},
+  {id:'oncology',      label:'Oncology',                              file:'images/dept-oncology.jpg'},
+  {id:'dental',        label:'Oral, Dental & Maxillofacial Surgery',  file:'images/dept-dental.jpg'},
+  {id:'dermatology',   label:'Dermatology & Cosmetology',             file:'images/dept-dermatology.jpg'},
+  {id:'ent',           label:'ENT & Plastic Surgery',                 file:'images/dept-ent.jpg'},
+  {id:'ophthalmology', label:'Ophthalmology',                         file:'images/dept-ophthalmology.jpg'},
+  {id:'psychiatry',    label:'Psychiatry',                            file:'images/dept-psychiatry.jpg'}
+];
+
+const DOCTORS = [
+  {id:'tesfay',    label:'Dr. Tesfay Atsbeha — Cardiology',           file:'images/doctor1.jpg'},
+  {id:'higus',     label:'Dr. Higus Teklu — Internal Medicine',       file:'images/doctor2.jpg'},
+  {id:'gebreab',   label:'Dr. Gebreab Nega — Pediatrics',             file:'images/doctor3.jpg'},
+  {id:'henok',     label:'Dr. Henok G/her — OB/GYN',                  file:'images/doctor-henok.jpg'},
+  {id:'natnael',   label:'Dr. Natnael Kidanu — Radiology',            file:'images/doctor-natnael.jpg'},
+  {id:'teklay',    label:'Dr. Teklay Hagos — Pediatrics',             file:'images/doctor-teklay.jpg'},
+  {id:'fiseha',    label:'Dr. Fiseha Tikue — Dental',                 file:'images/doctor-fiseha.jpg'},
+  {id:'yisak',     label:'Dr. Yisak G/her — Surgery',                 file:'images/doctor-yisak.jpg'},
+  {id:'goytom',    label:'Dr. Goytom — Orthopedics',                  file:'images/doctor-goytom.jpg'},
+  {id:'ashenafi',  label:'Dr. Ashenafi Gidey — Dermatology',          file:'images/doctor-ashenafi.jpg'},
+  {id:'berhe',     label:'Dr. Berhe Amare — Neurosurgery',            file:'images/doctor-berhe.jpg'},
+  {id:'wendmu',    label:'Dr. Wendmu — ENT',                          file:'images/doctor-wendmu.jpg'},
+  {id:'biruk',     label:'Dr. Biruk Mulugeta — Internal Medicine',    file:'images/doctor-biruk.jpg'},
+  {id:'gebremariam', label:'Dr. Gebremariam Godefay — Pathology',     file:'images/doctor-gebremariam.jpg'},
+  {id:'laboratory',  label:'Laboratory Team — Hintsa & Mulualem',     file:'images/staff-laboratory.jpg'},
+  {id:'pharmacy',    label:'Pharmacy Team',                           file:'images/staff-pharmacy.jpg'}
+];
+
+function loadConfig(){try{return JSON.parse(localStorage.getItem(STORAGE_KEY)||'{}')}catch(e){return{}}}
+function saveConfigStore(c){localStorage.setItem(STORAGE_KEY,JSON.stringify(c))}
+
+const GH='https://api.github.com';
+async function ghGet(path){
+  const bust = Date.now() + '_' + Math.random().toString(36).slice(2,8);
+  const r=await fetch(`${GH}/repos/${cfg.owner}/${cfg.repo}/contents/${path}?_=${bust}`,{
+    headers:{Authorization:`token ${cfg.token}`,Accept:'application/vnd.github.v3+json'},
+    cache:'no-store'
+  });
+  if(!r.ok)throw new Error(`GET failed: ${r.status}`);
+  return r.json();
+}
+async function ghPut(path,content64,sha,message){
+  const body={message,content:content64};
+  if(sha)body.sha=sha;
+  const r=await fetch(`${GH}/repos/${cfg.owner}/${cfg.repo}/contents/${path}`,{
+    method:'PUT',
+    headers:{Authorization:`token ${cfg.token}`,Accept:'application/vnd.github.v3+json','Content-Type':'application/json'},
+    body:JSON.stringify(body),
+    cache:'no-store'
+  });
+  if(!r.ok)throw new Error(`PUT failed: ${r.status} ${await r.text()}`);
+  return r.json();
+}
+
+async function doLogin(){
+  const owner=document.getElementById('cfgOwner').value.trim();
+  const repo=document.getElementById('cfgRepo').value.trim();
+  const token=document.getElementById('cfgToken').value.trim();
+  if(!owner||!repo||!token){showLoginErr('ኩሎም fields ምልእ።');return}
+  const btn=document.getElementById('loginBtn');
+  btn.disabled=true;btn.innerHTML='<i class="fas fa-spinner spin"></i> Verifying...';
+  try{
+    const r=await fetch(`${GH}/repos/${owner}/${repo}`,{
+      headers:{Authorization:`token ${token}`,Accept:'application/vnd.github.v3+json'}
+    });
+    if(!r.ok)throw new Error('Invalid credentials or repository not found.');
+    cfg={owner,repo,token};
+    saveConfigStore(cfg);
+    enterAdmin();
+  }catch(e){
+    showLoginErr(e.message);
+    btn.disabled=false;btn.innerHTML='<i class="fas fa-sign-in-alt"></i> &nbsp;Sign In';
+  }
+}
+function showLoginErr(msg){const el=document.getElementById('loginError');el.textContent=msg;el.style.display='block'}
+function doLogout(){localStorage.removeItem(STORAGE_KEY);location.reload()}
+function enterAdmin(){
+  document.getElementById('loginScreen').style.display='none';
+  document.getElementById('adminApp').style.display='block';
+  document.getElementById('cfgOwner2').value=cfg.owner;
+  document.getElementById('cfgRepo2').value=cfg.repo;
+  document.getElementById('cfgToken2').value=cfg.token;
+  document.getElementById('artDate').valueAsDate=new Date();
+}
+
+function switchTab(name){
+  ['publish','manage','vacancy','departments','doctors','gallery','config'].forEach(t=>{
+    document.getElementById('tab-'+t).style.display=(t===name)?'':'none';
+    document.querySelector(`[data-tab="${t}"]`).classList.toggle('active',t===name);
+  });
+  if(name==='manage')loadArticleList();
+  if(name==='vacancy')loadVacancyList();
+  if(name==='departments')renderPhotoGrid('deptGrid',DEPARTMENTS);
+  if(name==='doctors')renderPhotoGrid('doctorGrid',DOCTORS);
+  if(name==='gallery')loadGalleryList();
+}
+
+function compressImage(file, maxDim=1600, quality=0.82){
+  return new Promise((resolve, reject)=>{
+    const reader = new FileReader();
+    reader.onload = e => {
+      const img = new Image();
+      img.onload = () => {
+        let {width, height} = img;
+        if (width > maxDim || height > maxDim){
+          if (width > height){ height = Math.round(height * maxDim / width); width = maxDim; }
+          else { width = Math.round(width * maxDim / height); height = maxDim; }
+        }
+        const canvas = document.createElement('canvas');
+        canvas.width = width; canvas.height = height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, width, height);
+        const mime = file.type === 'image/png' ? 'image/png' : 'image/jpeg';
+        const dataUrl = canvas.toDataURL(mime, quality);
+        resolve({dataUrl, base64: dataUrl.split(',')[1]});
+      };
+      img.onerror = () => reject(new Error('Could not read image.'));
+      img.src = e.target.result;
+    };
+    reader.onerror = () => reject(new Error('File read failed.'));
+    reader.readAsDataURL(file);
+  });
+}
+
+function renderPhotoGrid(gridId, items){
+  const grid=document.getElementById(gridId);
+  grid.innerHTML=items.map(it=>`
+    <div class="photo-manage-card" id="pm-${gridId}-${it.id}">
+      <div class="pm-img-wrap">
+        <img src="https://raw.githubusercontent.com/${cfg.owner}/${cfg.repo}/main/${it.file}?t=${Date.now()}"
+             alt="${it.label}"
+             onerror="this.style.display='none';this.parentElement.innerHTML+='<i class=\\'fas fa-image\\'></i>'">
+      </div>
+      <div class="pm-body">
+        <h4>${it.label}</h4>
+        <label class="pm-upload-btn">
+          <i class="fas fa-camera"></i> ስእሊ ቀይር
+          <input type="file" accept="image/*" style="display:none" onchange="uploadEntityPhoto('${gridId}','${it.id}','${it.file}',this.files[0])">
+        </label>
+        <div class="pm-status" id="pm-status-${gridId}-${it.id}"></div>
+      </div>
+    </div>`).join('');
+}
+
+async function uploadEntityPhoto(gridId,itemId,filePath,file){
+  if(!file)return;
+  if(!file.type.startsWith('image/')){alert('ስእሊ ጥራይ upload ግበር።');return}
+  if(file.size>5*1024*1024){alert('ስእሊ ካብ 5MB ንላዕሊ ክኸውን የብሉን።');return}
+  const statusEl=document.getElementById(`pm-status-${gridId}-${itemId}`);
+  statusEl.innerHTML='<span style="color:var(--teal)"><i class="fas fa-spinner spin"></i> ስእሊ እናተመሓየሸ (compress) ኣሎ...</span>';
+  try{
+    const {dataUrl, base64} = await compressImage(file);
+    let sha=null;
+    try{
+      const existing=await ghGet(filePath);
+      sha=existing.sha;
+    }catch(e){ }
+    await ghPut(filePath, base64, sha, `Update photo: ${filePath}`);
+    statusEl.innerHTML='<span style="color:var(--green)"><i class="fas fa-check-circle"></i> ተዓዊቱ! (ናይ 1-2 ደቓይቕ ጽንሕ)</span>';
+    const card=document.getElementById(`pm-${gridId}-${itemId}`);
+    const imgWrap=card.querySelector('.pm-img-wrap');
+    imgWrap.innerHTML=`<img src="${dataUrl}" alt="preview">`;
+    setTimeout(()=>{statusEl.innerHTML=''},5000);
+  }catch(err){
+    statusEl.innerHTML=`<span style="color:var(--red)"><i class="fas fa-exclamation-circle"></i> Failed: ${err.message}</span>`;
+  }
+}
+
+let galPendingPhoto = null;
+
+function switchGalAddMode(mode){
+  document.getElementById('galAddPhoto').style.display = mode==='photo' ? '' : 'none';
+  document.getElementById('galAddVideo').style.display = mode==='video' ? '' : 'none';
+  const pBtn = document.getElementById('galAddPhotoTabBtn');
+  const vBtn = document.getElementById('galAddVideoTabBtn');
+  pBtn.style.background = mode==='photo' ? 'var(--teal-l)' : 'transparent';
+  pBtn.style.color = mode==='photo' ? 'var(--teal)' : 'var(--gray-500)';
+  vBtn.style.background = mode==='video' ? 'var(--teal-l)' : 'transparent';
+  vBtn.style.color = mode==='video' ? 'var(--teal)' : 'var(--gray-500)';
+}
+
+async function handleGalPhoto(file){
+  if(!file) return;
+  if(!file.type.startsWith('image/')){alert('ስእሊ ጥራይ upload ግበር።');return}
+  if(file.size>5*1024*1024){alert('ስእሊ ካብ 5MB ንላዕሊ ክኸውን የብሉን።');return}
+  const ext=file.name.split('.').pop().toLowerCase()||'jpg';
+  const safeName='gallery_'+Date.now()+'_'+Math.random().toString(36).slice(2,7)+'.'+ext;
+  try{
+    const {dataUrl, base64} = await compressImage(file);
+    galPendingPhoto={dataUrl,base64,name:safeName};
+    document.getElementById('galPhotoPreview').innerHTML=
+      `<div class="img-thumb"><img src="${dataUrl}" alt="preview"><button class="remove-img" onclick="galPendingPhoto=null;document.getElementById('galPhotoPreview').innerHTML=''"><i class="fas fa-times"></i></button></div>`;
+  }catch(err){
+    alert('ስእሊ ምሕዋስ ኣይተኻእለን: '+err.message);
+  }
+}
+
+let galPendingVideoFile = null;
+const GAL_VIDEO_MAX_BYTES = 30 * 1024 * 1024;
+
+function switchGalVideoMode(mode){
+  document.getElementById('galVideoLinkMode').style.display = mode==='link' ? '' : 'none';
+  document.getElementById('galVideoFileMode').style.display = mode==='file' ? '' : 'none';
+  const lBtn = document.getElementById('galVideoModeLinkBtn');
+  const fBtn = document.getElementById('galVideoModeFileBtn');
+  lBtn.classList.toggle('active', mode==='link');
+  fBtn.classList.toggle('active', mode==='file');
+  lBtn.style.background = mode==='link' ? 'var(--teal-l)' : 'transparent';
+  lBtn.style.color = mode==='link' ? 'var(--teal)' : 'var(--gray-500)';
+  fBtn.style.background = mode==='file' ? 'var(--teal-l)' : 'transparent';
+  fBtn.style.color = mode==='file' ? 'var(--teal)' : 'var(--gray-500)';
+}
+
+function readFileAsBase64(file){
+  return new Promise((resolve,reject)=>{
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = reader.result;
+      resolve({dataUrl: result, base64: result.split(',')[1]});
+    };
+    reader.onerror = () => reject(new Error('File could not be read.'));
+    reader.readAsDataURL(file);
+  });
+}
+
+async function handleGalVideoFileSelect(event){
+  const file = event.target.files[0];
+  const nameEl = document.getElementById('galVideoFileName');
+  const btn = document.getElementById('galAddVideoFileBtn');
+  galPendingVideoFile = null;
+  btn.disabled = true;
+  nameEl.style.display = 'none';
+
+  if(!file) return;
+  if(!file.type.startsWith('video/')){
+    alert('ናይ ቪድዮ ፋይል ጥራይ upload ግበር።');
+    event.target.value = '';
+    return;
+  }
+  if(file.size > GAL_VIDEO_MAX_BYTES){
+    alert(`ቪድዮ ካብ 30MB ንላዕሊ ኣይፍቀድን። ናትካ ፋይል ${(file.size/1024/1024).toFixed(1)}MB እዩ። ንዓበይቲ ቪድዮታት YouTube ወይ TikTok ተጠቐም።`);
+    event.target.value = '';
+    return;
+  }
+
+  try{
+    const {base64} = await readFileAsBase64(file);
+    const ext = file.name.split('.').pop().toLowerCase() || 'mp4';
+    const safeName = 'gallery_video_' + Date.now() + '_' + Math.random().toString(36).slice(2,7) + '.' + ext;
+    galPendingVideoFile = {base64, name: safeName, sizeMB: (file.size/1024/1024).toFixed(1)};
+    nameEl.textContent = `✅ ${file.name} (${galPendingVideoFile.sizeMB}MB) — ንUpload ድሉው`;
+    nameEl.style.display = 'block';
+    btn.disabled = false;
+  }catch(err){
+    alert('ቪድዮ ምንባብ ኣይተኻእለን: ' + err.message);
+  }
+}
+
+async function addGalleryVideoFile(){
+  const caption = document.getElementById('galVideoCaption').value.trim();
+  if(!caption){showStatus('galleryAddStatus','error','Caption ምልእ።');return}
+  if(!galPendingVideoFile){showStatus('galleryAddStatus','error','ናይ ቪድዮ ፋይል ምረጽ።');return}
+
+  const btn = document.getElementById('galAddVideoFileBtn');
+  btn.disabled = true;
+  showStatus('galleryAddStatus','loading','ቪድዮ እናተጻዓነ ኣሎ (ቁሩብ ግዜ ክወስድ ይኽእል)...');
+  try{
+    const repoPath = `videos/gallery/${galPendingVideoFile.name}`;
+    await ghPut(repoPath, galPendingVideoFile.base64, null, `Add gallery video file: ${galPendingVideoFile.name}`);
+    await ghUpdateJsonWithRetry('data/gallery.json', (data) => {
+      const items = (data && data.items) || [];
+      items.unshift({id:'gal-'+Date.now(), type:'video-file', src:repoPath, caption});
+      return {items};
+    }, `Add gallery video file: ${caption}`);
+    showStatus('galleryAddStatus','success','✅ ቪድዮ ተወሲኹ! ድሒሩ ኣብ gallery.html ይርኤ።');
+    document.getElementById('galVideoCaption').value='';
+    document.getElementById('galVideoFileInput').value='';
+    document.getElementById('galVideoFileName').style.display='none';
+    galPendingVideoFile = null;
+    loadGalleryList();
+  }catch(err){
+    showStatus('galleryAddStatus','error','Error: '+err.message);
+  }
+  btn.disabled = false;
+}
+
+async function ghGetJson(path){
+  try{
+    const existing = await ghGet(path);
+    const decoded = decodeURIComponent(escape(atob(existing.content.replace(/\n/g,''))));
+    return {data: JSON.parse(decoded), sha: existing.sha};
+  }catch(e){
+    return {data: null, sha: null};
+  }
+}
+async function ghPutJson(path, obj, sha, message){
+  const content = btoa(unescape(encodeURIComponent(JSON.stringify(obj, null, 2))));
+  return ghPut(path, content, sha, message);
+}
+
+async function ghUpdateJsonWithRetry(path, mutatorFn, message, maxRetries = 6) {
+  let lastErr;
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    const { data, sha } = await ghGetJson(path);
+    const newData = mutatorFn(data);
+    try {
+      return await ghPutJson(path, newData, sha, message);
+    } catch (err) {
+      lastErr = err;
+      const isShaConflict = /409/.test(err.message);
+      if (isShaConflict && attempt < maxRetries) {
+        await new Promise(r => setTimeout(r, 500 * attempt));
+        continue;
+      }
+      throw err;
+    }
+  }
+  throw lastErr;
+}
+
+async function addGalleryPhoto(){
+  const caption = document.getElementById('galPhotoCaption').value.trim();
+  if(!caption){showStatus('galleryAddStatus','error','Caption ምልእ።');return}
+  if(!galPendingPhoto){showStatus('galleryAddStatus','error','ስእሊ ምረጽ።');return}
+  const btn=document.getElementById('galAddPhotoBtn');
+  btn.disabled=true;
+  showStatus('galleryAddStatus','loading','ስእሊ እናተስቀለ...');
+  try{
+    const repoPath = `images/gallery/${galPendingPhoto.name}`;
+    await ghPut(repoPath, galPendingPhoto.base64, null, `Add gallery photo: ${galPendingPhoto.name}`);
+    await ghUpdateJsonWithRetry('data/gallery.json', (data) => {
+      const items = (data && data.items) || [];
+      items.unshift({id:'gal-'+Date.now(), type:'image', src:repoPath, caption});
+      return {items};
+    }, `Add gallery photo: ${caption}`);
+    showStatus('galleryAddStatus','success','✅ ስእሊ ተወሲኹ! ድሒሩ ኣብ gallery.html ይርኤ።');
+    document.getElementById('galPhotoCaption').value='';
+    galPendingPhoto=null;
+    document.getElementById('galPhotoPreview').innerHTML='';
+    loadGalleryList();
+  }catch(err){
+    showStatus('galleryAddStatus','error','Error: '+err.message);
+  }
+  btn.disabled=false;
+}
+
+function extractYouTubeId(url){
+  const m = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/);
+  return m ? m[1] : null;
+}
+function isTikTokUrl(url){
+  return /^https?:\/\/(?:www\.|vt\.|vm\.|m\.)?tiktok\.com\//i.test(url.trim());
+}
+
+async function addGalleryVideo(){
+  const caption = document.getElementById('galVideoCaption').value.trim();
+  const url = document.getElementById('galVideoUrl').value.trim();
+  if(!caption){showStatus('galleryAddStatus','error','Caption ምልእ።');return}
+
+  const videoId = extractYouTubeId(url);
+  const isTikTok = !videoId && isTikTokUrl(url);
+
+  if(!videoId && !isTikTok){
+    showStatus('galleryAddStatus','error','ትኽክለኛ YouTube ወይ TikTok link ኣይኮነን። ደጊምካ ፈትን።');
+    return;
+  }
+  const btn=document.getElementById('galAddVideoBtn');
+  btn.disabled=true;
+  showStatus('galleryAddStatus','loading','ቪድዮ እናተወሰኸ...');
+  try{
+    const newItem = isTikTok
+      ? {id:'gal-'+Date.now(), type:'tiktok', tiktokUrl:url, caption}
+      : {id:'gal-'+Date.now(), type:'video', videoId, caption};
+    await ghUpdateJsonWithRetry('data/gallery.json', (data) => {
+      const items = (data && data.items) || [];
+      items.unshift(newItem);
+      return {items};
+    }, `Add gallery video: ${caption}`);
+    showStatus('galleryAddStatus','success','✅ ቪድዮ ተወሲኹ! ድሒሩ ኣብ gallery.html ይርኤ።');
+    document.getElementById('galVideoCaption').value='';
+    document.getElementById('galVideoUrl').value='';
+    loadGalleryList();
+  }catch(err){
+    showStatus('galleryAddStatus','error','Error: '+err.message);
+  }
+  btn.disabled=false;
+}
+
+async function loadGalleryList(){
+  const grid=document.getElementById('galleryItemsGrid');
+  grid.innerHTML='<p style="color:var(--gray-400);grid-column:1/-1;text-align:center;padding:24px 0"><i class="fas fa-spinner spin"></i> Loading...</p>';
+  try{
+    const {data} = await ghGetJson('data/gallery.json');
+    const items = (data && data.items) || [];
+    if(items.length===0){
+      grid.innerHTML='<p style="color:var(--gray-400);grid-column:1/-1;text-align:center;padding:24px 0">ገና ዝኾነ ስእሊ ወይ ቪድዮ የለን።</p>';
+      return;
+    }
+    grid.innerHTML = items.map(it=>{
+      let thumb, typeLabel = '';
+      if (it.type === 'video') {
+        thumb = `<img src="https://img.youtube.com/vi/${it.videoId}/hqdefault.jpg" alt="${it.caption}"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.25)"><i class="fas fa-play-circle" style="font-size:1.8rem;color:#fff"></i></div>`;
+        typeLabel = '<span style="color:var(--teal);font-size:.7rem">(YouTube)</span>';
+      } else if (it.type === 'tiktok') {
+        thumb = `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#0f0f0f"><i class="fab fa-tiktok" style="font-size:2rem;color:#fff"></i></div>`;
+        typeLabel = '<span style="color:var(--teal);font-size:.7rem">(TikTok)</span>';
+      } else if (it.type === 'video-file') {
+        thumb = `<video src="https://raw.githubusercontent.com/${cfg.owner}/${cfg.repo}/main/${it.src}?t=${Date.now()}" controls preload="metadata" style="width:100%;height:100%;object-fit:cover"></video>`;
+        typeLabel = '<span style="color:var(--teal);font-size:.7rem">(Uploaded Video)</span>';
+      } else {
+        thumb = `<img src="https://raw.githubusercontent.com/${cfg.owner}/${cfg.repo}/main/${it.src}?t=${Date.now()}" alt="${it.caption}" onerror="this.style.display='none'">`;
+      }
+      return `
+      <div class="photo-manage-card">
+        <div class="pm-img-wrap" style="position:relative">${thumb}</div>
+        <div class="pm-body">
+          <h4>${it.caption} ${typeLabel}</h4>
+          <button class="btn-danger" style="width:100%;justify-content:center;display:flex" onclick="deleteGalleryItem('${it.id}')"><i class="fas fa-trash-alt"></i> ሰርዝ</button>
+        </div>
+      </div>`;
+    }).join('');
+  }catch(e){
+    grid.innerHTML=`<p style="color:var(--red);grid-column:1/-1;text-align:center;padding:20px">Failed: ${e.message}</p>`;
+  }
+}
+
+async function deleteGalleryItem(id){
+  if(!confirm('እዚ ስእሊ/ቪድዮ ክስረዝ ዲዩ?'))return;
+  showStatus('galleryListStatus','loading','Deleting...');
+  try{
+    await ghUpdateJsonWithRetry('data/gallery.json', (data) => {
+      const items = ((data && data.items) || []).filter(it=>it.id!==id);
+      return {items};
+    }, `Delete gallery item: ${id}`);
+    showStatus('galleryListStatus','success','ተሰሪዙ።');
+    loadGalleryList();
+  }catch(e){
+    showStatus('galleryListStatus','error','Failed: '+e.message);
+  }
+}
+
+const uploadZone=document.getElementById('uploadZone');
+uploadZone.addEventListener('dragover',e=>{e.preventDefault();uploadZone.classList.add('drag-over')});
+uploadZone.addEventListener('dragleave',()=>uploadZone.classList.remove('drag-over'));
+uploadZone.addEventListener('drop',e=>{e.preventDefault();uploadZone.classList.remove('drag-over');handleFiles(e.dataTransfer.files)});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const galZone = document.getElementById('galUploadZone');
+  if (galZone) {
+    galZone.addEventListener('dragover', e => { e.preventDefault(); galZone.classList.add('drag-over'); });
+    galZone.addEventListener('dragleave', () => galZone.classList.remove('drag-over'));
+    galZone.addEventListener('drop', e => { e.preventDefault(); galZone.classList.remove('drag-over'); if (e.dataTransfer.files[0]) handleGalPhoto(e.dataTransfer.files[0]); });
+  }
+});
+
+function handleFiles(files){
+  [...files].forEach(async file=>{
+    if(!file.type.startsWith('image/')){return}
+    if(file.size>5*1024*1024){alert(file.name+' is too large (max 5MB).');return}
+    const ext=file.name.split('.').pop().toLowerCase()||'jpg';
+    const safeName='news_'+Date.now()+'_'+Math.random().toString(36).slice(2,7)+'.'+ext;
+    try{
+      const {dataUrl, base64} = await compressImage(file);
+      pendingFiles.push({file,dataUrl,base64,name:safeName});
+      renderPreviews();
+    }catch(err){
+      alert(file.name+' ምሕዋስ ኣይተኻእለን: '+err.message);
+    }
+  });
+}
+function renderPreviews(){
+  const list=document.getElementById('imgPreviewList');
+  const hint=document.getElementById('orderHint');
+  list.innerHTML='';
+  pendingFiles.forEach((pf,i)=>{
+    const thumb=document.createElement('div');
+    thumb.className='img-thumb';
+    thumb.innerHTML=`<img src="${pf.dataUrl}" alt="preview"><button class="remove-img" onclick="removeImg(${i})"><i class="fas fa-times"></i></button></div>`;
+    list.appendChild(thumb);
+  });
+  hint.style.display=pendingFiles.length>0?'':'none';
+}
+function removeImg(idx){pendingFiles.splice(idx,1);renderPreviews()}
+
+function showStatus(elId,type,msg){
+  const el=document.getElementById(elId);
+  el.className='status-banner '+type;
+  el.innerHTML=`<i class="fas fa-${type==='success'?'check-circle':type==='error'?'exclamation-circle':'spinner spin'}"></i> ${msg}`;
+}
+function setProgress(pct){
+  document.getElementById('publishProgress').style.display=pct>0&&pct<100?'':'none';
+  document.getElementById('progressBar').style.width=pct+'%';
+}
+
+async function publishArticle(){
+  const title=document.getElementById('artTitle').value.trim();
+  const date=document.getElementById('artDate').value;
+  const category=document.getElementById('artCategory').value;
+  const excerpt=document.getElementById('artExcerpt').value.trim();
+  const body=document.getElementById('artBody').value.trim();
+  const link=document.getElementById('artLink').value.trim();
+  if(!title||!date||!excerpt){showStatus('publishStatus','error','Title, Date, Summary ምልእ።');return}
+  if(pendingFiles.length===0){showStatus('publishStatus','error','ቢያንስ ሓደ ስእሊ upload ግበር።');return}
+  const btn=document.getElementById('publishBtn');
+  btn.disabled=true;
+  setProgress(5);
+  showStatus('publishStatus','loading','ስእሊ ናብ GitHub እናስቀልናዮ ኣለና...');
+  try{
+    const imagePaths=[];
+    for(let i=0;i<pendingFiles.length;i++){
+      const pf=pendingFiles[i];
+      const repoPath=`images/news/${pf.name}`;
+      await ghPut(repoPath,pf.base64,null,`Add news image: ${pf.name}`);
+      imagePaths.push(repoPath);
+      setProgress(5+Math.round((i+1)/pendingFiles.length*55));
+    }
+    setProgress(65);
+    showStatus('publishStatus','loading','news.json እናሕደስናዮ ኣለና...');
+    const newArticle={
+      id:'article-'+Date.now(),
+      title,date,category,excerpt,
+      body:body||excerpt,
+      images:imagePaths
+    };
+    if(link)newArticle.link=link;
+    await ghUpdateJsonWithRetry('data/news.json', (data) => {
+      const articles = (data && data.articles) || [];
+      articles.unshift(newArticle);
+      return {articles};
+    }, `Publish article: ${title}`);
+    setProgress(85);
+    showStatus('publishStatus','loading','Creating SEO article page...');
+    try {
+      const slug = title.toLowerCase()
+        .replace(/[^\w\s-]/g,'').replace(/\s+/g,'-').replace(/-+/g,'-').slice(0,60);
+      newArticle.slug = slug;
+      const coverImg = imagePaths.length > 0
+        ? `https://raw.githubusercontent.com/${cfg.owner}/${cfg.repo}/main/${imagePaths[0]}`
+        : 'https://geezhospital.com/images/og-cover.jpg';
+      const articlePageHtml = generateArticlePage(newArticle, coverImg);
+      const articleContent  = btoa(unescape(encodeURIComponent(articlePageHtml)));
+      await ghPut(`news/${slug}.html`, articleContent, null, `Create article page: ${slug}`);
+      await ghUpdateJsonWithRetry('data/news.json', (data) => {
+        data.articles = (data.articles||[]).map(a => a.id===newArticle.id ? {...a,slug} : a);
+        return data;
+      }, `Add slug to article: ${title}`);
+    } catch(e) { console.warn('Article page creation failed:',e.message); }
+    setProgress(100);
+    showStatus('publishStatus','success','✅ Article published! ድሕሪ 1 ደቒቓ ኣብ news page ይርኤ።');
+    document.getElementById('artTitle').value='';
+    document.getElementById('artExcerpt').value='';
+    document.getElementById('artBody').value='';
+    document.getElementById('artLink').value='';
+    document.getElementById('artDate').valueAsDate=new Date();
+    pendingFiles=[];renderPreviews();
+  }catch(err){
+    showStatus('publishStatus','error','Error: '+err.message);
+    setProgress(0);
+  }
+  btn.disabled=false;
+}
+
+async function loadArticleList(){
+  const listEl=document.getElementById('articleList');
+  listEl.innerHTML='<p style="color:var(--gray-400);text-align:center;padding:24px 0"><i class="fas fa-spinner spin"></i> Loading...</p>';
+  try{
+    const existing=await ghGet('data/news.json');
+    const decoded=decodeURIComponent(escape(atob(existing.content.replace(/\n/g,''))));
+    const articles=JSON.parse(decoded).articles||[];
+    if(articles.length===0){listEl.innerHTML='<p style="color:var(--gray-400);text-align:center;padding:24px 0">No articles yet.</p>';return}
+    listEl.innerHTML='';
+    articles.forEach(art=>{
+      const item=document.createElement('div');
+      item.className='article-list-item';
+      const thumb=art.images&&art.images.length
+        ?`<img class="article-thumb" src="${art.images[0]}" alt="" onerror="this.style.display='none'">`
+        :`<div class="article-thumb-ph"><i class="fas fa-newspaper"></i></div>`;
+      const cat=art.category==='Announcement'?'badge-gold':art.category==='Event'?'badge-teal':art.category==='Testimony'?'badge-purple':'badge-gray';
+      item.innerHTML=`
+        ${thumb}
+        <div class="article-info">
+          <h4>${art.title}</h4>
+          <div class="meta"><span class="badge ${cat}">${art.category||'News'}</span> &nbsp;${art.date} &nbsp;·&nbsp; ${art.images?art.images.length:0} ስእሊ</div>
+        </div>
+        <div class="article-actions">
+          <button class="btn-secondary" style="background:#e8f4f4;color:#0B7B7B;border:1.5px solid #0B7B7B;padding:7px 14px;border-radius:6px;cursor:pointer;font-size:.82rem;font-weight:600;font-family:inherit" onclick="editArticle('${art.id}')"><i class="fas fa-edit"></i> ምምሕያሽ</button>
+          <button class="btn-danger" onclick="deleteArticle('${art.id}')"><i class="fas fa-trash-alt"></i> ሰርዝ</button>
+        </div>`;
+      listEl.appendChild(item);
+    });
+  }catch(e){
+    listEl.innerHTML=`<p style="color:var(--red);text-align:center;padding:20px">Failed: ${e.message}</p>`;
+  }
+}
+
+async function deleteArticle(id){
+  if(!confirm('እዚ article ክሰረዝ ዲዩ?'))return;
+  showStatus('manageStatus','loading','Deleting...');
+  try{
+    await ghUpdateJsonWithRetry('data/news.json', (data) => {
+      data.articles = (data.articles||[]).filter(a=>a.id!==id);
+      return data;
+    }, `Delete article: ${id}`);
+    showStatus('manageStatus','success','Article deleted.');
+    loadArticleList();
+  }catch(e){showStatus('manageStatus','error','Failed: '+e.message)}
+}
+
+document.getElementById('vacSalary').addEventListener('change', function() {
+  document.getElementById('vacSalaryCustomDiv').style.display = this.value === 'custom' ? '' : 'none';
+});
+
+async function postVacancy() {
+  const title     = document.getElementById('vacTitle').value.trim();
+  const titleTig  = document.getElementById('vacTitleTig').value.trim();
+  const dept      = document.getElementById('vacDept').value;
+  const positions = parseInt(document.getElementById('vacPositions').value) || 1;
+  const type      = document.getElementById('vacType').value;
+  const startDate = document.getElementById('vacStart').value;
+  const deadline  = document.getElementById('vacDeadline').value;
+  const reqsRaw   = document.getElementById('vacReqs').value.trim();
+  const salType   = document.getElementById('vacSalary').value;
+  const salAmt    = document.getElementById('vacSalaryAmt').value.trim();
+  const email     = document.getElementById('vacEmail').value.trim();
+  const whatsapp  = document.getElementById('vacWhatsApp').value.trim();
+  const direct    = document.getElementById('vacDirect').checked;
+
+  if (!title || !deadline || !reqsRaw) {
+    showStatus('vacPostStatus','error','Title, Deadline, Requirements ምልእ።');
+    return;
+  }
+
+  const requirements = reqsRaw.split('\n').map(r=>r.trim()).filter(Boolean);
+  let salary = salType;
+  if (salType === 'custom' && salAmt) salary = salAmt;
+
+  const btn = document.getElementById('vacPostBtn');
+  btn.disabled = true;
+  showStatus('vacPostStatus','loading','Posting vacancy...');
+
+  try {
+    const newVac = {
+      id: 'vac-' + Date.now(),
+      title, titleTig, department: dept, positions, type,
+      startDate: startDate || null,
+      deadline,
+      requirements,
+      salary,
+      category: dept,
+      postedDate: new Date().toISOString().split('T')[0],
+      applyEmail:    email    || null,
+      applyWhatsApp: whatsapp || null,
+      applyDirect:   direct
+    };
+
+    await ghUpdateJsonWithRetry('data/vacancies.json', (data) => {
+      const vacancies = (data && data.vacancies) || [];
+      vacancies.unshift(newVac);
+      return {vacancies};
+    }, `Post vacancy: ${title}`);
+
+    showStatus('vacPostStatus','success','✅ Vacancy posted! ድሕሪ 1 ደቒቓ ኣብ vacancy.html ይርኤ።');
+
+    document.getElementById('vacTitle').value = '';
+    document.getElementById('vacTitleTig').value = '';
+    document.getElementById('vacReqs').value = '';
+    document.getElementById('vacStart').value = '';
+    document.getElementById('vacDeadline').value = '';
+    document.getElementById('vacWhatsApp').value = '';
+    document.getElementById('vacPositions').value = '1';
+
+    loadVacancyList();
+  } catch(err) {
+    showStatus('vacPostStatus','error','Error: ' + err.message);
+  }
+  btn.disabled = false;
+}
+
+async function loadVacancyList() {
+  const listEl = document.getElementById('vacList');
+  if (!listEl) return;
+  listEl.innerHTML = '<p style="color:var(--gray-400);text-align:center;padding:16px"><i class="fas fa-spinner spin"></i></p>';
+  try {
+    const existing = await ghGet('data/vacancies.json');
+    const decoded  = decodeURIComponent(escape(atob(existing.content.replace(/\n/g,''))));
+    const vacs     = JSON.parse(decoded).vacancies || [];
+    if (!vacs.length) {
+      listEl.innerHTML = '<p style="color:var(--gray-400);text-align:center;padding:16px">No vacancies yet.</p>';
+      return;
+    }
+    listEl.innerHTML = vacs.map(v => {
+      const closed = v.deadline && new Date(v.deadline) < new Date();
+      return `
+      <div class="article-list-item">
+        <div class="article-thumb-ph"><i class="fas fa-briefcase"></i></div>
+        <div class="article-info">
+          <h4>${v.title}</h4>
+          <div class="meta">
+            <span class="badge badge-teal">${v.department}</span>
+            &nbsp;${v.positions} position(s)
+            &nbsp;·&nbsp; Deadline: ${v.deadline}
+            &nbsp;·&nbsp; <span style="color:${closed?'var(--red)':'var(--green)'}">
+              ${closed ? '🔒 Closed' : '✅ Open'}
+            </span>
+          </div>
+        </div>
+        <div class="article-actions">
+          <button class="btn-danger" onclick="deleteVacancy('${v.id}')"><i class="fas fa-trash-alt"></i> ሰርዝ</button>
+        </div>
+      </div>`;
+    }).join('');
+  } catch(e) {
+    listEl.innerHTML = `<p style="color:var(--red);text-align:center;padding:16px">Failed: ${e.message}</p>`;
+  }
+}
+
+async function deleteVacancy(id) {
+  if (!confirm('እዚ vacancy ክሰረዝ ዲዩ?')) return;
+  showStatus('vacManageStatus','loading','Deleting...');
+  try {
+    await ghUpdateJsonWithRetry('data/vacancies.json', (data) => {
+      data.vacancies = (data.vacancies||[]).filter(v => v.id !== id);
+      return data;
+    }, `Delete vacancy: ${id}`);
+    showStatus('vacManageStatus','success','Vacancy deleted.');
+    loadVacancyList();
+  } catch(e) {
+    showStatus('vacManageStatus','error','Failed: ' + e.message);
+  }
+}
+
+function generateArticlePage(art, coverImg) {
+  var safeTitle   = (art.title||'').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+  var safeExcerpt = (art.excerpt||'').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+  var safeBody    = (art.body||art.excerpt||'').replace(/\n/g,'<br>');
+  var fmtDate     = art.date ? new Date(art.date).toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'}) : '';
+  var images      = art.images || [];
+  var canonical   = 'https://geezhospital.com/news/' + (art.slug||art.id) + '.html';
+  var catClass    = art.category === 'Announcement' ? ' gold' : '';
+  var catIcon     = art.category === 'Event' ? 'calendar-alt' : art.category === 'Health Tip' ? 'heart-pulse' : art.category === 'Testimony' ? 'quote-left' : 'newspaper';
+
+  var imgSlider = '';
+  if (images.length > 0) {
+    images.forEach(function(src, i) {
+      var raw = 'https://raw.githubusercontent.com/' + cfg.owner + '/' + cfg.repo + '/main/' + src;
+      imgSlider += '<div class="slide' + (i===0?' active':'') + '">';
+      imgSlider += '<img src="' + raw + '" alt="' + safeTitle + ' photo ' + (i+1) + '" loading="' + (i===0?'eager':'lazy') + '">';
+      imgSlider += '</div>';
+    });
+  } else {
+    imgSlider = '<div class="slide active"><div class="no-img"><i class="fas fa-newspaper"></i></div></div>';
+  }
+
+  var sliderControls = '';
+  if (images.length > 1) {
+    var dots = '';
+    images.forEach(function(_, i) {
+      dots += '<span class="' + (i===0?'active':'') + '" onclick="artGoSlide(' + i + ')"></span>';
+    });
+    sliderControls =
+      '<button class="slider-arrow prev" onclick="artSlide(-1)"><i class="fas fa-chevron-left"></i></button>' +
+      '<button class="slider-arrow next" onclick="artSlide(1)"><i class="fas fa-chevron-right"></i></button>' +
+      '<div class="slider-dots" id="artDots">' + dots + '</div>';
+  }
+
+  var schemaImg = images.length > 0
+    ? '"image":"https://raw.githubusercontent.com/' + cfg.owner + '/' + cfg.repo + '/main/' + images[0] + '",'
+    : '';
+
+  var shareUrl = encodeURIComponent(canonical);
+  var shareText = encodeURIComponent(safeTitle);
+
+  var html = '<!DOCTYPE html>\n<html lang="en">\n<head>\n' +
+    '<meta charset="UTF-8">\n' +
+    '<meta name="viewport" content="width=device-width, initial-scale=1.0">\n' +
+    '<title>' + safeTitle + ' | Geez Hospital \u2014 Axum, Tigray</title>\n' +
+    '<meta name="description" content="' + safeExcerpt + '">\n' +
+    '<meta name="keywords" content="' + safeTitle + ', Geez Hospital, Hospital Axum, ' + (art.category||'News') + ' Axum, Tigray Health">\n' +
+    '<link rel="canonical" href="' + canonical + '">\n' +
+    '<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">\n' +
+    '<meta name="author" content="Geez Hospital \u2014 Axum, Tigray">\n' +
+    '<meta property="og:type" content="article">\n' +
+    '<meta property="og:url" content="' + canonical + '">\n' +
+    '<meta property="og:title" content="' + safeTitle + ' | Geez Hospital">\n' +
+    '<meta property="og:description" content="' + safeExcerpt + '">\n' +
+    '<meta property="og:image" content="' + coverImg + '">\n' +
+    '<meta property="og:image:width" content="1200">\n' +
+    '<meta property="og:image:height" content="630">\n' +
+    '<meta property="og:site_name" content="Geez Hospital">\n' +
+    '<meta property="article:published_time" content="' + (art.date||'') + '">\n' +
+    '<meta name="twitter:card" content="summary_large_image">\n' +
+    '<meta name="twitter:title" content="' + safeTitle + ' | Geez Hospital">\n' +
+    '<meta name="twitter:description" content="' + safeExcerpt + '">\n' +
+    '<meta name="twitter:image" content="' + coverImg + '">\n' +
+    '<link rel="icon" href="../images/favicon.png" type="image/png">\n' +
+    '<link rel="preconnect" href="https://fonts.googleapis.com">\n' +
+    '<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">\n' +
+    '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">\n' +
+    '<link rel="stylesheet" href="../style.css">\n' +
+    '<script type="application/ld+json">\n' +
+    '{"@context":"https://schema.org","@type":"NewsArticle",' +
+    '"headline":"' + safeTitle + '",' +
+    '"description":"' + safeExcerpt + '",' +
+    schemaImg +
+    '"datePublished":"' + (art.date||'') + '",' +
+    '"dateModified":"' + (art.date||'') + '",' +
+    '"author":{"@type":"Organization","name":"Geez Hospital"},' +
+    '"publisher":{"@type":"Organization","name":"Geez Hospital","logo":{"@type":"ImageObject","url":"https://geezhospital.com/images/logo.png"}},' +
+    '"mainEntityOfPage":{"@type":"WebPage","@id":"' + canonical + '"},' +
+    '"articleSection":"' + (art.category||'News') + '"}\n' +
+    '<\/script>\n' +
+    '<style>\n' +
+    '*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}\n' +
+    'body{font-family:\'Figtree\',system-ui,sans-serif;color:#0F172A;background:#F8FAFB;line-height:1.7}\n' +
+    'a{text-decoration:none;color:inherit}\n' +
+    '.art-topbar{background:#0A1F3D;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}\n' +
+    '.art-topbar a{color:rgba(255,255,255,.75);font-size:.78rem;display:flex;align-items:center;gap:6px;transition:color .2s}\n' +
+    '.art-topbar a:hover{color:#fff}\n' +
+    '.art-topbar .logo{font-family:\'Cormorant Garamond\',serif;font-size:1.05rem;font-weight:700;color:#fff}\n' +
+    '.art-topbar .logo span{color:#5FD3D3}\n' +
+    '.breadcrumb{background:#fff;border-bottom:1px solid #EEF2F6;padding:12px 24px}\n' +
+    '.breadcrumb .inner{max-width:860px;margin:0 auto;font-size:.8rem;color:#64748B;display:flex;align-items:center;gap:8px;flex-wrap:wrap}\n' +
+    '.breadcrumb a{color:#0B7B7B}\n' +
+    '.art-wrap{max-width:860px;margin:0 auto;padding:40px 24px 80px}\n' +
+    '.art-badge{display:inline-flex;align-items:center;gap:6px;background:#E8F4F4;color:#0B7B7B;font-size:.72rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:5px 14px;border-radius:999px;margin-bottom:16px}\n' +
+    '.art-badge.gold{background:#FDF6E3;color:#B8860B}\n' +
+    '.art-title{font-family:\'Cormorant Garamond\',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:600;color:#0A1F3D;line-height:1.2;margin-bottom:14px}\n' +
+    '.art-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-size:.83rem;color:#64748B;margin-bottom:32px;padding-bottom:20px;border-bottom:1px solid #EEF2F6}\n' +
+    '.art-meta i{color:#0B7B7B}\n' +
+    '.art-slider{position:relative;border-radius:16px;overflow:hidden;margin-bottom:36px;background:#E8F4F4;aspect-ratio:16/9}\n' +
+    '.art-slider .slide{position:absolute;inset:0;opacity:0;transition:opacity .5s}\n' +
+    '.art-slider .slide.active{opacity:1}\n' +
+    '.art-slider img{width:100%;height:100%;object-fit:cover}\n' +
+    '.art-slider .no-img{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;color:#0B7B7B;opacity:.3}\n' +
+    '.slider-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:7px}\n' +
+    '.slider-dots span{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer;transition:.2s}\n' +
+    '.slider-dots span.active{background:#fff;transform:scale(1.3)}\n' +
+    '.slider-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.85);border:none;border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.85rem;color:#0A1F3D;z-index:2;transition:.2s}\n' +
+    '.slider-arrow.prev{left:12px}.slider-arrow.next{right:12px}\n' +
+    '.art-body{font-size:1rem;color:#1E293B;line-height:1.85;margin-bottom:40px}\n' +
+    '.art-share{background:#fff;border:1px solid #EEF2F6;border-radius:12px;padding:20px 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:40px}\n' +
+    '.share-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 18px;border-radius:999px;font-size:.82rem;font-weight:600;cursor:pointer;border:none;transition:all .2s;text-decoration:none}\n' +
+    '.share-fb{background:#1877F2;color:#fff}.share-tg{background:#0088cc;color:#fff}.share-wa{background:#25D366;color:#fff}.share-copy{background:#f1f5f9;color:#475569}\n' +
+    '.share-btn:hover{opacity:.88;transform:translateY(-1px)}\n' +
+    '.art-back{display:inline-flex;align-items:center;gap:8px;background:#0B7B7B;color:#fff;padding:12px 24px;border-radius:999px;font-size:.88rem;font-weight:600;transition:background .2s}\n' +
+    '.art-back:hover{background:#096767}\n' +
+    '.art-cta{background:linear-gradient(135deg,#0A1F3D,#0B7B7B);border-radius:16px;padding:32px;text-align:center;color:#fff;margin-bottom:40px}\n' +
+    '.art-cta h3{font-family:\'Cormorant Garamond\',serif;font-size:1.5rem;margin-bottom:8px}\n' +
+    '.art-cta p{font-size:.88rem;color:rgba(255,255,255,.72);margin-bottom:18px}\n' +
+    '.art-cta a{background:#fff;color:#0B7B7B;padding:11px 26px;border-radius:999px;font-weight:700;font-size:.88rem;display:inline-flex;align-items:center;gap:8px}\n' +
+    '<\/style>\n' +
+    '<\/head>\n<body>\n' +
+    '<div class="art-topbar">\n' +
+    '  <a href="../index.html" class="logo"><span>Geez<\/span> Hospital &mdash; Axum, Tigray<\/a>\n' +
+    '  <div style="display:flex;gap:16px">\n' +
+    '    <a href="tel:+251920008338"><i class="fas fa-phone"><\/i> +251 920 008 338<\/a>\n' +
+    '    <a href="../contact.html"><i class="fas fa-calendar-check"><\/i> Book Appointment<\/a>\n' +
+    '  <\/div>\n<\/div>\n' +
+    '<div class="breadcrumb"><div class="inner">\n' +
+    '  <a href="../index.html"><i class="fas fa-home"><\/i> Home<\/a>\n' +
+    '  <i class="fas fa-chevron-right" style="font-size:.65rem"><\/i>\n' +
+    '  <a href="../news.html">News &amp; Events<\/a>\n' +
+    '  <i class="fas fa-chevron-right" style="font-size:.65rem"><\/i>\n' +
+    '  <span>' + safeTitle.substring(0,50) + (safeTitle.length>50?'&hellip;':'') + '<\/span>\n' +
+    '<\/div><\/div>\n' +
+    '<div class="art-wrap">\n' +
+    '  <div class="art-badge' + catClass + '"><i class="fas fa-' + catIcon + '"><\/i> ' + (art.category||'News') + '<\/div>\n' +
+    '  <h1 class="art-title">' + safeTitle + '<\/h1>\n' +
+    '  <div class="art-meta">\n' +
+    '    <span><i class="fas fa-calendar-alt"><\/i> ' + fmtDate + '<\/span>\n' +
+    '    <span><i class="fas fa-hospital"><\/i> Geez Hospital, Axum<\/span>\n' +
+    '    <span><i class="fas fa-tag"><\/i> ' + (art.category||'News') + '<\/span>\n' +
+    '  <\/div>\n' +
+    '  <div class="art-slider" id="artSlider">' + imgSlider + sliderControls + '<\/div>\n' +
+    '  <div class="art-body"><p>' + safeBody + '<\/p><\/div>\n' +
+    '  <div class="art-share">\n' +
+    '    <strong><i class="fas fa-share-alt" style="color:#0B7B7B"><\/i> Share:<\/strong>\n' +
+    '    <a href="https://www.facebook.com/sharer/sharer.php?u=' + shareUrl + '" target="_blank" class="share-btn share-fb"><i class="fab fa-facebook-f"><\/i> Facebook<\/a>\n' +
+    '    <a href="https://t.me/share/url?url=' + shareUrl + '&text=' + shareText + '" target="_blank" class="share-btn share-tg"><i class="fab fa-telegram-plane"><\/i> Telegram<\/a>\n' +
+    '    <a href="https://wa.me/?text=' + encodeURIComponent(art.title + ' \u2014 ') + shareUrl + '" target="_blank" class="share-btn share-wa"><i class="fab fa-whatsapp"><\/i> WhatsApp<\/a>\n' +
+    '    <button class="share-btn share-copy" onclick="navigator.clipboard.writeText(\'' + canonical + '\');this.textContent=\'Copied!\';"><i class="fas fa-link"><\/i> Copy Link<\/button>\n' +
+    '  <\/div>\n' +
+    '  <div class="art-cta">\n' +
+    '    <h3>Need Medical Help?<\/h3>\n' +
+    '    <p>Our specialist doctors are available 24\/7 in Axum, Tigray.<\/p>\n' +
+    '    <a href="../contact.html"><i class="fas fa-calendar-check"><\/i> Book an Appointment<\/a>\n' +
+    '  <\/div>\n' +
+    '  <a href="../news.html" class="art-back"><i class="fas fa-arrow-left"><\/i> Back to News<\/a>\n' +
+    '<\/div>\n' +
+    '<script>\n' +
+    'var slides=document.querySelectorAll(\'#artSlider .slide\');\n' +
+    'var dots=document.querySelectorAll(\'#artDots span\');\n' +
+    'var cur=0;\n' +
+    'function artGoSlide(n){slides[cur].classList.remove(\'active\');if(dots[cur])dots[cur].classList.remove(\'active\');cur=(n+slides.length)%slides.length;slides[cur].classList.add(\'active\');if(dots[cur])dots[cur].classList.add(\'active\');}\n' +
+    'function artSlide(d){artGoSlide(cur+d);}\n' +
+    'if(slides.length>1){setInterval(function(){artSlide(1);},5000);}\n' +
+    '<\/script>\n<\/body>\n<\/html>';
+
+  return html;
+}
+
+function saveConfig(){
+  cfg.owner=document.getElementById('cfgOwner2').value.trim();
+  cfg.repo=document.getElementById('cfgRepo2').value.trim();
+  cfg.token=document.getElementById('cfgToken2').value.trim();
+  saveConfigStore(cfg);
+  showStatus('configStatus','success','Settings saved.');
+}
+
+window.addEventListener('DOMContentLoaded',()=>{
+  cfg=loadConfig();
+  if(cfg.owner&&cfg.repo&&cfg.token)enterAdmin();
+});
+</script>
+<div id="editModal" style="display:none;position:fixed;inset:0;background:rgba(10,31,61,.65);backdrop-filter:blur(4px);z-index:9999;align-items:flex-start;justify-content:center;padding:40px 20px;overflow-y:auto">
+  <div style="background:#fff;border-radius:16px;max-width:780px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.25);padding:32px">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px">
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#0A1F3D"><i class="fas fa-edit" style="color:#0B7B7B;margin-right:8px"></i> Article ምምሕያሽ</h2>
+      <button onclick="closeEditModal()" style="background:none;border:none;font-size:1.3rem;cursor:pointer;color:#64748B;padding:4px 8px">✕</button>
+    </div>
+
+    <div id="editStatus" class="status-banner"></div>
+
+    <input type="hidden" id="editId">
+    <input type="hidden" id="editOldImages">
+
+    <div class="form-group">
+      <label>Title *</label>
+      <input type="text" id="editTitle">
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div class="form-group">
+        <label>Date *</label>
+        <input type="date" id="editDate">
+      </div>
+      <div class="form-group">
+        <label>Category *</label>
+        <select id="editCategory">
+          <option value="Announcement">Announcement</option>
+          <option value="Event">Event</option>
+          <option value="Health Tip">Health Tip</option>
+          <option value="News">News</option>
+          <option value="Testimony">Testimony</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Short Summary *</label>
+      <textarea id="editExcerpt" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+      <label>Full Article Body</label>
+      <textarea id="editBody" rows="6"></textarea>
+    </div>
+    <div class="form-group">
+      <label>External Link (optional)</label>
+      <input type="text" id="editLink">
+    </div>
+
+    <div class="form-group">
+      <label>ሕጂ ዘሎ ስእሊ</label>
+      <div id="editCurrentImages" style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:10px"></div>
+    </div>
+
+    <div class="form-group">
+      <label>ሓዲሽ ስእሊ ምስቃል (optional)</label>
+      <div class="upload-zone" onclick="document.getElementById('editPhotoInput').click()" style="padding:18px">
+        <input type="file" id="editPhotoInput" accept="image/*" multiple onchange="handleEditFiles(this.files)">
+        <i class="fas fa-cloud-upload-alt" style="font-size:1.5rem;color:#0B7B7B;opacity:.5;display:block;margin-bottom:8px"></i>
+        <p style="font-size:.83rem;color:#64748B">ሓዲሽ ስእሊ ምስ ዕቕምካ — ዘሎ ስእሊ ይቕጽል</p>
+      </div>
+      <div class="img-preview-list" id="editImgPreview"></div>
+    </div>
+
+    <div style="display:flex;gap:12px;margin-top:8px">
+      <button class="btn-primary" id="editSaveBtn" onclick="saveEdit()"><i class="fas fa-save"></i> Save Changes</button>
+      <button onclick="closeEditModal()" style="background:#f1f5f9;color:#475569;border:1.5px solid #e2e8f0;padding:12px 24px;border-radius:8px;cursor:pointer;font-size:.93rem;font-weight:600;font-family:inherit">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script>
+let editPendingFiles = [];
+let allArticlesCache = [];
+
+async function editArticle(id) {
+  try {
+    const existing = await ghGet('data/news.json');
+    const decoded  = decodeURIComponent(escape(atob(existing.content.replace(/\n/g,''))));
+    allArticlesCache = JSON.parse(decoded).articles || [];
+  } catch(e) { showStatus('manageStatus','error','Failed to load: '+e.message); return; }
+
+  const art = allArticlesCache.find(a => a.id === id);
+  if (!art) { alert('Article not found.'); return; }
+
+  document.getElementById('editId').value       = art.id;
+  document.getElementById('editTitle').value     = art.title || '';
+  document.getElementById('editDate').value      = art.date  || '';
+  document.getElementById('editCategory').value  = art.category || 'Announcement';
+  document.getElementById('editExcerpt').value   = art.excerpt || '';
+  document.getElementById('editBody').value      = art.body    || '';
+  document.getElementById('editLink').value      = art.link    || '';
+  document.getElementById('editOldImages').value = JSON.stringify(art.images || []);
+
+  const imgDiv = document.getElementById('editCurrentImages');
+  imgDiv.innerHTML = (art.images||[]).map((src,i) =>
+    `<div style="position:relative;width:80px;height:64px;border-radius:8px;overflow:hidden;border:2px solid #e2e8f0">
+       <img src="${src}" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'">
+       <span style="position:absolute;bottom:2px;left:2px;background:rgba(0,0,0,.5);color:#fff;font-size:.6rem;padding:1px 4px;border-radius:3px">${i+1}</span>
+     </div>`
+  ).join('') || '<p style="color:#94a3b8;font-size:.82rem">ስእሊ የለን</p>';
+
+  editPendingFiles = [];
+  document.getElementById('editImgPreview').innerHTML = '';
+  document.getElementById('editStatus').className = 'status-banner';
+
+  const modal = document.getElementById('editModal');
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeEditModal() {
+  document.getElementById('editModal').style.display = 'none';
+  document.body.style.overflow = '';
+  editPendingFiles = [];
+}
+
+function handleEditFiles(files) {
+  [...files].forEach(async file => {
+    if (!file.type.startsWith('image/')) return;
+    if (file.size > 5*1024*1024) { alert(file.name+' too large (max 5MB).'); return; }
+    const ext  = file.name.split('.').pop().toLowerCase() || 'jpg';
+    const name = 'news_'+Date.now()+'_'+Math.random().toString(36).slice(2,7)+'.'+ext;
+    try{
+      const {dataUrl, base64} = await compressImage(file);
+      editPendingFiles.push({dataUrl, base64, name});
+      const prev = document.getElementById('editImgPreview');
+      prev.innerHTML = editPendingFiles.map((pf,i) =>
+        `<div class="img-thumb"><img src="${pf.dataUrl}"><button class="remove-img" onclick="editPendingFiles.splice(${i},1);handleEditFiles(new DataTransfer().files)"><i class="fas fa-times"></i></button></div>`
+      ).join('');
+    }catch(err){
+      alert(file.name+' ምሕዋስ ኣይተኻእለን: '+err.message);
+    }
+  });
+}
+
+async function saveEdit() {
+  const id       = document.getElementById('editId').value;
+  const title    = document.getElementById('editTitle').value.trim();
+  const date     = document.getElementById('editDate').value;
+  const category = document.getElementById('editCategory').value;
+  const excerpt  = document.getElementById('editExcerpt').value.trim();
+  const body     = document.getElementById('editBody').value.trim();
+  const link     = document.getElementById('editLink').value.trim();
+  const oldImages= JSON.parse(document.getElementById('editOldImages').value || '[]');
+
+  if (!title||!date||!excerpt) { showStatus('editStatus','error','Title, Date, Summary ምልእ።'); return; }
+
+  const btn = document.getElementById('editSaveBtn');
+  btn.disabled = true;
+  showStatus('editStatus','loading','Saving changes...');
+
+  try {
+    let imagePaths = [...oldImages];
+    for (let i=0; i<editPendingFiles.length; i++) {
+      const pf = editPendingFiles[i];
+      await ghPut(`images/news/${pf.name}`, pf.base64, null, `Add image: ${pf.name}`);
+      imagePaths.push(`images/news/${pf.name}`);
+    }
+
+    await ghUpdateJsonWithRetry('data/news.json', (data) => {
+      data.articles = data.articles.map(a => {
+        if (a.id !== id) return a;
+        const updated = {...a, title, date, category, excerpt, body: body||excerpt, images: imagePaths};
+        if (link) updated.link = link; else delete updated.link;
+        return updated;
+      });
+      return data;
+    }, `Edit article: ${title}`);
+
+    showStatus('editStatus','success','✅ Article updated successfully!');
+    setTimeout(() => { closeEditModal(); loadArticleList(); }, 1500);
+  } catch(err) {
+    showStatus('editStatus','error','Error: '+err.message);
+  }
+  btn.disabled = false;
+}
+
+document.getElementById('editModal').addEventListener('click', function(e) {
+  if (e.target === this) closeEditModal();
+});
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(err => {
+      console.warn('[Admin PWA] Service worker registration failed:', err);
+    });
+  });
+}
+</script>
+</body>
+</html>
