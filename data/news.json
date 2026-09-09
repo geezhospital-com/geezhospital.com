@@ -1,18 +1,6 @@
 {
   "articles": [
     {
-      "id": "article-1788900707436",
-      "title": "Modern Ct scsn",
-      "date": "2026-09-08",
-      "category": "News",
-      "excerpt": "Modern Ct scan",
-      "body": "Modern Ct scan",
-      "images": [
-        "images/news/news_1788900695332_8uzl7.jpg"
-      ],
-      "slug": "modern-ct-scsn"
-    },
-    {
       "id": "article-1787526751409",
       "title": "ምስክርነት ኣቶ ገብረመድህን ካሕሳይ ብዛዕባ ግዕዝ ሆስፒታል",
       "date": "2026-08-23",
